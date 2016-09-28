@@ -13,10 +13,10 @@ public class Review {
 		private Product product;
 		
 		
+		
 		public Long getId() {
 			return id;
 		}
-		
 		public Long getRating() {
 			return rating;
 		}
@@ -28,6 +28,12 @@ public class Review {
 		}
 		public void setComment(String comment) {
 			this.comment = comment;
+		}
+		public User getReviewer() {
+			return reviewer;
+		}
+		public Product getProduct() {
+			return product;
 		}
 		
 }
