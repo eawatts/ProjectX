@@ -2,21 +2,30 @@ package projectx.assets;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "PaymentDetails")
 public class PaymentDetails {
-	
-	private int id;
-	private int user_id;
-	private String account_number;
-	private String sort_code;
 
 	@Id
-	@GeneratedValue
 	@Column(name = "id", length=80, nullable=false)
+	@GeneratedValue (strategy= GenerationType.IDENTITY)
 	@NotNull
-	@
+	@Size(min=1, max=8)
+	private int id;
+	
+	@ManyToOne
+	@JoinColumn(name = "user_id_fk", nullable=false)
+	private PaymentDetails paymentDetails;
+	
+	@Column(name = "account_number", length= 20)
+	@Size(min=5, max=20)
+	private String account_number;
+	
+	@Column(name = "sort_code", length=8)
+	@Size(min=6, max=8)
+	private String sort_code;
 	
 	public int getId() {
 		return id;
@@ -25,17 +34,7 @@ public class PaymentDetails {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	@Column(name = "user_id")
-	public int getUser_id() {
-		return user_id;
-	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
-	}
-
-	@Column(name = "account_number")
 	public String getAccount_number() {
 		return account_number;
 	}
@@ -44,7 +43,6 @@ public class PaymentDetails {
 		this.account_number = account_number;
 	}
 
-	@Column(name = "sort_code")
 	public String getSort_code() {
 		return sort_code;
 	}
