@@ -2,21 +2,30 @@ package projectx.assets;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "PaymentDetails")
 public class PaymentDetails {
-	
-	private int id;
-	private int user_id;
-	private String account_number;
-	private String sort_code;
 
 	@Id
-	@GeneratedValue
 	@Column(name = "id", length=80, nullable=false)
+	@GeneratedValue (strategy= GenerationType.IDENTITY)
 	@NotNull
+	@Size(min=1, max=8)
+	private int id;
 	
+	@ManyToOne
+	@JoinColumn(name = "user_id_fk", nullable=false)
+	private PaymentDetails paymentDetails;
+	
+	@Column(name = "account_number", length= 20)
+	@Size(min=5, max=20)
+	private String accountNumber;
+	
+	@Column(name = "sort_code", length=8)
+	@Size(min=6, max=8)
+	private String sortCode;
 	
 	public int getId() {
 		return id;
@@ -25,32 +34,20 @@ public class PaymentDetails {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	@Column(name = "user_id")
-	public int getUser_id() {
-		return user_id;
+
+	public String getAccountNumber() {
+		return accountNumber;
 	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
 	}
 
-	@Column(name = "account_number")
-	public String getAccount_number() {
-		return account_number;
+	public String getSortCode() {
+		return sortCode;
 	}
 
-	public void setAccount_number(String account_number) {
-		this.account_number = account_number;
+	public void setSortCode(String sortCode) {
+		this.sortCode = sortCode;
 	}
-
-	@Column(name = "sort_code")
-	public String getSort_code() {
-		return sort_code;
-	}
-
-	public void setSort_code(String sort_code) {
-		this.sort_code = sort_code;
-	}
-
 }
