@@ -3,29 +3,45 @@ package projectx.assets;
 import java.sql.Date;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "order")
 
+
+@NamedQueries ({
+	@NamedQuery(name = "", query = "")
+})
+
+
+
+
+
+
 public class Order {
 	@Id
-	@GeneratedValue
-	@Column(name = "id")
+	@GeneratedValue ( strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable=false)
+	@NotNull
 	private int orderID;
 
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "user_id", nullable=false)
+	@NotNull
 	private int userID;
 
 	@ManyToOne
-	@JoinColumn(name = "order_type_id")
+	@JoinColumn(name = "order_type_id", nullable=false)
+	@NotNull
 	private OrderType orderType;
 
 	@ManyToOne
-	@JoinColumn(name = "order_state_id")
+	@JoinColumn(name = "order_state_id", nullable=false)
+	@NotNull
 	private OrderState orderState;
 
 	@Column(name = "notes")
+	@Size (max=100)
 	private String notes;
 
 	@Column(name = "order_date")
