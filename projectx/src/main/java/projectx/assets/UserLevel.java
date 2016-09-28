@@ -1,13 +1,11 @@
-
 package projectx.assets;
 
-public enum OrderType {
+public enum UserLevel {
 	
-	CUSTOMER("Customer"),
-	PURCHASE("Purchase"),
-	RETURNS("Return");
+	ADMIN("Admin"),
+	CUSTOMER("Customer");
 
-	OrderType(String displayName) {
+	UserLevel(String displayName) {
 		this.displayName = displayName;
 	}
 
@@ -16,4 +14,5 @@ public enum OrderType {
 	public String getDisplayName() {
 		return displayName;
 	}
+
 }
