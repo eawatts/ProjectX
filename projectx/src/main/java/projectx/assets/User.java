@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
@@ -14,26 +17,29 @@ import org.hibernate.validator.constraints.Email;
 public class User {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id", nullable = false)
 	private Long id;
 		
-	@Column(name = "username", length = 30)
+	@Column(name = "username", length = 30, nullable = false)
 	private String username;
 	
-	@Column(name = "password", length = 256)
+	@Column(name = "password", length = 256, nullable = false)
 	private String password;
 	
-	@Column(name = "firstname", length = 50)
+	@Column(name = "firstname", length = 50, nullable = false)
 	private String firstname;
 	
-	@Column(name = "surname", length = 50)
+	@Column(name = "surname", length = 50, nullable = false)
 	private String surname;
 	
-	@Column(name = "user_level")
+	@ManyToOne
+	@MapsId
+	@JoinColumn(name = "")
+	@Column(name = "user_level", nullable = false)
 	private UserLevel userLevel;
 	
 	@Email
-	@Column(name = "email_address")
+	@Column(name = "email_address", nullable = false)
 	private String emailAddress;
 	
 	public User() {}

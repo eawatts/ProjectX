@@ -11,10 +11,10 @@ public class Address {
 	private int id;
 
 	@Column(name = "line_1")
-	private String line_1;
+	private String line1;
 	
 	@Column(name = "line_2")
-	private String line_2;
+	private String line2;
 	
 	@Column(name = "postcode")
 	private String postcode;
@@ -24,15 +24,15 @@ public class Address {
 	 * 
 	 * @author Tom ;)
 	 * @param id
-	 * @param line_1
-	 * @param line_2
+	 * @param line1
+	 * @param line2
 	 * @param postcode
 	 * 
 	 */
-	Address(int id, String line_1, String line_2, String postcode) {
+	Address(int id, String line1, String line2, String postcode) {
 		this.id = id;
-		this.line_1 = line_1;
-		this.line_2 = line_2;
+		this.line1 = line1;
+		this.line2 = line2;
 		this.postcode = postcode;
 	}
 
@@ -50,19 +50,19 @@ public class Address {
 	/**
 	 * getLine_1
 	 * 
-	 * @return Address line_1
+	 * @return Address line1
 	 */
-	public String getLine_1() {
-		return line_1;
+	public String getLine1() {
+		return line1;
 	}
 
 	/**
 	 * getLine_2
 	 * 
-	 * @return Address line_2
+	 * @return Address line2
 	 */
-	public String getLine_2() {
-		return line_2;
+	public String getLine2() {
+		return line2;
 	}
 
 	/**
@@ -83,16 +83,15 @@ public class Address {
 		this.id = id;
 	}
 
-	public void setLine_1(String line_1) {
-		this.line_1 = line_1;
+	public void setLine_1(String line1) {
+		this.line1 = line1;
 	}
 
-	public void setLine_2(String line_2) {
-		this.line_2 = line_2;
+	public void setLine_2(String line2) {
+		this.line2 = line2;
 	}
 
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
-
 }
