@@ -44,10 +44,16 @@ public class User {
 	
 	public User() {}
 	
-	public User(UserLevel userLevel) {
+	public User(Long id, String username, String password, String firstname, String surname, UserLevel userLevel, String emailAddress) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.firstname = firstname;
+		this.surname = surname;
 		this.userLevel = userLevel;
+		this.emailAddress = emailAddress;
 	}
-	
+
 	public Long getId(){
 		return this.id;
 	}

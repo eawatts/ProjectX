@@ -16,7 +16,7 @@ public class PaymentDetails {
 	@GeneratedValue
 	@Column(name = "id", length=80, nullable=false)
 	@NotNull
-	@
+	
 	
 	public int getId() {
 		return id;

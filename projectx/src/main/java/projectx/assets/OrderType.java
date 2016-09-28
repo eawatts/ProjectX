@@ -13,6 +13,10 @@ public enum OrderType {
 
 	private String displayName;
 	
+	/**
+	 * Gets the display name equivalent for the Order State.
+	 * @return the display name.
+	 */
 	public String getDisplayName() {
 		return displayName;
 	}
