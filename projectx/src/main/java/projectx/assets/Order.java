@@ -28,7 +28,7 @@ public class Order {
 	@ManyToOne
 	@JoinColumn(name = "user_id", nullable=false)
 	@NotNull
-	private int userID;
+	private User user;
 
 	@ManyToOne
 	@JoinColumn(name = "order_type_id", nullable=false)
@@ -87,12 +87,12 @@ public class Order {
 	}
 
 	// get and set foreign keys
-	public int getUserID() {
-		return userID;
+	public User getUserID() {
+		return user;
 	}
 
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public void setUserID(User user) {
+		this.user = user;
 	}
 
 	public OrderType getOrderType() {
