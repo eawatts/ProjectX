@@ -12,18 +12,17 @@ public class Order {
 	@Column(name="id")
 	private int orderID;
 	
-	
 	@ManyToOne
 	@JoinColumn (name="user_id")
 	private int userID;
 	
 	@ManyToOne
 	@JoinColumn(name="order_type_id")
-	private int orderTypeID;
-	
+	private OrderType orderType;
+
 	@ManyToOne
 	@JoinColumn (name="order_state_id")
-	private int orderStateID;
+	private OrderState orderState;
 	
 	@Column(name="notes")
 	private String notes;
@@ -70,35 +69,17 @@ public class Order {
 		this.deliveryDate = deliveryDate;
 	}
 
-	//set and get User ID
+	//get foreign keys
 	public int getUserID() {
 		return userID;
 	}
 
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public OrderType getOrderType() {
+		return orderType;
 	}
 
-	//set and get Order Type ID
-	public int getOrderTypeID() {
-		return orderTypeID;
+	public OrderState getOrderState() {
+		return orderState;
 	}
-
-	public void setOrderTypeID(int orderTypeID) {
-		this.orderTypeID = orderTypeID;
-	}
-
-	//set and get Order State Id
-	public int getOrderStateID() {
-		return orderStateID;
-	}
-
-	public void setOrderStateID(int orderStateID) {
-		this.orderStateID = orderStateID;
-	}
-	
-	
-	
-	
 	
 }
