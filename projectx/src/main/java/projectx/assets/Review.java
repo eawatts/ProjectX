@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -40,6 +38,24 @@ public class Review {
 		@NotNull
 		private Product product;
 		
+		/**
+		 * Review constructor
+		 * 
+		 * @param id
+		 * @param rating
+		 * @param comment
+		 * @param reviewer
+		 * @param product
+		 */
+		public Review(Long id, Long rating, String comment, User reviewer, Product product) {
+			super();
+			this.id = id;
+			this.rating = rating;
+			this.comment = comment;
+			this.reviewer = reviewer;
+			this.product = product;
+		}
+		
 		public Long getId() {
 			return id;
 		}
@@ -62,7 +78,7 @@ public class Review {
 			return product;
 		}
 		
-		//TODO Named Queries
+		
 //		@NamedQueries ({
 //			@NamedQuery(name = "", query = "")
 //		})
