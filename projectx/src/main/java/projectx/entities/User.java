@@ -16,6 +16,10 @@ import org.hibernate.validator.constraints.Email;
 
 @NamedQueries (
 	{
+		@NamedQuery (name = User.SAVE_USER, query = ""),
+		@NamedQuery (name = User.SAVE_USERS, query = ""),
+		@NamedQuery (name = User.GET_USERS, query = ""),
+		@NamedQuery (name = User.UPDATE_USER, query = ""),
 		@NamedQuery (name = User.FIND_BY_USERNAME, query = "SELECT u FROM User u WHERE u.username = :username"),
 		@NamedQuery (name = User.CHECK_PASSWORD, query = "")
 	}
@@ -25,6 +29,10 @@ import org.hibernate.validator.constraints.Email;
 @Table(name = "User")
 public class User {
 	
+	public static final String SAVE_USER = "User.saveUser";
+	public static final String SAVE_USERS = "User.saveUsers";
+	public static final String GET_USERS = "User.getUsers";
+	public static final String UPDATE_USER = "User.updateUsers";
 	public static final String FIND_BY_USERNAME = "User.findByUsername";
 	public static final String CHECK_PASSWORD = "User.checkPassword";
 	
