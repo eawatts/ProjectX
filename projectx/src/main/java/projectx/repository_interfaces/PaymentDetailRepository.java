@@ -1,9 +1,14 @@
 package projectx.repository_interfaces;
 
 import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
+
 import projectx.entities.PaymentDetails;
 
-
+@Stateless
+@Default
 public interface PaymentDetailRepository
 {
 	public void persistPaymentDetails (PaymentDetails paymentDetails);
