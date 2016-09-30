@@ -64,7 +64,7 @@ public class User {
 	
 	public User() {}
 	
-	public User(Long id, String username, String password, String firstname, String surname, UserLevel userLevel, String emailAddress) {
+	public User(int id, String username, String password, String firstname, String surname, UserLevel userLevel, String emailAddress) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
@@ -74,7 +74,7 @@ public class User {
 		this.emailAddress = emailAddress;
 	}
 
-	public Long getId(){
+	public int getId(){
 		return this.id;
 	}
 		
