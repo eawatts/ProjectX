@@ -8,17 +8,25 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "Category")
-public class Category 
+@NamedQueries({ @NamedQuery(name = Category.FIND_BY_ID, query = "SELECT c FROM category c WHERE c.id = :id"),
+		@NamedQuery(name = Category.FIND_BY_NAME, query = "SELECT c FROM category c WHERE c.name = :name"),
+		@NamedQuery(name = Category.FIND_ALL, query = "SELECT * FROM category c WHERE c.id = :id") })
+public class Category
 {
-	@Id @GeneratedValue
-	@Column(name = "id")
+	public static final String FIND_BY_ID = "Category.findByID";
+	public static final String FIND_BY_NAME = "Category.findByName";
+	public static final String FIND_ALL = "Category.findAll";
+	@Id
+	@GeneratedValue
+	@Column(name = "id", nullable = false)
 	private int categoryID;
-	
-	@Column(name = "name")
+
+	@Column(name = "name", nullable = false)
 	private String name;
-	
+
 	/**
 	 * Constructor
+	 * 
 	 * @param id
 	 * @param nName
 	 */
@@ -31,28 +39,36 @@ public class Category
 	/**
 	 * @return the categoryID
 	 */
-	public int getCategoryID() {
+	public int getCategoryID()
+	{
 		return categoryID;
+
 	}
 
 	/**
-	 * @param categoryID the categoryID to set
+	 * @param categoryID
+	 *            the categoryID to set
 	 */
-	public void setCategoryID(int categoryID) {
+	public void setCategoryID(int categoryID)
+	{
 		this.categoryID = categoryID;
 	}
 
 	/**
 	 * @return the name
 	 */
-	public String getName() {
+	public String getName()
+	{
 		return name;
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
-	public void setName(String name) {
+	public void setName(String name)
+	{
 		this.name = name;
 	}
+
 }
