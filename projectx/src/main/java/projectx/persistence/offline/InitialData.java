@@ -52,7 +52,10 @@ public class InitialData {
 	 */
 	public void updateUser(User user){
 		int indexOfUser = this.users.indexOf(user);
-		// TODO: !!
+		if (indexOfUser != -1){
+			this.users.remove(indexOfUser); // Easier just to remove them, then individually update them.
+		}
+		this.users.add(user);		
 	}
 	
 	/**
