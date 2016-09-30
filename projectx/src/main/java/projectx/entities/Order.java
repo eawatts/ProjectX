@@ -10,7 +10,10 @@ import javax.validation.constraints.*;
 
 
 @NamedQueries ({
-	@NamedQuery(name = "", query = "")
+	@NamedQuery(name ="Order.findByOrderType" , query = "Select o FROM Order o  WHERE o.orderType= :orderType"),
+	@NamedQuery(name="Order.findByUser", query ="Select o FROM Order o Join user u WHERE o.user= :user  "),
+	@NamedQuery(name="Order.findByOrderDate", query ="Select o deliveryDate FROM Order o WHERE o.orderDate= :orderDate"),
+
 })
 
 
@@ -19,6 +22,11 @@ import javax.validation.constraints.*;
 
 
 public class Order {
+
+	public static final String findByOrderDate="Order.findByOrderDate";
+	public static final String findByUser="Order.findByUser";
+	public static final String findByOrderType="Order.findByOrderType";
+	
 	@Id
 	@GeneratedValue ( strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable=false)
@@ -110,5 +118,5 @@ public class Order {
 	public void setOrderState(OrderState orderState) {
 		this.orderState = orderState;
 	}
-
+	
 }
