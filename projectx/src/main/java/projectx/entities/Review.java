@@ -15,6 +15,13 @@ import javax.validation.constraints.Size;
 
 @Entity
 
+/**
+ * 
+ * @author Ed Watts
+ * 
+ * Named queries to find entries in the database
+ *
+ */
 @NamedQueries({
 	@NamedQuery(name = Review.VIEW_ALL,
 				query = "SELECT r FROM Review r"),
@@ -22,11 +29,17 @@ import javax.validation.constraints.Size;
 				query = "SELECT r.user_id FROM Review r"), 
 	@NamedQuery(name = Review.FIND_BY_USER_ID,
 				query = "SELECT r.user_id FROM Review r WHERE r.user_id = :user_id"),
-	})
+	@NamedQuery(name = Review.PERSIST_REVIEW,
+				query = ""),
+	@NamedQuery(name = Review.PERSIST_REVIEWS,
+				query = ""),
+})
 
 @Table(name = "Review")
 public class Review {
 	
+	public static final String PERSIST_REVIEW = "Review.persistReview";
+	public static final String PERSIST_REVIEWS = "Review.persistReviews";
 	public static final String VIEW_ALL = "Review.viewAll";
 	public static final String VEIW_USER_ID = "Review.viewUserId";
 	public static final String FIND_BY_USER_ID = "Review.findByUserId";
@@ -72,14 +85,26 @@ public class Review {
 		this.product = product;
 	}
 
+	/**
+	 * returns user id 
+	 * @return
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/**
+	 * returns a rating value
+	 * @return
+	 */
 	public Long getRating() {
 		return rating;
 	}
 
+	/**
+	 * sets a rating value
+	 * @param rating
+	 */
 	public void setRating(Long rating) {
 		this.rating = rating;
 	}
