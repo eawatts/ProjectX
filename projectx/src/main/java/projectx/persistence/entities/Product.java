@@ -4,11 +4,20 @@ import java.math.BigDecimal;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+
+@NamedQueries ({
+@NamedQuery (name = User.FIND_BY_USERNAME, query = "SELECT p FROM Product p WHERE p.name = :Productname")
+}
+)
 
 @Entity
 @Table(name="Product")
 public class Product {
 	
+		public static final String FIND_BY_PRODUCT_NAME = "Product.findByProductName";
+		
 		@Id
 		@Column(name="id")
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
