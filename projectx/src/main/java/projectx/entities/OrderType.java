@@ -1,5 +1,5 @@
 
-package projectx.assets;
+package projectx.entities;
 
 public enum OrderType {
 	

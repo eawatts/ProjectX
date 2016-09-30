@@ -1,4 +1,4 @@
-package projectx.assets;
+package projectx.entities;
 
 import javax.persistence.*;
 
