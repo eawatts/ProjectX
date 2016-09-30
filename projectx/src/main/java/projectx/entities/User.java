@@ -1,4 +1,4 @@
-package projectx.assets;
+package projectx.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,13 +8,25 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
 
+@NamedQueries (
+	{
+		@NamedQuery (name = User.FIND_BY_USERNAME, query = "SELECT u FROM User u WHERE u.username = :username"),
+		@NamedQuery (name = User.CHECK_PASSWORD, query = "")
+	}
+)
+
 @Entity
 @Table(name = "User")
 public class User {
+	
+	public static final String FIND_BY_USERNAME = "User.findByUsername";
+	public static final String CHECK_PASSWORD = "User.checkPassword";
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
