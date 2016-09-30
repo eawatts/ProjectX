@@ -6,6 +6,7 @@ import java.util.List;
 import javax.ejb.Singleton;
 
 import projectx.persistence.entities.PaymentDetails;
+import projectx.persistence.entities.Product;
 import projectx.persistence.entities.User;
 import projectx.persistence.entities.UserLevel;
 
@@ -14,7 +15,8 @@ public class InitialData {
 	
 	private List<User> users;
 	private ArrayList<PaymentDetails> paymentDetails = new ArrayList<PaymentDetails>(); 
-
+	private List<Product> products;
+	
 	public InitialData() {
 		populateData();
 		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
@@ -26,6 +28,8 @@ public class InitialData {
 	private void populateData() {
 		users = new ArrayList<User>();
 		users.add(new User());
+		products = new ArrayList<Product>();
+		products.add(new Product());
 	}
 	
 	// USERS

@@ -22,10 +22,6 @@ public class PaymentDetails {
 	@NotNull
 	private int id;
 	
-	@ManyToOne
-	@JoinColumn(name = "user_id_fk", nullable=false)
-	private PaymentDetails paymentDetails;
-	
 	@Column(name = "account_number", length= 20)
 	@Size(min=5, max=20)
 	private String accountNumber;
