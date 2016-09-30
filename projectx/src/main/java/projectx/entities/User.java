@@ -32,7 +32,7 @@ public class User {
 	public static final String SAVE_USER = "User.saveUser";
 	public static final String SAVE_USERS = "User.saveUsers";
 	public static final String GET_USERS = "User.getUsers";
-	public static final String UPDATE_USER = "User.updateUsers";
+	public static final String UPDATE_USER = "User.updateUser";
 	public static final String FIND_BY_USERNAME = "User.findByUsername";
 	public static final String CHECK_PASSWORD = "User.checkPassword";
 	
