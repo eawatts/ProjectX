@@ -5,54 +5,59 @@ import java.util.List;
 
 import javax.ejb.Singleton;
 
-import projectx.persistence.entities.PaymentDetails;
+import projectx.persistence.entities.Review;
 import projectx.persistence.entities.User;
 
 @Singleton
 public class InitialData {
-	
+
 	private List<User> users;
-	private ArrayList<PaymentDetails> paymentDetails = new ArrayList<PaymentDetails>(); 
+	private List<Review> reviews;
 
 	public InitialData() {
 		populateData();
-		paymentDetails.add(new PaymentDetails("1","1","89012345","123456"));
 	}
-	
-	/**
-	 * Will populate the offline data, with valid data and expose methods to access it.
-	 */
+
 	private void populateData() {
 		users = new ArrayList<User>();
 		users.add(new User());
 	}
-	
-	// USERS
-	public List<User> getUsers(){
+
+	public List<User> getUsers() {
 		return users;
 	}
-	
-	public void addUser(User user){
+
+	public void addUser(User user) {
 		this.users.add(user);
 	}
-	
-	public void updateUser(User user){
-		//TODO: Implement
-	}
-	
-	public void saveUsers(List<User> users) {
-		for(User user : this.users){
-			this.users.add(user);
-		}
-	}
-	
-	public User findByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 
-	public boolean checkPassword(String username, String password) {
-		// TODO Auto-generated method stub
-		return false;
+	public void addReview(Review review) {
+		this.reviews.add(review);
+
 	}
+
+	public void persistReviews(List<Review> reviews) {
+		this.reviews = reviews;
+
+	}
+
+	public List<Review> getReviews() {
+		return reviews;
+	}
+
+	public List<Review> findReviewByUserId(int id) {
+		List<Review> userReviews = new ArrayList<Review>();
+		for (Review review : this.reviews) {
+			if (review.getId() == id) {
+				userReviews.add(review);
+			}
+
+		}
+		return userReviews;
+	}
+
 }

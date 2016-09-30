@@ -14,7 +14,7 @@ public interface ReviewRepository {
 
 	public void persistReviews(List<Review> r);
 
-	public Review findByUserId(int id);
+	public List<Review> findByUserId(int id);
 
 	public List<Review> getReviews();
 
