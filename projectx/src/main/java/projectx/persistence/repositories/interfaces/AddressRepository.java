@@ -1,4 +1,4 @@
-package projectx.repository_interfaces;
+package projectx.persistence.repositories.interfaces;
 
 import java.util.List;
 

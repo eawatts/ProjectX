@@ -17,7 +17,7 @@ public class InitialData {
 
 	public InitialData() {
 		populateData();
-		paymentDetails.add(new PaymentDetails(1,new User(1l,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
+		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
 	}
 	
 	/**
