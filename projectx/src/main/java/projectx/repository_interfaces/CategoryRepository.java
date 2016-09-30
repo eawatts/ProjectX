@@ -8,8 +8,8 @@ import projectx.entities.Category;
 public interface CategoryRepository
 {
 	
-	public void saveCategory(Category category);
-	public void saveCategories(List<Category> categories);
+	public void persistCategory(Category category);
+	public void persistCategories(List<Category> categories);
 	public List<Category> getCategories();
 	public void updateCategory(Category category);
 	public Category findByName(String name);
