@@ -1,7 +1,8 @@
-package projectx.repository_interfaces;
+package projectx.persistence.repositories.interfaces;
 
 import java.util.List;
-import projectx.entities.PaymentDetails;
+
+import projectx.persistence.entities.PaymentDetails;
 
 
 public interface PaymentDetailRepository
