@@ -29,11 +29,17 @@ import javax.validation.constraints.Size;
 				query = "SELECT r.user_id FROM Review r"), 
 	@NamedQuery(name = Review.FIND_BY_USER_ID,
 				query = "SELECT r.user_id FROM Review r WHERE r.user_id = :user_id"),
-	})
+	@NamedQuery(name = Review.PERSIST_REVIEW,
+				query = ""),
+	@NamedQuery(name = Review.PERSIST_REVIEWS,
+				query = ""),
+})
 
 @Table(name = "Review")
 public class Review {
 	
+	public static final String PERSIST_REVIEW = "Review.persistReview";
+	public static final String PERSIST_REVIEWS = "Review.persistReviews";
 	public static final String VIEW_ALL = "Review.viewAll";
 	public static final String VEIW_USER_ID = "Review.viewUserId";
 	public static final String FIND_BY_USER_ID = "Review.findByUserId";
