@@ -1,5 +1,5 @@
 
-package projectx.entities;
+package projectx.persistence.entities;
 
 public enum OrderType {
 	

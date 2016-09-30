@@ -1,10 +1,10 @@
-package projectx.repository_interfaces;
+package projectx.persistence.repositories.interfaces;
 
 import java.util.List;
+
+import projectx.persistence.entities.Order;
+
 import java.sql.Date;
-
-
-import projectx.entities.Order;
 
 public interface OrderRepository {
 	public void persistOrder (Order o);
