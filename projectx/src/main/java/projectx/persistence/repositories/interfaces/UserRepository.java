@@ -1,8 +1,8 @@
-package projectx.repository_interfaces;
+package projectx.persistence.repositories.interfaces;
 
 import java.util.List;
 
-import projectx.entities.User;
+import projectx.persistence.entities.User;
 
 public interface UserRepository {
 	
