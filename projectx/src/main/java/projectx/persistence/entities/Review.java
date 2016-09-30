@@ -47,7 +47,7 @@ public class Review {
 	@Id
 	@Column(name = "id", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 
 	@Column(name = "rating", nullable = false)
 	@NotNull

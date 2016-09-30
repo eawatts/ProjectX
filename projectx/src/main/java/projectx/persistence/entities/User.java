@@ -38,7 +38,7 @@ public class User {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
-	private Long id;
+	private int id;
 		
 	@Column(name = "username", length = 30, nullable = false)
 	private String username;

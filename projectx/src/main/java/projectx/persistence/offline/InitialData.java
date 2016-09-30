@@ -7,6 +7,7 @@ import javax.ejb.Singleton;
 
 import projectx.persistence.entities.PaymentDetails;
 import projectx.persistence.entities.User;
+import projectx.persistence.entities.UserLevel;
 
 @Singleton
 public class InitialData {
@@ -16,7 +17,7 @@ public class InitialData {
 
 	public InitialData() {
 		populateData();
-		paymentDetails.add(new PaymentDetails("1","1","89012345","123456"));
+		paymentDetails.add(new PaymentDetails(1,new User(1l,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
 	}
 	
 	/**
