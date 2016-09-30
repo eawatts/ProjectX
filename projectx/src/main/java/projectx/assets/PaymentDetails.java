@@ -4,6 +4,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@NamedQueries ({
+	@NamedQuery (name=PaymentDetails.FIND_BY_USER, query= "SELECT d FROM PaymentDetails d WHERE d.user_id=:user_id")
+	
+})
+
 @Entity
 @Table(name = "PaymentDetails")
 public class PaymentDetails {
@@ -110,4 +115,5 @@ public class PaymentDetails {
 	public void setSort_code(String sort_code) {
 		this.sortCode = sort_code;
 	}
+	public static final String FIND_BY_USER= "PaymentDetails.findByUser";
 }
