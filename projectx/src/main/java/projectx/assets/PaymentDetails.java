@@ -1,11 +1,12 @@
-package projectx.entities;
+package projectx.assets;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @NamedQueries ({
-	@NamedQuery (name=PaymentDetails.FIND_BY_USER, query= "SELECT d FROM PaymentDetails d WHERE d.user_id=:user_id")
+	@NamedQuery (name=PaymentDetails.FIND_BY_USER, query= "SELECT d FROM PaymentDetails d WHERE d.user_id=:user_id"),
+	@NamedQuery (name=PaymentDetails.FIND_BY_ID, query= "SELECT d FROM PaymentDetails d WHERE d.id=:id"),
 	
 })
 
@@ -116,4 +117,6 @@ public class PaymentDetails {
 		this.sortCode = sort_code;
 	}
 	public static final String FIND_BY_USER= "PaymentDetails.findByUser";
+	public static final String FIND_BY_ID= "PaymentDetails.findById";
+
 }
