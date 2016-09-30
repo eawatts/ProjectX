@@ -1,10 +1,11 @@
-package projectx.repository_interfaces;
+package projectx.persistence.repositories.interfaces;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 
-import projectx.entities.Review;
+import projectx.persistence.entities.Review;
+
 
 @Stateless
 @Default

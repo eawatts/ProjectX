@@ -1,16 +1,12 @@
 package projectx.persistence.repositories.interfaces;
 
 import java.util.List;
-<<<<<<< HEAD:projectx/src/main/java/projectx/repository_interfaces/PaymentDetailRepository.java
-=======
 
 import projectx.persistence.entities.PaymentDetails;
->>>>>>> 2e6eb66369b6bd7be1b29de6d9124dabc8f10604:projectx/src/main/java/projectx/persistence/repositories/interfaces/PaymentDetailRepository.java
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 
-import projectx.entities.PaymentDetails;
 
 @Stateless
 @Default
