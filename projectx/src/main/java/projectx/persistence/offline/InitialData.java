@@ -5,15 +5,18 @@ import java.util.List;
 
 import javax.ejb.Singleton;
 
+import projectx.persistence.entities.PaymentDetails;
 import projectx.persistence.entities.User;
 
 @Singleton
 public class InitialData {
 	
 	private List<User> users;
+	private ArrayList<PaymentDetails> paymentDetails = new ArrayList<PaymentDetails>(); 
 
 	public InitialData() {
 		populateData();
+		paymentDetails.add(new PaymentDetails("1","1","89012345","123456"));
 	}
 	
 	/**
