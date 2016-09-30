@@ -2,27 +2,34 @@ package projectx.entities;
 
 import javax.persistence.*;
 
+@NamedQueries({ @NamedQuery(name = Address.FIND_BY_ID, query = "Select a FROM Address a WHERE a.id= : Aid"),
+		@NamedQuery(name = Address.FIND_BY_LINE1, query = "Select a FROM Address a WHERE a.line_1= : line_1"),
+		@NamedQuery(name = Address.FIND_BY_LINE2, query = "Select a FROM Address a WHERE a.line_2= : line_2"),
+		@NamedQuery(name = Address.FIND_BY_POSTCODE, query = "Select a FROM Address a WHERE a.postcode= : postcode"), })
 @Entity
 @Table(name = "Address")
 public class Address {
 
+	public static final String FIND_BY_ID = "Address.findById";
+	public static final String FIND_BY_LINE1 = "Address.findByLine1";
+	public static final String FIND_BY_LINE2 = "Address.findByLine2";
+	public static final String FIND_BY_POSTCODE = "Address.findByPostCode";
 	@Id
 	@Column(name = "id", nullable = false)
 	private int id;
 
 	@Column(name = "line_1")
 	private String line1;
-	
+
 	@Column(name = "line_2")
 	private String line2;
-	
+
 	@Column(name = "postcode")
 	private String postcode;
 
 	/**
 	 * Constructor
-	 * 
-	 * @author Tom ;)
+	 *
 	 * @param id
 	 * @param line1
 	 * @param line2
@@ -94,4 +101,5 @@ public class Address {
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
+
 }
