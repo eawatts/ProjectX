@@ -42,7 +42,7 @@ public class InitialData {
 	 * Add a User to the collection.
 	 * @param user the User to add.
 	 */
-	public void addUser(User user){
+	public void persistUser(User user){
 		this.users.add(user);
 	}
 	
@@ -62,7 +62,7 @@ public class InitialData {
 	 * Add multiple Users to the collection.
 	 * @param users the List of Users to add.
 	 */
-	public void saveUsers(List<User> users) {
+	public void persistUsers(List<User> users) {
 		for(User user : this.users){
 			this.users.add(user);
 		}
