@@ -15,6 +15,13 @@ import javax.validation.constraints.Size;
 
 @Entity
 
+/**
+ * 
+ * @author Ed Watts
+ * 
+ * Named queries to find entries in the database
+ *
+ */
 @NamedQueries({
 	@NamedQuery(name = Review.VIEW_ALL,
 				query = "SELECT r FROM Review r"),
@@ -72,14 +79,26 @@ public class Review {
 		this.product = product;
 	}
 
+	/**
+	 * returns user id 
+	 * @return
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/**
+	 * returns a rating value
+	 * @return
+	 */
 	public Long getRating() {
 		return rating;
 	}
 
+	/**
+	 * sets a rating value
+	 * @param rating
+	 */
 	public void setRating(Long rating) {
 		this.rating = rating;
 	}
