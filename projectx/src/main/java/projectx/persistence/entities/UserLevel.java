@@ -14,5 +14,4 @@ public enum UserLevel {
 	public String getDisplayName() {
 		return displayName;
 	}
-
 }
