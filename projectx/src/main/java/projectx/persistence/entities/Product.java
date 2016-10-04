@@ -8,7 +8,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 @NamedQueries ({
-@NamedQuery (name = User.FIND_BY_USERNAME, query = "SELECT p FROM Product p WHERE p.name = :Productname")
+@NamedQuery (name = Product.FIND_BY_PRODUCT_NAME, query = "SELECT p FROM Product p WHERE p.name = :Productname")
 }
 )
 
@@ -42,6 +42,7 @@ public class Product {
 		@Column(name="is_discontinued", nullable = false)
 		private boolean isDiscontinued;
 		
+		public Product(){};
 		public Product(String name, int stockLvl, BigDecimal price, int lowStock, int maxStock){
 			this.name = name;
 			this.currentStockLevel = stockLvl;

@@ -47,7 +47,7 @@ public class Review {
 	@Id
 	@Column(name = "id", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 
 	@Column(name = "rating", nullable = false)
 	@NotNull
@@ -76,7 +76,7 @@ public class Review {
 	 * @param reviewer
 	 * @param product
 	 */
-	public Review(Long id, Long rating, String comment, User reviewer, Product product) {
+	public Review(int id, Long rating, String comment, User reviewer, Product product) {
 		super();
 		this.id = id;
 		this.rating = rating;
@@ -89,7 +89,7 @@ public class Review {
 	 * returns user id 
 	 * @return
 	 */
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
