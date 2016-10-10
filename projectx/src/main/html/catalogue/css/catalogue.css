@@ -1,10 +1,80 @@
+@charset "ISO-8859-1";
 /* 
-	raisin black = #272727
-	floral white = #f9fbf2
-	orange yellow = #fed766
-	british racing green = #004425
-	sweet sweet brown = #a53f2b
+    raisin black = #272727
+    floral white = #f9fbf2
+    orange yellow = #fed766
+    british racing green = #004425
+    sweet sweet brown = #a53f2b
 */
+html {
+  background-color: #F9FBF2
+}
+header {
+  background-color: #004425
+}
+.nav-logo {
+  max-width:
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #004425;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropdown-button {
+    display: inline-block;
+    color: #F9FBF2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropdown-button {
+    background-color: #F9FBF2;
+    color: #004425;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #F9FBF2;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: #004425;
+    background-color: #F9FBF2;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    color: #F9FBF2;
+    background-color: #004425
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+footer {
+  background-color: #004425
+}
+
 
 .createaccountheading{
 	color: #272727;
@@ -24,3 +94,5 @@ article{
 	width: 80%;
 	border: 5px #272727
 }
+=======
+
