@@ -7,7 +7,22 @@ header {
   background-color: #004425
 }
 .nav-logo {
-  max-width:
+  max-width:100px;
+  max-height: 100px;
+}
+
+#nav-left {
+  width: 25%;
+  display: inline-block;
+}
+#nav-centre {
+  width:25%;
+  border: 20px 20px 20px 20px;
+  display: inline-block;
+}
+#nav-right {
+  float: right;
+  display: inline-block;
 }
 
 ul {
@@ -69,11 +84,10 @@ footer {
   background-color: #004425
 }
 
-/* 
+/*
 	raisin black = #272727
 	floral white = #f9fbf2
 	orange yellow = #fed766
 	british racing green = #004425
 	sweet sweet brown = #a53f2b
 */
-
