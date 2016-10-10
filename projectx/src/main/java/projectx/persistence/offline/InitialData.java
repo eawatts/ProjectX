@@ -6,6 +6,7 @@ import java.util.List;
 import javax.ejb.Singleton;
 
 import projectx.persistence.entities.PaymentDetails;
+import projectx.persistence.entities.Product;
 import projectx.persistence.entities.User;
 import projectx.persistence.entities.UserLevel;
 
@@ -14,7 +15,8 @@ public class InitialData {
 	
 	private List<User> users;
 	private ArrayList<PaymentDetails> paymentDetails = new ArrayList<PaymentDetails>(); 
-
+	private List<Product> products;
+	
 	public InitialData() {
 		populateData();
 		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
@@ -26,6 +28,8 @@ public class InitialData {
 	private void populateData() {
 		users = new ArrayList<User>();
 		users.add(new User());
+		products = new ArrayList<Product>();
+		products.add(new Product());
 	}
 	
 	// USERS
@@ -42,7 +46,7 @@ public class InitialData {
 	 * Add a User to the collection.
 	 * @param user the User to add.
 	 */
-	public void addUser(User user){
+	public void persistUser(User user){
 		this.users.add(user);
 	}
 	
@@ -52,14 +56,17 @@ public class InitialData {
 	 */
 	public void updateUser(User user){
 		int indexOfUser = this.users.indexOf(user);
-		// TODO: !!
+		if (indexOfUser != -1){
+			this.users.remove(indexOfUser); // Easier just to remove them, then individually update them.
+		}
+		this.users.add(user);		
 	}
 	
 	/**
 	 * Add multiple Users to the collection.
 	 * @param users the List of Users to add.
 	 */
-	public void saveUsers(List<User> users) {
+	public void persistUsers(List<User> users) {
 		for(User user : this.users){
 			this.users.add(user);
 		}
