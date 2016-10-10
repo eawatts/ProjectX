@@ -13,13 +13,13 @@ public class UserRepositoryOffline implements UserRepository {
 	private InitialData db;
 
 	@Override
-	public void saveUser(User user) {
-		db.addUser(user);
+	public void persistUser(User user) {
+		db.persistUser(user);
 	}
 
 	@Override
-	public void saveUsers(List<User> users) {
-		db.saveUsers(users);
+	public void persistUsers(List<User> users) {
+		db.persistUsers(users);
 		
 	}
 
