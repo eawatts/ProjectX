@@ -5,3 +5,22 @@
 	british racing green = #004425
 	sweet sweet brown = #a53f2b
 */
+
+.createaccountheading{
+	color: #272727;
+	width: 80%;
+	margin: auto;
+}
+
+article{
+	color: #272727;
+	margin: auto;
+	width: 80%;
+	border: 10px #000000
+}
+.createAccount{
+	color: #272727;
+	margin: auto;
+	width: 80%;
+	border: 5px #272727
+}
