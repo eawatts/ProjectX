@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>NBGardens: Your one stop shop for gnomes and gnome
-	accessories</title>
-</head>
-<body>
-	
+
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>NB Gardens</title>
+	</head>
+
+	<body>
+
 		<!-- This is the green navigation banner along the top of each page. -->
 		<header>
 			<div>
@@ -96,62 +97,49 @@
 				</nav>
 		</div>
 		</header>
-	<hr />
-	<article>
-		<div id="heading">
-			<h1>Create Account</h1>
-		</div>
+
+		<!-- This is the content of the actual page. -->
 		<div>
-			<hr />
-			<div id="createAccount">
-			<h2>User Info</h2>
-			<form action="createAccount.js">
-			title: <select name="title">
-				<option value="Mr">Mr</option>
-				<option value="Mrs">Mrs</option>
-				<option value="Miss">Miss</option>
-				<option value="Ms">Ms</option>
-				<option value="Dr">Dr</option>
-				<option value="Lord">Lord</option>
-				<option value="Lady">Lady</option>
-				<option value="Duke">Duke</option>
-				<option value="Duchess">Duchess</option>
-				<option value="HRH">HRH</option>
-			</select>
-			<br>
-			email: <input type="text" name="email"> <br> <br> 
-			First Name: <input type="text" name="firstname"> <br> 
-			Last Name: <input type="text" name="lastname"> <br> 
-			Age: <input type="text" name="age"> <br> 
-			Bio: <input type="text"	name="bio"> <br>
+			<!-- !!CONTENT!! -->
+			<div id="heading">
+				<h2> Search Results</h2>
 			</div>
 
-			<hr />
-			<div id="Address">
-			<h2>Address</h2>
-			House Number: <input type="text" name="housenumber"> <br>
-			Street: <input type="text" name="street"> <br> 
-			Town: <input type="text" name="town"> <br> 
-			PostCode: <input type="text" name="postcode"> <br>
-			</div>
-			<hr />
-			<div id="Payment">
-			<h2>Payment details</h2>
-			Account Number: <input type="text" name="accountnumber"> <br>
-			Sort Code: <input type="text" name="sortcode"> <br>
-			</div>
-			<hr />
-			<div id="submitbutton">
-				<input type="submit" name="createAccount" value="Create Account">
+			<div id="resultitems">
+				<div id="resultItem">
+					<div id="number"> 1:</div>
+					<div id="image"> <img src="http://placehold.it/140x100"/>
+					</div>
+					<div id="description"> 
+					Vestibulumet ipsum non turpisultriciespretiumat utenim. Fusceet arcusit ametlorem consequatscelerisque. Utvulputatemetusac ante interdum, utscelerisquelectusscelerisque. Fusceplaceratnibheros, velauctornislfacilisisat. Suspendisseid rhoncusdolor. Vivamusac velitultricies, dignissimurnavel, posuerearcu. Nullaquismassaimperdiet, efficiturmaurisin, gravida ante. In molestietemporeuismod. Maecenas at porta magna. Proinsedpretiumlectus, at pretiumleo. In tellusarcu, efficitura nullaet, consecteturmalesuadaurna. Curabiturfacilisisdiamenim, non pharetra nibhtinciduntin. Vestibulumipsum enim, rhoncusvitae luctusvitae, tempus eusapien. 
+					</div>
+					<div id="buttonBasket">
+						<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+					</div>
+					<div id="buttonwishlist">
+						<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+					</div>
+				</div>
+				<div id="resultItem">
+					<div id="number"> 2:</div>
+					<div id="image"> <img src="http://placehold.it/140x100"/>
+					</div>
+					<div id="description"> 
+					Vestibulumet ipsum non turpisultriciespretiumat utenim. Fusceet arcusit ametlorem consequatscelerisque. Utvulputatemetusac ante interdum, utscelerisquelectusscelerisque. Fusceplaceratnibheros, velauctornislfacilisisat. Suspendisseid rhoncusdolor. Vivamusac velitultricies, dignissimurnavel, posuerearcu. Nullaquismassaimperdiet, efficiturmaurisin, gravida ante. In molestietemporeuismod. Maecenas at porta magna. Proinsedpretiumlectus, at pretiumleo. In tellusarcu, efficitura nullaet, consecteturmalesuadaurna. Curabiturfacilisisdiamenim, non pharetra nibhtinciduntin. Vestibulumipsum enim, rhoncusvitae luctusvitae, tempus eusapien. 
+					</div>
+					<div id="buttonBasket">
+						<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+					</div>
+					<div id="buttonwishlist">
+						<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+					</div>
+				</div>
 			</div>
 
-			</form>
 		</div>
 
-		<hr />
-	</article>
-
-	<footer>
+		<!-- This is the green footer along the bottom of each page. -->
+		<footer>
 			<div id="footer-left">
 			</div>
 			<div id="footer-centre">
@@ -162,5 +150,5 @@
 				<a href="contact.html">Contact</a>
 			</div>
 		</footer>
-</body>
+	</body>
 </html>
