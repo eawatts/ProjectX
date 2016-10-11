@@ -12,7 +12,13 @@ html {
 header {
   background-color: #004425
 }
-
+body{
+  height:100%;
+}
+#container{
+  min-height: 100%;
+  position:relative;
+}
 .nav-banner {
   width: 100%;
   display: inline-block;
@@ -90,4 +96,9 @@ li.dropdown {
 }
 
 footer {
-  background-color: #004425
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  background-color: #004425;
+}
