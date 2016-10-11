@@ -106,7 +106,7 @@
 		<!-- This is the content of the actual page. -->
 		<div>
 			<div name=breadcrumbs class=breadcrumbs>
-				<a href=#>Home</a> / <a href=#>Contact</a>
+				<a href=#>Home</a> > <a href=#>Contact</a>
 			</div>
 			<div class=row>
 				<div class="col-tab-12 col-desk-12">
@@ -125,16 +125,16 @@
 						<div class=contactForm>
 							<form action="createQuery.js" class=formContent>
 								<div class=inputs>
-									Name: <input type=text id=name> <br>
-									email: <input type=text id=email> <br> 
-									Contact: <input type=text id=contact><br>
-									Query: <input type=text id=query><br>
+									<label for=name>Name:</label> <input type=text id=name> <br>
+									<label for=email>email:</label> <input type=text id=email> <br> 
+									<label for=contact>Contact:</label> <input type=text id=contact><br>
+									<label for=query>Query:</label> <input type=text id=query><br>
 								</div>
-								<hr />
-								<div>
+								</br>
+							</form>		
+							<div class=button>
 								<input type=submit name=createQuery>
-								</div>
-							</form>	
+							</div>
 					</article>
 				</div>
 			</div>				
