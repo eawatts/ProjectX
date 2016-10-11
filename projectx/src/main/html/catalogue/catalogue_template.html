@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/catalogue.css">
 	<!-- This adds the small icon in the browser tab. -->
-	<link rel="icon" type="image/x-icon "href="../assets/nb_favicon.png"/>
+	<link rel="icon" type="image/x-icon" href="../assets/nb_favicon.png">
 	<!-- This is required to add the small icons, such as the basket etc. -->
 	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
@@ -37,57 +37,32 @@
 					</div>
 				</div>
 
-				<style>
-				.menu-btn div {
-					position: absolute;
-					left: 100%;
-					top: 64%;
-					padding-right: 8px;
-					margin-top: -0.50em;
-					line-height: 1.2;
-					font-size: 18px;
-					font-weight: 200;
-					vertical-align: middle;
-					z-index: 99;
-				}
-
-				.menu-btn span {
-					display: block;
-					width: 19px;
-					height: 3px;
-					margin: 4px 0;
-					background: rgb(0,0,0);
-					z-index: 99;
-				}
-
-				.responsive-menu{
-					display: none;
-				}
-
-				.expand {
-					display: block !important;
-				}
-				</style>
-
 				<div class=nav-links>
+
+					<!-- This is what is displayed if the screen is detected to be a mobile device. -->
 					<div id="nav-mobile">
 						<div class="mobile-nav">
-							<div class="menu-btn" id="menu-btn">
+							<div class="mobile-nav-toggle">
 								<div></div>
 								<span></span>
 								<span></span>
 								<span></span>
 							</div>
-
-							<div class="responsive-menu">
+							<div class="mobile-nav-menu">
 								<ul>
-									<li>1. Object</li>
-									<li>2. Object</li>
+									<a href="#" class="mobile-dropdown-button">Gnomes</a>
+									<a href="#" class="mobile-dropdown-button">Electrical</a>
+									<a href="#" class="mobile-dropdown-button">Ornaments</a>
+									<a href="#" class="mobile-dropdown-button">Rakes and Hoes</a>
+									<a href="#" class="mobile-dropdown-button">Water Features</a>
+									<a href="#" class="mobile-dropdown-button">Furniture</a>
+									<a href="#" class="mobile-dropdown-button">Maintenance</a>
 								</ul>
 							</div>
 						</div>
 					</div>
 
+					<!-- This is what is displayed if the screen is detected to be a desktop device. -->
 					<div id="nav-desktop">
 						<ul>
 							<li><a href="#" class="active">Home</a></li>
@@ -167,23 +142,39 @@
 		<!-- This is the content of the actual page. -->
 		<div id=content-main>
 			<br/>
-
+			
 			<br/>
 		</div>
 
 		<!-- This is the green footer along the bottom of each page. -->
-		<br>
+		</body>
 		<br/>
 		<footer>
-			<div id="footer-left">
-			</div>
-			<div id="footer-centre">
-			</div>
-			<div id="footer-right">
-				<a href="help.html">Help</a>
-				<a href="about.html">About</a>
-				<a href="contact.html">Contact</a>
-			</div>
+			<div class="row">
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-left">
+    					<a href="https://www.facebook.com">
+    						<i class="fa fa-facebook-square" aria-hidden="true"></i>
+    					</a>
+    					<a href="https://twitter.com/">
+    						<i class="fa fa-twitter-square" aria-hidden="true"></i>
+    					</a>
+					</div>
+    			</div>
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-centre">
+    					&copy;
+    					Xpedite Consulting 2016
+					</div>
+    			</div>
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-right">
+						<a href="help.html">Help</a>
+						<a href="about.html">About</a>
+						<a href="contact.html">Contact</a>
+					</div>
+    			</div>
+    		</div>
 		</footer>
 	</div>
 </html>
