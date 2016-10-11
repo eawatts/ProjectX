@@ -9,17 +9,15 @@
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/catalogue.css">
 	<!-- This adds the small icon in the browser tab. -->
-	<link rel="icon" type="image/x-icon" href="../assets/nb_favicon.png">
+	<link rel="icon" type="image/x-icon "href="../assets/nb_favicon.png"/>
 	<!-- This is required to add the small icons, such as the basket etc. -->
 	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
-	<link rel="stylesheet" type="text/css" href="css/search.css">
+	<link href="css/contactDirectory.css" rel="stylesheet" type="text/css" />
 
 	<!-- Javascript -->
 	<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javaScript" src="js/navigation.js"></script>
 </head>
-
 
 <body>
 	<!-- This is the green navigation banner along the top of each page. -->
@@ -28,7 +26,6 @@
 			<nav>
 				<div class="nav-banner">
 					<div class="nav-banner-left">
-
 						<img class="nav-logo" src="../assets/nb_logo.png"/>
 					</div>
 					<div class="nav-banner-centre">
@@ -142,72 +139,51 @@
 			</nav>
 		</div>
 	</header>
-		<!-- This is the content of the actual page. -->
-		<div id=content-main>
-			<br/>
-			<div id="breadcrumbs">
-				<ul class="breadcrumb">
-	  				<li><a href="index.html">Home</a></li>
-	  				<li>Search Results</li>
-				</ul>
-			</div>
-			<div id="resultitems">
-				<div id="resultItem">
-					<div class="row">
-						<div class="col-tab-1 col-desk-1">
-		    				<div id="resultnumber"> 1:</div>
-		    			</div>
-		    			<div class="col-tab-2 col-desk-2">
-							<div id="resultimage"> <img src="http://placehold.it/140x100"/></div>
-		    			</div>
-		    			<div class="col-tab-5 col-desk-5">
-		    				<div id="resultdescription"> 
-							Vestibulumet ipsum non turpisultriciespretiumat utenim. Fusceet arcusit ametlorem consequatscelerisque. Utvulputatemetusac ante interdum, utscelerisquelectusscelerisque. Fusceplaceratnibheros, velauctornislfacilisisat. Suspendisseid rhoncusdolor. Vivamusac velitultricies, dignissimurnavel, posuerearcu. Nullaquismassaimperdiet, efficiturmaurisin, gravida ante. In molestietemporeuismod. Maecenas at porta magna. Proinsedpretiumlectus, at pretiumleo. In tellusarcu, efficitura nullaet, consecteturmalesuadaurna. Curabiturfacilisisdiamenim, non pharetra nibhtinciduntin. Vestibulumipsum enim, rhoncusvitae luctusvitae, tempus eusapien. 
-							</div>
-		    			</div>
-		    			<div class="col-tab-4 col-desk-4">
-		    				<div id="resultbuttonBasket">
-								<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
-							</div>
-							<br/>
-							<div id="resultbuttonwishlist">
-								<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
-							</div>
-		    			</div>
-	    			</div>
-				</div>
-				<div id="resultItem">
-					<div class="row">
-						<div class="col-tab-1 col-desk-1">
-		    				<div id="resultnumber"> 2:</div>
-		    			</div>
-		    			<div class="col-tab-2 col-desk-2">
-							<div id="resultimage"> <img src="http://placehold.it/140x100"/></div>
-		    			</div>
-		    			<div class="col-tab-5 col-desk-5">
-		    				<div id="resultdescription"> 
-							Vestibulumet ipsum non turpisultriciespretiumat utenim. Fusceet arcusit ametlorem consequatscelerisque. Utvulputatemetusac ante interdum, utscelerisquelectusscelerisque. Fusceplaceratnibheros, velauctornislfacilisisat. Suspendisseid rhoncusdolor. Vivamusac velitultricies, dignissimurnavel, posuerearcu. Nullaquismassaimperdiet, efficiturmaurisin, gravida ante. In molestietemporeuismod. Maecenas at porta magna. Proinsedpretiumlectus, at pretiumleo. In tellusarcu, efficitura nullaet, consecteturmalesuadaurna. Curabiturfacilisisdiamenim, non pharetra nibhtinciduntin. Vestibulumipsum enim, rhoncusvitae luctusvitae, tempus eusapien. 
-							</div>
-		    			</div>
-		    			<div class="col-tab-4 col-desk-4">
-		    				<div id="resultbuttonBasket">
-								<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
-							</div>
-							<br/>
-							<div id="resultbuttonwishlist">
-								<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
-							</div>
-		    			</div>
-	    			</div>
-				</div>
-			</div>
 
+		<!-- This is the content of the actual page. -->
+		<div class= Content> 
+			<div name=breadcrumbs class=breadcrumbs>
+				<a href="catalogue_index.html">Home</a> > <a href=catalogue_contact.html#>Contact</a>
+			</div>
+			</div>
+		<div class=row>
+			<div class="col-tab-12 col-desk-12">
+				<article class= mainContent>
+						<div id=Title>
+							<h1>Contact us</h1>
+						</div>
+						<div class=description>
+							<p>
+								Please select whether you are a <b>customer</B> or a <b>supplier:</b>
+							</p>
+							</br>
+						</div>
+						<div class=links>
+							<div id=supplier>
+								<p>
+									<label for=supplier><b>Supplier:</b></label><a href="catalogue_supplier_contact.html#">
+												<img name=supplier border="0" alt="Supplier" src="../assets/supplier.jpg" width="100" height="100">
+											</a>
+								</p>
+							</div>
+							<div id=customer>
+								<p>
+									<label for=customer><b>Customer:</b></label><a href="catalogue_contact.html#">
+												<img name= customer border="0" alt="Customer" src="../assets/customer.jpg" width="100" height="100">
+											</a>
+								</p>
+							</div>	
+						</div>
+				</article>	
+			</div>		
 		</div>
-			<br/>
-		</div>
+			
+			
+			
+			
 
 		<!-- This is the green footer along the bottom of each page. -->
-		</body>
+		<br>
 		<br/>
 		<footer>
 			<div class="row">
