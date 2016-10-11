@@ -6,3 +6,16 @@ article {
   text-align: center;
 }
 
+:root
+{
+	--raisin-black: #272727;
+    --floral-white: #f9fbf2;
+    --orange-yellow: #fed766;
+    --british-racing-green: #004425;
+    --sweet-sweet-brown: #a53f2b;
+    --inline-width: 40%;
+}
+
+mainContent.breadcrumbs{
+	Color: var(--sweet-sweet-brown);
+}
