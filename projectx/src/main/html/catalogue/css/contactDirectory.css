@@ -1,0 +1,21 @@
+@CHARSET "ISO-8859-1";
+
+#Title{
+	text-align: center;
+}
+.description{
+	text-align: center;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 300px;
+    text-align: right;
+}
+input {
+  display: inline-block;
+  float: left;
+  width:45%;
+}
