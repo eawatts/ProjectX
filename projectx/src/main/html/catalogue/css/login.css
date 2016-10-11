@@ -16,6 +16,10 @@ article {
     --inline-width: 40%;
 }
 
-mainContent.breadcrumbs{
-	Color: var(--sweet-sweet-brown);
+.breadcrumbs{
+
+	text-color: var(--sweet-sweet-brown);
+}
+#breadcrumbs{
+  color: var(--sweet-sweet-brown);
 }
