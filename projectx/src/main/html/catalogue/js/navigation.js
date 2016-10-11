@@ -22,23 +22,8 @@ function displayNavigation() {
   }
 }
 
-// 
-// jQuery(function($){
-//   $( '.menu-btn' ).click(function(){
-//     $('.responsive-menu').addClass('expand')
-//     $('.menu-btn').addClass('btn-none')
-//   })
-//
-//   $( '.close-btn' ).click(function(){
-//     $('.responsive-menu').removeClass('expand')
-//     $('.menu-btn').removeClass('btn-none')
-//   })
-// })
-//
-//
-
 jQuery(function($){
-  $( '.menu-btn' ).click(function(){
-    $('.responsive-menu').toggleClass('expand')
+  $('.mobile-nav-toggle').click(function(){
+    $('.mobile-nav-menu').toggleClass('mobile-nav-menu-expand')
   })
 })
