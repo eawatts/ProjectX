@@ -13,22 +13,7 @@ header {
   background-color: #004425
 }
 .nav-logo {
-  max-width:100px;
-  max-height: 100px;
-}
-
-#nav-left {
-  width: 25%;
-  display: inline-block;
-}
-#nav-centre {
-  width:25%;
-  border: 20px 20px 20px 20px;
-  display: inline-block;
-}
-#nav-right {
-  float: right;
-  display: inline-block;
+  max-width:
 }
 
 ul {
@@ -88,3 +73,4 @@ li.dropdown {
 
 footer {
   background-color: #004425
+}
