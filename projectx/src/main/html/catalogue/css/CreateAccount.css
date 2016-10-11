@@ -1,0 +1,65 @@
+@charset "ISO-8859-1";
+
+:root
+{
+	--raisin-black: #272727;
+    --floral-white: #f9fbf2;
+    --orange-yellow: #fed766;
+    --british-racing-green: #004425;
+    --sweet-sweet-brown: #a53f2b;
+    --inline-width: 40%;
+}
+
+article
+{
+	color: var(--raisin-black);
+	margin: auto;
+	width: 80%;
+    padding: 10px;
+}
+
+label
+{
+	width: 5em;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block;
+}
+
+#userInfo
+{
+
+	text-align: left;
+	color: var(--raisin-black);
+	margin: auto;
+	width: 50%;
+    padding: 10px;
+    display: block;
+}
+
+#userInfoForm
+{
+	text-align: center;
+	width: var(--inline-width);
+	margin: auto;
+}
+
+#address
+{
+	text-align: center;
+	width: var(--inline-width);
+	margin: auto;
+}
+
+#payment
+{
+	text-align: center;
+	width: var(--inline-width);
+	margin: auto;
+}
+
+#submitbutton
+{
+	text-align: right;
+}

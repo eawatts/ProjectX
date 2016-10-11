@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>NBGardens: Your one stop shop for gnomes and gnome accessories</title>
-		<link href="css/catalogue.css" rel="stylesheet" type="text/css" />
+		<link href="css/Catalogue.css" rel="stylesheet" type="text/css" />
+		<link href="css/CreateAccount.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
@@ -104,53 +105,50 @@
 			</div>
 			<div>
 				<hr />
-				<div id="createAccount">
-				<h2>User Info</h2>
+				<div id="userInfo">
+					<h2>User Info</h2>
 					<form action="createAccount.js">
-					title: <select name="title">
-						<option value="Mr">Mr</option>
-						<option value="Mrs">Mrs</option>
-						<option value="Miss">Miss</option>
-						<option value="Ms">Ms</option>
-						<option value="Dr">Dr</option>
-						<option value="Lord">Lord</option>
-						<option value="Lady">Lady</option>
-						<option value="Duke">Duke</option>
-						<option value="Duchess">Duchess</option>
-						<option value="HRH">HRH</option>
-					</select>
-					<br>
-					email: <input type="text" name="email"> <br> 
-					First Name: <input type="text" name="firstname"> <br>
-					Last Name: <input type="text" name="lastname"> <br> 
-					Age: <input type="text" name="age"> <br> 
-					Bio: <input type="text"	name="bio"> <br>
-
+						<div id="userInfoForm">
+							Title: <select name="title">
+								<option value="Mr">Mr</option>
+								<option value="Mrs">Mrs</option>
+								<option value="Miss">Miss</option>
+								<option value="Ms">Ms</option>
+								<option value="Dr">Dr</option>
+								<option value="Lord">Lord</option>
+								<option value="Lady">Lady</option>
+								<option value="Duke">Duke</option>
+								<option value="Duchess">Duchess</option>
+								<option value="HRH">HRH</option>
+							</select>
+							<br> <br>
+							Email: <input type="text" name="email"> <br> <br>
+							First Name: <input type="text" name="firstname"> <br> <br>
+							Last Name: <input type="text" name="lastname"> <br> <br>
+							Age: <input type="text" name="age"> <br> <br>
+							Bio: <input type="text"	name="bio"> <br> <br>
+						</div>
+						<hr />
+						<h2>Address</h2>
+						<div id="address">
+							House Number: <input type="text" name="housenumber"> <br> <br>
+							Street: <input type="text" name="street"> <br> <br>
+							Town: <input type="text" name="town"> <br> <br>
+							PostCode: <input type="text" name="postcode"> <br> <br>
+						</div>
+						<hr />
+						<h2>Payment details</h2>
+						<div id="payment">
+							Account Number: <input type="text" name="accountnumber"> <br> <br>
+							Sort Code: <input type="text" name="sortcode"> <br> <br>
+						</div>
+						<hr />
+						<div id="submitbutton">
+							<input type="submit" name="createAccount" value="Create Account">
+						</div>
+						</form>
 				</div>
-
-				<hr />
-				<div id="Address">
-				<h2>Address</h2>
-				House Number: <input type="text" name="housenumber"> <br>
-				Street: <input type="text" name="street"> <br> 
-				Town: <input type="text" name="town"> <br> 
-				PostCode: <input type="text" name="postcode"> <br>
-				</div>
-				<hr />
-				<div id="Payment">
-				<h2>Payment details</h2>
-				Account Number: <input type="text" name="accountnumber"> <br>
-				Sort Code: <input type="text" name="sortcode"> <br>
-				</div>
-				<hr />
-				<div id="submitbutton">
-					<input type="submit" name="createAccount" value="Create Account">
-				</div>
-
-				</form>
 			</div>
-
-			<hr />
 		</article>
 
 		<footer>
@@ -163,6 +161,6 @@
 					<a href="about.html">About</a>
 					<a href="contact.html">Contact</a>
 				</div>
-			</footer>
+		</footer>
 	</body>
 </html>
