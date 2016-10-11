@@ -1,9 +1,7 @@
-@CHARSET "ISO-8859-1"
-.i {
-}
+@CHARSET "ISO-8859-1";
 
-article {
-  text-align: center;
+.mainContent{
+	text-align: center;
 }
 
 :root
@@ -16,18 +14,23 @@ article {
     --inline-width: 40%;
 }
 
-.login{
+#Title{
 	background-color: var(--british-racing-green);
 	Color: var(--floral-white);
 }
 .description{
 	Color: var(--sweet-sweet-brown);
-
 }
-
 #formTitle{
 	Color: var(--raisin-black);
 }
 .form{
 	Color: var(--sweet-sweet-brown);
+}
+.formContent{
+	Color: var(--sweet-sweet-brown);
+}
+.inputs{
+	display: inline-block;
+	 width: 150px;
 }
