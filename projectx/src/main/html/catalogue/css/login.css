@@ -15,7 +15,17 @@ article {
     --sweet-sweet-brown: #a53f2b;
     --inline-width: 40%;
 }
+.login{
+	background-color: var(--british-racing-green);
+	Color: var(--floral-white);
+}
+.description{
+	Color: var(--sweet-sweet-brown);
+}
 
-mainContent.breadcrumbs{
+#formTitle{
+	Color: var(--raisin-black);
+}
+.form{
 	Color: var(--sweet-sweet-brown);
 }
