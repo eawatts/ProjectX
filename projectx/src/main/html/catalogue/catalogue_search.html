@@ -1,156 +1,240 @@
 <!DOCTYPE html>
 <html>
+<div id="container">
 
-	<head>
-		<meta charset="ISO-8859-1">
-		<title>NB Gardens</title>
-		<link href="css/Catalogue.css" rel="stylesheet" type="text/css" />
-		<link href="css/search.css" rel="stylesheet" type="text/css" />
-	</head>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<title>NB Gardens</title>
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/catalogue.css">
+	<!-- This adds the small icon in the browser tab. -->
+	<link rel="icon" type="image/x-icon" href="../assets/nb_favicon.png">
+	<!-- This is required to add the small icons, such as the basket etc. -->
+	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
+	<link rel="stylesheet" type="text/css" href="css/search.css">
 
-	<body>
+	<!-- Javascript -->
+	<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javaScript" src="js/navigation.js"></script>
+</head>
 
-		<!-- This is the green navigation banner along the top of each page. -->
-		<header>
-			<div>
-				<nav>
-					<div id="nav-left">
-						<img src="http://placehold.it/140x100"/>
+
+<body>
+	<!-- This is the green navigation banner along the top of each page. -->
+	<header>
+		<div>
+			<nav>
+				<div class="nav-banner">
+					<div class="nav-banner-left">
+
+						<img class="nav-logo" src="../assets/nb_logo.png"/>
 					</div>
-					<div id="nav-centre">
+					<div class="nav-banner-centre">
 						<input type="search" name="searchbar">
-						<button type="button">S</button>
+						<button type="button"><i class="fa fa-search"></i></button>
 					</div>
-					<div id="nav-right">
-						<button type="button">Basket</button>
-						<button type="button">Login</button>
+					<div class="nav-banner-right">
+						<button type="button">Basket <i class="fa fa-shopping-basket"></i></button>
+						<button type="button">Login <i class="fa fa-user"></i></button>
 					</div>
-					<div id=nav-links>
+				</div>
+
+				<div class=nav-links>
+
+					<!-- This is what is displayed if the screen is detected to be a mobile device. -->
+					<div id="nav-mobile">
+						<div class="mobile-nav">
+							<div class="mobile-nav-toggle">
+								<div></div>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							<div class="mobile-nav-menu">
+								<ul>
+									<a href="#" class="mobile-dropdown-button">Gnomes</a>
+									<a href="#" class="mobile-dropdown-button">Electrical</a>
+									<a href="#" class="mobile-dropdown-button">Ornaments</a>
+									<a href="#" class="mobile-dropdown-button">Rakes and Hoes</a>
+									<a href="#" class="mobile-dropdown-button">Water Features</a>
+									<a href="#" class="mobile-dropdown-button">Furniture</a>
+									<a href="#" class="mobile-dropdown-button">Maintenance</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- This is what is displayed if the screen is detected to be a desktop device. -->
+					<div id="nav-desktop">
 						<ul>
-							<li><a href="index.html">Home<a/></li>
-							<li>
-								<a href="gnomes.html">Gnomes<a/>
-								<ul>
-									<a href="gnomes_seasonal.html">Seasonal<a/>
-									<a href="gnomes_themed.html">Themed<a/>
-									<a href="gnomes_novelty.html">Novelty<a/>
-									<a href="gnomes_classic.html">Classic<a/>
-									<a href="gnomes_gnome_care.html">Gnome Care<a/>
-								</ul>
+							<li><a href="#" class="active">Home</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-button">Gnomes</a>
+								<div class="dropdown-content">
+									<a href="#">Seasonal</a>
+									<a href="#">Themed</a>
+									<a href="#">Novelty</a>
+									<a href="#">Classic</a>
+									<a href="#">Gnome Care</a>
+								</div>
 							</li>
-							<li>
-								<a href="electrical.html">Electrical<a/>
-								<ul>
-									<a href="electrical_lighting.html">Lighting<a/>
-									<a href="electrical_heaters.html">Heaters<a/>
-									<a href="electrical_hot_tubs.html">Hot Tubs<a/>
-									<a href="electrical_bbqs.html">BBQs<a/>
-									<a href="electrical_misc.html">Misc<a/>
-								</ul>
+							<li class="dropdown">
+								<a href="#" class="dropdown-button">Electrical</a>
+								<div class="dropdown-content">
+									<a href="#">Lighting</a>
+									<a href="#">Heaters</a>
+									<a href="#">Hot Tubs</a>
+									<a href="#">BBQs</a>
+									<a href="#">Misc</a>
+								</div>
 							</li>
-							<li>
-								<a href="ornaments.html">Ornaments<a/>
-								<ul>
-									<a href="ornaments_animal.html">Animal<a/>
-									<a href="ornaments_wind_chimes.html">Wind Chimes<a/>
-									<a href="ornaments_weather_vanes.html">Weather Vanes<a/>
-									<a href="ornaments_pots.html">Pots<a/>
-								</ul>
+							<li class="dropdown">
+								<a href="#" class="dropdown-button">Ornaments</a>
+								<div class="dropdown-content">
+									<a href="#">Animal</a>
+									<a href="#">Wind Chimes</a>
+									<a href="#">Weather Vanes</a>
+									<a href="#">Pots</a>
+								</div>
 							</li>
-							<li>
-								<a href="rakes_and_hoes.html">Rakes & Hoes<a/>
-								<ul>
-									<a href="rakes_and_hoes_rakes.html">Rakes<a/>
-									<a href="rakes_and_hoes_rakes.html">Hoes<a/>
-									<a href="rakes_and_hoes_spades_and_forks.html">Spades and Forks<a/>
-									<a href="rakes_and_hoes_trowels.html">Trowels<a/>
-								</ul>
+							<li class="dropdown">
+								<a href="#" class="dropdown-button">Rakes and Hoes</a>
+								<div class="dropdown-content">
+									<a href="#">Rakes</a>
+									<a href="#">Hoes</a>
+									<a href="#">Spades and Forks</a>
+									<a href="#">Trowels</a>
+								</div>
 							</li>
-							<li>
-								<a href="water_features.html">Water Features<a/>
-								<ul>
-									<a href="water_features_ponds.html">Ponds<a/>
-									<a href="water_features_pumps.html">Pumps<a/>
-									<a href="water_features_pipes.html">Pipes<a/>
-									<a href="water_features_fountains.html">Fountains<a/>
-								</ul>
+							<li class="dropdown">
+								<a href="#" class="dropdown-button">Water Features</a>
+								<div class="dropdown-content">
+									<a href="water_features_ponds.html">Ponds</a>
+									<a href="water_features_pumps.html">Pumps</a>
+									<a href="water_features_pipes.html">Pipes</a>
+									<a href="water_features_fountains.html">Fountains</a>
+								</div>
 							</li>
-							<li>
-								<a href="furniture.html">Furniture<a/>
-								<ul>
-									<a href="furniture_tables_and_chairs.html">Tables and Chairs<a/>
-									<a href="furniture_benches.html">Benches<a/>
-									<a href="furniture_hammoks.html">Hammoks<a/>
-									<a href="furniture_swinging.html">Swinging<a/>
-									<a href="furniture_bird_houses.html">Bird Houses<a/>
-								</ul>
+							<li class="dropdown">
+								<a href="#" class="dropdown-button">Furniture</a>
+								<div class="dropdown-content">
+									<a href="#">Tables and Chairs</a>
+									<a href="#">Benches</a>
+									<a href="#">Hammoks</a>
+									<a href="#">Swinging</a>
+									<a href="#">Bird Houses</a>
+								</div>
 							</li>
-							<li>
-								<a href="maintenance.html">Maintenance<a/>
-								<ul>
-									<a href="maintenance_movers.html">Mowers<a/>
-									<a href="maintenance_strimmers.html">Strimmers<a/>
-									<a href="maintenance_feed_and_weed.html">Feed and Weed<a/>
-									<a href="maintenance_secateurs.html">Secateurs<a/>
-								</ul>
+							<li class="dropdown">
+								<a href="#" class="dropdown-button">Maintenance</a>
+								<div class="dropdown-content">
+									<a href="#">Mowers</a>
+									<a href="#">Strimmers</a>
+									<a href="#">Feed and Weed</a>
+									<a href="#">Secateurs</a>
+								</div>
 							</li>
 						</ul>
 					</div>
-				</nav>
+				</div>
+			</nav>
 		</div>
-		</header>
-
+	</header>
 		<!-- This is the content of the actual page. -->
-		<div>
-			<!-- !!CONTENT!! -->
-			<div id="heading">
-				<h2> Search Results</h2>
+		<div id=content-main>
+			<br/>
+			<div id="breadcrumbs">
+				<ul class="breadcrumb">
+	  				<li><a href="index.html">Home</a></li>
+	  				<li>Search Results</li>
+				</ul>
 			</div>
-
 			<div id="resultitems">
 				<div id="resultItem">
-					<div id="resultnumber"> 1:</div>
-					<div id="resultimage"> <img src="http://placehold.it/140x100"/>
-					</div>
-					<div id="resultdescription"> 
-					Vestibulumet ipsum non turpisultriciespretiumat utenim. Fusceet arcusit ametlorem consequatscelerisque. Utvulputatemetusac ante interdum, utscelerisquelectusscelerisque. Fusceplaceratnibheros, velauctornislfacilisisat. Suspendisseid rhoncusdolor. Vivamusac velitultricies, dignissimurnavel, posuerearcu. Nullaquismassaimperdiet, efficiturmaurisin, gravida ante. In molestietemporeuismod. Maecenas at porta magna. Proinsedpretiumlectus, at pretiumleo. In tellusarcu, efficitura nullaet, consecteturmalesuadaurna. Curabiturfacilisisdiamenim, non pharetra nibhtinciduntin. Vestibulumipsum enim, rhoncusvitae luctusvitae, tempus eusapien. 
-					</div>
-					<div id="resultbuttonBasket">
-						<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
-					</div>
-					<div id="resultbuttonwishlist">
-						<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
-					</div>
+					<div class="row">
+						<div class="col-tab-1 col-desk-1">
+		    				<div id="resultnumber"> 1:</div>
+		    			</div>
+		    			<div class="col-tab-2 col-desk-2">
+							<div id="resultimage"> <img src="http://placehold.it/140x100"/></div>
+		    			</div>
+		    			<div class="col-tab-5 col-desk-5">
+		    				<div id="resultdescription"> 
+							Vestibulumet ipsum non turpisultriciespretiumat utenim. Fusceet arcusit ametlorem consequatscelerisque. Utvulputatemetusac ante interdum, utscelerisquelectusscelerisque. Fusceplaceratnibheros, velauctornislfacilisisat. Suspendisseid rhoncusdolor. Vivamusac velitultricies, dignissimurnavel, posuerearcu. Nullaquismassaimperdiet, efficiturmaurisin, gravida ante. In molestietemporeuismod. Maecenas at porta magna. Proinsedpretiumlectus, at pretiumleo. In tellusarcu, efficitura nullaet, consecteturmalesuadaurna. Curabiturfacilisisdiamenim, non pharetra nibhtinciduntin. Vestibulumipsum enim, rhoncusvitae luctusvitae, tempus eusapien. 
+							</div>
+		    			</div>
+		    			<div class="col-tab-4 col-desk-4">
+		    				<div id="resultbuttonBasket">
+								<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+							</div>
+							<br/>
+							<div id="resultbuttonwishlist">
+								<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+							</div>
+		    			</div>
+	    			</div>
 				</div>
 				<div id="resultItem">
-					<div id="resultnumber"> 2:</div>
-					<div id="resultimage"> <img src="http://placehold.it/140x100"/>
-					</div>
-					<div id="resultdescription"> 
-					Vestibulumet ipsum non turpisultriciespretiumat utenim. Fusceet arcusit ametlorem consequatscelerisque. Utvulputatemetusac ante interdum, utscelerisquelectusscelerisque. Fusceplaceratnibheros, velauctornislfacilisisat. Suspendisseid rhoncusdolor. Vivamusac velitultricies, dignissimurnavel, posuerearcu. Nullaquismassaimperdiet, efficiturmaurisin, gravida ante. In molestietemporeuismod. Maecenas at porta magna. Proinsedpretiumlectus, at pretiumleo. In tellusarcu, efficitura nullaet, consecteturmalesuadaurna. Curabiturfacilisisdiamenim, non pharetra nibhtinciduntin. Vestibulumipsum enim, rhoncusvitae luctusvitae, tempus eusapien. 
-					</div>
-					<div id="resultbuttonBasket">
-						<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
-					</div>
-					<div id="resultbuttonwishlist">
-						<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
-					</div>
+					<div class="row">
+						<div class="col-tab-1 col-desk-1">
+		    				<div id="resultnumber"> 2:</div>
+		    			</div>
+		    			<div class="col-tab-2 col-desk-2">
+							<div id="resultimage"> <img src="http://placehold.it/140x100"/></div>
+		    			</div>
+		    			<div class="col-tab-5 col-desk-5">
+		    				<div id="resultdescription"> 
+							Vestibulumet ipsum non turpisultriciespretiumat utenim. Fusceet arcusit ametlorem consequatscelerisque. Utvulputatemetusac ante interdum, utscelerisquelectusscelerisque. Fusceplaceratnibheros, velauctornislfacilisisat. Suspendisseid rhoncusdolor. Vivamusac velitultricies, dignissimurnavel, posuerearcu. Nullaquismassaimperdiet, efficiturmaurisin, gravida ante. In molestietemporeuismod. Maecenas at porta magna. Proinsedpretiumlectus, at pretiumleo. In tellusarcu, efficitura nullaet, consecteturmalesuadaurna. Curabiturfacilisisdiamenim, non pharetra nibhtinciduntin. Vestibulumipsum enim, rhoncusvitae luctusvitae, tempus eusapien. 
+							</div>
+		    			</div>
+		    			<div class="col-tab-4 col-desk-4">
+		    				<div id="resultbuttonBasket">
+								<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+							</div>
+							<br/>
+							<div id="resultbuttonwishlist">
+								<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+							</div>
+		    			</div>
+	    			</div>
 				</div>
 			</div>
 
+		</div>
+			<br/>
 		</div>
 
 		<!-- This is the green footer along the bottom of each page. -->
+		</body>
+		<br/>
 		<footer>
-			<div id="footer-left">
-			</div>
-			<div id="footer-centre">
-			</div>
-			<div id="footer-right">
-				<a href="help.html">Help</a>
-				<a href="about.html">About</a>
-				<a href="contact.html">Contact</a>
-			</div>
+			<div class="row">
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-left">
+    					<a href="https://www.facebook.com">
+    						<i class="fa fa-facebook-square" aria-hidden="true"></i>
+    					</a>
+    					<a href="https://twitter.com/">
+    						<i class="fa fa-twitter-square" aria-hidden="true"></i>
+    					</a>
+					</div>
+    			</div>
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-centre">
+    					&copy;
+    					Xpedite Consulting 2016
+					</div>
+    			</div>
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-right">
+						<a href="help.html">Help</a>
+						<a href="about.html">About</a>
+						<a href="contact.html">Contact</a>
+					</div>
+    			</div>
+    		</div>
 		</footer>
-	</body>
+	</div>
 </html>

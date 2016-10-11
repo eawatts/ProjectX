@@ -45,6 +45,11 @@ input {
   width:50%;
 }
 .button{
+<<<<<<< HEAD
+	text-align: center;
+	margin: auto;
+=======
 	margin-left:50%;
 	width: 150px;
+>>>>>>> a3b3cce75bee0a22b84a68044085feacca6578b5
 }

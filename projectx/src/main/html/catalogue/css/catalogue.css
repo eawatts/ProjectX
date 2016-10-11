@@ -165,17 +165,20 @@ footer a{
   color: #F9FBF2;
 }
 
-.footer-left a {
+#footer-left a {
+  text-decoration: none;
+}
+
+a:hover, #footer-left{
   text-decoration: none;
 }
 
 footer {
-
-  position: absolute;
   bottom: 0;
   width: 100%;
   text-align: right;
   background-color: #004425;
+<<<<<<< HEAD
   <<<<<<< HEAD
   color: #F9FBF2;
   =======
@@ -186,3 +189,7 @@ footer {
 >>>>>>> dac31e175717c7c76834eab0237b39812a524379
 }
 >>>>>>> 1c85fbe5378ce35f873433088c69992d752270d8
+=======
+  color: #F9FBF2;
+}
+>>>>>>> 97ea290a72bd4d0b721ca5e70d5a05bb8a43bc18
