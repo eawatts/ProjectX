@@ -165,6 +165,10 @@ footer a{
   color: #F9FBF2;
 }
 
+#footer-right{
+  text-align: right;
+}
+
 #footer-left a {
   text-decoration: none;
 }
@@ -176,7 +180,7 @@ a:hover, #footer-left{
 footer {
   bottom: 0;
   width: 100%;
-  text-align: right;
+  text-align: center;
   background-color: #004425;
 <<<<<<< HEAD
   <<<<<<< HEAD
