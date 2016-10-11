@@ -30,7 +30,18 @@
 .formContent{
 	Color: var(--sweet-sweet-brown);
 }
-.inputs{
-	display: inline-block;
-	 width: 150px;
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 300px;
+    text-align: right;
+}
+input {
+  display: inline-block;
+  float: left;
+}
+.button{
+	text-align: center;
 }
