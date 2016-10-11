@@ -95,10 +95,23 @@ li.dropdown {
     display: block;
 }
 
+#footer-left{
+  text-align: left;
+}
+
+footer a{
+  color: #F9FBF2;
+}
+
+.footer-left a {
+  text-decoration: none;
+}
+ 
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: right;
   background-color: #004425;
+  color: #F9FBF2;
 }
