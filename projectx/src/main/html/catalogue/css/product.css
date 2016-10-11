@@ -1,0 +1,40 @@
+/*
+	raisin black = #272727
+	floral white = #f9fbf2
+	orange yellow = #fed766
+	british racing green = #004425
+	sweet sweet brown = #a53f2b
+*/
+body{
+	background-color: #f9fbf2;
+}
+#breadcrumbs{
+	color: #272727;
+}
+#picture{
+
+width:300px;
+height:300px;
+border: 3px solid #272727;
+}
+#productname{
+
+	color: #272727;
+}
+#div{
+	height: 4px;
+	color: #a53f2b;
+	background-color: #a53f2b;
+	border-style: none;
+}
+
+
+#quant{
+position: relative;
+left:0;
+
+}
+a{
+	color: #a53f2b;
+
+}
