@@ -7,8 +7,8 @@ import projectx.persistence.entities.Order;
 import java.sql.Date;
 
 public interface OrderRepository {
-	public void persistOrder (Order o);
-	public void persistOrders (List<Order> o);
+	public void persistOrder (Order order);
+	public void persistOrders (List<Order> order);
 	
 	public Order findByOrderType (String orderType);
 	public Order findByUser (String orderType);

@@ -1,4 +1,4 @@
-package projectx.persistence.entities;
+.package projectx.persistence.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -21,6 +21,10 @@ public class PaymentDetails {
 	@GeneratedValue (strategy= GenerationType.IDENTITY)
 	@NotNull
 	private int id;
+	
+	@ManyToOne
+	@JoinColumn(name = "user_id_fk", nullable=false)
+	private PaymentDetails paymentDetails;
 	
 	@Column(name = "account_number", length= 20)
 	@Size(min=5, max=20)
