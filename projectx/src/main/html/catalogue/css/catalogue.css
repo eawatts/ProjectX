@@ -39,18 +39,17 @@ body{
   margin-top: 30px;
 }
 .nav-banner-right-search-button {
-  width: 10%;
+  width: 8%;
   margin:auto;
   margin-top: 30px;
 }
 .nav-banner-centre {
 }
 .nav-banner-right {
-
 }
 .nav-banner-right-button {
   float: right;
-  margin: 20px 10px 20px 10px;
+  margin: 30px 10px 20px 10px;
 }
 
 .nav-links {
@@ -182,5 +181,5 @@ footer {
   width: 100%;
   text-align: center;
   background-color: #004425;
-  color: #F9FBF2; 
+  color: #F9FBF2;
 }
