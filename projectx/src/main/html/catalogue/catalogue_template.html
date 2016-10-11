@@ -2,101 +2,115 @@
 <html>
 
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 		<title>NB Gardens</title>
-
-		<!-- Stylesheets. -->
+		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
 		<link rel="stylesheet" type="text/css" href="css/catalogue.css">
+		<!-- This adds the small icon in the browser tab. -->
+		<link rel="icon" type="image/x-icon "href="../assets/nb_favicon.png"/>
+		<!-- This is required to add the small icons, such as the basket etc. -->
+		<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+		<!-- Javascript -->
+		<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javaScript" src="js/navigation.js"></script>
 	</head>
 
 	<body>
-
 		<!-- This is the green navigation banner along the top of each page. -->
 		<header>
 			<div>
 				<nav>
-					<div id="nav-left">
-						<img class="nav-logo" src="../assets/nb_logo.png"/>
+					<div class="nav-banner">
+						<div class="nav-banner-left">
+							<img class="nav-logo" src="../assets/nb_logo.png"/>
+						</div>
+						<div class="nav-banner-centre">
+							<input type="search" name="searchbar">
+							<button type="button"><i class="fa fa-search"></i></button>
+						</div>
+						<div class="nav-banner-right">
+							<button type="button">Basket <i class="fa fa-shopping-basket"></i></button>
+							<button type="button">Login <i class="fa fa-user"></i></button>
+						</div>
 					</div>
-					<div id="nav-centre">
-						<input type="search" name="searchbar">
-						<button type="button">S</button>
-					</div>
-					<div id="nav-right">
-						<button type="button">Basket</button>
-						<button type="button">Login</button>
-					</div>
-					<div id=nav-links>
-						<ul>
-							<li><a href="#" class="active">Home</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Gnomes</a>
-								<div class="dropdown-content">
-									<a href="#">Seasonal</a>
-									<a href="#">Themed</a>
-									<a href="#">Novelty</a>
-									<a href="#">Classic</a>
-									<a href="#">Gnome Care</a>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Electrical</a>
-								<div class="dropdown-content">
-									<a href="#">Lighting</a>
-									<a href="#">Heaters</a>
-									<a href="#">Hot Tubs</a>
-									<a href="#">BBQs</a>
-									<a href="#">Misc</a>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Ornaments</a>
-								<div class="dropdown-content">
-									<a href="#">Animal</a>
-									<a href="#">Wind Chimes</a>
-									<a href="#">Weather Vanes</a>
-									<a href="#">Pots</a>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Rakes and Hoes</a>
+
+					<div class=nav-links>
+						<div id="nav-mobile">
+							
+						</div>
+						<div id="nav-desktop">
+							<ul>
+								<li><a href="#" class="active">Home</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-button">Gnomes</a>
 									<div class="dropdown-content">
-										<a href="#">Rakes</a>
-										<a href="#">Hoes</a>
-										<a href="#">Spades and Forks</a>
-										<a href="#">Trowels</a>
+										<a href="#">Seasonal</a>
+										<a href="#">Themed</a>
+										<a href="#">Novelty</a>
+										<a href="#">Classic</a>
+										<a href="#">Gnome Care</a>
 									</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Water Features</a>
-								<div class="dropdown-content">
-									<a href="water_features_ponds.html">Ponds</a>
-									<a href="water_features_pumps.html">Pumps</a>
-									<a href="water_features_pipes.html">Pipes</a>
-									<a href="water_features_fountains.html">Fountains</a>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Furniture</a>
-								<div class="dropdown-content">
-									<a href="#">Tables and Chairs</a>
-									<a href="#">Benches</a>
-									<a href="#">Hammoks</a>
-									<a href="#">Swinging</a>
-									<a href="#">Bird Houses</a>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Maintenance</a>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-button">Electrical</a>
 									<div class="dropdown-content">
-										<a href="#">Mowers</a>
-										<a href="#">Strimmers</a>
-										<a href="#">Feed and Weed</a>
-										<a href="#">Secateurs</a>
+										<a href="#">Lighting</a>
+										<a href="#">Heaters</a>
+										<a href="#">Hot Tubs</a>
+										<a href="#">BBQs</a>
+										<a href="#">Misc</a>
 									</div>
-							</li>
-						</ul>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-button">Ornaments</a>
+									<div class="dropdown-content">
+										<a href="#">Animal</a>
+										<a href="#">Wind Chimes</a>
+										<a href="#">Weather Vanes</a>
+										<a href="#">Pots</a>
+									</div>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-button">Rakes and Hoes</a>
+										<div class="dropdown-content">
+											<a href="#">Rakes</a>
+											<a href="#">Hoes</a>
+											<a href="#">Spades and Forks</a>
+											<a href="#">Trowels</a>
+										</div>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-button">Water Features</a>
+									<div class="dropdown-content">
+										<a href="water_features_ponds.html">Ponds</a>
+										<a href="water_features_pumps.html">Pumps</a>
+										<a href="water_features_pipes.html">Pipes</a>
+										<a href="water_features_fountains.html">Fountains</a>
+									</div>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-button">Furniture</a>
+									<div class="dropdown-content">
+										<a href="#">Tables and Chairs</a>
+										<a href="#">Benches</a>
+										<a href="#">Hammoks</a>
+										<a href="#">Swinging</a>
+										<a href="#">Bird Houses</a>
+									</div>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-button">Maintenance</a>
+										<div class="dropdown-content">
+											<a href="#">Mowers</a>
+											<a href="#">Strimmers</a>
+											<a href="#">Feed and Weed</a>
+											<a href="#">Secateurs</a>
+										</div>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</nav>
 		</div>
