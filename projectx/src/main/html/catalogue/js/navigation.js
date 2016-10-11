@@ -13,7 +13,7 @@ $(window).resize(function() {
 // Will get the width of the window, and see if it is less that
 //  600px (Mobile Size), and will swap the navigation as fit.
 function displayNavigation() {
-  if ($(window).width() <= 600){
+  if ($(window).width() <= 992){
     $("#nav-mobile").show();
     $("#nav-desktop").hide();
   } else {

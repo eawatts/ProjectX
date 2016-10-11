@@ -65,7 +65,6 @@ label
 	width: var(--inline-width);
 	margin: auto;
 	box-sizing: border-box;
-	border: 1px solid black;
 	padding-left: 10%;
 	padding-right: 30%;
 }
