@@ -34,19 +34,15 @@ position: relative;
 left:0;
 
 }
-a{
-	color: #a53f2b;
-}
 
 .button{
+	width: 190px;
+	height: 35px;
 	background-color: #a53f2b;
 	color: #FFF;
-	padding: 10px
-	border: 2px solid #06D85F;
-  border-radius: 20px/50px;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.01s ease-out;
 }
 .button:hover {
 	background-color: #004425;
@@ -91,5 +87,5 @@ a{
   color: #333;
 }
 .popup .close:hover {
-  color: #06D85F;
+  color: #004425;
 }
