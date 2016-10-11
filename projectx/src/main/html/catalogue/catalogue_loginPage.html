@@ -6,6 +6,7 @@
 <title>NB Gardens</title>
 <link href="css/catalogue.css" rel="stylesheet" type="text/css" />
 <link href="css/login.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
 
 
 </head>
@@ -103,67 +104,40 @@
 	</header>
 	<hr />
 
-	<!-- <div name="breadcrumbs" class="breadcrumbs">
-		<a href="#">Home</a> / <a href="#">Login</a>
-		<article class=body>
-		<div id="Login">
-				<h1>Login</h1>
-			</div>
-			<div id="info">
-				<p>Please login to your NB Gardens Account to access website
-					features and checkout.</p>
-			</div>
-				<div>
-				<hr />
-				<h3>Enter your details:</h3>
-				<form action="loginToAccount.js">
-					Username <input type="text" name="username"> <br> <br />
-					Password <input type="password" name="password"><br>
-					<hr />
-			</div>
-			<div>
-				<input type="submit" name="loginToAccount">
-			</div>
-			</form>
-			<div>
-				<a
-					href="file:///C:/Users/Administrator/workspace/ProjectX/projectx/src/main/html/CreateAccount.html">Create
-					Account</a>
-				<hr />
-			</div>
-			</article>
-		-->
-
 		<!-- This is the content of the actual page. -->
 
 			<div>
 				<div class="breadcrumbs">
 					<a href="#">Home</a> / <a href="#">Login</a>
 				</div>
-				<article class= mainBody>
-					<div class="Login">
-						<h1>Login</h1>
+				<div class=row>
+					<div class="col-tab-12 col-desk-12">
+						<article class= mainBody>
+							<div class="Login">
+								<h1>Login</h1>
+							</div>
+		
+							<div class="description">
+								<p>Please login to your NB Gardens Account to access website
+									features and checkout.</p>
+							</div>
+							<div class="loginToSite">
+								<h3>Enter your details</h3>
+								<form action="loginToAccount.js">
+									Username <input type="text" name="username"> <br> <br />
+									Password <input type="password" name="password"><br>
+									<hr />
+									<input type="submit" name="loginToAccount">
+								</form>
+							</div>
+							<div class=createAccount>
+								<a href="file:///C:/Users/Administrator/workspace/ProjectX/projectx/src/main/html/CreateAccount.html">Create
+								Account</a>
+								<hr />
+							</div>
+						</article>
 					</div>
-
-					<div class="description">
-						<p>Please login to your NB Gardens Account to access website
-							features and checkout.</p>
-					</div>
-					<div class="loginToSite">
-						<h3>Enter your details</h3>
-						<form action="loginToAccount.js">
-							Username <input type="text" name="username"> <br> <br />
-							Password <input type="password" name="password"><br>
-							<hr />
-							<input type="submit" name="loginToAccount">
-						</form>
-					</div>
-					<div class=createAccount>
-						<a href="file:///C:/Users/Administrator/workspace/ProjectX/projectx/src/main/html/CreateAccount.html">Create
-						Account</a>
-						<hr />
-					</div>
-				</article>
+				</div>	
 			</div>
 
 			<!-- This is the green footer along the bottom of each page. -->
