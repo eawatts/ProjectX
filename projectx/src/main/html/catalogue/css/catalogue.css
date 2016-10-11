@@ -135,6 +135,18 @@ a:hover, .dropdown:hover .mobile-dropdown-button {
 
 /* MOBILE NAVIGATION - END */
 
+#footer-left{
+  text-align: left;
+}
+
+footer a{
+  color: #F9FBF2;
+}
+
+.footer-left a {
+  text-decoration: none;
+}
+ 
 footer {
 
   position: absolute;
@@ -142,9 +154,13 @@ footer {
   width: 100%;
   text-align: right;
   background-color: #004425;
+<<<<<<< HEAD
+  color: #F9FBF2;
+=======
 
 <<<<<<< HEAD
 }
 =======
+>>>>>>> dac31e175717c7c76834eab0237b39812a524379
 }
 >>>>>>> 1c85fbe5378ce35f873433088c69992d752270d8
