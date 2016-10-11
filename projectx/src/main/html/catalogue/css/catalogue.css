@@ -1,5 +1,11 @@
 @charset "ISO-8859-1";
-
+/* 
+    raisin black = #272727
+    floral white = #f9fbf2
+    orange yellow = #fed766
+    british racing green = #004425
+    sweet sweet brown = #a53f2b
+*/
 html {
   background-color: #F9FBF2
 }
@@ -85,12 +91,3 @@ li.dropdown {
 
 footer {
   background-color: #004425
-}
-
-/*
-	raisin black = #272727
-	floral white = #f9fbf2
-	orange yellow = #fed766
-	british racing green = #004425
-	sweet sweet brown = #a53f2b
-*/

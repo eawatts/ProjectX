@@ -1,0 +1,31 @@
+@CHARSET "ISO-8859-1"
+.i {
+}
+
+article {
+  text-align: center;
+}
+
+:root
+{
+	--raisin-black: #272727;
+    --floral-white: #f9fbf2;
+    --orange-yellow: #fed766;
+    --british-racing-green: #004425;
+    --sweet-sweet-brown: #a53f2b;
+    --inline-width: 40%;
+}
+.login{
+	background-color: var(--british-racing-green);
+	Color: var(--floral-white);
+}
+.description{
+	Color: var(--sweet-sweet-brown);
+}
+
+#formTitle{
+	Color: var(--raisin-black);
+}
+.form{
+	Color: var(--sweet-sweet-brown);
+}
