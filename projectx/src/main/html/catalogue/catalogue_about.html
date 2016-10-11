@@ -4,14 +4,14 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-	<title>About Us</title>
+	<title>NB Gardens</title>
 	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/catalogue.css">
-	<link rel="stylesheet" type="text/css" href="css/about.css"/>
-	<link rel="stylesheet" type="text/css" href="css/breadcrumb.css"/>
+	<link rel="stylesheet" type="text/css" href="css/about.css">
+	<link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
 	<!-- This adds the small icon in the browser tab. -->
-	<link rel="icon" type="image/x-icon "href="../assets/nb_favicon.png"/>
+	<link rel="icon" type="image/x-icon" href="../assets/nb_favicon.png">
 	<!-- This is required to add the small icons, such as the basket etc. -->
 	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
@@ -26,7 +26,22 @@
 		<div>
 			<nav>
 				<div class="nav-banner">
-					<div class="nav-banner-left">
+
+					<div class="row">
+						<div class="col-tab-3 col-desk-3 nav-banner-left">
+							<img class="nav-logo" src="../assets/nb_logo.png"/>
+						</div>
+						<div class="col-tab-6 col-desk-6 nav-banner-centre">
+							<input type="search" class="nav-banner-right-search" name="searchbar">
+							<button type="button" class="nav-banner-right-search-button"><i class="fa fa-search"></i></button>
+						</div>
+						<div class="col-tab-3 col-desk-3 nav-banner-right">
+							<button type="button" class="nav-banner-right-button">Basket <i class="fa fa-shopping-basket"></i></button>
+							<button type="button" class="nav-banner-right-button">Login <i class="fa fa-user"></i></button>
+						</div>
+					</div>
+
+					<!-- <div class="nav-banner-left">
 						<img class="nav-logo" src="../assets/nb_logo.png"/>
 					</div>
 					<div class="nav-banner-centre">
@@ -36,7 +51,7 @@
 					<div class="nav-banner-right">
 						<button type="button">Basket <i class="fa fa-shopping-basket"></i></button>
 						<button type="button">Login <i class="fa fa-user"></i></button>
-					</div>
+					</div> -->
 				</div>
 
 				<div class=nav-links>
@@ -66,7 +81,7 @@
 
 					<!-- This is what is displayed if the screen is detected to be a desktop device. -->
 					<div id="nav-desktop">
-						<ul>
+						<ul class="dropdown-list">
 							<li><a href="catalogue_index" class="active">Home</a></li>
 							<li class="dropdown">
 								<a href="catalogue_gnomes" class="dropdown-button">Gnomes</a>
