@@ -1,0 +1,28 @@
+
+ul.breadcrumb {
+    padding: 8px 16px;
+    list-style: none;
+    background-color: #f9fbf2;
+}
+ul.breadcrumb li {display: inline;}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {display: inline; color: green;}
+
+.progress-bar{
+	text-align: center;
+	vertical-align: center;
+}
+
+.page-title{
+	text-align: center;
+	vertical-align: center;
+}
+
+.basket-bottom-right{
+	text-align: center;
+	vertical-align: top;
+}

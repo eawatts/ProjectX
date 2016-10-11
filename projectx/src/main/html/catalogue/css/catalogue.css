@@ -1,5 +1,5 @@
 @charset "ISO-8859-1";
-/* 
+/*
     raisin black = #272727
     floral white = #f9fbf2
     orange yellow = #fed766
@@ -12,8 +12,32 @@ html {
 header {
   background-color: #004425
 }
+body{
+  height:100%;
+}
+#container{
+  min-height: 100%;
+  position:relative;
+}
+.nav-banner {
+  width: 100%;
+  display: inline-block;
+}
 .nav-logo {
-  max-width:
+  max-width:100px;
+  max-height: 100px;
+}
+.nav-banner-left {
+  width: 25%;
+}
+.nav-banner-centre {
+  width:25%;
+  border: 20px 20px 20px 20px;
+}
+.nav-banner-right {
+  float: right;
+}
+.nav-links {
 }
 
 ul {
@@ -72,5 +96,11 @@ li.dropdown {
 }
 
 footer {
-  background-color: #004425
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  background-color: #004425;
+
 }

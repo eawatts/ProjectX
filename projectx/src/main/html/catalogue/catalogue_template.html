@@ -1,33 +1,94 @@
 <!DOCTYPE html>
 <html>
+<div id="container">
 
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>NB Gardens</title>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<title>NB Gardens</title>
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/catalogue.css">
+	<!-- This adds the small icon in the browser tab. -->
+	<link rel="icon" type="image/x-icon "href="../assets/nb_favicon.png"/>
+	<!-- This is required to add the small icons, such as the basket etc. -->
+	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
-		<!-- Stylesheets. -->
-		<link rel="stylesheet" type="text/css" href="css/responsive.css">
-		<link rel="stylesheet" type="text/css" href="css/catalogue.css">
-	</head>
+	<!-- Javascript -->
+	<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javaScript" src="js/navigation.js"></script>
+</head>
 
-	<body>
-
-		<!-- This is the green navigation banner along the top of each page. -->
-		<header>
-			<div>
-				<nav>
-					<div id="nav-left">
+<body>
+	<!-- This is the green navigation banner along the top of each page. -->
+	<header>
+		<div>
+			<nav>
+				<div class="nav-banner">
+					<div class="nav-banner-left">
 						<img class="nav-logo" src="../assets/nb_logo.png"/>
 					</div>
-					<div id="nav-centre">
+					<div class="nav-banner-centre">
 						<input type="search" name="searchbar">
-						<button type="button">S</button>
+						<button type="button"><i class="fa fa-search"></i></button>
 					</div>
-					<div id="nav-right">
-						<button type="button">Basket</button>
-						<button type="button">Login</button>
+					<div class="nav-banner-right">
+						<button type="button">Basket <i class="fa fa-shopping-basket"></i></button>
+						<button type="button">Login <i class="fa fa-user"></i></button>
 					</div>
-					<div id=nav-links>
+				</div>
+
+				<style>
+				.menu-btn div {
+					position: absolute;
+					left: 100%;
+					top: 64%;
+					padding-right: 8px;
+					margin-top: -0.50em;
+					line-height: 1.2;
+					font-size: 18px;
+					font-weight: 200;
+					vertical-align: middle;
+					z-index: 99;
+				}
+
+				.menu-btn span {
+					display: block;
+					width: 19px;
+					height: 3px;
+					margin: 4px 0;
+					background: rgb(0,0,0);
+					z-index: 99;
+				}
+
+				.responsive-menu{
+					display: none;
+				}
+
+				.expand {
+					display: block !important;
+				}
+				</style>
+
+				<div class=nav-links>
+					<div id="nav-mobile">
+						<div class="mobile-nav">
+							<div class="menu-btn" id="menu-btn">
+								<div></div>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+
+							<div class="responsive-menu">
+								<ul>
+									<li>1. Object</li>
+									<li>2. Object</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div id="nav-desktop">
 						<ul>
 							<li><a href="#" class="active">Home</a></li>
 							<li class="dropdown">
@@ -61,12 +122,12 @@
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-button">Rakes and Hoes</a>
-									<div class="dropdown-content">
-										<a href="#">Rakes</a>
-										<a href="#">Hoes</a>
-										<a href="#">Spades and Forks</a>
-										<a href="#">Trowels</a>
-									</div>
+								<div class="dropdown-content">
+									<a href="#">Rakes</a>
+									<a href="#">Hoes</a>
+									<a href="#">Spades and Forks</a>
+									<a href="#">Trowels</a>
+								</div>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-button">Water Features</a>
@@ -89,26 +150,30 @@
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-button">Maintenance</a>
-									<div class="dropdown-content">
-										<a href="#">Mowers</a>
-										<a href="#">Strimmers</a>
-										<a href="#">Feed and Weed</a>
-										<a href="#">Secateurs</a>
-									</div>
+								<div class="dropdown-content">
+									<a href="#">Mowers</a>
+									<a href="#">Strimmers</a>
+									<a href="#">Feed and Weed</a>
+									<a href="#">Secateurs</a>
+								</div>
 							</li>
 						</ul>
 					</div>
-				</nav>
+				</div>
+			</nav>
 		</div>
-		</header>
+	</header>
 
 		<!-- This is the content of the actual page. -->
 		<div id=content-main>
 			<br/>
+
 			<br/>
 		</div>
 
 		<!-- This is the green footer along the bottom of each page. -->
+		<br>
+		<br/>
 		<footer>
 			<div id="footer-left">
 			</div>
@@ -120,5 +185,5 @@
 				<a href="contact.html">Contact</a>
 			</div>
 		</footer>
-	</body>
+	</div>
 </html>
