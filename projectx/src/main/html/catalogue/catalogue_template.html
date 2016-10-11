@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/catalogue.css">
 	<!-- This adds the small icon in the browser tab. -->
-	<link rel="icon" type="image/x-icon "href="../assets/nb_favicon.png"/>
+	<link rel="icon" type="image/x-icon" href="../assets/nb_favicon.png">
 	<!-- This is required to add the small icons, such as the basket etc. -->
 	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
@@ -24,7 +24,22 @@
 		<div>
 			<nav>
 				<div class="nav-banner">
-					<div class="nav-banner-left">
+
+					<div class="row">
+						<div class="col-tab-3 col-desk-3 nav-banner-left">
+							<img class="nav-logo" src="../assets/nb_logo.png"/>
+						</div>
+						<div class="col-tab-6 col-desk-6 nav-banner-centre">
+							<input type="search" class="nav-banner-right-search" name="searchbar">
+							<button type="button" class="nav-banner-right-search-button"><i class="fa fa-search"></i></button>
+						</div>
+						<div class="col-tab-3 col-desk-3 nav-banner-right">
+							<button type="button" class="nav-banner-right-button">Basket <i class="fa fa-shopping-basket"></i></button>
+							<button type="button" class="nav-banner-right-button">Login <i class="fa fa-user"></i></button>
+						</div>
+					</div>
+
+					<!-- <div class="nav-banner-left">
 						<img class="nav-logo" src="../assets/nb_logo.png"/>
 					</div>
 					<div class="nav-banner-centre">
@@ -34,7 +49,7 @@
 					<div class="nav-banner-right">
 						<button type="button">Basket <i class="fa fa-shopping-basket"></i></button>
 						<button type="button">Login <i class="fa fa-user"></i></button>
-					</div>
+					</div> -->
 				</div>
 
 				<div class=nav-links>
@@ -64,8 +79,8 @@
 
 					<!-- This is what is displayed if the screen is detected to be a desktop device. -->
 					<div id="nav-desktop">
-						<ul>
-							<li><a href="#" class="active">Home</a></li>
+						<ul class="dropdown-list">
+							<li class="dropdown"><a href="#" class="active">Home</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-button">Gnomes</a>
 								<div class="dropdown-content">
@@ -124,7 +139,7 @@
 								</div>
 							</li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-button">Maintenance</a>
+								<a href="#" class="dropdown-button">Misc</a>
 								<div class="dropdown-content">
 									<a href="#">Mowers</a>
 									<a href="#">Strimmers</a>
@@ -140,15 +155,23 @@
 	</header>
 
 		<!-- This is the content of the actual page. -->
-		<div id=content-main>
+		<div class="main-content">
 			<br/>
-				
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Invidiosum nomen est, infame, suspectum. Ex ea difficultate illae fallaciloquae, ut ait Accius, malitiae natae sunt. Rhetorice igitur, inquam, nos mavis quam dialectice disputare? Duo Reges: constructio interrete. Nondum autem explanatum satis, erat, quid maxime natura vellet. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Cur ipse Pythagoras et Aegyptum lustravit et Persarum magos adiit? Aliter enim nosmet ipsos nosse non possumus. </p>
+
+<p>Ex rebus enim timiditas, non ex vocabulis nascitur. Sed tamen enitar et, si minus multa mihi occurrent, non fugiam ista popularia. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. Dic in quovis conventu te omnia facere, ne doleas. </p>
+
+<p>Atque ab isto capite fluere necesse est omnem rationem bonorum et malorum. Sed quot homines, tot sententiae; Quodsi ipsam honestatem undique pertectam atque absolutam. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres. Non est enim vitium in oratione solum, sed etiam in moribus. </p>
+
+<p>Quid ergo aliud intellegetur nisi uti ne quae pars naturae neglegatur? Te enim iudicem aequum puto, modo quae dicat ille bene noris. Facile pateremur, qui etiam nunc agendi aliquid discendique causa prope contra naturam vígillas suscipere soleamus. Qualem igitur hominem natura inchoavit? Eadem fortitudinis ratio reperietur. Nam de isto magna dissensio est. Quod autem satis est, eo quicquid accessit, nimium est; Quae cum magnifice primo dici viderentur, considerata minus probabantur. </p>
+
+<p>Nam ista vestra: Si gravis, brevis; Huius ego nunc auctoritatem sequens idem faciam. Hoc enim constituto in philosophia constituta sunt omnia. Ne in odium veniam, si amicum destitero tueri. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. An potest, inquit ille, quicquam esse suavius quam nihil dolere? Quia nec honesto quic quam honestius nec turpi turpius. </p>
 
 			<br/>
 		</div>
 
 		<!-- This is the green footer along the bottom of each page. -->
-		<br>
+		</body>
 		<br/>
 		<footer>
 			<div class="row">
