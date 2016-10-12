@@ -37,17 +37,33 @@ ul.breadcrumb li a
 	margin: auto;
 	width: 90%;
 	display:block;
+	box-sizing: border-box;
+}
+.productimage
+{
+	text-align: center;
+	padding: 5px;
+
+}
+.productdescription
+{
+	padding: 5px;
+
 }
 
 #feedbackinfo
 {
 	text-align: left;
-	width: 90%;
 	border: 1px solid black;
+	padding: 5px;
+
 }
 
 .feedbackbox
 {
 	border: 1px solid black;
 	background: #FFFFFF
+	width: 90%;
+	margin-bottom: 5px;
+	padding: 5px;
 }
