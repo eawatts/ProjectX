@@ -91,7 +91,8 @@ label
 
 #submitbutton
 {
-	text-align: center;
+	text-align: right;
+	width: 90%;
 }
 h2
 {
