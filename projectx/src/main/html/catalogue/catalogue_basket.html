@@ -1,201 +1,85 @@
-<!DOCTYPE html>
-<html>
-
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>NB Gardens</title>
-
-		<!-- Stylesheets. -->
-		<link rel="stylesheet" type="text/css" href="css/responsive.css">
-		<link rel="stylesheet" type="text/css" href="css/catalogue.css">
-		<link rel="stylesheet" type="text/css" href="css/basket.css">
-		<link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
-	</head>
-
-	<body>
-
-		<!-- This is the green navigation banner along the top of each page. -->
-		<header>
-			<div>
-				<nav>
-					<div id="nav-left">
-						<img class="nav-logo" src="../assets/nb_logo.png"/>
-					</div>
-					<div id="nav-centre">
-						<input type="search" name="searchbar">
-						<button type="button">S</button>
-					</div>
-					<div id="nav-right">
-						<button type="button">Basket</button>
-						<button type="button">Login</button>
-					</div>
-					<div id=nav-links>
-						<ul>
-							<li><a href="" class="active">Home</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Gnomes</a>
-								<div class="dropdown-content">
-									<a href="#">Seasonal</a>
-									<a href="#">Themed</a>
-									<a href="#">Novelty</a>
-									<a href="#">Classic</a>
-									<a href="#">Gnome Care</a>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Electrical</a>
-								<div class="dropdown-content">
-									<a href="#">Lighting</a>
-									<a href="#">Heaters</a>
-									<a href="#">Hot Tubs</a>
-									<a href="#">BBQs</a>
-									<a href="#">Misc</a>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Ornaments</a>
-								<div class="dropdown-content">
-									<a href="#">Animal</a>
-									<a href="#">Wind Chimes</a>
-									<a href="#">Weather Vanes</a>
-									<a href="#">Pots</a>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Rakes and Hoes</a>
-									<div class="dropdown-content">
-										<a href="#">Rakes</a>
-										<a href="#">Hoes</a>
-										<a href="#">Spades and Forks</a>
-										<a href="#">Trowels</a>
-									</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Water Features</a>
-								<div class="dropdown-content">
-									<a href="water_features_ponds.html">Ponds</a>
-									<a href="water_features_pumps.html">Pumps</a>
-									<a href="water_features_pipes.html">Pipes</a>
-									<a href="water_features_fountains.html">Fountains</a>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Furniture</a>
-								<div class="dropdown-content">
-									<a href="#">Tables and Chairs</a>
-									<a href="#">Benches</a>
-									<a href="#">Hammoks</a>
-									<a href="#">Swinging</a>
-									<a href="#">Bird Houses</a>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-button">Maintenance</a>
-									<div class="dropdown-content">
-										<a href="#">Mowers</a>
-										<a href="#">Strimmers</a>
-										<a href="#">Feed and Weed</a>
-										<a href="#">Secateurs</a>
-									</div>
-							</li>
-						</ul>
-					</div>
-				</nav>
-		</div>
-		</header>
-
-		<!-- This is the content of the actual page. -->
+<ui:composition 
+	xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="#"> <!-- This will be where the name of the template file will fill in -->
+	<link rel="stylesheet" type="text/css" href="css/basket.css">
+	<link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
+		<ui:define name="title">
+			Basket - NB Gardens
+		</ui:define>
+	<ui:define name="main-content">
 		<div class="main-content">
 			<br/>
 			<div id="breadcrumbs">
-			<ul class="breadcrumb">
-  				<li><a href="index.html">Home</a></li>
-  				<li><a href="">Purchase</a></li>
-  				<li>Basket</li>
-			</ul>
+				<ul class="breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="">Purchase</a></li>
+					<li>Basket</li>
+				</ul>
 			</div>
 		</div>
 		<div>
-    		<br>
-    		<div class="row">
-    			<div class="col-tab-12 col-desk-12">
-    				<div class="page-title">
-    					<h1>Basket</h1>
-    				</div>
-    			</div>
-    		</div>
-    		<div class="row">
-    			<div class="col-tab-2 col-desk-2">
-    	
-    			</div>
-    			<div class="col-tab-6 col-desk-6">
-    				<h2>Product Description</h2>
-    			</div>
-    			<div class="col-tab-2 col-desk-2">
-    				<h2>Quantity</h2>
-    			</div>
-    			<div class="col-tab-2 col-desk-2">
-    				<h2>Product Price</h2>
-    			</div>
-    		</div>
-    		<div class="row">
-    			<div class="col-tab-2 col-desk-2">
-    				<img src="http://placehold.it/140x100">
-    			</div>
-    			<div class="col-tab-6 col-desk-6">
-    				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet scelerisque ex, vel efficitur sapien. Donec sit amet tellus dapibus, auctor leo ac, vehicula nunc. Aliquam et convallis urna. Nunc viverra arcu nulla, at molestie sem imperdiet vitae. Fusce malesuada pellentesque tempor. Etiam viverra elit et purus luctus faucibus nec in tellus. Morbi eget tellus ultricies, rutrum sapien at, porta augue. </p>
-    			</div>
-    			<div class="col-tab-2 col-desk-2">
-    				<input type="number" name="quantity">
-    			</div>
-    			<div class="col-tab-2 col-desk-2">
-    				<p>price</p>
-    			</div>
-    		</div>
-    		<div class="row">
-    			<div class="col-tab-2 col-desk-2">
-    				<img src="http://placehold.it/140x100">
-    			</div>
-    			<div class="col-tab-6 col-desk-6">
-    				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet scelerisque ex, vel efficitur sapien. Donec sit amet tellus dapibus, auctor leo ac, vehicula nunc. Aliquam et convallis urna. Nunc viverra arcu nulla, at molestie sem imperdiet vitae. Fusce malesuada pellentesque tempor. Etiam viverra elit et purus luctus faucibus nec in tellus. Morbi eget tellus ultricies, rutrum sapien at, porta augue. </p>
-    			</div>
-    			<div class="col-tab-2 col-desk-2">
-    				<input type="number" name="quantity">
-    			</div>
-    			<div class="col-tab-2 col-desk-2">
-    				<p>price</p>
-    			</div>
-    		</div>
-		</div>
-		<br>
-		<hr/>
-		<div class="row">
-    		<div class="col-tab-8 col-desk-8">
-    			<img class="progress-bar" src="../assets/BasketProgress.JPG"/>
-    		</div>
-    		<div class="col-tab-4 col-desk-4">
-    			<div class="basket-bottom-right">
-						<h2>Subtotal</h2>
-						<p>price</p>
-						<button type="button">Proceed to checkout</button>
-						<button type="button">Continue Shopping</button>
+			<br>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<div class="page-title">
+						<h1>Basket</h1>
+					</div>
 				</div>
-    		</div>
-    	</div>
-		<hr/>
-			<br/>
+			</div>
+			<div class="row">
+				<div class="col-tab-2 col-desk-2">
+				</div>
+			<div class="col-tab-6 col-desk-6">
+				<h2>Product Description</h2>   
+			</div>
+			<div class="col-tab-2 col-desk-2">
+				<h2>Quantity</h2>
+			</div>
+			<div class="col-tab-2 col-desk-2">
+				<h2>Product Price</h2>
+			</div>
+			</div>
+		<div class="row">
+			<div class="col-tab-2 col-desk-2">
+			<h:graphicImage value="http://placehold.it/140x100">
+				<!--<img src="http://placehold.it/140x100"> <!-- put code to grab product image -->
+			</div>
+			<div class="col-tab-6 col-desk-6">
+				<h:outputText escape="false"
+				value="No items currently in your basket"
+				rendered="#{products.basketCount == 0"/>
+				<h:panelGroup renedered="#{products.basketCount > 0}">
+				<h:outputText value="#{products.basketItems.firstBasketItem.itemDescription}"/>
+				<!-- code to get product description -->
+			</div>
+			<div class="col-tab-2 col-desk-2">
+				<input type="number" name="quantity"> <!-- code to get current number of item in basket with option to change -->
+			</div>
+			<div class="col-tab-2 col-desk-2">
+				<p>price</p>  
+				<!-- code to get the price of the item -->
+			</div>
 		</div>
-		<!-- This is the green footer along the bottom of each page. -->
-		<footer>
-			<div id="footer-left">
+	<br>
+	<hr/>
+	<div class="row">
+		<div class="col-tab-8 col-desk-8">
+			<img class="progress-bar" src="../assets/BasketProgress.JPG"/>
+		</div>
+		<div class="col-tab-4 col-desk-4">
+			<div class="basket-bottom-right">
+				<h2>Subtotal</h2>
+				<p>price</p>
+				<button type="button">Proceed to checkout</button>
+				<button type="button">Continue Shopping</button>
 			</div>
-			<div id="footer-centre">
-			</div>
-			<div id="footer-right">
-				<a href="help.html">Help</a>
-				<a href="about.html">About</a>
-				<a href="contact.html">Contact</a>
-			</div>
-		</footer>
-	</body>
-</html>
+		</div>
+	</div>
+	<hr/>
+	<br/>
+	</div>
+	</ui:define>
+</ui:composition>
