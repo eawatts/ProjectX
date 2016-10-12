@@ -28,6 +28,11 @@ body { font-family: sans-serif; }
   text-align: center;
 }
 
+h2 {
+  text-align: left;
+  color:#a53f2b;
+}
+
 .categoriesbutton{
   float: left;
   width:30%;
