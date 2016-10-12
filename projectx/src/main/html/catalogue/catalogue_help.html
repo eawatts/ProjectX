@@ -4,15 +4,17 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-	<title>NB Gardens</title>
+	<title>Help</title>
 	<!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/catalogue.css">
+	<link rel="stylesheet" type="text/css" href="css/help.css">
+	<link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
 	<!-- This adds the small icon in the browser tab. -->
-	<link rel="icon" type="image/x-icon" href="../assets/nb_favicon.png">
+	<link rel="icon" type="image/x-icon "href="../assets/nb_favicon.png"/>
 	<!-- This is required to add the small icons, such as the basket etc. -->
 	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
 
 	<!-- Javascript -->
 	<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
@@ -31,12 +33,12 @@
 							<img class="nav-logo" src="../assets/nb_logo.png"/>
 						</div>
 						<div class="col-tab-6 col-desk-6 nav-banner-centre">
-							<input type="search" class="nav-banner-right-search searchbox-brown" name="searchbar">
-							<button type="button" class="button-green-inverse nav-banner-right-search-button"><i class="fa fa-search"></i></button>
+							<input type="search" class="nav-banner-right-search" name="searchbar">
+							<button type="button" class="nav-banner-right-search-button"><i class="fa fa-search"></i></button>
 						</div>
 						<div class="col-tab-3 col-desk-3 nav-banner-right">
-							<button type="button" class="button-green-inverse nav-banner-right-button">Basket <i class="fa fa-shopping-basket"></i></button>
-							<button type="button" class="button-green-inverse nav-banner-right-button">Login <i class="fa fa-user"></i></button>
+							<button type="button" class="nav-banner-right-button">Basket <i class="fa fa-shopping-basket"></i></button>
+							<button type="button" class="nav-banner-right-button">Login <i class="fa fa-user"></i></button>
 						</div>
 					</div>
 
@@ -60,9 +62,9 @@
 						<div class="mobile-nav">
 							<div class="mobile-nav-toggle">
 								<div></div>
-								<span class="mobile-nav-toggle-burger"></span>
-								<span class="mobile-nav-toggle-burger"></span>
-								<span class="mobile-nav-toggle-burger"></span>
+								<span></span>
+								<span></span>
+								<span></span>
 							</div>
 							<div class="mobile-nav-menu">
 								<ul>
@@ -156,19 +158,41 @@
 	</header>
 
 		<!-- This is the content of the actual page. -->
-		<div class="main-content">
+			<div id=content-main>
 			<br/>
-			<button type="button" class="button-brown"><i class="fa fa-smile-o"></i> Brown button <i class="fa fa-smile-o"></i></button>
-			<button type="button" class="button-green"><i class="fa fa-smile-o"></i> Green button <i class="fa fa-smile-o"></i></button>
-			<br/>
-		</div>
+				<section>
+					<div name=breadcrumb>
+						<ul class="breadcrumb">
+				   			<a href="catalogue_index.html">Home </a>
+				       		<a href="catalogue_userAccount.html">/ Help</a>
+				       	</ul>
+					</div>
+					<h2>
+				   			Help
+					</h2>
+					<div class=row>
+						<div class="col-tab-6 col-desk-3">
+							<div id=helpImage> <img src="../assets/help.jpg"/></div>
+			    		</div>
+				   		<div class="col-tab-6 col-desk-9" >
+				   			<p>
+				   				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh purus, consequat quis egestas ac, vestibulum vel libero. Suspendisse eleifend, libero sit amet ultrices mattis, ante eros malesuada mauris, vel laoreet justo neque id lacus. Ut elit tortor, vestibulum a dolor sed, tempor dapibus sapien. Aenean consequat augue eget enim lobortis, vel mollis orci imperdiet. Aenean ac dapibus nibh. Nunc ornare augue neque, nec tristique lorem dignissim id. Vivamus non fermentum sapien, nec elementum risus. Cras ut dui sit amet mauris rhoncus facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus dolor felis, accumsan sagittis nunc posuere eu. Cras quis nunc sed purus aliquam fringilla eu ac ipsum. Maecenas lorem dolor, iaculis sit amet odio sit amet, gravida mattis felis. Nam justo mi, ultricies vitae turpis vel, luctus convallis justo. Nullam id vulputate justo.
+				   			</p>	
+				   		</div>			
+				  	</div>
+				  <div>
+				  <br/>
+				  </div>
+			  	</section>
 
+			<br/>
+			</div>
 		<!-- This is the green footer along the bottom of each page. -->
-		</body>
+		<br>
 		<br/>
 		<footer>
 			<div class="row">
-    			<div class="col-tab-2 col-desk-2">
+    			<div class="col-tab-4 col-desk-4">
     				<div id="footer-left">
     					<a href="https://www.facebook.com">
     						<i class="fa fa-facebook-square" aria-hidden="true"></i>
@@ -178,33 +202,21 @@
     					</a>
 					</div>
     			</div>
-    			<div class="col-tab-2 col-desk-2">
+    			<div class="col-tab-4 col-desk-4">
     				<div id="footer-centre">
     					&copy;
     					Xpedite Consulting 2016
 					</div>
     			</div>
-    			<div class="col-tab-8 col-desk-8">
+    			<div class="col-tab-4 col-desk-4">
     				<div id="footer-right">
-    					<ul>
-							<li><a href="help.html">Help</a></li>
-							<li><a href="about.html">About Us</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="products.html">Catagories</a>
-								<ul>
-									<li><a href="#">Gnomes</a></li>
-									<li><a href="#">Electrical</a></li>
-									<li><a href="#">Ornaments</a></li>
-									<li><a href="#">Rakes & Hoes</a></li>
-									<li><a href="#">Water Features</a></li>
-									<li><a href="#">Furniture</a></li>
-									<li><a href="#">Maintanence</a></li>
-								</ul>
-							</li>
-						</ul>
+						<a href="help.html">Help</a>
+						<a href="about.html">About</a>
+						<a href="contact.html">Contact</a>
 					</div>
     			</div>
     		</div>
 		</footer>
 	</div>
 </html>
+		

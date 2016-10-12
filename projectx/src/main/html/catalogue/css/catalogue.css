@@ -137,6 +137,10 @@ body{
   z-index: 99;
 }
 #nav-mobile .mobile-nav-menu{
+  background: red;
+}
+
+.mobile-nav-menu{
   display: none;
 }
 #nav-mobile .mobile-nav-menu-expand {
