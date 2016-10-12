@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<div id="container">
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+		<title>NB Gardens</title>
+		<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css">
+		<link rel="stylesheet" type="text/css" href="css/ims-products-style.css">
+		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+		<link rel="stylesheet" type="text/css" href="css/ims.css">
+		<!-- This adds the small icon in the browser tab. -->
+		<link rel="icon" type="image/x-icon" href="../assets/nb_favicon.png">
+		<!-- This is required to add the small icons, such as the basket etc. -->
+		<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!-- This is the green navigation banner along the top of each page. -->
+		<header>
+			<div>
+				<nav>
+					<div class="nav-banner">
+						<div class="row">
+							<div class="col-tab-3 col-desk-3 nav-banner-left">
+								<a href="catalogue_gnomes.html"><img class="nav-logo" src="../assets/nb_logo.png"/></a>
+							</div>
+							<div class="col-tab-6 col-desk-6 nav-banner-centre">
+								<span class="notification-center">
+									<div class="noti-pos">
+										<img class="noti-ims" src="..\assets\pendingPO.png"/>
+										<img class="noti-ims" src="..\assets\aprovedPO.png"/>
+										<img class="noti-ims" src="..\assets\emergency.png"/>
+										<img class="noti-ims" src="..\assets\warehouse.png"/>
+										<img class="noti-ims" src="..\assets\delivery.png"/>
+										<img class="noti-ims" src="..\assets\saveerror.png"/>
+										<img class="noti-ims" src="..\assets\warehouseidle.png"/>
+										<img class="noti-ims" src="..\assets\cashdiscrepency.png"/>
+									</div>
+								</span>
+							</div>
+							<div class="col-tab-3 col-desk-3 nav-banner-right">
+								<button type="button" class="button-green-inverse nav-banner-right-button">Logout <i class="fa fa-user"></i></button>
+							</div>
+						</div>
+					</div>
+
+					<div class=nav-links>
+						<!-- This is what is displayed if the screen is detected to be a mobile device. -->
+						<div id="nav-mobile">
+							<div class="mobile-nav">
+								<div class="mobile-nav-toggle">
+									<button type="button" class="button-green-inverse button-burger-nav">
+										<i class="fa fa-bars"></i>
+									</button>
+								</div>
+								<div class="mobile-nav-menu">
+									<ul class="mobile-nav-list">
+										<a href="ims_generatePurchaseOrder.html" class="mobile-dropdown-button">Generate Purchase Order</a>
+										<a href="ims_createPurchaseOrder.html" class="mobile-dropdown-button">Create Purchase Order</a>
+										<a href="ims_view_purchase_order.html" class="mobile-dropdown-button">View Purchase Order</a>
+										<a href="ims_product.html" class="mobile-dropdown-button">Product</a>
+										<a href="ims_metrics.html" class="mobile-dropdown-button">Metrics</a>
+										<a href="ims_suppliers.html" class="mobile-dropdown-button">Suppliers</a>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- This is what is displayed if the screen is detected to be a desktop device. -->
+						<div id="nav-desktop">
+							<ul class="dropdown-all-buttons">
+								<li class="dropdown-category">
+									<a href="ims_index.html" class="dropdown-button active">Home</a>
+								</li>
+								<li class="dropdown-category">
+									<div class="dropdown-button">Purchase Order</div>
+									<div class="dropdown-content">
+										<a href="ims_generatePurchaseOrder.html" class="dropdown-sub-button">Generate Purchase Order</a>
+										<a href="ims_createPurchaseOrder.html" class="dropdown-sub-button">Create Purchase Order</a>
+										<a href="ims_view_purchase_order.html" class="dropdown-sub-button">View Purchase Order</a>
+									</div>
+								</li>
+								<li class="dropdown-category">
+									<a href="ims_product.html" class="dropdown-button active">Product</a>
+								</li>
+								<li class="dropdown-category">
+									<a href="ims_metrics.html" class="dropdown-button active">Metrics</a>
+								</li>
+								<li class="dropdown-category">
+									<a href="ims_suppliers.html" class="dropdown-button active">Suppliers</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<br/>
+		<br/>
+
+		<!-- This is the content of the actual page. -->
+		<div class="main-content">
+		</div>
+		<div class="row">
+			<div class="col-tab-12 col-desk-12">
+
+				<form id="product-table">
+					<div class="div-table">
+						<div class="div-table-row">
+							<div class="div-table-col" align="left">Product ID</div>
+							<div  class="div-table-col">Name</div>
+							<div  class="div-table-col">Current Stock</div>
+							<div  class="div-table-col">Low Limit</div>
+							<div  class="div-table-col">Description</div>
+							<div  class="div-table-col">Suppliers</div>
+						</div>
+						<div class="div-table-row">
+							<div class="div-table-col">001</div>
+							<div class="div-table-col">002</div>
+							<div class="div-table-col">003</div>
+							<div class="div-table-col">004</div>
+							<div class="div-table-col"><p>Lorem ipsum dolor sit amet, ne est volutpat scriptorem, laboramus concludaturque sit an, ludus altera definitionem has no. Primis aliquip mei et. His ut affert possim suscipiantur. Utinam mnesarchum per ut.</p></div>
+							<select>
+								<option value="supplierA">supplierA</option>
+								<option value="supplierB">supplierB</option>
+								<option value="supplierC">supplierC</option>
+								<option value="supplierD" selected>supplierD</option>
+							</select>
+						</div>
+						<div class="div-table-row">
+							<div class="div-table-col">001</div>
+							<div class="div-table-col">002</div>
+							<div class="div-table-col">003</div>
+							<div class="div-table-col">004</div>
+							<div class="div-table-col"><p>Lorem ipsum dolor sit amet, ne est volutpat scriptorem, laboramus concludaturque sit an, ludus altera definitionem has no. Primis aliquip mei et. His ut affert possim suscipiantur. Utinam mnesarchum per ut.</p></div>
+							<select>
+								<option value="supplierA">supplierA</option>
+								<option value="supplierB">supplierB</option>
+								<option value="supplierC">supplierC</option>
+								<option value="supplierD" selected>supplierD</option>
+							</select>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+
+		<!-- This is the green footer along the bottom of each page. -->
+		<br/>
+		<footer>
+			<div class="row">
+				<div class="col-tab-2 col-desk-2">
+					<div id="footer-left">
+					</div>
+				</div>
+				<div class="col-tab-2 col-desk-2">
+					<div id="footer-centre">
+						&copy; <i class="fa fa-times" aria-hidden="true"></i>pedite Consulting 2016
+					</div>
+				</div>
+				<div class="col-tab-8 col-desk-8">
+					<div id="footer-right">
+						<ul>
+							<li><a href="ims_help.html">Help</a></li>
+							<li><a href="ims_metrics.html">Metrics</a></li>
+							<li><a href="ims_product.html">Product</a></li>
+							<li><a href="ims_suppliers.html">Suppliers</a>
+								<li>Purchase Order
+									<ul>
+										<li><a href="#">Generate Purchase Order</a></li>
+										<li><a href="#">Create Purchase Order</a></li>
+										<li><a href="#">View Purchase Order</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- Javascript -->
+			<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
+			<script type="text/javaScript" src="js/navigation.js"></script>
+		</body>
+
+	</div>
+	</html>
