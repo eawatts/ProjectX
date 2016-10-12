@@ -2,9 +2,23 @@
 <html>
 
 <head>
+<<<<<<< HEAD
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+=======
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<title>Help</title>
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/catalogue.css">
+	<link rel="stylesheet" type="text/css" href="css/help.css">
+	<link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
+	<!-- This adds the small icon in the browser tab. -->
+	<link rel="icon" type="image/x-icon "href="../assets/nb_favicon.png"/>
+	<!-- This is required to add the small icons, such as the basket etc. -->
+	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+>>>>>>> 9547e1118fcecb18246ac205d877c3f56ca2bd66
 
 
 <meta charset="ISO-8859-1">
@@ -20,6 +34,7 @@
 	<header>
 		<div>
 			<nav>
+<<<<<<< HEAD
 				<div id="nav-left">
 					<img class="nav-logo" src="../assets/nb_logo.png" />
 				</div>
@@ -75,11 +90,140 @@
 									and Weed</a> <a href="#">Secateurs</a>
 							</div></li>
 					</ul>
+=======
+				<div class="nav-banner">
+
+					<div class="row">
+						<div class="col-tab-3 col-desk-3 nav-banner-left">
+							<img class="nav-logo" src="../assets/nb_logo.png"/>
+						</div>
+						<div class="col-tab-6 col-desk-6 nav-banner-centre">
+							<input type="search" class="nav-banner-right-search" name="searchbar">
+							<button type="button" class="nav-banner-right-search-button"><i class="fa fa-search"></i></button>
+						</div>
+						<div class="col-tab-3 col-desk-3 nav-banner-right">
+							<button type="button" class="nav-banner-right-button">Basket <i class="fa fa-shopping-basket"></i></button>
+							<button type="button" class="nav-banner-right-button">Login <i class="fa fa-user"></i></button>
+						</div>
+					</div>
+
+					<!-- <div class="nav-banner-left">
+						<img class="nav-logo" src="../assets/nb_logo.png"/>
+					</div>
+					<div class="nav-banner-centre">
+						<input type="search" name="searchbar">
+						<button type="button"><i class="fa fa-search"></i></button>
+					</div>
+					<div class="nav-banner-right">
+						<button type="button">Basket <i class="fa fa-shopping-basket"></i></button>
+						<button type="button">Login <i class="fa fa-user"></i></button>
+					</div> -->
+				</div>
+
+				<div class=nav-links>
+
+					<!-- This is what is displayed if the screen is detected to be a mobile device. -->
+					<div id="nav-mobile">
+						<div class="mobile-nav">
+							<div class="mobile-nav-toggle">
+								<div></div>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							<div class="mobile-nav-menu">
+								<ul>
+									<a href="catalogue_gnomes.html" class="mobile-dropdown-button">Gnomes</a>
+									<a href="catalogue_electrical.html" class="mobile-dropdown-button">Electrical</a>
+									<a href="catalogue_ornaments.html" class="mobile-dropdown-button">Ornaments</a>
+									<a href="catalogue_rakesAndHoes.html" class="mobile-dropdown-button">Rakes and Hoes</a>
+									<a href="catalogue_waterFeatures.html" class="mobile-dropdown-button">Water Features</a>
+									<a href="catalogue_furniture.html" class="mobile-dropdown-button">Furniture</a>
+									<a href="catalogue_Maintenance.html" class="mobile-dropdown-button">Maintenance</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- This is what is displayed if the screen is detected to be a desktop device. -->
+					<div id="nav-desktop">
+						<ul class="dropdown-list">
+							<li><a href="catalogue_index.html" class="active">Home</a></li>
+							<li class="dropdown">
+								<a href="catalogue_gnomes.html" class="dropdown-button">Gnomes</a>
+								<div class="dropdown-content">
+									<a href="catalogue_seasonal.html">Seasonal</a>
+									<a href="catalogue_themed.html">Themed</a>
+									<a href="catalogue_novelty.html">Novelty</a>
+									<a href="catalogue_classic.html">Classic</a>
+									<a href="catalogue_gnomeCare.html">Gnome Care</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_electrical.html" class="dropdown-button">Electrical</a>
+								<div class="dropdown-content">
+									<a href="catalogue_lighting.html">Lighting</a>
+									<a href="catalogue_heaters.html">Heaters</a>
+									<a href="catalogue_hotTubs.html">Hot Tubs</a>
+									<a href="catalogue_bbqs.html">BBQs</a>
+									<a href="catalogue_misc.html">Misc</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_ornaments.html" class="dropdown-button">Ornaments</a>
+								<div class="dropdown-content">
+									<a href="catalogue_animal.html">Animal</a>
+									<a href="catalogue_windChimes.html">Wind Chimes</a>
+									<a href="catalogue_weatherVanes.html">Weather Vanes</a>
+									<a href="catalogue_pots.html">Pots</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_rakesAndHoes.html" class="dropdown-button">Rakes and Hoes</a>
+								<div class="dropdown-content">
+									<a href="catalogue_rakes.html">Rakes</a>
+									<a href="catalogue_hoes.html">Hoes</a>
+									<a href="catalogue_spadesAndForks.html">Spades and Forks</a>
+									<a href="catalogue_Trowels.html">Trowels</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_waterFeatures.html" class="dropdown-button">Water Features</a>
+								<div class="dropdown-content">
+									<a href="catalogue_ponds.html">Ponds</a>
+									<a href="catalogue_pumps.html">Pumps</a>
+									<a href="catalogue_pipes.html">Pipes</a>
+									<a href="catalogue_fountains.html">Fountains</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_furniture.html" class="dropdown-button">Furniture</a>
+								<div class="dropdown-content">
+									<a href="catalogue_tablesAndChairs.html">Tables and Chairs</a>
+									<a href="catalogue_benches.html">Benches</a>
+									<a href="catalogue_hammocks.html">Hammocks</a>
+									<a href="catalogue_swinging.html">Swinging</a>
+									<a href="catalogue_birdHouses.html">Bird Houses</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_maintenance.html" class="dropdown-button">Maintenance</a>
+								<div class="dropdown-content">
+									<a href="catalogue_mowers.html">Mowers</a>
+									<a href="catalogue_strimmers.html">Strimmers</a>
+									<a href="catalogue_feedAndWeed.html">Feed and Weed</a>
+									<a href="catalogue_secateurs.html">Secateurs</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+>>>>>>> 9547e1118fcecb18246ac205d877c3f56ca2bd66
 				</div>
 			</nav>
 		</div>
 	</header>
 
+<<<<<<< HEAD
 	<!-- This is the content of the actual page. -->
 	<div>
 		<div class=row>
@@ -140,6 +284,67 @@
 			</div>
 			</br>
 		</div>
+=======
+		<!-- This is the content of the actual page. -->
+			<div id=content-main>
+			<br/>
+				<section>
+					<div name=breadcrumb>
+						<ul class="breadcrumb">
+				   			<a href="catalogue_index.html">Home </a>
+				       		<a href="catalogue_userAccount.html">/ Help</a>
+				       	</ul>
+					</div>
+					<h2>
+				   			Help
+					</h2>
+					<div class=row>
+						<div class="col-tab-6 col-desk-3">
+							<div id=helpImage> <img src="../assets/help.jpg"/></div>
+			    		</div>
+				   		<div class="col-tab-6 col-desk-9" >
+				   			<p>
+				   				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh purus, consequat quis egestas ac, vestibulum vel libero. Suspendisse eleifend, libero sit amet ultrices mattis, ante eros malesuada mauris, vel laoreet justo neque id lacus. Ut elit tortor, vestibulum a dolor sed, tempor dapibus sapien. Aenean consequat augue eget enim lobortis, vel mollis orci imperdiet. Aenean ac dapibus nibh. Nunc ornare augue neque, nec tristique lorem dignissim id. Vivamus non fermentum sapien, nec elementum risus. Cras ut dui sit amet mauris rhoncus facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus dolor felis, accumsan sagittis nunc posuere eu. Cras quis nunc sed purus aliquam fringilla eu ac ipsum. Maecenas lorem dolor, iaculis sit amet odio sit amet, gravida mattis felis. Nam justo mi, ultricies vitae turpis vel, luctus convallis justo. Nullam id vulputate justo.
+				   			</p>	
+				   		</div>			
+				  	</div>
+				  <div>
+				  <br/>
+				  </div>
+			  	</section>
+			<br/>
+			</div>
+		<!-- This is the green footer along the bottom of each page. -->
+		<br>
+		<br/>
+		<footer>
+			<div class="row">
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-left">
+    					<a href="https://www.facebook.com">
+    						<i class="fa fa-facebook-square" aria-hidden="true"></i>
+    					</a>
+    					<a href="https://twitter.com/">
+    						<i class="fa fa-twitter-square" aria-hidden="true"></i>
+    					</a>
+					</div>
+    			</div>
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-centre">
+    					&copy;
+    					Xpedite Consulting 2016
+					</div>
+    			</div>
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-right">
+						<a href="help.html">Help</a>
+						<a href="about.html">About</a>
+						<a href="contact.html">Contact</a>
+					</div>
+    			</div>
+    		</div>
+		</footer>
+>>>>>>> 9547e1118fcecb18246ac205d877c3f56ca2bd66
 	</div>
 
 	<!-- This is the green footer along the bottom of each page. -->
