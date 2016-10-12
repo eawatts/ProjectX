@@ -74,10 +74,11 @@ body{
   text-decoration: none;
 }
 #nav-desktop li a:hover, .dropdown:hover .dropdown-button {
-  background-color: #F9FBF2;
+  background-color: #f9fbf2;
   color: #004425;
 }
 #nav-desktop li.dropdown {
+  color: #004425;
   display: inline-block;
   width: 12.5%;
   text-align: center;
@@ -103,7 +104,7 @@ body{
 }
 #nav-desktop .dropdown-content a:hover {
   color: #F9FBF2;
-  background-color: #004425
+  background-color: #004425;
 }
 #nav-desktop .dropdown:hover .dropdown-content {
   display: block;
@@ -115,7 +116,7 @@ body{
   padding-bottom: 4px;
 }
 
-.mobile-nav-toggle div {
+#nav-mobile .mobile-nav-toggle div {
   position: absolute;
   left: 100%;
   top: 64%;
@@ -127,7 +128,7 @@ body{
   vertical-align: middle;
   z-index: 99;
 }
-.mobile-nav-toggle span {
+#nav-mobile .mobile-nav-toggle span {
   display: block;
   width: 19px;
   height: 3px;
@@ -135,13 +136,13 @@ body{
   background: #F9FBF2;
   z-index: 99;
 }
-.mobile-nav-menu{
+#nav-mobile .mobile-nav-menu{
   display: none;
 }
-.mobile-nav-menu-expand {
+#nav-mobile .mobile-nav-menu-expand {
   display: block !important;
 }
-.mobile-dropdown-button {
+#nav-mobile .mobile-dropdown-button {
   color: #F9FBF2;
   width: 100%;
   text-align: center;
@@ -149,14 +150,18 @@ body{
   /*padding: 14px 16px;
   text-decoration: none;*/
 }
-a:hover, .dropdown:hover .mobile-dropdown-button {
+#nav-mobile a:hover, .dropdown:hover .mobile-dropdown-button {
   background-color: #F9FBF2;
   color: #004425;
 }
 
 /* MOBILE NAVIGATION - END */
 
+/* FOOTER STYLING - START */
+
 #footer-left{
+  padding-top: 15px;
+  padding-right: 10px;
   text-align: left;
 }
 
@@ -170,6 +175,11 @@ footer a{
 
 #footer-left a {
   text-decoration: none;
+  font-size: 35px;
+}
+
+#footer-centre {
+  padding-top: 15px;
 }
 
 #footer-right a{
@@ -182,7 +192,7 @@ footer a{
 footer {
   bottom: 0;
   width: 100%;
-  text-align: center;
+  text-align: right;
   background-color: #004425;
   color: #F9FBF2;
 }
