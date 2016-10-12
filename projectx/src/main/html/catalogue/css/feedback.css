@@ -67,3 +67,10 @@ ul.breadcrumb li a
 	margin-bottom: 5px;
 	padding: 5px;
 }
+
+textarea
+{
+	width: 100%;
+	box-sizing: border-box;
+	resize: none;
+}
