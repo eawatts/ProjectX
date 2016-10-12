@@ -7,6 +7,7 @@
 		<title>NB Gardens</title>
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css">
+		<link rel="stylesheet" type="text/css" href="css/ims-products-style.css">
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
 		<link rel="stylesheet" type="text/css" href="css/ims.css">
 		<!-- This adds the small icon in the browser tab. -->
@@ -22,40 +23,24 @@
 				<nav>
 					<div class="nav-banner">
 						<div class="row">
-							<div class="col-tab-2 col-desk-2 nav-banner-left">
+							<div class="col-tab-3 col-desk-3 nav-banner-left">
 								<a href="catalogue_gnomes.html"><img class="nav-logo" src="../assets/nb_logo.png"/></a>
 							</div>
-							<div id=navinav class="nav-banner-centre">
+							<div class="col-tab-6 col-desk-6 nav-banner-centre">
 								<span class="notification-center">
-	            					<div class="noti-pos">
-	            					<div class="col-tab-1 col-desk-1">
-						              <img class="noti-ims navinav" src="..\assets\pendingPO.png"/>
-						             </div>
-						             <div class="col-tab-1 col-desk-1"> 
-						              <img class="noti-ims navinav" src="..\assets\aprovedPO.png"/>
-						              </div>
-						              <div class="col-tab-1 col-desk-1">
-						              <img class="noti-ims navinav" src="..\assets\emergency.png"/>
-						              </div>
-						              <div class="col-tab-1 col-desk-1">
-						              <img class="noti-ims navinav" src="..\assets\warehouse.png"/>
-						              </div>
-						              <div class="col-tab-1 col-desk-1">
-						              <img class="noti-ims navinav" src="..\assets\delivery.png"/>
-						              </div>
-						              <div class="col-tab-1 col-desk-1">
-						              <img class="noti-ims navinav" src="..\assets\saveerror.png"/>
-						              </div>
-						              <div class="col-tab-1 col-desk-1">
-						              <img class="noti-ims navinav" src="..\assets\warehouseidle.png"/>
-						              </div>
-						              <div class="col-tab-1 col-desk-1">
-						              <img class="noti-ims navinav" src="..\assets\cashdiscrepency.png"/>
-						            </div>
-						            </div>
-					          	</span>
+									<div class="noti-pos">
+										<img class="noti-ims" src="..\assets\pendingPO.png"/>
+										<img class="noti-ims" src="..\assets\aprovedPO.png"/>
+										<img class="noti-ims" src="..\assets\emergency.png"/>
+										<img class="noti-ims" src="..\assets\warehouse.png"/>
+										<img class="noti-ims" src="..\assets\delivery.png"/>
+										<img class="noti-ims" src="..\assets\saveerror.png"/>
+										<img class="noti-ims" src="..\assets\warehouseidle.png"/>
+										<img class="noti-ims" src="..\assets\cashdiscrepency.png"/>
+									</div>
+								</span>
 							</div>
-							<div class="col-tab-2 col-desk-2 nav-banner-right">
+							<div class="col-tab-3 col-desk-3 nav-banner-right">
 								<button type="button" class="button-green-inverse nav-banner-right-button">Logout <i class="fa fa-user"></i></button>
 							</div>
 						</div>
@@ -73,11 +58,11 @@
 								<div class="mobile-nav-menu">
 									<ul class="mobile-nav-list">
 										<a href="ims_generatePurchaseOrder.html" class="mobile-dropdown-button">Generate Purchase Order</a>
-									<a href="ims_createPurchaseOrder.html" class="mobile-dropdown-button">Create Purchase Order</a>
-									<a href="ims_view_purchase_order.html" class="mobile-dropdown-button">View Purchase Order</a>
-									<a href="ims_product.html" class="mobile-dropdown-button">Product</a>
-									<a href="ims_metrics.html" class="mobile-dropdown-button">Metrics</a>
-									<a href="ims_suppliers.html" class="mobile-dropdown-button">Suppliers</a>
+										<a href="ims_createPurchaseOrder.html" class="mobile-dropdown-button">Create Purchase Order</a>
+										<a href="ims_view_purchase_order.html" class="mobile-dropdown-button">View Purchase Order</a>
+										<a href="ims_product.html" class="mobile-dropdown-button">Product</a>
+										<a href="ims_metrics.html" class="mobile-dropdown-button">Metrics</a>
+										<a href="ims_suppliers.html" class="mobile-dropdown-button">Suppliers</a>
 									</ul>
 								</div>
 							</div>
@@ -112,9 +97,55 @@
 				</nav>
 			</div>
 		</header>
+		<br/>
+		<br/>
 
 		<!-- This is the content of the actual page. -->
 		<div class="main-content">
+		</div>
+		<div class="row">
+			<div class="col-tab-12 col-desk-12">
+
+				<form id="product-table">
+					<div class="div-table">
+						<div class="div-table-row">
+							<div class="div-table-col" align="left">Product ID</div>
+							<div  class="div-table-col">Name</div>
+							<div  class="div-table-col">Current Stock</div>
+							<div  class="div-table-col">Low Limit</div>
+							<div  class="div-table-col">Description</div>
+							<div  class="div-table-col">Suppliers</div>
+						</div>
+						<div class="div-table-row">
+							<div class="div-table-col">001</div>
+							<div class="div-table-col">002</div>
+							<div class="div-table-col">003</div>
+							<div class="div-table-col">004</div>
+							<div class="div-table-col"><p>Lorem ipsum dolor sit amet, ne est volutpat scriptorem, laboramus concludaturque sit an, ludus altera definitionem has no. Primis aliquip mei et. His ut affert possim suscipiantur. Utinam mnesarchum per ut.</p></div>
+							<select>
+								<option value="supplierA">supplierA</option>
+								<option value="supplierB">supplierB</option>
+								<option value="supplierC">supplierC</option>
+								<option value="supplierD" selected>supplierD</option>
+							</select>
+						</div>
+						<div class="div-table-row">
+							<div class="div-table-col">001</div>
+							<div class="div-table-col">002</div>
+							<div class="div-table-col">003</div>
+							<div class="div-table-col">004</div>
+							<div class="div-table-col"><p>Lorem ipsum dolor sit amet, ne est volutpat scriptorem, laboramus concludaturque sit an, ludus altera definitionem has no. Primis aliquip mei et. His ut affert possim suscipiantur. Utinam mnesarchum per ut.</p></div>
+							<select>
+								<option value="supplierA">supplierA</option>
+								<option value="supplierB">supplierB</option>
+								<option value="supplierC">supplierC</option>
+								<option value="supplierD" selected>supplierD</option>
+							</select>
+						</div>
+					</div>
+				</form>
+
+			</div>
 		</div>
 
 		<!-- This is the green footer along the bottom of each page. -->
@@ -137,22 +168,22 @@
 							<li><a href="ims_metrics.html">Metrics</a></li>
 							<li><a href="ims_product.html">Product</a></li>
 							<li><a href="ims_suppliers.html">Suppliers</a>
-							<li>Purchase Order
-								<ul>
-									<li><a href="#">Generate Purchase Order</a></li>
-									<li><a href="#">Create Purchase Order</a></li>
-									<li><a href="#">View Purchase Order</a></li>
-								</ul>
-							</li>
-						</ul>
+								<li>Purchase Order
+									<ul>
+										<li><a href="#">Generate Purchase Order</a></li>
+										<li><a href="#">Create Purchase Order</a></li>
+										<li><a href="#">View Purchase Order</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-		</footer>
-		<!-- Javascript -->
-		<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
-		<script type="text/javaScript" src="js/navigation.js"></script>
-	</body>
+			</footer>
+			<!-- Javascript -->
+			<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
+			<script type="text/javaScript" src="js/navigation.js"></script>
+		</body>
 
-</div>
-</html>
+	</div>
+	</html>
