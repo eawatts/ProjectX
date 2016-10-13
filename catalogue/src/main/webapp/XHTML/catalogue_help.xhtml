@@ -1,22 +1,14 @@
-<ui:composition
-	xmlns="https://www.w3.org/1999/xhtml"
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="templates/main.xhtml">
-	
+	template="../templates/catalogue_template.xhtml">
+
 	<link rel="stylesheet" type="text/css" href="css/helpAcordian.css">
 	<link rel="stylesheet" type="text/css" href="css/help.css">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="title">Help</ui:define>
 	<ui:define name="maincontent">
-		<br />
-		<div name=breadcrumb>
-			<ul class="breadcrumb">
-				<a href="catalogue_index.html">Home </a>
-				<a href="catalogue_help.html">> Help</a>
-			</ul>
-		</div>
 		<div>
 			<div class=row>
 				<div id=Title>
@@ -27,13 +19,13 @@
 				<div class="col-tab-8 col-desk-8">
 					<div class=description>
 						<p>
-							Oh no we are so sorry that you need help.</b>
+							Oh no we are so sorry that you need help.<br/>
 						<p>
-							Perhaps navigating our website is too complicated for you.</b>
+							Perhaps navigating our website is too complicated for you.<br/>
 						<p>
-							Please see our FAQ below as someone may have had the same issue.</b>
+							Please see our FAQ below as someone may have had the same issue.<br/>
 						</p>
-						</br>
+						<br />
 					</div>
 				</div>
 				<div class="col-tab-4 col-desk-4">
@@ -42,7 +34,7 @@
 					</div>
 				</div>
 			</div>
-			</br>
+			<br />
 			<div class=row>
 				<div class="togglebox">
 					<input id="toggle1" type="radio" name="toggle" /> <label
@@ -63,22 +55,22 @@
 						<p>Here at NB Gardens we are dedicated to identifying the
 							identity of mysterion. We have a few quess but no solids leads as
 							of yet. If you have any information please let us know!!!</p>
-						</br> <img id=mysterion src="../assets/mysterion.jpg" alt="" />
+						<br/> <img id=mysterion src="../assets/mysterion.jpg" alt="" />
 					</section>
 
 					<input id="toggle3" type="radio" name="toggle" /> <label
 						for="toggle3">Who would win a Gnome or Godzilla?</label>
 					<section id="content3">
 						<p>
-							<img src="../assets/gnomezilla.jpg" alt="" /></br> We estimate that
-							individually Gnomes would die a gruseum death against godzilla.
+							<img src="../assets/gnomezilla.jpg" alt="" /><br/> We estimate that
+							individually Gnomes would die a gruesome death against godzilla.
 							However as a team they can over come any hurdle.
 						</p>
 					</section>
 				</div>
-				</br>
+				<br />
 			</div>
-		
+		</div>
 	</ui:define>
 	<ui:define name="custom-scripts">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
