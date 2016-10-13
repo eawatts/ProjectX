@@ -1,9 +1,59 @@
-<ui:compositionxmlns
-	="https://www.w3.org/1999/xhtml"
-xmlns:f="http://java.sun.com/jsf/core"
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="">
-	<meta charset="utf-8" />
-	<ui:definename="title">Contact-Customer</ui:define>
-	
-	
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/main.xhtml">
+
+	<link rel="stylesheet" type="text/css" href="css/contact.css">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="title">Contact - Customer</ui:define>
+	<ui:define name="maincontent">
+
+		<div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<article class="mainContent">
+						<div id="title">
+							<h2>Customer Contact us</h2>
+						</div>
+						<div class="description">
+							<p>
+								Please complete the form below or call us on <b>07853958438</b>
+							</p>
+							<p>We will try our very best to answer your email within 48
+								hours</p>
+						</div>
+						<hr />
+						<div>
+							<h2 id="formTitle">Query info</h2>
+						</div>
+						<div id="contactFormWrapper" class="contactForm">
+							<form action="createQuery.js" class="formContent">
+								<div class="inputs">
+									<label for="name">Name:</label>
+									<h:inputText id="name" value="#{contact.customer.name}" />
+									<br>
+									<label for="email">email:</label>
+									<h:inputText id="email" value="#{contact.customer.email}" />
+									<br>
+									<label for="contact_details">Contact Details:</label>
+									<h:inputText id="contact"
+										value="#{contact.customer.contact_details}" />
+									<br>
+									<label for="query">Query:</label>
+									<h:inputText id="query" value="#{contact.customer.query}" />
+									<br>
+								</div>
+								<br />
+								<div class="button">
+									<input type="submit" name="createQuery" onclick=="#{search.search()}">
+								</div>
+							</form>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
