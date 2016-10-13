@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<div id="container">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NB Gardens</title>
+
+  <!-- Stylesheets. -->
+  <link rel="stylesheet" type="text/css" href="css/product.css">
+  <link rel="stylesheet" type="text/css" href="css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="css/catalogue.css">
+    <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
+  <!-- This adds the small icon in the browser tab. -->
+  <link rel="icon" type="image/x-icon " href="../assets/nb_favicon.png" />
+  <!-- This is required to add the small icons, such as the basket etc. -->
+  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+  <!-- Javascript -->
+  <script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javaScript" src="js/navigation.js"></script>
+</head>
+
+<body>
+
+  <!-- This is the green navigation banner along the top of each page. -->
+  <header>
+    <div>
+      <nav>
+        <div class="nav-banner">
+          <div class="nav-banner-left">
+            <img class="nav-logo" src="../assets/nb_logo.png" />
+          </div>
+          <div class="nav-banner-centre">
+            <input type="search" name="searchbar">
+            <button type="button"><i class="fa fa-search"></i></button>
+          </div>
+          <div class="nav-banner-right">
+            <button type="button">Basket <i class="fa fa-shopping-basket"></i></button>
+            <button type="button">Login <i class="fa fa-user"></i></button>
+          </div>
+        </div>
+
+        <div class=nav-links>
+
+          <!-- This is what is displayed if the screen is detected to be a mobile device. -->
+          <div id="nav-mobile">
+            <div class="mobile-nav">
+              <div class="mobile-nav-toggle">
+                <div></div>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="mobile-nav-menu">
+                <ul>
+                  <a href="#" class="mobile-dropdown-button">Gnomes</a>
+                  <a href="#" class="mobile-dropdown-button">Electrical</a>
+                  <a href="#" class="mobile-dropdown-button">Ornaments</a>
+                  <a href="#" class="mobile-dropdown-button">Rakes and Hoes</a>
+                  <a href="#" class="mobile-dropdown-button">Water Features</a>
+                  <a href="#" class="mobile-dropdown-button">Furniture</a>
+                  <a href="#" class="mobile-dropdown-button">Maintenance</a>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- This is what is displayed if the screen is detected to be a desktop device. -->
+          <div id="nav-desktop">
+            <ul>
+              <li><a href="#" class="active">Home</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-button">Gnomes</a>
+                <div class="dropdown-content">
+                  <a href="#">Seasonal</a>
+                  <a href="#">Themed</a>
+                  <a href="#">Novelty</a>
+                  <a href="#">Classic</a>
+                  <a href="#">Gnome Care</a>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-button">Electrical</a>
+                <div class="dropdown-content">
+                  <a href="#">Lighting</a>
+                  <a href="#">Heaters</a>
+                  <a href="#">Hot Tubs</a>
+                  <a href="#">BBQs</a>
+                  <a href="#">Misc</a>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-button">Ornaments</a>
+                <div class="dropdown-content">
+                  <a href="#">Animal</a>
+                  <a href="#">Wind Chimes</a>
+                  <a href="#">Weather Vanes</a>
+                  <a href="#">Pots</a>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-button">Rakes and Hoes</a>
+                <div class="dropdown-content">
+                  <a href="#">Rakes</a>
+                  <a href="#">Hoes</a>
+                  <a href="#">Spades and Forks</a>
+                  <a href="#">Trowels</a>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-button">Water Features</a>
+                <div class="dropdown-content">
+                  <a href="water_features_ponds.html">Ponds</a>
+                  <a href="water_features_pumps.html">Pumps</a>
+                  <a href="water_features_pipes.html">Pipes</a>
+                  <a href="water_features_fountains.html">Fountains</a>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-button">Furniture</a>
+                <div class="dropdown-content">
+                  <a href="#">Tables and Chairs</a>
+                  <a href="#">Benches</a>
+                  <a href="#">Hammoks</a>
+                  <a href="#">Swinging</a>
+                  <a href="#">Bird Houses</a>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-button">Maintenance</a>
+                <div class="dropdown-content">
+                  <a href="#">Mowers</a>
+                  <a href="#">Strimmers</a>
+                  <a href="#">Feed and Weed</a>
+                  <a href="#">Secateurs</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- This is the content of the actual page. -->
+  <div class="main-content">
+  <div id="breadcrumbs">
+<ul class="breadcrumb">
+  <li>  <a href="#">Home</a> </li>
+  <li>  <a href="#">Gnome</a> ></li>
+  <li>  <a href="#">Classic</a> ></li>
+  <li>  <a href="#">Classic Red Hat Gnome</a></li>
+</ul>
+  </div>
+  <div class="row">
+    <div class="col-tab-4 col-desk-4">
+      <div id="picture">
+        <img src="..\assets\RedGnome.png" alt="The Classic Red Hat Gnome" style="width:200px;height:200px;">
+      </div>
+    </div>
+    <div class="col-tab-8 col-desk-8">
+      <div class="col-tab-12 col-desk-12">
+        <div id="productname">
+          <h1>Classic Red Hat Gnome</h1>
+        </div>
+      </div>
+      <div class="col-tab-6 col-desk-6">
+        <div id="productinfo">
+
+          <h2>Stock:In Stock</h2>
+
+          <h2>Cost:&pound;10</h2>
+          <div class="row">
+            <div class="col-tab-6 col-desk-6">
+              <h2>Quantity:</h2>
+            </div>
+            <div class="col-tab-6 col-desk-6">
+              
+                <form action="#popup1" method="get">
+                  <input list="quantity" name="quantity" style="width: 75px;">
+                  <datalist id="quantity">
+                    <option value="1">
+                      <option value="2">
+                        <option value="3">
+                          <option value="4">
+                            <option value="5">
+                              <option value="6">
+                                <option value="7">
+                                  <option value="8">
+                                    <option value="9">
+                                      <option value="10">
+                                        <option value="11">
+                                          <option value="12">
+                                            <option value="13">
+                                              <option value="14">
+                                                <option value="15">
+                                                  <option value="16">
+                                                    <option value="17">
+                                                      <option value="18">
+                                                        <option value="19">
+                                                          <option value="20">
+                                                            <option value="21">
+                  </datalist>
+             
+            </div>
+
+          </div>
+          <img src="..\assets\rating.png" alt="Rating">
+        </div>
+
+
+
+      </div>
+      <div class="col-tab-6 col-desk-6">
+        <div id="productaction">
+
+          <button class="button" onclick="location.href='#popup1'">Add to Basket</button>
+          <div id="popup1" class="overlay">
+            <div class="popup">
+              <h2>4 Classic Red Gnomes Added to Basket</h2>
+                <br>
+              <a class="close" href="#">&times;</a>
+                
+            </div>
+          </div>
+
+          <input type="image" name="image" src="..\assets\AtW.png">
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-tab-12 col-desk-12">
+        <div id="productdescription">
+          <h2>Description:</h2>
+          <p> The classic. A signature gnome that everyone knows and loves, with the famous red hat, bushy beard and blue coat. Made from the finest porcelain from Worcester, and finished with a glorious lead-free paint to stand out in your garden. Built
+            to stand everyday weather conditions, to always bring a shine to your garden. Dimensions: 30cm x 10cm. 1 year guarantee.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr id="div">
+    <div class="row">
+      <h1>Reviews</h1>
+      <div class="col-tab-4 col-desk-4">
+        <img src="..\assets\rating.png" alt="Rating">
+        <h2>Garry Stones</h2>
+        <p>Fantastic value, a classic gnome at a great price.</p>
+      </div>
+      <div class="col-tab-4 col-desk-4">
+        <img src="..\assets\rating.png" alt="Rating">
+        <h2>Andrew Joules</h2>
+        <p>A nice touch to the garden, looks like it will survive the English weather.</p>
+      </div>
+      <div class="col-tab-4 col-desk-4">
+        <img src="..\assets\rating.png" alt="Rating">
+        <h2>Betty Drain</h2>
+        <p>Didn't fit in with my other gnomes, so now is in the shed.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- This is the green footer along the bottom of each page. -->
+  <footer>
+    <div class="row">
+      <div class="col-tab-4 col-desk-4">
+        <div id="footer-left">
+          <a href="https://www.facebook.com">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+          </a>
+          <a href="https://twitter.com/">
+            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-tab-4 col-desk-4">
+        <div id="footer-centre">
+          &copy; Xpedite Consulting 2016
+        </div>
+      </div>
+      <div class="col-tab-4 col-desk-4">
+        <div id="footer-right">
+          <a href="help.html">Help</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+
+</html>
