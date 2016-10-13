@@ -1,17 +1,16 @@
-<ui:compositionxmlns
-	="https://www.w3.org/1999/xhtml"
-xmlns:f="http://java.sun.com/jsf/core"
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets" template="">
 	<meta charset="utf-8" />
-	<ui:definename="title">Contact Type</ui:define>
-
-		<ui:definename="maincontent">
-			<div class=Content>
-				<div name=breadcrumbs class=breadcrumbs>
-					<a href="catalogue_index.html">Home</a> > <a
-						href=catalogue_contact.html#>Contact</a>
-				</div>
+	<ui:define name="title">
+		Contact Type
+	</ui:define>
+	<ui:define name="maincontent">
+		<div class=Content>
+			<div class=breadcrumbs>
+				<a href="catalogue_index.html">Home</a> > <a
+					href=catalogue_contact.html#>Contact</a>
 			</div>
 			<div class=row>
 				<div class="col-tab-12 col-desk-12">
@@ -23,29 +22,27 @@ xmlns:f="http://java.sun.com/jsf/core"
 							<p>
 								Please select whether you are a <b>customer</B> or a <b>supplier:</b>
 							</p>
-							</br>
+							<br />
 						</div>
 						<div class=links>
 							<div id=supplier>
 								<p>
-									<label for=supplier><b>Supplier:</b></label><a
+									<label for=supplier><b>Supplier:</b></label> <a
 										href="catalogue_supplier_contact.html#"> <img
 										name=supplier border="0" alt="Supplier"
-										src="../assets/supplier.jpg" width="100" height="100">
-									</a>
+										src="../assets/supplier.jpg" width="100" height="100"></a>
 								</p>
 							</div>
 							<div id=customer>
 								<p>
-									<label for=customer><b>Customer:</b></label><a
+									<label for=customer><b>Customer:</b></label> <a
 										href="catalogue_contact.html#"> <img name=customer
 										border="0" alt="Customer" src="../assets/customer.jpg"
-										width="100" height="100">
-									</a>
+										width="100" height="100"></a>
 								</p>
 							</div>
 						</div>
 					</article>
 				</div>
 			</div>
-			</ui:define>
+	</ui:define>

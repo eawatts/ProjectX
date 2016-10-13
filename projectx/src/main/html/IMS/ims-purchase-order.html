@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 		<title>NB Gardens</title>
 		<!-- Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="css/ims-products-style.css">
+		<link rel="stylesheet" type="text/css" href="css/ims-purchase-order-view.css">
 		<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css">
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
 		<link rel="stylesheet" type="text/css" href="css/ims.css">
@@ -115,93 +115,82 @@
 		</header>
 
 		<!-- This is the content of the actual page. -->
+		<br/>
 		<div class="main-content">
+			<div class="page-title">
+				<h2>Purchase Order List</h2>
+			</div>
 		</div>
-		<br/>
-		<div class="page-title">
-			<h2>Product List</h2>
-		</div>
-		<br/>
 		<div class="div-table">
 			<div class="header-row">
 				<div class="row">
-					<div class="col-tab-1 col-desk-1">
-						Product ID
+					<div class="col-tab-1 col-desk-1 purchase-order-col">
+						Purchase Order ID
 					</div>
-					<div class="col-tab-1 col-desk-1">
-						Name	
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						Supplier	
 					</div>
-					<div class="col-tab-1 col-desk-1">
-						Current Stock	
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						Approved/Rejected	
 					</div>
-					<div class="col-tab-1 col-desk-1">
-						Low Limit	
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						Date Approved	
 					</div>
-					<div class="col-tab-6 col-desk-6">
-						Description	
-					</div>
-					<div class="col-tab-2 col-desk-2">
-						Suppliers	
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						Status	
 					</div>
 				</div>
 			</div>
 			<div class="product-row">
 				<div class="row">
-					<div class="col-tab-1 col-desk-1">
+					<div class="col-tab-1 col-desk-1 purchase-order-col">
 						001
 					</div>
-					<div class="col-tab-1 col-desk-1">
-						002
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						Supplier A
 					</div>
-					<div class="col-tab-1 col-desk-1">
-						003
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						Approved
 					</div>
-					<div class="col-tab-1 col-desk-1">
-						004
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						03/02/27
 					</div>
-					<div class="col-tab-6 col-desk-6">
-						Lorem ipsum dolor sit amet, ne est volutpat scriptorem, laboramus concludaturque sit an, ludus altera definitionem has no. Primis aliquip mei et. His ut affert possim suscipiantur. Utinam mnesarchum per ut.
-					</div>
-					<div class="col-tab-2 col-desk-2">
-						<div class="styled-select">
-							<select>
-								<option value="supplierA">supplierA</option>
-								<option value="supplierB">supplierB</option>
-								<option value="supplierC">supplierC</option>
-								<option value="supplierD" selected>supplierD</option>
-							</select>
-						</div>	
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						Delivered
 					</div>
 				</div>
 			</div>
 			<br/>
 			<div class="product-row">
 				<div class="row">
-					<div class="col-tab-1 col-desk-1">
+					<div class="col-tab-1 col-desk-1 purchase-order-col">
 						001
 					</div>
-					<div class="col-tab-1 col-desk-1">
-						002
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						Supplier A
 					</div>
-					<div class="col-tab-1 col-desk-1">
-						003
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						Approved
 					</div>
-					<div class="col-tab-1 col-desk-1">
-						004
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						03/02/27
 					</div>
-					<div class="col-tab-6 col-desk-6">
-						Lorem ipsum dolor sit amet, ne est volutpat scriptorem, laboramus concludaturque sit an, ludus altera definitionem has no. Primis aliquip mei et. His ut affert possim suscipiantur. Utinam mnesarchum per ut.
+					<div class="col-tab-2 col-desk-2 purchase-order-col">
+						Delivered
 					</div>
-					<div class="col-tab-2 col-desk-2">
-						<div class="styled-select">
-							<select>
-								<option value="supplierA">supplierA</option>
-								<option value="supplierB">supplierB</option>
-								<option value="supplierC">supplierC</option>
-								<option value="supplierD" selected>supplierD</option>
-							</select>
-						</div>	
-					</div>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-tab-6 col-desk-6">
+			<div class="PO-button">
+					<button type="button" onclick="alert('Would create a popup that would allow a new entry to be made')" class="button-green">Add Purchase Order</button>
+				</div>
+			</div>
+			<div class="col-tab-6 col-desk-6">
+				<div class="PO-button">
+					<button type="button" onclick="alert('would have functionality')" class="button-green">Click Me!</button>
 				</div>
 			</div>
 		</div>

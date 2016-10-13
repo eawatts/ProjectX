@@ -5,9 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Category;
-import projectx.persistence.entities.User;
 import projectx.persistence.repositories.interfaces.CategoryRepository;
-import projectx.persistence.repositories.interfaces.UserRepository;
 
 public class CategoryRepositoryOffline implements CategoryRepository {
 	
@@ -49,14 +47,14 @@ public class CategoryRepositoryOffline implements CategoryRepository {
 	public Category findByName(String name)
 	{
 		// TODO Auto-generated method stub
-		db.findCategoryByName(name);
+		return db.findCategoryByName(name);
 	}
 
 	@Override
 	public Category findByid(long id)
 	{
 		// TODO Auto-generated method stub
-		db.findCategoryById(id);
+		return db.findCategoryById(id);
 	}
 
 	

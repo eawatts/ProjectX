@@ -133,9 +133,11 @@
 						</div>
 						<div class="div-table-row">
 							<div class="div-table-col">001</div>
-							<div class="div-table-col">002</div>
-							<div class="div-table-col">003</div>
-							<div class="div-table-col">004</div>
+							<div class="div-table-col"><a class="button" href="#popup1">Supplier 1</a>
+								
+							</div>
+							<div class="div-table-col">A Road, Somewhere, #######</div>
+							<div class="div-table-col">###########</div>
 						</div>
 						<div class="div-table-row">
 							<div class="div-table-col">001</div>
@@ -148,8 +150,51 @@
 
 			</div>
 		</div>
-	</div>
+		<br/>
+		<ul class="buttons">
+			<li><a class="button1" href="#popup2">Add New Supplier  &#43</a></li>
+		</ul>
+		<div id="popup2" class="overlay">
+			<div class="popup">
+				<h2>Add Supplier</h2>
+				<a class="close" href="#">&times;</a>
+				<div class="content">
+					<form action="ims_suppliers.html">
+					  <input class="Sname" type="text" name="Name" placeholder="Supplier 1">
+					  <br/>
+					  <input class="Saddr" type="text" name="address1" placeholder="A Road">
+					  <input class="Saddr" type="text" name="address2" placeholder="Somewhere">
+					  <input class="Saddr" type="text" pattern="[A-Z]{1-2} [0-9]{1-2} [0-9]{1} [A-Z]{2} "name="address3" placeholder="#######">
+					  <br/>
+					  <input class="Saddr" type="tel" name="contact" placeholder="###########">
+					  <br/>
+					  <input type="submit" value="Apply">
+					</form>									
+				</div>
+			</div>
+		</div>	
+		<div id="popup1" class="overlay">
+			<div class="popup">
+				<h2>Edit Supplier</h2>
+				<a class="close" href="#">&times;</a>
+				<div class="content">
+					<form action="ims_suppliers.html">
+					  <input class="Sname" type="disabled" name="Name" placeholder="Supplier Name">
+					  <br/>
+					  <input class="Saddr" type="text" name="address1" placeholder="Address line 1">
+					  <input class="Saddr" type="text" name="address2" placeholder="Address line 1">
+					  <input class="Saddr" type="text" pattern="[A-Z]{1-2} [0-9]{1-2} [0-9]{1} [A-Z]{2} "name="address3" placeholder="Postcode">
+					  <br/>
+					  <input class="Saddr" type="tel" name="contact" placeholder="Phone Number">
+					  <br/>
+					  <input type="submit" value="Apply">
+					</form>									
+				</div>
+			</div>
+		</div>	
+</div>
 
+								
 		<!-- This is the green footer along the bottom of each page. -->
 		<br/>
 		<footer>
