@@ -5,20 +5,20 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="#"> <!-- This will be where the name of the template file will fill in -->
 	<link rel="stylesheet" type="text/css" href="css/basket.css">
-	<link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/breadcrumb.css"> -->
 		<ui:define name="title">
 			Basket - NB Gardens
 		</ui:define>
 	<ui:define name="main-content">
 		<div class="main-content">
 			<br/>
-			<div id="breadcrumbs">
+			<!-- <div id="breadcrumbs">
 				<ul class="breadcrumb">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="">Purchase</a></li>
 					<li>Basket</li>
 				</ul>
-			</div>
+			</div> -->
 		</div>
 		<div>
 			<br>
@@ -42,6 +42,11 @@
 				<h2>Product Price</h2>
 			</div>
 			</div>
+
+			<ui:repeat >
+				
+			</ui:repeat>
+
 		<div class="row">
 			<div class="col-tab-2 col-desk-2">
 			<h:graphicImage value="http://placehold.it/140x100">
@@ -50,9 +55,9 @@
 			<div class="col-tab-6 col-desk-6">
 				<h:outputText escape="false"
 				value="No items currently in your basket"
-				rendered="#{products.basketCount == 0"/>
-				<h:panelGroup renedered="#{products.basketCount > 0}">
-				<h:outputText value="#{products.basketItems.firstBasketItem.itemDescription}"/>
+				rendered="#{user.basket.basketCount == 0"/>
+				<h:panelGroup renedered="#{user.basket.basketCount > 0}">
+				<h:outputText value="#{user.basket.getNextItem.productDescription}"/>
 				<!-- code to get product description -->
 			</div>
 			<div class="col-tab-2 col-desk-2">
@@ -63,6 +68,8 @@
 				<!-- code to get the price of the item -->
 			</div>
 		</div>
+
+
 	<br>
 	<hr/>
 	<div class="row">
