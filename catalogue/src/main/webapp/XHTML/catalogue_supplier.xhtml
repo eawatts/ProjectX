@@ -1,53 +1,54 @@
-<ui:compositionxmlns
-	="https://www.w3.org/1999/xhtml"
-xmlns:f="http://java.sun.com/jsf/core"
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets" template="">
 	<meta charset="utf-8" />
-	<ui:definename="title">Contact-Supplier</ui:define>
+	<ui:define name="title">Contact-Supplier</ui:define>
 
-		<ui:definename="maincontent">
-			<div>
-				<div name=breadcrumbs class=breadcrumbs>
-					<a href="catalogue_index.html">Home</a> > <a
-						href=Contact_Directory.html#>Contact Type</a> > <a
-						href=catalogue_supplier_contact.html#>Supplier Contact</a>
-				</div>
-				<div class=row>
-					<div class="col-tab-12 col-desk-12">
-						<article class=mainContent>
-							<div id=Title>
-								<h1>Supplier Contact us</h1>
-							</div>
-							<div class=description>
-								<p>
-									Please complete the form below or call us on <b>07853958435</b>
-								</p>
-								<p>We will try our very best to answer your email within 48
-									hours</p>
-							</div>
-							<hr />
-							<div>
-								<h2 id=formTitle>Query info</h2>
-							</div>
-							<div id=contactFormWrapper class=contactForm>
-								<form action="createQuery.js" class=formContent>
-									<div class=inputs>
-										<label for=company>Company:</label> <input type=text
-											id=company><br>
-										<label for=name>Name:</label> <input type=text id=name><br>
-										<label for=email>email:</label> <input type=text id=email><br>
-										<label for=contact>Contact:</label><input type=text id=contact><br>
-										<label for=query>Query:</label><input type=text id=query><br>
-									</div>
-									<br />
-									<div class=button>
-										<input type=submit name=createQuery>
-									</div>
-								</form>
-							</div>
-						</article>
-					</div>
+	<ui:define name="maincontent">
+		<div>
+			<div name="breadcrumbs" class="breadcrumbs">
+				<a href="catalogue_index.html">Home</a> > <a
+					href="Contact_Directory.html">Contact Type</a> > <a
+					href="catalogue_supplier_contact.html">Supplier Contact</a>
+			</div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<article class="mainContent">
+						<div id="Title">
+							<h1>Supplier Contact us</h1>
+						</div>
+						<div class="description">
+							<p>
+								Please complete the form below or call us on <b>07853958435</b>
+							</p>
+							<p>We will try our very best to answer your email within 48
+								hours</p>
+						</div>
+						<hr />
+						<div>
+							<h2 id="ormTitle">Query info</h2>
+						</div>
+						<div id="contactFormWrapper" class="contactForm">
+							<form action="createQuery.js" class="formContent">
+								<div class="inputs">
+									<label for="company">Company:</label> <input type="text"
+										id="company"><br>
+									<label for="name">Name:</label> <input type="text" id="name"><br>
+									<label for="email">email:</label> <input type="text" id="email"><br>
+									<label for="contact">Contact:</label><input type="text"
+										id="contact"><br>
+									<label for="query">Query:</label><input type="text" id="query"><br>
+								</div>
+								<br />
+								<div class="button">
+									<input type="submit" name="createQuery">
+								</div>
+							</form>
+						</div>
+					</article>
 				</div>
 			</div>
-			</ui:define>
+		</div>
+	</ui:define>
+</ui:composition>
