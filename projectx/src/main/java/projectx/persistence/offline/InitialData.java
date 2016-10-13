@@ -5,12 +5,10 @@ import java.util.List;
 
 import javax.ejb.Singleton;
 
+import projectx.persistence.entities.Category;
 import projectx.persistence.entities.PaymentDetails;
-<<<<<<< HEAD
 import projectx.persistence.entities.Review;
-=======
 import projectx.persistence.entities.Product;
->>>>>>> 18fff9e7699592dc20d9c9ac309708ea8fcd2f32
 import projectx.persistence.entities.User;
 import projectx.persistence.entities.UserLevel;
 
@@ -18,15 +16,10 @@ import projectx.persistence.entities.UserLevel;
 public class InitialData {
 
 	private List<User> users;
-<<<<<<< HEAD
 	private List<Review> reviews;
 	private List<PaymentDetails> paymentDetails;
-
-=======
-	private ArrayList<PaymentDetails> paymentDetails = new ArrayList<PaymentDetails>(); 
 	private List<Product> products;
 	
->>>>>>> 18fff9e7699592dc20d9c9ac309708ea8fcd2f32
 	public InitialData() {
 		populateData();
 
@@ -35,7 +28,8 @@ public class InitialData {
 	private void populateData() {
 		users = new ArrayList<User>();
 		users.add(new User());
-<<<<<<< HEAD
+		products = new ArrayList<Product>();
+		products.add(new Product());
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
 	}
@@ -56,10 +50,27 @@ public class InitialData {
 
 	public List<Review> getReviews() {
 		return reviews;
-=======
-		products = new ArrayList<Product>();
-		products.add(new Product());
->>>>>>> 18fff9e7699592dc20d9c9ac309708ea8fcd2f32
+	}
+	
+	// CATEGORY
+	
+	public void addCategory(Category category){
+		// TODO: Implement!!
+	}
+	public void updateCategory(Category category){
+		// TODO: Implement!!
+	}
+	public Category findCategoryByName(String name){
+		// TODO: Implement!!
+		return null;
+	}
+	public Category findCategoryById(long id){
+		// TODO: Implement!!
+		return null;
+	}
+	public List<Category> getCategories(){
+		// TODO: Implement!!
+		return null;
 	}
 	
 	// USERS
@@ -146,5 +157,4 @@ public class InitialData {
 		}
 		return userReviews;
 	}
-
 }
