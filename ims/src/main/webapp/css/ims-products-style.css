@@ -1,0 +1,37 @@
+.div-table{
+  margin: auto;
+  display:table;         
+  width:auto;         
+  background-color:#eee;         
+  border:1px solid  #666666;         
+  border-spacing:5px;/*cellspacing:poor IE support for  this*/
+}
+.styled-select select {
+  background: transparent;
+  width: 240px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+}
+.header-row{
+  margin: auto;
+  display:table-row;
+  width: auto;
+  clear:both;
+  text-align: left;
+}
+.product-row{
+  margin: auto;
+  float:left;/*fix for  buggy browsers*/
+  display:inline-block;                  
+  background-color:#ccc; 
+  padding-bottom: 10px;
+  border: 1px solid #666666;` 	
+}
+.page-title h2{
+  margin: auto;
+  text-align: center;
+}

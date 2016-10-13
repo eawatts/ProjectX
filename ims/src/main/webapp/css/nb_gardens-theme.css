@@ -1,0 +1,91 @@
+/*
+raisin black = #272727
+floral white = #f9fbf2
+orange yellow = #fed766
+british racing green = #004425
+sweet sweet brown = #a53f2b
+*/
+:root {
+  --colour-raisin_black: #272727;
+  --colour-gloral_white: #f9fbf2;
+  --colour-orange_yellow: #fed766;
+  --colour-racing_green: #004425;
+  --colour-sweet_brown: #a53f2b;
+}
+
+html {
+  font-family: Calibri;
+}
+
+.searchbox-brown {
+  color: #F9FBF2;
+  background-color: #F9FBF2;
+  border: none;
+  border-radius: 2px;
+  border: 2px solid #A53F2B;
+  padding: 4px 4px 4px 4px;
+}
+
+.button-brown {
+  color: #F9FBF2;
+  background-color: #A53F2B;
+  border: none;
+  border-radius: 2px;
+  border: 2px solid #A53F2B;
+  padding: 4px 4px 4px 4px;
+}
+
+.button-brown:hover {
+  color: #A53F2b;
+  background-color: #F9FBF2;
+  border-radius: 2px;
+  border: 2px solid #A53F2B;
+}
+
+.button-green {
+  color: #F9FBF2;
+  background-color: #004425;
+  border: none;
+  border-radius: 2px;
+  border: 2px solid #004425;
+  padding: 4px 4px 4px 4px;
+
+}
+.button-green:hover {
+  color: #004425;
+  background-color: #F9FBF2;
+  border-radius: 2px;
+  border: 2px solid #004425;
+}
+
+.button-green-inverse {
+  color: #F9FBF2;
+  background-color: #004425;
+  border: none;
+  border-radius: 2px;
+  border: 2px solid #F9FBF2;
+  padding: 4px 4px 4px 4px;
+
+}
+.button-green-inverse:hover {
+  color: #004425;
+  background-color: #F9FBF2;
+  border-radius: 2px;
+  border: 2px solid #F9FBF2;
+}
+
+.button-brown-inverse {
+  color: #F9FBF2;
+  background-color: #A53F2B;
+  border: none;
+  border-radius: 2px;
+  border: 2px solid #F9FBF2;
+  padding: 4px 4px 4px 4px;
+
+}
+.button-brown-inverse:hover {
+  color: #A53F2B;
+  background-color: #F9FBF2;
+  border-radius: 2px;
+  border: 2px solid #A53F2B;
+}

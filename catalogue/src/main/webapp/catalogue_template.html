@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<div id="container">
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+		<title>NB Gardens</title>
+		<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css">
+		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+		<link rel="stylesheet" type="text/css" href="css/catalogue.css">
+		<!-- This adds the small icon in the browser tab. -->
+		<link rel="icon" type="image/x-icon" href="../assets/nb_favicon.png">
+		<!-- This is required to add the small icons, such as the basket etc. -->
+		<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!-- This is the green navigation banner along the top of each page. -->
+		<header>
+			<div>
+				<nav>
+					<div class="nav-banner">
+						<div id="header-mobile">
+							<ul class="header-mobile-list">
+								<li class="header-mobile-item">
+									<a href="catalogue_gnomes.html"><img class="nav-mobile-logo" src="../assets/nb_logo.png"/></a>
+								</li>
+								<li class="header-mobile-item">
+									<input type="search" class="searchbox-brown nav-banner-mobile-right-search" name="searchbar">
+									<button type="button" class="button-green-inverse nav-banner-mobile-right-button"><i class="fa fa-search"></i></button>
+								</li>
+
+								<li class="header-mobile-item">
+									<button type="button" class="button-green-inverse nav-banner-mobile-right-button"><i class="fa fa-shopping-basket"></i></button>
+								</li>
+								<li class="header-mobile-item">
+									<button type="button" class="button-green-inverse nav-banner-mobile-right-button"><i class="fa fa-user"></i></button>
+								</li>
+								<li class="header-mobile-item">
+									<!-- This is what is displayed if the screen is detected to be a mobile device. -->
+									<div id="nav-mobile">
+										<button type="button" class="button-green-inverse button-burger-nav nav-banner-mobile-right-button">
+											<i class="fa fa-bars"></i>
+										</button>
+									</div>
+								</li>
+
+							</ul>
+							<div class="mobile-nav-menu">
+								<ul class="mobile-nav-list">
+									<li><a href="catalogue_gnomes.html" class="mobile-dropdown-button">Gnomes</a></li>
+									<li><a href="catalogue_electrical.html" class="mobile-dropdown-button">Electrical</a></li>
+									<li><a href="catalogue_ornaments.html" class="mobile-dropdown-button">Ornaments</a></li>
+									<li><a href="catalogue_rakesAndHoes.html" class="mobile-dropdown-button">Rakes and Hoes</a></li>
+									<li><a href="catalogue_waterFeatures.html" class="mobile-dropdown-button">Water Features</a></li>
+									<li><a href="catalogue_furniture.html" class="mobile-dropdown-button">Furniture</a></li>
+									<li><a href="catalogue_Maintenance.html" class="mobile-dropdown-button">Maintenance</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div id="header-desktop">
+							<div class="row">
+								<div class="col-tab-3 col-desk-3 nav-banner-desktop-left">
+									<a href="catalogue_gnomes.html"><img class="nav-desktop-logo" src="../assets/nb_logo.png"/></a>
+								</div>
+								<div class="col-tab-6 col-desk-6 nav-banner-desktop-centre">
+									<input type="search" class="searchbox-brown nav-banner-desktop-right-search" name="searchbar">
+									<button type="button" class="button-green-inverse nav-banner-desktop-right-search-button"><i class="fa fa-search"></i></button>
+								</div>
+								<div class="col-tab-3 col-desk-3 nav-banner-desktop-right">
+									<button type="button" class="button-green-inverse nav-banner-desktop-right-button">Basket <i class="fa fa-shopping-basket"></i></button>
+									<button type="button" class="button-green-inverse nav-banner-desktop-right-button">Login <i class="fa fa-user"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="nav-desktop">
+						<ul class="dropdown-all-buttons">
+							<li class="dropdown-category">
+								<a href="catalogue_index.html" class="dropdown-button active">Home</a>
+							</li>
+							<li class="dropdown-category">
+								<a href="catalogue_gnomes.html" class="dropdown-button">Gnomes</a>
+								<div class="dropdown-content">
+									<a href="catalogue_seasonal.html" class="dropdown-sub-button">Seasonal</a>
+									<a href="catalogue_themed.html" class="dropdown-sub-button">Themed</a>
+									<a href="catalogue_novelty.html" class="dropdown-sub-button">Novelty</a>
+									<a href="catalogue_classic.html" class="dropdown-sub-button">Classic</a>
+									<a href="catalogue_gnomeCare.html" class="dropdown-sub-button">Gnome Care</a>
+								</div>
+							</li>
+							<li class="dropdown-category">
+								<a href="catalogue_electrical.html" class="dropdown-button">Electrical</a>
+								<div class="dropdown-content">
+									<a href="catalogue_lighting.html" class="dropdown-sub-button">Lighting</a>
+									<a href="catalogue_heaters.html" class="dropdown-sub-button">Heaters</a>
+									<a href="catalogue_hotTubs.html" class="dropdown-sub-button">Hot Tubs</a>
+									<a href="catalogue_bbqs.html" class="dropdown-sub-button">BBQs</a>
+									<a href="catalogue_misc.html" class="dropdown-sub-button">Misc</a>
+								</div>
+							</li>
+							<li class="dropdown-category">
+								<a href="catalogue_ornaments.html" class="dropdown-button">Ornaments</a>
+								<div class="dropdown-content">
+									<a href="catalogue_animal.html" class="dropdown-sub-button">Animal</a>
+									<a href="catalogue_windChimes.html" class="dropdown-sub-button">Wind Chimes</a>
+									<a href="catalogue_weatherVanes.html" class="dropdown-sub-button">Weather Vanes</a>
+									<a href="catalogue_pots.html" class="dropdown-sub-button">Pots</a>
+								</div>
+							</li>
+							<li class="dropdown-category">
+								<a href="catalogue_rakesAndHoes.html" class="dropdown-button">Rakes and Hoes</a>
+								<div class="dropdown-content">
+									<a href="catalogue_rakes.html" class="dropdown-sub-button">Rakes</a>
+									<a href="catalogue_hoes.html" class="dropdown-sub-button">Hoes</a>
+									<a href="catalogue_spadesAndForks.html" class="dropdown-sub-button">Spades and Forks</a>
+									<a href="catalogue_Trowels.html" class="dropdown-sub-button">Trowels</a>
+								</div>
+							</li>
+							<li class="dropdown-category">
+								<a href="catalogue_waterFeatures.html" class="dropdown-button">Water Features</a>
+								<div class="dropdown-content">
+									<a href="catalogue_ponds.html" class="dropdown-sub-button">Ponds</a>
+									<a href="catalogue_pumps.html" class="dropdown-sub-button">Pumps</a>
+									<a href="catalogue_pipes.html" class="dropdown-sub-button">Pipes</a>
+									<a href="catalogue_fountains.html" class="dropdown-sub-button">Fountains</a>
+								</div>
+							</li>
+							<li class="dropdown-category">
+								<a href="catalogue_furniture.html" class="dropdown-button">Furniture</a>
+								<div class="dropdown-content">
+									<a href="catalogue_tablesAndChairs.html" class="dropdown-sub-button">Tables and Chairs</a>
+									<a href="catalogue_benches.html" class="dropdown-sub-button">Benches</a>
+									<a href="catalogue_hammocks.html" class="dropdown-sub-button">Hammocks</a>
+									<a href="catalogue_swinging.html" class="dropdown-sub-button">Swinging</a>
+									<a href="catalogue_birdHouses.html" class="dropdown-sub-button">Bird Houses</a>
+								</div>
+							</li>
+							<li class="dropdown-category">
+								<a href="catalogue_maintenance.html" class="dropdown-button">Maintenance</a>
+								<div class="dropdown-content">
+									<a href="catalogue_mowers.html" class="dropdown-sub-button">Mowers</a>
+									<a href="catalogue_strimmers.html" class="dropdown-sub-button">Strimmers</a>
+									<a href="catalogue_feedAndWeed.html" class="dropdown-sub-button">Feed and Weed</a>
+									<a href="catalogue_secateurs.html" class="dropdown-sub-button">Secateurs</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<!-- This is the content of the actual page. -->
+		<div class="main-content">
+			<br/>
+			<button type="button" class="button-brown"><i class="fa fa-smile-o"></i> Brown button <i class="fa fa-smile-o"></i></button>
+			<button type="button" class="button-green"><i class="fa fa-smile-o"></i> Green button <i class="fa fa-smile-o"></i></button>
+			<br/>
+		</div>
+
+		<!-- This is the green footer along the bottom of each page. -->
+		<br/>
+		<footer>
+			<div class="row">
+				<div class="col-tab-4 col-desk-4">
+					<div class="footer-social">
+						<a href="https://www.facebook.com" target="_blank" class="footer-social-icon">
+							<i class="fa fa-facebook-square" aria-hidden="true" class="footer-social-icon"></i>
+						</a>
+						<a href="https://twitter.com" target="_blank" class="footer-social-icon">
+							<i class="fa fa-twitter-square" aria-hidden="true"></i>
+						</a>
+						<a href="https://reddit.com/r/nbgardens" target="_blank" class="footer-social-icon">
+							<i class="fa fa-reddit-square" aria-hidden="true"></i>
+						</a>
+					</div>
+				</div>
+				<div class="col-tab-8 col-desk-8">
+					<div class="footer-company-copyright">&copy; <i class="fa fa-times" aria-hidden="true"></i>pedite Consulting 2016</div>
+				</div>
+			</div>
+			<hr class="footer-separator"/>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<ul class="footer-sitemap-list">
+						<li class="footer-sitemap-category">
+							<a href="catalogue_gnomes.html" class="footer-sitemap-category-header">Gnomes</a>
+							<div class="footer-sitemap-sub-category-list">
+								<a href="catalogue_seasonal.html" class="footer-sitemap-sub-category">Seasonal</a>
+								<a href="catalogue_themed.html" class="footer-sitemap-sub-category">Themed</a>
+								<a href="catalogue_novelty.html" class="footer-sitemap-sub-category">Novelty</a>
+								<a href="catalogue_classic.html" class="footer-sitemap-sub-category">Classic</a>
+								<a href="catalogue_gnomeCare.html" class="footer-sitemap-sub-category">Gnome Care</a>
+							</div>
+						</li>
+						<li class="footer-sitemap-category">
+							<a href="catalogue_electrical.html" class="footer-sitemap-category-header">Electrical</a>
+							<div class="footer-sitemap-sub-category-list">
+								<a href="catalogue_lighting.html" class="footer-sitemap-sub-category">Lighting</a>
+								<a href="catalogue_heaters.html" class="footer-sitemap-sub-category">Heaters</a>
+								<a href="catalogue_hotTubs.html" class="footer-sitemap-sub-category">Hot Tubs</a>
+								<a href="catalogue_bbqs.html" class="footer-sitemap-sub-category">BBQs</a>
+								<a href="catalogue_misc.html" class="footer-sitemap-sub-category">Misc</a>
+							</div>
+						</li>
+						<li class="footer-sitemap-category">
+							<a href="catalogue_ornaments.html" class="footer-sitemap-category-header">Ornaments</a>
+							<div class="footer-sitemap-sub-category-list">
+								<a href="catalogue_animal.html" class="footer-sitemap-sub-category">Animal</a>
+								<a href="catalogue_windChimes.html" class="footer-sitemap-sub-category">Wind Chimes</a>
+								<a href="catalogue_weatherVanes.html" class="footer-sitemap-sub-category">Weather Vanes</a>
+								<a href="catalogue_pots.html" class="footer-sitemap-sub-category">Pots</a>
+							</div>
+						</li>
+						<li class="footer-sitemap-category">
+							<a href="catalogue_rakesAndHoes.html" class="footer-sitemap-category-header">Rakes and Hoes</a>
+							<div class="footer-sitemap-sub-category-list">
+								<a href="catalogue_rakes.html" class="footer-sitemap-sub-category">Rakes</a>
+								<a href="catalogue_hoes.html" class="footer-sitemap-sub-category">Hoes</a>
+								<a href="catalogue_spadesAndForks.html" class="footer-sitemap-sub-category">Spades and Forks</a>
+								<a href="catalogue_Trowels.html" class="footer-sitemap-sub-category">Trowels</a>
+							</div>
+						</li>
+						<li class="footer-sitemap-category">
+							<a href="catalogue_waterFeatures.html" class="footer-sitemap-category-header">Water Features</a>
+							<div class="footer-sitemap-sub-category-list">
+								<a href="catalogue_ponds.html" class="footer-sitemap-sub-category">Ponds</a>
+								<a href="catalogue_pumps.html" class="footer-sitemap-sub-category">Pumps</a>
+								<a href="catalogue_pipes.html" class="footer-sitemap-sub-category">Pipes</a>
+								<a href="catalogue_fountains.html" class="footer-sitemap-sub-category">Fountains</a>
+							</div>
+						</li>
+						<li class="footer-sitemap-category">
+							<a href="catalogue_furniture.html" class="footer-sitemap-category-header">Furniture</a>
+							<div class="footer-sitemap-sub-category-list">
+								<a href="catalogue_tablesAndChairs.html" class="footer-sitemap-sub-category">Tables and Chairs</a>
+								<a href="catalogue_benches.html" class="footer-sitemap-sub-category">Benches</a>
+								<a href="catalogue_hammocks.html" class="footer-sitemap-sub-category">Hammocks</a>
+								<a href="catalogue_swinging.html" class="footer-sitemap-sub-category">Swinging</a>
+								<a href="catalogue_birdHouses.html" class="footer-sitemap-sub-category">Bird Houses</a>
+							</div>
+						</li>
+						<li class="footer-sitemap-category">
+							<a href="catalogue_maintenance.html" class="footer-sitemap-category-header">Maintenance</a>
+							<div class="footer-sitemap-sub-category-list">
+								<a href="catalogue_mowers.html" class="footer-sitemap-sub-category">Mowers</a>
+								<a href="catalogue_strimmers.html" class="footer-sitemap-sub-category">Strimmers</a>
+								<a href="catalogue_feedAndWeed.html" class="footer-sitemap-sub-category">Feed and Weed</a>
+								<a href="catalogue_secateurs.html" class="footer-sitemap-sub-category">Secateurs</a>
+							</div>
+						</li>
+						<li class="footer-sitemap-category">
+							<a href="" class="footer-sitemap-category-header" style="pointer-events:none;">Other</a>
+							<div class="footer-sitemap-sub-category-list">
+								<a href="help.html" class="footer-sitemap-sub-category">Help</a>
+								<a href="about.html" class="footer-sitemap-sub-category">About Us</a>
+								<a href="contact.html" class="footer-sitemap-sub-category">Contact</a>
+								<a href="products.html" class="footer-sitemap-sub-category">Categories</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="col-tab-8 col-desk-8">
+					<div id="footer-right">
+						<ul>
+							<li><a href="help.html">Help</a></li>
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li><a href="products.html">Catagories</a>
+								<ul>
+									<li><a href="#">Gnomes</a></li>
+									<li><a href="#">Electrical</a></li>
+									<li><a href="#">Ornaments</a></li>
+									<li><a href="#">Rakes & Hoes</a></li>
+									<li><a href="#">Water Features</a></li>
+									<li><a href="#">Furniture</a></li>
+									<li><a href="#">Maintanence</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div> -->
+		</footer>
+		<!-- Javascript -->
+		<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javaScript" src="js/header.js"></script>
+	</body>
+
+</div>
+</html>
