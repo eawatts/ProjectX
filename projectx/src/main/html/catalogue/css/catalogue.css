@@ -129,20 +129,22 @@ body{
   display: inline-block;
   vertical-align: middle;
   align-items: center;
-  height: 100%
+  height: 100%;
+  width: auto;
   padding: 0px 0px 0px 0px;
+}
+#header-mobile .header-mobile-items-right {
+  /*float: right;*/
+  margin: auto;
+  align-self: center;
+
 }
 #header-mobile .nav-mobile-logo {
   max-width:40px;
   max-height: 40px;
 }
 #header-mobile .nav-banner-mobile-right-search {
-  width: 40%;
-  margin:auto;
-}
-#header-mobile .nav-banner-mobile-right-search-button {
-  width: 10%;
-  min-width: 25px;
+  width: 80%;
   margin:auto;
 }
 #header-mobile .nav-banner-mobile-right-button {
@@ -186,52 +188,62 @@ body{
 /* MOBILE NAVIGATION - END */
 
 /* FOOTER STYLING - START */
-#footer-left{
-  padding-top: 15px;
-  padding-right: 10px;
-  text-align: left;
+footer {
+  bottom: 0;
+  width: 100%;
+  background-color: #004425;
+  color: #F9FBF2;
 }
 footer a{
   color: #F9FBF2;
 }
-#footer-right{
-  text-align: right;
+.footer-social {
+  align-content: center;
+  text-align: left;
+  width: auto;
+  vertical-align: middle;
 }
-#footer-left a {
+.footer-social-icon {
   text-decoration: none;
   font-size: 35px;
 }
-#footer-centre {
-  padding-top: 15px;
+.footer-company-copyright {
+  text-decoration: none;
+  align-content: center;
+  text-align: right;
+  width: auto;
+  vertical-align: middle;
+  padding-top: 10px;
 }
-#footer-right a{
+.footer-separator {
+  color: #F9FBF2;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.footer-sitemap-list {
+  padding-left: 0px;
+  padding-top: 0px;
+  width: 100%;
+}
+.footer-sitemap-category {
+  list-style:none;
+  display: inline-block;
+  vertical-align: top;
+  width; 12%
+  margin: auto;
+  padding: 0px 10px 25px 10px;
+  text-align: left;
+}
+.footer-sitemap-category-header{
+  font-weight: bold;
   text-decoration: none;
 }
-#footer-right a:hover{
-  text-decoration: underline;
+.footer-sitemap-sub-category-list {
 }
-footer {
-  bottom: 0;
-  width: 100%;
-  text-align: right;
-  background-color: #004425;
-  color: #F9FBF2;
-}
-footer ul {
-  width:100%;
-  list-style:none;
-}
-footer ul li {
-  float:left;
-  width:150px;
-  font-weight:bold;
-}
-footer ul li ul {
-  padding:0;
-}
-footer ul li ul li {
-  float:none;
-  padding:5px 0;
-  font-weight:normal;
+.footer-sitemap-sub-category {
+  display: block;
+  text-decoration: none;
+  font-size: 90%;
 }
 /* FOOTER STYLING - END */
