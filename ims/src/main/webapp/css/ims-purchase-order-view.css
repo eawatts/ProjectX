@@ -1,0 +1,42 @@
+.div-table{
+  margin: auto;
+  display:table;         
+  width:auto;         
+  background-color:#eee;         
+  border:1px solid  #666666;         
+  border-spacing:5px;/*cellspacing:poor IE support for  this*/
+}
+.styled-select select {
+  background: transparent;
+  width: 240px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+}
+.header-row{
+  margin: auto;
+  display:table-row;
+  width: auto;
+  clear:both;
+  text-align: left;
+}
+.product-row{
+  margin: auto;
+  float:left;/*fix for  buggy browsers*/
+  display:table-row;                  
+  background-color:#ccc; 
+  padding-bottom: 10px;
+  border: 1px solid #666666;` 	
+}
+.main-content .page-title h2 {
+  text-align: center;
+}
+.purchase-order-col{
+  min-width: 300px;
+}
+.PO-button{
+  padding-left: 150px;
+}
