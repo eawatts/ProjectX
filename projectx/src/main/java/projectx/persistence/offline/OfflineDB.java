@@ -1,8 +1,5 @@
 package projectx.persistence.offline;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.ejb.Singleton;
 
 

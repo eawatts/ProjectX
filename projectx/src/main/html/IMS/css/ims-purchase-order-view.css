@@ -26,12 +26,17 @@
 .product-row{
   margin: auto;
   float:left;/*fix for  buggy browsers*/
-  display:inline-block;                  
+  display:table-row;                  
   background-color:#ccc; 
   padding-bottom: 10px;
   border: 1px solid #666666;` 	
 }
-.page-title h2{
-  margin: auto;
+.main-content .page-title h2 {
   text-align: center;
+}
+.purchase-order-col{
+  min-width: 300px;
+}
+.PO-button{
+  padding-left: 150px;
 }
