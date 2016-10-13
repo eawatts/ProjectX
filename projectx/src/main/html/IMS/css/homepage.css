@@ -52,3 +52,13 @@
   border-spacing:5px;/*cellspacing:poor IE support for  this*/
   Color: var(--raisin-black);
 }
+.headings{
+	display:inline-block;
+}
+.titleText{
+	background-color: var(--british-racing-green);
+	Color: var(--floral-white);
+	padding:0em 0.2em 0em 0.2em;
+	
+	
+}
