@@ -8,8 +8,8 @@ $(window).resize(function() {
   displayHeader();
 });
 
-// Will get the width of the window, and see if it is less that
-//  600px (Mobile Size), and will swap the navigation as fit.
+// Will get the width of the window, and see if it is less than
+//  992px (Mobile Size), and will swap the navigation as fit.
 function displayHeader() {
   if ($(window).width() <= 992){
     $("#nav-desktop").hide();
