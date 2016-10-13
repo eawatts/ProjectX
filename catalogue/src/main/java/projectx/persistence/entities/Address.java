@@ -2,12 +2,17 @@ package projectx.persistence.entities;
 
 import javax.persistence.*;
 
-@NamedQueries({ @NamedQuery(name = Address.FIND_BY_ID, query = "Select a FROM Address a WHERE a.id= : Aid"),
-		@NamedQuery(name = Address.FIND_BY_LINE1, query = "Select a FROM Address a WHERE a.line_1= : line_1"),
-		@NamedQuery(name = Address.FIND_BY_LINE2, query = "Select a FROM Address a WHERE a.line_2= : line_2"),
-		@NamedQuery(name = Address.FIND_BY_POSTCODE, query = "Select a FROM Address a WHERE a.postcode= : postcode"),
-		@NamedQuery(name = Address.INSERT_NEW_ADDRESS, query = "INSERT INTO Address (id, line_1, line_2, postcode) VALUES( :Aid, :line_1, :line_2, :postcode, :active)"),
-		@NamedQuery(name = Address.UPDATE_ACTIVE, query =  "UDATE Address  a SET a.active = :status WHERE a.id = :Aid")})
+@NamedQueries(
+	{
+			@NamedQuery(name = Address.FIND_BY_ID, query = "Select a FROM Address a WHERE a.id= : Aid"),
+			@NamedQuery(name = Address.FIND_BY_LINE1, query = "Select a FROM Address a WHERE a.line_1= : line_1"),
+			@NamedQuery(name = Address.FIND_BY_LINE2, query = "Select a FROM Address a WHERE a.line_2= : line_2"),
+			@NamedQuery(name = Address.FIND_BY_POSTCODE, query = "Select a FROM Address a WHERE a.postcode= : postcode"),
+			@NamedQuery(name = Address.INSERT_NEW_ADDRESS, query = "INSERT INTO Address (id, line_1, line_2, postcode) VALUES( :Aid, :line_1, :line_2, :postcode, :active)"),
+			@NamedQuery(name = Address.UPDATE_ACTIVE, query =  "UDATE Address  a SET a.active = :status WHERE a.id = :Aid")
+	}
+)
+
 @Entity
 @Table(name = "Address")
 public class Address {
@@ -105,5 +110,4 @@ public class Address {
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
-
 }

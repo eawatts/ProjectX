@@ -23,6 +23,4 @@ public class OfflineDB
 	{
 		OCDB = oCDB;
 	}
-	
-	
 }
