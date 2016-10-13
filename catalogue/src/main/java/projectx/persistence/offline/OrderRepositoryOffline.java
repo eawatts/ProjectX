@@ -12,7 +12,7 @@ public class OrderRepositoryOffline {
 	@Inject
 	private InitialData db;
 
-	public void persistOrder(Order order) {
+/*	public void persistOrder(Order order) {
 		db.addUser(user);
 	}
 
@@ -40,5 +40,5 @@ public class OrderRepositoryOffline {
 	@Override
 	public boolean checkPassword(String username, String password) {
 		return db.checkPassword(username, password);
-	}
+	}*/
 }
