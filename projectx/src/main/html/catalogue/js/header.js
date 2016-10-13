@@ -23,7 +23,7 @@ function displayHeader() {
 }
 
 jQuery(function($){
-  $(".mobile-nav-toggle").click(function(){
+  $(".button-burger-nav").click(function(){
     $(".button-burger-nav").toggleClass("button-burger-nav-selected");
     $(".mobile-nav-menu").slideToggle("slow", null);
   })
