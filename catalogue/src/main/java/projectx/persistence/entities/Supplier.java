@@ -5,7 +5,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @NamedQueries ({
-@NamedQuery (name = Supplier.FIND_BY_SUPPLIER_NAME, query = "SELECT s FROM Supplier s WHERE s.name = :Suppliername")
+@NamedQuery (name = Supplier.FIND_BY_SUPPLIER_NAME, query = "SELECT s FROM Supplier s WHERE s.name = :Suppliername"),
+@NamedQuery (name = Supplier.FIND_BY_SUPPLIER_ID, query = "SELECT s FROM Supplier s WHERE s.id = :Supplierid")
 }
 )
 
@@ -13,7 +14,7 @@ import javax.validation.constraints.Size;
 @Table(name= "Supplier")
 public class Supplier {
 	public static final String FIND_BY_SUPPLIER_NAME = "Supplier.findBySupplierName";
-	
+	public static final String FIND_BY_SUPPLIER_ID = "Supplier.findBySupplierId";
 	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
