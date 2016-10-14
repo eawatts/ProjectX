@@ -3,13 +3,13 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="../templates/catalogue_template.xhtml">
+
 	<?xml-stylesheet type="text/css" href="css/basket.css"?>
 	<ui:define name="title">Basket</ui:define>
 	<ui:define name="main-content">
 		<br />
-		</div>
 		<div>
-			<br>
+			<br />
 			<div class="row">
 				<div class="col-tab-12 col-desk-12">
 					<div class="page-title">
@@ -32,18 +32,22 @@
 			<ui:repeat>
 				<div class="row">
 					<div class="col-tab-2 col-desk-2">
+
 						<h:graphicImage value="http://placehold.it/140x100"/>
+
+						<h:graphicImage value="http://placehold.it/140x100" />
 					</div>
 					<div class="col-tab-6 col-desk-6">
 						<h:outputText escape="false"
 							value="No items currently in your basket"
 							rendered="#{user.basket.basketCount == 0" />
-						<h:panelGroup renedered="#{user.basket.basketCount > 0}">
+						<h:panelGroup renedered="#{user.basket.basketCount &gt; 0}">
 							<h:outputText
 								value="#{user.basket.getNextItem.productDescription}" />
+						</h:panelGroup>
 					</div>
 					<div class="col-tab-2 col-desk-2">
-						<input type="number" name="quantity">
+						<input type="number" name="quantity" />
 						<h:outputText value="#{user.basket.getNextItem.quantity}" />
 					</div>
 					<div class="col-tab-2 col-desk-2">
@@ -51,15 +55,17 @@
 					</div>
 				</div>
 			</ui:repeat>
-			<br>
+			<br />
 			<hr />
 			<div class="row">
 				<div class="col-tab-8 col-desk-8">
-					<h:graphicImage class="progress-bar" src="../assets/BasketProgress.JPG" />
+					<h:graphicImage class="progress-bar" value="../assets/BasketProgress.JPG" />
+					<h:graphicImage class="progress-bar" value="../assets/BasketProgress.JPG" />
+
 				</div>
 				<div class="col-tab-4 col-desk-4">
 					<div class="basket-bottom-right">
-						<h2>Subtotal</h2>
+						<h2>Sub-total</h2>
 						<p>price</p>
 						<button type="button">Proceed to checkout</button>
 						<button type="button">Continue Shopping</button>

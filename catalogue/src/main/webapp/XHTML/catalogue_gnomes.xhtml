@@ -5,6 +5,8 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:ui="http://java.sun.com/jsf/facelets"
 template="templates/main.xhtml">
 <meta charset="utf-8" />
+<?xml-stylesheet type="text/css" href="css/responsive2.css"?>
+<?xml-stylesheet type="text/css" href="css/catalogue.css"?>
 
 <ui:define name="title">
 	Gnomes
@@ -161,7 +163,9 @@ template="templates/main.xhtml">
 	  					</ui:repeat>
 					</div>
 			<br/>
+			<ui:define name="custom-scripts">
 		<script src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js'></script>
         <script src="js/flickity.js"></script>
+        </ui:define>
   </ui:define>
 </ui:composition>
