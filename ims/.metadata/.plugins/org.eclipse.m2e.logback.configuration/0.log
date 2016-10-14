@@ -1,0 +1,9 @@
+2016-10-14 14:31:51,264 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: xpedite:projectx:0.0.1-SNAPSHOT @ C:\Users\Administrator\git\eXpedite\ProjectX\catalogue\pom.xml.
+2016-10-14 14:31:53,136 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /projectx/src/main/java
+2016-10-14 14:31:53,137 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /projectx/src/main/resources
+2016-10-14 14:31:53,137 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /projectx/src/test/java
+2016-10-14 14:31:53,544 [Worker-4] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 4 sec
+2016-10-14 14:31:54,001 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-14 14:31:54,010 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 30 resources
+2016-10-14 14:31:54,032 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-14 14:31:54,033 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\git\eXpedite\ProjectX\catalogue\src\test\resources
