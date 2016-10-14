@@ -5,17 +5,17 @@
   xmlns:ui="http://java.sun.com/jsf/facelets" 
   template="ims_template.xhtml">
   <meta charset="utf-8"/>
-  <ui:define name="title">Create Purchase Order</ui:define>
+  <ui:define name="title">Edit Purchase Order</ui:define>
   <ui:define name="main-content">
       <div class="pageheading">
-        <h2> Create Purchase Order</h2>
+        <h2> Edit Purchase Order</h2>
       </div>
       <div class="Supplier Info">
-        Supplier ID: <input type="text" disabled="true" value="Supplier 1"/> <br/>
-        Supplier name: <input type="text" disabled="true" value="supplier suppliers!"/> <br/>
-        Approved/rejected: <input type="text" disabled="true" value="Rejected!"/> <br/>
-        Rejection Date: <input type="text" disabled="true" value="02/04/2016"/> <br/>
-        Status: <input type="text" disabled="true" value="Rejected"/>
+        Supplier ID: <input type="text" disabled="true" value="#{purchaseOrder.supplier.id}"/> <br/>
+        Supplier name: <input type="text" disabled="true" value="#{purchaseOrder.supplier.name}"/> <br/>
+        Approved/rejected: <input type="text" disabled="true" value="#{purchaseOrder.approved}"/> <br/>
+        Rejection Date: <input type="text" disabled="true" value="#{purchaseOrder.approvalDate}"/> <br/>
+        Status: <input type="text" disabled="true" value="#{purchaseOrder.status}"/>
         <br/>
       </div>
       <div class="poheaders">
@@ -46,25 +46,24 @@
             <div class="row">
               <div class="col-desk-2 col-tab-2">
                 <select name="productID">
-                  <ui:repeat var="product" value="#{products.dataModel}">
+                  <ui:repeat var="product" value="#{products.productIDs}">
                     <option value="#{product.id}"> <h:outputText escape="false" value="#{product.id}" /> </option>
                   </ui:repeat>
                 </select>
               </div>
               <div class="col-desk-2 col-tab-2">
-                <input type="text" disabled="true" value="Product A"/>
+                <input type="text" disabled="true" value="#{product.name}"/>
               </div>
               <div class="col-desk-2 col-tab-2">
-                <input type="number" name ="quantity" min="0" max="999"/>
+                <input type="number" name ="quantity" min="1" max="#{product.stocklevel}"/>
               </div>
               <div class="col-desk-2 col-tab-2">
-                <input type="text" disabled="true" value="100000" /> 
+                <input type="text" disabled="true" value="#{product.stocklevel}" /> 
               </div>
               <div class="col-desk-2 col-tab-2">
-                <input type="text" disabled="true" value="Delivered" /> 
+                <input type="text" disabled="true" value="#{product.status}" /> 
               </div>
               <div class="col-desk-2 col-tab-2">
-                <input type="checkbox" name="confirm" checked="true" />
               </div>
             </div>
           </div>
