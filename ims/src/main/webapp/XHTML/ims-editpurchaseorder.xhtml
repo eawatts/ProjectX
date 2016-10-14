@@ -1,0 +1,95 @@
+<ui:composition 
+  xmlns="https://www.w3.org/1999/xhtml" 
+  xmlns:f="http://java.sun.com/jsf/core" 
+  xmlns:h="http://java.sun.com/jsf/html" 
+  xmlns:ui="http://java.sun.com/jsf/facelets" 
+  template="ims_template.xhtml">
+  <meta charset="utf-8"/>
+  <ui:define name="title">Create Purchase Order</ui:define>
+  <ui:define name="main-content">
+      <div class="pageheading">
+        <h2> Create Purchase Order</h2>
+      </div>
+      <div class="Supplier Info">
+        Supplier ID: <input type="text" disabled="true" value="Supplier 1"/> <br/>
+        Supplier name: <input type="text" disabled="true" value="supplier suppliers!"/> <br/>
+        Approved/rejected: <input type="text" disabled="true" value="Rejected!"/> <br/>
+        Rejection Date: <input type="text" disabled="true" value="02/04/2016"/> <br/>
+        Status: <input type="text" disabled="true" value="Rejected"/>
+        <br/>
+      </div>
+      <div class="poheaders">
+        <div class="row">
+          <div class="col-desk-2 col-tab-2">
+            Product ID
+          </div>
+          <div class="col-desk-2 col-tab-2">
+            Name
+          </div>
+          <div class="col-desk-2 col-tab-2">
+            Quantity
+          </div>
+          <div class="col-desk-2 col-tab-2">
+            Current Stock
+          </div>
+          <div class="col-desk-2 col-tab-2">
+            Supplier
+          </div>
+          <div class="col-desk-2 col-tab-2">
+            Confirm
+          </div>
+        </div>
+      </div>
+      <form>
+        <div class="poItems">
+          <div class="poitem">
+            <div class="row">
+              <div class="col-desk-2 col-tab-2">
+                <select name="productID">
+                  <option value="ProductA">ProductA</option>
+                  <option value="ProductB">ProductB</option>
+                  <option value="ProductC">ProductC</option>
+                  <option value="ProductD">ProductD</option>
+                  <option value="ProductE">ProductE</option>
+                  <option value="ProductF">ProductF</option>
+                  <option value="ProductG">ProductG</option>
+                  <option value="ProductH">ProductH</option>
+                  <option value="ProductI">ProductI</option>
+                  <option value="ProductJ">ProductJ</option>
+                </select>
+              </div>
+              <div class="col-desk-2 col-tab-2">
+                <input type="text" disabled="true" value="Product A"/>
+              </div>
+              <div class="col-desk-2 col-tab-2">
+                <input type="number" name ="quantity" min="0" max="999"/>
+              </div>
+              <div class="col-desk-2 col-tab-2">
+                <input type="text" disabled="true" value="100000" /> 
+              </div>
+              <div class="col-desk-2 col-tab-2">
+                <input type="text" disabled="true" value="Delivered" /> 
+              </div>
+              <div class="col-desk-2 col-tab-2">
+                <input type="checkbox" name="confirm" checked="true" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <br/>
+      </form>
+      <div class="Controls">
+        <div class="add-generatePO">
+          <div class="row">
+            <div class="col-desk-6 col-tab-6">
+            </div>
+
+            <div class="col-desk-6 col-tab-6">
+              <button name="createPO"> Create New Purchase Order </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <br/>
+  </ui:define>
+</ui:composition>
