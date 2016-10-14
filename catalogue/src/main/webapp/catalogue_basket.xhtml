@@ -2,9 +2,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="../templates/catalogue_template.xhtml">
+	template="templates/catalogue_template.xhtml">
 
-	<?xml-stylesheet type="text/css" href="css/basket.css"?>
+	<?xml-stylesheet type="text/css" href="css/catalogue_basket.css"?>
 	<ui:define name="title">Basket</ui:define>
 	<ui:define name="main-content">
 		<br />
@@ -18,7 +18,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-tab-2 col-desk-2"></div>
+				<div class="col-tab-2 col-desk-2"><p></p></div>
 				<div class="col-tab-6 col-desk-6">
 					<h2>Product Description</h2>
 				</div>
@@ -33,9 +33,8 @@
 				<div class="row">
 					<div class="col-tab-2 col-desk-2">
 
-						<h:graphicImage value="http://placehold.it/140x100" />
+						<h:graphicImage value="#{user.basket.getNextItem.productImage}" />
 
-						<h:graphicImage value="http://placehold.it/140x100" />
 					</div>
 					<div class="col-tab-6 col-desk-6">
 						<h:outputText escape="false"
@@ -59,18 +58,17 @@
 			<hr />
 			<div class="row">
 				<div class="col-tab-8 col-desk-8">
-					<h:graphicImage class="progress-bar"
-						value="../assets/BasketProgress.JPG" />
-					<h:graphicImage class="progress-bar"
-						value="../assets/BasketProgress.JPG" />
-
+					<p>
+						<h:graphicImage class="progress-bar"
+						value="#{user.basket.checkoutProgress}" />
+					</p>
 				</div>
 				<div class="col-tab-4 col-desk-4">
 					<div class="basket-bottom-right">
 						<h2>Sub-total</h2>
 						<p>price</p>
-						<button type="button">Proceed to checkout</button>
-						<button type="button">Continue Shopping</button>
+						<button type="button" class="button-green">Proceed to checkout</button>
+						<button type="button" class="button-green">Continue Shopping</button>
 					</div>
 				</div>
 			</div>
