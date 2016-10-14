@@ -1,7 +1,59 @@
-<ui:composition 
-xmlns="https://www.w3.org/1999/xhtml"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:ui="http://java.sun.com/jsf/facelets"
-template="ims_template.xhtml">
+<ui:composition xmlns="https://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" template="ims_template.xhtml">
     <link data-brackets-id='46830' rel="stylesheet" type="text/css" href="../css/ims-products-style.css">
+    <meta charset="utf-8" />
+    <ui:define name="title">Products</ui:define>
+    <ui:define name="maincontent">
+        <div class="main-content">
+            <div class="page-title">
+                <h2>Product List</h2></div>
+            <div class="div-table">
+                <div class="header-row">
+                    <div class="col-tab-1 col-desk-1">Product ID</div>
+                    <div class="col-tab-1 col-desk-1">Name</div>
+                    <div class="col-tab-1 col-desk-1">Current Stock</div>
+                    <div class="col-tab-1 col-desk-1">Low Limit</div>
+                    <div class="col-tab-5 col-desk-5">Description</div>
+                    <div class="col-tab-2 col-desk-2">Suppliers</div>
+                </div>
+            </div>
+            <ui:repeat var="product" value="#{products.productList}">
+                <div class="product-row">
+                    <div class="row">
+                        <div class="col-tab-1 col-desk-1">
+                            <p>
+                                <h:outputText value="#{product.id}" />
+                            </p>
+                        </div>
+                        <div class="col-tab-1 col-desk-1">
+                            <p>
+                                <h:outputText value="#{product.name}" />
+                            </p>
+                        </div>
+                        <div class="col-tab-1 col-desk-1">
+                            <p>
+                                <h:outputText value="#{product.currentstock}" />
+                            </p>
+                        </div>
+                        <div class="col-tab-1 col-desk-1">
+                            <p>
+                                <h:outputText value="#{product.lowlimit}" />
+                            </p>
+                        </div>
+                        <div class="col-tab-5 col-desk-5">
+                            <p>
+                                <h:outputText value="#{product.description}" />
+                            </p>
+                        </div>
+                        <div class="col-tab-2 col-desk-2">
+                            <div class="styled-select"> 
+                            <ui:repeat var="supplier" value="#{product.supplierlist}">
+                                <option value="#{supplier.name}"></option>
+                                </ui:repeat>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:repeat>
+        </div>
+    </ui:define>
+</ui:composition>
