@@ -7,10 +7,10 @@ template="ims_template.xhtml">
 <link href="css/login.css" rel="stylesheet" type="text/css" />
 	
 	<meta charset="utf-8" />
-	<ui: definename="title">Login</ui:define>
-	<ui: definename="maincontent">
+	<ui:define name ="title">Login</ui:define>
+	<ui:define name="maincontent">
 		<div class="main-content">
-			<div class=breadcrumbs>
+			<div class="breadcrumbs">
 					<a href="ims_homepage.html">Home</a> > <a href="ims_login.html">Login</a>
 				</div>
 				<div class="row">
@@ -30,7 +30,7 @@ template="ims_template.xhtml">
 									Username <h:inputText type="email" class="form-control" action="#{login.email}" required="true" requiredMessage="Please Enter Email"></h:inputText> 
 									Password <h:inputSecret class="form-control" value="#{login.password}" type="password" required= "true" requiredMessage="Please Enter Password"></h:inputSecret>
 									<hr />
-									<h: commandButton class="submit-button" type="submit" action="#l{ogin.loginToAccount}" value="Sign in"></h: commandButton> 
+									<h:commandButton class="submit-button" type="submit" action="#l{ogin.loginToAccount}" value="Sign in"></h:commandButton> 
 								</form>
 							</div>
 							<br/>
@@ -38,4 +38,5 @@ template="ims_template.xhtml">
 					</div>
 				</div>	
 		</div>
-	</ui:definename>
+		</ui:define>
+</ui:composition>		
