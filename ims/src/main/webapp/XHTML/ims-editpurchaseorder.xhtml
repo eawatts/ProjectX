@@ -40,22 +40,15 @@
           </div>
         </div>
       </div>
-      <form>
+      <h:form>
         <div class="poItems">
           <div class="poitem">
             <div class="row">
               <div class="col-desk-2 col-tab-2">
                 <select name="productID">
-                  <option value="ProductA">ProductA</option>
-                  <option value="ProductB">ProductB</option>
-                  <option value="ProductC">ProductC</option>
-                  <option value="ProductD">ProductD</option>
-                  <option value="ProductE">ProductE</option>
-                  <option value="ProductF">ProductF</option>
-                  <option value="ProductG">ProductG</option>
-                  <option value="ProductH">ProductH</option>
-                  <option value="ProductI">ProductI</option>
-                  <option value="ProductJ">ProductJ</option>
+                  <ui:repeat var="product" value="#{products.dataModel}">
+                    <option value="#{product.id}"> <h:outputText escape="false" value="#{product.id}" /> </option>
+                  </ui:repeat>
                 </select>
               </div>
               <div class="col-desk-2 col-tab-2">
@@ -77,7 +70,7 @@
           </div>
         </div>
         <br/>
-      </form>
+      </h:form>
       <div class="Controls">
         <div class="add-generatePO">
           <div class="row">
