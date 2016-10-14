@@ -6,19 +6,15 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
-@Table(name = "order")
+@Table(name = "Order")
 
-
-@NamedQueries ({
-	@NamedQuery(name ="Order.findByOrderType" , query = "Select o FROM Order o  WHERE o.orderType= :orderType"),
-	@NamedQuery(name="Order.findByUser", query ="Select o FROM Order o Join user u WHERE o.user= :user  "),
-	@NamedQuery(name="Order.findByOrderDate", query ="Select o deliveryDate FROM Order o WHERE o.orderDate= :orderDate"),
-
-})
-
-
-
-
+@NamedQueries (
+	{
+		@NamedQuery(name ="Order.findByOrderType" , query = "Select o FROM Order o  WHERE o.orderType= :orderType"),
+		@NamedQuery(name="Order.findByUser", query ="Select o FROM Order o Join user u WHERE o.user= :user  "),
+		@NamedQuery(name="Order.findByOrderDate", query ="Select o deliveryDate FROM Order o WHERE o.orderDate= :orderDate"),
+	}
+)
 
 
 public class Order {
