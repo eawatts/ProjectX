@@ -1,10 +1,10 @@
 package projectx.controllers;
 
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
-//@Named("testing")
-//@SessionScoped
+@Named("testing")
+@RequestScoped
 public class TestingController {
 	
 	private String testMessage = "This is a test message";
