@@ -14,26 +14,15 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-
-/**
- * 
- * @author Ed Watts
- * 
- * Named queries to find entries in the database
- *
- */
-@NamedQueries({
-	@NamedQuery(name = Review.VIEW_ALL,
-				query = "SELECT r FROM Review r"),
-	@NamedQuery(name = Review.VEIW_USER_ID,
-				query = "SELECT r.user_id FROM Review r"), 
-	@NamedQuery(name = Review.FIND_BY_USER_ID,
-				query = "SELECT r.user_id FROM Review r WHERE r.user_id = :user_id"),
-	@NamedQuery(name = Review.PERSIST_REVIEW,
-				query = ""),
-	@NamedQuery(name = Review.PERSIST_REVIEWS,
-				query = ""),
-})
+@NamedQueries(
+	{
+		@NamedQuery(name = Review.VIEW_ALL,	query = "SELECT r FROM Review r"),
+		@NamedQuery(name = Review.VEIW_USER_ID,	query = "SELECT r.user_id FROM Review r"), 
+		@NamedQuery(name = Review.FIND_BY_USER_ID, query = "SELECT r.user_id FROM Review r WHERE r.user_id = :user_id"),
+		@NamedQuery(name = Review.PERSIST_REVIEW, query = ""),
+		@NamedQuery(name = Review.PERSIST_REVIEWS, query = ""),
+	}
+)
 
 @Table(name = "Review")
 public class Review {

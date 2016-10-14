@@ -9,8 +9,7 @@ import projectx.persistence.entities.Category;
 
 @Stateless
 @Default
-public interface CategoryRepository
-{
+public interface CategoryRepository {
 	
 	public void persistCategory(Category category);
 	public void persistCategories(List<Category> categories);

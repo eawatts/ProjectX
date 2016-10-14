@@ -1,18 +1,12 @@
 package projectx.persistence.offline;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
-import projectx.persistence.entities.Order;
-import projectx.persistence.repositories.interfaces.OrderRepository;
 
 public class OrderRepositoryOffline {
 	
-	@Inject
-	private InitialData db;
+	//@Inject
+	//private InitialData db;
 
-	public void persistOrder(Order order) {
+/*	public void persistOrder(Order order) {
 		db.addUser(user);
 	}
 
@@ -40,5 +34,5 @@ public class OrderRepositoryOffline {
 	@Override
 	public boolean checkPassword(String username, String password) {
 		return db.checkPassword(username, password);
-	}
+	}*/
 }

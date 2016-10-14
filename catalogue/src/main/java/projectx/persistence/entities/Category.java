@@ -2,20 +2,18 @@ package projectx.persistence.entities;
 
 import javax.persistence.*;
 
-/**
- * @author DanielH
- *
- */
 @Entity
 @Table(name = "Category")
 @NamedQueries(
-{ 
-	@NamedQuery(name = Category.FIND_BY_ID, query = "SELECT c FROM category c WHERE c.id = :id"),
-	@NamedQuery(name = Category.FIND_BY_NAME, query = "SELECT c FROM category c WHERE c.name = :name"),
-	@NamedQuery(name = Category.FIND_ALL, query = "SELECT c FROM category c WHERE c.id = :id"),
-	@NamedQuery(name = Category.INSERT_CATEGORY, query = "INSERT INTO category c (id, name) VALUES(:id, :name)"),
-	@NamedQuery(name = Category.UPDATE_CATEGORY, query = "UPDATE category c SET c.id=:newid, c.name=:newname WHERE c.id =:id")
-})
+	{ 
+		@NamedQuery(name = Category.FIND_BY_ID, query = "SELECT c FROM category c WHERE c.id = :id"),
+		@NamedQuery(name = Category.FIND_BY_NAME, query = "SELECT c FROM category c WHERE c.name = :name"),
+		@NamedQuery(name = Category.FIND_ALL, query = "SELECT c FROM category c WHERE c.id = :id"),
+		@NamedQuery(name = Category.INSERT_CATEGORY, query = "INSERT INTO category c (id, name) VALUES(:id, :name)"),
+		@NamedQuery(name = Category.UPDATE_CATEGORY, query = "UPDATE category c SET c.id=:newid, c.name=:newname WHERE c.id =:id")
+	}
+)
+
 public class Category
 {
 	public static final String FIND_BY_ID = "Category.findByID";
