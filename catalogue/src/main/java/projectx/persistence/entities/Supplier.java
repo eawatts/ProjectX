@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name= "Supplier")
 public class Supplier {
-	public static final String FIND_BY_PRODUCT_SUPPLIER = "Supplier.findBySupplierName";
+	public static final String FIND_BY_SUPPLIER_NAME = "Supplier.findBySupplierName";
 	
 	@Id
 	@Column(name="id")
