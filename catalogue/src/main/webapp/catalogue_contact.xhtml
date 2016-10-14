@@ -1,53 +1,52 @@
-<ui:composition
-	xmlns="https://www.w3.org/1999/xhtml"
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="../templates/catalogue_template.xhtml">
-	
+	template="templates/catalogue_template.xhtml">
+
 	<?xml-stylesheet type="text/css" href="css/about.css"?>
 	<?xml-stylesheet href="css/catalogue.css" type="text/css" ?>
 	<?xml-stylesheet href="css/contact.css" type="text/css" ?>
 	<?xml-stylesheet type="text/css" href="css/responsive.css"?>
 	<meta charset="ISO-8859-1" />
 	<ui:define name="title">Contact Us</ui:define>
-	<ui:define name="maincontent">
+	<ui:define name="main-content">
 
-	<div>
-		<div class=row>
-			<div class="col-tab-12 col-desk-12">
-				<article class=mainContent>
-					<div id=Title>
-						<h1>Customer Contact us</h1>
-					</div>
-					<div class=description>
-						<p>
-							Please complete the form below or call us on <b>07853958438</b>
-						</p>
-						<p>We will try our very best to answer your email within 48
-							hours</p>
-					</div>
-					<hr />
-					<div>
-						<h2 id=formTitle>Query info</h2>
-					</div>
-					<div id=contactFormWrapper class=contactForm>
-						<form action="createQuery.js" class=formContent>
-							<div class=inputs>
-								<label for=name>Name:</label> <input type=text id=name><br>
-								<label for=email>email:</label> <input type=text id=email> <br> 
-								<label for=contact>Contact:</label><input type=text id=contact><br> 
-								<label for=query>Query:</label><input type=text id=query><br>
-							</div>
-							<br />
-							<div class=button>
-								<input type=submit name=createQuery>
-							</div>
-						</form>
-					</div>
-				</article>
+		<div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<article class="mainContent">
+						<div id="Title">
+							<h1>Customer Contact us</h1>
+						</div>
+						<div class="description">
+							<p>
+								Please complete the form below or call us on <b>07853958438</b>
+							</p>
+							<p>We will try our very best to answer your email within 48
+								hours</p>
+						</div>
+						<hr />
+						<div>
+							<h2 id="formTitle">Query info</h2>
+						</div>
+						<div id="contactFormWrapper" class="contactForm">
+							<form action="createQuery.js" class="formContent">
+								<div class="inputs">
+									<label for="name">Name:</label> <input type="text" id="name" /><br /><br/>
+									<label for="email">Email:</label> <input type="text" id="email" /><br /><br/>
+									<label for="contact">Contact:</label><input type="text" id="contact" /><br /> <br/>
+									<label for="query">Query:</label><input type="text" id="query" /><br /><br/>
+								</div>
+								<br />
+								<div class="button">
+									<input type="submit" name="createQuery" class="button-green"/>
+								</div>
+							</form>
+						</div>
+					</article>
+				</div>
 			</div>
 		</div>
-	</div>
 	</ui:define>
 </ui:composition>
