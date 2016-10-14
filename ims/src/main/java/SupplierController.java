@@ -1,5 +1,9 @@
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
-public abstract class SupplierHelper {
+@Named("suppliers")
+@SessionScoped
+public class SupplierController {
 	private int supplierID;
 	private String name;
 	private String addressLine1;
