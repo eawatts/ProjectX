@@ -33,15 +33,15 @@
 				<div class="row">
 					<div class="col-tab-2 col-desk-2">
 
-						<h:graphicImage value="http://placehold.it/140x100"/>
+						<h:graphicImage value="http://placehold.it/140x100" />
 
 						<h:graphicImage value="http://placehold.it/140x100" />
 					</div>
 					<div class="col-tab-6 col-desk-6">
 						<h:outputText escape="false"
 							value="No items currently in your basket"
-							rendered="#{user.basket.basketCount == 0" />
-						<h:panelGroup renedered="#{user.basket.basketCount &gt; 0}">
+							rendered="#{user.basket.basketCount == 0}" />
+						<h:panelGroup renedered="#{user.basket.basketCount > 0}">
 							<h:outputText
 								value="#{user.basket.getNextItem.productDescription}" />
 						</h:panelGroup>
@@ -59,8 +59,10 @@
 			<hr />
 			<div class="row">
 				<div class="col-tab-8 col-desk-8">
-					<h:graphicImage class="progress-bar" value="../assets/BasketProgress.JPG" />
-					<h:graphicImage class="progress-bar" value="../assets/BasketProgress.JPG" />
+					<h:graphicImage class="progress-bar"
+						value="../assets/BasketProgress.JPG" />
+					<h:graphicImage class="progress-bar"
+						value="../assets/BasketProgress.JPG" />
 
 				</div>
 				<div class="col-tab-4 col-desk-4">
