@@ -27,32 +27,34 @@ template="ims_template.xhtml">
 									<div class="col-tab-2 col-desk-2">Phone Number</div>
 								</div>
 							</div>
-							<div class="product-row">
-								<div class="row">
-									<div class="col-tab-1 col-desk-1">
-										<h:outputText value="#{suppliers.supplier.id}"></h:outputText>
-									</div>
-									<div class="col-tab-2 col-desk-2">
-										<h:outputText value="#{suppliers.supplier.name}"></h:outputText>
-									</div>
-									<div class="col-tab-1 col-desk-1">
-										<h:outputText value="#{suppliers.supplier.addressLine1}"></h:outputText>
-									</div>
-									<div class="col-tab-2 col-desk-2">
-										<h:outputText value="#{suppliers.supplier.addressLine2}"></h:outputText>
-									</div>
-									<div class="col-tab-3 col-desk-3">
-										<h:outputText value="#{suppliers.supplier.postcode}"></h:outputText>
-									</div>
-									<div class="col-tab-2 col-desk-2">
-										<h:outputText value="#{suppliers.supplier.phone}"></h:outputText>
-									</div>
-									<div class="col-tab-1 col-desk-1">
-										<button id="editP" type="button"
-											onclick="location.href='#popup1'">Edit</button>
+							<ui:repeat var="supplier" value="#{suppliers.dataModel}">
+								<div class="product-row">
+									<div class="row">
+										<div class="col-tab-1 col-desk-1">
+											<h:outputText value="#{suppliers.supplier.id}"></h:outputText>
+										</div>
+										<div class="col-tab-2 col-desk-2">
+											<h:outputText value="#{suppliers.supplier.name}"></h:outputText>
+										</div>
+										<div class="col-tab-1 col-desk-1">
+											<h:outputText value="#{suppliers.supplier.addressLine1}"></h:outputText>
+										</div>
+										<div class="col-tab-2 col-desk-2">
+											<h:outputText value="#{suppliers.supplier.addressLine2}"></h:outputText>
+										</div>
+										<div class="col-tab-3 col-desk-3">
+											<h:outputText value="#{suppliers.supplier.postcode}"></h:outputText>
+										</div>
+										<div class="col-tab-2 col-desk-2">
+											<h:outputText value="#{suppliers.supplier.phone}"></h:outputText>
+										</div>
+										<div class="col-tab-1 col-desk-1">
+											<button id="editP" type="button"
+												onclick="location.href='#popup1'">Edit</button>
+										</div>
 									</div>
 								</div>
-							</div>
+							</ui:repeat>
 						</div>
 						<button id="add" type="button" onclick="location.href='#popup2'">Add</button>
 						<div id="popup2" class="overlay">
@@ -79,7 +81,8 @@ template="ims_template.xhtml">
 											action="#{suppliers.supplier.phone}" required="true"
 											requiredMessage="Please Enter Phone Number"></h:inputText>
 										<h:commandButton class="submit-button" type="submit"
-											action="#{Suppliers.createSupplier}" value="Create Supplier"></h:commandButton>
+											action="#{Suppliers.createSupplier}" value="Create Supplier">
+										</h:commandButton>
 									</h:form>
 								</div>
 							</div>
