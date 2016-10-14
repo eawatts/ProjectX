@@ -4,7 +4,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/main.xhtml">
 
-	<link rel="stylesheet" type="text/css" href="css/contact.css">
+	<?xml-stylesheet type="text/css" href="css/contact.css"?>
 	<meta charset="ISO-8859-1" />
 	<ui:define name="title">Contact - Customer</ui:define>
 	<ui:define name="maincontent">
@@ -46,7 +46,8 @@
 								</div>
 								<br />
 								<div class="button">
-									<input type="submit" name="createQuery" onclick=="#{search.search()}">
+									<input type="submit" name="createQuery"
+										onclick="#{search.search()}" />
 								</div>
 							</form>
 						</div>

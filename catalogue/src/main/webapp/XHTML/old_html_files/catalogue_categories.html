@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <div id="container">
 
@@ -6,10 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 	<title>NB Gardens</title>
 	<!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css"/>
-	<link rel="stylesheet" type="text/css" href="css/responsive.css"/>
-	<link rel="stylesheet" type="text/css" href="css/catalogue.css"/>
-	<link rel="stylesheet" type="text/css" href="css/feedback.css"/>
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/catalogue.css">
+	<link rel="stylesheet" type="text/css" href="css/categories.css">
+	<link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
 	<!-- This adds the small icon in the browser tab. -->
 	<link rel="icon" type="image/x-icon" href="../assets/nb_favicon.png">
 	<!-- This is required to add the small icons, such as the basket etc. -->
@@ -32,12 +32,12 @@
 							<img class="nav-logo" src="../assets/nb_logo.png"/>
 						</div>
 						<div class="col-tab-6 col-desk-6 nav-banner-centre">
-							<input type="search" class="nav-banner-right-search searchbox-brown" name="searchbar">
-							<button type="button" class="button-green-inverse nav-banner-right-search-button"><i class="fa fa-search"></i></button>
+							<input type="search" class="nav-banner-right-search" name="searchbar">
+							<button type="button" class="nav-banner-right-search-button"><i class="fa fa-search"></i></button>
 						</div>
 						<div class="col-tab-3 col-desk-3 nav-banner-right">
-							<button type="button" class="button-green-inverse nav-banner-right-button">Basket <i class="fa fa-shopping-basket"></i></button>
-							<button type="button" class="button-green-inverse nav-banner-right-button">Login <i class="fa fa-user"></i></button>
+							<button type="button" class="nav-banner-right-button">Basket <i class="fa fa-shopping-basket"></i></button>
+							<button type="button" class="nav-banner-right-button">Login <i class="fa fa-user"></i></button>
 						</div>
 					</div>
 
@@ -61,9 +61,9 @@
 						<div class="mobile-nav">
 							<div class="mobile-nav-toggle">
 								<div></div>
-								<span class="mobile-nav-toggle-burger"></span>
-								<span class="mobile-nav-toggle-burger"></span>
-								<span class="mobile-nav-toggle-burger"></span>
+								<span></span>
+								<span></span>
+								<span></span>
 							</div>
 							<div class="mobile-nav-menu">
 								<ul>
@@ -157,79 +157,144 @@
 	</header>
 
 		<!-- This is the content of the actual page. -->
-		<div class="main-content">
+		<div id=content-main>
 			<br/>
-			<h2>Feedback</h2>
+				<section>
+				<div name=breadcrumb>
+					<ul class="breadcrumb">
+			   			<a href="catalogue_index.html">Home </a>
+			       		<a href="catalogue_userAccount.html">/ Categories</a>
+			       	</ul>
+				</div>
+				<h2>
+			   			Categories
+				</h2>
 
-			<div class="feedback">
-				<div class="row">
-					<div class="col-desk-2">
-						<div class="productimage">
-						<img class="nav-logo" src="../assets/nb_logo.png"/>
+				<div class=row>
+					<div class="col-tab-6 col-desk-4" >
+					<div class="box">
+						<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Gnomes</button>
+						<div class="panel">
+							<p>
+								<a href="catalogue_seasonal.html">Seasonal</a><br/>
+								<a href="catalogue_themed.html">Themed</a><br/>
+								<a href="catalogue_novelty.html">Novelty</a><br/>
+								<a href="catalogue_classic.html">Classic</a><br/>
+								<a href="catalogue_gnomeCare.html">Gnome Care</a><br/>
+							</p>
 						</div>
 					</div>
-					<div class="col-desk-10">
-						<div class="productdescription">
-						Product Name: Lorem Ipsum <br>
-						Product Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+					</div>
+					<div class="col-tab-6 col-desk-4" >
+					<div class="box">
+						<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Electrical</button>
+						<div class="panel">
+							<p>
+								<a href="catalogue_lighting.html">Lighting</a><br/>
+								<a href="catalogue_heaters.html">Heaters</a><br/>
+								<a href="catalogue_hotTubs.html">Hot Tubs</a><br/>
+								<a href="catalogue_bbqs.html">BBQs</a><br/>
+								<a href="catalogue_misc.html">Misc</a><br/>
+							</p>
+						</div>
+					</div>
+					</div>
+						<div class="col-tab-6 col-desk-4" >
+						<div class="box">
+						<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Ornaments</button>
+						<div class="panel">
+							<p>
+								<a href="catalogue_animal.html">Animal</a><br/>
+								<a href="catalogue_windChimes.html">Wind Chimes</a><br/>
+								<a href="catalogue_weatherVanes.html">Weather Vanes</a><br/>
+								<a href="catalogue_pots.html">Pots</a><br/>
+							</p>
+						</div>
+					</div>
+					</div>
+					<div class="col-tab-6 col-desk-4" >	
+					<div class="box">
+					<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Rakes and Hoes</button>
+						<div class="panel">
+							<p>
+								<a href="catalogue_rakes.html">Rakes</a><br/>
+								<a href="catalogue_hoes.html">Hoes</a><br/>
+								<a href="catalogue_spadesAndForks.html">Spades and Forks</a><br/>
+								<a href="catalogue_Trowels.html">Trowels</a><br/>
+							</p>
+						</div>
+					</div>
+					</div>
+					<div class="col-tab-6 col-desk-4" >
+					<div class="box">
+					<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Water Features</button>
+						<div class="panel">
+							<p>
+								<a href="catalogue_ponds.html">Ponds</a><br/>
+								<a href="catalogue_pumps.html">Pumps</a><br/>
+								<a href="catalogue_pipes.html">Pipes</a><br/>
+								<a href="catalogue_fountains.html">Fountains</a><br/>
+							</p>
+						</div>
+					</div>
+					</div>
+					<div class="col-tab-6 col-desk-4" >	
+					<div class="box">
+					<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Furniture</button>
+						<div class="panel">
+							<p>
+								<a href="catalogue_tablesAndChairs.html">Tables and Chairs</a><br/>
+								<a href="catalogue_benches.html">Benches</a><br/>
+								<a href="catalogue_hammocks.html">Hammocks</a><br/>
+								<a href="catalogue_swinging.html">Swinging</a><br/>
+								<a href="catalogue_birdHouses.html">Bird Houses</a><br/>
+							</p>
+						</div>
+					</div>
+					</div>
+					<div class="col-tab-6 col-desk-4" >	
+					<div class="box">
+					<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Maintenance</button>
+						<div class="panel">
+							<p>
+								<a href="catalogue_mowers.html">Mowers</a><br/>
+								<a href="catalogue_strimmers.html">Strimmers</a><br/>
+								<a href="catalogue_feedAndWeed.html">Feed and Weed</a><br/>
+								<a href="catalogue_secateurs.html">Secateurs</a><br/>
+							</p>
 						</div>
 					</div>
 				</div>
-				<form>
-					<div id="feedbackinfo">
-						<div class="row">
-							<div class="col-desk-1">
-							Rating:
-							</div>
+				</div>
 
-							<div class="col-desk-1">
-								<select name="stars">
-								    <option value="1"> * </option>
-								    <option value="2"> ** </option>
-								    <option value="3"> *** </option>
-								    <option value="4"> **** </option>
-								    <option value="5"> ***** </option>
-								 </select> 
-							</div>
+				<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
 
-							<div class="col-desk-10">
-							</div>
-						</div>
-						<br>
-						<div class="row">
-							<div class="col-desk-12">
-							 	Feedback:
-							 	<div class="feedbackbox">
-							 		<textarea name="feedbackdescription" rows="10" cols="60"></textarea>
-							 	</div>
-							</div>
-						</div>
-						<br>
-						<div class="row">
-							<div class="col-desk-1">
-								Recommend?
-							</div>
-							<div class="col-desk-1">
-								<input type="radio" name="recommend" value="yes" checked> Yes
-							</div>
-							<div class="col-desk-1">
-								<input type="radio" name="recommend" value="no"> No
-							</div>
-							<div class="col-desk-8">
-							</div>
-							<div class="col-desk-1">
-								<input type="submit">
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+</script>
+			  <div>
+			  <br/>
+			  </div>
+		  </section>
 
 			<br/>
 		</div>
 
 		<!-- This is the green footer along the bottom of each page. -->
-		</body>
+		<br>
 		<br/>
 		<footer>
 			<div class="row">
