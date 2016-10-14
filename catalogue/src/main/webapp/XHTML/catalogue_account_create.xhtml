@@ -4,14 +4,13 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="../templates/catalogue_template.xhtml">
 
-	<?xml-stylesheet type="text/css" href="css/create_account.css"?>
-	<meta charset="ISO-8859-1" />
+	<?xml-stylesheet type="text/css" href="css/catalogue_create_account.css"?>
 	<ui:define name="title">Create Account</ui:define>
 
-	<ui:define name="maincontent">
+	<ui:define name="main-content">
 		<div>
 			<div id="createaccountheading">
-				<h2>Create Account</h2>
+				<h1>Create Account</h1>
 			</div>
 			<div id="userInfo">
 				<h2>User Info</h2>
@@ -28,13 +27,13 @@
 							<option value="Duke">Duke</option>
 							<option value="Duchess">Duchess</option>
 							<option value="HRH">HRH</option>
-						</select> <br>
-						<br> Email: 
-						<input type="text" name="email" /><br>
-						<br> First Name: 
+						</select> <br/>
+						<br/> Email: 
+						<input type="text" name="email" /><br/>
+						<br/> First Name: 
 						<input type="text" name="firstname" /><br /> <br /> Last Name: <input
 							type="text" name="lastname" /><br /> <br /> Age: <input
-							type="text" name="age" /> Bio: <br /> <br /> <input type="text"
+							type="text" name="age" /><br/> <br /> Bio:  <input type="text"
 							name="bio" /><br /> <br />
 					</div>
 					<hr />
@@ -53,7 +52,7 @@
 					</div>
 					<hr />
 					<div id="submitbutton">
-						<input type="submit" name="createAccount" value="Create Account" />
+						<input type="submit" name="createAccount" value="Create Account" class="button-green" />
 					</div>
 				</form>
 			</div>
