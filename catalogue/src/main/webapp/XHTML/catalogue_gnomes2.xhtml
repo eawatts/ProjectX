@@ -64,10 +64,10 @@ template="templates/main.xhtml">
       		</div>
       			<br>
       				<h:form id="form">
-      					<p:carousel value="#{carouselView.gnome}" headerText="Seasonal" var="seasonal_gnome" itemStyle="text-align:center" responsive="true" cricular="true">
+      					<p:carousel value="#{carouselView.gnome}" headerText="Seasonal" var="gnome" itemStyle="text-align:center" responsive="true" cricular="true">
       						<p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 					            <f:facet name="header">
-					                <p:graphicImage name="url/#{gnome.product}.gif"> </p:graphicImage>
+					                <p:graphicImage name="url/#{gnome.productName}.gif"> </p:graphicImage>
 					            </f:facet>
 					 
 					            <h:outputText value="Product Name: " ></h:outputText>
@@ -85,7 +85,7 @@ template="templates/main.xhtml">
 
 				<br>
       				<h:form id="form">
-      					<p:carousel value="#{carouselView.gnome}" headerText="Themed" var="themed_gnome" itemStyle="text-align:center" responsive="true" cricular="true">
+      					<p:carousel value="#{carouselView.gnome}" headerText="Themed" var="gnome" itemStyle="text-align:center" responsive="true" cricular="true">
       						<p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 					            <f:facet name="header">
 					                <p:graphicImage name="url/#{gnome.product}.gif"> </p:graphicImage>
@@ -105,7 +105,7 @@ template="templates/main.xhtml">
 					</h:form>
 				<br>
 					<h:form id="form">
-      					<p:carousel value="#{carouselView.gnome}" headerText="Novelty" var="novelty_gnome" itemStyle="text-align:center" responsive="true" cricular="true">
+      					<p:carousel value="#{carouselView.gnome}" headerText="Novelty" var="gnome" itemStyle="text-align:center" responsive="true" cricular="true">
       						<p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 					            <f:facet name="header">
 					                <p:graphicImage name="url/#{gnome.product}.gif"> </p:graphicImage>
@@ -125,7 +125,7 @@ template="templates/main.xhtml">
 					</h:form>
 				<br>
 					<h:form id="form">
-      					<p:carousel value="#{carouselView.gnome}" headerText="Classic" var="classic_gnome" itemStyle="text-align:center" responsive="true" cricular="true">
+      					<p:carousel value="#{carouselView.gnome}" headerText="Classic" var="gnome" itemStyle="text-align:center" responsive="true" cricular="true">
       						<p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 					            <f:facet name="header">
 					                <p:graphicImage name="url/#{gnome.product}.gif"> </p:graphicImage>
@@ -145,7 +145,7 @@ template="templates/main.xhtml">
 					</h:form>
 				<br>
 				<h:form id="form">
-      					<p:carousel value="#{carouselView.gnome}" headerText="Gnome Care" var="gnomecare" itemStyle="text-align:center" responsive="true" cricular="true">
+      					<p:carousel value="#{carouselView.gnome}" headerText="Gnome Care" var="gnome" itemStyle="text-align:center" responsive="true" cricular="true">
       						<p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 					            <f:facet name="header">
 					                <p:graphicImage name="url/#{gnome.product}.gif"> </p:graphicImage>
