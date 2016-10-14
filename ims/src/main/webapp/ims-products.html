@@ -124,24 +124,18 @@
                     <div class="col-tab-1 col-desk-1">
                         <button id="editP" type="button" onclick="location.href='#popup'">Edit</button>
                         <div id="popup" class="overlay">
-                            <div class="popup">
-                                <a class="close" href="#">&times;</a>
+                            <div class="popup"> <a class="close" href="#">&times;</a>
                                 <form>
                                     <div class="row"><b>Product ID</b>
-                                        <input type="text" name="ProductID" value="1">
-                                    </div>
+                                        <input type="text" name="ProductID" value="1"> </div>
                                     <div class="row"><b>Product Name</b>
-                                        <input type="text" name="ProductName" value="Scuba Gnome">
-                                    </div>
+                                        <input type="text" name="ProductName" value="Scuba Gnome"> </div>
                                     <div class="row"><b>Current Stock</b>
-                                        <input type="text" name="Current Stock" value="15">
-                                    </div>
+                                        <input type="text" name="Current Stock" value="15"> </div>
                                     <div class="row"><b>Low Limit</b>
-                                        <input type="text" name="Low Limit" value="5">
-                                    </div>
+                                        <input type="text" name="Low Limit" value="5"> </div>
                                     <div class="row"><b>Description</b>
-                                        <input type="text" name="Description" value="This gnome has awesome Scuba Gear">
-                                    </div>
+                                        <input type="text" name="Description" value="This gnome has awesome Scuba Gear"> </div>
                                     <div class="row"><b>Suppliers</b>
                                         <div class="styled-select">
                                             <select>
@@ -152,6 +146,7 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <button type="submit" href="ims-products.html">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -159,23 +154,24 @@
                 </div>
             </div>
             <br/>
-            <div class="product-row">
-                <div class="row">
-                    <div class="col-tab-1 col-desk-1"> 001 </div>
-                    <div class="col-tab-1 col-desk-1"> 002 </div>
-                    <div class="col-tab-1 col-desk-1"> 003 </div>
-                    <div class="col-tab-1 col-desk-1"> 004 </div>
-                    <div class="col-tab-6 col-desk-6"> Lorem ipsum dolor sit amet, ne est volutpat scriptorem, laboramus concludaturque sit an, ludus altera definitionem has no. Primis aliquip mei et. His ut affert possim suscipiantur. Utinam mnesarchum per ut. </div>
-                    <div class="col-tab-2 col-desk-2">
-                        <div class="styled-select">
-                            <select>
-                                <option value="supplierA">supplierA</option>
-                                <option value="supplierB">supplierB</option>
-                                <option value="supplierC">supplierC</option>
-                                <option value="supplierD" selected>supplierD</option>
-                            </select>
-                        </div>
-                    </div>
+            <button id="editP" type="button" onclick="location.href='#popup1'">Add</button>
+            <div id="popup1" class="overlay">
+                <div class="popup"> <a class="close" href="#">&times;</a>
+                    <form>
+                        <div class="row"><b>Product ID</b>
+                            <input type="text" name="ProductID" value=""> </div>
+                        <div class="row"><b>Product Name</b>
+                            <input type="text" name="ProductName" value=""> </div>
+                        <div class="row"><b>Current Stock</b>
+                            <input type="text" name="Current Stock" value=""> </div>
+                        <div class="row"><b>Low Limit</b>
+                            <input type="text" name="Low Limit" value=""> </div>
+                        <div class="row"><b>Description</b>
+                            <input type="text" name="Description" value=""> </div>
+                        <div class="row"><b>Suppliers</b>
+                            <input type="text" name="Supplier" value=""> </div>
+                        <button type="submit">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
