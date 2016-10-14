@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 @NamedQuery (name = Supplier.FIND_BY_SUPPLIER_ID, query = "SELECT s FROM Supplier s WHERE s.id = :Supplierid"),
 @NamedQuery (name = Supplier.UPDATE_SUPPLIER, query = ""),
 @NamedQuery (name= Supplier.CREATE_SUPPLIER, query=""),
-@NamedQuery (name= Supplier.GET_SUPPLIERS, query="")
+@NamedQuery (name= Supplier.GET_SUPPLIERS, query=""),
 }
 )
 
@@ -20,7 +20,7 @@ public class Supplier {
 	public static final String FIND_BY_SUPPLIER_ID = "Supplier.findBySupplierId";
 	public static final String UPDATE_SUPPLIER = "Supplier.updateSupplier";
 	public static final String CREATE_SUPPLIER = "Supplier.createSupplier";
-	public static final String GET_SUPPLIERs = "Supplier.getSuppliers";
+	public static final String GET_SUPPLIERS = "Supplier.getSuppliers";
 	
 	
 	@Id
