@@ -12,7 +12,7 @@ public class LoginService {
 	@Inject UserRepository userRepo;
 	
 	public boolean validateDetails(String user, String pass){
-		User user=userRepo.
+		return true;
 	}
 
 }
