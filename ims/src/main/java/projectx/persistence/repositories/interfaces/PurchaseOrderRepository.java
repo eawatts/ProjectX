@@ -9,9 +9,9 @@ public interface PurchaseOrderRepository {
 	public void persistOrder (PurchaseOrder purchaseOrder);
 	public void persistOrders (List<PurchaseOrder> purchaseOrder);
 	
-	public PurchaseOrder findBySupplierID(String supplierID);
-	public PurchaseOrder findByOrderStatus(String orderStatus);
-	public PurchaseOrder findByPurchaseOrderID(String id);
+	public PurchaseOrder findPurchaseOrderBySupplierID(String supplierID);
+	public PurchaseOrder findPurchaseOrderByOrderStatus(String orderStatus);
+	public PurchaseOrder findPurchaseOrderById(String id);
 	public List<PurchaseOrder> getPurchaseOrders();
 	public void updatePurchaseOrder (PurchaseOrder purchaseOrder);
 }
