@@ -1,24 +1,19 @@
 package projectx.persistence.controllers;
 import projectx.persistence.entities.*;
+import projectx.persistence.services.*;
+
 import java.io.Serializable;
 
 import javax.faces.bean.SessionScoped;
+import javax.faces.model.DataModel;
 import javax.inject.*;
 
 
 
+@SuppressWarnings("serial")
 @Named("purchaseOrders")
 @SessionScoped
 public class PurchaseOrderController implements Serializable{
-	private Product product;
-	private Product stock;
-	@Inject	private PurchaseOrderSerivce purchaseOrderService;
-	
-	public void SetProduct(Product product){
-		this.product=product;
-		stock=purchaseOrderService.findByID(product.getId());
-	}
-	
-	
-	
+	@Inject PurchaseOrderSerivce purchaseOrderSerivce;
+	private DataModel<PurchaseOrder> datamodel=null;
 }
