@@ -4,70 +4,10 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/catalogue_template.xhtml">
-	<style>
-	/*
-raisin black = #272727
-floral white = #f9fbf2
-orange yellow = #fed766
-british racing green = #004425
-sweet sweet brown = #a53f2b
-*/
-h2{
-	text-align:center;
-	color:#004425;
-}
-.box {
-    background-color: #004425;
-    border: 2px solid #fed766;
-    color:#004425;
-    float:left;
-    padding: 18px;
-    margin: 1em 1em 1em 1em;
-    min-width:100%;
-}
-button.accordion {
-    background-color: #f9fbf2;
-    color: #004425;
-    cursor: pointer;
-    padding: none;
-    min-width: 100%;
-    border: none;
-    text-align: center;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
-
-button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
-}
-
-div.panel {
-    padding: 0 18px;
-    display: none;
-    background-color: #fed766;
-    min-width:100%;
-    text-align:center;
-}
-
-div.panel.show {
-    display: block;
-}
-
-img.accord{
-	float:left;
-	padding: 1em;
-	display:block;
-	margin: 0 auto;
-	min-width:100%;
-	visibility:visible;
-}
-	</style>
 	<link rel="stylesheet" type="text/css" href="css/catalogue_categories.css"></link>
 	<meta charset="ISO-8859-1" />
 	<ui:define name="title">About Us</ui:define>
 	<ui:define name="main-content">
-
 		<div>
 			<h2>
 			   			Categories
@@ -175,6 +115,7 @@ img.accord{
 						</div>
 					</div>
 				</div>
+				
 				</div>
 				<script type="text/javascript" src="js/catalogue_categories.js">
 				</script>
