@@ -1,38 +1,42 @@
-<ui:composition
-	xmlns="https://www.w3.org/1999/xhtml"
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/catalogue_template.xhtml">
 	<ui:define name="custom-css">
-	<link rel="stylesheet" type="text/css" href="css/catalogue_categories.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="css/catalogue_categories.css"></link>
 	</ui:define>
 	<meta charset="ISO-8859-1" />
 	<ui:define name="title">About Us</ui:define>
 	<ui:define name="main-content">
 
 		<div>
-			<h2>
-			   			Categories
-			</h2>
-
-			<ui:repeat var="#{category.categoryList}" value="cat">
-				<div class="col-tab-6 col-desk-4" >
-					<div class="box">
-						<h:graphicImage class= "accord" value="http://placehold.it/140x100"/>
-						<h:button class="accordion" value="#{category.categoryList.cat.getName()}" outcome="#{category.categoryList.cat}"></h:button>
-						<div class="panel">
-							<p>
-								<ui:repeat var="#{category.categoryList.cat.subCategoryList}" value="subCat">
-									<h:link value="#{category.categoryList.cat.subCategoryList.subCat.getName()}" 
-										outcome="#{category.categoryList.cat.subCategoryList.subCat.getName()}"></h:link>
-									<br></br>
-								</ui:repeat>
-							</p>
+			<h2>Categories</h2>
+			<div class="row">
+				<ui:repeat var="#{category.categoryList}" value="cat">
+					<div class="col-tab-6 col-desk-4">
+						<div class="box">
+							<h:graphicImage class="accord"
+								value="http://placehold.it/140x100" />
+							<h:button class="accordion"
+								value="#{category.categoryList.cat.getName()}"
+								outcome="#{category.categoryList.cat}"></h:button>
+							<div class="panel">
+								<p>
+									<ui:repeat var="#{category.categoryList.cat.subCategoryList}"
+										value="subCat">
+										<h:link
+											value="#{category.categoryList.cat.subCategoryList.subCat.getName()}"
+											outcome="#{category.categoryList.cat.subCategoryList.subCat.getName()}"></h:link>
+										<br></br>
+									</ui:repeat>
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-			</ui:repeat>
+				</ui:repeat>
+			</div>
 		</div>
 	</ui:define>
 </ui:composition>
