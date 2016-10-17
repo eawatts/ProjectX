@@ -11,11 +11,11 @@
         <h2> Edit Purchase Order</h2>
       </div>
       <div class="Supplier Info">
-        Supplier ID: <input type="text" disabled="true" value="#{purchaseOrder.supplier.id}"/> <br/>
-        Supplier name: <input type="text" disabled="true" value="#{purchaseOrder.supplier.name}"/> <br/>
-        Approved/rejected: <input type="text" disabled="true" value="#{purchaseOrder.approved}"/> <br/>
-        Rejection Date: <input type="text" disabled="true" value="#{purchaseOrder.approvalDate}"/> <br/>
-        Status: <input type="text" disabled="true" value="#{purchaseOrder.status}"/>
+        Supplier ID: <h:outputText value="#{purchaseOrder.supplier.id}"/> <br/>
+        Supplier name: <h:outputText value="#{purchaseOrder.supplier.name}"/> <br/>
+        Approved/rejected: <h:outputText value="#{purchaseOrder.approved}"/> <br/>
+        Rejection Date: <h:outputText value="#{purchaseOrder.approvalDate}"/> <br/>
+        Status: <h:outputText value="#{purchaseOrder.status}"/>
         <br/>
       </div>
       <div class="poheaders">
@@ -52,16 +52,16 @@
                 </select>
               </div>
               <div class="col-desk-2 col-tab-2">
-                <input type="text" disabled="true" value="#{product.name}"/>
+                <h:outputText disabled="true" value="#{product.name}"/>
               </div>
               <div class="col-desk-2 col-tab-2">
                 <input type="number" name ="quantity" min="1" max="#{product.stocklevel}"/>
               </div>
               <div class="col-desk-2 col-tab-2">
-                <input type="text" disabled="true" value="#{product.stocklevel}" /> 
+                <h:outputText value="#{product.stocklevel}" /> 
               </div>
               <div class="col-desk-2 col-tab-2">
-                <input type="text" disabled="true" value="#{product.status}" /> 
+                <h:outputText value="#{product.status}" /> 
               </div>
               <div class="col-desk-2 col-tab-2">
               </div>
