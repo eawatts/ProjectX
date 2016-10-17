@@ -1,0 +1,106 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" template="ims_template.xhtml">
+    <link data-brackets-id='46830' rel="stylesheet" type="text/css" href="../css/ims-products-style.css">
+    <meta charset="utf-8" />
+    <ui:define name="title">Products</ui:define>
+    <ui:define name="maincontent">
+        <div class="main-content">
+            <div class="page-title">
+                <h2>Product List</h2></div>
+            <div class="div-table">
+                <div class="header-row">
+                    <div class="col-tab-1 col-desk-1">Product ID</div>
+                    <div class="col-tab-1 col-desk-1">Name</div>
+                    <div class="col-tab-1 col-desk-1">Current Stock</div>
+                    <div class="col-tab-1 col-desk-1">Low Limit</div>
+                    <div class="col-tab-5 col-desk-5">Description</div>
+                    <div class="col-tab-2 col-desk-2">Suppliers</div>
+                </div>
+            </div>
+            <ui:repeat var="product" value="#{products.productList}">
+                <div class="product-row">
+                    <div class="row">
+                        <div class="col-tab-1 col-desk-1">
+                            <p>
+                                <h:outputText value="#{product.id}" /> </p>
+                        </div>
+                        <div class="col-tab-1 col-desk-1">
+                            <p>
+                                <h:outputText value="#{product.name}" /> </p>
+                        </div>
+                        <div class="col-tab-1 col-desk-1">
+                            <p>
+                                <h:outputText value="#{product.currentstock}" /> </p>
+                        </div>
+                        <div class="col-tab-1 col-desk-1">
+                            <p>
+                                <h:outputText value="#{product.lowlimit}" /> </p>
+                        </div>
+                        <div class="col-tab-5 col-desk-5">
+                            <p>
+                                <h:outputText value="#{product.description}" /> </p>
+                        </div>
+                        <div class="col-tab-2 col-desk-2">
+                            <div class="styled-select">
+                                <ui:repeat var="supplier" value="#{product.supplierlist}">
+                                    <option value="#{supplier.name}"></option>
+                                </ui:repeat>
+                            </div>
+                        </div>
+                        <div class="col-tab-1 col-desk-1">
+                            <button id="editP" type="button" onclick="location.href='#popup1'">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </ui:repeat>
+            <div id="popup1" class="overlay">
+                <div class="popup"> <a class="close" href="#">X</a>
+                    <h:form>
+                        <div class="row"><b>ID</b>
+                            <h:inputText type="text" name="ProductID" value="#{product.id}"></h:inputText>
+                        </div>
+                        <div class="row"><b>Name</b>
+                            <h:inputText type="text" name="ProductName" value="#{product.name}"></h:inputText>
+                        </div>
+                        <div class="row"><b>Current Stock</b>
+                            <h:inputText type="text" name="ProductStock" value="#{product.stock}"></h:inputText>
+                        </div>
+                        <div class="row"><b>Low Limit</b>
+                            <h:inputText type="text" name="ProductLowLimit" value="#{product.lowlimit}"></h:inputText>
+                        </div>
+                        <div class="row"><b>Description</b>
+                            <h:inputText type="text" name="ProductDescription" value="#{product.description}"></h:inputText>
+                        </div>
+                        <div class="row">
+                            <h:commandButton class="submit-button" type="submit" action="#{Suppliers.editProduct}" value="Edit Product"></h:commandButton>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+            <button id="editP" type="button" onclick="location.href='#popup2'">Add</button>
+            <div id="popup2" class="overlay">
+                <div class="popup"> <a class="close" href="#">X</a>
+                    <h:form>
+                        <div class="row"><b>Name</b>
+                            <h:inputText type="text" name="ProductName" value="#{product.name}"></h:inputText>
+                        </div>
+                        <div class="row"><b>Current Stock</b>
+                            <h:inputText type="text" name="ProductStock" value="#{product.stock}"></h:inputText>
+                        </div>
+                        <div class="row"><b>Low Limit</b>
+                            <h:inputText type="text" name="ProductLowLimit" value="#{product.lowlimit}"></h:inputText>
+                        </div>
+                        <div class="row"><b>Description</b>
+                            <h:inputText type="text" name="ProductDescription" value="#{product.description}"></h:inputText>
+                        </div>
+                        <div class="row"><b>Supplier</b>
+                            <h:inputText type="text" name="ProductSupplier" value="#{product.supplier}"></h:inputText>
+                        </div>
+                        <div class="row">
+                            <h:commandButton class="submit-button" type="submit" action="#{Suppliers.addProduct}" value="Edit Product"></h:commandButton>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>

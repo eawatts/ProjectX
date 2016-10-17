@@ -1,0 +1,30 @@
+@CHARSET "ISO-8859-1";
+@CHARSET "ISO-8859-1"
+.i {
+}
+
+.main-content {
+  text-align: center;
+}
+
+:root
+{
+	--raisin-black: #272727;
+    --floral-white: #f9fbf2;
+    --orange-yellow: #fed766;
+    --british-racing-green: #004425;
+    --sweet-sweet-brown: #a53f2b;
+    --inline-width: 40%;
+}
+
+.Heading{
+  text-align: center;
+  background-color: var(--british-racing-green);
+	Color: var(--floral-white);
+  }
+#description{
+	Color: var(--sweet-sweet-brown);
+}
+#description1{
+	Color: var(--sweet-sweet-brown);
+}
