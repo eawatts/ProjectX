@@ -34,11 +34,11 @@ public class LoginController {
 				password = "";
 				return "login";
 				}
-				userCredentials.setUser(loginService.getUserID(username));
+				UserCredentials.setUser(loginService.getUserID(username));
 				return "home";
 	}
 	public String logout() {
-		userCredentials.setUser("");
+		UserCredentials.setUser("");
 		return "login";
 		}
 		public String getUsername(){
@@ -47,8 +47,8 @@ public class LoginController {
 		return password; }
 		public String getError(){
 		return error; }
-		public void setUsername(String user) {
-		this.username = user; }
+		public void setUsername(String username) {
+		this.username = username; }
 		public void setPassword(String pass){
 		this.password = pass; }
 	

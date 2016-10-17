@@ -10,6 +10,7 @@ public class UserCredentials implements Serializable {
 	
 	public void setUser(String user){
 			this.user = user;
+
 			}
 
 }

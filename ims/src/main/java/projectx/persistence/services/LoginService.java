@@ -12,7 +12,13 @@ public class LoginService {
 	@Inject UserRepository userRepo;
 	
 	public boolean validateDetails(String user, String pass){
-		return true;
+		User user =userRepo.checkPassword(user.toLowerCase(), pass);
+		if(user !=null)
+			return true;
+		else return false;		
+		}
+	public long getUserID(String username){
+		return userRepo. 
 	}
 
 }
