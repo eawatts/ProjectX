@@ -1,0 +1,30 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/catalogue_template.xhtml">
+
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/catalogue_index.css"></link>
+	</ui:define>
+	
+	<ui:define name="title">Welcome</ui:define>
+	
+	<ui:define name="main-content">
+		<div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+				<a href="/catalogue/catalogue_index.xhtml" name="NB Gardens Home Page">
+					<h:graphicImage class="main-banner-img" value="img/index/banner_grass_text.jpg" alt="Grass Banner"></h:graphicImage>
+				</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
