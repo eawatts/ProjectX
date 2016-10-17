@@ -1,0 +1,52 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="templates/catalogue_template.xhtml">
+	<meta charset="utf-8" />
+	<ui:define name="custom-css">
+	<link rel="stylesheet" type="text/css" href="css/responsive2.css"/>
+	<link rel="stylesheet" type="text/css" href="css/catalogue.css"/>
+	</ui:define>
+	<ui:define name="title">
+		<h:outputText value="#{category.getName}" />
+		<h:outputText value="#{category.subcategory.getName}" />
+	</ui:define>
+
+	<ui:define name="main-content">
+		<h1>
+			<h:outputText value="#{category.subcategory.getName}" />
+		</h1>
+		
+		<ui:repeat>
+		 		<!--	//Put in a list of items in subcategory here -->
+		 		<div class="row">
+					<div class="col-tab-2 col-desk-2">
+
+						<h:graphicImage value="#{getProductImage}" />
+
+					</div>
+					<div class="col-tab-6 col-desk-6">
+						<h:outputText escape="false"
+							value="No items in subcategory"
+							rendered="#{subcatagory.getProducts == 0}" />
+						<h:panelGroup renedered="#{user.basket.basketCount > 0}">
+							<h:outputText
+								value="#{user.basket.getNextItem.productDescription}" />
+						</h:panelGroup>
+					</div>
+					<div class="col-tab-2 col-desk-2">
+						<input type="number" name="quantity" />
+						<h:outputText value="#{user.basket.getNextItem.quantity}" />
+					</div>
+					<div class="col-tab-2 col-desk-2">
+						<h:outputText value="#{user.basket.getNextItem.price}" />
+						<!-- put in add to basket button -->
+					</div>
+				</div>
+		</ui:repeat>    			    
+  
+      				
+  </ui:define>
+</ui:composition>

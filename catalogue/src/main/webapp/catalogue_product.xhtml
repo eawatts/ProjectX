@@ -1,6 +1,11 @@
 <ui:composition xmlns="https://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" template="/templates/catalogue_template.xhtml">
-    <link rel="stylesheet" type="text/css" href="css/about.css" />
-    <link rel="stylesheet" type="text/css" href="css/product.css" />
+    
+    <ui:define name="custom-css">
+      <link rel="stylesheet" type="text/css" href="css/product.css" />	
+       <link rel="stylesheet" type="text/css" href="css/breadcrumb.css" />
+	</ui:define>
+    
+    
     <meta charset="ISO-8859-1" />
     <ui:define name="title">
         <h:outputText value="#{product.productName}" /> </ui:define>
@@ -9,12 +14,20 @@
             <div id="breadcrumbs">
                 <ul class="breadcrumb">
                     <li> <a href="#">Home</a> </li>
-                    <li> <a href="#">Gnome</a> ></li>
-                    <li> <a href="#">Classic</a> ></li>
+                    <li> <a href="#">Gnome</a> </li>
+                    <li> <a href="#">Classic</a> </li>
                     <li> <a href="#">Classic Red Hat Gnome</a></li>
                 </ul>
 
             </div>
+            
+            <h3>
+				<ui:repeat var="product" value="#{product.list}">
+            	<h:outputText value="#{product.testMessage}"></h:outputText>
+            	<br/>
+            	</ui:repeat>
+            </h3>
+                     
             <div class="row">
                 <div class="col-tab-4 col-desk-4">
                     <div id="picture">
@@ -31,10 +44,11 @@
                         <div class="col-tab-6 col-desk-6">
                             <div id="productinfo">
                                 <h2>Stock:
-          	                         <h:outputText value="#{product.stockStatus}" />
+          	                		 <h:outputText value="#{product.stockStatus}" />  
                                 </h2>
                                 <h2>Cost:
-          	                         <h:outputText value="#{product.productPrice}" />
+                                 <i class="fa fa-gbp" aria-hidden="true"></i>
+          	                         <h:outputText value=" #{product.productPrice}" />
                                 </h2>
                                 <div class="row">
                                     <div class="col-tab-6 col-desk-6">
@@ -50,7 +64,7 @@
                                 <div id="popup1" class="overlay">
                                     <div class="popup">
                                         <h2>
-              	<h:outputText value="#{product.getChosenQuantity}" />
+              	<h:outputText value="#{product.chosenQuantity}" />
               	<h:outputText value="#{product.productName}" /> 
               	Added to Basket
               </h2> <a class="close" href="#">X</a> </div>
@@ -72,7 +86,7 @@
             <hr/>
             <h1>Reviews</h1>
             <div class="row">
-                <ui:repeat var="review" value="#{review.dataModel}">
+                <ui:repeat var="review" value="#{review.reviews}">
                     <div class="col-tab-4 col-desk-4"> <img src="..\assets\rating.png" alt="Rating" />
                         <h2>
         	<h:outputText value="#{review.nextReview.userName}" />
