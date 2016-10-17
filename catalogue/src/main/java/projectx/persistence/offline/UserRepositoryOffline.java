@@ -25,6 +25,7 @@ public class UserRepositoryOffline implements UserRepository {
 
 	@Override
 	public List<User> getUsers() {
+		
 		return db.getUsers();
 	}
 

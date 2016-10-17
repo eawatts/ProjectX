@@ -1,4 +1,4 @@
-package projectx;
+package projectx.persistence.entities;
 
 public class Products {
 	private String productName;

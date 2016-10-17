@@ -1,4 +1,4 @@
-package projectx;
+package projectx.controllers.helpers;
 
 import javax.faces.model.DataModel;
 

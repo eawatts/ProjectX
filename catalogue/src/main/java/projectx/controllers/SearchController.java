@@ -1,4 +1,4 @@
-package projectx;
+package projectx.controllers;
 
 import java.io.Serializable;
 
@@ -7,12 +7,12 @@ import javax.inject.Named;
 
 import projectx.persistence.entities.Product;
 
-@Named("products")
+// ** Don't commit non-compilable code ** //
+/*@Named("products")
 @SessionScoped
 public class SearchController implements Serializable{
 	@Inject
 	private ProductManager productManager;
-	private Product product;
-	
-}
+	private Product product;	
+}*/
 
