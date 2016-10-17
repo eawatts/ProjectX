@@ -29,7 +29,7 @@ public class LoginController {
 		password = "";
 		return "login";
 		}
-		if(!LoginService.validateDetails(username, password)) {
+		if(!loginService.validateDetails(username, password)) {
 				error = "Invalid login";
 				password = "";
 				return "login";
@@ -38,7 +38,7 @@ public class LoginController {
 				return "home";
 	}
 	public String logout() {
-		UserCredentials.setUser("");
+		userCredentials.setUser("");
 		return "login";
 		}
 		public String getUsername(){
