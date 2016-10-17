@@ -20,6 +20,5 @@ public class LoginService {
 	public long getUserID(String username){
 		return userRepo. 
 	}
-	}
 
 }

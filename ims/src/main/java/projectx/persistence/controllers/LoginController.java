@@ -4,6 +4,9 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import projectx.persistence.services.LoginService;
+import projectx.persistence.services.UserCredentials;
+
 @Named(value="login")
 @RequestScoped
 public class LoginController {
@@ -44,8 +47,8 @@ public class LoginController {
 		return password; }
 		public String getError(){
 		return error; }
-		public void setUsername(String user) {
-		this.username = user; }
+		public void setUsername(String username) {
+		this.username = username; }
 		public void setPassword(String pass){
 		this.password = pass; }
 	
