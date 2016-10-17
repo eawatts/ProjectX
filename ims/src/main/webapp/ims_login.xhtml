@@ -4,7 +4,7 @@ xmlns:f="http://java.sun.com/jsf/core"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:ui="http://java.sun.com/jsf/facelets"
 template="ims_template.xhtml">
-<link href="css/login.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/login.css"></link>
 	
 	<meta charset="utf-8" />
 	<ui:define name ="title">Login</ui:define>
@@ -30,7 +30,7 @@ template="ims_template.xhtml">
 									Username <h:inputText class="form-control" value="#{login.email}" type="email" required="true" requiredMessage="Please Enter Email"></h:inputText> 
 									Password <h:inputSecret class="form-control" value="#{login.password}" type="password" required= "true" requiredMessage="Please Enter Password"></h:inputSecret>
 									<hr />
-									<h:commandButton class="submit-button" type="submit" action="#{ogin.loginToAccount}" value="Sign in"></h:commandButton> 
+									<h:commandButton class="submit-button" type="submit" action="#{login.loginToAccount}" value="Sign in"></h:commandButton> 
 								</form>
 							</div>
 							<br/>
