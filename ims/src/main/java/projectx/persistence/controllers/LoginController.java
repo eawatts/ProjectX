@@ -4,6 +4,9 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import projectx.persistence.services.LoginService;
+import projectx.persistence.services.UserCredentials;
+
 @Named(value="login")
 @RequestScoped
 public class LoginController {

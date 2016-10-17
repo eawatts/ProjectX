@@ -8,7 +8,7 @@ import javax.enterprise.context.SessionScoped;
 public class UserCredentials implements Serializable {
 	private String user;
 	
-	protected void setUser(String user){
+	public void setUser(String user){
 			this.user = user;
 			}
 

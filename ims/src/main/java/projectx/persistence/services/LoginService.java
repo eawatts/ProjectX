@@ -3,6 +3,7 @@ package projectx.persistence.services;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import projectx.persistence.entities.User;
 import projectx.persistence.repositories.interfaces.UserRepository;
 
 
