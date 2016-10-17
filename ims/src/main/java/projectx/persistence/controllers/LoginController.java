@@ -29,7 +29,7 @@ public class LoginController {
 		password = "";
 		return "login";
 		}
-		if(!customerService.validateDetails(username, password)) {
+		if(!LoginService.validateDetails(username, password)) {
 				error = "Invalid login";
 				password = "";
 				return "login";

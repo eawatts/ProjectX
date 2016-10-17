@@ -22,6 +22,7 @@ import org.hibernate.validator.constraints.Email;
 		@NamedQuery (name = User.UPDATE_USER, query = ""),
 		@NamedQuery (name = User.FIND_BY_USERNAME, query = "SELECT u FROM User u WHERE u.username = :username"),
 		@NamedQuery (name = User.CHECK_PASSWORD, query = "")
+		
 	}
 )
 

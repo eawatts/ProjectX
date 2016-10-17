@@ -11,14 +11,14 @@ import projectx.persistence.repositories.interfaces.UserRepository;
 public class LoginService {
 	@Inject UserRepository userRepo;
 	
-	public boolean validateDetails(String user, String pass){
-		User user =userRepo.checkPassword(user.toLowerCase(), pass);
+	public boolean validateDetails(String username, String pass){
+		User user = userRepo.checkPassword(username.toLowerCase(), pass);
 		if(user !=null)
 			return true;
-		else return false;		
+		return false;		
 		}
 	public long getUserID(String username){
-		return userRepo. 
+		return userRepo.getId(username.toLowerCase());
 	}
 
 }
