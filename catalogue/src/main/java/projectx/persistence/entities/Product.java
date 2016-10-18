@@ -3,9 +3,8 @@ package projectx.persistence.entities;
 import java.math.BigDecimal;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 
 @NamedQueries (
 	{
@@ -42,6 +41,12 @@ public class Product {
 		
 		@Column(name="is_discontinued", nullable = false)
 		private boolean isDiscontinued;
+		
+		@ManyToOne
+		@JoinColumn(name = "subcategory_id", nullable=false)
+		@NotNull
+		private SubCategory sub_id;
+		
 		
 		public Product(){};
 		public Product(String name, int stockLvl, BigDecimal price, int lowStock, int maxStock){
@@ -98,5 +103,10 @@ public class Product {
 		public void setDiscontinued(boolean isDiscontinued) {
 			this.isDiscontinued = isDiscontinued;
 		}
-		
+		public SubCategory getSub_id() {
+			return sub_id;
+		}
+		public void setSub_id(SubCategory sub_id) {
+			this.sub_id = sub_id;
+		}
 }
