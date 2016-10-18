@@ -1,48 +1,35 @@
 package projectx.controllers;
 
-import java.util.ArrayList;
+
+import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Category;
+import projectx.services.CategoryService;
 
 @Named("category")
 @RequestScoped
 public class CategoryController {
-		
-		private String testMessage = "This is a test message";
-		private ArrayList <Category> catList = new ArrayList<Category>();
 
+
+		@Inject
+		private CategoryService categoryService;
 		
 		
-		public ArrayList <Category> populateCategories(ArrayList <Category> catList){
-		Category gnomes = new Category(1, "Gnomes");
-		Category rh = new Category(2, "Rakes and Hoes");
-		Category mtn = new Category(3, "Maintenance");
-		
-		catList.add(gnomes);
-		catList.add(rh);
-		catList.add(mtn);
-		
-		return catList;
-		
-		}
-		
-		
-		public ArrayList <Category> getCategories(){
+		public List <Category> getCategories(){
 			
-			catList = populateCategories(catList);
-			return catList;
+			return categoryService.getCategories();
 		}
 		
-	
+		public Category findByName(String name){
+			return categoryService.findByName(name);
+		}
 		
-		public String getTestMessage(){
-			return testMessage;
+		public Category findByid(int id){
+			return categoryService.findByid(id);
 		}
-		public void setTestMessage(String testMessage) {
-			this.testMessage = testMessage;
-		}
-	}
+}
 
