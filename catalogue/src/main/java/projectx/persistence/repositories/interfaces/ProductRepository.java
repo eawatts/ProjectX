@@ -10,5 +10,6 @@ public interface ProductRepository {
 	public void persistProdcut(Product product);
 	public void persistProducts(List<Product> products);
 	public List<Product> getProducts();
+	public Product getProductFromId(int id);
 	public void updateProduct(Product product);
 }

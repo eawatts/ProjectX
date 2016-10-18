@@ -33,6 +33,11 @@ public class ProductRepositoryOffline implements ProductRepository {
 	public List<Product> getProducts() {
 		return db.getProducts();
 	}
+	
+	@Override
+	public Product getProductFromId(int id) {
+		return db.getProductFromId(id);
+	}
 
 	@Override
 	public void updateProduct(Product product) {

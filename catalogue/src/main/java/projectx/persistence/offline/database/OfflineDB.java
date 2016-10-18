@@ -63,7 +63,7 @@ public class OfflineDB
 	
 	private void setupReviews() {
 		reviews = new ArrayList<Review>();
-		reviews.add(new Review(1, 4.5f, "Pretty good.", users.get(2), products.get(2)));
+		reviews.add(new Review(1, 4.5f, "Pretty dank.", users.get(2), products.get(2)));
 		reviews.add(new Review(2, 3.1f, "Pretty good.", users.get(3), products.get(3)));
 		reviews.add(new Review(3, 2.0f, "Broke first night.", users.get(2), products.get(4)));
 		reviews.add(new Review(4, 4.9f, "Pretty good.", users.get(4), products.get(8)));
@@ -72,6 +72,7 @@ public class OfflineDB
 		reviews.add(new Review(7, 4.2f, "Pretty good.", users.get(3), products.get(7)));
 	}
 	
+
 	private void setupCategories(){
 		categories = new ArrayList<Category>();
 		categories.add(new Category(1, "Gnomes"));
@@ -122,6 +123,8 @@ public class OfflineDB
 		subcategories.add(new SubCategory(27, "Feed and Weed", 7));
 		subcategories.add(new SubCategory(28, "Secateurs", 7));
 	}
+
+	// ----- PRODUCTS -----
 	/**
 	 * Returns a copy of the Products.
 	 * @return copy of the Products ArrayList.
@@ -129,6 +132,55 @@ public class OfflineDB
 	public List<Product> getProducts(){
 		return new ArrayList<Product>(products);
 	}
+	
+	
+	public Product getProductFromId(int productId){
+		
+		for (Product product : products){
+			if(product.getId() == productId){
+				return product;
+			}
+		}	
+		return null;
+	}
+	
+	// ----- END PRODUCTS -----
+	
+	// ----- REVIEWS -----
+	
+	/**
+	 * Will return the average rating of a Product.
+	 * @param productId the Product Id to check.
+	 * @return null if no Reviews exist, the average score if present.
+	 */
+	public Integer getAverageReviewForProductId(int productId){
+		
+		// See if the Product actually exists.
+		Product product = getProductFromId(productId);
+		if(product == null){
+			return null;
+		}
+			
+		int reviewTotal = 0;
+		int numberOfReviews = 0;
+		
+		for(Review review : reviews){
+			if (review.getProduct().getId() == productId){
+				numberOfReviews++;
+				reviewTotal += review.getRating();
+			}
+		}
+		
+		if(numberOfReviews == 0){ // Also helps prevent divide by zero.
+			return null;
+		}
+		
+		return reviewTotal / numberOfReviews;
+	}
+	
+	// ----- END REVIEWS -----
+	
+	// ----- USERS -----
 	
 	/**
 	 * Returns a copy of the Users.
@@ -145,4 +197,6 @@ public class OfflineDB
 	public List<Review> getReviews(){
 		return new ArrayList<Review>(reviews);
 	}
+	
+	// ----- END USERS -----
 }

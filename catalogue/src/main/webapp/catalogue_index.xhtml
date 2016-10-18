@@ -26,31 +26,55 @@
 			</div>
 			<div class="row">
 				<div class="col-tab-12 col-desk-12">
-					<div class="regular slider" data-slick='{"slidesToShow":4, "slidesToScroll":4}'>
-					<ui:repeat var="current_product" value="#{home.topProducts}">
-						<div>
+				<h2 class="category-heading">Top Products</h2>
+					<div class="regular slider">
+					<ui:repeat var="current_product" value="#{products.topProducts}">
+						<div> <!-- Leave this div in. -->
 							<img src="http://placehold.it/350x300?text=1"></img>
-							<p><h:outputText value="#{current_product.name}"/></p>
+							<div class="product-slider-title-container">
+								<h:outputText class="product-slider-title" value="#{current_product.name}"/>
+							</div>
+							<button type="button"
+										class="button-green product-slider-atb"
+										onclick="#{user.backet()}">Add to Basket&#160;&#160;<i class="fa fa-shopping-basket"></i></button>
+							<div>
+								<ul class="product-slider-star-rating">
+									<li class="product-slider-star" >
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</li>
+									<li class="product-slider-star" >
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</li>
+									<li class="product-slider-star" >
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</li>
+									<li class="product-slider-star" >
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</li>
+									<li class="product-slider-star" >
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</li>
+								</ul>
+							</div>						
 						</div>
 					</ui:repeat>
-<!-- 					<div>
-							<img src="http://placehold.it/350x300?text=2"></img>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+				<hr class="category-divider"/>
+				<h2 class="category-heading">Seasonal</h2>
+					<div class="regular slider" data-slick='{"slidesToShow":4, "slidesToScroll":4}'>
+					<ui:repeat var="current_product" value="#{products.seasonalProducts}">
+						<div> <!-- Leave this div in. -->
+							<img src="http://placehold.it/350x300?text=1"></img>
+							<h:outputText class="product-slider-title" value="#{current_product.name}"/>
+							<button type="button"
+										class="button-green product-slider-atb"
+										onclick="#{user.backet()}">Add to Basket&#160;&#160;<i class="fa fa-shopping-basket"></i></button>						
 						</div>
-						<div>
-							<img src="http://placehold.it/350x300?text=3"></img>
-						</div>
-						<div>
-							<img src="http://placehold.it/350x300?text=4"></img>
-						</div>
-						<div>
-							<img src="http://placehold.it/350x300?text=5"></img>
-						</div>
-						<div>
-							<img src="http://placehold.it/350x300?text=6"></img>
-						</div>
-						<div>
-							<img src="http://placehold.it/350x300?text=7"></img>
-						</div> -->
+					</ui:repeat>
 					</div>
 				</div>
 			</div>
