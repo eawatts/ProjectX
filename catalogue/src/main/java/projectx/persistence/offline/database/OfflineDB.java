@@ -77,9 +77,10 @@ public class OfflineDB
 	}
 	
 	
-	public Product getProductFromId(int id){
+	public Product getProductFromId(int productId){
+		
 		for (Product product : products){
-			if(product.getId() == id){
+			if(product.getId() == productId){
 				return product;
 			}
 		}	
@@ -87,6 +88,42 @@ public class OfflineDB
 	}
 	
 	// ----- END PRODUCTS -----
+	
+	// ----- REVIEWS -----
+	
+	/**
+	 * Will return the average rating of a Product.
+	 * @param productId the Product Id to check.
+	 * @return null if no Reviews exist, the average score if present.
+	 */
+	public Integer getAverageReviewForProductId(int productId){
+		
+		// See if the Product actually exists.
+		Product product = getProductFromId(productId);
+		if(product == null){
+			return null;
+		}
+			
+		int reviewTotal = 0;
+		int numberOfReviews = 0;
+		
+		for(Review review : reviews){
+			if (review.getProduct().getId() == productId){
+				numberOfReviews++;
+				reviewTotal += review.getRating();
+			}
+		}
+		
+		if(numberOfReviews == 0){ // Also helps prevent divide by zero.
+			return null;
+		}
+		
+		return reviewTotal / numberOfReviews;
+	}
+	
+	// ----- END REVIEWS -----
+	
+	// ----- USERS -----
 	
 	/**
 	 * Returns a copy of the Users.
@@ -103,4 +140,6 @@ public class OfflineDB
 	public List<Review> getReviews(){
 		return new ArrayList<Review>(reviews);
 	}
+	
+	// ----- END USERS -----
 }
