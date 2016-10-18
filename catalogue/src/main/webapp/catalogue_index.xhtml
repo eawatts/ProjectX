@@ -27,14 +27,35 @@
 			<div class="row">
 				<div class="col-tab-12 col-desk-12">
 				<h2 class="category-heading">Top Products</h2>
-					<div class="regular slider" data-slick='{"slidesToShow":4, "slidesToScroll":4}'>
+					<div class="regular slider">
 					<ui:repeat var="current_product" value="#{products.topProducts}">
 						<div> <!-- Leave this div in. -->
 							<img src="http://placehold.it/350x300?text=1"></img>
-							<h:outputText class="product-slider-title" value="#{current_product.name}"/>
+							<div class="product-slider-title-container">
+								<h:outputText class="product-slider-title" value="#{current_product.name}"/>
+							</div>
 							<button type="button"
 										class="button-green product-slider-atb"
-										onclick="#{user.backet()}">Add to Basket&#160;&#160;<i class="fa fa-shopping-basket"></i></button>						
+										onclick="#{user.backet()}">Add to Basket&#160;&#160;<i class="fa fa-shopping-basket"></i></button>
+							<div>
+								<ul class="product-slider-star-rating">
+									<li class="product-slider-star" >
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</li>
+									<li class="product-slider-star" >
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</li>
+									<li class="product-slider-star" >
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</li>
+									<li class="product-slider-star" >
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</li>
+									<li class="product-slider-star" >
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</li>
+								</ul>
+							</div>						
 						</div>
 					</ui:repeat>
 					</div>

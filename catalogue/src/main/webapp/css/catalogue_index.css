@@ -7,14 +7,32 @@
 	margin-top: 30px;
 	border-style: none;
 }
+.product-slider-title-container {
+	text-align: center;
+	font-weight: bold;
+	width:100%;
+	font-size: 120%;
+	margin: 10px 0px;
+}
 .product-slider-title {
 	color: #A53F2B;
-	text-align: center;
-	font-weight:bold;
-	width:100%;
+	width: 100%;
 }
 .product-slider-atb {
 	width:80%;
 	margin-left:10%;
 	margin-right:10%;
+}
+
+.product-slider-star-rating {
+	text-align: center;
+	font-weight: bold;
+	width:100%;
+	font-size: 120%;
+	padding-left: 0px;
+}
+
+.product-slider-star{
+	color: #fed766;
+	display: inline-block;
 }
