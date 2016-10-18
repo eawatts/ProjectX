@@ -23,4 +23,4 @@ public List<Product> getProducts()
 {
 	return productManager.getProducts();
 }
-}
+} 
