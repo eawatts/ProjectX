@@ -5,7 +5,7 @@ import java.util.List;
 import projectx.persistence.entities.Supplier;
 
 
-public interface SupplierRespository {
+public interface SupplierRepository {
 	public void createSupplier(Supplier supplier);
 	public Supplier findBySupplierName(String name);
 	public Supplier findBySupplierId(String name);
