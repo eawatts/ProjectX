@@ -1,17 +1,19 @@
-package projectx.persistence.offline;
+package projectx.persistence.util;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
+import javax.ejb.Startup;
 
 import projectx.persistence.entities.Category;
 import projectx.persistence.entities.PaymentDetails;
 import projectx.persistence.entities.Review;
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.User;
-import projectx.persistence.entities.UserLevel;
 
+@Startup
 @Singleton
 public class InitialData {
 
@@ -19,12 +21,8 @@ public class InitialData {
 	private List<Review> reviews;
 	private List<PaymentDetails> paymentDetails;
 	private List<Product> products;
-	
-	public InitialData() {
-		populateData();
 
-	}
-
+	@PostConstruct
 	private void populateData() {
 		users = new ArrayList<User>();
 		users.add(new User());

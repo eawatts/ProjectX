@@ -14,6 +14,19 @@ import javax.inject.*;
 @Named("purchaseOrders")
 @SessionScoped
 public class PurchaseOrderController implements Serializable{
-	@Inject PurchaseOrderSerivce purchaseOrderSerivce;
+	@Inject 
+	private PurchaseOrderSerivce purchaseOrderSerivce;
 	private DataModel<PurchaseOrder> datamodel=null;
+	public DataModel<PurchaseOrder> getDatamodel() {
+		return datamodel;
+	}
+	public void setDatamodel(DataModel<PurchaseOrder> datamodel) {
+		this.datamodel = datamodel;
+	}
+	public PurchaseOrderSerivce getPurchaseOrderSerivce() {
+		return purchaseOrderSerivce;
+	}
+	public void setPurchaseOrderSerivce(PurchaseOrderSerivce purchaseOrderSerivce) {
+		this.purchaseOrderSerivce = purchaseOrderSerivce;
+	}
 }

@@ -1,4 +1,4 @@
-package projectx.persistence.entities;
+package projectx.persistence.util;
 
 public enum OrderState {
 	

@@ -3,13 +3,13 @@ package projectx.persistence.services;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import projectx.persistence.entities.User;
-import projectx.persistence.repositories.interfaces.UserRepository;
+import projectx.persistence.repositories.UserRepository;
 
 
 @Stateless
 public class LoginService {
-	UserRepository userRepo;
+	@Inject
+	private UserRepository userRepo;
 	
 	public boolean validateDetails(String username, String pass)
 	{

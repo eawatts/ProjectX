@@ -9,9 +9,7 @@ import javax.persistence.NamedQuery;
 
 @NamedQueries ({
 @NamedQuery (name = Product.FIND_BY_PRODUCT_NAME, query = "SELECT p FROM Product p WHERE p.name = :Productname")
-}
-)
-
+})
 @Entity
 @Table(name="Product")
 public class Product {

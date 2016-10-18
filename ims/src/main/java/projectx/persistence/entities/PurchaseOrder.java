@@ -2,17 +2,22 @@ package projectx.persistence.entities;
 
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
-@NamedQueries (
-		{
+@NamedQueries({
 			@NamedQuery (name = PurchaseOrder.SAVE_PURCHASEORDER, query = ""),
 			@NamedQuery (name = PurchaseOrder.SAVE_PURCHASEORDERS, query = ""),
 			@NamedQuery (name = PurchaseOrder.GET_PURCHASEORDER, query = ""),
 			@NamedQuery (name = PurchaseOrder.GET_PURCHASEORDERS, query = ""),
 			@NamedQuery (name = PurchaseOrder.UPDATE_PURCHASEORDER, query = ""),
-		}
-)
+})
 
 @Entity
 @Table(name = "PurchaseOrder")

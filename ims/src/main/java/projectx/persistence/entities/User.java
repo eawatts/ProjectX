@@ -14,6 +14,8 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
 
+import projectx.persistence.util.UserLevel;
+
 @NamedQueries (
 	{
 		@NamedQuery (name = User.SAVE_USER, query = ""),

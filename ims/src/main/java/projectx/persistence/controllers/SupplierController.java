@@ -7,17 +7,24 @@ import javax.faces.model.DataModel;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Supplier;
-import projectx.persistence.selected.SelectedSupplier;
-import projectx.persistence.services.SupplierService;
 
 @Named("suppliers")
 @SessionScoped
 public class SupplierController implements Serializable
 {
-	private SupplierService supplierService;
-	private SelectedSupplier selectedSupplier;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8543095349528556129L;
 	@SuppressWarnings("unused")
 	private int selectedSupplierIndex;
 	private DataModel<Supplier> dataModel = null;
+	
+	public DataModel<Supplier> getDataModel() {
+		return dataModel;
+	}
+	public void setDataModel(DataModel<Supplier> dataModel) {
+		this.dataModel = dataModel;
+	}
 	
 }

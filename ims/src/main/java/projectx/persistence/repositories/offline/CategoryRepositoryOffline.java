@@ -1,12 +1,17 @@
-package projectx.persistence.offline;
+package projectx.persistence.repositories.offline;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Category;
-import projectx.persistence.repositories.interfaces.CategoryRepository;
+import projectx.persistence.repositories.CategoryRepository;
+import projectx.persistence.util.InitialData;
 
+@Stateless
+@Default
 public class CategoryRepositoryOffline implements CategoryRepository {
 	
 	@Inject

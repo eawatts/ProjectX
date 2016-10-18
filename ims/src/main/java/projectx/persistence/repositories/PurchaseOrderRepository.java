@@ -1,4 +1,4 @@
-package projectx.persistence.repositories.interfaces;
+package projectx.persistence.repositories;
 
 
 import java.util.List;
@@ -14,5 +14,6 @@ public interface PurchaseOrderRepository {
 	public PurchaseOrder findPurchaseOrderById(String id);
 	public List<PurchaseOrder> getPurchaseOrders();
 	public void updatePurchaseOrder (PurchaseOrder purchaseOrder);
+	public Object getSupplier();
 }
 	

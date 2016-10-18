@@ -1,4 +1,4 @@
-package projectx.persistence.repositories.interfaces;
+package projectx.persistence.repositories;
 import java.util.List;
 
 import javax.ejb.Stateless;

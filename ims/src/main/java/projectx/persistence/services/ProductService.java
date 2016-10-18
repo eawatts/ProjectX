@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Product;
-import projectx.persistence.repositories.interfaces.ProductRepository;
+import projectx.persistence.repositories.ProductRepository;
 
 @Stateless
 public class ProductService{

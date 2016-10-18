@@ -3,16 +3,18 @@ package projectx.persistence.selected;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Product;
-import projectx.persistence.services.ProductService;
+
 @SessionScoped
 @Named("selected")
 public class SelectedProduct implements Serializable
 {
-	@Inject private ProductService proServ;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7762864582284913362L;
 	private Product selectedProduct;
 	/**
 	 * @return the selectedProduct

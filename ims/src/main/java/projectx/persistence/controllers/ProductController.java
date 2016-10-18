@@ -25,20 +25,7 @@ public class ProductController implements Serializable
 	@SuppressWarnings("unused")
 	private int selectedProductIndex;
 	private DataModel<Product> productDataModel = null;
-	/**
-	 * @return the productService
-	 */
-	public ProductService getProductService()
-	{
-		return productService;
-	}
-	/**
-	 * @param productService the productService to set
-	 */
-	public void setProductService(ProductService productService)
-	{
-		this.productService = productService;
-	}
+
 	/**
 	 * @return the selectedProduct
 	 */

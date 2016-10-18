@@ -2,15 +2,16 @@ package projectx.persistence.services;
 
 import java.util.List;
 
-import javax.enterprise.context.SessionScoped;
+import javax.ejb.Stateless;
+import javax.inject.Inject;
 
-import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Supplier;
-import projectx.persistence.repositories.interfaces.SupplierRepository;
+import projectx.persistence.repositories.SupplierRepository;
 
-@SessionScoped
+@Stateless
 public class SupplierService{
-	SupplierRepository supplierRepo;
+	@Inject
+	private SupplierRepository supplierRepo;
 	
 	public Supplier findSupplierById(String id)
 	{
@@ -18,11 +19,15 @@ public class SupplierService{
 	}
 	public Supplier findSupplierById(int id)
 	{
-		return supplierRepo.findBySupplierId(id);
+		return supplierRepo.findBySupplierId(Integer.toString(id));
 	}
 	public List<Supplier> getSuppliers() 
 	{
 		return supplierRepo.getSuppliers();
+	}
+	public Supplier findById(Object supplier) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

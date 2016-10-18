@@ -5,6 +5,9 @@ import java.sql.Date;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+import projectx.persistence.util.OrderState;
+import projectx.persistence.util.OrderType;
+
 @Entity
 @Table(name = "order")
 
