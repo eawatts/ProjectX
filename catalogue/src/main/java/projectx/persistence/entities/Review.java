@@ -40,7 +40,7 @@ public class Review {
 
 	@Column(name = "rating", nullable = false)
 	@NotNull
-	private Long rating;
+	private float rating;
 
 	@Column(name = "comment", length = 512)
 	@Size(min = 2, max = 512)
@@ -65,7 +65,7 @@ public class Review {
 	 * @param reviewer
 	 * @param product
 	 */
-	public Review(int id, Long rating, String comment, User reviewer, Product product) {
+	public Review(int id, float rating, String comment, User reviewer, Product product) {
 		super();
 		this.id = id;
 		this.rating = rating;
@@ -86,7 +86,7 @@ public class Review {
 	 * returns a rating value
 	 * @return
 	 */
-	public Long getRating() {
+	public float getRating() {
 		return rating;
 	}
 

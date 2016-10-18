@@ -6,24 +6,24 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-import projectx.persistence.entities.Products;
+import projectx.persistence.entities.xxx_Products;
  
 @SuppressWarnings("serial")
 @ManagedBean
 @ViewScoped
 public class CarouselController implements Serializable {
-     private List<Products> products;
-     private Products selectedProduct;
+     private List<xxx_Products> products;
+     private xxx_Products selectedProduct;
 
-	public List<Products> getProducts() {
+	public List<xxx_Products> getProducts() {
 		return products;
 	}
 
-	public Products getSelectedProduct() {
+	public xxx_Products getSelectedProduct() {
 		return selectedProduct;
 	}
 
-	public void setSelectedProduct(Products selectedProduct) {
+	public void setSelectedProduct(xxx_Products selectedProduct) {
 		this.selectedProduct = selectedProduct;
 	}
      

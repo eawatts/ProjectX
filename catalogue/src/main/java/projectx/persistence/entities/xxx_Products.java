@@ -1,6 +1,6 @@
 package projectx.persistence.entities;
 
-public class Products {
+public class xxx_Products {
 	private String productName;
 	private String productPrice;
 	private String productDescription;

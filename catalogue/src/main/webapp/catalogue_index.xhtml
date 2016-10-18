@@ -6,19 +6,31 @@
 
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/catalogue_index.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/slider/slick.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/slider/slick-theme.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick-theme.css"></link>
 	</ui:define>
-	
+
 	<ui:define name="title">Welcome</ui:define>
-	
+
 	<ui:define name="main-content">
 		<div>
 			<div class="row">
 				<div class="col-tab-12 col-desk-12">
-				<a href="/catalogue/catalogue_index.xhtml" name="NB Gardens Home Page">
-					<h:graphicImage class="main-banner-img" value="img/index/banner_grass_text.jpg" alt="Grass Banner"></h:graphicImage>
-				</a>
+					<a href="/catalogue/catalogue_index.xhtml"
+						name="NB Gardens Home Page"> <h:graphicImage
+							class="main-banner-img" value="img/index/banner_grass_text.jpg"
+							alt="Grass Banner"></h:graphicImage>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					
+					<ui:repeat var="product" value="#{home.topProducts}">
+						<h3><h:outputText value="#{product.toString()}"/></h3>
+					</ui:repeat>
 				</div>
 			</div>
 			<div class="row">
@@ -45,17 +57,16 @@
 						<div>
 							<img src="http://placehold.it/350x300?text=7"></img>
 						</div>
-						
 					</section>
 				</div>
 			</div>
 		</div>
 
 	</ui:define>
-	
+
 	<ui:define name="custom-scripts">
-		<script type="text/javaScript" src="js/slick.min.js"></script>
+		<script type="text/javaScript" src="libraries/slider/slick.min.js"></script>
 		<script type="text/javaScript" src="js/catalogue_index.js"></script>
 	</ui:define>
-	
+
 </ui:composition>
