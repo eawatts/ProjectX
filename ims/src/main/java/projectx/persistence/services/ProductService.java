@@ -10,7 +10,7 @@ import projectx.persistence.repositories.interfaces.ProductRepository;
 
 @Stateless
 public class ProductService{
-@Inject private ProductRepository productManager;
+private ProductRepository productManager;
 public Product findProductById(String id)
 {
 	return findProductById(Integer.parseInt(id));

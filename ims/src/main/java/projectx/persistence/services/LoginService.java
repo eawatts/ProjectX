@@ -9,7 +9,7 @@ import projectx.persistence.repositories.interfaces.UserRepository;
 
 @Stateless
 public class LoginService {
-	@Inject UserRepository userRepo;
+	UserRepository userRepo;
 	
 	public boolean validateDetails(String username, String pass)
 	{
@@ -20,7 +20,7 @@ public class LoginService {
 		else return false;
 		
 		}
-	public long getUserID(String username){
+	public String getUserID(String username){
 		return userRepo.getId(username.toLowerCase());
 	}
 

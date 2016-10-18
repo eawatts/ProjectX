@@ -27,7 +27,7 @@ template="ims_template.xhtml">
 							<div class="loginToSite">
 								<h3 id="formTitle">Enter your details</h3>
 								<form class="form">
-									Username <h:inputText class="form-control" value="#{login.email}" type="email" required="true" requiredMessage="Please Enter Email"></h:inputText> 
+									Username <h:inputText class="form-control" value="#{login.username}" type="text" required="true" requiredMessage="Please Enter Username"></h:inputText> 
 									Password <h:inputSecret class="form-control" value="#{login.password}" type="password" required= "true" requiredMessage="Please Enter Password"></h:inputSecret>
 									<hr />
 									<h:commandButton class="submit-button" type="submit" action="#{login.loginToAccount}" value="Sign in"></h:commandButton> 

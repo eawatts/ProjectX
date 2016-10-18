@@ -12,5 +12,5 @@ public interface UserRepository {
 	public void updateUser(User user);
 	public User findByUsername(String username);
 	public boolean checkPassword(String username, String password);
-	public long getId(String username);
+	public String getId(String username);
 }

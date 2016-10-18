@@ -4,41 +4,51 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import projectx.persistence.selected.LoggedInUser;
 import projectx.persistence.services.LoginService;
-import projectx.persistence.services.UserCredentials;
+
 
 @Named(value="login")
 @RequestScoped
 public class LoginController {
 	@Inject
 	LoginService loginService;
-	@Inject
-	UserCredentials userCredentials;
-	private String username = "";
-	private String password = "";
-	private String error = "";
-	
-	public String login(){
-		if (username.equals("")){
-		error = "please enter a username";
-		password = "";
-		return "login";
+	@Inject LoggedInUser loggedInUser;
+	private String username= "";
+	private String password= "";
+	private String error= "";
+	public String login()
+	{
+		if(loginService.validateDetails(username, password))
+		{
+			loggedInUser.setUser(loginService.getUserID(username));
+			return "home";
 		}
-		if (password.equals("")) {
-		error = "please enter a password";
-		password = "";
-		return "login";
-		}
-		if(!loginService.validateDetails(username, password)) {
-				error = "Invalid login";
+		else
+		{
+			if (username.equals(""))
+			{
+				error = "please enter a username";
 				password = "";
 				return "login";
-				}
-				UserCredentials.setUser(loginService.getUserID(username));
-				return "home";
+			}
+			else if (password.equals("")) 
+			{
+				error = "please enter a password";
+				password = "";
+				return "login";
+			}
+			else
+			{
+				error = "Username and password do not match";
+				password="";
+				return "login";
+			}
+			
+		}		
+	
 	}
 	public String logout() {
-		userCredentials.setUser("");
 		return "login";
 		}
 		public String getUsername(){
