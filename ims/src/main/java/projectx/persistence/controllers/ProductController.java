@@ -1,8 +1,6 @@
 package projectx.persistence.controllers;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.inject.Inject;
@@ -68,6 +66,19 @@ public class ProductController implements Serializable
 	public void setProductList(DataModel<Product> productList)
 	{
 		this.productDataModel = productList;
+	}
+	
+	public String getProduct(String id)
+	{
+		try
+		{
+			selectedProduct.setSelectedProduct(productService.findProductById(id));
+			return "product";
+		}
+		catch(Exception e)
+		{
+			return "browse";
+		}
 	}
 	
 }
