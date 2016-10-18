@@ -35,8 +35,7 @@
     transform: translate(0, -50%);
 
     cursor: pointer;
-
-    color: transparent;
+    
     border: none;
     outline: none;
     background: transparent;
@@ -71,7 +70,6 @@
     line-height: 1;
 
     opacity: .75;
-    color: #004425;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -131,7 +129,7 @@
     margin: 0;
 
     list-style: none;
-
+	
     text-align: center;
 }
 .slick-dots li
@@ -161,6 +159,7 @@
     cursor: pointer;
 
     color: transparent;
+    
     border: 0;
     outline: none;
     background: transparent;
@@ -200,5 +199,5 @@
 .slick-dots li.slick-active button:before
 {
     opacity: .75;
-    color: black;
+    color: #004425;
 }

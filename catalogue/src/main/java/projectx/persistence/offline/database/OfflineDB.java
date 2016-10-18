@@ -31,19 +31,19 @@ public class OfflineDB
 	
 	private void setupProducts() {
 		products = new ArrayList<Product>();
-		products.add(new Product("Red Gnome 1", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 2", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 3", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 4", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 5", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 6", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 7", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 8", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 9", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 10", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 11", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 12", 100, new BigDecimal(19.99), 10, 100));
-		products.add(new Product("Red Gnome 13", 100, new BigDecimal(19.99), 10, 100));	
+		products.add(new Product("Red Gnome 1", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 2", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 3", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 4", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 5", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 6", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 7", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 8", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 9", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 10", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 11", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 12", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product("Red Gnome 13", 100, new BigDecimal(19.99), 10, 100, 1));	
 	}
 	
 	private void setupUsers() {

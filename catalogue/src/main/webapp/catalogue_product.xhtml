@@ -30,34 +30,37 @@
                      
             <div class="row">
                 <div class="col-tab-4 col-desk-4">
-                    <div id="picture">
-                        <h:graphicImage value="#{product.imgPath}" alt="Picture of #{product.productName}" style="width:200px;height:200px;"></h:graphicImage> </div>
-                </div>
+                        <h:graphicImage value="#{product.imgPath}" alt="Picture of #{product.productName}" style="width:100%;height:auto;"></h:graphicImage> </div>
                 <div class="col-tab-8 col-desk-8">
                     <form action="#popup1" method="get">
-                        <div class="col-tab-12 col-desk-12">
+                        <div class="row">
                             <div id="productname">
                                 <h1>
           	                     <h:outputText value="#{product.productName}" />
                                 </h1> </div>
                         </div>
-                        <div class="col-tab-6 col-desk-6">
-                            <div id="productinfo">
-                                <h2>Stock:
-          	                		 <h:outputText value="#{product.stockStatus}" />  
-                                </h2>
-                                <h2>Cost:
-                                 <i class="fa fa-gbp" aria-hidden="true"></i>
-          	                         <h:outputText value=" #{product.productPrice}" />
-                                </h2>
+                        <div class="row">
+                        	<div class="col-tab-6 col-desk-6">
+                            	<div id="productinfo">
+                            	<div class="row">
+                                	<h2>Stock:
+          	                			 <h:outputText value="#{product.stockStatus}" />  
+                               	 </h2>
+                               	 </div>
+                                	<div class="row">
+                               	 <h2>Cost:
+                               	  <i class="fa fa-gbp" aria-hidden="true"></i>
+          	                   	      <h:outputText value=" #{product.productPrice}" />
+                              		 </h2>
+                              		 </div>
                                 <div class="row">
-                                    <div class="col-tab-6 col-desk-6">
-                                        <h2>Quantity:</h2> </div>
-                                    <div class="col-tab-6 col-desk-6">
-                                        <input list="quantity" name="quantity" style="width: 75px;"> </input>
-                                    </div>
+                                   	<div class="quantity">
+                                        <strong>Quantity: </strong>                            
+                                        <input list="quantity" name="quantity"> </input>
+                                  </div>
+                                  <br/>
                                 </div> <img src="..\assets\rating.png" alt="Rating" /> </div>
-                        </div>
+                        	</div>
                         <div class="col-tab-6 col-desk-6">
                             <div id="productaction">
                                 <button class="button" onclick="location.href='#popup1'">Add to Basket</button>
@@ -71,7 +74,9 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </form>
+                   
                 </div>
             </div>
             <div class="row">
