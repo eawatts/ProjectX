@@ -22,13 +22,10 @@
 		<h:outputText value="#{subcategory.subcategoryName}" />
 		</h1>
 		
-		<ui:repeat var="current_product" value="#{home.topProducts}">
-		 		<!--	//Put in a list of items in subcategory here -->
+		<ui:repeat var="current_product" value="#{products.topProducts}">
 		 		<div class="row">
 					<div class="col-tab-2 col-desk-2">
-
-						<h:graphicImage value="#{product.imgPath}" />
-
+						<h:graphicImage value="#{REMOVE_products.imgPath}" />
 					</div>
 					<div class="col-tab-4 col-desk-4">
 						<h:outputText escape="false"
@@ -39,15 +36,21 @@
 						</h:panelGroup>
 					</div>
 					<div class="col-tab-3 col-desk-3">
+						
+							<ui:repeat var="" value="">
+								<!-- put in repeat of star rating to print number of stars -->
+							</ui:repeat>
+						<br/>
+						<p><h:outputText value="#{REMOVE_products.productDescription}" /></p>
+					</div>
+					<div class="col-tab-3 col-desk-3">
 						<input type="number" name="quantity" />
-						<h:outputText value="#{product.productPrice}" />
+						<h:outputText value="#{REMOVE_products.productPrice}" />
 					</div>
 					<div class="col-tab-3 col-desk-3">
 					<i class="fa fa-gbp" aria-hidden="true"></i>
-						<h:outputText value="#{product.productPrice}"/>
-						<br/>
+						<h:outputText value="#{REMOVE_products.productPrice}"/><br/><br/>
 						<h:commandButton value="Add To Basket" class="button-green"/>
-						<!-- put in add to basket button -->
 					</div>
 				</div>
 		</ui:repeat>    			    

@@ -43,7 +43,7 @@ private String testMessage = "This is a test message - Ed and Tom are better tha
 	}
 	
 	public String getImgPath(){
-		String imagePath = "img/products/RedGnome.png";
+		String imagePath = "img/products/gnome_red-hat.png";
 		return imagePath;
 	}
 	
@@ -57,8 +57,8 @@ private String testMessage = "This is a test message - Ed and Tom are better tha
 		return stat;
 	}
 	
-	public int getProductPrice(){
-		return 10;
+	public double getProductPrice(){
+		return 10.00;
 	}
 	
 	public String getProductDescription(){
