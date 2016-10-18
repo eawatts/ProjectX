@@ -11,16 +11,16 @@ import projectx.persistence.repositories.interfaces.ProductRepository;
 @Stateless
 public class ProductService{
 private ProductRepository productManager;
-public Product findProductById(String id)
-{
-	return findProductById(Integer.parseInt(id));
-}
-public Product findProductById(int id)
-{
-	return productManager.findByProductId(id);
-}
-public List<Product> getProducts() 
-{
-	return productManager.getProducts();
-}
+	public Product findProductById(String id)
+	{
+		return findProductById(Integer.parseInt(id));
+	}
+	public Product findProductById(int id)
+	{
+		return productManager.findByProductId(id);
+	}
+	public List<Product> getProducts() 
+	{
+		return productManager.getProducts();
+	}
 } 

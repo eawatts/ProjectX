@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.model.DataModel;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Product;
@@ -18,11 +20,13 @@ public class ProductController implements Serializable
 	 * 
 	 */
 	private static final long serialVersionUID = 2390803500375830316L;
+	@Inject
 	private ProductService productService;
+	@Inject
 	private SelectedProduct selectedProduct;
 	@SuppressWarnings("unused")
 	private int selectedProductIndex;
-	private ArrayList<Product> productList = null;
+	private DataModel<Product> productDataModel = null;
 	/**
 	 * @return the productService
 	 */
@@ -54,16 +58,16 @@ public class ProductController implements Serializable
 	/**
 	 * @return the productList
 	 */
-	public ArrayList<Product> getProductList()
+	public DataModel<Product> getProductList()
 	{
-		return productList;
+		return productDataModel;
 	}
 	/**
 	 * @param productList the productList to set
 	 */
-	public void setProductList(ArrayList<Product> productList)
+	public void setProductList(DataModel<Product> productList)
 	{
-		this.productList = productList;
+		this.productDataModel = productList;
 	}
 	
 }
