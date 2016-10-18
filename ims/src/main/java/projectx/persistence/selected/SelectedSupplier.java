@@ -12,25 +12,15 @@ import projectx.persistence.services.SupplierService;
 @Named("selected")
 public class SelectedSupplier implements Serializable
 {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	@Inject private SupplierService suppServ;
 	private Supplier selectedSupplier;
-	/**
-	 * @return the selectedSupplier
-	 */
-	public Supplier getSelectedSupplier()
-	{
+
+	public Supplier getSelectedSupplier(){
 		return selectedSupplier;
 	}
-	/**
-	 * @param selectedSupplier the selectedProduct to set
-	 */
-	public void setSelectedSupplier(Supplier selectedSupplier)
-	{
+	public void setSelectedSupplier(Supplier selectedSupplier){
 		this.selectedSupplier = selectedSupplier;
+		selectedSupplier=suppServ.findSupplierById(selectedSupplier.getId());
 	}
 	
 	

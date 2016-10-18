@@ -7,7 +7,7 @@ import javax.faces.model.DataModel;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Supplier;
-import projectx.persistence.selected.SelectedSupplier
+import projectx.persistence.selected.SelectedSupplier;
 import projectx.persistence.services.SupplierService;
 
 @Named("suppliers")
