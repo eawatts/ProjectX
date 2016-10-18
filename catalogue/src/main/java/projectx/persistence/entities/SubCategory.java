@@ -1,8 +1,7 @@
 package projectx.persistence.entities;
 
-import java.util.ArrayList;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "SubCategory")
@@ -13,7 +12,9 @@ import javax.persistence.*;
 		@NamedQuery(name = SubCategory.FIND_ALL, query = "SELECT s FROM subcategory s WHERE s.id = :id"),
 		@NamedQuery(name = SubCategory.INSERT_CATEGORY, query = "INSERT INTO subcategory s (id, name) VALUES(:id, :name)"),
 		@NamedQuery(name = SubCategory.UPDATE_CATEGORY, query = "UPDATE subcategory s SET s.id=:newid, s.name=:newname WHERE s.id =:id"),
-		@NamedQuery(name = SubCategory.FIND_PRODUCTS, query = "SELECT products FROM subcategory s WHERE s.name = :name")
+		@NamedQuery(name = SubCategory.FIND_PRODUCTS, query = "SELECT p.name, s.name, c.name FROM products p JOIN subcategory s ON p.subcategory_id = s.id JOIN "
+															+ "category c ON s.category_id = c.id WHERE s.id = :id"),
+		@NamedQuery(name = SubCategory.FIND_MAIN_CATEGORY, query = "SELECT s.name, c.name FROM subcategory s JOIN category c ON s.category_id = c.id ORDER BY c.name DESC")
 	}
 )
 public class SubCategory {
@@ -24,6 +25,8 @@ public class SubCategory {
 		public static final String FIND_PRODUCTS = "SubCategory.findProducts";
 		public static final String INSERT_CATEGORY = "SubCategory.insert";
 		public static final String UPDATE_CATEGORY = "SubCategory.update";
+		public static final String FIND_MAIN_CATEGORY = "SubCategory.findMainCategory";
+		
 		@Id
 		@GeneratedValue
 		@Column(name = "id", nullable = false)
@@ -31,21 +34,25 @@ public class SubCategory {
 
 		@Column(name = "name", nullable = false)
 		private String name;
-
-		@Column(name = "products", nullable = true)
-		private ArrayList <Product> products;
+		
+		@ManyToOne
+		@JoinColumn(name = "category_id", nullable = false)
+		@NotNull
+		private int category_id;
+		
 		
 		/**
 		 * Constructor
 		 * 
 		 * @param id
 		 * @param nName
+		 * @param c_id
 		 */
-		public SubCategory(int id, String nName)
+		public SubCategory(int id, String nName, int c_id)
 		{
 			setSubCategoryID(id);
 			setName(nName);
-			this.products = null;
+			setMainCategoryID(c_id);
 		}
 
 
@@ -86,20 +93,23 @@ public class SubCategory {
 		}
 		
 		/**
-		 * 
-		 * @return product list
+		 * @return the subcategoryID
 		 */
-		public ArrayList<Product> getProducts() {
-			return products;
-		}
-		/**
-		 * add a product to the sub-category
-		 * @param products
-		 */
-		
-		public void setProducts(Product product) {
-			products.add(product);
+		public int getMainCategoryID()
+		{
+			return category_id;
+
 		}
 
+		/**
+		 * @param subCategoryID 
+		 * @param subcategoryID
+		 *            the subcategoryID to set
+		 */
+		public void setMainCategoryID(int category_id)
+		{
+			this.category_id = category_id;
+		}
+	
 	}
 

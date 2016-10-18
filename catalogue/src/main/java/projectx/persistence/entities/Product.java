@@ -45,17 +45,18 @@ public class Product {
 		@ManyToOne
 		@JoinColumn(name = "subcategory_id", nullable=false)
 		@NotNull
-		private SubCategory sub_id;
+		private int sub_id;
 		
 		
 		public Product(){};
-		public Product(String name, int stockLvl, BigDecimal price, int lowStock, int maxStock){
+		public Product(String name, int stockLvl, BigDecimal price, int lowStock, int maxStock, int sub_id){
 			this.name = name;
 			this.currentStockLevel = stockLvl;
 			this.price = price;
 			this.lowStockLevel = lowStock;
 			this.highStockLevel = maxStock;
 			this.isDiscontinued = false;
+			this.sub_id = sub_id;
 		}
 		
 		public int getId() {
@@ -103,10 +104,10 @@ public class Product {
 		public void setDiscontinued(boolean isDiscontinued) {
 			this.isDiscontinued = isDiscontinued;
 		}
-		public SubCategory getSub_id() {
+		public int getSub_id() {
 			return sub_id;
 		}
-		public void setSub_id(SubCategory sub_id) {
+		public void setSub_id(int sub_id) {
 			this.sub_id = sub_id;
 		}
 }
