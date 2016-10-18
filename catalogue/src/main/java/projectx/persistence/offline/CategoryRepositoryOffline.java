@@ -5,57 +5,47 @@ import java.util.List;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Category;
+import projectx.persistence.offline.database.OfflineDB;
 import projectx.persistence.repositories.interfaces.CategoryRepository;
 
 public class CategoryRepositoryOffline implements CategoryRepository {
 	
 	@Inject
-	private InitialData db;
+	private OfflineDB db;
 
 	@Override
-	public void persistCategory(Category category)
-	{
-		db.addCategory(category);
+	public void persistCategory(Category category) {
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void persistCategories(List<Category> categories)
-	{
-		for(Category category : categories)
-		{
-			persistCategory(category);
-		}
+	public void persistCategories(List<Category> categories) {
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<Category> getCategories()
-	{
-		return db.getCategories();
+	public List<Category> getCategories() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public void updateCategory(Category category)
-	{
+	public void updateCategory(Category category) {
 		// TODO Auto-generated method stub
-		db.updateCategory(category);
 		
 	}
 
 	@Override
-	public Category findByName(String name)
-	{
+	public Category findByName(String name) {
 		// TODO Auto-generated method stub
-		return db.findCategoryByName(name);
+		return null;
 	}
 
 	@Override
-	public Category findByid(long id)
-	{
+	public Category findByid(long id) {
 		// TODO Auto-generated method stub
-		return db.findCategoryById(id);
+		return null;
 	}
-
-	
 }
