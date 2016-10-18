@@ -48,11 +48,11 @@ public class OfflineDB
 	
 	private void setupUsers() {
 		users = new ArrayList<User>();
-		users.add(new User(1, "username", "password", "John", "Smith", UserLevel.ADMIN, "john.smith@email.com"));
-		users.add(new User(2, "username", "password", "Barry", "Smith", UserLevel.CUSTOMER, "barry.smith@email.com"));
-		users.add(new User(3, "username", "password", "Jane", "Smith", UserLevel.CUSTOMER, "jane.smith@email.com"));
-		users.add(new User(4, "username", "password", "Sally", "Smith", UserLevel.CUSTOMER, "sally.smith@email.com"));
-		users.add(new User(5, "username", "password", "Steve", "Smith", UserLevel.CUSTOMER, "steve.smith@email.com"));
+		users.add(new User(1, "JSmithy", "password", "John", "Smith", UserLevel.ADMIN, "john.smith@email.com"));
+		users.add(new User(2, "Bazza", "password", "Barry", "Smith", UserLevel.CUSTOMER, "barry.smith@email.com"));
+		users.add(new User(3, "JaneMane", "password", "Jane", "Smith", UserLevel.CUSTOMER, "jane.smith@email.com"));
+		users.add(new User(4, "Sallysaurus", "password", "Sally", "Smith", UserLevel.CUSTOMER, "sally.smith@email.com"));
+		users.add(new User(5, "Stevie", "password", "Steve", "Smith", UserLevel.CUSTOMER, "steve.smith@email.com"));
 	}
 	
 	private void setupReviews() {
