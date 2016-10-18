@@ -1,72 +1,66 @@
-<ui:composition 
-  xmlns="https://www.w3.org/1999/xhtml" 
-  xmlns:f="http://java.sun.com/jsf/core" 
-  xmlns:h="http://java.sun.com/jsf/html" 
-  xmlns:ui="http://java.sun.com/jsf/facelets" 
-  template="ims_template.xhtml">
-  <meta charset="utf-8"/>
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="ims_template.xhtml">
+	<meta charset="utf-8" />
 	<ui:define name="title">View Purchase Order</ui:define>
+	<ui:define name="page-stylesheet">
+		<link rel="stylesheet" type="text/css"
+			href="css/ims-purchase-order-view.css" />
+	</ui:define>
 	<ui:define name="main-content">
 		<!-- This is the content of the actual page. -->
 		<div class="main-content">
 			<div class="pageheading">
-				<h2> View Purchase Order</h2>
+				<h2>View Purchase Order</h2>
 			</div>
 			<div class="poheaders">
 				<div class="row">
-					<div class="col-desk-2 col-tab-2">
-						Purchase Order ID
-					</div>
-					<div class="col-desk-2 col-tab-2">
-						Supplier
-					</div>
-					<div class="col-desk-2 col-tab-2">
-						Approved/ Rejected
-					</div>
-					<div class="col-desk-2 col-tab-2">
-						Date Approved
-					</div>
-					<div class="col-desk-2 col-tab-2">
-						Status
-					</div>
-					<div class="col-desk-2 col-tab-2">
-					</div>
+					<div class="col-desk-2 col-tab-2">Purchase Order ID</div>
+					<div class="col-desk-2 col-tab-2">Supplier</div>
+					<div class="col-desk-2 col-tab-2">Approved/ Rejected</div>
+					<div class="col-desk-2 col-tab-2">Date Approved</div>
+					<div class="col-desk-2 col-tab-2">Status</div>
+					<div class="col-desk-2 col-tab-2"></div>
 				</div>
 			</div>
 			<div class="poItems">
 				<ui:repeat var="purchaseOrder" value="#{purchaseOrders.datamodel}">
-				<div class="poitem">
-					<div class="row">
-						<div class="col-desk-2 col-tab-2">
-							<h:outputText escape="false" value="#{purchaseOrder.id}" />
-						</div>
-						<div class="col-desk-2 col-tab-2">
-							<h:outputText escape="false" value="#{purchaseOrder.supplier.name}" />
-						</div>
-						<div class="col-desk-2 col-tab-2">
-							<h:outputText escape="false" value="#{purchaseOrder.Approved}" />
-						</div>
-						<div class="col-desk-2 col-tab-2">
-							<h:outputText escape="false" value="#{purchaseOrder.ApprovedDate}" />
-						</div>
-						<div class="col-desk-2 col-tab-2">
-							<h:outputText escape="false" value="#{purchaseOrder.Status}" />
-						</div>
-						<div class="col-desk-2 col-tab-2">
-							<button name="edit"> Edit </button>
+					<div class="poitem">
+						<div class="row">
+							<div class="col-desk-2 col-tab-2">
+								<h:outputText escape="false" value="#{purchaseOrder.id}" />
+							</div>
+							<div class="col-desk-2 col-tab-2">
+								<h:outputText escape="false"
+									value="#{purchaseOrder.supplier.name}" />
+							</div>
+							<div class="col-desk-2 col-tab-2">
+								<h:outputText escape="false" value="#{purchaseOrder.Approved}" />
+							</div>
+							<div class="col-desk-2 col-tab-2">
+								<h:outputText escape="false"
+									value="#{purchaseOrder.ApprovedDate}" />
+							</div>
+							<div class="col-desk-2 col-tab-2">
+								<h:outputText escape="false" value="#{purchaseOrder.Status}" />
+							</div>
+							<div class="col-desk-2 col-tab-2">
+								<button name="edit">Edit</button>
+							</div>
 						</div>
 					</div>
-				</div>
 			</div>
 			<div class="Controls">
 				<div class="add-generatePO">
 					<div class="row">
 						<div class="col-desk-6 col-tab-6">
-							<button name="createPO"> Create New Purchase Order </button>
+							<button name="createPO">Create New Purchase Order</button>
 						</div>
 
 						<div class="col-desk-6 col-tab-6">
-							<button name="generatePO"> Geneate New Purchase Order </button>
+							<button name="generatePO">Geneate New Purchase Order</button>
 						</div>
 					</div>
 				</div>

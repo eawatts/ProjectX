@@ -1,36 +1,57 @@
-<ui:composition
- xmlns="https://www.w3.org/1999/xhtml" 
- xmlns:f="http://java.sun.com/jsf/core" 
- xmlns:h="http://java.sun.com/jsf/html"
- xmlns:ui="http://java.sun.com/jsf/facelets" 
- template="ims_template.xhtml">
-    <link  rel="stylesheet" type="text/css" href="css/homepage.css"></link>
-    <meta charset="utf-8" />
-    <ui:define name="title">Home</ui:define>
-    <ui:define name="maincontent">
-        <div class="main-content">
-            <div class="row">
-                <h1 class="titleText">Home</h1>
-                <p class="description"><b>Top 25 Low Stock Items</b></p>
-            </div>
-            <div class="row">
-                <div class="table">
-                    <div class="row">
-                        <div class="col-tab-3 col-desk-3" align="left">Product ID</div>
-                        <div class="col-tab-3 col-desk-3">Name</div>
-                        <div class="col-tab-3 col-desk-3">Current Stock</div>
-                        <div class="col-tab-3 col-desk-3">Low Limit</div>
-                    </div>
-                    <ui:repeat var="product" value="#{products.productList}">
-                        <div class="row">
-                            <div class="col-tab-3 col-desk-3" align="left"><p><h:outputText value="#{product.id}"/></p></div>
-                            <div class="col-tab-3 col-desk-3"><p><h:outputText value="#{product.name}"/></p></div>
-                            <div class="col-tab-3 col-desk-3"><p><h:outputText value="#{product.currentstock}"/></p></div>
-                            <div class="col-tab-3 col-desk-3"><p><h:outputText value="#{product.lowlimit}"/></p></div>
-                        </div>
-                    </ui:repeat>
-                </div>
-            </div>
-        </div>
-    </ui:define>
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="ims_template.xhtml">
+	<ui:define name="page-stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/homepage.css"></link>
+	</ui:define>
+
+
+	<meta charset="utf-8" />
+	<ui:define name="title">Home</ui:define>
+	<ui:define name="maincontent">
+		<div class="main-content">
+			<div class="row">
+				<h1 class="titleText">Home</h1>
+				<p class="description">
+					<b>Top 25 Low Stock Items</b>
+				</p>
+			</div>
+			<div class="row">
+				<div class="table">
+					<div class="row">
+						<div class="col-tab-3 col-desk-3" align="left">Product ID</div>
+						<div class="col-tab-3 col-desk-3">Name</div>
+						<div class="col-tab-3 col-desk-3">Current Stock</div>
+						<div class="col-tab-3 col-desk-3">Low Limit</div>
+					</div>
+					<ui:repeat var="product" value="#{products.productList}">
+						<div class="row">
+							<div class="col-tab-3 col-desk-3" align="left">
+								<p>
+									<h:outputText value="#{product.id}" />
+								</p>
+							</div>
+							<div class="col-tab-3 col-desk-3">
+								<p>
+									<h:outputText value="#{product.name}" />
+								</p>
+							</div>
+							<div class="col-tab-3 col-desk-3">
+								<p>
+									<h:outputText value="#{product.currentstock}" />
+								</p>
+							</div>
+							<div class="col-tab-3 col-desk-3">
+								<p>
+									<h:outputText value="#{product.lowlimit}" />
+								</p>
+							</div>
+						</div>
+					</ui:repeat>
+				</div>
+			</div>
+		</div>
+	</ui:define>
 </ui:composition>

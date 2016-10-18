@@ -1,43 +1,52 @@
-<ui:composition
-xmlns="https://www.w3.org/1999/xhtml"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:ui="http://java.sun.com/jsf/facelets"
-template="ims_template.xhtml">
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="ims_template.xhtml">
 
 	<meta charset="utf-8" />
-	<ui:define name ="title">Login</ui:define>
-	 <ui:define name="maincontent">
-	 
+	<ui:define name="page-stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+	</ui:define>
+	<ui:define name="title">Login</ui:define>
+	<ui:define name="maincontent">
+
 		<div class="main-content">
 			<div class="breadcrumbs">
-					<a href="ims_homepage.html">Home</a> > <a href="ims_login.html">Login</a>
+				<a href="ims_homepage.html">Home</a> > <a href="ims_login.html">Login</a>
+			</div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<article class="mainBody">
+						<div class="login">
+							<h1>Login</h1>
+						</div>
+
+						<div class="description">
+							<p>Please login to your NB Gardens Account to access website
+								features and checkout.</p>
+						</div>
+						<div class="loginToSite">
+							<h3 id="formTitle">Enter your details</h3>
+							<form class="form">
+								Username
+								<h:inputText class="form-control" value="#{login.username}"
+									type="text" required="true"
+									requiredMessage="Please Enter Username"></h:inputText>
+								Password
+								<h:inputSecret class="form-control" value="#{login.password}"
+									type="password" required="true"
+									requiredMessage="Please Enter Password"></h:inputSecret>
+								<hr />
+								<h:commandButton class="submit-button" type="submit"
+									action="#{login.login}" value="Sign in"></h:commandButton>
+							</form>
+						</div>
+						<br />
+					</article>
 				</div>
-				<div class="row">
-					<div class="col-tab-12 col-desk-12">
-						<article class= "mainBody">
-							<div class="login">
-								<h1>Login</h1>
-							</div>
-		
-							<div class="description">
-								<p>Please login to your NB Gardens Account to access website
-									features and checkout.</p>
-							</div>
-							<div class="loginToSite">
-								<h3 id="formTitle">Enter your details</h3>
-								<form class="form">
-									Username <h:inputText class="form-control" value="#{login.username}" type="text" required="true" requiredMessage="Please Enter Username"></h:inputText> 
-									Password <h:inputSecret class="form-control" value="#{login.password}" type="password" required= "true" requiredMessage="Please Enter Password"></h:inputSecret>
-									<hr />
-									<h:commandButton class="submit-button" type="submit" action="#{login.login}" value="Sign in"></h:commandButton> 
-								</form>
-							</div>
-							<br/>
-						</article>
-					</div>
-				</div>	
+			</div>
 		</div>
-		</ui:define>
+	</ui:define>
 
 </ui:composition>
