@@ -20,8 +20,8 @@ public class SubcategoryController implements Serializable{
 	private static final long serialVersionUID = 6816671190729802756L;
 	private Product product;
 	private Category category;
-	private String categoryName = "";
-	private String subcategoryName = "";
+	private String categoryName = "Gnomes";
+	private String subcategoryName = "Seasonal";
 	private ArrayList <SubCategory> subList = new ArrayList<SubCategory>();
 	
 	public String getCategoryName(){
