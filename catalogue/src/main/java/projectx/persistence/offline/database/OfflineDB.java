@@ -199,4 +199,49 @@ public class OfflineDB
 	}
 	
 	// ----- END USERS -----
+
+	// ----- CATEGORIES -----
+	
+	/**
+	 * 
+	 * @return list of categories
+	 */
+	
+	public List<Category> getCategories(){
+		return new ArrayList<Category>(categories);
+	}
+	
+	/**
+	 * @param category name
+	 * @return Category
+	 */
+	
+	public Category findByName(String name){
+
+		for(Category category: categories){
+			if(category.getName() == name){
+				return category;
+			}
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * @param category ID
+	 * @return Category
+	 */
+	
+	public Category findByid(int id){
+
+		for(Category category: categories){
+			if(category.getCategoryID() == id){
+				return category;
+			}
+		}
+		
+		return null;
+	}
+	
+	
 }
