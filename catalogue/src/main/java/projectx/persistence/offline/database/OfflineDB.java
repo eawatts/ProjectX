@@ -66,6 +66,8 @@ public class OfflineDB
 		reviews.add(new Review(7, 4.2f, "Pretty good.", users.get(3), products.get(7)));
 	}
 	
+	// ----- PRODUCTS -----
+	
 	/**
 	 * Returns a copy of the Products.
 	 * @return copy of the Products ArrayList.
@@ -73,6 +75,18 @@ public class OfflineDB
 	public List<Product> getProducts(){
 		return new ArrayList<Product>(products);
 	}
+	
+	
+	public Product getProductFromId(int id){
+		for (Product product : products){
+			if(product.getId() == id){
+				return product;
+			}
+		}	
+		return null;
+	}
+	
+	// ----- END PRODUCTS -----
 	
 	/**
 	 * Returns a copy of the Users.

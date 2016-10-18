@@ -1,0 +1,20 @@
+.category-heading{
+	color: #A53F2B;
+}
+.category-divider {
+	background-color: #004425;
+	height: 3px;
+	margin-top: 30px;
+	border-style: none;
+}
+.product-slider-title {
+	color: #A53F2B;
+	text-align: center;
+	font-weight:bold;
+	width:100%;
+}
+.product-slider-atb {
+	width:80%;
+	margin-left:10%;
+	margin-right:10%;
+}

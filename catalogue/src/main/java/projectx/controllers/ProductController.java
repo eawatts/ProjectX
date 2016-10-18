@@ -1,76 +1,35 @@
 package projectx.controllers;
 
-import java.util.ArrayList;
+import java.io.Serializable;
+import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
-//import javax.enterprise.context.SessionScoped;
+import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Product;
+import projectx.services.ProductService;
 
-@Named("product")
+@Named("products")
 @RequestScoped
-public class ProductController {
+public class ProductController implements Serializable {
 	
-private String testMessage = "This is a test message - Ed and Tom are better than Adam";
-	
-	private ArrayList<String> testMessages = new ArrayList<String>();
-	private ArrayList<Product> products = new ArrayList<Product>();
-	
-	private ArrayList<String> fillMessages(String testMessage){
-		for(int i=0;i<0;i++){
-			testMessages.add(testMessage);
-		}
-		return testMessages;
-	}
-	
-	public String getTestMessage() {
-		return testMessage;
-	}
+	private static final long serialVersionUID = 1L;
 
-	public void setTestMessage(String testMessage) {
-		this.testMessage = testMessage;
-	}
-
-	public ArrayList<String> getList(){
-		fillMessages(testMessage);
-		return testMessages;
+	@Inject
+	private ProductService productService;
+	
+	public List<Product> getTopProducts() {
+		return productService.getAllProducts();
 	}
 	
-//	public ArrayList<Product> getProducts(){
-//		return Product.products;
-//	}
-	
-	public String getProductName(){
-		String productName = " Big fat gnome";
-		return productName;
-		
+	public List<Product> getSeasonalProducts() {
+		return productService.getAllProducts();
 	}
 	
-	public String getImgPath(){
-		String imagePath = "img/products/RedGnome.png";
-		return imagePath;
+	public Product getProductFromId(int id) {
+		return productService.getProductFromId(id);		
 	}
-	
-	public int getChosenQuantity(){
-		
-		return 20;
-	}
-	
-	public String getStockStatus(){
-		String stat = " In Stock";
-		return stat;
-	}
-	
-	public int getProductPrice(){
-		return 10;
-	}
-	
-	public String getProductDescription(){
-		String desc = "This Gnome is fat";
-		return desc;
-	}
-	
-	
-	
 }
