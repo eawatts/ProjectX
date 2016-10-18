@@ -42,14 +42,14 @@ private String testMessage = "This is a test message - Ed and Tom are better tha
 //	}
 	
 	public String getProductName(){
-		String test = " Big fat gnome";
-		return test;
+		String productName = " Big fat gnome";
+		return productName;
 		
 	}
 	
 	public String getImgPath(){
-		String image = "image";
-		return image;
+		String imagePath = "img/products/RedGnome.png";
+		return imagePath;
 	}
 	
 	public int getChosenQuantity(){

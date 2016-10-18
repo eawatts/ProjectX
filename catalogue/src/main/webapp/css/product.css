@@ -88,3 +88,7 @@ left:0;
 .popup .close:hover {
   color: #004425;
 }
+.quantity{
+	font-size: 150%;
+	font-style: bold;
+}
