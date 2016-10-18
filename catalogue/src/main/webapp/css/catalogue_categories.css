@@ -17,6 +17,7 @@ h2{
     padding: 18px;
     margin: 1em 1em 1em 1em;
     min-width:100%;
+    max-width:100%;
 }
 .accordion {
     background-color: #f9fbf2;

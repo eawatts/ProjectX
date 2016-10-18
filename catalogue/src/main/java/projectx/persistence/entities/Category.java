@@ -1,5 +1,7 @@
 package projectx.persistence.entities;
 
+import java.util.ArrayList;
+
 import javax.persistence.*;
 
 @Entity
@@ -28,6 +30,9 @@ public class Category
 
 	@Column(name = "name", nullable = false)
 	private String name;
+	
+	@Column(name = "products", nullable = true)
+	private ArrayList <Product> products;
 
 	/**
 	 * Constructor
@@ -39,6 +44,7 @@ public class Category
 	{
 		setCategoryID(id);
 		setName(nName);
+		
 	}
 
 	/**
