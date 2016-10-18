@@ -7,8 +7,10 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 
+import projectx.persistence.entities.Category;
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Review;
+import projectx.persistence.entities.SubCategory;
 import projectx.persistence.entities.User;
 import projectx.persistence.entities.UserLevel;
 import projectx.persistence.webentities.ProductWithAverageReview;
@@ -22,6 +24,8 @@ public class OfflineDB
 	private List<Product> products;
 	private List<User> users;
 	private List<Review> reviews;
+	private List<Category> categories;
+	private List<SubCategory> subcategories;
 	
 	public OfflineDB() {}
 	
@@ -30,6 +34,8 @@ public class OfflineDB
 		setupProducts();
 		setupUsers();
 		setupReviews();
+		setupCategories();
+		setupSubCategories();
 	}
 	
 	private void setupProducts() {
@@ -51,11 +57,11 @@ public class OfflineDB
 	
 	private void setupUsers() {
 		users = new ArrayList<User>();
-		users.add(new User(1, "username", "password", "John", "Smith", UserLevel.ADMIN, "john.smith@email.com"));
-		users.add(new User(2, "username", "password", "Barry", "Smith", UserLevel.CUSTOMER, "barry.smith@email.com"));
-		users.add(new User(3, "username", "password", "Jane", "Smith", UserLevel.CUSTOMER, "jane.smith@email.com"));
-		users.add(new User(4, "username", "password", "Sally", "Smith", UserLevel.CUSTOMER, "sally.smith@email.com"));
-		users.add(new User(5, "username", "password", "Steve", "Smith", UserLevel.CUSTOMER, "steve.smith@email.com"));
+		users.add(new User(1, "JSmithy", "password", "John", "Smith", UserLevel.ADMIN, "john.smith@email.com"));
+		users.add(new User(2, "Bazza", "password", "Barry", "Smith", UserLevel.CUSTOMER, "barry.smith@email.com"));
+		users.add(new User(3, "JaneMane", "password", "Jane", "Smith", UserLevel.CUSTOMER, "jane.smith@email.com"));
+		users.add(new User(4, "Sallysaurus", "password", "Sally", "Smith", UserLevel.CUSTOMER, "sally.smith@email.com"));
+		users.add(new User(5, "Stevie", "password", "Steve", "Smith", UserLevel.CUSTOMER, "steve.smith@email.com"));
 	}
 	
 	private void setupReviews() {
@@ -69,8 +75,59 @@ public class OfflineDB
 		reviews.add(new Review(7, 4.2f, "Pretty good.", users.get(3), products.get(7)));
 	}
 	
-	// ----- PRODUCTS -----
+
+	private void setupCategories(){
+		categories = new ArrayList<Category>();
+		categories.add(new Category(1, "Gnomes"));
+		categories.add(new Category(2, "Electrical"));
+		categories.add(new Category(3, "Oranaments"));
+		categories.add(new Category(4, "Rakes and Hoes"));
+		categories.add(new Category(5, "Water Features"));
+		categories.add(new Category(6, "Furniture"));
+		categories.add(new Category(7, "Maintenance"));
+	}
 	
+	private void setupSubCategories(){
+		subcategories = new ArrayList<SubCategory>();
+		subcategories.add(new SubCategory(1, "Themed", 1));
+		subcategories.add(new SubCategory(2, "Novelty", 1));
+		subcategories.add(new SubCategory(3, "Classic", 1));
+		subcategories.add(new SubCategory(4, "Gnome Care", 1));
+		
+		subcategories.add(new SubCategory(5, "Lighting", 2));
+		subcategories.add(new SubCategory(6, "Heaters", 2));
+		subcategories.add(new SubCategory(7, "Hot Tubs", 2));
+		subcategories.add(new SubCategory(8, "BBQs", 2));
+		subcategories.add(new SubCategory(9, "Misc", 2));
+		
+		subcategories.add(new SubCategory(10, "Animal", 3));
+		subcategories.add(new SubCategory(11, "Wind Chimes", 3));
+		subcategories.add(new SubCategory(12, "Weather Vanes", 3));
+		subcategories.add(new SubCategory(13, "Pots", 3));
+		
+		subcategories.add(new SubCategory(14, "Rakes", 4));
+		subcategories.add(new SubCategory(15, "Hoes", 4));
+		subcategories.add(new SubCategory(16, "Spades and Forks", 4));
+		subcategories.add(new SubCategory(17, "Trowels", 4));
+		
+		subcategories.add(new SubCategory(18, "Pumps", 5));
+		subcategories.add(new SubCategory(19, "Ponds", 5));
+		subcategories.add(new SubCategory(19, "Pipes", 5));
+		subcategories.add(new SubCategory(19, "Fountains", 5));
+		
+		subcategories.add(new SubCategory(20, "Tables and Chairs", 6));
+		subcategories.add(new SubCategory(21, "Benches", 6));
+		subcategories.add(new SubCategory(22, "Hammocks", 6));
+		subcategories.add(new SubCategory(23, "Swinging", 6));
+		subcategories.add(new SubCategory(24, "Bird Houses", 6));
+		
+		subcategories.add(new SubCategory(25, "Mowers", 7));
+		subcategories.add(new SubCategory(26, "Strimmers", 7));
+		subcategories.add(new SubCategory(27, "Feed and Weed", 7));
+		subcategories.add(new SubCategory(28, "Secateurs", 7));
+	}
+
+	// ----- PRODUCTS -----
 	/**
 	 * Returns a copy of the Products.
 	 * @return copy of the Products ArrayList.
@@ -162,4 +219,49 @@ public class OfflineDB
 	}
 	
 	// ----- END USERS -----
+
+	// ----- CATEGORIES -----
+	
+	/**
+	 * 
+	 * @return list of categories
+	 */
+	
+	public List<Category> getCategories(){
+		return new ArrayList<Category>(categories);
+	}
+	
+	/**
+	 * @param category name
+	 * @return Category
+	 */
+	
+	public Category findByName(String name){
+
+		for(Category category: categories){
+			if(category.getName() == name){
+				return category;
+			}
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * @param category ID
+	 * @return Category
+	 */
+	
+	public Category findByid(int id){
+
+		for(Category category: categories){
+			if(category.getCategoryID() == id){
+				return category;
+			}
+		}
+		
+		return null;
+	}
+	
+	
 }

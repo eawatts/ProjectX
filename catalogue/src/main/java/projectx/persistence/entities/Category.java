@@ -30,9 +30,6 @@ public class Category
 
 	@Column(name = "name", nullable = false)
 	private String name;
-	
-	@Column(name = "products", nullable = true)
-	private ArrayList <Product> products;
 
 	/**
 	 * Constructor

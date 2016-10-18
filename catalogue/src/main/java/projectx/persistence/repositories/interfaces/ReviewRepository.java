@@ -6,8 +6,6 @@ import javax.enterprise.inject.Default;
 
 import projectx.persistence.entities.Review;
 
-@Stateless
-@Default
 public interface ReviewRepository {
 	
 	public void persistReview(Review r);

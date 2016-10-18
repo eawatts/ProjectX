@@ -44,7 +44,7 @@ public class CategoryRepositoryOffline implements CategoryRepository {
 	}
 
 	@Override
-	public Category findByid(long id) {
+	public Category findByid(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
