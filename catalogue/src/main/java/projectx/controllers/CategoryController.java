@@ -33,20 +33,10 @@ public class CategoryController {
 		public ArrayList <Category> getCategories(){
 			
 			catList = populateCategories(catList);
-			
-		//	public String getName()
-			
 			return catList;
 		}
 		
-	public ArrayList <Category> getSubCategoryList(){
-			
-			catList = populateCategories(catList);
-			
-		//	public String getName()
-			
-			return catList;
-		}
+	
 		
 		public String getTestMessage(){
 			return testMessage;

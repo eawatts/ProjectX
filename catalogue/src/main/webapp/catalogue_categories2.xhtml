@@ -18,17 +18,18 @@
 					<div class="col-tab-6 col-desk-4">
 						<div class="box">
 							<h:graphicImage class="accord" value="http://placehold.it/140x100" />
-							<h:button class="accordion"
+							<h:commandButton class="accordion"
 								value="#{cat.getName()}"
 								outcome="cat">
-							</h:button>
+							</h:commandButton>
 							<div class="panel">
 								<p>
-									<ui:repeat var="subCat" value="#{category.subCategoryList}">
-										<h:link
-											value="#{subCat.getName()}"
+									<ui:repeat var="subCat" value="#{subcategory.subCategories}">
+										<h:outputLink
+											value="#{subCat.name}"
 											outcome="subCat">
-										</h:link>
+												<h:outputText value="#{subCat.name}"/>
+										</h:outputLink>
 										<br></br>
 									</ui:repeat>
 								</p>
@@ -38,5 +39,7 @@
 				</ui:repeat>
 			</div>
 		</div>
+		<script type="text/javascript" src="js/catalogue_categories.js">
+		</script>
 	</ui:define>
 </ui:composition>
