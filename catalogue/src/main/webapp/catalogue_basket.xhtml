@@ -3,8 +3,9 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/catalogue_template.xhtml">
-
-	<?xml-stylesheet type="text/css" href="css/catalogue_basket.css"?>
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/catalogue_basket.css"/>
+	</ui:define>
 	<ui:define name="title">Basket</ui:define>
 	<ui:define name="main-content">
 		<br />
