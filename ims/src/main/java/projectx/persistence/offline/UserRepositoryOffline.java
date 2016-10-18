@@ -42,4 +42,11 @@ public class UserRepositoryOffline implements UserRepository {
 	public boolean checkPassword(String username, String password) {
 		return db.checkPassword(username, password);
 	}
+
+	@Override
+	public String getId(String username)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
