@@ -6,10 +6,9 @@
 
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/catalogue_index.css"></link>
-		<link rel="stylesheet" type="text/css"
-			href="libraries/slider/slick.css"></link>
-		<link rel="stylesheet" type="text/css"
-			href="libraries/slider/slick-theme.css"></link>
+		<link rel="stylesheet" type="text/css" href="libraries/slider/slick.css"></link>
+		<link rel="stylesheet" type="text/css" href="libraries/slider/slick-theme.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/template_slide_custom.css"></link>
 	</ui:define>
 
 	<ui:define name="title">Welcome</ui:define>
@@ -27,19 +26,14 @@
 			</div>
 			<div class="row">
 				<div class="col-tab-12 col-desk-12">
-					
-					<ui:repeat var="product" value="#{home.topProducts}">
-						<h3><h:outputText value="#{product.toString()}"/></h3>
-					</ui:repeat>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-tab-12 col-desk-12">
-					<section class="regular slider">
+					<div class="regular slider" data-slick='{"slidesToShow":4, "slidesToScroll":4}'>
+					<ui:repeat var="current_product" value="#{home.topProducts}">
 						<div>
 							<img src="http://placehold.it/350x300?text=1"></img>
+							<p><h:outputText value="#{current_product.name}"/></p>
 						</div>
-						<div>
+					</ui:repeat>
+<!-- 					<div>
 							<img src="http://placehold.it/350x300?text=2"></img>
 						</div>
 						<div>
@@ -56,8 +50,8 @@
 						</div>
 						<div>
 							<img src="http://placehold.it/350x300?text=7"></img>
-						</div>
-					</section>
+						</div> -->
+					</div>
 				</div>
 			</div>
 		</div>
