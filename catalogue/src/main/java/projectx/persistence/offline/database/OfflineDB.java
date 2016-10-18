@@ -57,7 +57,7 @@ public class OfflineDB
 	
 	private void setupReviews() {
 		reviews = new ArrayList<Review>();
-		reviews.add(new Review(1, 4.5f, "Pretty good.", users.get(2), products.get(2)));
+		reviews.add(new Review(1, 4.5f, "Pretty dank.", users.get(2), products.get(2)));
 		reviews.add(new Review(2, 3.1f, "Pretty good.", users.get(3), products.get(3)));
 		reviews.add(new Review(3, 2.0f, "Broke first night.", users.get(2), products.get(4)));
 		reviews.add(new Review(4, 4.9f, "Pretty good.", users.get(4), products.get(8)));
