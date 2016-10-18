@@ -49,7 +49,9 @@ public class Product {
 		
 		
 		public Product(){};
-		public Product(String name, int stockLvl, BigDecimal price, int lowStock, int maxStock, int sub_id){
+		
+		public Product(int id, String name, int stockLvl, BigDecimal price, int lowStock, int maxStock, int sub_id){
+			this.id = id;
 			this.name = name;
 			this.currentStockLevel = stockLvl;
 			this.price = price;

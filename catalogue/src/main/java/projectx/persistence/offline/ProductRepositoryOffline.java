@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import projectx.persistence.entities.Product;
 import projectx.persistence.offline.database.OfflineDB;
 import projectx.persistence.repositories.interfaces.ProductRepository;
+import projectx.persistence.webentities.ProductWithAverageReview;
 
 @Stateless
 @Default
@@ -35,6 +36,16 @@ public class ProductRepositoryOffline implements ProductRepository {
 	}
 	
 	@Override
+	public List<ProductWithAverageReview> getTopProductsWithAverageReview() {
+		return db.getTopProductsWithAverageReview();
+	}
+
+	@Override
+	public List<ProductWithAverageReview> getSeasonalProductsWithAverageReview() {
+		return db.getSeasonalProductsWithAverageReview();
+	}
+	
+	@Override
 	public Product getProductFromId(int id) {
 		return db.getProductFromId(id);
 	}
@@ -42,5 +53,10 @@ public class ProductRepositoryOffline implements ProductRepository {
 	@Override
 	public void updateProduct(Product product) {
 		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public Integer getAverageReviewForProductId(int productId) {
+		return db.getAverageReviewForProductId(productId);
 	}
 }

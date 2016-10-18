@@ -11,11 +11,14 @@ import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Review;
 import projectx.persistence.entities.User;
 import projectx.persistence.entities.UserLevel;
+import projectx.persistence.webentities.ProductWithAverageReview;
 
 
 @Singleton
 public class OfflineDB 
 {
+	private static final int NUMBER_OF_PRODUCTS_TO_RETRIEVE = 10;
+	
 	private List<Product> products;
 	private List<User> users;
 	private List<Review> reviews;
@@ -31,19 +34,19 @@ public class OfflineDB
 	
 	private void setupProducts() {
 		products = new ArrayList<Product>();
-		products.add(new Product("Red Gnome 1", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 2", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 3", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 4", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 5", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 6", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 7", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 8", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 9", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 10", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 11", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 12", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product("Red Gnome 13", 100, new BigDecimal(19.99), 10, 100, 1));	
+		products.add(new Product(1, "Red Gnome 1", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(2, "Red Gnome 2", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(3, "Red Gnome 3", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(4, "Red Gnome 4", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(5, "Red Gnome 5", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(6, "Red Gnome 6", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(7, "Red Gnome 7", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(8, "Red Gnome 8", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(9, "Red Gnome 9", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(10, "Red Gnome 10", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(11, "Red Gnome 11", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(12, "Red Gnome 12", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(13, "Red Gnome 13", 100, new BigDecimal(19.99), 10, 100, 1));	
 	}
 	
 	private void setupUsers() {
@@ -76,6 +79,23 @@ public class OfflineDB
 		return new ArrayList<Product>(products);
 	}
 	
+	public List<ProductWithAverageReview> getTopProductsWithAverageReview(){
+		
+		List<ProductWithAverageReview> productsWithAverageReview = new ArrayList<ProductWithAverageReview>();	
+		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++) {
+			productsWithAverageReview.add(new ProductWithAverageReview(products.get(i), getAverageReviewForProductId(products.get(i).getId()) ));
+		}
+		return productsWithAverageReview;
+	}
+	
+	public List<ProductWithAverageReview> getSeasonalProductsWithAverageReview(){
+		
+		List<ProductWithAverageReview> productsWithAverageReview = new ArrayList<ProductWithAverageReview>();	
+		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++) {
+			productsWithAverageReview.add(new ProductWithAverageReview(products.get(i), getAverageReviewForProductId(products.get(i).getId()) ));
+		}
+		return productsWithAverageReview;
+	}
 	
 	public Product getProductFromId(int productId){
 		
