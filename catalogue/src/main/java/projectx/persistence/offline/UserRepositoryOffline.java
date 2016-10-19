@@ -2,12 +2,16 @@ package projectx.persistence.offline;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.User;
 import projectx.persistence.offline.database.OfflineDB;
 import projectx.persistence.repositories.interfaces.UserRepository;
 
+@Stateless
+@Default
 public class UserRepositoryOffline implements UserRepository {
 	
 	@Inject
