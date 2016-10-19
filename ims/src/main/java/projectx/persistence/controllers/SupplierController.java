@@ -39,6 +39,9 @@ public class SupplierController implements Serializable{
 			dataModel=createDataModel();
 			return dataModel;
 	}
-	public String  
+	public String  getSupplier(int id)
+	{
+		return suppRepo.findBySupplierId(Integer.toString(id).toString());
+	}
 	
 }
