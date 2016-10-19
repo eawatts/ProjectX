@@ -25,7 +25,8 @@
 					<div class="col-tab-2 col-desk-2">Suppliers</div>
 				</div>
 			</div>
-			<ui:repeat var="product" value="#{products.productList}">
+			<ui:repeat var="product" value="#{products.listProducts()}">
+				<h:commandLink action="#{products.getProduct(product.id)}"/>
 				<div class="product-row">
 					<div class="row">
 						<div class="col-tab-1 col-desk-1">
@@ -55,7 +56,7 @@
 						</div>
 						<div class="col-tab-2 col-desk-2">
 							<div class="styled-select">
-								<ui:repeat var="supplier" value="#{product.supplierlist}">
+								<ui:repeat var="supplier" value="#{product.supplierlist(product.id)}">
 									<option value="#{supplier.name}"></option>
 								</ui:repeat>
 							</div>

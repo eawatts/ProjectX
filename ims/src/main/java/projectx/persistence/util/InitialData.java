@@ -20,12 +20,15 @@ public class InitialData {
 	private List<User> users;
 	private List<Review> reviews;
 	private List<PaymentDetails> paymentDetails;
+	private List<Category> categories;
 	private List<Product> products;
 
 	@PostConstruct
 	private void populateData() {
 		users = new ArrayList<User>();
-		users.add(new User());
+		users.add(new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"));
+		users.add(new User(2,"alstock","password","Al","Stock",UserLevel.ADMIN,"alstock@al.co.uk"));
+		
 		products = new ArrayList<Product>();
 		products.add(new Product());
 		paymentDetails = new ArrayList<PaymentDetails>();
@@ -53,13 +56,17 @@ public class InitialData {
 	// CATEGORY
 	
 	public void addCategory(Category category){
-		// TODO: Implement!!
+		categories.add(category);
 	}
 	public void updateCategory(Category category){
-		// TODO: Implement!!
+		categories.remove(category);
+		categories.add(category);
 	}
 	public Category findCategoryByName(String name){
-		// TODO: Implement!!
+		for(Category c:categories)
+		{
+			if(c.getName().equals(name)) {return c;}
+		}
 		return null;
 	}
 	public Category findCategoryById(long id){
