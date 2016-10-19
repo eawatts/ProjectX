@@ -14,47 +14,80 @@
 			</div>
 			<div id="userInfo">
 				<h2>User Info</h2>
-				<form>
+				<h:form>
 					<div id="userInfoForm">
-						Title: <select name="title">
-							<option value="Mr">Mr</option>
-							<option value="Mrs">Mrs</option>
-							<option value="Miss">Miss</option>
-							<option value="Ms">Ms</option>
-							<option value="Dr">Dr</option>
-							<option value="Lord">Lord</option>
-							<option value="Lady">Lady</option>
-							<option value="Duke">Duke</option>
-							<option value="Duchess">Duchess</option>
-							<option value="HRH">HRH</option>
-						</select> <br/>
-						<br/> Email: 
-						<input type="text" name="email" /><br/>
-						<br/> First Name: 
-						<input type="text" name="firstname" /><br /> <br /> Last Name: <input
-							type="text" name="lastname" /><br /> <br /> Age: <input
-							type="text" name="age" /><br/> <br /> Bio:  <input type="text"
-							name="bio" /><br /> <br />
+						<h:outputLabel value="Title: "/>
+                        <h:selectOneMenu value="#{user.title}">
+							<f:selectItem itemValue="Mr" itemLabel="Mr"/>
+							<f:selectItem itemValue="Mrs" itemLabel="Mrs"/>
+							<f:selectItem itemValue="Miss" itemLabel="Miss"/>
+							<f:selectItem itemValue="Ms" itemLabel="Ms"/>
+							<f:selectItem itemValue="Dr" itemLabel="Dr"/>
+							<f:selectItem itemValue="Lord" itemLabel="Lord"/>
+							<f:selectItem itemValue="Lady" itemLabel="Lady"/>
+							<f:selectItem itemValue="Duke" itemLabel="Duke"/>
+							<f:selectItem itemValue="Dutchess" itemLabel="Dutchess"/>
+							<f:selectItem itemValue="HRH" itemLabel="HRH"/>
+						</h:selectOneMenu> <br/>
+						<br/> 
+                        <h:outputLabel value="Email: " />
+						<h:inputText value="#{user.email}"/>
+                        <br/>
+						<br/> 
+                        <h:outputLabel value="First Name: "/>
+						<h:inputText value="#{user.firstName}"/>
+                        <br /> 
+                        <br /> 
+                        <h:outputLabel value="Last Name: "/>
+                        <h:inputText value="#{user.lastName}" />
+                        <br />
+                        <br /> 
+                        <h:outputLabel value="Age: "/>
+                        <h:inputText value="#{user.age}" />
+                        <br/>
+                        <br /> 
+                        <h:outputLabel value="Bio: "/>
+                        <h:inputText value="#{user.bio}" />
+                        <br />
+                        <br />
 					</div>
 					<hr />
-					<h2>Address</h2>
+					   <h2>Address</h2>
 					<div id="address">
-						House Number: <input type="text" name="housenumber" /><br /> <br />
-						Street: <input type="text" name="street" /><br /> <br /> Town: <input
-							type="text" name="town" /><br /> <br /> Post Code: <input
-							type="text" name="postcode" /><br /> <br />
+						<h:outputLabel value="House Number: "/>
+                        <h:inputText value="#{user.houseNumber}"/>
+                        <br /> 
+                        <br />
+						<h:outputLabel value="Street: "/> 
+                        <h:inputText value="#{user.street}"/>
+                        <br />
+                        <br /> 
+                        <h:outputLabel value="Town: "/>
+                        <h:inputText value="#{user.town}"/>
+                        <br />
+                        <br /> 
+                        <h:outputLabel value="Postcode: "/>
+                        <h:inputText value="#{user.postcode}"/>
+                        <br /> 
+                        <br />
 					</div>
 					<hr />
 					<h2>Payment details</h2>
 					<div id="payment">
-						Account No.: <input type="text" name="accountnumber" /><br /> <br />
-						Sort Code: <input type="text" name="sortcode" /><br /> <br />
+						<h:outputLabel value="Account No: "/>
+                        <h:inputText value="#{user.bankNumber}"/>
+                        <br /> 
+                        <br />
+                        <h:outputLabel value="Sort Code: "/>
+						<h:inputText value="#{user.bankSort}"/>
+                        <br /> 
+                        <br />
 					</div>
 					<hr />
 					<div id="submitbutton">
 						<input type="submit" name="createAccount" value="Create Account" class="button-green" />
 					</div>
-				</form>
+				</h:form>
 			</div>
 		</div>
 
