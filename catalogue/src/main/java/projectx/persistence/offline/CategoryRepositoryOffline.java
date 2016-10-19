@@ -2,12 +2,15 @@ package projectx.persistence.offline;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Category;
 import projectx.persistence.offline.database.OfflineDB;
 import projectx.persistence.repositories.interfaces.CategoryRepository;
-
+@Stateless
+@Default
 public class CategoryRepositoryOffline implements CategoryRepository {
 	
 	@Inject
@@ -27,8 +30,7 @@ public class CategoryRepositoryOffline implements CategoryRepository {
 
 	@Override
 	public List<Category> getCategories() {
-		// TODO Auto-generated method stub
-		return null;
+		return db.getCategories();
 	}
 
 	@Override
@@ -39,13 +41,11 @@ public class CategoryRepositoryOffline implements CategoryRepository {
 
 	@Override
 	public Category findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return db.findByName(name);
 	}
 
 	@Override
-	public Category findByid(long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Category findByid(int id) {
+		return db.findByid(id);
 	}
 }

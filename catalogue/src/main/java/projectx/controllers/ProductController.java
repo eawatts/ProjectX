@@ -4,12 +4,11 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
-import javax.faces.model.DataModel;
-import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Product;
+import projectx.persistence.webentities.ProductWithAverageReview;
 import projectx.services.ProductService;
 
 @Named("products")
@@ -21,15 +20,19 @@ public class ProductController implements Serializable {
 	@Inject
 	private ProductService productService;
 	
-	public List<Product> getTopProducts() {
-		return productService.getAllProducts();
+	public List<ProductWithAverageReview> getTopProductsWithAverageReview() {
+		return productService.getTopProductsWithAverageReview();
 	}
 	
-	public List<Product> getSeasonalProducts() {
-		return productService.getAllProducts();
+	public List<ProductWithAverageReview> getSeasonalProductsWithAverageReview() {
+		return productService.getSeasonalProductsWithAverageReview();
 	}
 	
 	public Product getProductFromId(int id) {
 		return productService.getProductFromId(id);		
+	}
+	
+	public Integer getAverageReviewForProductId(int productId){
+		return productService.getAverageReviewForProductId(productId);
 	}
 }

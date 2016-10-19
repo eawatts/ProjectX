@@ -13,11 +13,14 @@ import projectx.persistence.entities.Review;
 import projectx.persistence.entities.SubCategory;
 import projectx.persistence.entities.User;
 import projectx.persistence.entities.UserLevel;
+import projectx.persistence.webentities.ProductWithAverageReview;
 
 
 @Singleton
 public class OfflineDB 
 {
+	private static final int NUMBER_OF_PRODUCTS_TO_RETRIEVE = 10;
+	
 	private List<Product> products;
 	private List<User> users;
 	private List<Review> reviews;
@@ -50,6 +53,7 @@ public class OfflineDB
 		products.add(new Product(11, "Red Gnome 11", "Large red hat gnome", 100, new BigDecimal(19.99), 10, 100, 1));
 		products.add(new Product(12, "Red Gnome 12", "Your dream gnome", 100, new BigDecimal(19.99), 10, 100, 1));
 		products.add(new Product(13, "Red Gnome 13", "Classic gnome - medium size", 100, new BigDecimal(19.99), 10, 100, 1));	
+
 	}
 	
 	private void setupUsers() {
@@ -133,6 +137,23 @@ public class OfflineDB
 		return new ArrayList<Product>(products);
 	}
 	
+	public List<ProductWithAverageReview> getTopProductsWithAverageReview(){
+		
+		List<ProductWithAverageReview> productsWithAverageReview = new ArrayList<ProductWithAverageReview>();	
+		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++) {
+			productsWithAverageReview.add(new ProductWithAverageReview(products.get(i), getAverageReviewForProductId(products.get(i).getId()) ));
+		}
+		return productsWithAverageReview;
+	}
+	
+	public List<ProductWithAverageReview> getSeasonalProductsWithAverageReview(){
+		
+		List<ProductWithAverageReview> productsWithAverageReview = new ArrayList<ProductWithAverageReview>();	
+		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++) {
+			productsWithAverageReview.add(new ProductWithAverageReview(products.get(i), getAverageReviewForProductId(products.get(i).getId()) ));
+		}
+		return productsWithAverageReview;
+	}
 	
 	public Product getProductFromId(int productId){
 		
@@ -225,4 +246,49 @@ public class OfflineDB
 	
 	
 	// ----- END USERS -----
+
+	// ----- CATEGORIES -----
+	
+	/**
+	 * 
+	 * @return list of categories
+	 */
+	
+	public List<Category> getCategories(){
+		return new ArrayList<Category>(categories);
+	}
+	
+	/**
+	 * @param category name
+	 * @return Category
+	 */
+	
+	public Category findByName(String name){
+
+		for(Category category: categories){
+			if(category.getName() == name){
+				return category;
+			}
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * @param category ID
+	 * @return Category
+	 */
+	
+	public Category findByid(int id){
+
+		for(Category category: categories){
+			if(category.getCategoryID() == id){
+				return category;
+			}
+		}
+		
+		return null;
+	}
+	
+	
 }

@@ -52,7 +52,9 @@ public class Product {
 		
 		
 		public Product(){};
+
 		public Product(int id, String name, String description, int stockLvl, BigDecimal price, int lowStock, int maxStock, int sub_id){
+
 			this.id = id;
 			this.name = name;
 			this.description = description;
