@@ -39,13 +39,13 @@ public class UserController implements Serializable{
 
 
 	public void submit(){
-		userService.title=title;
-		userService.email=email;
-		userService.firstname=firstName;
-		userService.lastName=lastName;
-		userService.age=age;
-		userService.bio=bio;
-		addressService.housenumber=housenumber
+		userService.setTitle(title);
+		userService.setEmail(email);
+		userService.setFirstName(firstName);
+		userService.setLastName(lastName);
+		userService.setAge(age);
+		userService.setBio(bio);
+		//addressService.housenumber=housenumber
 	}
 	
 }
