@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Product;
+import projectx.persistence.webentities.CurrentProduct;
 import projectx.persistence.webentities.ProductWithAverageReview;
 import projectx.services.ProductService;
 
@@ -19,6 +20,13 @@ public class ProductController implements Serializable {
 
 	@Inject
 	private ProductService productService;
+	@Inject
+	private CurrentProduct currentProduct;
+	
+	public String view(int productId){
+		currentProduct.setProduct(productService.getProductFromId(3));
+		return "catalogue_product";
+	}
 	
 	public List<ProductWithAverageReview> getTopProductsWithAverageReview() {
 		return productService.getTopProductsWithAverageReview();

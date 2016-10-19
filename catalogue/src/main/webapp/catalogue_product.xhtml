@@ -1,106 +1,117 @@
-<ui:composition xmlns="https://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" template="/templates/catalogue_template.xhtml">
-    
-    <ui:define name="custom-css">
-      <link rel="stylesheet" type="text/css" href="css/product.css" />	
-       <link rel="stylesheet" type="text/css" href="css/breadcrumb.css" />
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/catalogue_template.xhtml">
+
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/product.css" />
+		<link rel="stylesheet" type="text/css" href="css/breadcrumb.css" />
 	</ui:define>
-    
-    
-    <meta charset="ISO-8859-1" />
-    <ui:define name="title">
-        <h:outputText value="#{}" /> </ui:define>
-    <ui:define name="main-content">
-        <div class="main-content">
-            <div id="breadcrumbs">
-                <ul class="breadcrumb">
-                    <li> <a href="#">Home</a> </li>
-                    <li> <a href="#">Gnome</a> </li>
-                    <li> <a href="#">Classic</a> </li>
-                    <li> <a href="#">Classic Red Hat Gnome</a></li>
-                </ul>
-            </div>
-            
-            <h3>
-				<ui:repeat var="product" value="#{}">
-            	<h:outputText value="#{}"></h:outputText>
-            	<br/>
-            	</ui:repeat>
-            </h3>
-                     
-            <div class="row">
-                <div class="col-tab-4 col-desk-4">
-                        <h:graphicImage value="#{}" alt="Picture of #{}" style="width:100%;height:auto;"></h:graphicImage> </div>
-                <div class="col-tab-8 col-desk-8">
-                    <form action="#popup1" method="get">
-                        <div class="row">
-                            <div id="productname">
-                                <h1>
-          	                     <h:outputText value="#{}" />
-                                </h1> </div>
-                        </div>
-                        <div class="row">
-                        	<div class="col-tab-6 col-desk-6">
-                            	<div id="productinfo">
-                            	<div class="row">
-                                	<h2>Stock:
-          	                			 <h:outputText value="#{}" />  
-                               	 </h2>
-                               	 </div>
-                                	<div class="row">
-                               	 <h2>Cost:
-                               	  <i class="fa fa-gbp" aria-hidden="true"></i>
-          	                   	      <h:outputText value=" #{}" />
-                              		 </h2>
-                              		 </div>
-                                <div class="row">
-                                   	<div class="quantity">
-                                        <strong>Quantity: </strong>                            
-                                        <input list="quantity" name="quantity"> </input>
-                                  </div>
-                                  <br/>
-                                </div> <img src="..\assets\rating.png" alt="Rating" /> </div>
-                        	</div>
-                        <div class="col-tab-6 col-desk-6">
-                            <div id="productaction">
-                                <button class="button" onclick="location.href='#popup1'">Add to Basket</button>
-                                <div id="popup1" class="overlay">
-                                    <div class="popup">
-                                        <h2>
-              	<h:outputText value="#{}" />
-              	<h:outputText value="#{}" /> 
-              	Added to Basket
-              </h2> <a class="close" href="#">X</a> </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </form>
-                   
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-tab-12 col-desk-12">
-                    <div id="productdescription">
-                        <h2>Description:</h2>
-                        <p>
-                            <h:outputText value="#{}" /> </p>
-                    </div>
-                </div>
-            </div>
-            <hr/>
-            <h1>Reviews</h1>
-            <div class="row">
-                <ui:repeat var="rev" value="#{reviews.someReviews}">
-                    <div class="col-tab-4 col-desk-4"> 
-                    <h:outputText value="#{rev.rating}" />
-                        <h2>
-        	<h:outputText value="#{rev.reviewer.firstname}" />
-        </h2>
-                        <p>
-                            <h:outputText value="#{rev.comment}" /> </p>
-                    </div>
-                </ui:repeat>
-            </div>
-        </div>
-    </ui:define>
+
+
+	<meta charset="ISO-8859-1" />
+	<ui:define name="title">
+		Product
+	</ui:define>
+	<ui:define name="main-content">
+		<div class="main-content">
+			<div id="breadcrumbs">
+				<ul class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Gnome</a></li>
+					<li><a href="#">Classic</a></li>
+					<li><a href="#">Classic Red Hat Gnome</a></li>
+				</ul>
+			</div>
+
+			<div class="row">
+				<div class="col-tab-4 col-desk-4">
+					<h:graphicImage value=""
+						alt="Picture of #{current_product.product.name}"
+						style="width:100%;height:auto;"></h:graphicImage>
+				</div>
+				<div class="col-tab-8 col-desk-8">
+					<form action="#popup1" method="get">
+						<div class="row">
+							<div id="productname">
+								<h1>
+									<h:outputText value="#{current_product.product.name}" />
+								</h1>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-tab-6 col-desk-6">
+								<div id="productinfo">
+									<div class="row">
+										<h2>
+											Stock:
+											<h:outputText
+												value="#{current_product.product.currentStockLevel}" />
+										</h2>
+									</div>
+									<div class="row">
+										<h2>
+											Cost: <i class="fa fa-gbp" aria-hidden="true"></i>
+											<h:outputText value=" #{current_product.product.price}" />
+										</h2>
+									</div>
+									<div class="row">
+										<div class="quantity">
+											<strong>Quantity: </strong> <input list="quantity"
+												name="quantity"> </input>
+										</div>
+										<br />
+									</div>
+									<img src="..\assets\rating.png" alt="Rating" />
+								</div>
+							</div>
+							<div class="col-tab-6 col-desk-6">
+								<div id="productaction">
+									<button class="button" onclick="location.href='#popup1'">Add
+										to Basket</button>
+									<div id="popup1" class="overlay">
+										<div class="popup">
+											<h2>
+												<h:outputText value="" />
+												<h:outputText value="" />
+												Added to Basket
+											</h2>
+											<a class="close" href="#">X</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<div id="productdescription">
+						<h2>Description:</h2>
+						<p>
+							<h:outputText value="#{current_product.product.name}" />
+						</p>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<h1>Reviews</h1>
+			<div class="row">
+				<ui:repeat var="rev" value="#{reviews.someReviews}">
+					<div class="col-tab-4 col-desk-4">
+						<h:outputText value="#{rev.rating}" />
+						<h2>
+							<h:outputText value="#{rev.reviewer.firstname}" />
+						</h2>
+						<p>
+							<h:outputText value="#{rev.comment}" />
+						</p>
+					</div>
+				</ui:repeat>
+			</div>
+		</div>
+	</ui:define>
 </ui:composition>

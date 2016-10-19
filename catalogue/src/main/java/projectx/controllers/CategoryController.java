@@ -1,6 +1,5 @@
 package projectx.controllers;
 
-
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -14,22 +13,19 @@ import projectx.services.CategoryService;
 @RequestScoped
 public class CategoryController {
 
+	@Inject
+	private CategoryService categoryService;
 
-		@Inject
-		private CategoryService categoryService;
-		
-		
-		public List <Category> getCategories(){
-			
-			return categoryService.getCategories();
-		}
-		
-		public Category findByName(String name){
-			return categoryService.findByName(name);
-		}
-		
-		public Category findByid(int id){
-			return categoryService.findByid(id);
-		}
+	public List<Category> getCategories() {
+
+		return categoryService.getCategories();
+	}
+
+	public Category findByName(String name) {
+		return categoryService.findByName(name);
+	}
+
+	public Category findByid(int id) {
+		return categoryService.findByid(id);
+	}
 }
-
