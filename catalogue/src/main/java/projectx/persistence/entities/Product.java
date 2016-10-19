@@ -30,6 +30,9 @@ public class Product {
 		@Size (min = 2, max = 50)
 		private String name;
 		
+		@Column(name="description", nullable = false, length = 500)
+		private String description;
+		
 		@Column(name="price", precision = 7, scale = 2, nullable = false)
 		private BigDecimal price;
 		
@@ -49,8 +52,10 @@ public class Product {
 		
 		
 		public Product(){};
-		public Product(String name, int stockLvl, BigDecimal price, int lowStock, int maxStock, int sub_id){
+		public Product(int id, String name, String description, int stockLvl, BigDecimal price, int lowStock, int maxStock, int sub_id){
+			this.id = id;
 			this.name = name;
+			this.description = description;
 			this.currentStockLevel = stockLvl;
 			this.price = price;
 			this.lowStockLevel = lowStock;
