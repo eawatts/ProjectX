@@ -21,6 +21,7 @@ public class Supplier {
 	public static final String UPDATE_SUPPLIER = "Supplier.updateSupplier";
 	public static final String CREATE_SUPPLIER = "Supplier.createSupplier";
 	public static final String GET_SUPPLIERS = "Supplier.getSuppliers";
+	public static final String DELETE_SUPPLIERS="Supplier.deleteSupplier";
 	
 	
 	@Id

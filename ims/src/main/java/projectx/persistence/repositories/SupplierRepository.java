@@ -11,5 +11,6 @@ public interface SupplierRepository {
 	public Supplier findBySupplierId(String name);
 	public List<Supplier> getSuppliers();
 	public void updateSupplier(Supplier supplier);
+	public void deletSupplier(Supplier supplier);
 
 }

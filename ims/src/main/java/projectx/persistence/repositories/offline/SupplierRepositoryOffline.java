@@ -42,4 +42,10 @@ public class SupplierRepositoryOffline implements SupplierRepository {
 
 	}
 
+	@Override
+	public void deletSupplier(Supplier supplier) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
