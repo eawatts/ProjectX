@@ -41,7 +41,8 @@ public class Product {
 		private boolean isDiscontinued;
 		
 		public Product(){};
-		public Product(String name, int stockLvl, BigDecimal price, int lowStock, int maxStock){
+		public Product(int id, String name, int stockLvl, BigDecimal price, int lowStock, int maxStock){
+			this.id = id;
 			this.name = name;
 			this.currentStockLevel = stockLvl;
 			this.price = price;

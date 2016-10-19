@@ -30,7 +30,7 @@ public class InitialData {
 		users.add(new User(2,"alstock","password","Al","Stock",UserLevel.ADMIN,"alstock@al.co.uk"));
 		
 		products = new ArrayList<Product>();
-		products.add(new Product());
+		products.add();
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
 	}
@@ -161,5 +161,42 @@ public class InitialData {
 
 		}
 		return userReviews;
+	}
+
+	public void addProduct(Product p)
+	{
+
+		products.add(p);
+		
+	}
+
+	public List<Product> getProducts()
+	{
+		return products;
+	}
+
+	public void updateProduct(Product products2)
+	{
+		products.remove(products2);
+		products.add(products2);
+	}
+
+	public Product getProductByID(int productId)
+	{
+		for(Product p: products)
+		{
+			if( p.getId() == productId) return p;
+		}
+		return null;
+	}
+
+	public Product findProductByName(String name)
+	{
+		// TODO Auto-generated method stub
+		for(Product p: products)
+		{
+			if( p.getName().equals(name)) return p;
+		}
+		return null;
 	}
 }

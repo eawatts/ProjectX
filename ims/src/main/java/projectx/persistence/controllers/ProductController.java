@@ -48,6 +48,7 @@ public class ProductController implements Serializable
 			productDataModel = createDataModel();
 		return productDataModel;
 	}
+	
 	public DataModel<Product> createDataModel()
 	{
 		

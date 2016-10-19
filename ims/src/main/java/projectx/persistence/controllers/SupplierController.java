@@ -9,7 +9,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Supplier;
-import projectx.persistence.repositories.offline.SupplierRepositoryOffline;
+import projectx.persistence.repositories.SupplierRepository;
 
 @Named("suppliers")
 @SessionScoped
@@ -19,11 +19,12 @@ public class SupplierController implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	@Inject 
-	private SupplierRepositoryOffline suppRepo;
+	private SupplierRepository suppRepo;
 	private Supplier supplier;
 	private int selectedSupplier;
 	private DataModel<Supplier> dataModel = null;
 	
+	@SuppressWarnings("unused")
 	private void recreateModel() {
 		dataModel= null;
 		}
@@ -41,7 +42,7 @@ public class SupplierController implements Serializable{
 	}
 	public String  getSupplier(int id)
 	{
-		return suppRepo.findBySupplierId(Integer.toString(id).toString());
+		return suppRepo.findBySupplierId(Integer.toString(id)).toString();
 	}
 	
 }
