@@ -4,23 +4,33 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Review;
+import projectx.persistence.entities.User;
+import projectx.services.ReviewService;
 
-@Named("review")
+@Named("reviews")
 @RequestScoped
-public class ReviewController implements Serializable {
+public class ReviewController implements Serializable{
 
-	/**
-	 * what is this?
-	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
+
+
+	@Inject
+	private ReviewService reviewService;
 	
-	private List<Review> getSomeReviews(){
-		int number = 3;
-		List<Review>=
-		return null;
-		
+	public List<Review> getAllReviews(){
+		return reviewService.getAllReviews();
+	}
+	/**
+	 * in getSomeReviews the first int is the number of returned reviews 
+	 * second int is the productID
+	 * @return
+	 */
+	public List<Review> getSomeReviews(){
+		return reviewService.getSomeReviews(1, 8);
 	}
 }
+	
