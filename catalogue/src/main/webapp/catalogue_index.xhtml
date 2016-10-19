@@ -6,9 +6,12 @@
 
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/catalogue_index.css"></link>
-		<link rel="stylesheet" type="text/css" href="libraries/slider/slick.css"></link>
-		<link rel="stylesheet" type="text/css" href="libraries/slider/slick-theme.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/template_slide_custom.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick-theme.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="css/template_slide_custom.css"></link>
 	</ui:define>
 
 	<ui:define name="title">Welcome</ui:define>
@@ -17,87 +20,71 @@
 		<div>
 			<div class="row">
 				<div class="col-tab-12 col-desk-12">
-					<a href="/catalogue/catalogue_index.xhtml"
-						name="NB Gardens Home Page"> <h:graphicImage
+					<a href="/catalogue/catalogue_index.xhtml"> <h:graphicImage
 							class="main-banner-img" value="img/index/banner_grass_text.jpg"
-							alt="Grass Banner"></h:graphicImage>
+							alt="Advertisement Banner (Photo of grass)"></h:graphicImage>
 					</a>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-tab-12 col-desk-12">
-				<h2 class="category-heading">Top Products</h2>
+					<h2 class="category-heading">Top Products</h2>
 					<div class="regular slider">
-					<ui:repeat var="current_product" value="#{products.topProductsWithAverageReview}">
-						<div> <!-- Leave this div in. -->
-							<img src="http://placehold.it/350x300?text=1"></img>
-							<div class="product-slider-title-container">
-								<h:outputText class="product-slider-title" value="#{current_product.product.name}"/>
-								<h:outputText class="product-slider-title" value="#{current_product.averageReview}"/>
-							</div>
-							<button type="button"
-										class="button-green product-slider-atb"
-										onclick="#{user.basket()}">Add to Basket&#160;&#160;<i class="fa fa-shopping-basket"></i></button>
+						<ui:repeat var="slider_product"
+							value="#{products.topProductsWithAverageReview}">
 							<div>
-								<ul class="product-slider-star-rating">
-									<li class="product-slider-star" >
-										<i class="fa fa-star" aria-hidden="true"></i>
-									</li>
-									<li class="product-slider-star" >
-										<i class="fa fa-star" aria-hidden="true"></i>
-									</li>
-									<li class="product-slider-star" >
-										<i class="fa fa-star" aria-hidden="true"></i>
-									</li>
-									<li class="product-slider-star" >
-										<i class="fa fa-star" aria-hidden="true"></i>
-									</li>
-									<li class="product-slider-star" >
-										<i class="fa fa-star" aria-hidden="true"></i>
-									</li>
-								</ul>
+								<h:form>
+									<img src="http://placehold.it/350x300?text=1"></img>
+									<div class="product-slider-title-container">
+										<h:commandLink class="product-slider-title"
+											value="#{slider_product.product.name}"
+											action="#{products.view(slider_product.product.id)}">
+										</h:commandLink>
+									</div>
+									<button type="button" class="button-green product-slider-atb"
+										onclick="#{user.basket()}">
+										Add to Basket&#160;&#160;<i class="fa fa-shopping-basket"></i>
+									</button>
+									<div>
+										<ul class="product-slider-star-rating">
+											<h:form rendered="#{slider_product.averageReview ge 1}">
+												<li class="product-slider-star"><i class="fa fa-star"
+													aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 2}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 3}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 4}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 5}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+										</ul>
+									</div>
+								</h:form>
 							</div>
-						</div>
-					</ui:repeat>
+						</ui:repeat>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-tab-12 col-desk-12">
-				<hr class="category-divider"/>
-				<h2 class="category-heading">Seasonal</h2>
-					<div class="regular slider" data-slick='{"slidesToShow":4, "slidesToScroll":4}'>
-					<ui:repeat var="current_product" value="#{products.seasonalProductsWithAverageReview}">
-						<div> <!-- Leave this div in. -->	
-														<img src="http://placehold.it/350x300?text=1"></img>
-							<div class="product-slider-title-container">
-								<h:outputText class="product-slider-title" value="#{current_product.product.name}"/>
-								<h:outputText class="product-slider-title" value="(#{current_product.averageReview})"/>
-							</div>
-							<button type="button"
-										class="button-green product-slider-atb"
-										onclick="#{user.basket()}">Add to Basket&#160;&#160;<i class="fa fa-shopping-basket"></i></button>
-							<div>
-								<ul class="product-slider-star-rating">
-									<li class="product-slider-star" >
-										<i class="fa fa-star" aria-hidden="true"></i>
-									</li>
-									<li class="product-slider-star" >
-										<i class="fa fa-star" aria-hidden="true"></i>
-									</li>
-									<li class="product-slider-star" >
-										<i class="fa fa-star" aria-hidden="true"></i>
-									</li>
-									<li class="product-slider-star" >
-										<i class="fa fa-star" aria-hidden="true"></i>
-									</li>
-									<li class="product-slider-star" >
-										<i class="fa fa-star" aria-hidden="true"></i>
-									</li>
-								</ul>
-							</div>				
-						</div>
-					</ui:repeat>
+					<hr class="category-divider" />
+					<h2 class="category-heading">Seasonal</h2>
+					<div class="regular slider"
+						data-slick='{"slidesToShow":4, "slidesToScroll":4}'>
+						<ui:repeat var="slider_product"
+							value="#{products.topProductsWithAverageReview}">
+
+						</ui:repeat>
 					</div>
 				</div>
 			</div>

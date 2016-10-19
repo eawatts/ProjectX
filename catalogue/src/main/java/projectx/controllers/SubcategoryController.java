@@ -15,30 +15,26 @@ import projectx.services.CategoryService;
 
 @Named("subcategory")
 @SessionScoped
-public class SubcategoryController implements Serializable{
+public class SubcategoryController implements Serializable {
 
-	/**
-	 *auto generated serial number 
-	 */
 	private static final long serialVersionUID = 6816671190729802756L;
 	private String categoryName = "Gnomes";
 	private String subcategoryName = "Seasonal";
-	private ArrayList <SubCategory> subList = new ArrayList<SubCategory>();
-	
+	private ArrayList<SubCategory> subList = new ArrayList<SubCategory>();
+
 	@Inject
 	private SubCategoryService subCategoryService;
-	
-	
-	public List <Category> getSubCategories(){
-		
+
+	public List<Category> getSubCategories() {
+
 		return subCategoryService.getSubCategories();
 	}
-	
-	public Category findByName(String name){
+
+	public Category findByName(String name) {
 		return SubCategoryService.findByName(name);
 	}
-	
-	public Category findByid(int id){
+
+	public Category findByid(int id) {
 		return SubCategoryService.findByid(id);
 	}
 

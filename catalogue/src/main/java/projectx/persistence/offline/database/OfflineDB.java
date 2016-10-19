@@ -141,7 +141,9 @@ public class OfflineDB
 		
 		List<ProductWithAverageReview> productsWithAverageReview = new ArrayList<ProductWithAverageReview>();	
 		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++) {
-			productsWithAverageReview.add(new ProductWithAverageReview(products.get(i), getAverageReviewForProductId(products.get(i).getId()) ));
+			productsWithAverageReview.add(new ProductWithAverageReview(
+					products.get(i),
+					getAverageReviewForProductId(products.get(i).getId()) ));
 		}
 		return productsWithAverageReview;
 	}
@@ -150,7 +152,10 @@ public class OfflineDB
 		
 		List<ProductWithAverageReview> productsWithAverageReview = new ArrayList<ProductWithAverageReview>();	
 		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++) {
-			productsWithAverageReview.add(new ProductWithAverageReview(products.get(i), getAverageReviewForProductId(products.get(i).getId()) ));
+			productsWithAverageReview.add(
+					new ProductWithAverageReview(
+							products.get(i),
+							getAverageReviewForProductId(products.get(i).getId()) ));
 		}
 		return productsWithAverageReview;
 	}

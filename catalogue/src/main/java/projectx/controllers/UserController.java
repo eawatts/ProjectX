@@ -10,13 +10,10 @@ import projectx.services.AddressService;
 import projectx.services.BankAccountService;
 import projectx.services.UserService;
 
-@Named("products")
+@Named("users")
 @RequestScoped
 public class UserController implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Inject

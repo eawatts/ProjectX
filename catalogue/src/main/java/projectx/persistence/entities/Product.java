@@ -50,7 +50,6 @@ public class Product {
 		@NotNull
 		private int sub_id;
 		
-		
 		public Product(){};
 
 		public Product(int id, String name, String description, int stockLvl, BigDecimal price, int lowStock, int maxStock, int sub_id){
@@ -65,7 +64,7 @@ public class Product {
 			this.isDiscontinued = false;
 			this.sub_id = sub_id;
 		}
-		
+
 		public int getId() {
 			return id;
 		}
@@ -84,6 +83,14 @@ public class Product {
 			this.name = name;
 		}
 		
+		public String getDescription() {
+			return description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public BigDecimal getPrice() {
 			return price;
 		}
