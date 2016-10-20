@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import projectx.persistence.entities.Product;
 import projectx.persistence.offline.database.OfflineDB;
 import projectx.persistence.repositories.interfaces.ProductRepository;
+import projectx.persistence.webentities.CurrentProduct;
 import projectx.persistence.webentities.ProductWithAverageReview;
 
 @Stateless
@@ -58,5 +59,10 @@ public class ProductRepositoryOffline implements ProductRepository {
 	@Override
 	public Integer getAverageReviewForProductId(int productId) {
 		return db.getAverageReviewForProductId(productId);
+	}
+
+	@Override
+	public CurrentProduct getCurrentProductFromId(int productId) {
+		return db.getCurrentProduct(productId);
 	}
 }
