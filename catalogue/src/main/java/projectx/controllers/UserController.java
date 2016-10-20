@@ -23,6 +23,7 @@ public class UserController implements Serializable{
 	
 	private String title;
 	private String email;
+	private char[] password;
 	private String firstName;
 	private String lastName;
 	private int age;
@@ -32,17 +33,26 @@ public class UserController implements Serializable{
 	private String town;
 	private char[] postcode;
 	private int[] banknumber;
-	private int[] banksort;
+	private int[] sortcode;
 
 
-	public void submit(){
+	/**
+	 * 
+	 */
+	public void submitUserInfo(){
 		userService.setTitle(title);
 		userService.setEmail(email);
+		userService.setPassword(password);
 		userService.setFirstName(firstName);
 		userService.setLastName(lastName);
 		userService.setAge(age);
 		userService.setBio(bio);
-		//addressService.housenumber=housenumber
+		addressService.setHouseNumber(housenumber);
+		addressService.setStreetName(street);
+		addressService.setTownName(town);
+		addressService.setPostCode(postcode);
+		bankService.setBankNumber(banknumber);
+		bankService.setSortCode(sortcode);
 	}
 	
 }

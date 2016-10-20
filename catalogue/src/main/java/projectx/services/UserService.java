@@ -19,6 +19,10 @@ public class UserService{
 		
 	}
 	
+	public void setPassword(char[] password){
+		//Hashing goes here
+	}
+	
 	public void setFirstName(String firstname){
 		
 	}
