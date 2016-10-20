@@ -9,8 +9,6 @@ import projectx.persistence.repositories.interfaces.AddressRepository;
 @Stateless
 public class AddressService{
 	
-	@Inject
-	private AddressRepository addressRepository;
 	
 	public void setHouseNumber(String housenumber){
 		
