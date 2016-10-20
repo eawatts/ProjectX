@@ -18,7 +18,10 @@ public enum OrderState {
 	CANCELLED("Cancelled"),
 	PENDING_PICKING("Pending Picking"),
 	PICKING("Picking"),
-	PACKING("Packing");
+	PACKING("Packing"),
+	PENDING_DELIVERY("Awaiting Delivery"),
+	PENDING_CONFIRMATION("Pending Confirmation"),
+	ORDER_CLOSED("Order Closed");
 
 	OrderState(String displayName) {
 		this.displayName = displayName;

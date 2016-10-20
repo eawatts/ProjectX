@@ -14,6 +14,5 @@ public interface PurchaseOrderRepository {
 	public PurchaseOrder findPurchaseOrderById(String id);
 	public List<PurchaseOrder> getPurchaseOrders();
 	public void updatePurchaseOrder (PurchaseOrder purchaseOrder);
-	public Object getSupplier(String id);
 }
 	

@@ -14,6 +14,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import projectx.persistence.util.OrderState;
+
 @NamedQueries({
 			@NamedQuery (name = PurchaseOrder.INSERT_PURCHASEORDER, query = "INSERT INTO purchaseOrder p (id, supplier,approved,approvalDate,satus,products) VALUES(:id, :supplier, :approved, :approvalDate, :satus, :products) "),
 			@NamedQuery (name = PurchaseOrder.FIND_ALL, query = "SELECT * FROM purchaseOrder p "),
@@ -49,7 +51,7 @@ public class PurchaseOrder{
 	private Date approvalDate;
 	
 	@Column(name = "status", length = 10, nullable = false)
-	private String status;
+	private OrderState status;
 	
 	@Column(name = "products", length = 10, nullable = false)
 	private List<Product> products;
@@ -65,16 +67,17 @@ public class PurchaseOrder{
 	 * @param nProducts
 	 */
 	
-	public PurchaseOrder(int id, Supplier nSupplier, Boolean nApproved, Date nApprovalDate, String nStatus,List<Product> nProducts){
+	public PurchaseOrder(int id2, Supplier nSupplier, boolean nApproved, Date nApprovalDate, OrderState nStatus,
+			List<Product> nProducts) {
 		setId(id);
 		setSupplier(nSupplier);
 		setApprovalDate(nApprovalDate);
 		setStatus(nStatus);
 		setProducts(nProducts);
 	}
-	
-	
-	
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -111,8 +114,8 @@ public class PurchaseOrder{
 		return status;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setStatus(OrderState nStatus) {
+		this.status = nStatus;
 	}
 
 	public List<Product> getProducts() {

@@ -1,13 +1,11 @@
 package projectx.persistence.repositories.offline;
 
-import java.sql.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
-import projectx.persistence.entities.Product;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.repositories.PurchaseOrderRepository;
 import projectx.persistence.util.InitialData;
@@ -56,10 +54,4 @@ public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
 	public void updatePurchaseOrder(PurchaseOrder purchaseOrder) {
 		initialData.updatePurchaseOrders(purchaseOrder);
 	}
-
-	@Override
-	public Object getSupplier(String id) {
-		return initialData.getPurchaseOrderBySupplierID(id);
-	}
-
 }
