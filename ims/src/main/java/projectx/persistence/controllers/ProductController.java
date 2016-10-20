@@ -23,8 +23,8 @@ public class ProductController implements Serializable
 	private ProductService productService;
 	@Inject
 	private SelectedProduct selectedProduct;
-	@Inject
-	private Supplier selectedSupplier = null;
+	//@Inject
+	//private Supplier selectedSupplier = null;
 	@SuppressWarnings("unused")
 	private int selectedProductIndex;
 	private DataModel<Product> productDataModel = null;
@@ -63,14 +63,14 @@ public class ProductController implements Serializable
 		return productDataModel;
 	}
 	
-	public Supplier getSelectedSupplier()
+	//public Supplier getSelectedSupplier()
 	{
-		return selectedSupplier;
+	//	return selectedSupplier;
 	}
 	
-	public List<Supplier> getSupplier(int productId)
+	//public List<Supplier> getSupplier(int productId)
 	{
-		return selectedProduct.getSelectedProduct().getSupplierList(productId);
+		//return selectedProduct.getSelectedProduct().getSupplierList(productId);
 	}
 	
 	public void setSelectedProduct(int productId)

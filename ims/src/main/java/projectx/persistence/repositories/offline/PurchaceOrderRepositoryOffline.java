@@ -59,7 +59,7 @@ public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
 
 	@Override
 	public Object getSupplier(String id) {
-		return initialData.getPurchaseOrderBySupplierID(supplierID);
+		return initialData.getPurchaseOrderBySupplierID(id);
 	}
 
 }
