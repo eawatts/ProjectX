@@ -2,7 +2,6 @@ package projectx.persistence.offline.database;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -16,6 +15,7 @@ import projectx.persistence.entities.User;
 import projectx.persistence.entities.UserLevel;
 import projectx.persistence.webentities.CurrentProduct;
 import projectx.persistence.webentities.ProductWithAverageReview;
+import projectx.persistence.webentities.SubCategoriesWithinCategory;
 
 @Singleton
 public class OfflineDB {
@@ -173,12 +173,12 @@ public class OfflineDB {
 	}
 
 	public CurrentProduct getCurrentProduct(int productId) {
-		
+
 		Product product = getProductFromId(productId);
 		Integer averageReview = getAverageReviewForProductId(productId);
 		List<Review> reviews = getReviewsForProductId(productId);
-			
-		return new CurrentProduct(product, averageReview, reviews);		
+
+		return new CurrentProduct(product, averageReview, reviews);
 	}
 
 	public Product getProductFromId(int productId) {
@@ -197,9 +197,7 @@ public class OfflineDB {
 
 	/**
 	 * Will return the average rating of a Product.
-	 * 
-	 * @param productId
-	 *            the Product Id to check.
+	 * @param productId the Product Id to check.
 	 * @return null if no Reviews exist, the average score if present.
 	 */
 	public Integer getAverageReviewForProductId(int productId) {
@@ -245,11 +243,11 @@ public class OfflineDB {
 	public List<Review> getReviews() {
 		return new ArrayList<Review>(reviews);
 	}
-	
+
 	public List<Review> getReviewsForProductId(int productId) {
 		ArrayList<Review> reviewsForProduct = new ArrayList<Review>();
 		for (Review review : reviews) {
-			if(review.getProduct().getId() == productId){
+			if (review.getProduct().getId() == productId) {
 				reviewsForProduct.add(review);
 			}
 		}
@@ -262,7 +260,6 @@ public class OfflineDB {
 
 	/**
 	 * Returns a copy of the Users.
-	 * 
 	 * @return copy of the Users ArrayList.
 	 */
 	public List<User> getUsers() {
@@ -292,6 +289,65 @@ public class OfflineDB {
 		for (Category category : categories) {
 			if (category.getCategoryID() == id) {
 				return category;
+			}
+		}
+		return null;
+	}
+
+	// ----- END CATEGOIES -----
+
+	// ----- SUB-CATEGORIES -----
+
+	// ----- CATEGORIES -----
+
+	public List<SubCategory> getSubCategories() {
+		return new ArrayList<SubCategory>(subcategories);
+	}
+
+	public List<SubCategory> getSubCategories(Category category) {
+		List<SubCategory> subcategoryList = new ArrayList<SubCategory>();
+		for (SubCategory subcat : subcategories) {
+			if (category.getCategoryID() == subcat.getMainCategoryID()) {
+				subcategoryList.add(subcat);
+			}
+		}
+
+		return subcategoryList;
+	}
+
+	public List<SubCategoriesWithinCategory> getCategoriesWithSubs() {
+		ArrayList<SubCategoriesWithinCategory> catsWithSubs = new ArrayList<SubCategoriesWithinCategory>();
+		List<SubCategory> subCats = new ArrayList<SubCategory>();
+		for (Category category : categories) {
+			for (SubCategory subcategory : subcategories) {
+				if (category.getCategoryID() == subcategory.getMainCategoryID()) {
+					subCats.add(subcategory);
+				}
+			}
+
+			SubCategoriesWithinCategory subsInCats = new SubCategoriesWithinCategory(category, subCats);
+			catsWithSubs.add(subsInCats);
+		}
+
+		return catsWithSubs;
+	}
+
+	public SubCategory findSubByName(String name) {
+
+		for (SubCategory subcategory : subcategories) {
+			if (subcategory.getName() == name) {
+				return subcategory;
+			}
+		}
+
+		return null;
+	}
+
+	public SubCategory findSubByid(int id) {
+
+		for (SubCategory subcategory : subcategories) {
+			if (subcategory.getSubCategoryID() == id) {
+				return subcategory;
 			}
 		}
 		return null;
