@@ -8,6 +8,7 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.repositories.SupplierRepository;
 
@@ -23,7 +24,6 @@ public class SupplierController implements Serializable{
 	private Supplier supplier;
 	private int selectedSupplier;
 	private DataModel<Supplier> dataModel = null;
-	
 	@SuppressWarnings("unused")
 	private void recreateModel() {
 		dataModel= null;
@@ -35,14 +35,10 @@ public class SupplierController implements Serializable{
 		}
 		return dataModel;
 	}
-	public DataModel<Supplier> getDataModel(){
+	public DataModel<Supplier> getSuppliers(){
 		if(dataModel==null)
 			dataModel=createDataModel();
 			return dataModel;
 	}
-	public String  getSupplier(int id)
-	{
-		return suppRepo.findBySupplierId(Integer.toString(id)).toString();
-	}
-	
+
 }

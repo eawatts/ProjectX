@@ -6,12 +6,13 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Supplier;
-import projectx.persistence.repositories.offline.SupplierRepositoryOffline;
+import projectx.persistence.repositories.SupplierRepository;
+
 
 @Stateless
 public class SupplierService{
 	@Inject
-	private SupplierRepositoryOffline supplierRepo;
+	private SupplierRepository supplierRepo;
 	
 	public Supplier findSupplierById(String id){
 		return findSupplierById(Integer.parseInt(id));
