@@ -14,6 +14,7 @@ import projectx.persistence.entities.SubCategory;
 import projectx.persistence.entities.User;
 import projectx.persistence.entities.UserLevel;
 import projectx.persistence.webentities.ProductWithAverageReview;
+import projectx.persistence.webentities.SubCategoriesWithinCategory;
 
 
 @Singleton
@@ -294,6 +295,84 @@ public class OfflineDB
 		
 		return null;
 	}
+	
+	//----- END CATEGOIES -----
+	
+	//----- SUB-CATEGORIES -----
+	
+	// ----- CATEGORIES -----
+	
+		/**
+		 * 
+		 * @return list of categories
+		 */
+		
+		public List<SubCategory> getSubCategories(){
+			return new ArrayList<SubCategory>(subcategories);
+		}
+		
+		public List<SubCategory> getSubCategories(Category category){
+			List<SubCategory> subcategoryList = new ArrayList<SubCategory>();
+			for(SubCategory subcat : subcategories){
+				if(category.getCategoryID() == subcat.getMainCategoryID()){
+					subcategoryList.add(subcat);
+				}
+			}
+			
+				
+				return subcategoryList;
+		}
+		
+		public List<SubCategoriesWithinCategory> getCategoriesWithSubs(){
+			ArrayList<SubCategoriesWithinCategory> catsWithSubs = new ArrayList<SubCategoriesWithinCategory>();
+			List<SubCategory> subCats = new ArrayList<SubCategory>();
+			for(Category category: categories){
+				for(SubCategory subcategory: subcategories){
+					if(category.getCategoryID() == subcategory.getMainCategoryID()){
+						subCats.add(subcategory);
+					}
+					
+				}
+				
+				SubCategoriesWithinCategory subsInCats = new SubCategoriesWithinCategory(category, subCats);
+				catsWithSubs.add(subsInCats);
+			}
+			
+			
+			return catsWithSubs;
+		}
+		
+		/**
+		 * @param category name
+		 * @return Category
+		 */
+		
+		public SubCategory findSubByName(String name){
+
+			for(SubCategory subcategory: subcategories){
+				if(subcategory.getName() == name){
+					return subcategory;
+				}
+			}
+			
+			return null;
+		}
+		
+		/**
+		 * @param category ID
+		 * @return Category
+		 */
+		
+		public SubCategory findSubByid(int id){
+
+			for(SubCategory subcategory: subcategories){
+				if(subcategory.getSubCategoryID() == id){
+					return subcategory;
+				}
+			}
+			
+			return null;
+		}
 	
 	
 }
