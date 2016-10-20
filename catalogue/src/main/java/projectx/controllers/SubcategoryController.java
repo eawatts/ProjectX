@@ -12,6 +12,7 @@ import projectx.persistence.entities.Category;
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.SubCategory;
 import projectx.services.CategoryService;
+import projectx.services.SubCategoryService;
 
 @Named("subcategory")
 @SessionScoped
@@ -29,17 +30,17 @@ public class SubcategoryController implements Serializable{
 	private SubCategoryService subCategoryService;
 	
 	
-	public List <Category> getSubCategories(){
+	public List<SubCategory> getSubCategories(){
 		
 		return subCategoryService.getSubCategories();
 	}
 	
-	public Category findByName(String name){
-		return SubCategoryService.findByName(name);
+	public SubCategory findByName(String name){
+		return subCategoryService.findByName(name);
 	}
 	
-	public Category findByid(int id){
-		return SubCategoryService.findByid(id);
+	public SubCategory findByid(int id){
+		return subCategoryService.findByid(id);
 	}
 
 }
