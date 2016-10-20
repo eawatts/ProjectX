@@ -16,6 +16,8 @@ public class UserRepositoryOffline implements UserRepository {
 	
 	@Inject
 	private OfflineDB db;
+	
+	public UserRepositoryOffline(){}
 
 	@Override
 	public void persistUser(User user) {
