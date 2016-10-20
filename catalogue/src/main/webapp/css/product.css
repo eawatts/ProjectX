@@ -5,90 +5,105 @@
 	british racing green = #004425
 	sweet sweet brown = #a53f2b
 */
-body{
+body {
 	background-color: #f9fbf2;
 }
-#breadcrumbs{
-	color: #272727;
-}
-#picture{
-width:200px;
-height:200px;
-border: 2px solid #272727;
-}
-#productname{
 
+#breadcrumbs {
 	color: #272727;
 }
-hr{
+
+#picture {
+	width: 200px;
+	height: 200px;
+	border: 2px solid #272727;
+}
+
+#productname {
+	color: #272727;
+}
+
+hr {
 	height: 4px;
 	color: #a53f2b;
 	background-color: #a53f2b;
 	border-style: none;
 }
 
-
-#quant{
-position: relative;
-left:0;
-
+#quant {
+	position: relative;
+	left: 0;
 }
 
-.button{
+.button {
 	width: 190px;
 	height: 35px;
 	background-color: #a53f2b;
 	color: #FFF;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.01s ease-out;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.01s ease-out;
 }
+
 .button:hover {
 	background-color: #004425;
 }
-.overlay{
+
+.overlay {
 	position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
 }
+
 .overlay:target {
-  visibility: visible;
-  opacity: 1;
+	visibility: visible;
+	opacity: 1;
 }
+
 .popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 30%;
-  position: relative;
-  transition: all 5s ease-in-out;
+	margin: 70px auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	width: 30%;
+	position: relative;
+	transition: all 5s ease-in-out;
 }
-.popup li{list-style: none;}
+
+.popup li {
+	list-style: none;
+}
+
 .popup h2 {
-  margin-top: 0;
-  color: #333;
+	margin-top: 0;
+	color: #333;
 }
+
 .popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
 }
+
 .popup .close:hover {
-  color: #004425;
+	color: #004425;
 }
-.quantity{
+
+.quantity {
 	font-size: 150%;
 	font-style: bold;
+}
+.reviewer_name{
+	text-align: center;
 }

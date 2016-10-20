@@ -1,6 +1,7 @@
 package projectx.persistence.entities;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -50,9 +51,12 @@ public class Product {
 		@NotNull
 		private int sub_id;
 		
+		@Column(name = "product_image_filepath", nullable=false)
+		private String product_image_filepath;
+		
 		public Product(){};
 
-		public Product(int id, String name, String description, int stockLvl, BigDecimal price, int lowStock, int maxStock, int sub_id){
+		public Product(int id, String name, String description, int stockLvl, BigDecimal price, int lowStock, int maxStock, int sub_id, String product_image_filepath){
 
 			this.id = id;
 			this.name = name;
@@ -63,6 +67,7 @@ public class Product {
 			this.highStockLevel = maxStock;
 			this.isDiscontinued = false;
 			this.sub_id = sub_id;
+			this.product_image_filepath = product_image_filepath;
 		}
 
 		public int getId() {
@@ -94,6 +99,10 @@ public class Product {
 		public BigDecimal getPrice() {
 			return price;
 		}
+		public String getPriceToDisplay() {
+			return (price.setScale(2, RoundingMode.CEILING)).toString();
+		}
+		
 		public void setPrice(BigDecimal price) {
 			this.price = price;
 		}
@@ -123,5 +132,11 @@ public class Product {
 		}
 		public void setSub_id(int sub_id) {
 			this.sub_id = sub_id;
+		}
+		public String getProduct_image_filepath(){
+			return product_image_filepath;
+		}
+		public void setProduct_image_filepath(String product_image_filepath){
+			this.product_image_filepath = product_image_filepath;
 		}
 }

@@ -24,7 +24,7 @@ public class ProductController implements Serializable {
 	private CurrentProduct currentProduct;
 	
 	public String view(int productId){
-		currentProduct.setProduct(productService.getProductFromId(productId));
+		currentProduct.setCurrentProduct(productService.getCurrentProductFromId(productId));
 		return "catalogue_product";
 	}
 	

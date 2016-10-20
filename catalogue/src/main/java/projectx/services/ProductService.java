@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import projectx.persistence.entities.Product;
 import projectx.persistence.repositories.interfaces.ProductRepository;
+import projectx.persistence.webentities.CurrentProduct;
 import projectx.persistence.webentities.ProductWithAverageReview;
 
 @Stateless
@@ -29,6 +30,10 @@ public class ProductService {
 	
 	public Product getProductFromId(int id){
 		return productRepository.getProductFromId(id);	
+	}
+	
+	public CurrentProduct getCurrentProductFromId(int id){
+		return productRepository.getCurrentProductFromId(id);	
 	}
 	
 	public Integer getAverageReviewForProductId(int productId) {

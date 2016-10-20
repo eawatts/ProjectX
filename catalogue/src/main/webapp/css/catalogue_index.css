@@ -23,17 +23,3 @@
 	margin-left:10%;
 	margin-right:10%;
 }
-
-.product-slider-star-rating {
-	text-align: center;
-	font-weight: bold;
-	width:100%;
-	font-size: 120%;
-	padding-left: 0px;
-	list-style-type: none;
-}
-
-.product-slider-star{
-	color: #fed766;
-	display: inline-block;
-}
