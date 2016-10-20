@@ -32,7 +32,9 @@ public class InitialData {
 		users.add(new User(2,"alstock","password","Al","Stock",UserLevel.ADMIN,"alstock@al.co.uk"));
 		
 		products = new ArrayList<Product>();
-		products.add();
+		products.add(new Product(1,"product",300,5.00,20,"a very shiny product"));
+		products.add(new Product(2,"Another product",300,3.00,20,"another very shiny product"));
+
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
 		
@@ -199,7 +201,6 @@ public class InitialData {
 
 	public Product findProductByName(String name)
 	{
-		// TODO Auto-generated method stub
 		for(Product p: products)
 		{
 			if( p.getName().equals(name)) return p;

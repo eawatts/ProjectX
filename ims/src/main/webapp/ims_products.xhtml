@@ -25,49 +25,51 @@
 					<div class="col-tab-2 col-desk-2">Suppliers</div>
 				</div>
 			</div>
-			<ui:repeat var="product" value="#{products.listProducts()}">
-				<h:commandLink action="#{products.getProduct(product.id)}"/>
-				<div class="product-row">
-					<div class="row">
-						<div class="col-tab-1 col-desk-1">
-							<p>
-								<h:outputText value="#{product.id}" />
-							</p>
-						</div>
-						<div class="col-tab-1 col-desk-1">
-							<p>
-								<h:outputText value="#{product.name}" />
-							</p>
-						</div>
-						<div class="col-tab-1 col-desk-1">
-							<p>
-								<h:outputText value="#{product.currentstock}" />
-							</p>
-						</div>
-						<div class="col-tab-1 col-desk-1">
-							<p>
-								<h:outputText value="#{product.lowlimit}" />
-							</p>
-						</div>
-						<div class="col-tab-5 col-desk-5">
-							<p>
-								<h:outputText value="#{product.description}" />
-							</p>
-						</div>
-						<div class="col-tab-2 col-desk-2">
-							<div class="styled-select">
-								<ui:repeat var="supplier" value="#{product.supplierlist(product.id)}">
-									<option value="#{supplier.name}"></option>
-								</ui:repeat>
+			<div class="productList">
+				<ui:repeat var="product" value="#{products.productDataModel}">
+					<div class="product-row">
+							<div class="col-tab-1 col-desk-1">
+								<p>
+									<h:outputText value="#{product.id}" />
+								</p>
 							</div>
-						</div>
-						<div class="col-tab-1 col-desk-1">
-							<button id="editP" type="button"
-								onclick="location.href='#popup1'">Edit</button>
-						</div>
+							<div class="col-tab-1 col-desk-1">
+								<p>
+									<h:outputText value="#{product.name}" />
+								</p>
+							</div>
+							<div class="col-tab-1 col-desk-1">
+								<p>
+									<h:outputText value="#{product.currentStock}" />
+								</p>
+							</div>
+							<div class="col-tab-1 col-desk-1">
+								<p>
+									<h:outputText value="#{product.lowLimit}" />
+								</p>
+							</div>
+							<div class="col-tab-5 col-desk-5">
+								<p>
+									<h:outputText value="#{product.description}" />
+								</p>
+							</div>
+							<div class="col-tab-2 col-desk-2">
+								<h:selectOneMenu value="#products.selectedSupplier">
+									<ui:repeat var="supplier"
+										value="#{product.getSupplierList(product.id)}">
+										<f:selectItem value="#{supplier.name}"
+											itemLabel="#{supplier.name}" />
+									</ui:repeat>
+								</h:selectOneMenu>
+							</div>
+							<div class="col-tab-1 col-desk-1">
+								<button id="editP" type="button"
+									onclick="location.href='#popup1'">Edit</button>
+							</div>
 					</div>
-				</div>
-			</ui:repeat>
+					<br />
+				</ui:repeat>
+			</div>
 			<div id="popup1" class="overlay">
 				<div class="popup">
 					<a class="close" href="#">X</a>
