@@ -23,8 +23,8 @@ public class AddressService{
 		
 	}
 	public Address createNewAddress(String housenumber, String street, String town, String postcode) {
-		// TODO Auto-generated method stub
-		return null;
+		Address address = new Address(housenumber, street,town,postcode);
+		return address;
 	}
 
 	

@@ -13,42 +13,23 @@ import projectx.persistence.repositories.interfaces.UserRepository;
 @Stateless
 public class UserService{
 	
-	@Inject
-	private UserRepository userRepository;
-	
-	public void setTitle(String title){
-		
-	}
-	
-	public void setEmail(String email){
-		
-	}
-	
-	public void setPassword(String password){
+	public byte[] formatPassword(String password){
 		char[] pass = password.toCharArray();
 		byte[] hashedpassword = Hash.hashPassword(pass,Hash.getNextSalt(), 2, 256);
-		
-		
-	}
-	
-	public void setFirstName(String firstname){
+		return hashedpassword;
 		
 	}
 	
-	public void setLastName(String lastname){
-		
-	}
-	
-	public void setAge(String age){
-		
-	}
-	public void setBio(String bio){
-		
+
+	public int formatAge(String age){
+		int formatedage = Integer.parseInt(age);
+		return formatedage;
 	}
 
+
 	public User createNewUser(String title, String email, String password, String firstName, String lastName,
-			String age, String bio, BankAccount createNewBankAccout, Address createNewAddress) {
-		// TODO Auto-generated method stub
-		return null;
+			String age, String bio, BankAccount bankAccount, Address address) {
+		User user = new User(title,email,formatPassword(password), firstName, lastName, bankAccount, address,formatAge(age));
+		return user;
 	}
 }

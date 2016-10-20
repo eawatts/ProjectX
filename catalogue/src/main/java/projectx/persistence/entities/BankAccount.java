@@ -4,9 +4,9 @@ public class BankAccount {
 	private char[] banknumber;
 	private char[] sortcode;
 	
-	BankAccount(char[] cs, char[] cs2){
-		this.banknumber=cs;
-		this.sortcode=cs2;
+	public BankAccount(char[] banknumber, char[] sortcode){
+		this.banknumber=banknumber;
+		this.sortcode=sortcode;
 		
 	}
 	

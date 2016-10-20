@@ -36,15 +36,21 @@ public class User {
 	public static final String FIND_BY_USERNAME = "User.findByUsername";
 	public static final String CHECK_PASSWORD = "User.checkPassword";
 	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+/*	ID will be implemented when a proper database is hooked up
+ * @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
 	private int id;
-		
+	*/	
+	
+	@Column(name="title", length =6, nullable = false)
+	private String title;
+
+
 	@Column(name = "username", length = 30, nullable = false)
 	private String username;
 	
 	@Column(name = "password", length = 256, nullable = false)
-	private String password;
+	private byte[] password;
 	
 	@Column(name = "firstname", length = 50, nullable = false)
 	private String firstname;
@@ -52,45 +58,52 @@ public class User {
 	@Column(name = "surname", length = 50, nullable = false)
 	private String surname;
 	
+	@Column(name = "age", nullable = false)
+	private int age;
+	
+
+	/* Implemented on merge
 	@ManyToOne
 	@MapsId
 	@JoinColumn(name = "")
 	@Column(name = "user_level", nullable = false)
 	private UserLevel userLevel;
-	
+	*/
 	@Email
 	@Column(name = "email_address", nullable = false)
 	private String emailAddress;
-	
+	private Address address;
 	public User() {}
 	
-	public User(int id, String username, String password, String firstname, String surname, UserLevel userLevel, String emailAddress) {
-		this.id = id;
-		this.username = username;
+	public User(/*int id,*/String title, String emailAddress, byte[] password, String firstname, String surname, /*UserLevel userLevel,*/BankAccount bankaccount,Address address,int age) {
+		//this.id = id;
+		this.title=title;
 		this.password = password;
 		this.firstname = firstname;
 		this.surname = surname;
-		this.userLevel = userLevel;
+		//this.userLevel = userLevel;
 		this.emailAddress = emailAddress;
+		this.bankaccount=bankaccount;
+		this.address=address;
 	}
 
-	public int getId(){
-		return this.id;
-	}
+//	public int getId(){
+//		return this.id;
+//	}
 		
-	public String getUsername() {
-		return username;
-	}
+//	public String getUsername() {
+//		return username;
+//	}
 	
 	public void setUsername(String username) {
 		this.username = username;
 	}
 	
-	public String getPassword() {
+	public byte[] getPassword() {
 		return password;
 	}
 	
-	public void setPassword(String password) {
+	public void setPassword(byte[] password) {
 		this.password = password;
 	}
 	
@@ -118,7 +131,37 @@ public class User {
 		this.emailAddress = emailAddress;
 	}
 	
-	public UserLevel getUserLevel() {
-		return userLevel;
+	private BankAccount bankaccount;
+	public BankAccount getBankaccount() {
+		return bankaccount;
 	}
+
+	public void setBankaccount(BankAccount bankaccount) {
+		this.bankaccount = bankaccount;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+//	public UserLevel getUserLevel() {
+//		return userLevel;
+//	}
 }
