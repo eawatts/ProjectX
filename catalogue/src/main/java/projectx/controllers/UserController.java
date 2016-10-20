@@ -23,17 +23,17 @@ public class UserController implements Serializable{
 	
 	private String title;
 	private String email;
-	private char[] password;
+	private String password;
 	private String firstName;
 	private String lastName;
-	private int age;
+	private String age;
 	private String bio;
-	private int housenumber;
+	private String housenumber;
 	private String street;
 	private String town;
-	private char[] postcode;
-	private int[] banknumber;
-	private int[] sortcode;
+	private String postcode;
+	private String banknumber;
+	private String sortcode;
 
 
 	/**

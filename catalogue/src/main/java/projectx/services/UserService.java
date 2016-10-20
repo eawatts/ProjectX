@@ -19,8 +19,9 @@ public class UserService{
 		
 	}
 	
-	public void setPassword(char[] password){
-		//Hashing goes here
+	public void setPassword(String password){
+		char[] pass = password.toCharArray();
+				
 	}
 	
 	public void setFirstName(String firstname){
