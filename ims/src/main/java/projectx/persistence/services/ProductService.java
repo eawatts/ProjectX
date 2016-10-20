@@ -16,6 +16,7 @@ public class ProductService{
 	{
 		return findProductById(Integer.parseInt(id));
 	}
+	
 	public Product findProductById(int id)
 	{
 		return productManager.findByProductId(id);
