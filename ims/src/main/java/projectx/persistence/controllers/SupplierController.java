@@ -8,7 +8,6 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.repositories.SupplierRepository;
 
@@ -35,10 +34,16 @@ public class SupplierController implements Serializable{
 		}
 		return dataModel;
 	}
-	public DataModel<Supplier> getSuppliers(){
+
+	public DataModel<Supplier> getDataModel() {
 		if(dataModel==null)
 			dataModel=createDataModel();
 			return dataModel;
 	}
 
+	public void setDataModel(DataModel<Supplier> dataModel) {
+		this.dataModel = dataModel;
+	}
+
+	
 }
