@@ -1,11 +1,13 @@
 package projectx.persistence.controllers;
 import projectx.persistence.entities.*;
+import projectx.persistence.selected.SelectedPurchaseOrder;
 import projectx.persistence.services.*;
 
 import java.io.Serializable;
 
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 import javax.inject.*;
 
 
@@ -16,17 +18,33 @@ import javax.inject.*;
 public class PurchaseOrderController implements Serializable{
 	@Inject 
 	private PurchaseOrderSerivce purchaseOrderSerivce;
-	private DataModel<PurchaseOrder> datamodel=null;
+	@Inject
+	private SelectedPurchaseOrder selectedPurchaseOrder;
+	private DataModel<PurchaseOrder> purchaseOrderDataModel=null;
+	
+	public String getPurchaseOrder(String id){
+		try{
+		selectedPurchaseOrder.setSelectedpurchaseOrder(purchaseOrderSerivce.findProductById(id));
+		return "purchaseOrder";
+		}
+		catch (Exception e){
+			return "browse";
+		}
+	}
+	
 	public DataModel<PurchaseOrder> getDatamodel() {
-		return datamodel;
+		if (purchaseOrderDataModel==null){
+			purchaseOrderDataModel= createDataModel();
+		}
+		return purchaseOrderDataModel;
 	}
-	public void setDatamodel(DataModel<PurchaseOrder> datamodel) {
-		this.datamodel = datamodel;
+	
+	public DataModel<PurchaseOrder> createDataModel()
+	{
+		
+		return new ListDataModel<PurchaseOrder>(purchaseOrderSerivce.getPurchaseOrder());
 	}
-	public PurchaseOrderSerivce getPurchaseOrderSerivce() {
-		return purchaseOrderSerivce;
-	}
-	public void setPurchaseOrderSerivce(PurchaseOrderSerivce purchaseOrderSerivce) {
-		this.purchaseOrderSerivce = purchaseOrderSerivce;
-	}
+	
+	
+
 }
