@@ -1,6 +1,7 @@
 package projectx.persistence.entities;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -94,6 +95,10 @@ public class Product {
 		public BigDecimal getPrice() {
 			return price;
 		}
+		public String getPriceToDisplay() {
+			return (price.setScale(2, RoundingMode.CEILING)).toString();
+		}
+		
 		public void setPrice(BigDecimal price) {
 			this.price = price;
 		}

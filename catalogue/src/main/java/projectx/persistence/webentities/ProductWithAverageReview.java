@@ -20,7 +20,15 @@ public class ProductWithAverageReview {
 		return this.product;
 	}
 	
+	public void setProduct(Product product){
+		this.product = product;
+	}
+	
 	public Integer getAverageReview() {
 		return this.averageReview;
+	}
+	
+	public void setAverageReview(Integer averageReview){
+		this.averageReview = averageReview;
 	}
 }
