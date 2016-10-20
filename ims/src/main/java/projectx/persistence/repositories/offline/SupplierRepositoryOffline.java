@@ -4,41 +4,43 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
+import javax.inject.Inject;
 
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.repositories.SupplierRepository;
+import projectx.persistence.util.InitialData;
 
 @Stateless
 @Default
 public class SupplierRepositoryOffline implements SupplierRepository {
 
+	@Inject
+	InitialData initialData;
+	
 	@Override
 	public void createSupplier(Supplier supplier) {
-		// TODO Auto-generated method stub
+		initialData.addSupplier(supplier);
 
 	}
 
 	@Override
 	public Supplier findBySupplierName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return initialData.findBySupplierName(name);
 	}
 
 	@Override
-	public Supplier findBySupplierId(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public Supplier findBySupplierId(int id) {
+		return initialData.findBySupplierId(id);
 	}
 
 	@Override
 	public List<Supplier> getSuppliers() {
-		// TODO Auto-generated method stub
-		return null;
+		return initialData.getSuppliers();
 	}
 
 	@Override
 	public void updateSupplier(Supplier supplier) {
-		// TODO Auto-generated method stub
+		initialData.updateSupplier(supplier);
 
 	}
 

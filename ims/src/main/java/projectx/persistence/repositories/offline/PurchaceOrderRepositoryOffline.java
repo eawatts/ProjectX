@@ -1,5 +1,6 @@
 package projectx.persistence.repositories.offline;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -11,22 +12,30 @@ import projectx.persistence.repositories.PurchaseOrderRepository;
 @Stateless
 @Default
 public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
-
+	@Inject
+	private database database;
+	
+	private String orderStatus;
+	private String supplierID;
+	private Date dateOrdered;
 	@Override
 	public void persistOrder(PurchaseOrder purchaseOrder) {
-		// TODO Auto-generated method stub
-
+		database.addPurchaseOrder(purchaseOrder);
 	}
 
 	@Override
-	public void persistOrders(List<PurchaseOrder> purchaseOrder) {
-		// TODO Auto-generated method stub
+	public void persistOrders(List<PurchaseOrder> purchaseOrders) {
+		for (PurchaseOrder purchaseOrder: purchaseOrders){
+			persistOrder(purchaseOrder);
+		}
 
 	}
 
 	@Override
 	public PurchaseOrder findPurchaseOrderBySupplierID(String supplierID) {
-		// TODO Auto-generated method stub
+		for (PurchaseOrder.FIND_ALL ){
+			where 
+		}
 		return null;
 	}
 
@@ -45,7 +54,7 @@ public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
 	@Override
 	public List<PurchaseOrder> getPurchaseOrders() {
 		// TODO Auto-generated method stub
-		return null;
+		return database.getPurchaseOrders();
 	}
 
 	@Override
