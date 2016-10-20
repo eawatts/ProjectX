@@ -10,6 +10,7 @@ import javax.ejb.Startup;
 import projectx.persistence.entities.Category;
 import projectx.persistence.entities.PaymentDetails;
 import projectx.persistence.entities.Review;
+import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.User;
 
@@ -22,6 +23,7 @@ public class InitialData {
 	private List<PaymentDetails> paymentDetails;
 	private List<Category> categories;
 	private List<Product> products;
+	private List<Supplier> suppliers;
 
 	@PostConstruct
 	private void populateData() {
@@ -35,6 +37,11 @@ public class InitialData {
 
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
+		
+		suppliers= new ArrayList<Supplier>();
+		suppliers.add(new Supplier(1, "Gnomes gnaomes gnomes", "1 Road Street", "The Town", "M56YH", "07463772819"));
+		suppliers.add(new Supplier(2, "Rakes and Hoes Emporium", "33 Garden Street", "Cheshire", "SG147YH", "04463776419"));
+		suppliers.add(new Supplier(3, "We Sell Stuff", "2 Made Up Street", "Barca", "BE39UI", "01320739921"));
 	}
 
 	public void setUsers(List<User> users) {
@@ -199,5 +206,9 @@ public class InitialData {
 			if( p.getName().equals(name)) return p;
 		}
 		return null;
+	}
+	//Supplier
+	public void addSupplier(Supplier s){
+		suppliers.add(s)
 	}
 }
