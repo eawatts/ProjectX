@@ -15,6 +15,7 @@ public class SelectedSupplier implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	private Supplier supplier;
 	
 	public Supplier getSupplier(){
@@ -23,4 +24,5 @@ public class SelectedSupplier implements Serializable {
 	public void setSupplier(Supplier supplier){
 		this.supplier=supplier;
 	}
+	 
 }
