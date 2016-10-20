@@ -54,7 +54,4 @@ public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
 	public void updatePurchaseOrder(PurchaseOrder purchaseOrder) {
 		initialData.updatePurchaseOrders(purchaseOrder);
 	}
-
-
-
 }

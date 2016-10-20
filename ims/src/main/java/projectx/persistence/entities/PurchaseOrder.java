@@ -51,7 +51,7 @@ public class PurchaseOrder{
 	private Date approvalDate;
 	
 	@Column(name = "status", length = 10, nullable = false)
-	private String status;
+	private OrderState status;
 	
 	@Column(name = "products", length = 10, nullable = false)
 	private List<Product> products;
@@ -114,8 +114,8 @@ public class PurchaseOrder{
 		return status;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setStatus(OrderState nStatus) {
+		this.status = nStatus;
 	}
 
 	public List<Product> getProducts() {
