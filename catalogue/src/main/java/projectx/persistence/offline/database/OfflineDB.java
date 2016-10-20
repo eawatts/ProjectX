@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Singleton;
-
+import javax.ejb.Singleton;import projectx.persistence.entities.Address;
+import projectx.persistence.entities.BankAccount;
 import projectx.persistence.entities.Category;
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Review;
@@ -37,7 +37,7 @@ public class OfflineDB {
 	}
 
 	@PostConstruct
-	private void setupData() {
+	public void setupData() {
 		setupProducts();
 		setupUsers();
 		setupReviews();
@@ -61,32 +61,36 @@ public class OfflineDB {
 		products.add(new Product(13, "Red Gnome 13", "Classic gnome - medium size", 100, new BigDecimal(19.99), 10, 100, 1, "/products/gnomes/gnome_red-hat.png"));
 
 	}
-
+	String number = "1234";
+	BankAccount bank = new BankAccount(number.toCharArray(),number.toCharArray());
+	Address address = new Address(number, number, number, number);
+	byte[] pass = null;
 	private void setupUsers() {
 		users = new ArrayList<User>();
-		
+		users.add(new User("Mr", "stinky@googlemail.com", pass, "James", "Fixed",bank,address,10));
 	}
 
+	//GOD DAMN IT TOM!!! :(
 	private void setupReviews() {
 		reviews = new ArrayList<Review>();
-		reviews.add(new Review(1, 4.5f, "Pretty dank.", users.get(2), products.get(2)));
-		reviews.add(new Review(2, 3.1f, "Pretty good.", users.get(7), products.get(3)));
-		reviews.add(new Review(3, 2.0f, "Broke first night.", users.get(2), products.get(4)));
-		reviews.add(new Review(4, 4.9f, "Pretty good.", users.get(4), products.get(8)));
-		reviews.add(new Review(5, 5f, "Best. Purchase Ever!.", users.get(2), products.get(8)));
-		reviews.add(new Review(6, 3.8f, "Pretty good.", users.get(6), products.get(8)));
-		reviews.add(new Review(7, 4.2f, "Worth the money..", users.get(2), products.get(1)));
-		reviews.add(new Review(8, 4.2f, "Outstanding.", users.get(3), products.get(1)));
-		reviews.add(new Review(9, 3f, "Pretty good.", users.get(4), products.get(1)));
-		reviews.add(new Review(10, 1f, "Hated it.", users.get(2), products.get(1)));
-		reviews.add(new Review(11, 1f, "Raining when it arrived.", users.get(3), products.get(1)));
-		reviews.add(new Review(12, 5f, "My little Harry loves it.", users.get(4), products.get(1)));
-		reviews.add(new Review(13, 3.8f, "Looks great next to the pond.", users.get(3), products.get(1)));
-		reviews.add(new Review(14, 3.5f, "Pros: Price. Cons: Quality", users.get(3), products.get(1)));
-		reviews.add(new Review(15, 3.9f, "Its my second one!", users.get(6), products.get(1)));
-		reviews.add(new Review(16, 4.2f, "Absolute scorcher.", users.get(3), products.get(1)));
-		reviews.add(new Review(17, 4.6f, "Perfect proportions.", users.get(8), products.get(1)));
-		reviews.add(new Review(18, 0.5f, "Tripping hazard. Lorem ipsum dolor sit amet, eu sit dignissim conceptam, in dicta nullam vim, indoctum instructior eu quo. Duo ex vocent iuvaret vituperatoribus, nam ludus nostro eruditi an. Eam legere alterum cu. Id solum rebum apeirian cum, sed in aliquando elaboraret. Te qui vero dicant probatus.", users.get(9), products.get(1)));
+		reviews.add(new Review(1, 4.5f, "Pretty dank.", users.get(0), products.get(2)));
+		reviews.add(new Review(2, 3.1f, "Pretty good.", users.get(0), products.get(3)));
+		reviews.add(new Review(3, 2.0f, "Broke first night.", users.get(0), products.get(4)));
+		reviews.add(new Review(4, 4.9f, "Pretty good.", users.get(0), products.get(8)));
+		reviews.add(new Review(5, 5f, "Best. Purchase Ever!.", users.get(0), products.get(8)));
+		reviews.add(new Review(6, 3.8f, "Pretty good.", users.get(0), products.get(8)));
+		reviews.add(new Review(7, 4.2f, "Worth the money..", users.get(0), products.get(1)));
+		reviews.add(new Review(8, 4.2f, "Outstanding.", users.get(0), products.get(1)));
+		reviews.add(new Review(9, 3f, "Pretty good.", users.get(0), products.get(1)));
+		reviews.add(new Review(10, 1f, "Hated it.", users.get(0), products.get(1)));
+		reviews.add(new Review(11, 1f, "Raining when it arrived.", users.get(0), products.get(1)));
+		reviews.add(new Review(12, 5f, "My little Harry loves it.", users.get(0), products.get(1)));
+		reviews.add(new Review(13, 3.8f, "Looks great next to the pond.", users.get(0), products.get(1)));
+		reviews.add(new Review(14, 3.5f, "Pros: Price. Cons: Quality", users.get(0), products.get(1)));
+		reviews.add(new Review(15, 3.9f, "Its my second one!", users.get(0), products.get(1)));
+		reviews.add(new Review(16, 4.2f, "Absolute scorcher.", users.get(0), products.get(1)));
+		reviews.add(new Review(17, 4.6f, "Perfect proportions.", users.get(0), products.get(1)));
+		reviews.add(new Review(18, 0.5f, "Tripping hazard. Lorem ipsum dolor sit amet, eu sit dignissim conceptam, in dicta nullam vim, indoctum instructior eu quo. Duo ex vocent iuvaret vituperatoribus, nam ludus nostro eruditi an. Eam legere alterum cu. Id solum rebum apeirian cum, sed in aliquando elaboraret. Te qui vero dicant probatus.", users.get(0), products.get(1)));
 	}
 
 	private void setupCategories() {

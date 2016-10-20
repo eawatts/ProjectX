@@ -1,16 +1,16 @@
 package projectx.services;
 
-import javax.inject.Inject;
+//import javax.inject.Inject;
 import javax.ejb.Stateless;
 import projectx.persistence.entities.BankAccount;
-import projectx.persistence.repositories.interfaces.PaymentDetailRepository;
+//import projectx.persistence.repositories.interfaces.PaymentDetailRepository;
 
 @Stateless
 public class BankAccountService{
 	
-	@Inject
+	/*@Inject
 	private PaymentDetailRepository bankRepository;
-	
+	*/
 	public char[] formatBankNumber(String banknumbers){
 		char[] banknumber = banknumbers.toCharArray();
 		return banknumber;

@@ -30,7 +30,7 @@ public class RegistrationController {
 		/**
 		 * 
 		 */
-		public void submitUserInfo(){
+		public void setUserInfo(){
 			registrationService.createNewUser(title, email, password, firstName, lastName, age, bio, housenumber, street, town, postcode, banknumber, sortcode);
 		}
 
