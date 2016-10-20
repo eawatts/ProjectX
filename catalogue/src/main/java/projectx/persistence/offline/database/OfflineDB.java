@@ -41,19 +41,20 @@ public class OfflineDB
 	
 	private void setupProducts() {
 		products = new ArrayList<Product>();
-		products.add(new Product(1, "Red Gnome 1", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(2, "Red Gnome 2", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(3, "Red Gnome 3", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(4, "Red Gnome 4", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(5, "Red Gnome 5", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(6, "Red Gnome 6", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(7, "Red Gnome 7", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(8, "Red Gnome 8", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(9, "Red Gnome 9", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(10, "Red Gnome 10", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(11, "Red Gnome 11", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(12, "Red Gnome 12", 100, new BigDecimal(19.99), 10, 100, 1));
-		products.add(new Product(13, "Red Gnome 13", 100, new BigDecimal(19.99), 10, 100, 1));	
+		products.add(new Product(1,"Red Gnome 1", "This gnome is lovely", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(2, "Red Gnome 2", "Very generic gnome", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(3, "Red Gnome 3", "Bogstandard", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(4, "Red Gnome 4", "This is a stubbstandard gnome", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(5, "Red Gnome 5", "Red-hatted gnome", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(6, "Red Gnome 6", "Classic Gnome", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(7, "Red Gnome 7", "Usual red gnome with hat", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(8, "Red Gnome 8", "Classic red hat gnome", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(9, "Red Gnome 9", "The gnome of gnomes", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(10, "Red Gnome 10", "The one true gnome", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(11, "Red Gnome 11", "Large red hat gnome", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(12, "Red Gnome 12", "Your dream gnome", 100, new BigDecimal(19.99), 10, 100, 1));
+		products.add(new Product(13, "Red Gnome 13", "Classic gnome - medium size", 100, new BigDecimal(19.99), 10, 100, 1));	
+
 	}
 	
 	private void setupUsers() {
@@ -141,7 +142,9 @@ public class OfflineDB
 		
 		List<ProductWithAverageReview> productsWithAverageReview = new ArrayList<ProductWithAverageReview>();	
 		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++) {
-			productsWithAverageReview.add(new ProductWithAverageReview(products.get(i), getAverageReviewForProductId(products.get(i).getId()) ));
+			productsWithAverageReview.add(new ProductWithAverageReview(
+					products.get(i),
+					getAverageReviewForProductId(products.get(i).getId()) ));
 		}
 		return productsWithAverageReview;
 	}
@@ -150,7 +153,10 @@ public class OfflineDB
 		
 		List<ProductWithAverageReview> productsWithAverageReview = new ArrayList<ProductWithAverageReview>();	
 		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++) {
-			productsWithAverageReview.add(new ProductWithAverageReview(products.get(i), getAverageReviewForProductId(products.get(i).getId()) ));
+			productsWithAverageReview.add(
+					new ProductWithAverageReview(
+							products.get(i),
+							getAverageReviewForProductId(products.get(i).getId()) ));
 		}
 		return productsWithAverageReview;
 	}
@@ -199,6 +205,28 @@ public class OfflineDB
 		return reviewTotal / numberOfReviews;
 	}
 	
+	public List<Review> getSomeReviews(int n,int itemID){
+		List<Review> reviewList = new ArrayList<Review>();
+		for(int i = 0;i<reviews.size();i++){
+			if(reviews.get(i).getProduct().getId()==itemID){
+			reviewList.add(reviews.get(i));
+			if(reviewList.size()==n){break;}
+		}else{
+			continue;
+		}
+		}
+		
+		return reviewList;
+	}
+	
+//	public User getReviewerAuthor() {
+//		return Review.getUser().getName();
+//	}
+	
+	public List<Review> getReviews(){
+		return new ArrayList<Review>(reviews);
+	}
+	
 	// ----- END REVIEWS -----
 	
 	// ----- USERS -----
@@ -212,12 +240,16 @@ public class OfflineDB
 	}
 	
 	/**
-	 * Returns a copy of the Users.
+	 * Returns a Users name
 	 * @return copy of the Users ArrayList.
 	 */
-	public List<Review> getReviews(){
-		return new ArrayList<Review>(reviews);
-	}
+//	public String getName(){
+//		return User.getFirstname();
+//	}
+
+	
+
+	
 	
 	// ----- END USERS -----
 

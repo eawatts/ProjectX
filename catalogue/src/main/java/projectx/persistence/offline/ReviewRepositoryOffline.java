@@ -7,6 +7,7 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Review;
+import projectx.persistence.entities.User;
 import projectx.persistence.offline.database.OfflineDB;
 import projectx.persistence.repositories.interfaces.ReviewRepository;
 
@@ -39,4 +40,16 @@ public class ReviewRepositoryOffline implements ReviewRepository {
 	public List<Review> getReviews() {
 		return db.getReviews();
 	}
+
+	@Override
+	public List<Review> getSomeReviews(int n, int itemID) {
+		return db.getSomeReviews(n, itemID);
+	}
+
+//	@Override
+//	public User getReviewerAuthor() {
+//		return db.getReviewerAuthor();
+//	}
+//	
+	
 }

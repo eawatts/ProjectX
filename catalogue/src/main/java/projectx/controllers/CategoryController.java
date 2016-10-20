@@ -2,6 +2,7 @@ package projectx.controllers;
 
 
 import java.io.Serializable;
+
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -16,16 +17,14 @@ import projectx.services.CategoryService;
 @RequestScoped
 public class CategoryController implements Serializable{
 
+	@Inject
+	private CategoryService categoryService;
 
 		/**
 	 * Auto generated
 	 */
 	private static final long serialVersionUID = -8865755023593376085L;
 	
-		@Inject
-		private CategoryService categoryService;
-		
-		
 		public List <Category> getCategories(){
 			return categoryService.getCategories();
 		}
@@ -42,4 +41,4 @@ public class CategoryController implements Serializable{
 			return categoryService.findByid(id);
 		}
 }
-
+	
