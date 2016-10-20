@@ -25,7 +25,6 @@
 }
 .product-row{
   margin: auto;
-  float:left;/*fix for  buggy browsers*/
   display:inline-block;                  
   background-color:#ccc; 
   padding-bottom: 10px;

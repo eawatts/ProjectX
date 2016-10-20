@@ -41,6 +41,7 @@ public class Product {
 		
 		@Column(name="description", nullable = false, length = 500)
 		private String description;
+		private ArrayList<Supplier> suppliers;
 		
 		public Product(){};
 		public Product(int id, String name, int stockLvl, double price, int lowStock, String description){
@@ -150,12 +151,16 @@ public class Product {
 		{
 			this.description = description;
 		}
-		public List<Supplier> supplierList(int productID)
+		
+		public List<Supplier> getSupplierList(int productID)
 		{
-			ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
-			suppliers.add(new Supplier(1,"Gnome supplier", null, null, null, null));
-			suppliers.add(new Supplier(2,"GnomeOther supplier", null, null, null, null));
-			suppliers.add(new Supplier(3,"Gnome Super supplier", null, null, null, null));
+			if(suppliers == null)
+			{
+				ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
+				suppliers.add(new Supplier(1,"Gnome supplier", null, null, null, null));
+				suppliers.add(new Supplier(2,"GnomeOther supplier", null, null, null, null));
+				suppliers.add(new Supplier(3,"Gnome Super supplier", null, null, null, null));
+			}
 			return suppliers;
 		}
 		

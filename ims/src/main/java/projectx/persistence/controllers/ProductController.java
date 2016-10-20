@@ -1,6 +1,8 @@
 package projectx.persistence.controllers;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
@@ -8,6 +10,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Product;
+import projectx.persistence.entities.Supplier;
 import projectx.persistence.selected.SelectedProduct;
 import projectx.persistence.services.ProductService;
 
@@ -20,6 +23,8 @@ public class ProductController implements Serializable
 	private ProductService productService;
 	@Inject
 	private SelectedProduct selectedProduct;
+	@Inject
+	private Supplier selectedSupplier = null;
 	@SuppressWarnings("unused")
 	private int selectedProductIndex;
 	private DataModel<Product> productDataModel = null;
@@ -56,6 +61,21 @@ public class ProductController implements Serializable
 			productDataModel = createDataModel();
 		}
 		return productDataModel;
+	}
+	
+	public Supplier getSelectedSupplier()
+	{
+		return selectedSupplier;
+	}
+	
+	public List<Supplier> getSupplier(int productId)
+	{
+		return selectedProduct.getSelectedProduct().getSupplierList(productId);
+	}
+	
+	public void setSelectedProduct(int productId)
+	{
+		selectedProduct.setSelectedProduct(productService.findProductById(productId));
 	}
 	
 }
