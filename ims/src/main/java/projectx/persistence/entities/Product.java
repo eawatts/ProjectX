@@ -1,6 +1,7 @@
 package projectx.persistence.entities;
 
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -21,80 +22,142 @@ public class Product {
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		private int id;
 		
-		@Column(name="current_stock_level", nullable = false)
-		private int currentStockLevel;
+		@Column(name="current_stock", nullable = false)
+		private int currentStock;
 		
 		@Column(name="name", nullable = false, length = 50)
 		@Size (min = 2, max = 50)
 		private String name;
 		
 		@Column(name="price", precision = 7, scale = 2, nullable = false)
-		private BigDecimal price;
+		private double price;
 		
-		@Column(name="low_stock_level", nullable = false)
-		private int lowStockLevel;
+		@Column(name="low_stock_limit", nullable = false)
+		private int lowLimit;
 		
-		@Column(name="high_stock_level", nullable = false)
-		private int highStockLevel;
 		
 		@Column(name="is_discontinued", nullable = false)
 		private boolean isDiscontinued;
 		
+		@Column(name="description", nullable = false, length = 500)
+		private String description;
+		
 		public Product(){};
-		public Product(int id, String name, int stockLvl, BigDecimal price, int lowStock, int maxStock){
+		public Product(int id, String name, int stockLvl, double price, int lowStock, String description){
 			this.id = id;
 			this.name = name;
-			this.currentStockLevel = stockLvl;
+			this.currentStock = stockLvl;
 			this.price = price;
-			this.lowStockLevel = lowStock;
-			this.highStockLevel = maxStock;
+			this.lowLimit = lowStock;
 			this.isDiscontinued = false;
+			this.description = description;
 		}
-		
-		public int getId() {
+		/**
+		 * @return the id
+		 */
+		public int getId()
+		{
 			return id;
 		}
-		
-		public int getCurrentStockLevel() {
-			return currentStockLevel;
+		/**
+		 * @param id the id to set
+		 */
+		public void setId(int id)
+		{
+			this.id = id;
 		}
-		public void setCurrentStockLevel(int currentStockLevel) {
-			this.currentStockLevel = currentStockLevel;
+		/**
+		 * @return the currentStock
+		 */
+		public int getCurrentStock()
+		{
+			return currentStock;
 		}
-		
-		public String getName() {
+		/**
+		 * @param currentStock the currentStock to set
+		 */
+		public void setCurrentStock(int currentStock)
+		{
+			this.currentStock = currentStock;
+		}
+		/**
+		 * @return the name
+		 */
+		public String getName()
+		{
 			return name;
 		}
-		public void setName(String name) {
+		/**
+		 * @param name the name to set
+		 */
+		public void setName(String name)
+		{
 			this.name = name;
 		}
-		
-		public BigDecimal getPrice() {
+		/**
+		 * @return the price
+		 */
+		public double getPrice()
+		{
 			return price;
 		}
-		public void setPrice(BigDecimal price) {
+		/**
+		 * @param price the price to set
+		 */
+		public void setPrice(double price)
+		{
 			this.price = price;
 		}
-		
-		public int getLowStockLevel() {
-			return lowStockLevel;
+		/**
+		 * @return the lowLimit
+		 */
+		public int getLowLimit()
+		{
+			return lowLimit;
 		}
-		public void setLowStockLevel(int lowStockLevel) {
-			this.lowStockLevel = lowStockLevel;
+		/**
+		 * @param lowLimit the lowLimit to set
+		 */
+		public void setLowLimit(int lowLimit)
+		{
+			this.lowLimit = lowLimit;
 		}
-		
-		public int getHighStockLevel() {
-			return highStockLevel;
-		}
-		public void setHighStockLevel(int highStockLevel) {
-			this.highStockLevel = highStockLevel;
-		}
-		
-		public boolean isDiscontinued() {
+		/**
+		 * @return the isDiscontinued
+		 */
+		public boolean isDiscontinued()
+		{
 			return isDiscontinued;
 		}
-		public void setDiscontinued(boolean isDiscontinued) {
+		/**
+		 * @param isDiscontinued the isDiscontinued to set
+		 */
+		public void setDiscontinued(boolean isDiscontinued)
+		{
 			this.isDiscontinued = isDiscontinued;
 		}
+		/**
+		 * @return the description
+		 */
+		public String getDescription()
+		{
+			return description;
+		}
+		/**
+		 * @param description the description to set
+		 */
+		public void setDescription(String description)
+		{
+			this.description = description;
+		}
+		public List<Supplier> supplierList(int productID)
+		{
+			ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
+			suppliers.add(new Supplier(1,"Gnome supplier", null, null, null, null));
+			suppliers.add(new Supplier(2,"GnomeOther supplier", null, null, null, null));
+			suppliers.add(new Supplier(3,"Gnome Super supplier", null, null, null, null));
+			return suppliers;
+		}
+		
 		
 }

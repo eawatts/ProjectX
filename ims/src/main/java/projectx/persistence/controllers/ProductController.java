@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Product;
-import projectx.persistence.repositories.ProductRepository;
 import projectx.persistence.selected.SelectedProduct;
 import projectx.persistence.services.ProductService;
 
@@ -16,12 +15,7 @@ import projectx.persistence.services.ProductService;
 @SessionScoped
 public class ProductController implements Serializable
 {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2390803500375830316L;
-	@Inject
-	private ProductRepository productManager;
 	@Inject
 	private ProductService productService;
 	@Inject
@@ -52,7 +46,16 @@ public class ProductController implements Serializable
 	public DataModel<Product> createDataModel()
 	{
 		
-		return new ListDataModel<Product>(productManager.getProducts());
+		return new ListDataModel<Product>(productService.getProducts());
+	}
+	
+	public DataModel<Product> getProductDataModel()
+	{
+		if(productDataModel == null)
+		{
+			productDataModel = createDataModel();
+		}
+		return productDataModel;
 	}
 	
 }
