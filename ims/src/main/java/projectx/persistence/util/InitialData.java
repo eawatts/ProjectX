@@ -12,6 +12,7 @@ import projectx.persistence.entities.PaymentDetails;
 import projectx.persistence.entities.Review;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.Product;
+import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.User;
 
 @Startup
@@ -24,7 +25,8 @@ public class InitialData {
 	private List<Category> categories;
 	private List<Product> products;
 	private List<Supplier> suppliers;
-
+	private List<PurchaseOrder> purchaseOrder;
+	
 	@PostConstruct
 	private void populateData() {
 		users = new ArrayList<User>();
@@ -211,4 +213,38 @@ public class InitialData {
 	public void addSupplier(Supplier s){
 		suppliers.add(s)
 	}
+
+	//PurchaseOrder
+	public PurchaseOrder getPurchaseOrderBySupplierID(String supplierID) {
+
+		return null;
+	}
+
+	public void addPurchaseOrder(PurchaseOrder purchaseOrder) {
+		this.purchaseOrder.add(purchaseOrder);
+	}
+
+	public PurchaseOrder getPurchaseOrderByOrderStatus(String orderStatus) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public PurchaseOrder getPurchaseOrderById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<PurchaseOrder> getPurchaseOrders() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void updatePurchaseOrders(PurchaseOrder purchaseOrder2) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+	
 }

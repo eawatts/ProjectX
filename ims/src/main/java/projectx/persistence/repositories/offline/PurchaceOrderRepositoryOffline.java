@@ -5,68 +5,61 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
+import javax.inject.Inject;
 
+import projectx.persistence.entities.Product;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.repositories.PurchaseOrderRepository;
+import projectx.persistence.util.InitialData;
 
 @Stateless
 @Default
 public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
 	@Inject
-	private database database;
+	InitialData initialData;
 	
-	private String orderStatus;
-	private String supplierID;
-	private Date dateOrdered;
+
 	@Override
 	public void persistOrder(PurchaseOrder purchaseOrder) {
-		database.addPurchaseOrder(purchaseOrder);
+		initialData.addPurchaseOrder(purchaseOrder);
 	}
 
 	@Override
 	public void persistOrders(List<PurchaseOrder> purchaseOrders) {
 		for (PurchaseOrder purchaseOrder: purchaseOrders){
-			persistOrder(purchaseOrder);
+			initialData.addPurchaseOrder(purchaseOrder);
 		}
 
 	}
 
 	@Override
-	public PurchaseOrder findPurchaseOrderBySupplierID(String supplierID) {
-		for (PurchaseOrder.FIND_ALL ){
-			where 
-		}
-		return null;
+	public PurchaseOrder findPurchaseOrderBySupplierId(String supplierID) {
+		return initialData.getPurchaseOrderBySupplierID(supplierID);
 	}
 
 	@Override
 	public PurchaseOrder findPurchaseOrderByOrderStatus(String orderStatus) {
-		// TODO Auto-generated method stub
-		return null;
+		return initialData.getPurchaseOrderByOrderStatus(orderStatus);
 	}
 
 	@Override
 	public PurchaseOrder findPurchaseOrderById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return initialData.getPurchaseOrderById(id);
 	}
 
 	@Override
 	public List<PurchaseOrder> getPurchaseOrders() {
-		// TODO Auto-generated method stub
-		return database.getPurchaseOrders();
+		return initialData.getPurchaseOrders();
 	}
 
 	@Override
 	public void updatePurchaseOrder(PurchaseOrder purchaseOrder) {
-		// TODO Auto-generated method stub
-
+		initialData.updatePurchaseOrders(purchaseOrder);
 	}
 
 	@Override
-	public Object getSupplier() {
-		// TODO Auto-generated method stub
-		return null;
+	public Object getSupplier(String id) {
+		return initialData.getPurchaseOrderBySupplierID(supplierID);
 	}
 
 }
