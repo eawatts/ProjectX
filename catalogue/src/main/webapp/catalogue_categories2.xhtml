@@ -14,24 +14,22 @@
 		<div>
 			<h2>Categories</h2>
 			<div class="row">
-				<ui:repeat var="cat" value="#{category.categoriesWithSubs}">
+				<ui:repeat var="cat" value="#{category.categories}">
 					<div class="col-tab-6 col-desk-4">
 						<div class="box">
-							<h:graphicImage class="accord" value="http://placehold.it/140x100" />
-							<h:commandButton class="accordion"
-								value="#{cat.category.name}"
+							<h:graphicImage class="accord"
+								value="http://placehold.it/140x100" />
+							<h:commandButton class="accordion" value="#{cat.name}"
 								outcome="cat">
 							</h:commandButton>
 							<div class="panel">
 								<p>
-								
-								<!-- use cat.getName() as parameter, work out cat.getID to be able to get ALL Sub-categories -->
-								
-									<ui:repeat var="subCat" value="#{cat.subCatList}">
-										<h:outputLink
-											value="#{cat.subCatList.getName()}"
-											outcome="subCat">
-												<h:outputText value="#{subCat.name}"/>
+
+									<!-- use cat.getName() as parameter, work out cat.getID to be able to get ALL Sub-categories -->
+
+									<ui:repeat var="subCat" value="#{cat.subCategories}">
+										<h:outputLink value="#{subCat.name}" outcome="subCat" target="catalogue_subCat">
+										<h:outputText value="#{subCat.name}"/> 
 										</h:outputLink>
 										<br></br>
 									</ui:repeat>
