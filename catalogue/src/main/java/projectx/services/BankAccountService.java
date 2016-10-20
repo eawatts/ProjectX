@@ -1,10 +1,11 @@
 package projectx.services;
 
 import javax.inject.Inject;
-
+import javax.ejb.Stateless;
 import projectx.persistence.entities.BankAccount;
 import projectx.persistence.repositories.interfaces.PaymentDetailRepository;
 
+@Stateless
 public class BankAccountService{
 	
 	@Inject

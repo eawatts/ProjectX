@@ -1,10 +1,12 @@
 package projectx.services;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Address;
 import projectx.persistence.repositories.interfaces.AddressRepository;
 
+@Stateless
 public class AddressService{
 	
 	@Inject
