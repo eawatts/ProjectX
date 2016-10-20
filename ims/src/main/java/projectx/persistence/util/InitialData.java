@@ -1,5 +1,6 @@
 package projectx.persistence.util;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class InitialData {
 	private List<Category> categories;
 	private List<Product> products;
 	private List<Supplier> suppliers;
-	private List<PurchaseOrder> purchaseOrder;
+	private List<PurchaseOrder> purchaseOrders;
 	
 	@PostConstruct
 	private void populateData() {
@@ -45,6 +46,14 @@ public class InitialData {
 		suppliers.add(new Supplier(2, "Rakes and Hoes Emporium", "33 Garden Street", "Cheshire", "SG147YH", "04463776419"));
 		suppliers.add(new Supplier(3, "We Sell Stuff", "2 Made Up Street", "Barca", "BE39UI", "01320739921"));
 		suppliers.add(new Supplier(4, "Gnomes R Us", "123 Fake Street", "MAdeUp Land", "TU59PI", "01193812204"));
+		
+		purchaseOrders= new ArrayList<PurchaseOrder>();
+		purchaseOrders.add(new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"), OrderState.ORDER_CLOSED, products));
+		purchaseOrders.add(new PurchaseOrder(2, suppliers.get(1), false, Date.valueOf("2016-02-16"), OrderState.PENDING_CONFIRMATION, products));
+		purchaseOrders.add(new PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"), OrderState.PENDING_DELIVERY, products));
+		purchaseOrders.add(new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"), OrderState.DELIVERED, products));
+		
+		purchaseOrders.add(new PurchaseOrder();
 	}
 
 	public void setUsers(List<User> users) {
@@ -244,33 +253,42 @@ public class InitialData {
 	}
 
 	//PurchaseOrder
+	//PurchaseOrder
 	public PurchaseOrder getPurchaseOrderBySupplierID(String supplierID) {
-
+		for(PurchaseOrder p: purchaseOrders)
+		{
+			if( p.getSupplier().equals(supplierID)) return p;
+		}
 		return null;
 	}
 
 	public void addPurchaseOrder(PurchaseOrder purchaseOrder) {
-		this.purchaseOrder.add(purchaseOrder);
+		this.purchaseOrders.add(purchaseOrder);
 	}
 
 	public PurchaseOrder getPurchaseOrderByOrderStatus(String orderStatus) {
-		// TODO Auto-generated method stub
+		for(PurchaseOrder p: purchaseOrders)
+		{
+			if( p.getStatus().equals(orderStatus)) return p;
+		}
 		return null;
 	}
 
 	public PurchaseOrder getPurchaseOrderById(String id) {
-		// TODO Auto-generated method stub
+		for(PurchaseOrder p: purchaseOrders)
+		{
+			if(  Integer.toString(p.getId() ).equals(id)) return p;
+		}
 		return null;
 	}
 
 	public List<PurchaseOrder> getPurchaseOrders() {
-		// TODO Auto-generated method stub
-		return null;
+		return purchaseOrders;
 	}
 
-	public void updatePurchaseOrders(PurchaseOrder purchaseOrder2) {
-		// TODO Auto-generated method stub
-		
+	public void updatePurchaseOrders(PurchaseOrder purchaseOrder) {
+		purchaseOrders.remove(purchaseOrder);
+		purchaseOrders.add(purchaseOrder);
 	}
 	
 	

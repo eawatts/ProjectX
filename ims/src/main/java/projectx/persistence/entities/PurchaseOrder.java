@@ -14,6 +14,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import projectx.persistence.util.OrderState;
+
 @NamedQueries({
 			@NamedQuery (name = PurchaseOrder.INSERT_PURCHASEORDER, query = "INSERT INTO purchaseOrder p (id, supplier,approved,approvalDate,satus,products) VALUES(:id, :supplier, :approved, :approvalDate, :satus, :products) "),
 			@NamedQuery (name = PurchaseOrder.FIND_ALL, query = "SELECT * FROM purchaseOrder p "),
@@ -65,16 +67,17 @@ public class PurchaseOrder{
 	 * @param nProducts
 	 */
 	
-	public PurchaseOrder(int id, Supplier nSupplier, Boolean nApproved, Date nApprovalDate, String nStatus,List<Product> nProducts){
+	public PurchaseOrder(int id2, Supplier nSupplier, boolean nApproved, Date nApprovalDate, OrderState nStatus,
+			List<Product> nProducts) {
 		setId(id);
 		setSupplier(nSupplier);
 		setApprovalDate(nApprovalDate);
 		setStatus(nStatus);
 		setProducts(nProducts);
 	}
-	
-	
-	
+
+
+
 	public int getId() {
 		return id;
 	}
