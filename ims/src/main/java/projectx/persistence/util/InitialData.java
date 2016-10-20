@@ -41,7 +41,7 @@ public class InitialData {
 		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
 		
 		suppliers= new ArrayList<Supplier>();
-		suppliers.add(new Supplier(1, "Gnomes gnaomes gnomes", "1 Road Street", "The Town", "M56YH", "07463772819"));
+		suppliers.add(new Supplier(1, "Gnomes gnomes gnomes", "1 Road Street", "The Town", "M56YH", "07463772819"));
 		suppliers.add(new Supplier(2, "Rakes and Hoes Emporium", "33 Garden Street", "Cheshire", "SG147YH", "04463776419"));
 		suppliers.add(new Supplier(3, "We Sell Stuff", "2 Made Up Street", "Barca", "BE39UI", "01320739921"));
 		suppliers.add(new Supplier(4, "Gnomes R Us", "123 Fake Street", "MAdeUp Land", "TU59PI", "01193812204"));
@@ -232,7 +232,7 @@ public class InitialData {
 		return null;
 	}
 
-	public List<Supplier> getSuppliers() {
+	public ArrayList<Supplier> getSuppliers() {
 		return new ArrayList<Supplier>(this.suppliers);
 	}
 	public void updateSupplier(Supplier supplier){

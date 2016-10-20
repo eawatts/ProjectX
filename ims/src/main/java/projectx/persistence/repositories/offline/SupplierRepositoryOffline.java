@@ -1,5 +1,6 @@
 package projectx.persistence.repositories.offline;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -34,7 +35,7 @@ public class SupplierRepositoryOffline implements SupplierRepository {
 	}
 
 	@Override
-	public List<Supplier> getSuppliers() {
+	public ArrayList<Supplier> getSuppliers() {
 		return initialData.getSuppliers();
 	}
 
