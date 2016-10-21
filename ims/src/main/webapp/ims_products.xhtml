@@ -15,60 +15,49 @@
 			<div class="page-title">
 				<h2>Product List</h2>
 			</div>
-			<div class="div-table">
-				<div class="header-row">
-					<div class="col-tab-1 col-desk-1">Product ID</div>
-					<div class="col-tab-1 col-desk-1">Name</div>
-					<div class="col-tab-1 col-desk-1">Current Stock</div>
-					<div class="col-tab-1 col-desk-1">Low Limit</div>
-					<div class="col-tab-5 col-desk-5">Description</div>
-					<div class="col-tab-2 col-desk-2">Suppliers</div>
-				</div>
+			<div class="header-row">
+				<div class="col-tab-1 col-desk-1">Product ID</div>
+				<div class="col-tab-1 col-desk-2">Name</div>
+				<div class="col-tab-1 col-desk-1">Current Stock</div>
+				<div class="col-tab-1 col-desk-1">Low Limit</div>
+				<div class="col-tab-5 col-desk-5">Description</div>
+				<div class="col-tab-2 col-desk-2">Suppliers</div>
 			</div>
-			<div class="productList">
-				<ui:repeat var="product" value="#{products.productDataModel}">
-					<div class="product-row">
-							<div class="col-tab-1 col-desk-1">
-								<p>
-									<h:outputText value="#{product.id}" />
-								</p>
-							</div>
-							<div class="col-tab-1 col-desk-1">
-								<p>
-									<h:outputText value="#{product.name}" />
-								</p>
-							</div>
-							<div class="col-tab-1 col-desk-1">
-								<p>
-									<h:outputText value="#{product.currentStock}" />
-								</p>
-							</div>
-							<div class="col-tab-1 col-desk-1">
-								<p>
-									<h:outputText value="#{product.lowLimit}" />
-								</p>
-							</div>
-							<div class="col-tab-5 col-desk-5">
-								<p>
-									<h:outputText value="#{product.description}" />
-								</p>
-							</div>
-							<div class="col-tab-2 col-desk-2">
-								<h:selectOneMenu value="#products.selectedSupplier">
-									<ui:repeat var="supplier"
-										value="#{product.getSupplierList(product.id)}">
-										<f:selectItem value="#{supplier.name}"
-											itemLabel="#{supplier.name}" />
-									</ui:repeat>
-								</h:selectOneMenu>
-							</div>
-							<div class="col-tab-1 col-desk-1">
-								<button id="editP" type="button"
-									onclick="location.href='#popup1'">Edit</button>
-							</div>
+			<ui:repeat var="product" value="#{products.productDataModel}">
+				<div class="product-row">
+					<div class="col-tab-1 col-desk-1">
+						<h:outputText value="#{product.id}" />
 					</div>
-					<br />
-				</ui:repeat>
+					<div class="col-tab-1 col-desk-1">
+						<h:outputText value="#{product.name}" />
+					</div>
+					<div class="col-tab-1 col-desk-1">
+						<h:outputText value="#{product.currentStock}" />
+					</div>
+					<div class="col-tab-1 col-desk-1">
+						<h:outputText value="#{product.lowLimit}" />
+					</div>
+					<div class="col-tab-5 col-desk-5">
+						<h:outputText value="#{product.description}" />
+					</div>
+					<div class="col-tab-2 col-desk-2">
+						<h:selectOneMenu value="#products.selectedSupplier">
+							<ui:repeat var="supplier"
+								value="#{product.getSupplierList(product.id)}">
+								<f:selectItem value="#{supplier.name}"
+									itemLabel="#{supplier.name}" />
+							</ui:repeat>
+						</h:selectOneMenu>
+					</div>
+					<div class="col-tab-1 col-desk-1">
+						<button id="editP" type="button"
+							onclick="location.href='#popup1'">Edit</button>
+					</div>
+				</div>
+
+			</ui:repeat>
+			<div class="row">
+				<button id="editP" type="button" onclick="location.href='#popup2'">Add</button>
 			</div>
 			<div id="popup1" class="overlay">
 				<div class="popup">
@@ -105,7 +94,6 @@
 					</h:form>
 				</div>
 			</div>
-			<button id="editP" type="button" onclick="location.href='#popup2'">Add</button>
 			<div id="popup2" class="overlay">
 				<div class="popup">
 					<a class="close" href="#">X</a>
