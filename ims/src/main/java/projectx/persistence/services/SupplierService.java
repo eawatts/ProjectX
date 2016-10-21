@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import projectx.persistence.controllers.SelectedSupplier;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.repositories.SupplierRepository;
 
@@ -14,20 +13,20 @@ public class SupplierService{
 	@Inject
 	private SupplierRepository supplierRepo;
 	
-//	public Supplier findSupplierById(String id){
-//		return findSupplierById(Integer.parseInt(id));
-//	}	
-//	
-//	public Supplier findSupplierById(int id){
-//		return supplierRepo.findBySupplierId(id);
-//	}
+	public Supplier findSupplierById(String id){
+		return findSupplierById(Integer.parseInt(id));
+	}	
+	
+	public Supplier findSupplierById(int id){
+		return supplierRepo.findBySupplierId(id);
+	}
 //	public List<Supplier> getSuppliers() {
 //		return supplierRepo.getSuppliers();
 //	}
-//	
-//	public Supplier findByName(String name) {
-//		return supplierRepo.findBySupplierName(name);
-//	}
+	
+	public Supplier findByName(String name) {
+		return supplierRepo.findBySupplierName(name);
+	}
 //	public void updateSupplier(Supplier supplier){
 //		supplierRepo.updateSupplier(supplier);
 //	}

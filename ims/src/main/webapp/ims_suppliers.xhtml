@@ -3,7 +3,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="ims_template.xhtml">
-	
+
 	<meta charset="utf-8" />
 	<ui:define name="page-stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/ims_supplier.css" />
@@ -19,45 +19,94 @@
 						<div class="div-table">
 							<div class="header-row">
 								<div class="row">
-									<div class="col-tab-1 col-desk-1"><b>ID</b></div>
-									<div class="col-tab-2 col-desk-2"><b>Name</b></div>
-									<div class="col-tab-2 col-desk-2"><b>Address Line 1</b></div>
-									<div class="col-tab-2 col-desk-2"><b>Address Line 2</b></div>
-									<div class="col-tab-2 col-desk-2"><b>Post Code</b></div>
-									<div class="col-tab-2 col-desk-2"><b>Phone Number</b></div>
+									<div class="col-tab-1 col-desk-1">
+										<b>ID</b>
+									</div>
+									<div class="col-tab-2 col-desk-2">
+										<b>Name</b>
+									</div>
+									<div class="col-tab-2 col-desk-2">
+										<b>Address Line 1</b>
+									</div>
+									<div class="col-tab-2 col-desk-2">
+										<b>Address Line 2</b>
+									</div>
+									<div class="col-tab-2 col-desk-2">
+										<b>Post Code</b>
+									</div>
+									<div class="col-tab-2 col-desk-2">
+										<b>Phone Number</b>
+									</div>
 								</div>
 							</div>
 							<hr />
 							<ui:repeat var="supplier" value="#{suppliers.suppliersList}">
-								<h:form>
-									<div class="product-row">
-										<div class="row">
-											<div class="col-tab-1 col-desk-1">
-												<h:outputText value="#{supplier.id}"></h:outputText>
-											</div>
-											<div class="col-tab-2 col-desk-2">
-												<h:outputText value="#{supplier.name}"></h:outputText>
-											</div>
-											<div class="col-tab-2 col-desk-2">
-												<h:outputText value="#{supplier.addressLine1}"></h:outputText>
-											</div>
-											<div class="col-tab-2 col-desk-2">
-												<h:outputText value="#{supplier.addressLine2}"></h:outputText>
-											</div>
-											<div class="col-tab-2 col-desk-2">
-												<h:outputText value="#{supplier.postcode}"></h:outputText>
-											</div>
-											<div class="col-tab-2 col-desk-2">
-												<h:outputText value="#{supplier.phone}"></h:outputText>
-											</div>
-											<div class="col-tab-1 col-desk-1">
-												<h:commandButton id="editP" type="button" onclick="location.href='#popup1';#{suppliers.selected(supplier.id, supplier.name, supplier.addressLine1, supplier.addressLine2, supplier.postcode, supplier.phone)};"  value="Edit" />
-												<!-- <button id="editP" type="button" onclick="location.href='#popup1'">Edit</button> -->
-											</div>
+								<div class="product-row">
+									<div class="row">
+										<div class="col-tab-1 col-desk-1">
+											<h:outputText value="#{supplier.id}"></h:outputText>
+										</div>
+										<div class="col-tab-2 col-desk-2">
+											<h:outputText value="#{supplier.name}"></h:outputText>
+										</div>
+										<div class="col-tab-2 col-desk-2">
+											<h:outputText value="#{supplier.addressLine1}"></h:outputText>
+										</div>
+										<div class="col-tab-2 col-desk-2">
+											<h:outputText value="#{supplier.addressLine2}"></h:outputText>
+										</div>
+										<div class="col-tab-2 col-desk-2">
+											<h:outputText value="#{supplier.postcode}"></h:outputText>
+										</div>
+										<div class="col-tab-2 col-desk-2">
+											<h:outputText value="#{supplier.phone}"></h:outputText>
+										</div>
+										<div class="col-tab-1 col-desk-1">
+											<h:commandButton id="editP" type="button"
+												onclick="location.href='#popup1';#{suppliers.selected(supplier.id, supplier.name, supplier.addressLine1, supplier.addressLine2, supplier.postcode, supplier.phone)};"
+												value="Edit" />
+											<!-- <button id="editP" type="button" onclick="location.href='#popup1'">Edit</button> -->
 										</div>
 									</div>
-									<hr />
-								</h:form>
+								</div>
+								<div id="popup1" class="overlay">
+									<div class="popup">
+										<h2>Edit Supplier</h2>
+										<a class="close" href="#">X</a>
+										<div class="content">
+											<h:form action="#{suppliers.editSupplier}">
+										ID <h:outputText type="text" class="Saddr"
+													value="#{supplier.id}"></h:outputText>
+												<br /> 
+										Name <h:inputText type="text" class="Sname"
+													value="#{suppliers.name}" required="true"
+													requiredMessage="#{supplier.getName}"></h:inputText>
+												<br /> 
+										Address Line 1 <h:inputText type="text" class="Saddr"
+													value="#{suppliers.addressLine1}" required="true"
+													requiredMessage="#{supplier.getAddressLine1}"></h:inputText>
+												<br /> 
+										Address Line 2 <h:inputText type="text" class="Saddr"
+													value="#{suppliers.addressLine2}" required="true"
+													requiredMessage="#{supplier.getAddressLine2}"></h:inputText>
+												<br /> 
+										Postcode <h:inputText type="text" class="Saddr"
+													value="#{supplier.postcode}"
+													pattern="[A-Z]{1-2} [0-9]{1-2} [0-9]{1} [A-Z]{2} "
+													required="true" requiredMessage="#{suppliers.getPostcode}"></h:inputText>
+												<br /> 
+										Phone <h:inputText type="text" class="Saddr"
+													value="#{suppliers.phone}" required="true"
+													requiredMessage="#{supplier.getPhone}"></h:inputText>
+												<br />
+												<h:commandButton class="submit-button" type="submit"
+													action="#{suppliers.editSupplier(suppliers.id, suppliers.name, suppliers.addressLine1, suppliers.addressLine2, suppliers.postcode, suppliers.phone)}"
+													value="Edit Supplier" />
+											</h:form>
+										</div>
+									</div>
+								</div>
+								<hr />
 							</ui:repeat>
 						</div>
 						<button id="add" type="button" onclick="location.href='#popup2'">Add</button>
@@ -87,7 +136,7 @@
 										Phone <h:inputText type="text" class="Saddr"
 											value="#{supplierSelected.phone}" required="true"
 											requiredMessage="Please Enter Phone Number"></h:inputText>
-										<br /> 
+										<br />
 										<h:commandButton class="submit-button" type="submit"
 											action="#{Suppliers.createSupplier}" value="Create Supplier">
 										</h:commandButton>
@@ -95,39 +144,7 @@
 								</div>
 							</div>
 						</div>
-						<div id="popup1" class="overlay">
-							<div class="popup">
-								<h2>Edit Supplier</h2>
-								<a class="close" href="#">X</a>
-								<div class="content">
-									<h:form action="#{suppliers.editSupplier}">
-										ID <h:outputText type="text" class= "Saddr" value="#{suppliers.name}"></h:outputText>
-										Name <h:inputText type="text" class="Sname"
-											value="#{suppliers.name}" required="true"
-											requiredMessage="#{suppliers.getName}"></h:inputText>
-										<br /> 
-										Address Line 1 <h:inputText type="text" class="Saddr"
-											value="#{suppliers.addressLine1}" required="true"
-											requiredMessage="#{suppliers.getAddressLine1}"></h:inputText>
-										<br /> 
-										Address Line 2 <h:inputText type="text" class="Saddr"
-											value="#{suppliers.addressLine2}" required="true"
-											requiredMessage="#{suppliers.getAddressLine2}"></h:inputText>
-										<br /> 
-										Postcode <h:inputText type="text" class="Saddr"
-											value="#{suppliers.postcode}"
-											pattern="[A-Z]{1-2} [0-9]{1-2} [0-9]{1} [A-Z]{2} "
-											required="true" requiredMessage="#{suppliers.getPostcode}"></h:inputText>
-										<br /> 
-										Phone <h:inputText type="text" class="Saddr"
-											value="#{suppliers.phone}" required="true"
-											requiredMessage="#{suppliers.getPhone}"></h:inputText>
-										<br /> 	
-										<h:commandButton class="submit-button" type="submit" action="#{suppliers.editSupplier(supplier.id, supplier.name, supplier.addressLine1, supplier.addressLine2, supplier.postcode, supplier.phone)}" value="Edit Supplier"></h:commandButton>
-									</h:form>
-								</div>
-							</div>
-						</div>
+
 					</form>
 				</div>
 			</div>
