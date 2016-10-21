@@ -11,16 +11,13 @@ public class BankAccountService{
 	/*@Inject
 	private PaymentDetailRepository bankRepository;
 	*/
-	public char[] formatBankNumber(String banknumbers){
-		char[] banknumber = banknumbers.toCharArray();
-		return banknumber;
+	public int formatBankNumber(String bankNumbers){
+		return Integer.parseInt(bankNumbers);
 	}
-	public char[] formatSortCode(String sortcodes){
-		char[] sortcode = sortcodes.toCharArray();
-		return sortcode;
+	public int formatSortCode(String sortcode){
+		return Integer.parseInt(sortcode);
 	}
 	public BankAccount createNewBankAccout(String banknumber, String sortcode) {
-		BankAccount userBankAccount = new BankAccount(formatBankNumber(banknumber),formatSortCode(sortcode));
-		return userBankAccount;
+		return new BankAccount(formatBankNumber(banknumber),formatSortCode(sortcode));
 	}
 }

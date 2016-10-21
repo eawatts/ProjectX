@@ -1,28 +1,27 @@
 package projectx.persistence.entities;
 
 public class BankAccount {
-	private char[] banknumber;
-	private char[] sortcode;
-	
-	public BankAccount(char[] banknumber, char[] sortcode){
-		this.banknumber=banknumber;
-		this.sortcode=sortcode;
-		
-	}
-	
-	public char[] getBanknumber() {
-		return banknumber;
+	private int bankNumber;
+	private int sortCode;
+
+	public BankAccount(int bankNumber, int sortCode) {
+		this.bankNumber = bankNumber;
+		this.sortCode = sortCode;
 	}
 
-	public void setBanknumber(char[] banknumber) {
-		this.banknumber = banknumber;
+	public int getBankNumber() {
+		return bankNumber;
 	}
 
-	public char[] getSortcode() {
-		return sortcode;
+	public void setBankNumber(int bankNumber) {
+		this.bankNumber = bankNumber;
 	}
 
-	public void setSortcode(char[] sortcode) {
-		this.sortcode = sortcode;
+	public int getSortCode() {
+		return sortCode;
+	}
+
+	public void setSortCode(int sortCode) {
+		this.sortCode = sortCode;
 	}
 }
