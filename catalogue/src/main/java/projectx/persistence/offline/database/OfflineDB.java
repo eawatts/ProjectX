@@ -123,20 +123,19 @@ public class OfflineDB {
 		byte[] password = new byte[25];
 
 		users = new ArrayList<User>();
-		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
-				UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(1)));
-		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
-				UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(1)));
-		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
-				UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(1)));
-		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
-				UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(1)));
-		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
-				UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(1)));
-		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
-				UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(1)));
-		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
-				UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(1)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.ADMIN, null, null));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(2), addresses.get(2)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(3), addresses.get(3)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(4), addresses.get(4)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(5), addresses.get(1)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(6), addresses.get(2)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(13)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(13)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(13)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(13)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(13)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(13)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(13)));
 	}
 
 	private void setupReviews() {
