@@ -58,7 +58,7 @@ public class OfflineDB {
 		products.add(new Product(3, "Red Gnome 3", "Bogstandard", 100, new BigDecimal(19.99), 10, 100, 1,
 				"/products/gnomes/gnome_red-hat.png"));
 		products.add(new Product(4, "Red Gnome 4", "This is a stubbstandard gnome", 100, new BigDecimal(19.99), 10, 100,
-				1, "/img/products/gnomes/gnome_red-hat.png"));
+				1, "/products/gnomes/gnome_red-hat.png"));
 		products.add(new Product(5, "Red Gnome 5", "Red-hatted gnome", 100, new BigDecimal(19.99), 10, 100, 1,
 				"/products/gnomes/gnome_red-hat.png"));
 		products.add(new Product(6, "Red Gnome 6", "Classic Gnome", 100, new BigDecimal(19.99), 10, 100, 1,
