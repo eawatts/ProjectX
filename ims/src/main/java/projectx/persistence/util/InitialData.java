@@ -53,7 +53,7 @@ public class InitialData {
 		purchaseOrders.add(new PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"), OrderState.PENDING_DELIVERY, products));
 		purchaseOrders.add(new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"), OrderState.DELIVERED, products));
 		
-		purchaseOrders.add(new PurchaseOrder();
+		purchaseOrders.add(new PurchaseOrder());
 	}
 
 	public void setUsers(List<User> users) {
@@ -244,12 +244,16 @@ public class InitialData {
 	public ArrayList<Supplier> getSuppliers() {
 		return new ArrayList<Supplier>(this.suppliers);
 	}
-	public void updateSupplier(Supplier supplier){
-		int indexOfSupplier = this.suppliers.indexOf(supplier);
-		if (indexOfSupplier != -1){
-			this.suppliers.remove(indexOfSupplier); // Easier just to remove them, then individually update them.
-		}
-		this.suppliers.add(supplier);		
+	public void updateSupplier(int id, String name, String addressLine1, String addressLine2, String postcode, String phone){
+		for(Supplier s: suppliers){
+			if(s.getId() == id){
+				s.setName(name);
+				s.setAddressLine1(addressLine1);
+				s.setAddressLine2(addressLine2);
+				s.setPostcode(postcode);
+				s.setPhone(phone);
+			}
+		}		
 	}
 
 	//PurchaseOrder
@@ -269,7 +273,6 @@ public class InitialData {
 	public PurchaseOrder getPurchaseOrderByOrderStatus(String orderStatus) {
 		for(PurchaseOrder p: purchaseOrders)
 		{
-			if( p.getStatus().equals(orderStatus)) return p;
 		}
 		return null;
 	}

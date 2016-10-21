@@ -31,21 +31,26 @@ public class SupplierController implements Serializable{
 		return supplierService.getSuppliersList();
 	}
 
+	public void selected(int id, String name, String addressLine1, String addressLine2, String postcode, String phone) {
+		this.id = id;
+		this.name = name;
+		this.addressLine1 = addressLine1;
+		this.addressLine2 = addressLine2;
+		this.phone = phone;
+		this.postcode = postcode;
+		System.out.println(id + ": " + name);
+	}
 	
-	
-	
-	
-	
-	
-	
+	public void  editSupplier(){
+		System.out.println("edited supplier" + name);
+		supplierService.editSupplier(id, name, addressLine1, addressLine2, postcode, phone);
+	}
 	
 	
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getName() {
 		return name;
 	}
@@ -75,10 +80,5 @@ public class SupplierController implements Serializable{
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-	
-	
-	
-
-	
+	}	
 }

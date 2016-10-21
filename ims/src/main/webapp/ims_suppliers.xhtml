@@ -50,8 +50,8 @@
 											<h:outputText value="#{supplier.phone}"></h:outputText>
 										</div>
 										<div class="col-tab-1 col-desk-1">
-											<button id="editP" type="button"
-												onclick="location.href='#popup1'">Edit</button>
+											<h:commandButton id="editP" type="button" onclick="location.href='#popup1'" value="Edit" action="#{suppliers.selected(supplier.id, supplier.name, supplier.addressLine1, supplier.addressLine2, supplier.postcode, supplier.phone)}" />
+											<!-- <button id="editP" type="button" onclick="location.href='#popup1'">Edit</button> -->
 										</div>
 									</div>
 								</div>
@@ -98,30 +98,30 @@
 								<h2>Edit Supplier</h2>
 								<a class="close" href="#">X</a>
 								<div class="content">
-									<h:form action="ims_suppliers.html">
+									<h:form action="#{suppliers.editSupplier}">
 										Name <h:inputText type="text" class="Sname"
-											action="#{suppliers.supplier.name}" required="true"
-											requiredMessage="Please Enter Name"></h:inputText>
+											value="#{suppliers.name}" required="true"
+											requiredMessage="#{suppliers.name}"></h:inputText>
 										<br /> 
 										Address Line 1 <h:inputText type="text" class="Saddr"
-											action="#{suppliers.supplier.addressLine1}" required="true"
-											requiredMessage="Please Enter Address Line 1"></h:inputText>
+											value="#{suppliers.addressLine1}" required="true"
+											requiredMessage="#{suppliers.addressLine1}"></h:inputText>
 										<br /> 
 										Address Line 2 <h:inputText type="text" class="Saddr"
-											action="#{suppliers.supplier.addressLine2}" required="true"
-											requiredMessage="Please Enter Address Line 2"></h:inputText>
+											value="#{suppliers.addressLine2}" required="true"
+											requiredMessage="#{suppliers.addressLine2}"></h:inputText>
 										<br /> 
 										Postcode <h:inputText type="text" class="Saddr"
-											action="#{suppliers.supplier.postcode}"
+											value="#{suppliers.postcode}"
 											pattern="[A-Z]{1-2} [0-9]{1-2} [0-9]{1} [A-Z]{2} "
-											required="true" requiredMessage="Please Enter Postcode"></h:inputText>
+											required="true" requiredMessage="#{suppliers.postcode}"></h:inputText>
 										<br /> 
 										Phone <h:inputText type="text" class="Saddr"
-											action="#{suppliers.supplier.phone}" required="true"
-											requiredMessage="Please Enter Phone Number"></h:inputText>
+											value="#{suppliers.phone}" required="true"
+											requiredMessage="#{suppliers.phone}"></h:inputText>
 										<br /> 	
 										<h:commandButton class="submit-button" type="submit"
-											action="#{Suppliers.editSupplier}" value="Edit Supplier"></h:commandButton>
+											action="#{suppliers.editSupplier()}" value="Edit Supplier"></h:commandButton>
 									</h:form>
 								</div>
 							</div>

@@ -1,8 +1,6 @@
 package projectx.persistence.services;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -35,6 +33,10 @@ public class SupplierService{
 
 	public ArrayList<Supplier> getSuppliersList() {
 		return supplierRepo.getSuppliers();
+	}
+
+	public void editSupplier(int id, String name, String addressLine1, String addressLine2, String postcode, String phone) {
+		supplierRepo.updateSupplier(id, name, addressLine1, addressLine2, postcode, phone);
 	}
 
 }

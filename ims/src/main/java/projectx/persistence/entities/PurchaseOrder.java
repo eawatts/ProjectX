@@ -67,6 +67,8 @@ public class PurchaseOrder{
 	 * @param nProducts
 	 */
 	
+	public PurchaseOrder(){}
+	
 	public PurchaseOrder(int id2, Supplier nSupplier, boolean nApproved, Date nApprovalDate, OrderState nStatus,
 			List<Product> nProducts) {
 		setId(id);
@@ -109,11 +111,6 @@ public class PurchaseOrder{
 	public void setApprovalDate(Date approvalDate) {
 		this.approvalDate = approvalDate;
 	}
-
-	public String getStatus() {
-		return status;
-	}
-
 	public void setStatus(OrderState nStatus) {
 		this.status = nStatus;
 	}

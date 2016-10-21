@@ -40,8 +40,8 @@ public class SupplierRepositoryOffline implements SupplierRepository {
 	}
 
 	@Override
-	public void updateSupplier(Supplier supplier) {
-		initialData.updateSupplier(supplier);
+	public void updateSupplier(int id, String name, String addressLine1, String addressLine2, String postcode, String phone) {
+		initialData.updateSupplier(id, name, addressLine1, addressLine2, postcode, phone);
 
 	}
 
