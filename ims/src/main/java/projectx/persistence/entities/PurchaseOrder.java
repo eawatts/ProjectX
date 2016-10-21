@@ -59,15 +59,13 @@ public class PurchaseOrder{
 	 * @param nProductsOrdered
 	 */
 	
-	public PurchaseOrder(){}
-	
-	public PurchaseOrder(int id2, Supplier nSupplier, boolean nApproved, Date nApprovalDate, OrderState nStatus,
-			List<Product> nProducts) {
 
+	public PurchaseOrder(int id, Supplier nSupplier, boolean nApproved, Date nApprovalDate, OrderState nStatus,List<ProductsOrdered> nproductsOrdered) {
 		setId(id);
 		setSupplier(nSupplier);
 		setApprovalDate(nApprovalDate);
 		setStatus(nStatus);
+		setProducts(nproductsOrdered);
 	}
 
 
@@ -119,6 +117,17 @@ public class PurchaseOrder{
 		this.productsOrdered = purchasedProducts;
 	}
 
+
+
+	public void addOrderedProducts (ProductsOrdered orderedProducts) {
+		if(productsOrdered==null){
+			productsOrdered = new ArrayList<>();
+		}
+		productsOrdered.add(orderedProducts);
+		if(orderedProducts.getPurchaseOrderId()!= this)
+			orderedProducts.setPurchaseOrderId(this);
+		
+	}
 
 	
 	

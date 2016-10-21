@@ -1,23 +1,16 @@
 package projectx.persistence.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @NamedQueries({
-	//@NamedQuery (name=ProductsOrdered.FIND_ALL,query = "");
-	//@NamedQuery (name = ProductsOrdered.FIND_BY_PRODUCT,query = "");
-	//@NamedQuery (name = ProductsOrdered.FIND_BY_ID,query = "");
-	//@NamedQuery (name = ProductsOrdered.UPDATE_ORDEREDPRODUCTS,query = "");
+
+	@NamedQuery (name = ProductsOrdered.INSERT_ORDEREDPRODUCTS, query = "INSERT INTO OrderedProducts (id,product,ammountOrdered) VALUES (:id, :product, :ammountOrdered)"),
+	@NamedQuery (name=ProductsOrdered.FIND_ALL,query = "SELECT * FROM OrderedProducts"),
+	@NamedQuery (name = ProductsOrdered.FIND_BY_PRODUCT,query = "SELECT * FROM OrderedProducts o where o.productId=:productId"),
+	@NamedQuery (name = ProductsOrdered.FIND_BY_ID,query = "SELECT * FROM OrderedProducts o where o.id=:id"),
+	@NamedQuery (name = ProductsOrdered.UPDATE_ORDEREDPRODUCTS,query = "UPDATE OrderedProducts o SET o.productId=:newProductId , o.ammountOrdered=:newAmooutnOrdered  WHERE o.id=:newId,"),
 })
-
-
-//@NamedQueries({
-	//@NamedQuery (name = PurchaseOrder.INSERT_PURCHASEORDER, query = "INSERT INTO purchaseOrder p (id, supplier,approved,approvalDate,satus,products) VALUES(:id, :supplier, :approved, :approvalDate, :satus, :products) "),
-	//@NamedQuery (name = PurchaseOrder.FIND_ALL, query = "SELECT * FROM purchaseOrder p "),
-	//@NamedQuery (name = PurchaseOrder.FIND_BY_APPROVALDATE, query = "SELECT * from purchaseOrder p where p.approvalDate =:approvalDate"),
-	//@NamedQuery (name = PurchaseOrder.FIND_BY_APPROVED, query = "SELECT * from purchaseOrder p where p.approved =:approved"),
-	//@NamedQuery (name = PurchaseOrder.FIND_BY_STATUS, query = "SELECT * from purchaseOrder p where p.status =:status"),
-	//@NamedQuery (name = PurchaseOrder.UPDATE_PURCHASEORDER, query = "UPDATE purchaseOrder p SET p.supplier=:newSupplier, p.approved=:newApproved, p.approvalDate=:newApprovalDate, p.status=:newStatus, p.productsOrdered=:newProductsOrdered WHERE p.id =:id"),
-//})
 
 @Entity
 @Table(name = "OrderedProducts")
@@ -39,6 +32,10 @@ public class ProductsOrdered {
 	@Column(name = "ammountOrdered", nullable = false)
 	private int ordered;
 	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "purchaseOrderId", nullable = false)
+	@NotNull
+	private PurchaseOrder purchaseOrderId;
 	
 	/**
 	 * Constructor
@@ -46,12 +43,22 @@ public class ProductsOrdered {
 	 * @param id
 	 * @param nproduct
 	 * @param nOrdered
+	 * @param npurchaseOrderId
 	 */
 	
-	public ProductsOrdered(int id, Product nProduct, int nOrdered) {
+	public ProductsOrdered(int id, Product nProduct, int nOrdered,PurchaseOrder npurchaseOrderId) {
 		setId(id);
 		setProduct(nProduct);
 		setAmmountOrdered(nOrdered);
+		setPurchaseOrderId(npurchaseOrderId);
+	}
+
+	public PurchaseOrder getPurchaseOrderId() {
+		return purchaseOrderId;
+	}
+
+	public void setPurchaseOrderId(PurchaseOrder purchaseOrderId) {
+		this.purchaseOrderId = purchaseOrderId;
 	}
 
 	private void setAmmountOrdered(int nOrdered) {

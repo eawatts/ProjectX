@@ -1,5 +1,6 @@
 package projectx.persistence.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -18,7 +19,7 @@ public class PurchaseOrderSerivce {
 	{
 		return purchaseOrderManager.findPurchaseOrderById(id);
 	}
-	public List<PurchaseOrder> getPurchaseOrder() 
+	public ArrayList<PurchaseOrder> getPurchaseOrder() 
 	{
 		return purchaseOrderManager.getPurchaseOrders();
 	}
