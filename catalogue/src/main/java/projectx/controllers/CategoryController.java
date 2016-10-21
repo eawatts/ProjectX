@@ -10,7 +10,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Category;
-import projectx.persistence.webentities.SubCategoriesWithinCategory;
 import projectx.services.CategoryService;
 
 @Named("category")
@@ -27,10 +26,6 @@ public class CategoryController implements Serializable{
 	
 		public List <Category> getCategories(){
 			return categoryService.getCategories();
-		}
-		
-		public List<SubCategoriesWithinCategory> getCategoriesWithSubs(){
-			return categoryService.getCategoriesWithSubs();
 		}
 		
 		public Category findByName(String name){

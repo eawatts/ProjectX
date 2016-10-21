@@ -18,10 +18,11 @@ public class UserRepositoryOffline implements UserRepository {
 	private OfflineDB db;
 	
 	public UserRepositoryOffline(){}
-
-	@Override
+	
+	
 	public void persistUser(User user) {
-		// TODO Auto-generated method stub
+		db.userAdd(user);
+		
 	}
 
 	@Override

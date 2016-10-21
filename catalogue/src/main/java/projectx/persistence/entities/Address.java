@@ -23,16 +23,19 @@ public class Address {
 	public static final String FIND_BY_POSTCODE = "Address.findByPostCode";
 	public static final String INSERT_NEW_ADDRESS = "Address.new";
 	public static final String UPDATE_ACTIVE = "Address.deactivate";
-	@Id
-	@Column(name = "id", nullable = false)
-	private int id;
-
-	@Column(name = "line_1")
-	private String line1;
-
-	@Column(name = "line_2")
-	private String line2;
-
+//	@Id
+//	@Column(name = "id", nullable = false)
+//	private int id;
+//
+//	@Column(name = "line_1")
+//	private String line1;
+//
+//	@Column(name = "line_2")
+//	private String line2;
+	
+	private String housenumber;
+	private String street;
+	private String town;
 	@Column(name = "postcode")
 	private String postcode;
 
@@ -45,10 +48,11 @@ public class Address {
 	 * @param postcode
 	 * 
 	 */
-	Address(int id, String line1, String line2, String postcode) {
-		this.id = id;
-		this.line1 = line1;
-		this.line2 = line2;
+	public Address(/*int id,*/ String housenumber, String street, String town, String postcode) {
+		//this.id = id;
+		this.housenumber=housenumber;
+		this.street=street;
+		this.town=town;
 		this.postcode = postcode;
 	}
 
@@ -59,27 +63,27 @@ public class Address {
 	 * 
 	 * @return Address id
 	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * getLine_1
-	 * 
-	 * @return Address line1
-	 */
-	public String getLine1() {
-		return line1;
-	}
-
-	/**
-	 * getLine_2
-	 * 
-	 * @return Address line2
-	 */
-	public String getLine2() {
-		return line2;
-	}
+//	public int getId() {
+//		return id;
+//	}
+//
+//	/**
+//	 * getLine_1
+//	 * 
+//	 * @return Address line1
+//	 */
+//	public String getLine1() {
+//		return line1;
+//	}
+//
+//	/**
+//	 * getLine_2
+//	 * 
+//	 * @return Address line2
+//	 */
+//	public String getLine2() {
+//		return line2;
+//	}
 
 	/**
 	 * getPostcode
@@ -95,19 +99,44 @@ public class Address {
 	 * 
 	 * @param id
 	 */
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public void setLine_1(String line1) {
-		this.line1 = line1;
-	}
-
-	public void setLine_2(String line2) {
-		this.line2 = line2;
-	}
+//	public void setId(int id) {
+//		this.id = id;
+//	}
+//
+//	public void setLine_1(String line1) {
+//		this.line1 = line1;
+//	}
+//
+//	public void setLine_2(String line2) {
+//		this.line2 = line2;
+//	}
 
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
+	public String getHousenumber() {
+		return housenumber;
+	}
+
+	public void setHousenumber(String housenumber) {
+		this.housenumber = housenumber;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getTown() {
+		return town;
+	}
+
+	public void setTown(String town) {
+		this.town = town;
+	}
+
+
 }

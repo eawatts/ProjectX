@@ -9,7 +9,7 @@ import javax.inject.Inject;
 import projectx.persistence.entities.Category;
 import projectx.persistence.offline.database.OfflineDB;
 import projectx.persistence.repositories.interfaces.CategoryRepository;
-import projectx.persistence.webentities.SubCategoriesWithinCategory;
+
 @Stateless
 @Default
 public class CategoryRepositoryOffline implements CategoryRepository {
@@ -33,12 +33,7 @@ public class CategoryRepositoryOffline implements CategoryRepository {
 	public List<Category> getCategories() {
 		return db.getCategories();
 	}
-	
-	@Override
-	public List<SubCategoriesWithinCategory> getCategoriesWithSubs(){
-		return db.getCategoriesWithSubs();
-	}
-	
+
 	@Override
 	public void updateCategory(Category category) {
 		// TODO Auto-generated method stub

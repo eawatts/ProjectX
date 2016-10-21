@@ -39,10 +39,6 @@ public class UserController implements Serializable{
 	/**
 	 * 
 	 */
-	public void submitUserInfo(){
-		userService.createNewUser(title, email, password, firstName, lastName, age, bio, housenumber, street, town, postcode, banknumber, sortcode);
-	}
-
 
 	public UserService getUserService() {
 		return userService;
