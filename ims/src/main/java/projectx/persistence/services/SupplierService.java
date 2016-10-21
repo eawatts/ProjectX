@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import projectx.persistence.controllers.SelectedSupplier;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.repositories.SupplierRepository;
 
@@ -38,5 +39,9 @@ public class SupplierService{
 	public void editSupplier(int id, String name, String addressLine1, String addressLine2, String postcode, String phone) {
 		supplierRepo.updateSupplier(id, name, addressLine1, addressLine2, postcode, phone);
 	}
+
+	//public void editSupplier(SelectedSupplier selectedSupplier) {
+	//	supplierRepo.updateSupplier(selectedSupplier.getId(), supplierRepo.g, addressLine1, addressLine2, postcode, phone);
+	//}
 
 }
