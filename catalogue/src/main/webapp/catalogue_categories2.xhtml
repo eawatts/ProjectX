@@ -24,9 +24,6 @@
 							</h:commandButton>
 							<div class="panel">
 								<p>
-
-									<!-- use cat.getName() as parameter, work out cat.getID to be able to get ALL Sub-categories -->
-
 									<ui:repeat var="subCat" value="#{cat.subCategories}">
 										<h:outputLink value="#{subCat.name}" outcome="subCat" target="catalogue_subCat">
 										<h:outputText value="#{subCat.name}"/> 
