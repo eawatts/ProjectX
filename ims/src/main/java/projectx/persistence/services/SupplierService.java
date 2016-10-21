@@ -1,5 +1,6 @@
 package projectx.persistence.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -14,22 +15,26 @@ public class SupplierService{
 	@Inject
 	private SupplierRepository supplierRepo;
 	
-	public Supplier findSupplierById(String id){
-		return findSupplierById(Integer.parseInt(id));
-	}	
-	
-	public Supplier findSupplierById(int id){
-		return supplierRepo.findBySupplierId(id);
-	}
-	public List<Supplier> getSuppliers() {
+//	public Supplier findSupplierById(String id){
+//		return findSupplierById(Integer.parseInt(id));
+//	}	
+//	
+//	public Supplier findSupplierById(int id){
+//		return supplierRepo.findBySupplierId(id);
+//	}
+//	public List<Supplier> getSuppliers() {
+//		return supplierRepo.getSuppliers();
+//	}
+//	
+//	public Supplier findByName(String name) {
+//		return supplierRepo.findBySupplierName(name);
+//	}
+//	public void updateSupplier(Supplier supplier){
+//		supplierRepo.updateSupplier(supplier);
+//	}
+
+	public ArrayList<Supplier> getSuppliersList() {
 		return supplierRepo.getSuppliers();
-	}
-	
-	public Supplier findByName(String name) {
-		return supplierRepo.findBySupplierName(name);
-	}
-	public void updateSupplier(Supplier supplier){
-		supplierRepo.updateSupplier(supplier);
 	}
 
 }
