@@ -33,7 +33,9 @@
 							value="#{products.topProductsWithAverageReview}">
 							<div>
 								<h:form>
-									<img src="img#{slider_product.product.product_image_filepath}"></img>
+									<div class="slider-product-image">
+										<img src="img#{slider_product.product.productImageFilepath}"></img>
+									</div>
 									<div class="product-slider-title-container">
 										<h:commandLink class="product-slider-title"
 											value="#{slider_product.product.name}"
@@ -87,7 +89,9 @@
 							value="#{products.topProductsWithAverageReview}">
 							<div>
 								<h:form>
-									<img src="img#{slider_product.product.product_image_filepath}"></img>
+									<div class="slider-product-image">
+										<img src="img#{slider_product.product.productImageFilepath}"></img>
+									</div>
 									<div class="product-slider-title-container">
 										<h:commandLink class="product-slider-title"
 											value="#{slider_product.product.name}"

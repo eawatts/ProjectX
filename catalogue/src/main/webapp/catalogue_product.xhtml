@@ -30,7 +30,8 @@
 
 			<div class="row">
 				<div class="col-tab-4 col-desk-4">
-					<h:graphicImage url="img#{current_product.product.product_image_filepath}"
+					<h:graphicImage
+						url="http://localhost:8080/catalogue/img/products/gnomes/gnome_red-hat.png"
 						alt="Picture of #{current_product.product.name}"
 						style="width:100%;height:auto;"></h:graphicImage>
 				</div>
@@ -47,27 +48,60 @@
 							<div class="col-tab-6 col-desk-6">
 								<div id="productinfo">
 									<div class="row">
-										<h2>
-											Stock:
-											<h:outputText
-												value="#{current_product.product.currentStockLevel}" />
-										</h2>
-									</div>
-									<div class="row">
-										<h2>
-											Cost: £
-											<h:outputText
-												value=" #{current_product.product.priceToDisplay}" />
-										</h2>
-									</div>
-									<div class="row">
-										<div class="quantity">
-											<strong>Quantity: </strong> <input list="quantity"
-												name="quantity"> </input>
+										<div class="col-tab-12 col-desk-12">
+											<h2>
+												Stock:
+												<h:outputText
+													value="#{current_product.product.currentStockLevel}" />
+											</h2>
 										</div>
-										<br />
 									</div>
-									<img src="..\assets\rating.png" alt="Rating" />
+									<div class="row">
+										<div class="col-tab-12 col-desk-12">
+											<h2>
+												Cost: £
+												<h:outputText
+													value=" #{current_product.product.priceToDisplay}" />
+											</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-tab-12 col-desk-12">
+											<div class="quantity">
+												<strong>Quantity: </strong> <input list="quantity"
+													name="quantity"> </input>
+											</div>
+											<br />										
+										</div>
+										<div>
+											<ul class="product-slider-star-rating">
+												<h:form rendered="#{current_product.averageReview lt 1}"
+													class="product-slider-star">
+													<li><i class="fa fa-star-half" aria-hidden="true"></i></li>
+												</h:form>
+												<h:form rendered="#{current_product.averageReview ge 1}">
+													<li class="product-slider-star"><i class="fa fa-star"
+														aria-hidden="true"></i></li>
+												</h:form>
+												<h:form rendered="#{current_product.averageReview ge 2}"
+													class="product-slider-star">
+													<li><i class="fa fa-star" aria-hidden="true"></i></li>
+												</h:form>
+												<h:form rendered="#{current_product.averageReview ge 3}"
+													class="product-slider-star">
+													<li><i class="fa fa-star" aria-hidden="true"></i></li>
+												</h:form>
+												<h:form rendered="#{current_product.averageReview ge 4}"
+													class="product-slider-star">
+													<li><i class="fa fa-star" aria-hidden="true"></i></li>
+												</h:form>
+												<h:form rendered="#{current_product.averageReview ge 5}"
+													class="product-slider-star">
+													<li><i class="fa fa-star" aria-hidden="true"></i></li>
+												</h:form>
+											</ul>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-tab-6 col-desk-6">

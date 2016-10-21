@@ -133,10 +133,10 @@ public class Product {
 		public void setSub_id(int sub_id) {
 			this.sub_id = sub_id;
 		}
-		public String getProduct_image_filepath(){
+		public String getProductImageFilepath(){
 			return product_image_filepath;
 		}
-		public void setProduct_image_filepath(String product_image_filepath){
+		public void setProductImageFilepath(String product_image_filepath){
 			this.product_image_filepath = product_image_filepath;
 		}
 }
