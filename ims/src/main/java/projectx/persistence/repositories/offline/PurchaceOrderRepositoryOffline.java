@@ -1,5 +1,6 @@
 package projectx.persistence.repositories.offline;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -46,8 +47,8 @@ public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
 	}
 
 	@Override
-	public List<PurchaseOrder> getPurchaseOrders() {
-		return initialData.getPurchaseOrders();
+	public ArrayList<PurchaseOrder> getPurchaseOrders() {
+		return (ArrayList<PurchaseOrder>) initialData.getPurchaseOrders();
 	}
 
 	@Override

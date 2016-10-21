@@ -13,6 +13,7 @@ import projectx.persistence.entities.PaymentDetails;
 import projectx.persistence.entities.Review;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.Product;
+import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.User;
 
@@ -27,6 +28,7 @@ public class InitialData {
 	private List<Product> products;
 	private List<Supplier> suppliers;
 	private List<PurchaseOrder> purchaseOrders;
+	private List<ProductsOrdered> productsOrdered;
 	
 	@PostConstruct
 	private void populateData() {
@@ -52,11 +54,18 @@ public class InitialData {
 		suppliers.add(new Supplier(4, "Gnomes R Us", "123 Fake Street", "MAdeUp Land", "TU59PI", "01193812204"));
 		
 		purchaseOrders= new ArrayList<PurchaseOrder>();
-		purchaseOrders.add(new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"), OrderState.ORDER_CLOSED, products));
-		purchaseOrders.add(new PurchaseOrder(2, suppliers.get(1), false, Date.valueOf("2016-02-16"), OrderState.PENDING_CONFIRMATION, products));
-		purchaseOrders.add(new PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"), OrderState.PENDING_DELIVERY, products));
-		purchaseOrders.add(new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"), OrderState.DELIVERED, products));
-
+		PurchaseOrder purchaseOrder1=new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"), OrderState.ORDER_CLOSED, productsOrdered);
+		purchaseOrder1.addOrderedProducts(new ProductsOrdered(1,products.get(1),20,purchaseOrder1));
+		purchaseOrder1.addOrderedProducts(new ProductsOrdered(2,products.get(2),10,purchaseOrder1));
+		PurchaseOrder purchaseOrder2=new PurchaseOrder(2, suppliers.get(1), false, Date.valueOf("2016-02-16"), OrderState.PENDING_CONFIRMATION, productsOrdered);
+		purchaseOrder2.addOrderedProducts(new ProductsOrdered(3,products.get(1),20,purchaseOrder2));
+		purchaseOrder2.addOrderedProducts(new ProductsOrdered(4,products.get(5),10,purchaseOrder2));
+		PurchaseOrder purchaseOrder3=new PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"), OrderState.PENDING_DELIVERY, productsOrdered);
+		purchaseOrder3.addOrderedProducts(new ProductsOrdered(5,products.get(3),20,purchaseOrder3));
+		purchaseOrder3.addOrderedProducts(new ProductsOrdered(6,products.get(6),10,purchaseOrder3));
+		PurchaseOrder purchaseOrder4=new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"), OrderState.DELIVERED, productsOrdered);
+		purchaseOrder4.addOrderedProducts(new ProductsOrdered(7,products.get(4),20,purchaseOrder4));
+		purchaseOrder4.addOrderedProducts(new ProductsOrdered(8,products.get(6),10,purchaseOrder4));
 
 	}
 
@@ -263,9 +272,9 @@ public class InitialData {
 	//PurchaseOrder
 	//PurchaseOrder
 	public PurchaseOrder getPurchaseOrderBySupplierID(String supplierID) {
-		for(PurchaseOrder p: purchaseOrders)
+		for(PurchaseOrder purchOrder: purchaseOrders)
 		{
-			if( p.getSupplier().equals(supplierID)) return p;
+			if( purchOrder.getSupplier().equals(supplierID)) return purchOrder;
 		}
 		return null;
 	}
@@ -275,16 +284,17 @@ public class InitialData {
 	}
 
 	public PurchaseOrder getPurchaseOrderByOrderStatus(String orderStatus) {
-		for(PurchaseOrder p: purchaseOrders)
+		for(PurchaseOrder purchOrder: purchaseOrders)
 		{
+			if( purchOrder.getStatus().equals(orderStatus)) return purchOrder;
 		}
 		return null;
 	}
 
 	public PurchaseOrder getPurchaseOrderById(String id) {
-		for(PurchaseOrder p: purchaseOrders)
+		for(PurchaseOrder purchOrder: purchaseOrders)
 		{
-			if(  Integer.toString(p.getId() ).equals(id)) return p;
+			if(  Integer.toString(purchOrder.getId() ).equals(id)) return purchOrder;
 		}
 		return null;
 	}

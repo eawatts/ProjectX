@@ -2,8 +2,11 @@ package projectx.persistence.controllers;
 import projectx.persistence.entities.*;
 import projectx.persistence.selected.SelectedPurchaseOrder;
 import projectx.persistence.services.*;
+import projectx.persistence.util.OrderState;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
 
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
@@ -12,7 +15,6 @@ import javax.inject.*;
 
 
 
-@SuppressWarnings("serial")
 @Named("purchaseOrders")
 @SessionScoped
 public class PurchaseOrderController implements Serializable{
@@ -22,29 +24,29 @@ public class PurchaseOrderController implements Serializable{
 	private SelectedPurchaseOrder selectedPurchaseOrder;
 	private DataModel<PurchaseOrder> purchaseOrderDataModel=null;
 	
-	public String getPurchaseOrder(String id){
-		try{
-		selectedPurchaseOrder.setSelectedpurchaseOrder(purchaseOrderSerivce.findProductById(id));
-		return "purchaseOrder";
-		}
-		catch (Exception e){
-			return "browse";
-		}
+	private static final long serialVersionUID = 1L;
+	
+	private int id;
+	private Supplier supplier;
+	private boolean approved;
+	private Date approvalDate;
+	private OrderState status;
+	private ProductsOrdered productsOrdered;
+	
+	public void selected(int sId, Supplier sSupplier, boolean sApproved, Date sApprovalDate, OrderState sStatus, ProductsOrdered sProductsOrdered){
+		this.id=sId;
+		this.supplier=sSupplier;
+		this.approved=sApproved;
+		this.approvalDate=sApprovalDate;
+		this.status=sStatus;
+		this.productsOrdered=sProductsOrdered;
 	}
-	
-	public DataModel<PurchaseOrder> getDatamodel() {
-		if (purchaseOrderDataModel==null){
-			purchaseOrderDataModel= createDataModel();
-		}
-		return purchaseOrderDataModel;
-	}
-	
-	public DataModel<PurchaseOrder> createDataModel()
-	{
-		
-		return new ListDataModel<PurchaseOrder>(purchaseOrderSerivce.getPurchaseOrder());
-	}
-	
-	
 
+	public ArrayList<PurchaseOrder> getPurchaseOrderList(){	
+		return purchaseOrderSerivce.getPurchaseOrder();
+	}
+	
+	
+	
+	
 }
