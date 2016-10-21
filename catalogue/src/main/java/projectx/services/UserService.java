@@ -1,14 +1,13 @@
 package projectx.services;
 
-import java.util.regex.Pattern;
+import java.sql.Date;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 
 import projectx.persistence.entities.Address;
 import projectx.persistence.entities.BankAccount;
 import projectx.persistence.entities.User;
-import projectx.persistence.repositories.interfaces.UserRepository;
+import projectx.persistence.entities.UserLevel;
 
 @Stateless
 public class UserService{
@@ -17,19 +16,15 @@ public class UserService{
 		char[] pass = password.toCharArray();
 		byte[] hashedpassword = Hash.hashPassword(pass,Hash.getNextSalt(), 2, 256);
 		return hashedpassword;
-		
 	}
 	
-
-	public int formatAge(String age){
-		int formatedage = Integer.parseInt(age);
-		return formatedage;
+	public Date formatAge(String age){
+		// TODO: Need to actually get the DOB
+		return new Date(565461234);
 	}
-
 
 	public User createNewUser(String title, String email, String password, String firstName, String lastName,
 			String age, String bio, BankAccount bankAccount, Address address) {
-		User user = new User(title,email,formatPassword(password), firstName, lastName, bankAccount, address,formatAge(age));
-		return user;
+		return new User(null, title, firstName, lastName, formatAge(age), "email", "username", formatPassword(password), UserLevel.CUSTOMER, bankAccount, address);
 	}
 }
