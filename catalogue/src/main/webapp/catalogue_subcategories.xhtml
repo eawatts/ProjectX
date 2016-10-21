@@ -11,10 +11,10 @@
 	<ui:define name="title">SubCategories</ui:define>
 	<ui:define name="main-content">
 		<div>
-			<h2>
+			<h1>
 				<h:outputText value="#{category.findByid(1).name}">
 				</h:outputText>
-			</h2>
+			</h1>
 			<div class="row">
 				<ui:repeat var="cat" value="#{category.findByid(1).subCategories}">
 					<div class="col-tab-6 col-desk-4">
