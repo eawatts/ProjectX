@@ -13,13 +13,15 @@
   display:block;
   width: auto;
   text-align: left;
+  height: 100px;
 }
 .product-row{
   margin: auto;
   width: auto;
   display:block;
   text-align: center;
-  box-sizing: border-box
+  box-sizing: border-box;
+  height: 20px;
 }
 .page-title h2{
   margin: auto;
