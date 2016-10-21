@@ -20,7 +20,9 @@ public class SupplierController implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Inject 
 	private SupplierRepository suppRepo;
+	@SuppressWarnings("unused")
 	private Supplier supplier;
+	@SuppressWarnings("unused")
 	private int selectedSupplier;
 	private DataModel<Supplier> dataModel = null;
 	@SuppressWarnings("unused")

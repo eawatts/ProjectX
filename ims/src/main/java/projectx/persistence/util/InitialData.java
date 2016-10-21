@@ -13,6 +13,7 @@ import projectx.persistence.entities.PaymentDetails;
 import projectx.persistence.entities.Review;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.Product;
+import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.User;
 
@@ -37,7 +38,11 @@ public class InitialData {
 		products = new ArrayList<Product>();
 		products.add(new Product(1,"product",300,5.00,20,"a very shiny product"));
 		products.add(new Product(2,"Another product",300,3.00,20,"another very shiny product"));
-
+		products.add(new Product(3,"Gnome",300,3.00,20,"a Gnome"));
+		products.add(new Product(4,"Another Gnome",300,3.00,20,"another Gnome"));
+		products.add(new Product(5,"Help",300,3.00,20,"shiny product"));
+		products.add(new Product(6,"Help Me",300,3.00,20,"another shiny product"));
+		
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
 		
@@ -48,12 +53,18 @@ public class InitialData {
 		suppliers.add(new Supplier(4, "Gnomes R Us", "123 Fake Street", "MAdeUp Land", "TU59PI", "01193812204"));
 		
 		purchaseOrders= new ArrayList<PurchaseOrder>();
-		purchaseOrders.add(new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"), OrderState.ORDER_CLOSED, products));
-		purchaseOrders.add(new PurchaseOrder(2, suppliers.get(1), false, Date.valueOf("2016-02-16"), OrderState.PENDING_CONFIRMATION, products));
-		purchaseOrders.add(new PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"), OrderState.PENDING_DELIVERY, products));
-		purchaseOrders.add(new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"), OrderState.DELIVERED, products));
-		
-		purchaseOrders.add(new PurchaseOrder();
+		PurchaseOrder purchaseOrder1=new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"), OrderState.ORDER_CLOSED, purchasedProducts);
+		purchaseOrder1.addOrderedProducts(new ProductsOrdered(1,products.get(1),20));
+		purchaseOrder1.addOrderedProducts(new ProductsOrdered(2,products.get(2),10));
+		PurchaseOrder purchaseOrder2=new PurchaseOrder(2, suppliers.get(1), false, Date.valueOf("2016-02-16"), OrderState.PENDING_CONFIRMATION, products);
+		purchaseOrder2.addOrderedProducts(new ProductsOrdered(3,products.get(1),20));
+		purchaseOrder2.addOrderedProducts(new ProductsOrdered(4,products.get(5),10));
+		PurchaseOrder purchaseOrder3=ew PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"), OrderState.PENDING_DELIVERY, products));
+		purchaseOrder3.addOrderedProducts(new ProductsOrdered(5,products.get(3),20));
+		purchaseOrder3.addOrderedProducts(new ProductsOrdered(6,products.get(6),10));
+		PurchaseOrder purchaseOrder4=new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"), OrderState.DELIVERED, products));
+		purchaseOrder4.addOrderedProducts(new ProductsOrdered(7,products.get(4),20));
+		purchaseOrder4.addOrderedProducts(new ProductsOrdered(8,products.get(6),10));
 	}
 
 	public void setUsers(List<User> users) {

@@ -1,18 +1,11 @@
 package projectx.persistence.entities;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 
 import projectx.persistence.util.OrderState;
 
@@ -22,7 +15,7 @@ import projectx.persistence.util.OrderState;
 			@NamedQuery (name = PurchaseOrder.FIND_BY_APPROVALDATE, query = "SELECT * from purchaseOrder p where p.approvalDate =:approvalDate"),
 			@NamedQuery (name = PurchaseOrder.FIND_BY_APPROVED, query = "SELECT * from purchaseOrder p where p.approved =:approved"),
 			@NamedQuery (name = PurchaseOrder.FIND_BY_STATUS, query = "SELECT * from purchaseOrder p where p.status =:status"),
-			@NamedQuery (name = PurchaseOrder.UPDATE_PURCHASEORDER, query = "UPDATE purchaseOrder p SET p.supplier=:newSupplier, p.approved=:newApproved, p.approvalDate=:newApprovalDate, p.status=:newStatus, p.products=:newProducts WHERE p.id =:id"),
+			@NamedQuery (name = PurchaseOrder.UPDATE_PURCHASEORDER, query = "UPDATE purchaseOrder p SET p.supplier=:newSupplier, p.approved=:newApproved, p.approvalDate=:newApprovalDate, p.status=:newStatus, p.productsOrdered=:newProductsOrdered WHERE p.id =:id"),
 })
 
 @Entity
@@ -30,7 +23,6 @@ import projectx.persistence.util.OrderState;
 public class PurchaseOrder{
 	public static final String INSERT_PURCHASEORDER = "PurchaseOrder.savePurchaseOrder";
 	public static final String FIND_ALL = "PurchaseOrder.findAll";
-	public static final String GET_PURCHASEORDER = "PurchaseOrder.getPurchaseOrder";
 	public static final String FIND_BY_APPROVALDATE="PurchaseOrder.findByAprovalDate";
 	public static final String FIND_BY_APPROVED="PurchaseOrder.findByAproved";
 	public static final String FIND_BY_STATUS="PurchaseOrder.status";
@@ -40,7 +32,7 @@ public class PurchaseOrder{
 	@Column(name = "id", nullable = false)
 	private int id;
 	
-	@ManyToOne (optional=false)
+	@ManyToOne (fetch=FetchType.LAZY)
 	@JoinColumn (name = "supplierid", nullable=false, updatable=false)
 	private  Supplier supplier;
 	
@@ -53,8 +45,8 @@ public class PurchaseOrder{
 	@Column(name = "status", length = 10, nullable = false)
 	private OrderState status;
 	
-	@Column(name = "products", length = 10, nullable = false)
-	private List<Product> products;
+	@OneToMany (mappedBy="PurchaseOrder")
+	private  List<ProductsOrdered> productsOrdered;
 	
 	/**
 	 * Constructor
@@ -64,16 +56,15 @@ public class PurchaseOrder{
 	 * @param nApproved
 	 * @param nApprovalDate
 	 * @param nStatus
-	 * @param nProducts
+	 * @param nProductsOrdered
 	 */
 	
-	public PurchaseOrder(int id2, Supplier nSupplier, boolean nApproved, Date nApprovalDate, OrderState nStatus,
-			List<Product> nProducts) {
+	public PurchaseOrder(int id2, Supplier nSupplier, boolean nApproved, Date nApprovalDate, OrderState nStatus,List<ProductsOrdered> nPurchasedProducts) {
 		setId(id);
 		setSupplier(nSupplier);
 		setApprovalDate(nApprovalDate);
 		setStatus(nStatus);
-		setProducts(nProducts);
+		setProducts(nPurchasedProducts);
 	}
 
 
@@ -110,7 +101,7 @@ public class PurchaseOrder{
 		this.approvalDate = approvalDate;
 	}
 
-	public String getStatus() {
+	public OrderState getStatus() {
 		return status;
 	}
 
@@ -118,12 +109,24 @@ public class PurchaseOrder{
 		this.status = nStatus;
 	}
 
-	public List<Product> getProducts() {
-		return products;
+	public List<ProductsOrdered> getPurchasedProducts() {
+		return productsOrdered;
 	}
 
-	public void setProducts(List<Product> products) {
-		this.products = products;
+	public void setProducts(List<ProductsOrdered> purchasedProducts) {
+		this.productsOrdered = purchasedProducts;
+	}
+
+
+
+	public void addOrderedProducts (ProductsOrdered orderedProducts) {
+		if(productsOrdered==null){
+			productsOrdered = new ArrayList<>();
+		}
+		productsOrdered.add(orderedProducts);
+		if(orderedProducts.getPurchasedProducts() != this)
+			orderedProducts.setPurchasedProducts(this);
+		
 	}
 
 	
