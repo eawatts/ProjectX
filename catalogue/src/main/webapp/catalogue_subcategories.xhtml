@@ -8,29 +8,30 @@
 			href="css/catalogue_categories.css"></link>
 	</ui:define>
 	<meta charset="ISO-8859-1" />
-	<ui:define name="title">
-		<h:outputText value="#{category.categoryList.cat.getName()}">
-		</h:outputText>
-	</ui:define>
+	<ui:define name="title">SubCategories</ui:define>
 	<ui:define name="main-content">
 		<div>
 			<h2>
-			<h:outputText value="#{category.categoryList.cat.getName()}">
-			</h:outputText>
+				<h:outputText value="#{category.findByid(1).name}">
+				</h:outputText>
 			</h2>
 			<div class="row">
-				<ui:repeat var="#{category.categoryList.cat.subCategoryList}" value="subCat">
+				<ui:repeat var="cat" value="#{category.findByid(1).subCategories}">
 					<div class="col-tab-6 col-desk-4">
 						<div class="box">
 							<h:graphicImage class="accord"
 								value="http://placehold.it/140x100" />
-							<h:button class="accordion"
-								value="#{subCat.getName()}"
-								outcome="subCat"></h:button>
+							<h:commandButton class="accordion" value="#{cat.name}"
+								outcome="cat">
+							</h:commandButton>
+							<div class="panel">
+							</div>
 						</div>
 					</div>
 				</ui:repeat>
 			</div>
 		</div>
+		<script type="text/javascript" src="js/catalogue_categories.js">
+		</script>
 	</ui:define>
 </ui:composition>
