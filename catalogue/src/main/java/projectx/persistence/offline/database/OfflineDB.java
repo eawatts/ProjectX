@@ -57,19 +57,19 @@ public class OfflineDB {
 
 	}
 
-	private void setupUsers() {
-		users = new ArrayList<User>();
-		users.add(new User(1, "JSmithy", "password", "John", "Smith", UserLevel.ADMIN, "john.smith@email.com"));
-		users.add(new User(2, "Bazza", "password", "Barry", "Smith", UserLevel.CUSTOMER, "barry.smith@email.com"));
-		users.add(new User(3, "JaneMane", "password", "Jane", "Smith", UserLevel.CUSTOMER, "jane.smith@email.com"));
-		users.add(new User(4, "Sallysaurus", "password", "Sally", "Smith", UserLevel.CUSTOMER, "sally.smith@email.com"));
-		users.add(new User(5, "Stevie", "password", "Steve", "Smith", UserLevel.CUSTOMER, "steve.smith@email.com"));
-		users.add(new User(6, "GroovyMan", "password", "Harvey", "Stevens", UserLevel.CUSTOMER, "harvey.stevens@email.com"));
-		users.add(new User(7, "Spud", "password", "Samuel", "Potts", UserLevel.CUSTOMER, "samuel.potts@email.com"));
-		users.add(new User(8, "Stubb", "password", "Brian", "McCafe", UserLevel.CUSTOMER, "brian.mccafe@email.com"));
-		users.add(new User(9, "Freddo", "password", "Fred", "O'Donnell", UserLevel.CUSTOMER, "fred.odonnell@email.com"));
-		users.add(new User(10, "Freddeta", "password", "Frida", "O'Donnell", UserLevel.CUSTOMER, "frida.odonnell@email.com"));
-	}
+//	private void setupUsers() {
+//		users = new ArrayList<User>();
+//		users.add(new User(1, "JSmithy", "password", "John", "Smith", UserLevel.ADMIN, "john.smith@email.com"));
+//		users.add(new User(2, "Bazza", "password", "Barry", "Smith", UserLevel.CUSTOMER, "barry.smith@email.com"));
+//		users.add(new User(3, "JaneMane", "password", "Jane", "Smith", UserLevel.CUSTOMER, "jane.smith@email.com"));
+//		users.add(new User(4, "Sallysaurus", "password", "Sally", "Smith", UserLevel.CUSTOMER, "sally.smith@email.com"));
+//		users.add(new User(5, "Stevie", "password", "Steve", "Smith", UserLevel.CUSTOMER, "steve.smith@email.com"));
+//		users.add(new User(6, "GroovyMan", "password", "Harvey", "Stevens", UserLevel.CUSTOMER, "harvey.stevens@email.com"));
+//		users.add(new User(7, "Spud", "password", "Samuel", "Potts", UserLevel.CUSTOMER, "samuel.potts@email.com"));
+//		users.add(new User(8, "Stubb", "password", "Brian", "McCafe", UserLevel.CUSTOMER, "brian.mccafe@email.com"));
+//		users.add(new User(9, "Freddo", "password", "Fred", "O'Donnell", UserLevel.CUSTOMER, "fred.odonnell@email.com"));
+//		users.add(new User(10, "Freddeta", "password", "Frida", "O'Donnell", UserLevel.CUSTOMER, "frida.odonnell@email.com"));
+//	}
 
 	private void setupReviews() {
 		reviews = new ArrayList<Review>();
