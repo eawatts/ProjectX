@@ -37,7 +37,11 @@ public class InitialData {
 		products = new ArrayList<Product>();
 		products.add(new Product(1,"product",300,5.00,20,"a very shiny product"));
 		products.add(new Product(2,"Another product",300,3.00,20,"another very shiny product"));
-
+		products.add(new Product(3,"Gnome",300,3.00,20,"a Gnome"));
+		products.add(new Product(4,"Another Gnome",300,3.00,20,"another Gnome"));
+		products.add(new Product(5,"Help",300,3.00,20,"shiny product"));
+		products.add(new Product(6,"Help Me",300,3.00,20,"another shiny product"));
+		
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
 		
@@ -52,8 +56,8 @@ public class InitialData {
 		purchaseOrders.add(new PurchaseOrder(2, suppliers.get(1), false, Date.valueOf("2016-02-16"), OrderState.PENDING_CONFIRMATION, products));
 		purchaseOrders.add(new PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"), OrderState.PENDING_DELIVERY, products));
 		purchaseOrders.add(new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"), OrderState.DELIVERED, products));
-		
-		purchaseOrders.add(new PurchaseOrder());
+
+
 	}
 
 	public void setUsers(List<User> users) {

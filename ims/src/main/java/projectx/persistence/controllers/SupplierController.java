@@ -18,6 +18,7 @@ public class SupplierController implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	@Inject 
+
 	private SupplierService supplierService;
 	
 	private int id;
@@ -39,6 +40,7 @@ public class SupplierController implements Serializable{
 	public void  editSupplier(int id, String name, String addressLine1, String addressLine2, String postcode, String phone){
 		System.out.println("edited supplier" + getName());
 		supplierService.editSupplier(id, name, addressLine1, addressLine2, postcode, phone);
+
 	}
 
 	
