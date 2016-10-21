@@ -53,7 +53,6 @@ public class InitialData {
 		purchaseOrders.add(new PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"), OrderState.PENDING_DELIVERY, products));
 		purchaseOrders.add(new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"), OrderState.DELIVERED, products));
 		
-		purchaseOrders.add(new PurchaseOrder();
 	}
 
 	public void setUsers(List<User> users) {
