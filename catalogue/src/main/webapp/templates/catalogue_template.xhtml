@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="css/responsive.css"></link>
 		<link rel="stylesheet" type="text/css" href="css/template_catalogue.css"></link>
 		<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/popup.css"></link>
 		<link rel="icon" type="image/gif" href="favicon.ico"></link>
 		<ui:insert name="custom-css" />
 	</h:head>
@@ -103,11 +104,26 @@
 											class="button-green-inverse nav-banner-desktop-right-button">
 											Basket <i class="fa fa-shopping-basket"></i>
 										</button>
-										<button type="button"
+										<a href="catalogue_login.xhtml">
+										<button
 											class="button-green-inverse nav-banner-desktop-right-button">
-											Login <i class="fa fa-user"></i>
+											<h:outputText rendered="#{current_session.loggedIn eq true}" value="#{current_session.userFirstName}" />
+											<h:outputText rendered="#{current_session.loggedIn ne true}" value="Login" />
 										</button>
+										</a>
 									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="popup_login" class="overlay">
+							<div class="popup">
+								<h2>
+									Login!!!!
+								</h2>
+								<a class="close" href="#">X</a>
+								<div class="content">
+									
 								</div>
 							</div>
 						</div>
