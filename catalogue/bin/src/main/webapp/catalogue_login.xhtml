@@ -1,0 +1,48 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="../templates/catalogue_template.xhtml">
+
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="title">Login</ui:define>
+	<ui:define name="maincontent">
+
+		<div>
+			<div class="breadcrumbs">
+				<a href="catalogue_index.html">Home</a> > <a
+					href="catalogue_loginPage.html#">Login</a>
+			</div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<article class="mainBody">
+						<div class="login">
+							<h1>Login</h1>
+						</div>
+
+						<div class="description">
+							<p>Please login to your NB Gardens Account to access website
+								features and checkout.</p>
+						</div>
+						<div class="loginToSite">
+							<h3 id="formTitle">Enter your details</h3>
+							<form action="loginToAccount.js" class="form">
+								Username <input type="text" name="username"><br>
+								<br /> Password <input type="password" name="password"><br>
+								<hr />
+								<input type="submit" name="loginToAccount">
+							</form>
+						</div>
+						</br>
+						<div class="createAccount">
+							<a href="catalogue_CreateAccount.html">Create Account</a>
+							<hr />
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>

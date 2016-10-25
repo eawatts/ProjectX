@@ -1,0 +1,262 @@
+!DOCTYPE html>
+<html>
+<div id="container">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<title>NB Gardens</title>
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+	<link rel="stylesheet" type="text/css" href="css/catalogue.css"/>
+	<link rel="stylesheet" type="text/css" href="css/feedback.css"/>
+	<!-- This adds the small icon in the browser tab. -->
+	<link rel="icon" type="image/x-icon" href="../assets/nb_favicon.png">
+	<!-- This is required to add the small icons, such as the basket etc. -->
+	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+	<!-- Javascript -->
+	<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javaScript" src="js/navigation.js"></script>
+</head>
+
+<body>
+	<!-- This is the green navigation banner along the top of each page. -->
+	<header>
+		<div>
+			<nav>
+				<div class="nav-banner">
+
+					<div class="row">
+						<div class="col-tab-3 col-desk-3 nav-banner-left">
+							<img class="nav-logo" src="../assets/nb_logo.png"/>
+						</div>
+						<div class="col-tab-6 col-desk-6 nav-banner-centre">
+							<input type="search" class="nav-banner-right-search searchbox-brown" name="searchbar">
+							<button type="button" class="button-green-inverse nav-banner-right-search-button"><i class="fa fa-search"></i></button>
+						</div>
+						<div class="col-tab-3 col-desk-3 nav-banner-right">
+							<button type="button" class="button-green-inverse nav-banner-right-button">Basket <i class="fa fa-shopping-basket"></i></button>
+							<button type="button" class="button-green-inverse nav-banner-right-button">Login <i class="fa fa-user"></i></button>
+						</div>
+					</div>
+
+					<!-- <div class="nav-banner-left">
+						<img class="nav-logo" src="../assets/nb_logo.png"/>
+					</div>
+					<div class="nav-banner-centre">
+						<input type="search" name="searchbar">
+						<button type="button"><i class="fa fa-search"></i></button>
+					</div>
+					<div class="nav-banner-right">
+						<button type="button">Basket <i class="fa fa-shopping-basket"></i></button>
+						<button type="button">Login <i class="fa fa-user"></i></button>
+					</div> -->
+				</div>
+
+				<div class=nav-links>
+
+					<!-- This is what is displayed if the screen is detected to be a mobile device. -->
+					<div id="nav-mobile">
+						<div class="mobile-nav">
+							<div class="mobile-nav-toggle">
+								<div></div>
+								<span class="mobile-nav-toggle-burger"></span>
+								<span class="mobile-nav-toggle-burger"></span>
+								<span class="mobile-nav-toggle-burger"></span>
+							</div>
+							<div class="mobile-nav-menu">
+								<ul>
+									<a href="catalogue_gnomes.html" class="mobile-dropdown-button">Gnomes</a>
+									<a href="catalogue_electrical.html" class="mobile-dropdown-button">Electrical</a>
+									<a href="catalogue_ornaments.html" class="mobile-dropdown-button">Ornaments</a>
+									<a href="catalogue_rakesAndHoes.html" class="mobile-dropdown-button">Rakes and Hoes</a>
+									<a href="catalogue_waterFeatures.html" class="mobile-dropdown-button">Water Features</a>
+									<a href="catalogue_furniture.html" class="mobile-dropdown-button">Furniture</a>
+									<a href="catalogue_Maintenance.html" class="mobile-dropdown-button">Maintenance</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- This is what is displayed if the screen is detected to be a desktop device. -->
+					<div id="nav-desktop">
+						<ul class="dropdown-list">
+							<li><a href="catalogue_index.html" class="active">Home</a></li>
+							<li class="dropdown">
+								<a href="catalogue_gnomes.html" class="dropdown-button">Gnomes</a>
+								<div class="dropdown-content">
+									<a href="catalogue_seasonal.html">Seasonal</a>
+									<a href="catalogue_themed.html">Themed</a>
+									<a href="catalogue_novelty.html">Novelty</a>
+									<a href="catalogue_classic.html">Classic</a>
+									<a href="catalogue_gnomeCare.html">Gnome Care</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_electrical.html" class="dropdown-button">Electrical</a>
+								<div class="dropdown-content">
+									<a href="catalogue_lighting.html">Lighting</a>
+									<a href="catalogue_heaters.html">Heaters</a>
+									<a href="catalogue_hotTubs.html">Hot Tubs</a>
+									<a href="catalogue_bbqs.html">BBQs</a>
+									<a href="catalogue_misc.html">Misc</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_ornaments.html" class="dropdown-button">Ornaments</a>
+								<div class="dropdown-content">
+									<a href="catalogue_animal.html">Animal</a>
+									<a href="catalogue_windChimes.html">Wind Chimes</a>
+									<a href="catalogue_weatherVanes.html">Weather Vanes</a>
+									<a href="catalogue_pots.html">Pots</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_rakesAndHoes.html" class="dropdown-button">Rakes and Hoes</a>
+								<div class="dropdown-content">
+									<a href="catalogue_rakes.html">Rakes</a>
+									<a href="catalogue_hoes.html">Hoes</a>
+									<a href="catalogue_spadesAndForks.html">Spades and Forks</a>
+									<a href="catalogue_Trowels.html">Trowels</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_waterFeatures.html" class="dropdown-button">Water Features</a>
+								<div class="dropdown-content">
+									<a href="catalogue_ponds.html">Ponds</a>
+									<a href="catalogue_pumps.html">Pumps</a>
+									<a href="catalogue_pipes.html">Pipes</a>
+									<a href="catalogue_fountains.html">Fountains</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_furniture.html" class="dropdown-button">Furniture</a>
+								<div class="dropdown-content">
+									<a href="catalogue_tablesAndChairs.html">Tables and Chairs</a>
+									<a href="catalogue_benches.html">Benches</a>
+									<a href="catalogue_hammocks.html">Hammocks</a>
+									<a href="catalogue_swinging.html">Swinging</a>
+									<a href="catalogue_birdHouses.html">Bird Houses</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="catalogue_maintenance.html" class="dropdown-button">Maintenance</a>
+								<div class="dropdown-content">
+									<a href="catalogue_mowers.html">Mowers</a>
+									<a href="catalogue_strimmers.html">Strimmers</a>
+									<a href="catalogue_feedAndWeed.html">Feed and Weed</a>
+									<a href="catalogue_secateurs.html">Secateurs</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+		<!-- This is the content of the actual page. -->
+		<div class="main-content">
+			<br/>
+			<h2>Feedback</h2>
+
+			<div class="feedback">
+				<div class="row">
+					<div class="col-desk-2">
+						<div class="productimage">
+						<img class="nav-logo" src="../assets/nb_logo.png"/>
+						</div>
+					</div>
+					<div class="col-desk-10">
+						<div class="productdescription">
+						Product Name: Lorem Ipsum <br>
+						Product Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+						</div>
+					</div>
+				</div>
+				<form>
+					<div id="feedbackinfo">
+						<div class="row">
+							<div class="col-desk-1">
+							Rating:
+							</div>
+
+							<div class="col-desk-1">
+								<select name="stars">
+								    <option value="1"> * </option>
+								    <option value="2"> ** </option>
+								    <option value="3"> *** </option>
+								    <option value="4"> **** </option>
+								    <option value="5"> ***** </option>
+								 </select> 
+							</div>
+
+							<div class="col-desk-10">
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-desk-12">
+							 	Feedback:
+							 	<div class="feedbackbox">
+							 		<textarea name="feedbackdescription" rows="10" cols="60"></textarea>
+							 	</div>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-desk-1">
+								Recommend?
+							</div>
+							<div class="col-desk-1">
+								<input type="radio" name="recommend" value="yes" checked> Yes
+							</div>
+							<div class="col-desk-1">
+								<input type="radio" name="recommend" value="no"> No
+							</div>
+							<div class="col-desk-8">
+							</div>
+							<div class="col-desk-1">
+								<input type="submit">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<br/>
+		</div>
+
+		<!-- This is the green footer along the bottom of each page. -->
+		</body>
+		<br/>
+		<footer>
+			<div class="row">
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-left">
+    					<a href="https://www.facebook.com">
+    						<i class="fa fa-facebook-square" aria-hidden="true"></i>
+    					</a>
+    					<a href="https://twitter.com/">
+    						<i class="fa fa-twitter-square" aria-hidden="true"></i>
+    					</a>
+					</div>
+    			</div>
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-centre">
+    					&copy;
+    					Xpedite Consulting 2016
+					</div>
+    			</div>
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-right">
+						<a href="catalogue_help.html">Help</a>
+						<a href="catalogue_about.html">About</a>
+						<a href="catalogue_contact.html">Contact</a>
+					</div>
+    			</div>
+    		</div>
+		</footer>
+	</div>
+</html>

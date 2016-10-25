@@ -35,6 +35,37 @@ public class OfflineDB {
 	private List<SubCategory> subcategories4;
 	private List<SubCategory> subcategories5;
 	private List<SubCategory> subcategories6;
+	
+	private ArrayList<Product> classicgnomes;
+	private ArrayList<Product> secatures;
+	private ArrayList<Product> feednweed;
+	private ArrayList<Product> birdhouses;
+	private ArrayList<Product> noveltygnomes;
+	private ArrayList<Product> themedgnomes;
+	private ArrayList<Product> gnomecare;
+	private ArrayList<Product> lighting;
+	private ArrayList<Product> heaters;
+	private ArrayList<Product> hottubs;
+	private ArrayList<Product> bbqs;
+	private ArrayList<Product> misc;
+	private ArrayList<Product> animals;
+	private ArrayList<Product> windchimes;
+	private ArrayList<Product> weathervanes;
+	private ArrayList<Product> pots;
+	private ArrayList<Product> rakes;
+	private ArrayList<Product> hoes;
+	private ArrayList<Product> spadesnforks;
+	private ArrayList<Product> trowels;
+	private ArrayList<Product> pumps;
+	private ArrayList<Product> ponds;
+	private ArrayList<Product> fountains;
+	private ArrayList<Product> pipes;
+	private ArrayList<Product> tablesnchairs;
+	private ArrayList<Product> benches;
+	private ArrayList<Product> hammocks;
+	private ArrayList<Product> swinging;
+	private ArrayList<Product> mowers;
+	private ArrayList<Product> strimmers;
 
 	public OfflineDB() {
 	}
@@ -46,7 +77,9 @@ public class OfflineDB {
 		setupAddresses();
 		setupUsers();
 		setupReviews();
+		setupCategoriesProducts();
 		setupCategories();
+		
 	}
 
 	private void setupProducts() {
@@ -150,53 +183,102 @@ public class OfflineDB {
 											+ " Te qui vero dicant probatus.",
 				users.get(10), products.get(1)));
 	}
-
+	
+	private void setupCategoriesProducts(){
+		classicgnomes = new ArrayList<Product>();
+			classicgnomes.add(products.get(0));
+			classicgnomes.add(products.get(1));
+			classicgnomes.add(products.get(2));
+			classicgnomes.add(products.get(3));
+			classicgnomes.add(products.get(4));
+			classicgnomes.add(products.get(5));
+			classicgnomes.add(products.get(6));
+			classicgnomes.add(products.get(7));
+			classicgnomes.add(products.get(8));
+			classicgnomes.add(products.get(9));
+			classicgnomes.add(products.get(10));
+			classicgnomes.add(products.get(11));
+			classicgnomes.add(products.get(12));
+			
+		 noveltygnomes = new ArrayList<Product>();
+		 themedgnomes = new ArrayList<Product>();
+		 gnomecare = new ArrayList<Product>();
+		 lighting = new ArrayList<Product>();
+		 heaters = new ArrayList<Product>();
+		 hottubs = new ArrayList<Product>();
+		 bbqs = new ArrayList<Product>();
+		 misc = new ArrayList<Product>();
+		 animals = new ArrayList<Product>();
+		 windchimes = new ArrayList<Product>();
+		 weathervanes = new ArrayList<Product>();
+		 pots = new ArrayList<Product>();
+		 rakes = new ArrayList<Product>();
+		 hoes = new ArrayList<Product>();
+		 spadesnforks = new ArrayList<Product>();
+		 trowels = new ArrayList<Product>();
+		 pumps = new ArrayList<Product>();
+		 ponds = new ArrayList<Product>();
+		 pipes = new ArrayList<Product>();
+		 fountains = new ArrayList<Product>();
+		 tablesnchairs = new ArrayList<Product>();
+		 benches = new ArrayList<Product>();
+		 hammocks = new ArrayList<Product>();
+		 swinging = new ArrayList<Product>();
+		 birdhouses = new ArrayList<Product>();
+		 mowers = new ArrayList<Product>();
+		 strimmers = new ArrayList<Product>();
+		 feednweed = new ArrayList<Product>();
+		 secatures = new ArrayList<Product>();
+	}
 	private void setupCategories() {
 		categories = new ArrayList<Category>();
 
+		
+		
+		
 		Category one = new Category(1, "Gnomes", subcategories);
-		one.addSubCategory(new SubCategory(1, "Classic", one));
-		one.addSubCategory(new SubCategory(2, "Novelty", one));
-		one.addSubCategory(new SubCategory(3, "Themed", one));
-		one.addSubCategory(new SubCategory(4, "Gnome Care", one));
+		one.addSubCategory(new SubCategory(1, "Classic", one, classicgnomes));
+		one.addSubCategory(new SubCategory(2, "Novelty", one, noveltygnomes));
+		one.addSubCategory(new SubCategory(3, "Themed", one, themedgnomes));
+		one.addSubCategory(new SubCategory(4, "Gnome Care", one,gnomecare));
 
 		Category two = new Category(2, "Electrical", subcategories1);
-		two.addSubCategory(new SubCategory(5, "Lighting", two));
-		two.addSubCategory(new SubCategory(6, "Heaters", two));
-		two.addSubCategory(new SubCategory(7, "Hot Tubs", two));
-		two.addSubCategory(new SubCategory(8, "BBQs", two));
-		two.addSubCategory(new SubCategory(9, "Misc", two));
+		two.addSubCategory(new SubCategory(5, "Lighting", two,lighting));
+		two.addSubCategory(new SubCategory(6, "Heaters", two,heaters));
+		two.addSubCategory(new SubCategory(7, "Hot Tubs", two,hottubs));
+		two.addSubCategory(new SubCategory(8, "BBQs", two,bbqs));
+		two.addSubCategory(new SubCategory(9, "Misc", two,misc));
 
 		Category three = new Category(3, "Oranaments", subcategories2);
-		three.addSubCategory(new SubCategory(10, "Animal", three));
-		three.addSubCategory(new SubCategory(11, "Wind Chimes", three));
-		three.addSubCategory(new SubCategory(12, "Weather Vanes", three));
-		three.addSubCategory(new SubCategory(13, "Pots", three));
+		three.addSubCategory(new SubCategory(10, "Animal", three,animals));
+		three.addSubCategory(new SubCategory(11, "Wind Chimes", three,windchimes));
+		three.addSubCategory(new SubCategory(12, "Weather Vanes", three,weathervanes));
+		three.addSubCategory(new SubCategory(13, "Pots", three,pots));
 
 		Category four = new Category(4, "Rakes and Hoes", subcategories3);
-		four.addSubCategory(new SubCategory(14, "Rakes", four));
-		four.addSubCategory(new SubCategory(15, "Hoes", four));
-		four.addSubCategory(new SubCategory(16, "Spades and Forks", four));
-		four.addSubCategory(new SubCategory(17, "Trowels", four));
+		four.addSubCategory(new SubCategory(14, "Rakes", four,rakes));
+		four.addSubCategory(new SubCategory(15, "Hoes", four,hoes));
+		four.addSubCategory(new SubCategory(16, "Spades and Forks", four,spadesnforks));
+		four.addSubCategory(new SubCategory(17, "Trowels", four,trowels));
 
 		Category five = new Category(5, "Water Features", subcategories4);
-		five.addSubCategory(new SubCategory(18, "Pumps", five));
-		five.addSubCategory(new SubCategory(19, "Ponds", five));
-		five.addSubCategory(new SubCategory(19, "Pipes", five));
-		five.addSubCategory(new SubCategory(19, "Fountains", five));
+		five.addSubCategory(new SubCategory(18, "Pumps", five,pumps));
+		five.addSubCategory(new SubCategory(19, "Ponds", five,ponds));
+		five.addSubCategory(new SubCategory(19, "Pipes", five,pipes));
+		five.addSubCategory(new SubCategory(19, "Fountains", five,fountains));
 
 		Category six = new Category(6, "Furniture", subcategories5);
-		six.addSubCategory(new SubCategory(20, "Tables and Chairs", six));
-		six.addSubCategory(new SubCategory(21, "Benches", six));
-		six.addSubCategory(new SubCategory(22, "Hammocks", six));
-		six.addSubCategory(new SubCategory(23, "Swinging", six));
-		six.addSubCategory(new SubCategory(24, "Bird Houses", six));
+		six.addSubCategory(new SubCategory(20, "Tables and Chairs", six,tablesnchairs));
+		six.addSubCategory(new SubCategory(21, "Benches", six,benches));
+		six.addSubCategory(new SubCategory(22, "Hammocks", six,hammocks));
+		six.addSubCategory(new SubCategory(23, "Swinging", six,swinging));
+		six.addSubCategory(new SubCategory(24, "Bird Houses", six,birdhouses));
 
 		Category seven = new Category(7, "Maintenance", subcategories6);
-		seven.addSubCategory(new SubCategory(25, "Mowers", seven));
-		seven.addSubCategory(new SubCategory(26, "Strimmers", seven));
-		seven.addSubCategory(new SubCategory(27, "Feed and Weed", seven));
-		seven.addSubCategory(new SubCategory(28, "Secateurs", seven));
+		seven.addSubCategory(new SubCategory(25, "Mowers", seven,mowers));
+		seven.addSubCategory(new SubCategory(26, "Strimmers", seven,strimmers));
+		seven.addSubCategory(new SubCategory(27, "Feed and Weed", seven,feednweed));
+		seven.addSubCategory(new SubCategory(28, "Secateurs", seven,secatures));
 
 		categories.add(one);
 		categories.add(two);
@@ -391,6 +473,7 @@ public class OfflineDB {
 		return subcategoryList;
 	}
 
+	
 	/**
 	 * @param category
 	 *            name
@@ -416,4 +499,20 @@ public class OfflineDB {
 		}
 		return null;
 	}
+
+	public ArrayList<Product> getSubcatsProducts(String subcategory) {
+		switch(subcategory){
+		case "Classic":
+			return classicgnomes;
+		case "Novelty":
+			return noveltygnomes;
+		case "Themed":
+			return themedgnomes;
+		case "Gnome Care":
+			return gnomecare;
+		}
+		return null;
+	}
+
+
 }

@@ -1,5 +1,8 @@
 package projectx.persistence.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -35,7 +38,8 @@ public class SubCategory {
 	@JoinColumn(name = "category_id", nullable = false)
 	@NotNull
 	private Category category;
-
+	
+	private List<Product> products;
 	/**
 	 * Constructor
 	 * 
@@ -43,10 +47,11 @@ public class SubCategory {
 	 * @param nName
 	 * @param c_id
 	 */
-	public SubCategory(int id, String nName, Category category) {
+	public SubCategory(int id, String nName, Category category, ArrayList<Product> Products) {
 		setSubCategoryID(id);
 		setName(nName);
 		this.category = category;
+		this.setProducts(Products);
 	}
 
 	/**
@@ -95,6 +100,14 @@ public class SubCategory {
 		this.category = category;
 		if(!category.getSubCategories().contains(this))
 			category.addSubCategory(this);
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 
 }

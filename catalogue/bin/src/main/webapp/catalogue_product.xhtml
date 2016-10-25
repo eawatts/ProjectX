@@ -1,0 +1,195 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/catalogue_template.xhtml">
+
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/product.css" />
+		<link rel="stylesheet" type="text/css" href="css/breadcrumb.css" />
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick-theme.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/slide_custom.css"></link>
+	</ui:define>
+
+	<ui:define name="title">Product</ui:define>
+
+	<ui:define name="main-content">
+		<div class="main-content">
+			<div id="breadcrumbs">
+				<ul class="breadcrumb">
+					<li><a href="http://localhost:8080/catalogue/catalogue_index.xhtml">Home</a></li>
+					<li><a href="http://localhost:8080/catalogue/catalogue_categories2.xhtml">Catagories</a></li>
+					<li><a href="http://localhost:8080/catalogue/catalogue_subcategories.xhtml">Gnomes</a></li>
+					<li><a href="#">Classic</a></li>
+					<li><a href="#"><h:outputText
+								value="#{current_product.product.name}" /></a></li>
+				</ul>
+			</div>
+
+			<div class="row">
+				<div class="col-tab-4 col-desk-4">
+					<h:graphicImage
+						url="http://localhost:8080/catalogue/img/products/gnomes/gnome_red-hat.png"
+						alt="Picture of #{current_product.product.name}"
+						style="width:100%;height:auto;"></h:graphicImage>
+				</div>
+				<div class="col-tab-8 col-desk-8">
+					<form action="#popup1" method="get">
+						<div class="row">
+							<div id="productname">
+								<h1>
+									<h:outputText value="#{current_product.product.name}" />
+								</h1>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-tab-6 col-desk-6">
+								<div id="productinfo">
+									<div class="row">
+										<div class="col-tab-12 col-desk-12">
+											<h2>
+												Stock:
+												<h:outputText
+													value="#{current_product.product.currentStockLevel}" />
+											</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-tab-12 col-desk-12">
+											<h2>
+												Cost: £
+												<h:outputText
+													value=" #{current_product.product.priceToDisplay}" />
+											</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-tab-12 col-desk-12">
+											<div class="quantity">
+												<strong>Quantity: </strong> <input list="quantity"
+													name="quantity"> </input>
+											</div>
+											<br />										
+										</div>
+										<div>
+											<ul class="product-slider-star-rating">
+												<h:form rendered="#{current_product.averageReview lt 1}"
+													class="product-slider-star">
+													<li><i class="fa fa-star-half" aria-hidden="true"></i></li>
+												</h:form>
+												<h:form rendered="#{current_product.averageReview ge 1}">
+													<li class="product-slider-star"><i class="fa fa-star"
+														aria-hidden="true"></i></li>
+												</h:form>
+												<h:form rendered="#{current_product.averageReview ge 2}"
+													class="product-slider-star">
+													<li><i class="fa fa-star" aria-hidden="true"></i></li>
+												</h:form>
+												<h:form rendered="#{current_product.averageReview ge 3}"
+													class="product-slider-star">
+													<li><i class="fa fa-star" aria-hidden="true"></i></li>
+												</h:form>
+												<h:form rendered="#{current_product.averageReview ge 4}"
+													class="product-slider-star">
+													<li><i class="fa fa-star" aria-hidden="true"></i></li>
+												</h:form>
+												<h:form rendered="#{current_product.averageReview ge 5}"
+													class="product-slider-star">
+													<li><i class="fa fa-star" aria-hidden="true"></i></li>
+												</h:form>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-tab-6 col-desk-6">
+								<div id="productaction">
+									<button class="button" onclick="location.href='#popup1'">Add
+										to Basket</button>
+									<div id="popup1" class="overlay">
+										<div class="popup">
+											<h2>
+												<h:outputText value="" />
+												<h:outputText value="" />
+												Added to Basket
+											</h2>
+											<a class="close" href="#">X</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<div id="productdescription">
+						<h2>Description:</h2>
+						<p>
+							<h:outputText value="#{current_product.product.description}" />
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<hr />
+
+			<h1 style="margin-bottom: 0px;">Reviews</h1>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<div class="regular slider">
+						<ui:repeat var="slider_review" value="#{current_product.reviews}">
+							<div>
+								<h4 class="reviewer_name">
+									<h:outputText value="#{slider_review.reviewer.firstname}" />
+								</h4>
+								<div>
+									<ul class="product-slider-star-rating">
+										<h:form rendered="#{slider_review.rating lt 1}"
+											class="product-slider-star">
+											<li><i class="fa fa-star-half" aria-hidden="true"></i></li>
+										</h:form>
+										<h:form rendered="#{slider_review.rating ge 1}"
+											class="product-slider-star">
+											<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										</h:form>
+										<h:form rendered="#{slider_review.rating ge 2}"
+											class="product-slider-star">
+											<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										</h:form>
+										<h:form rendered="#{slider_review.rating ge 3}"
+											class="product-slider-star">
+											<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										</h:form>
+										<h:form rendered="#{slider_review.rating ge 4}"
+											class="product-slider-star">
+											<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										</h:form>
+										<h:form rendered="#{slider_review.rating ge 5}"
+											class="product-slider-star">
+											<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										</h:form>
+									</ul>
+								</div>
+								<p>
+									<h:outputText value="#{slider_review.comment}" />
+								</p>
+							</div>
+						</ui:repeat>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+
+	<ui:define name="custom-scripts">
+		<script type="text/javaScript" src="libraries/slider/slick.min.js"></script>
+		<script type="text/javaScript" src="js/catalogue_product.js"></script>
+	</ui:define>
+
+</ui:composition>

@@ -1,0 +1,17 @@
+.progress-bar{
+	text-align: center;
+	vertical-align: center;
+}
+
+.page-title{
+	text-align: center;
+	vertical-align: center;
+}
+
+.basket-bottom-right{
+	text-align: center;
+	vertical-align: top;
+}
+.basket-button{
+	margin: 5px 5px 5px 0px
+}

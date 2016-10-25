@@ -1,6 +1,7 @@
 package projectx.controllers;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -17,7 +18,7 @@ import projectx.services.ProductService;
 public class ProductController implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-
+	private static String subcategory = "Classic";
 	@Inject
 	private ProductService productService;
 	@Inject
@@ -43,4 +44,12 @@ public class ProductController implements Serializable {
 	public Integer getAverageReviewForProductId(int productId){
 		return productService.getAverageReviewForProductId(productId);
 	}
-}
+	public ArrayList<Product> getSubcatsProducts(){
+		
+		ArrayList<Product> productList = productService.getSubcatsProducts(subcategory);
+
+		return productList;
+	}
+	
+	}
+
