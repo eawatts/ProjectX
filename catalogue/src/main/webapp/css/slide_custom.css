@@ -21,3 +21,6 @@
 .slick-prev:before, .slick-next:before {
 	color: #004425;
 }
+.slider-basket-button{
+	text-align: center;
+}

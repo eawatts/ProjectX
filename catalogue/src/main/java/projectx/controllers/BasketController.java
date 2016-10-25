@@ -7,6 +7,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import projectx.persistence.entities.Product;
 import projectx.persistence.webentities.BasketProduct;
 import projectx.persistence.webentities.CurrentProduct;
 import projectx.services.BasketService;
@@ -25,8 +26,13 @@ public class BasketController implements Serializable{
 
 	public String addCurrentProduct()
 	{
-		System.out.println(currentProduct+", " +  quantity);
-		basketService.addProductToBasket(currentProduct, quantity );
+		basketService.addProductToBasket(currentProduct.getProduct(), quantity );
+		quantity = 1;
+		return "Added to Basket";
+	}
+	public String addProduct(Product product)
+	{
+		basketService.addProductToBasket(product, quantity );
 		quantity = 1;
 		return "Added to Basket";
 	}
@@ -44,6 +50,14 @@ public class BasketController implements Serializable{
 	public List<BasketProduct> getBasket()
 	{
 		return basketService.getBasketContents();
+	}
+	
+	public int getBasketCount()
+	{
+		if (basketService.getBasketContents() == null){
+			return 0;
+		}
+		return basketService.getBasketContents().size();
 	}
 
 	public int getQuantity() {

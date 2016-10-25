@@ -10,9 +10,9 @@ public class BasketProduct {
 	private int quantity;
 	private Product product;
 	
-	public BasketProduct(CurrentProduct currentProduct, int quantity2) {
-		this.quantity = quantity2;
-		this.product = currentProduct.getProduct();
+	public BasketProduct(Product product, int quantity) {
+		this.quantity = quantity;
+		this.product = product;
 	}
 
 	public int getQuantity()
@@ -39,6 +39,4 @@ public class BasketProduct {
 	{
 		return (this.product.getPrice().multiply(new BigDecimal(quantity)).setScale(2, RoundingMode.CEILING).toString());
 	}
-	
-
 }
