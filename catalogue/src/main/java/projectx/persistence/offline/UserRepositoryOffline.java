@@ -22,7 +22,6 @@ public class UserRepositoryOffline implements UserRepository {
 	
 	public void persistUser(User user) {
 		db.userAdd(user);
-		
 	}
 
 	@Override

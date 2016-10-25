@@ -4,92 +4,92 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/catalogue_template.xhtml">
 
-	<?xml-stylesheet type="text/css" href="css/catalogue_create_account.css"?>
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css"
+			href="css/catalogue_create_account.css"></link>
+	</ui:define>
+
 	<ui:define name="title">Create Account</ui:define>
 
 	<ui:define name="main-content">
 		<div>
-			<div id="createaccountheading">
-				<h1>Create Account</h1>
-			</div>
+			<h1>Create Account</h1>
 			<div id="userInfo">
 				<h2>User Info</h2>
 				<h:form>
 					<div id="userInfoForm">
-						<h:outputLabel value="Title: "/>
-                        <h:selectOneMenu value="#{registration.title}">
-							<f:selectItem itemValue="Mr" itemLabel="Mr"/>
-							<f:selectItem itemValue="Mrs" itemLabel="Mrs"/>
-							<f:selectItem itemValue="Miss" itemLabel="Miss"/>
-							<f:selectItem itemValue="Ms" itemLabel="Ms"/>
-							<f:selectItem itemValue="Dr" itemLabel="Dr"/>
-							<f:selectItem itemValue="Lord" itemLabel="Lord"/>
-							<f:selectItem itemValue="Lady" itemLabel="Lady"/>
-							<f:selectItem itemValue="Duke" itemLabel="Duke"/>
-							<f:selectItem itemValue="Dutchess" itemLabel="Dutchess"/>
-							<f:selectItem itemValue="HRH" itemLabel="HRH"/>
-						</h:selectOneMenu> <br/>
-						<br/> 
-                        <h:outputLabel value="Email: " />
-						<h:inputText value="#{registration.email}"/>
-                        <br/>
-						<br/> 
-                        <h:outputLabel value="First Name: "/>
-						<h:inputText value="#{registration.firstName}"/>
-                        <br /> 
-                        <br /> 
-                        <h:outputLabel value="Last Name: "/>
-                        <h:inputText value="#{registration.lastName}" />
-                        <br />
-                        <br /> 
-                        <h:outputLabel value="Age: "/>
-                        <h:inputText value="#{registration.age}" />
-                        <br/>
-                        <br /> 
-                        <h:outputLabel value="Bio: "/>
-                        <h:inputText value="#{registration.bio}" />
-                        <br />
-                        <br />
+						<h:outputLabel value="Title: " />
+						<h:selectOneMenu value="#{registration.user.title}">
+							<f:selectItem itemValue="Mr" itemLabel="Mr" />
+							<f:selectItem itemValue="Mrs" itemLabel="Mrs" />
+							<f:selectItem itemValue="Miss" itemLabel="Miss" />
+							<f:selectItem itemValue="Ms" itemLabel="Ms" />
+							<f:selectItem itemValue="Dr" itemLabel="Dr" />
+							<f:selectItem itemValue="Lord" itemLabel="Lord" />
+							<f:selectItem itemValue="Lady" itemLabel="Lady" />
+							<f:selectItem itemValue="Duke" itemLabel="Duke" />
+							<f:selectItem itemValue="Dutchess" itemLabel="Dutchess" />
+						</h:selectOneMenu>
+						
+						<br /> <br />
+						<h:outputLabel value="Username: " />
+						<h:inputText value="#{registration.user.username}" />
+						
+						<br /> <br />
+						<h:outputLabel value="Password: " />
+						<h:inputSecret value="#{registration.user.password}" />
+						
+						<br /> <br />
+						<h:outputLabel value="Email: " />
+						<h:inputText value="#{registration.user.emailAddress}" />
+						
+						<br /> <br />
+						<h:outputLabel value="First Name: " />
+						<h:inputText value="#{registration.user.firstname}" />
+						
+						<br /> <br />
+						<h:outputLabel value="Last Name: " />
+						<h:inputText value="#{registration.user.surname}" />
+						
+						<br /> <br />
 					</div>
 					<hr />
-					   <h2>Address</h2>
+					<h2>Address</h2>
 					<div id="address">
-						<h:outputLabel value="House Number: "/>
-                        <h:inputText value="#{registration.housenumber}"/>
-                        <br /> 
-                        <br />
-						<h:outputLabel value="Street: "/> 
-                        <h:inputText value="#{registration.street}"/>
-                        <br />
-                        <br /> 
-                        <h:outputLabel value="Town: "/>
-                        <h:inputText value="#{registration.town}"/>
-                        <br />
-                        <br /> 
-                        <h:outputLabel value="Postcode: "/>
-                        <h:inputText value="#{registration.postcode}"/>
-                        <br /> 
-                        <br />
+						<h:outputLabel value="House Number: " />
+						<h:inputText value="#{registration.address.housenumber}" />
+						<br /> <br />
+						<h:outputLabel value="Line 1: " />
+						<h:inputText value="#{registration.address.line1}" />
+						<br /> <br />
+						<h:outputLabel value="Line 2: " />
+						<h:inputText value="#{registration.address.line2}" />
+						<br /> <br />
+						<h:outputLabel value="Street: " />
+						<h:inputText value="#{registration.address.street}" />
+						<br /> <br />
+						<h:outputLabel value="Town: " />
+						<h:inputText value="#{registration.address.town}" />
+						<br /> <br />
+						<h:outputLabel value="Postcode: " />
+						<h:inputText value="#{registration.address.postcode}" />
+						<br /> <br />
 					</div>
 					<hr />
 					<h2>Payment details</h2>
 					<div id="payment">
-						<h:outputLabel value="Account No: "/>
-                        <h:inputText value="#{registration.banknumber}"/>
-                        <br /> 
-                        <br />
-                        <h:outputLabel value="Sort Code: "/>
-						<h:inputText value="#{registration.sortcode}"/>
-                        <br /> 
-                        <br />
+						<h:outputLabel value="Account No: " />
+						<h:inputText value="#{registration.paymentDetails.accountNumber}" />
+						<br /> <br />
+						<h:outputLabel value="Sort Code: " />
+						<h:inputText value="#{registration.paymentDetails.sortCode}" />
+						<br /> <br />
 					</div>
 					<hr />
-					<div id="submitbutton">
-						<h:commandButton value="Submit" action="#{registration.setUserInfo}" />
-					</div>
+					<h:commandButton class="button-green" value="Submit"
+							action="#{registration.registerUser}" />
 				</h:form>
 			</div>
 		</div>
-
 	</ui:define>
 </ui:composition>

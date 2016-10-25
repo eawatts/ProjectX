@@ -12,10 +12,7 @@ public class LoginService {
 	@Inject
 	private LoginRepository loginrepository;
 	
-	
 	public User login(String user, String pass){
 		return loginrepository.login(user, pass);
 	}
-	
-	
 }

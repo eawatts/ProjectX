@@ -104,13 +104,21 @@
 											class="button-green-inverse nav-banner-desktop-right-button">
 											Basket <i class="fa fa-shopping-basket"></i>
 										</button>
-										<a href="catalogue_login.xhtml">
-										<button
-											class="button-green-inverse nav-banner-desktop-right-button">
-											<h:outputText rendered="#{current_session.loggedIn eq true}" value="#{current_session.userFirstName}" />
-											<h:outputText rendered="#{current_session.loggedIn ne true}" value="Login" />
-										</button>
-										</a>
+										<h:panelGroup layout="block" rendered="#{current_session.loggedIn eq true}">
+											<a href="catalogue_account.xhtml">
+												<button	class="button-green-inverse nav-banner-desktop-right-button">
+													<h:outputText value="#{current_session.userFirstName}" />
+												</button>
+											</a>
+										</h:panelGroup>
+										<h:panelGroup layout="block" rendered="#{current_session.loggedIn ne true}">
+											<a href="catalogue_login.xhtml">
+												<button	class="button-green-inverse nav-banner-desktop-right-button">
+													<h:outputText value="Login" />
+													<i class="fa fa-user" aria-hidden="true"></i>
+												</button>
+											</a>
+										</h:panelGroup>
 									</div>
 								</div>
 							</div>

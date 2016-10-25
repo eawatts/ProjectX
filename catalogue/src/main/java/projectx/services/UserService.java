@@ -5,26 +5,17 @@ import java.sql.Date;
 import javax.ejb.Stateless;
 
 import projectx.persistence.entities.Address;
-import projectx.persistence.entities.BankAccount;
+import projectx.persistence.entities.PaymentDetails;
 import projectx.persistence.entities.User;
 import projectx.persistence.entities.UserLevel;
 
+@Deprecated
 @Stateless
 public class UserService{
 	
-	public String formatPassword(String password){
-		char[] pass = password.toCharArray();
-		byte[] hashedpassword = Hash.hashPassword(pass,Hash.getNextSalt(), 2, 256);
-		return hashedpassword.toString();
-	}
-	
-	public Date formatAge(String age){
-		// TODO: Need to actually get the DOB
-		return new Date(565461234);
-	}
-
+	@Deprecated
 	public User createNewUser(String title, String email, String password, String firstName, String lastName,
-			String age, String bio, BankAccount bankAccount, Address address) {
-		return new User(null, title, firstName, lastName, formatAge(age), "email", "username", formatPassword(password), UserLevel.CUSTOMER, bankAccount, address);
+			String age, String bio, PaymentDetails paymentDetails, Address address) {
+		return new User(null, title, firstName, lastName, new Date(46545646), "email", "username", "password", UserLevel.CUSTOMER, paymentDetails, address);
 	}
 }
