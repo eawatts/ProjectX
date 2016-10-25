@@ -1,6 +1,8 @@
 package projectx.persistence.entities;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -53,10 +54,9 @@ public class User {
 	@Column(name = "surname", length = 50, nullable = false)
 	private String surname;
 
-	@Column(name = "age", nullable = false)
+	@Column(name = "date_of_birth", nullable = false)
 	private Date dateOfBirth;
 
-	@ManyToOne
 	@MapsId
 	@JoinColumn(name = "")
 	@Column(name = "user_level", nullable = false)
@@ -66,23 +66,27 @@ public class User {
 	@Column(name = "email_address", nullable = false)
 	private String emailAddress;
 
-	private Address address;
+	private List<Address> addresses;
+	private PaymentDetails paymentDetails;
 
 	public User() {
+		addresses = new ArrayList<Address>();
 	}
 
 	public User(Integer id, String title, String firstname, String surname, Date dateOfbirth, String emailAddress,
-			String username, String password, UserLevel userLevel, BankAccount bankaccount, Address address) {
+			String username, String password, UserLevel userLevel, PaymentDetails bankaccount, Address address) {
+		this();
 		this.id = id;
 		this.title = title;
 		this.firstname = firstname;
 		this.surname = surname;
+		this.username = username;
 		this.password = password;
 		this.dateOfBirth = dateOfbirth;
 		this.emailAddress = emailAddress;
 		this.userLevel = userLevel;
-		this.bankaccount = bankaccount;
-		this.address = address;
+		this.paymentDetails = bankaccount;
+		this.addresses.add(address);
 	}
 
 	public Integer getId() {
@@ -129,22 +133,12 @@ public class User {
 		this.emailAddress = emailAddress;
 	}
 
-	private BankAccount bankaccount;
-
-	public BankAccount getBankaccount() {
-		return bankaccount;
+	public PaymentDetails getPaymentDetails() {
+		return paymentDetails;
 	}
 
-	public void setBankaccount(BankAccount bankaccount) {
-		this.bankaccount = bankaccount;
-	}
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setPaymentDetails(PaymentDetails paymentDetails) {
+		this.paymentDetails = paymentDetails;
 	}
 
 	public String getTitle() {
@@ -165,5 +159,17 @@ public class User {
 
 	public UserLevel getUserLevel() {
 		return userLevel;
+	}
+
+	public List<Address> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
+	}
+	
+	public void addAddress(Address address){
+		this.addresses.add(address);
 	}
 }

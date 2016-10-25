@@ -31,5 +31,7 @@ public class CurrentSession implements Serializable {
 		return (user == null) ? false : true;
 	}
 	
-	
+	public void logout(){
+		this.user = null;
+	}
 }

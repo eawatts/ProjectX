@@ -85,6 +85,7 @@ public class LoginController implements Serializable{
 		this.username = null;
 		this.password = null;
 		this.error = null;
+		currentsession.logout();
 		return "catalogue_index";
 	}
 }
