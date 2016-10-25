@@ -14,6 +14,7 @@ import javax.persistence.MapsId;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
@@ -43,15 +44,19 @@ public class User {
 	private String title;
 
 	@Column(name = "username", length = 30, nullable = false)
+	@Size(min = 5, max = 45, message = "Username has to be between 5 and 45 in length.")
 	private String username;
 
 	@Column(name = "password", length = 256, nullable = false)
+	@Size(min = 5, max = 45, message = "Password has to be between 5 and 45 in length.")
 	private String password;
 
 	@Column(name = "firstname", length = 50, nullable = false)
+	@Size(min = 1, max = 45, message = "Firstname has to be between 1 and 45 in length.")
 	private String firstname;
 
 	@Column(name = "surname", length = 50, nullable = false)
+	@Size(min = 1, max = 45, message = "Surname has to be between 1 and 45 in length.")
 	private String surname;
 
 	@Column(name = "date_of_birth", nullable = false)
@@ -62,7 +67,7 @@ public class User {
 	@Column(name = "user_level", nullable = false)
 	private UserLevel userLevel;
 
-	@Email
+	@Email(message = "Must be a valid email address.")
 	@Column(name = "email_address", nullable = false)
 	private String emailAddress;
 
@@ -168,8 +173,8 @@ public class User {
 	public void setAddresses(List<Address> addresses) {
 		this.addresses = addresses;
 	}
-	
-	public void addAddress(Address address){
+
+	public void addAddress(Address address) {
 		this.addresses.add(address);
 	}
 }

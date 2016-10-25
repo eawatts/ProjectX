@@ -12,83 +12,129 @@
 	<ui:define name="title">Create Account</ui:define>
 
 	<ui:define name="main-content">
-		<div>
-			<h1>Create Account</h1>
-			<div id="userInfo">
-				<h2>User Info</h2>
-				<h:form>
-					<div id="userInfoForm">
-						<h:outputLabel value="Title: " />
-						<h:selectOneMenu value="#{registration.user.title}">
-							<f:selectItem itemValue="Mr" itemLabel="Mr" />
-							<f:selectItem itemValue="Mrs" itemLabel="Mrs" />
-							<f:selectItem itemValue="Miss" itemLabel="Miss" />
-							<f:selectItem itemValue="Ms" itemLabel="Ms" />
-							<f:selectItem itemValue="Dr" itemLabel="Dr" />
-							<f:selectItem itemValue="Lord" itemLabel="Lord" />
-							<f:selectItem itemValue="Lady" itemLabel="Lady" />
-							<f:selectItem itemValue="Duke" itemLabel="Duke" />
-							<f:selectItem itemValue="Dutchess" itemLabel="Dutchess" />
-						</h:selectOneMenu>
-						
-						<br /> <br />
-						<h:outputLabel value="Username: " />
-						<h:inputText value="#{registration.user.username}" />
-						
-						<br /> <br />
-						<h:outputLabel value="Password: " />
-						<h:inputSecret value="#{registration.user.password}" />
-						
-						<br /> <br />
-						<h:outputLabel value="Email: " />
-						<h:inputText value="#{registration.user.emailAddress}" />
-						
-						<br /> <br />
-						<h:outputLabel value="First Name: " />
-						<h:inputText value="#{registration.user.firstname}" />
-						
-						<br /> <br />
-						<h:outputLabel value="Last Name: " />
-						<h:inputText value="#{registration.user.surname}" />
-						
-						<br /> <br />
-					</div>
-					<hr />
-					<h2>Address</h2>
-					<div id="address">
-						<h:outputLabel value="House Number: " />
-						<h:inputText value="#{registration.address.housenumber}" />
-						<br /> <br />
-						<h:outputLabel value="Line 1: " />
-						<h:inputText value="#{registration.address.line1}" />
-						<br /> <br />
-						<h:outputLabel value="Line 2: " />
-						<h:inputText value="#{registration.address.line2}" />
-						<br /> <br />
-						<h:outputLabel value="Street: " />
-						<h:inputText value="#{registration.address.street}" />
-						<br /> <br />
-						<h:outputLabel value="Town: " />
-						<h:inputText value="#{registration.address.town}" />
-						<br /> <br />
-						<h:outputLabel value="Postcode: " />
-						<h:inputText value="#{registration.address.postcode}" />
-						<br /> <br />
-					</div>
-					<hr />
-					<h2>Payment details</h2>
-					<div id="payment">
-						<h:outputLabel value="Account No: " />
-						<h:inputText value="#{registration.paymentDetails.accountNumber}" />
-						<br /> <br />
-						<h:outputLabel value="Sort Code: " />
-						<h:inputText value="#{registration.paymentDetails.sortCode}" />
-						<br /> <br />
-					</div>
-					<hr />
-					<h:commandButton class="button-green" value="Submit"
+		<div class="row">
+			<div class="col-tab-12 col-desk-12">
+				<h1>Create Account</h1>
+				<div id="userInfo">
+					<h2>User Info</h2>
+					<h:form>
+						<div id="userInfoForm">
+							<h:outputLabel value="Title: " />
+							<h:selectOneMenu value="#{registration.user.title}">
+								<f:selectItem itemValue="Mr" itemLabel="Mr" />
+								<f:selectItem itemValue="Mrs" itemLabel="Mrs" />
+								<f:selectItem itemValue="Miss" itemLabel="Miss" />
+								<f:selectItem itemValue="Ms" itemLabel="Ms" />
+								<f:selectItem itemValue="Dr" itemLabel="Dr" />
+								<f:selectItem itemValue="Lord" itemLabel="Lord" />
+								<f:selectItem itemValue="Lady" itemLabel="Lady" />
+								<f:selectItem itemValue="Duke" itemLabel="Duke" />
+								<f:selectItem itemValue="Dutchess" itemLabel="Dutchess" />
+							</h:selectOneMenu>
+
+							<br /> <br />
+							<div>
+								<h:message class="register-error" for="username" />
+							</div>
+							<h:outputLabel value="Username: " />
+							<h:inputText id="username" value="#{registration.user.username}" />
+
+							<br /> <br />
+							<div>
+								<h:message class="register-error" for="password" />
+							</div>
+							<h:outputLabel value="Password: " />
+							<h:inputSecret id="password" value="#{registration.user.password}" />
+
+							<br /> <br />
+							<div>
+								<h:message class="register-error" for="email" />
+							</div>
+							<h:outputLabel value="Email: " />
+							<h:inputText id="email" value="#{registration.user.emailAddress}" />
+
+							<br /> <br />
+							<div>
+								<h:message class="register-error" for="firstname" />
+							</div>
+							<h:outputLabel value="First Name: " />
+							<h:inputText id="firstname" value="#{registration.user.firstname}" />
+
+							<br /> <br />
+							<div>
+								<h:message class="register-error" for="surname" />
+							</div>
+							<h:outputLabel value="Last Name: " />
+							<h:inputText id="surname" value="#{registration.user.surname}" />
+
+							<br /> <br />
+						</div>
+						<hr />
+						<h2>Address</h2>
+						<div id="address">
+							<div>
+								<h:message class="register-error" for="houseNumber" />
+							</div>
+							<h:outputLabel value="House Number: " />
+							<h:inputText id="houseNumber"
+								value="#{registration.address.housenumber}" />
+							<br /> <br />
+							<div>
+								<h:message class="register-error" for="line1" />
+							</div>
+							<h:outputLabel value="Line 1: " />
+							<h:inputText id="line1" value="#{registration.address.line1}" />
+							<br /> <br />
+							<div>
+								<h:message class="register-error" for="line2" />
+							</div>
+							<h:outputLabel value="Line 2: " />
+							<h:inputText id="line2" value="#{registration.address.line2}" />
+							<br /> <br />
+							<div>
+								<h:message class="register-error" for="street" />
+							</div>
+							<h:outputLabel value="Street: " />
+							<h:inputText id="street" value="#{registration.address.street}" />
+							<br /> <br />
+							<div>
+								<h:message class="register-error" for="town" />
+							</div>
+							<h:outputLabel value="Town: " />
+							<h:inputText id="town" value="#{registration.address.town}" />
+							<br /> <br />
+							<div>
+								<h:message class="register-error" for="postcode" />
+							</div>
+							<h:outputLabel value="Postcode: " />
+							<h:inputText id="postcode"
+								value="#{registration.address.postcode}" />
+							<br /> <br />
+						</div>
+						<hr />
+						<h2>Payment details</h2>
+						<div id="payment">
+							<div>
+								<h:message class="register-error" for="accountNumber" />
+							</div>
+							<h:outputLabel value="Account No: " />
+							<h:inputText id="accountNumber"
+								value="#{registration.paymentDetails.accountNumber}" />
+							<br /> <br />
+							<div>
+								<h:message class="register-error" for="sortCode" />
+							</div>
+							<h:outputLabel value="Sort Code: " />
+							<h:inputText id="sortCode"
+								value="#{registration.paymentDetails.sortCode}" />
+							<br /> <br />
+
+						</div>
+						<hr />
+						<h:commandButton class="button-green" value="Submit"
 							action="#{registration.registerUser}" />
-				</h:form>
+					</h:form>
+				</div>
 			</div>
 		</div>
 	</ui:define>

@@ -1,6 +1,7 @@
 package projectx.persistence.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @NamedQueries({ @NamedQuery(name = Address.FIND_BY_ID, query = "Select a FROM Address a WHERE a.id= : Aid"),
 		@NamedQuery(name = Address.FIND_BY_LINE1, query = "Select a FROM Address a WHERE a.line_1= : line_1"),
@@ -23,14 +24,29 @@ public class Address {
 	@Id
 	@Column(name = "id", nullable = false)
 	private Integer id;
+	
 	@Column(name = "line_1")
+	@Size(min = 0, max = 20, message = "Line 1 is optional.")
 	private String line1;
+	
 	@Column(name = "line_2")
+	@Size(min = 0, max = 20, message = "Line 2 is optional.")
 	private String line2;
+	
+	@Column(name = "house_number")
+	@Size(min = 1, max = 20, message = "Must be a valid house number/name.")
 	private String houseNumber;
+	
+	@Column(name = "street")
+	@Size(min = 2, max = 20, message = "Must be a valid street.")
 	private String street;
+	
+	@Column(name = "town")
+	@Size(min = 2, max = 20, message = "Must be a valid town.")
 	private String town;
+	
 	@Column(name = "postcode")
+	@Size(min = 3, max = 7, message = "Must be a valid postcode.")
 	private String postcode;
 
 	public Address() {

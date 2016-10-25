@@ -26,12 +26,12 @@ public class BasketService {
 		if(basketContents == null)
 			basketContents = initBasketContents();
 		boolean flag = true;
-		for(BasketProduct bProduct: basketContents)
+		for(BasketProduct basketProduct: basketContents)
 		{
-			if(bProduct.getProduct().equals(currentProduct.getProduct())) 
+			if(basketProduct.getProduct().equals(currentProduct.getProduct())) 
 			{
 				flag = false;
-				bProduct.setQuantity(quantity + bProduct.getQuantity());
+				basketProduct.setQuantity(quantity + basketProduct.getQuantity());
 				break;
 			}
 		}
@@ -72,5 +72,4 @@ public class BasketService {
 		return Math.round(totalPrice*100.0)/100.0;
 		}
 	}
-
 }
