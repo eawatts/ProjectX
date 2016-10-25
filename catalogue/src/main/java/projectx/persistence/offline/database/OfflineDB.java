@@ -138,10 +138,10 @@ public class OfflineDB {
 	}
 
 	private void setupUsers() {
-		byte[] password = new byte[25];
+		String password = "test";
 
 		users = new ArrayList<User>();
-		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.ADMIN, null, null));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "Admin", password, UserLevel.ADMIN, null, null));
 		users.add(new User(2, "Mr", "Dan", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(2), addresses.get(2)));
 		users.add(new User(3, "Mr", "Ben", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(3), addresses.get(3)));
 		users.add(new User(4, "Mr", "Chris", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(4), addresses.get(4)));
@@ -420,6 +420,18 @@ public class OfflineDB {
 	public void userAdd(User user) {
 		users.add(user);
 
+	}
+	
+	public User login(String username, String pass){
+		for(User user : users){
+			System.out.println(user);
+			System.out.println("**********");
+			if(user.getUsername().equals(username) && user.getPassword().equals(pass)){
+				return user;
+			}
+		}
+			//String password = pass;
+			return null; //new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "Admin", password, UserLevel.ADMIN, null, null);
 	}
 
 	// ----- END USERS -----

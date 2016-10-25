@@ -45,7 +45,7 @@ public class User {
 	private String username;
 
 	@Column(name = "password", length = 256, nullable = false)
-	private byte[] password;
+	private String password;
 
 	@Column(name = "firstname", length = 50, nullable = false)
 	private String firstname;
@@ -72,7 +72,7 @@ public class User {
 	}
 
 	public User(Integer id, String title, String firstname, String surname, Date dateOfbirth, String emailAddress,
-			String username, byte[] password, UserLevel userLevel, BankAccount bankaccount, Address address) {
+			String username, String password, UserLevel userLevel, BankAccount bankaccount, Address address) {
 		this.id = id;
 		this.title = title;
 		this.firstname = firstname;
@@ -97,11 +97,11 @@ public class User {
 		this.username = username;
 	}
 
-	public byte[] getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(byte[] password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 

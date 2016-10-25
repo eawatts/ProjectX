@@ -12,10 +12,10 @@ import projectx.persistence.entities.UserLevel;
 @Stateless
 public class UserService{
 	
-	public byte[] formatPassword(String password){
+	public String formatPassword(String password){
 		char[] pass = password.toCharArray();
 		byte[] hashedpassword = Hash.hashPassword(pass,Hash.getNextSalt(), 2, 256);
-		return hashedpassword;
+		return hashedpassword.toString();
 	}
 	
 	public Date formatAge(String age){
