@@ -45,8 +45,8 @@ public class CategoryRepositoryOffline implements CategoryRepository {
 		return db.findByName(name);
 	}
 
-	@Override
-	public Category findByid(int id) {
-		return db.findByid(id);
+
+	public Category findById(int id) {
+		return db.findById(id);
 	}
 }
