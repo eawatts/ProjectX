@@ -19,7 +19,7 @@ public class SubcategoryController implements Serializable {
 
 	private static final long serialVersionUID = 6816671190729802756L;
 
-private String name;
+	private String name;
 
 	@Inject
 	private SubCategoryService subCategoryService;
@@ -39,7 +39,6 @@ private String name;
 	}
 
 	public String getName() {
-		name = "Classic";
 		return name;
 	}
 

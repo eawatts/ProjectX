@@ -12,11 +12,11 @@
 	<ui:define name="main-content">
 		<div>
 			<h1>
-				<h:outputText value="#{category.findByid(1).name}">
+				<h:outputText value="#{category.findById().name}">
 				</h:outputText>
 			</h1>
 			<div class="row">
-				<ui:repeat var="cat" value="#{category.findByid(1).subCategories}">
+				<ui:repeat var="cat" value="#{category.findById().subCategories}">
 					<div class="col-tab-6 col-desk-4">
 						<div class="box">
 						<h:form>
@@ -28,7 +28,7 @@
 								<h:commandLink class="product-slider-title"
 											value="#{slider_product.product.name}"
 											action="#{products.view(2)}">
-										</h:commandLink>
+								</h:commandLink>
 							</h:commandButton>
 							<div class="panel">
 							</div>

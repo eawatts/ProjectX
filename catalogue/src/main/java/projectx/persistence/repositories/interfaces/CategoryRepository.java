@@ -14,6 +14,6 @@ public interface CategoryRepository {
 	public List<Category> getCategories();
 	public void updateCategory(Category category);
 	public Category findByName(String name);
-	public Category findByid(int id);
+	public Category findById(int id);
 	
 }
