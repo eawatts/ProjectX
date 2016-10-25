@@ -1,0 +1,168 @@
+<ui:composition
+xmlns="https://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui"  
+template="templates/catalogue_template.xhtml">
+<meta charset="utf-8" />
+<?xml-stylesheet type="text/css" href="../css/responsive2.css"?>
+<?xml-stylesheet type="text/css" href="../css/catalogue.css"?>
+<ui:define name="title">
+	Gnomes
+</ui:define>
+
+<ui:define name="main-content">
+	<div id="section group">
+      			<h1> Gnome </h1>
+      				<div id="row">
+      				<div class="col span_1_of_5">
+      					<div class="subcategoriesbutton">
+      							<a href="#" class="subcategorieshyperlink"><span>
+      							Seasonal
+      							<h:graphicImage align="right" alt="Picture of Santa Clause Gnome" name="url/seasonal_gnome.gif"/>
+      							Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.
+      						</span></a>
+      					</div>
+      				</div>
+      				<div class="col span_1_of_5">
+	      				<div class="subcategoriesbutton">
+	      					<a href="#" class="subcategorieshyperlink"><span>
+							Themed
+							<h:graphicImage align="right" alt="Picture of game of thrones Gnome" name="url/themed_gnome.gif"/>
+	      					Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.
+	      					</span></a>
+						</div>
+					</div>
+					<div class="col span_1_of_5">
+						<div class="subcategoriesbutton">	
+							<a href="#" class="subcategorieshyperlink"><span>
+							Novelty
+							<h:graphicImage align="right" alt="Picture of Gnome" name="url/novelty_gnome.gif"/>
+	      					Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.
+	      					</span></a>
+						</div>
+					</div>
+					<div class="col span_1_of_5">
+						<div class="subcategoriesbutton">
+							<a href="#" class="subcategorieshyperlink"><span>
+							Classic
+							<h:graphicImage align="right" alt="Picture of classic Gnome" name="url/classic_gnome.gif"/>
+	      					Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.
+	      					</span></a>
+						</div>
+					</div>
+					<div class="col span_1_of_5">
+						<div class="subcategoriesbutton">
+							<a href="#" class="subcategorieshyperlink"><span>
+							Gnome Care
+							<h:graphicImage align="right" alt="Picture of items for your Gnome" name="url/gnomecare.gif"/>
+	      					Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.
+	      					</span></a>
+	      				</div>
+      				</div>
+      			</div>
+      		</div>
+      			<br/>
+      				<h:form id="form">
+      					<p:carousel value="#{carouselView.products}" headerText="Seasonal" var="gnome" itemStyle="text-align:center" responsive="true" cricular="true">
+      						<p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+					            <f:facet name="header">
+					                <p:graphicImage name="url/#{products.productName}.gif"> </p:graphicImage>
+					            </f:facet>
+					 
+					            <h:outputText value="Product Name: " ></h:outputText>
+					            <h:outputText value="{products.productName}" ></h:outputText>
+					 			<h:outputText value="Description" ></h:outputText>
+					            <h:outputText value="{products.productDescription}" ></h:outputText>
+					            <h:outputText value="Price:" ></h:outputText>
+					            <h:outputText value="£#{products.price}" ></h:outputText>
+
+					            <h:commandButton action="#{basket.addproduct(result)}"> Add to Basket </h:commandButton>
+	                     		<h:commandButton action="#{wishlist.addproduct(result)}"> Add to Wishlist </h:commandButton>
+					        </p:panelGrid>
+					    </p:carousel>
+					</h:form>
+
+				<br/>
+      				<h:form id="form">
+      					<p:carousel value="#{carouselView.products}" headerText="Themed" var="gnome" itemStyle="text-align:center" responsive="true" cricular="true">
+      						<p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+					            <f:facet name="header">
+					                <p:graphicImage name="url/#{gnome.product}.gif"> </p:graphicImage>
+					            </f:facet>
+					 
+					            <h:outputText value="Product Name: " ></h:outputText>
+					            <h:outputText value="{gnome.productName}" ></h:outputText>
+					 			<h:outputText value="Description" ></h:outputText>
+					            <h:outputText value="{gnome.productDescription}" ></h:outputText>
+					            <h:outputText value="Price:" ></h:outputText>
+					            <h:outputText value="£#{gnome.price}" ></h:outputText>
+
+					            <h:commandButton action="#{basket.addproduct(result)}"> Add to Basket </h:commandButton>
+	                     		<h:commandButton action="#{wishlist.addproduct(result)}"> Add to Wishlist </h:commandButton>
+					        </p:panelGrid>
+					    </p:carousel>
+					</h:form>
+				<br/>
+					<h:form id="form">
+      					<p:carousel value="#{carouselView.products}" headerText="Novelty" var="gnome" itemStyle="text-align:center" responsive="true" cricular="true">
+      						<p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+					            <f:facet name="header">
+					                <p:graphicImage name="url/#{gnome.product}.gif"> </p:graphicImage>
+					            </f:facet>
+					 
+					            <h:outputText value="Product Name: " ></h:outputText>
+					            <h:outputText value="{products.productName}" ></h:outputText>
+					 			<h:outputText value="Description" ></h:outputText>
+					            <h:outputText value="{products.productDescription}" ></h:outputText>
+					            <h:outputText value="Price:" ></h:outputText>
+					            <h:outputText value="£#{products.price}" ></h:outputText>
+
+					            <h:commandButton action="#{basket.addproduct(result)}"> Add to Basket </h:commandButton>
+	                     		<h:commandButton action="#{wishlist.addproduct(result)}"> Add to Wishlist </h:commandButton>
+					        </p:panelGrid>
+					    </p:carousel>
+					</h:form>
+				<br/>
+					<h:form id="form">
+      					<p:carousel value="#{carouselView.products}" headerText="Classic" var="gnome" itemStyle="text-align:center" responsive="true" cricular="true">
+      						<p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+					            <f:facet name="header">
+					                <p:graphicImage name="url/#{gnome.product}.gif"> </p:graphicImage>
+					            </f:facet>
+					 
+					            <h:outputText value="Product Name: " ></h:outputText>
+					            <h:outputText value="{products.productName}" ></h:outputText>
+					 			<h:outputText value="Description" ></h:outputText>
+					            <h:outputText value="{products.productDescription}" ></h:outputText>
+					            <h:outputText value="Price:" ></h:outputText>
+					            <h:outputText value="£#{products.price}" ></h:outputText>
+
+					            <h:commandButton action="#{basket.addproduct(result)}"> Add to Basket </h:commandButton>
+	                     		<h:commandButton action="#{wishlist.addproduct(result)}"> Add to Wishlist </h:commandButton>
+					        </p:panelGrid>
+					    </p:carousel>
+					</h:form>
+				<br/>
+				<h:form id="form">
+      					<p:carousel value="#{carouselView.products}" headerText="Gnome Care" var="gnome" itemStyle="text-align:center" responsive="true" cricular="true">
+      						<p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+					            <f:facet name="header">
+					                <p:graphicImage name="url/#{products.product}.gif"> </p:graphicImage>
+					            </f:facet>
+					 
+					            <h:outputText value="Product Name: " ></h:outputText>
+					            <h:outputText value="{products.productName}" ></h:outputText>
+					 			<h:outputText value="Description" ></h:outputText>
+					            <h:outputText value="{products.productDescription}" ></h:outputText>
+					            <h:outputText value="Price:" ></h:outputText>
+					            <h:outputText value="£#{products.price}" ></h:outputText>
+
+					            <h:commandButton action="#{basket.addproduct(result)}"> Add to Basket </h:commandButton>
+	                     		<h:commandButton action="#{wishlist.addproduct(result)}"> Add to Wishlist </h:commandButton>
+					        </p:panelGrid>
+					    </p:carousel>
+				</h:form>
+  </ui:define>
+</ui:composition>

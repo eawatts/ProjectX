@@ -1,0 +1,95 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/catalogue_template.xhtml">
+
+	<?xml-stylesheet type="text/css" href="css/catalogue_create_account.css"?>
+	<ui:define name="title">Create Account</ui:define>
+
+	<ui:define name="main-content">
+		<div>
+			<div id="createaccountheading">
+				<h1>Create Account</h1>
+			</div>
+			<div id="userInfo">
+				<h2>User Info</h2>
+				<h:form>
+					<div id="userInfoForm">
+						<h:outputLabel value="Title: "/>
+                        <h:selectOneMenu value="#{registration.title}">
+							<f:selectItem itemValue="Mr" itemLabel="Mr"/>
+							<f:selectItem itemValue="Mrs" itemLabel="Mrs"/>
+							<f:selectItem itemValue="Miss" itemLabel="Miss"/>
+							<f:selectItem itemValue="Ms" itemLabel="Ms"/>
+							<f:selectItem itemValue="Dr" itemLabel="Dr"/>
+							<f:selectItem itemValue="Lord" itemLabel="Lord"/>
+							<f:selectItem itemValue="Lady" itemLabel="Lady"/>
+							<f:selectItem itemValue="Duke" itemLabel="Duke"/>
+							<f:selectItem itemValue="Dutchess" itemLabel="Dutchess"/>
+							<f:selectItem itemValue="HRH" itemLabel="HRH"/>
+						</h:selectOneMenu> <br/>
+						<br/> 
+                        <h:outputLabel value="Email: " />
+						<h:inputText value="#{registration.email}"/>
+                        <br/>
+						<br/> 
+                        <h:outputLabel value="First Name: "/>
+						<h:inputText value="#{registration.firstName}"/>
+                        <br /> 
+                        <br /> 
+                        <h:outputLabel value="Last Name: "/>
+                        <h:inputText value="#{registration.lastName}" />
+                        <br />
+                        <br /> 
+                        <h:outputLabel value="Age: "/>
+                        <h:inputText value="#{registration.age}" />
+                        <br/>
+                        <br /> 
+                        <h:outputLabel value="Bio: "/>
+                        <h:inputText value="#{registration.bio}" />
+                        <br />
+                        <br />
+					</div>
+					<hr />
+					   <h2>Address</h2>
+					<div id="address">
+						<h:outputLabel value="House Number: "/>
+                        <h:inputText value="#{registration.housenumber}"/>
+                        <br /> 
+                        <br />
+						<h:outputLabel value="Street: "/> 
+                        <h:inputText value="#{registration.street}"/>
+                        <br />
+                        <br /> 
+                        <h:outputLabel value="Town: "/>
+                        <h:inputText value="#{registration.town}"/>
+                        <br />
+                        <br /> 
+                        <h:outputLabel value="Postcode: "/>
+                        <h:inputText value="#{registration.postcode}"/>
+                        <br /> 
+                        <br />
+					</div>
+					<hr />
+					<h2>Payment details</h2>
+					<div id="payment">
+						<h:outputLabel value="Account No: "/>
+                        <h:inputText value="#{registration.banknumber}"/>
+                        <br /> 
+                        <br />
+                        <h:outputLabel value="Sort Code: "/>
+						<h:inputText value="#{registration.sortcode}"/>
+                        <br /> 
+                        <br />
+					</div>
+					<hr />
+					<div id="submitbutton">
+						<h:commandButton value="Submit" action="#{registration.setUserInfo}" />
+					</div>
+				</h:form>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>

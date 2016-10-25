@@ -1,5 +1,6 @@
 package projectx.persistence.repositories.interfaces;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import projectx.persistence.entities.Product;
@@ -17,4 +18,5 @@ public interface ProductRepository {
 	public Product getProductFromId(int id);
 	public Integer getAverageReviewForProductId(int id);
 	public void updateProduct(Product product);
+	public ArrayList<Product> getSubcatsProducts(String subcatagory);
 }

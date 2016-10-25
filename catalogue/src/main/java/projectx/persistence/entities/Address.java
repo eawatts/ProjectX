@@ -33,6 +33,9 @@ public class Address {
 	@Column(name = "postcode")
 	private String postcode;
 
+	public Address() {
+	}
+	
 	public Address(Integer id, String houseNumber, String street, String town, String postcode) {
 		this.id = id;
 		this.houseNumber = houseNumber;
