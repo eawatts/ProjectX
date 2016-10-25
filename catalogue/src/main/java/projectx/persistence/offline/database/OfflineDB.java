@@ -443,7 +443,7 @@ public class OfflineDB {
 		return null;
 	}
 
-	public Category findByid(int id) {
+	public Category findById(int id) {
 
 		for (Category category : categories) {
 			if (category.getCategoryID() == id) {

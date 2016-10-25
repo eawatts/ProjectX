@@ -9,10 +9,13 @@
 		<meta name="viewport"
 			content="width=device-width, initial-scale=1.0, maximum-scale=1"></meta>
 		<title>NB Gardens - <ui:insert name="title" /></title>
-		<link rel="stylesheet" type="text/css" href="css/template_nb_gardens.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="css/template_nb_gardens.css"></link>
 		<link rel="stylesheet" type="text/css" href="css/responsive.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/template_catalogue.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="css/template_catalogue.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="css/font-awesome/css/font-awesome.min.css"></link>
 		<link rel="stylesheet" type="text/css" href="css/popup.css"></link>
 		<link rel="icon" type="image/gif" href="favicon.ico"></link>
 		<ui:insert name="custom-css" />
@@ -28,8 +31,9 @@
 							<div id="header-mobile">
 								<ul class="header-mobile-list">
 									<li class="header-mobile-item"><a
-										href="catalogue_index.xhtml"> 
-										<h:graphicImage class="nav-mobile-logo" value="img/site/nb_logo.png" alt="NB Gardens Logo"></h:graphicImage></a></li>
+										href="catalogue_index.xhtml"> <h:graphicImage
+												class="nav-mobile-logo" value="img/site/nb_logo.png"
+												alt="NB Gardens Logo"></h:graphicImage></a></li>
 									<li class="header-mobile-item"><h:inputText
 											class="searchbox-brown nav-banner-mobile-right-search"
 											value="#{search.term}" />
@@ -87,8 +91,9 @@
 							<div id="header-desktop">
 								<div class="row">
 									<div class="col-tab-3 col-desk-3 nav-banner-desktop-left">
-										<a href="catalogue_index.xhtml">
-										<h:graphicImage class="nav-desktop-logo" value="img/site/nb_logo.png" alt="NB Gardens Logo"></h:graphicImage></a>
+										<a href="catalogue_index.xhtml"> <h:graphicImage
+												class="nav-desktop-logo" value="img/site/nb_logo.png"
+												alt="NB Gardens Logo"></h:graphicImage></a>
 									</div>
 									<div class="col-tab-6 col-desk-6 nav-banner-desktop-centre">
 										<input type="search"
@@ -103,6 +108,7 @@
 										<a href="catalogue_basket.xhtml">
 											<button type="button"
 												class="button-green-inverse nav-banner-desktop-right-button">
+												<h:outputText value="(#{basket.basketCount})" />
 												Basket <i class="fa fa-shopping-basket"></i>
 											</button>
 										</a>
@@ -110,20 +116,20 @@
 											class="button-green-inverse nav-banner-desktop-right-button">
 											Login <i class="fa fa-user"></i>
 										</button>
-										<button type="button"
-											class="button-green-inverse nav-banner-desktop-right-button">
-											Basket <i class="fa fa-shopping-basket"></i>
-										</button>
-										<h:panelGroup layout="block" rendered="#{current_session.loggedIn eq true}">
+										<h:panelGroup layout="block"
+											rendered="#{current_session.loggedIn eq true}">
 											<a href="catalogue_account.xhtml">
-												<button	class="button-green-inverse nav-banner-desktop-right-button">
+												<button
+													class="button-green-inverse nav-banner-desktop-right-button">
 													<h:outputText value="#{current_session.userFirstName}" />
 												</button>
 											</a>
 										</h:panelGroup>
-										<h:panelGroup layout="block" rendered="#{current_session.loggedIn ne true}">
+										<h:panelGroup layout="block"
+											rendered="#{current_session.loggedIn ne true}">
 											<a href="catalogue_login.xhtml">
-												<button	class="button-green-inverse nav-banner-desktop-right-button">
+												<button
+													class="button-green-inverse nav-banner-desktop-right-button">
 													<h:outputText value="Login" />
 													<i class="fa fa-user" aria-hidden="true"></i>
 												</button>
@@ -136,13 +142,9 @@
 
 						<div id="popup_login" class="overlay">
 							<div class="popup">
-								<h2>
-									Login!!!!
-								</h2>
+								<h2>Login!!!!</h2>
 								<a class="close" href="#">X</a>
-								<div class="content">
-									
-								</div>
+								<div class="content"></div>
 							</div>
 						</div>
 
@@ -152,73 +154,96 @@
 									href="catalogue_index.xhtml" class="dropdown-button active">Home</a>
 								</li>
 								<li class="dropdown-category"><a
-									href="http://localhost:8080/catalogue/catalogue_subcategories.xhtml" class="dropdown-button">Gnomes</a>
+									href="catalogue_subcategories.xhtml" class="dropdown-button">Gnomes</a>
 									<div class="dropdown-content">
-										<a href="catalogue_seasonal.html" class="dropdown-sub-button">Seasonal</a>
-										<a href="catalogue_themed.html" class="dropdown-sub-button">Themed</a>
-										<a href="catalogue_novelty.html" class="dropdown-sub-button">Novelty</a>
-										<a href="catalogue_classic.html" class="dropdown-sub-button">Classic</a>
-										<a href="catalogue_gnomeCare.html" class="dropdown-sub-button">Gnome
-											Care</a>
+										<a href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Seasonal</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Themed</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Novelty</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Classic</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Gnome Care</a>
 									</div></li>
 								<li class="dropdown-category"><a
-									href="catalogue_electrical.html" class="dropdown-button">Electrical</a>
+									href="catalogue_subcategories.xhtml" class="dropdown-button">Electrical</a>
 									<div class="dropdown-content">
-										<a href="catalogue_lighting.html" class="dropdown-sub-button">Lighting</a>
-										<a href="catalogue_heaters.html" class="dropdown-sub-button">Heaters</a>
-										<a href="catalogue_hotTubs.html" class="dropdown-sub-button">Hot
-											Tubs</a> <a href="catalogue_bbqs.html"
+										<a href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Lighting</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Heaters</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Hot Tubs</a> <a
+											href="catalogue_productlist.xhtml"
 											class="dropdown-sub-button">BBQs</a> <a
-											href="catalogue_misc.html" class="dropdown-sub-button">Misc</a>
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Misc</a>
 									</div></li>
 								<li class="dropdown-category"><a
-									href="catalogue_ornaments.html" class="dropdown-button">Ornaments</a>
+									href="catalogue_subcategories.xhtml" class="dropdown-button">Ornaments</a>
 									<div class="dropdown-content">
-										<a href="catalogue_animal.html" class="dropdown-sub-button">Animal</a>
-										<a href="catalogue_windChimes.html"
+										<a href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Animal</a> <a
+											href="catalogue_productlist.xhtml"
 											class="dropdown-sub-button">Wind Chimes</a> <a
-											href="catalogue_weatherVanes.html"
+											href="catalogue_productlist.xhtml"
 											class="dropdown-sub-button">Weather Vanes</a> <a
-											href="catalogue_pots.html" class="dropdown-sub-button">Pots</a>
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Pots</a>
 									</div></li>
 								<li class="dropdown-category"><a
-									href="catalogue_rakesAndHoes.html" class="dropdown-button">Rakes
+									href="catalogue_subcategories.xhtml" class="dropdown-button">Rakes
 										and Hoes</a>
 									<div class="dropdown-content">
-										<a href="catalogue_rakes.html" class="dropdown-sub-button">Rakes</a>
-										<a href="catalogue_hoes.html" class="dropdown-sub-button">Hoes</a>
-										<a href="catalogue_spadesAndForks.html"
+										<a href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Rakes</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Hoes</a> <a
+											href="catalogue_productlist.xhtml"
 											class="dropdown-sub-button">Spades and Forks</a> <a
-											href="catalogue_Trowels.html" class="dropdown-sub-button">Trowels</a>
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Trowels</a>
 									</div></li>
 								<li class="dropdown-category"><a
-									href="catalogue_waterFeatures.html" class="dropdown-button">Water
+									href="catalogue_subcategories.xhtml" class="dropdown-button">Water
 										Features</a>
 									<div class="dropdown-content">
-										<a href="catalogue_ponds.html" class="dropdown-sub-button">Ponds</a>
-										<a href="catalogue_pumps.html" class="dropdown-sub-button">Pumps</a>
-										<a href="catalogue_pipes.html" class="dropdown-sub-button">Pipes</a>
-										<a href="catalogue_fountains.html" class="dropdown-sub-button">Fountains</a>
+										<a href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Ponds</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Pumps</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Pipes</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Fountains</a>
 									</div></li>
 								<li class="dropdown-category"><a
-									href="catalogue_furniture.html" class="dropdown-button">Furniture</a>
+									href="catalogue_subcategories.xhtml" class="dropdown-button">Furniture</a>
 									<div class="dropdown-content">
-										<a href="catalogue_tablesAndChairs.html"
+										<a href="catalogue_productlist.xhtml"
 											class="dropdown-sub-button">Tables and Chairs</a> <a
-											href="catalogue_benches.html" class="dropdown-sub-button">Benches</a>
-										<a href="catalogue_hammocks.html" class="dropdown-sub-button">Hammocks</a>
-										<a href="catalogue_swinging.html" class="dropdown-sub-button">Swinging</a>
-										<a href="catalogue_birdHouses.html"
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Benches</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Hammocks</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Swinging</a> <a
+											href="catalogue_productlist.xhtml"
 											class="dropdown-sub-button">Bird Houses</a>
 									</div></li>
 								<li class="dropdown-category"><a
-									href="catalogue_maintenance.html" class="dropdown-button">Maintenance</a>
+									href="catalogue_subcategories.xhtml" class="dropdown-button">Maintenance</a>
 									<div class="dropdown-content">
-										<a href="catalogue_mowers.html" class="dropdown-sub-button">Mowers</a>
-										<a href="catalogue_strimmers.html" class="dropdown-sub-button">Strimmers</a>
-										<a href="catalogue_feedAndWeed.html"
+										<a href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Mowers</a> <a
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Strimmers</a> <a
+											href="catalogue_productlist.xhtml"
 											class="dropdown-sub-button">Feed and Weed</a> <a
-											href="catalogue_secateurs.html" class="dropdown-sub-button">Secateurs</a>
+											href="catalogue_productlist.xhtml"
+											class="dropdown-sub-button">Secateurs</a>
 									</div></li>
 							</ul>
 						</div>

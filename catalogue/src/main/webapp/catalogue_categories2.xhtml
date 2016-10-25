@@ -17,17 +17,23 @@
 				<ui:repeat var="cat" value="#{category.categories}">
 					<div class="col-tab-6 col-desk-4">
 						<div class="box">
-							<a href="catalogue_subcategories.xhtml"><h:graphicImage class="accord"
-								value="http://placehold.it/140x100"/> </a>
+							<h:form>
+								<h:commandLink
+									action="#{category.viewSubcatagory(cat.categoryID)}">
+									<h:graphicImage
+											class="accord" value="http://placehold.it/140x100" />
+								</h:commandLink>
+							</h:form>
+							
 							<h:commandButton class="accordion" value="#{cat.name}"
 								outcome="cat">
 							</h:commandButton>
 							<div class="panel">
 								<p>
 									<ui:repeat var="subCat" value="#{cat.subCategories}">
-										<h:outputLink value="#{subCat.name}" outcome="subCat" target="catalogue_subCat">
-										<h:outputText value="#{subCat.name}"/> 
-										</h:outputLink>
+
+										<h:outputText value="#{subCat.name}"></h:outputText>
+
 										<br></br>
 									</ui:repeat>
 								</p>
@@ -38,6 +44,7 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="js/catalogue_categories.js">
+			
 		</script>
 	</ui:define>
 </ui:composition>
