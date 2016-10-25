@@ -1,0 +1,61 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/catalogue_template.xhtml">
+
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/productlist.css" />
+		<link rel="stylesheet" type="text/css" href="css/breadcrumb.css" />
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick-theme.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/slide_custom.css"></link>
+	</ui:define>
+
+	<ui:define name="title">Productlist</ui:define>
+
+	<ui:define name="main-content">
+		<div class="main content">
+			<div class="row">
+				<div id="title">
+					<h1>
+						<h:outputText value="#{subcategory.name}">
+						</h:outputText>
+						- Products
+					</h1>
+				</div>
+			</div>
+			<ui:repeat var="subcat_product" value="#{products.subcatsProducts}">
+				<div class="row">
+					<div class="col-tab-4 col-desk-4">
+						<div id="prod-head">
+							<h3>
+								<h:outputText value="#{subcat_product.name}" />
+							</h3>
+							<img src="img#{subcat_product.productImageFilepath}"></img>
+						</div>
+					</div>
+					<div class="col-tab-5 col-desk-5">
+						<h:outputText value="#{subcat_product.description}"></h:outputText>
+					</div>
+					<div class="col-tab-3 col-desk-3">
+						<h5>
+							£
+							<h:outputText value="#{subcat_product.priceToDisplay}"></h:outputText>
+						</h5>
+
+					</div>
+				</div>
+				<hr />
+			</ui:repeat>
+		</div>
+	</ui:define>
+
+	<ui:define name="custom-scripts">
+		<script type="text/javaScript" src="libraries/slider/slick.min.js"></script>
+		<script type="text/javaScript" src="js/catalogue_product.js"></script>
+	</ui:define>
+
+</ui:composition>

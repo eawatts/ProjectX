@@ -1,0 +1,152 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/catalogue_template.xhtml">
+
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/catalogue_index.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick-theme.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/slide_custom.css"></link>
+	</ui:define>
+
+	<ui:define name="title">Welcome</ui:define>
+
+	<ui:define name="main-content">
+		<div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<a href="/catalogue/catalogue_categories2.xhtml"> <h:graphicImage
+							class="main-banner-img" value="img/index/banner_grass_text.jpg"
+							alt="Advertisement Banner (Photo of grass)"></h:graphicImage>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<h2 class="category-heading">Top Products</h2>
+					<div class="regular slider">
+						<ui:repeat var="slider_product"
+							value="#{products.topProductsWithAverageReview}">
+							<div>
+								<h:form>
+									<div class="slider-product-image">
+										<img src="img#{slider_product.product.productImageFilepath}"></img>
+									</div>
+									<div class="product-slider-title-container">
+										<h:commandLink class="product-slider-title"
+											value="#{slider_product.product.name}"
+											action="#{products.view(slider_product.product.id)}">
+										</h:commandLink>
+									</div>
+									<button type="button" class="button-green product-slider-atb"
+										onclick="#{user.basket()}">
+										Add to Basket&#160;&#160;<i class="fa fa-shopping-basket"></i>
+									</button>
+									<div>
+										<ul class="product-slider-star-rating">
+											<h:form rendered="#{slider_product.averageReview lt 1}"
+												class="product-slider-star">
+												<li><i class="fa fa-star-half" aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 1}">
+												<li class="product-slider-star"><i class="fa fa-star"
+													aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 2}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 3}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 4}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 5}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+										</ul>
+									</div>
+								</h:form>
+							</div>
+						</ui:repeat>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<hr class="category-divider" />
+					<h2 class="category-heading">Seasonal</h2>
+					<div class="regular slider">
+						<ui:repeat var="slider_product"
+							value="#{products.topProductsWithAverageReview}">
+							<div>
+								<h:form>
+									<div class="slider-product-image">
+										<img src="img#{slider_product.product.productImageFilepath}"></img>
+									</div>
+									<div class="product-slider-title-container">
+										<h:commandLink class="product-slider-title"
+											value="#{slider_product.product.name}"
+											action="#{products.view(slider_product.product.id)}">
+										</h:commandLink>
+									</div>
+									<button type="button" class="button-green product-slider-atb"
+										onclick="#{user.basket()}">
+										Add to Basket&#160;&#160;<i class="fa fa-shopping-basket"></i>
+									</button>
+									<div>
+										<ul class="product-slider-star-rating">
+											<h:form rendered="#{slider_product.averageReview lt 0.5}"
+												class="product-slider-star">
+											No Reviews
+										</h:form>
+											<h:form rendered="#{slider_product.averageReview lt 1}"
+												class="product-slider-star">
+												<li><i class="fa fa-star-half" aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 1}">
+												<li class="product-slider-star"><i class="fa fa-star"
+													aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 2}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 3}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 4}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+											<h:form rendered="#{slider_product.averageReview ge 5}"
+												class="product-slider-star">
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											</h:form>
+										</ul>
+									</div>
+								</h:form>
+							</div>
+						</ui:repeat>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+
+	<ui:define name="custom-scripts">
+		<script type="text/javaScript" src="libraries/slider/slick.min.js"></script>
+		<script type="text/javaScript" src="js/catalogue_index.js"></script>
+	</ui:define>
+
+</ui:composition>

@@ -1,5 +1,6 @@
 package projectx.persistence.offline;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -64,5 +65,10 @@ public class ProductRepositoryOffline implements ProductRepository {
 	@Override
 	public CurrentProduct getCurrentProductFromId(int productId) {
 		return db.getCurrentProduct(productId);
+	}
+
+	@Override
+	public ArrayList<Product> getSubcatsProducts(String subcategory) {
+		return db.getSubcatsProducts(subcategory);
 	}
 }

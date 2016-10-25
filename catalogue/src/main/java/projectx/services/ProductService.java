@@ -1,5 +1,6 @@
 package projectx.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -38,5 +39,9 @@ public class ProductService {
 	
 	public Integer getAverageReviewForProductId(int productId) {
 		return productRepository.getAverageReviewForProductId(productId);
+	}
+
+	public ArrayList<Product> getSubcatsProducts(String subcategory) {
+		return productRepository.getSubcatsProducts(subcategory);
 	}
 }
