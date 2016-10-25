@@ -143,12 +143,7 @@ public class OfflineDB {
 		reviews.add(new Review(15, 3.9f, "Its my second one!", users.get(6), products.get(1)));
 		reviews.add(new Review(16, 4.2f, "Absolute scorcher.", users.get(5), products.get(1)));
 		reviews.add(new Review(17, 4.6f, "Perfect proportions.", users.get(1), products.get(1)));
-		reviews.add(new Review(18, 0.5f, "Tripping hazard. Lorem ipsum dolor sit amet, eu sit dignissim conceptam, "
-											+ "in dicta nullam vim, indoctum instructior eu quo. Duo ex vocent iuvaret"
-											+ " vituperatoribus, nam ludus nostro eruditi an. Eam legere alterum cu."
-											+ " Id solum rebum apeirian cum, sed in aliquando elaboraret."
-											+ " Te qui vero dicant probatus.",
-				users.get(10), products.get(1)));
+		reviews.add(new Review(18, 0.5f, "Tripping hazard.", users.get(10), products.get(1)));
 	}
 
 	private void setupCategories() {
