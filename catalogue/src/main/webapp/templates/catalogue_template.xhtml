@@ -100,17 +100,38 @@
 										</button>
 									</div>
 									<div class="col-tab-3 col-desk-3 nav-banner-desktop-right">
+<<<<<<< HEAD
+										<a href="catalogue_basket.xhtml">
+											<button type="button"
+												class="button-green-inverse nav-banner-desktop-right-button">
+												Basket <i class="fa fa-shopping-basket"></i>
+											</button>
+										</a>
+										<button type="button"
+											class="button-green-inverse nav-banner-desktop-right-button">
+											Login <i class="fa fa-user"></i>
+										</button>
+=======
 										<button type="button"
 											class="button-green-inverse nav-banner-desktop-right-button">
 											Basket <i class="fa fa-shopping-basket"></i>
 										</button>
-										<a href="catalogue_login.xhtml">
-										<button
-											class="button-green-inverse nav-banner-desktop-right-button">
-											<h:outputText rendered="#{current_session.loggedIn eq true}" value="#{current_session.userFirstName}" />
-											<h:outputText rendered="#{current_session.loggedIn ne true}" value="Login" />
-										</button>
-										</a>
+										<h:panelGroup layout="block" rendered="#{current_session.loggedIn eq true}">
+											<a href="catalogue_account.xhtml">
+												<button	class="button-green-inverse nav-banner-desktop-right-button">
+													<h:outputText value="#{current_session.userFirstName}" />
+												</button>
+											</a>
+										</h:panelGroup>
+										<h:panelGroup layout="block" rendered="#{current_session.loggedIn ne true}">
+											<a href="catalogue_login.xhtml">
+												<button	class="button-green-inverse nav-banner-desktop-right-button">
+													<h:outputText value="Login" />
+													<i class="fa fa-user" aria-hidden="true"></i>
+												</button>
+											</a>
+										</h:panelGroup>
+>>>>>>> 7e9b88fb054f9fd676099cf1bb9ff6536be39e2b
 									</div>
 								</div>
 							</div>

@@ -8,8 +8,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import projectx.persistence.entities.Address;
-import projectx.persistence.entities.BankAccount;
 import projectx.persistence.entities.Category;
+import projectx.persistence.entities.PaymentDetails;
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Review;
 import projectx.persistence.entities.SubCategory;
@@ -25,7 +25,7 @@ public class OfflineDB {
 	private List<Product> products;
 	private List<User> users;
 	private List<Review> reviews;
-	private List<BankAccount> bankAccounts;
+	private List<PaymentDetails> paymentDetails;
 	private List<Address> addresses;
 	private List<Category> categories;
 	private List<SubCategory> subcategories;
@@ -73,7 +73,7 @@ public class OfflineDB {
 	@PostConstruct
 	public void setupData() {
 		setupProducts();
-		setupBankAccounts();
+		setupPaymentDetails();
 		setupAddresses();
 		setupUsers();
 		setupReviews();
@@ -113,18 +113,18 @@ public class OfflineDB {
 
 	}
 
-	private void setupBankAccounts() {
-		bankAccounts = new ArrayList<BankAccount>();
-		bankAccounts.add(new BankAccount(125685, 236595632));
-		bankAccounts.add(new BankAccount(216543, 236595632));
-		bankAccounts.add(new BankAccount(464246, 236595632));
-		bankAccounts.add(new BankAccount(236594, 236595632));
-		bankAccounts.add(new BankAccount(985654, 236595632));
-		bankAccounts.add(new BankAccount(365254, 236595632));
-		bankAccounts.add(new BankAccount(365254, 236595632));
-		bankAccounts.add(new BankAccount(365254, 236595632));
-		bankAccounts.add(new BankAccount(365254, 236595632));
-		bankAccounts.add(new BankAccount(365254, 236595632));
+	private void setupPaymentDetails() {
+		paymentDetails = new ArrayList<PaymentDetails>();
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
 	}
 
 	private void setupAddresses() {
@@ -142,18 +142,18 @@ public class OfflineDB {
 
 		users = new ArrayList<User>();
 		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "Admin", password, UserLevel.ADMIN, null, null));
-		users.add(new User(2, "Mr", "Dan", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(2), addresses.get(2)));
-		users.add(new User(3, "Mr", "Ben", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(3), addresses.get(3)));
-		users.add(new User(4, "Mr", "Chris", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(4), addresses.get(4)));
-		users.add(new User(5, "Mr", "Alan", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(5), addresses.get(1)));
-		users.add(new User(6, "Mrs", "Sally", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(6), addresses.get(2)));
-		users.add(new User(7, "Mrs", "Dorean", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(2), addresses.get(0)));
-		users.add(new User(8, "Mrs", "Jenny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(6), addresses.get(5)));
-		users.add(new User(9, "Mrs", "Jolene", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, bankAccounts.get(3), addresses.get(4)));
-		users.add(new User(10, "Miss", "Karen", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, bankAccounts.get(2), addresses.get(2)));
-		users.add(new User(11, "Miss", "Kate", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, bankAccounts.get(3), addresses.get(1)));
-		users.add(new User(12, "Mr", "Baz", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(0)));
-		users.add(new User(13, "Mrs", "Greath", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, bankAccounts.get(1), addresses.get(3)));
+		users.add(new User(2, "Mr", "Dan", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(2)));
+		users.add(new User(3, "Mr", "Ben", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(3)));
+		users.add(new User(4, "Mr", "Chris", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(4), addresses.get(4)));
+		users.add(new User(5, "Mr", "Alan", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(5), addresses.get(1)));
+		users.add(new User(6, "Mrs", "Sally", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(6), addresses.get(2)));
+		users.add(new User(7, "Mrs", "Dorean", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(0)));
+		users.add(new User(8, "Mrs", "Jenny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(6), addresses.get(5)));
+		users.add(new User(9, "Mrs", "Jolene", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(4)));
+		users.add(new User(10, "Miss", "Karen", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(2)));
+		users.add(new User(11, "Miss", "Kate", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(1)));
+		users.add(new User(12, "Mr", "Baz", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, paymentDetails.get(1), addresses.get(0)));
+		users.add(new User(13, "Mrs", "Greath", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, paymentDetails.get(1), addresses.get(3)));
 	}
 
 
@@ -176,12 +176,7 @@ public class OfflineDB {
 		reviews.add(new Review(15, 3.9f, "Its my second one!", users.get(6), products.get(1)));
 		reviews.add(new Review(16, 4.2f, "Absolute scorcher.", users.get(5), products.get(1)));
 		reviews.add(new Review(17, 4.6f, "Perfect proportions.", users.get(1), products.get(1)));
-		reviews.add(new Review(18, 0.5f, "Tripping hazard. Lorem ipsum dolor sit amet, eu sit dignissim conceptam, "
-											+ "in dicta nullam vim, indoctum instructior eu quo. Duo ex vocent iuvaret"
-											+ " vituperatoribus, nam ludus nostro eruditi an. Eam legere alterum cu."
-											+ " Id solum rebum apeirian cum, sed in aliquando elaboraret."
-											+ " Te qui vero dicant probatus.",
-				users.get(10), products.get(1)));
+		reviews.add(new Review(18, 0.5f, "Tripping hazard.", users.get(10), products.get(1)));
 	}
 	
 	private void setupCategoriesProducts(){
@@ -419,19 +414,15 @@ public class OfflineDB {
 
 	public void userAdd(User user) {
 		users.add(user);
-
 	}
 	
 	public User login(String username, String pass){
 		for(User user : users){
-			System.out.println(user);
-			System.out.println("**********");
 			if(user.getUsername().equals(username) && user.getPassword().equals(pass)){
 				return user;
 			}
 		}
-			//String password = pass;
-			return null; //new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "Admin", password, UserLevel.ADMIN, null, null);
+			return null;
 	}
 
 	// ----- END USERS -----

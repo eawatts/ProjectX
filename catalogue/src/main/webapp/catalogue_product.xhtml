@@ -20,7 +20,7 @@
 		<div class="main-content">
 			<div id="breadcrumbs">
 				<ul class="breadcrumb">
-					<li><a href="http://localhost:8080/catalogue/catalogue_index.xhtml">Home</a></li>
+					<li><h:link outcome="catalogue_index">Home</h:link></li>
 					<li><a href="http://localhost:8080/catalogue/catalogue_categories2.xhtml">Catagories</a></li>
 					<li><a href="http://localhost:8080/catalogue/catalogue_subcategories.xhtml">Gnomes</a></li>
 					<li><a href="#">Classic</a></li>
@@ -68,11 +68,7 @@
 									</div>
 									<div class="row">
 										<div class="col-tab-12 col-desk-12">
-											<div class="quantity">
-												<strong>Quantity: </strong> <input list="quantity"
-													name="quantity"> </input>
-											</div>
-											<br />										
+																			
 										</div>
 										<div>
 											<ul class="product-slider-star-rating">
@@ -106,19 +102,16 @@
 								</div>
 							</div>
 							<div class="col-tab-6 col-desk-6">
-								<div id="productaction">
-									<button class="button" onclick="location.href='#popup1'">Add
-										to Basket</button>
-									<div id="popup1" class="overlay">
-										<div class="popup">
-											<h2>
-												<h:outputText value="" />
-												<h:outputText value="" />
-												Added to Basket
-											</h2>
-											<a class="close" href="#">X</a>
+								
+								<div id="product_action">
+									<h:form>
+										<div class="quantity">
+												<strong>Quantity: </strong> <h:inputText 
+													styleClass="quantity" type="number" value="#{basket.quantity}" /> 
 										</div>
-									</div>
+										<br />		
+										<h:commandButton value="Add to Basket" class="button-green" action="#{basket.addCurrentProduct}"/>
+									</h:form>
 								</div>
 							</div>
 						</div>
@@ -143,6 +136,9 @@
 			<div class="row">
 				<div class="col-tab-12 col-desk-12">
 					<div class="regular slider">
+						<h:panelGroup layout="block" rendered="#{slider_review.rating eq null}">
+						<p>There are no reviews.</p>
+						</h:panelGroup>
 						<ui:repeat var="slider_review" value="#{current_product.reviews}">
 							<div>
 								<h4 class="reviewer_name">
