@@ -14,47 +14,43 @@ import projectx.services.BasketService;
 
 @Named("basket")
 @SessionScoped
-public class BasketController implements Serializable{
+public class BasketController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Inject
 	private BasketService basketService;
-	@Inject 
+	
+	@Inject
 	private CurrentProduct currentProduct;
+	
 	private int quantity = 1;
 
-	public String addCurrentProduct()
-	{
-		basketService.addProductToBasket(currentProduct.getProduct(), quantity );
+	public void addCurrentProduct() {
+		basketService.addProductToBasket(currentProduct.getProduct(), quantity);
 		quantity = 1;
-		return "Added to Basket";
 	}
-	public String addProduct(Product product)
-	{
-		basketService.addProductToBasket(product, quantity );
+
+	public void addProduct(Product product) {
+		System.out.println("** Adding Product: " + product.getName());
+		basketService.addProductToBasket(product, quantity);
 		quantity = 1;
-		return "Added to Basket";
 	}
-	
-	public void removeProduct(int productId)
-	{
+
+	public void removeProduct(int productId) {
 		basketService.removeProduct(productId);
 	}
-	
-	public String view()
-	{
+
+	public String view() {
 		return "catalogue_basket";
 	}
-	
-	public List<BasketProduct> getBasket()
-	{
+
+	public List<BasketProduct> getBasket() {
 		return basketService.getBasketContents();
 	}
-	
-	public int getBasketCount()
-	{
-		if (basketService.getBasketContents() == null){
+
+	public int getBasketCount() {
+		if (basketService.getBasketContents() == null) {
 			return 0;
 		}
 		return basketService.getBasketContents().size();
@@ -67,10 +63,9 @@ public class BasketController implements Serializable{
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
-	public double getTotalBasketPrice(){
+
+	public double getTotalBasketPrice() {
 		return basketService.totalBasketPrice();
 	}
-	
-	
+
 }

@@ -103,6 +103,7 @@ hr {
 .quantity {
 	font-size: 150%;
 	font-style: bold;
+	width: 50%;
 }
 .reviewer_name{
 	text-align: center;

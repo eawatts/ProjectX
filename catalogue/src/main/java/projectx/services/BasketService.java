@@ -7,7 +7,6 @@ import javax.ejb.Stateful;
 
 import projectx.persistence.entities.Product;
 import projectx.persistence.webentities.BasketProduct;
-import projectx.persistence.webentities.CurrentProduct;
 
 @Stateful
 public class BasketService {
@@ -24,21 +23,24 @@ public class BasketService {
 
 	public void addProductToBasket(Product product, int quantity) {
 		if (basketContents == null)
-			basketContents = initBasketContents();
-		boolean flag = true;
+			basketContents = initialiseBasketContents();
+		
+		boolean needAddingToBasket = true;
+		
+		// Go through the Basket to see if we can just update a quantity.
 		for (BasketProduct basketProduct : basketContents) {
-			if (basketProduct.getProduct().equals(product)) {
-				flag = false;
+			if (basketProduct.getProduct().getId() == product.getId()) {
+				needAddingToBasket = false;
 				basketProduct.setQuantity(quantity + basketProduct.getQuantity());
 				break;
 			}
 		}
-		if (flag) {
+		if (needAddingToBasket) {
 			basketContents.add(new BasketProduct(product, quantity));
 		}
 	}
 
-	public ArrayList<BasketProduct> initBasketContents() {
+	public ArrayList<BasketProduct> initialiseBasketContents() {
 		if (basketContents == null)
 			return new ArrayList<BasketProduct>();
 		else

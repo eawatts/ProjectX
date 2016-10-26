@@ -350,9 +350,7 @@ public class OfflineDB {
 
 	/**
 	 * Will return the average rating of a Product.
-	 * 
-	 * @param productId
-	 *            the Product Id to check.
+	 * @param productId the Product Id to check.
 	 * @return null if no Reviews exist, the average score if present.
 	 */
 	public Integer getAverageReviewForProductId(int productId) {
