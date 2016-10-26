@@ -1,5 +1,6 @@
 package projectx.persistence.webentities;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -14,6 +15,12 @@ public class CurrentSession implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private User user;
+	private Basket basket;
+	
+	@PostConstruct
+	private void setupCurrentSession(){
+		this.basket = new Basket();
+	}
 
 	public User getUser() {
 		return user;
@@ -22,16 +29,24 @@ public class CurrentSession implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	public String getUserFirstName(){
+
+	public Basket getBasket() {
+		return basket;
+	}
+
+	public void setBasket(Basket basket) {
+		this.basket = basket;
+	}
+
+	public String getUserFirstName() {
 		return this.user.getFirstname();
 	}
-	public boolean isLoggedIn(){
-	
+
+	public boolean isLoggedIn() {
 		return (user == null) ? false : true;
 	}
-	
-	public void logout(){
+
+	public void logout() {
 		this.user = null;
 	}
 }
