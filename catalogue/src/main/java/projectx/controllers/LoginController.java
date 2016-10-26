@@ -73,8 +73,7 @@ public class LoginController implements Serializable{
 			this.password = "";
 			return null;
 		}
-		
-		User user = loginservice.login("Admin", "test");
+		User user = loginservice.login(this.username, this.password);
 		
 		if(user == null){
 			this.error = "Check Username or Password";

@@ -16,7 +16,7 @@ public class LoginRepositoryOffline implements LoginRepository{
 	private OfflineDB db;
 	
 	@Override
-	public User login(String user, String pass){
-		return db.login(user, pass);
+	public User login(String username, String password){
+		return db.login(username, password);
 	}
 }

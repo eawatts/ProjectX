@@ -143,29 +143,29 @@ public class OfflineDB {
 		users = new ArrayList<User>();
 		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "Admin", password,
 				UserLevel.ADMIN, null, null));
-		users.add(new User(2, "Mr", "Dan", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+		users.add(new User(2, "Mr", "Dan", "Black", new Date(215455415), "jonny.black@email.com", "User2", password,
 				UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(2)));
-		users.add(new User(3, "Mr", "Ben", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+		users.add(new User(3, "Mr", "Ben", "Black", new Date(215455415), "jonny.black@email.com", "User3", password,
 				UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(3)));
-		users.add(new User(4, "Mr", "Chris", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+		users.add(new User(4, "Mr", "Chris", "Black", new Date(215455415), "jonny.black@email.com", "User4", password,
 				UserLevel.CUSTOMER, paymentDetails.get(4), addresses.get(4)));
-		users.add(new User(5, "Mr", "Alan", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+		users.add(new User(5, "Mr", "Alan", "Black", new Date(215455415), "jonny.black@email.com", "User5", password,
 				UserLevel.CUSTOMER, paymentDetails.get(5), addresses.get(1)));
-		users.add(new User(6, "Mrs", "Sally", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+		users.add(new User(6, "Mrs", "Sally", "Black", new Date(215455415), "jonny.black@email.com", "User6", password,
 				UserLevel.CUSTOMER, paymentDetails.get(6), addresses.get(2)));
-		users.add(new User(7, "Mrs", "Dorean", "Black", new Date(215455415), "jonny.black@email.com", "JBlack",
+		users.add(new User(7, "Mrs", "Dorean", "Black", new Date(215455415), "jonny.black@email.com", "User7",
 				password, UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(0)));
-		users.add(new User(8, "Mrs", "Jenny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+		users.add(new User(8, "Mrs", "Jenny", "Black", new Date(215455415), "jonny.black@email.com", "User8", password,
 				UserLevel.CUSTOMER, paymentDetails.get(6), addresses.get(5)));
-		users.add(new User(9, "Mrs", "Jolene", "Black", new Date(215455415), "jonny.black@email.com", "JBlack",
+		users.add(new User(9, "Mrs", "Jolene", "Black", new Date(215455415), "jonny.black@email.com", "User9",
 				password, UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(4)));
-		users.add(new User(10, "Miss", "Karen", "Black", new Date(215455415), "jonny.black@email.com", "JBlack",
+		users.add(new User(10, "Miss", "Karen", "Black", new Date(215455415), "jonny.black@email.com", "User10",
 				password, UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(2)));
-		users.add(new User(11, "Miss", "Kate", "Black", new Date(215455415), "jonny.black@email.com", "JBlack",
+		users.add(new User(11, "Miss", "Kate", "Black", new Date(215455415), "jonny.black@email.com", "User11",
 				password, UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(1)));
-		users.add(new User(12, "Mr", "Baz", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+		users.add(new User(12, "Mr", "Baz", "Black", new Date(215455415), "jonny.black@email.com", "User12", password,
 				UserLevel.CUSTOMER, paymentDetails.get(1), addresses.get(0)));
-		users.add(new User(13, "Mrs", "Greath", "Black", new Date(215455415), "jonny.black@email.com", "JBlack",
+		users.add(new User(13, "Mrs", "Greath", "Black", new Date(215455415), "jonny.black@email.com", "User13",
 				password, UserLevel.CUSTOMER, paymentDetails.get(1), addresses.get(3)));
 	}
 
@@ -424,9 +424,15 @@ public class OfflineDB {
 		users.add(user);
 	}
 
-	public User login(String username, String pass) {
+	/**
+	 * Will check with the Users to see if there is a match for a Username and Password.
+	 * @param username the Username to check.
+	 * @param password the Password to check.
+	 * @return null if no User is found, the User is there is a match.
+	 */
+	public User login(String username, String password) {
 		for (User user : users) {
-			if (user.getUsername().equals(username) && user.getPassword().equals(pass)) {
+			if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
 				return user;
 			}
 		}
