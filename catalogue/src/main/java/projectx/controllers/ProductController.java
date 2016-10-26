@@ -23,6 +23,8 @@ public class ProductController implements Serializable {
 	private ProductService productService;
 	@Inject
 	private CurrentProduct currentProduct;
+	@Inject
+	private SubcategoryController subCategory;
 	
 	public String view(int productId){
 		currentProduct.setCurrentProduct(productService.getCurrentProductFromId(productId));
@@ -50,6 +52,7 @@ public class ProductController implements Serializable {
 	}
 	public String viewList(String subcat){
 		subcategory = subcat;
+		subCategory.setName(subcat);
 		return "catalogue_productlist";
 	}
 	

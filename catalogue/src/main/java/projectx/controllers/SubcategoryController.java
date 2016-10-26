@@ -39,6 +39,7 @@ public class SubcategoryController implements Serializable {
 	}
 
 	public String getName() {
+		System.out.println(name);
 		return name;
 	}
 

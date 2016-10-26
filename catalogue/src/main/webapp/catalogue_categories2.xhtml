@@ -31,9 +31,10 @@
 							<div class="panel">
 								<p>
 									<ui:repeat var="subCat" value="#{cat.subCategories}">
-
+										<h:form>
 										<h:commandLink value="#{subCat.name}" action="#{products.viewList(subCat.name)}"></h:commandLink>
 										<br></br>
+										</h:form>
 									</ui:repeat>
 								</p>
 							</div>
