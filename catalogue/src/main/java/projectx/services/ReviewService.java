@@ -14,15 +14,19 @@ public class ReviewService {
 
 	@Inject
 	private ReviewRepository reviewRepository;
-	
-	public List<Review> getAllReviews(){
+
+	public List<Review> getAllReviews() {
 		return reviewRepository.getReviews();
 	}
-	public List<Review> getSomeReviews(int n, int itemID){
-		return reviewRepository.getSomeReviews(n, itemID);
+
+	/**
+	 * Returns a specific number of Reviews for a specific Product.
+	 * 
+	 * @param numberOfReviewsToRetrieve the number of reviews to retrieve for a Product.
+	 * @param productId the Product's Id to get the reviews for.
+	 * @return a list of Reviews for a Product.
+	 */
+	public List<Review> getSomeReviews(int numberOfReviewsToRetrieve, int productId) {
+		return reviewRepository.getSomeReviews(numberOfReviewsToRetrieve, productId);
 	}
-	
-//	public User getReviewerAuthor() {
-//		return reviewRepository.getReviewerAuthor();
-//	}
 }

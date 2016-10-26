@@ -11,6 +11,9 @@ import projectx.persistence.entities.User;
 import projectx.persistence.webentities.CurrentSession;
 import projectx.services.LoginService;
 
+/**
+ * Used to manage the Login and Logout process. Accessed via 'login'.
+ */
 @Named("login")
 @SessionScoped
 public class LoginController implements Serializable{
@@ -54,6 +57,11 @@ public class LoginController implements Serializable{
 		return "catalogue_account_create";
 	}
 	
+	/**
+	 * Will check that the Username and Password are present, 
+	 * if a User is found to exist with the credentials. It will set it as the Current User.
+	 * @return a page redirect to display error messages, or a redirect to the Index page.
+	 */
 	public String login(){
 		if(username.equals("")){
 			this.error = "Username Required";
@@ -65,6 +73,7 @@ public class LoginController implements Serializable{
 			this.password = "";
 			return null;
 		}
+		
 		User user = loginservice.login("Admin", "test");
 		
 		if(user == null){
@@ -81,6 +90,10 @@ public class LoginController implements Serializable{
 		return "catalogue_index";
 	}
 	
+	/**
+	 * Will log the Current User out, and clear the current session.
+	 * @return a redirect to the Index page.
+	 */
 	public String logout(){
 		this.username = null;
 		this.password = null;
