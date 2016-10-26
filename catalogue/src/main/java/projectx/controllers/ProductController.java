@@ -18,7 +18,7 @@ import projectx.services.ProductService;
 public class ProductController implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	private static String subcategory = "Classic";
+	private static String subcategory;
 	@Inject
 	private ProductService productService;
 	@Inject
@@ -45,10 +45,12 @@ public class ProductController implements Serializable {
 		return productService.getAverageReviewForProductId(productId);
 	}
 	public ArrayList<Product> getSubcatsProducts(){
-		
 		ArrayList<Product> productList = productService.getSubcatsProducts(subcategory);
-
 		return productList;
+	}
+	public String viewList(String subcat){
+		subcategory = subcat;
+		return "catalogue_productlist";
 	}
 	
 	}

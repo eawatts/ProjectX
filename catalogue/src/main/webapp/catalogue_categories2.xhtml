@@ -32,8 +32,7 @@
 								<p>
 									<ui:repeat var="subCat" value="#{cat.subCategories}">
 
-										<h:outputText value="#{subCat.name}"></h:outputText>
-
+										<h:commandLink value="#{subCat.name}" action="#{products.viewList(subCat.name)}"></h:commandLink>
 										<br></br>
 									</ui:repeat>
 								</p>
