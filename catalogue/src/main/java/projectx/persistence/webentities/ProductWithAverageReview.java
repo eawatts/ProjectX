@@ -8,7 +8,6 @@ import projectx.persistence.entities.Product;
 public class ProductWithAverageReview {
 	
 	private Product product;
-	
 	private Integer averageReview;
 	
 	public ProductWithAverageReview(Product product, Integer averageReview) {

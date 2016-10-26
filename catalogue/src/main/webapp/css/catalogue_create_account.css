@@ -41,7 +41,9 @@
 	padding-left: 10%;
 	padding-right: 30%;
 }
-
+.register-error{
+	color: red;
+}
 
 h2 {
 	padding-left: 5%;

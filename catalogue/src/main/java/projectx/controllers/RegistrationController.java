@@ -29,11 +29,13 @@ public class RegistrationController {
 		private User user;
 		private Address address;
 		private PaymentDetails paymentDetails;
-		private String error;
+		private String error = "";
 		
-		public void registerUser(){
-			user.setDateOfBirth(new Date(456263)); // Leave this for now
+		public String registerUser(){
+			user.setDateOfBirth(new Date(456263)); // Leave this for now	
+			
 			registrationService.registerUser(user, address, paymentDetails);
+			return "catalogue_index";
 		}
 		
 		// GETTERS / SETTERS

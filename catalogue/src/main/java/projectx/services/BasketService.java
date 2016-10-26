@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ejb.Stateful;
 
+import projectx.persistence.entities.Product;
 import projectx.persistence.webentities.BasketProduct;
 import projectx.persistence.webentities.CurrentProduct;
 
@@ -20,40 +21,40 @@ public class BasketService {
 	public void setBasketContents(List<BasketProduct> basketContents) {
 		this.basketContents = basketContents;
 	}
-	
-	public void addProductToBasket(CurrentProduct currentProduct, int quantity)
-	{
-		if(basketContents == null)
+
+	public void addProductToBasket(Product product, int quantity) {
+		if (basketContents == null)
 			basketContents = initBasketContents();
 		boolean flag = true;
-		for(BasketProduct bProduct: basketContents)
+<<<<<<< HEAD
+		for(BasketProduct basketProduct: basketContents)
 		{
-			if(bProduct.getProduct().equals(currentProduct.getProduct())) 
+			if(basketProduct.getProduct().equals(currentProduct.getProduct())) 
 			{
+=======
+		for (BasketProduct basketProduct : basketContents) {
+			if (basketProduct.getProduct().equals(product)) {
+>>>>>>> a8e64070a9feda76a3616c8e2d2fae18fcc89305
 				flag = false;
-				bProduct.setQuantity(quantity + bProduct.getQuantity());
+				basketProduct.setQuantity(quantity + basketProduct.getQuantity());
 				break;
 			}
 		}
-		if(flag) 
-		{
-			basketContents.add(new BasketProduct(currentProduct, quantity));
+		if (flag) {
+			basketContents.add(new BasketProduct(product, quantity));
 		}
-		
 	}
-	
-	public ArrayList<BasketProduct> initBasketContents()
-	{
-		if(basketContents == null) 
+
+	public ArrayList<BasketProduct> initBasketContents() {
+		if (basketContents == null)
 			return new ArrayList<BasketProduct>();
 		else
 			return null;
 	}
 
-	public void removeProduct(int productId)
-	{
-		for(BasketProduct basketProduct: basketContents){
-			if(basketProduct.getProduct().getId() == productId){
+	public void removeProduct(int productId) {
+		for (BasketProduct basketProduct : basketContents) {
+			if (basketProduct.getProduct().getId() == productId) {
 				basketContents.remove(basketProduct);
 				return;
 			}
@@ -62,15 +63,13 @@ public class BasketService {
 
 	public double totalBasketPrice() {
 		double totalPrice = 0.00;
-		if(basketContents == null){
+		if (basketContents == null) {
 			return totalPrice;
-		}
-		else{
-		for(BasketProduct basketProduct: basketContents){
+		} else {
+			for (BasketProduct basketProduct : basketContents) {
 				totalPrice = totalPrice + Double.parseDouble(basketProduct.getBasketProductPrice());
 			}
-		return Math.round(totalPrice*100.0)/100.0;
+			return Math.round(totalPrice * 100.0) / 100.0;
 		}
 	}
-
 }

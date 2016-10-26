@@ -26,3 +26,17 @@
 .slider-product-image{
 	height:50%;
 }
+.slider-basket-button{
+	color: #004425;
+	text-align: center;
+	width: 100%;
+	align-content: center;
+	padding-bottom: 1%;
+	font-weight: bold;
+}
+.review-text{
+	text-align: center;
+	color: #A53F2B;
+	font-size: 90%
+	
+}
