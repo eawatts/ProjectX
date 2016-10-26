@@ -26,15 +26,8 @@ public class BasketService {
 		if (basketContents == null)
 			basketContents = initBasketContents();
 		boolean flag = true;
-<<<<<<< HEAD
-		for(BasketProduct basketProduct: basketContents)
-		{
-			if(basketProduct.getProduct().equals(currentProduct.getProduct())) 
-			{
-=======
 		for (BasketProduct basketProduct : basketContents) {
 			if (basketProduct.getProduct().equals(product)) {
->>>>>>> a8e64070a9feda76a3616c8e2d2fae18fcc89305
 				flag = false;
 				basketProduct.setQuantity(quantity + basketProduct.getQuantity());
 				break;
