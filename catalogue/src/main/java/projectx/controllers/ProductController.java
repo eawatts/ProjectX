@@ -28,6 +28,9 @@ public class ProductController implements Serializable {
 
 	@Inject
 	private CurrentProduct currentProduct;
+	
+	@Inject
+	private SubcategoryController subCategory;
 
 	/**
 	 * Will view a Product via the Product Id, via setting the Current Product
@@ -35,8 +38,8 @@ public class ProductController implements Serializable {
 	 * 
 	 * @param productId the Id of the Product to view.
 	 * @return the Product page.
-	 */
-	public String view(int productId) {
+	 */	
+	public String view(int productId){
 		currentProduct.setCurrentProduct(productService.getCurrentProductFromId(productId));
 		return "catalogue_product";
 	}
@@ -89,7 +92,7 @@ public class ProductController implements Serializable {
 
 	public String viewList(String subcat) {
 		subcategory = subcat;
+		subCategory.setName(subcat);
 		return "catalogue_productlist";
 	}
-
 }

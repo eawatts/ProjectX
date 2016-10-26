@@ -23,12 +23,7 @@
 							<h:graphicImage class="accord"
 								value="http://placehold.it/140x100" />
 							<h:commandButton class="accordion" value="#{cat.name}"
-								outcome="#{products.view(2)}">
-	
-								<h:commandLink class="product-slider-title"
-											value="#{slider_product.product.name}"
-											action="#{products.view(2)}">
-								</h:commandLink>
+								 action="#{products.viewList(cat.name)}">
 							</h:commandButton>
 							<div class="panel">
 							</div>
