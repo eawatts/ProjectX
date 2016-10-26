@@ -32,7 +32,6 @@ public class BasketController implements Serializable {
 	}
 
 	public void addProduct(Product product) {
-		System.out.println("** Adding Product: " + product.getName());
 		basketService.addProductToBasket(product, quantity);
 		quantity = 1;
 	}
