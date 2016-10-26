@@ -2,10 +2,10 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="/templates/catalogue_template.xhtml">
+	template="/templates/main_template.xhtml">
 
 	<ui:define name="custom-css">
-		<link rel="stylesheet" type="text/css" href="css/catalogue_login.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/login.css"></link>
 	</ui:define>
 
 	<ui:define name="title">Login</ui:define>
@@ -33,7 +33,7 @@
 						<h:commandButton class="button-green" action="#{login.login()}"
 							type="submit" value="Login"></h:commandButton>
 					</h:form>
-					<a href="catalogue_account_create.xhtml">
+					<a href="account_create.xhtml">
 						<button class="button-brown">Create Account</button>
 					</a>
 				</div>

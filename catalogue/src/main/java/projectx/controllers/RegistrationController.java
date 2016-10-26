@@ -42,7 +42,7 @@ public class RegistrationController {
 			user.setDateOfBirth(new Date(456263)); // This is a temporary fix as we do not have a DatePicker on the site.
 			
 			registrationService.registerUser(user, address, paymentDetails);
-			return "catalogue_index";
+			return "index";
 		}
 				
 		public User getUser() {
