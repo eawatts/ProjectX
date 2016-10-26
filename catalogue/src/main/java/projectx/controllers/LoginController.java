@@ -57,6 +57,11 @@ public class LoginController implements Serializable{
 		return "account_create";
 	}
 	
+	public String loginRedirectToCheckoutSummary(){
+		currentsession.setUrlRedirect("checkout_summary");
+		return "login";
+	}
+	
 	/**
 	 * Will check that the Username and Password are present, 
 	 * if a User is found to exist with the credentials. It will set it as the Current User.
@@ -86,6 +91,11 @@ public class LoginController implements Serializable{
 		username = null;
 		password = null;
 		error = null;
+		
+		if(currentsession.getUrlRedirect() != null){
+			return currentsession.getUrlRedirect();
+		}
+		
 		return "index";
 	}
 	

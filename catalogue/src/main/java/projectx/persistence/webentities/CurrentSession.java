@@ -17,6 +17,9 @@ public class CurrentSession implements Serializable {
 	private User user;
 	private Basket basket;
 	
+	// Used to store a String if wanting to redirect after an event (login for example).
+	private String urlRedirect;
+
 	@PostConstruct
 	private void setupCurrentSession(){
 		this.basket = new Basket();
@@ -48,5 +51,13 @@ public class CurrentSession implements Serializable {
 
 	public void logout() {
 		this.user = null;
+	}
+	
+	public String getUrlRedirect() {
+		return urlRedirect;
+	}
+
+	public void setUrlRedirect(String urlRedirect) {
+		this.urlRedirect = urlRedirect;
 	}
 }

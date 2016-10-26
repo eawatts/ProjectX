@@ -48,7 +48,7 @@
 											value="&#163;#{slider_product.product.priceToDisplay}"></h:outputText>
 									</div>
 									<h:commandButton class="button-green product-slider-atb"
-										action="#{basket.addProduct(slider_product.product)}"
+										action="#{current_session.basket.addSingleProductToBasket(slider_product.product)}"
 										value="Add to Basket"></h:commandButton>
 
 									<div>
@@ -113,7 +113,7 @@
 											value="&#163;#{slider_product.product.priceToDisplay}"></h:outputText>
 									</div>
 									<h:commandButton class="button-green product-slider-atb"
-										action="#{basket.addProduct(slider_product.product)}"
+										action="#{current_session.basket.addSingleProductToBasket(slider_product.product)}"
 										value="Add to Basket"></h:commandButton>
 									<div>
 										<ul class="product-slider-star-rating">

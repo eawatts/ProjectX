@@ -7,6 +7,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
+
+import org.hibernate.dialect.MySQL57InnoDBDialect;
+
 import projectx.persistence.entities.Address;
 import projectx.persistence.entities.Category;
 import projectx.persistence.entities.PaymentDetails;
@@ -115,16 +118,16 @@ public class OfflineDB {
 
 	private void setupPaymentDetails() {
 		paymentDetails = new ArrayList<PaymentDetails>();
-		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
-		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
-		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
-		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
-		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
-		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
-		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
-		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
-		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
-		paymentDetails.add(new PaymentDetails(1, "125685", "236595632"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Halifax Card"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Credit Card"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Debit Card"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Halifax Card"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Credit Card"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Halifax Card"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Debit Card"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Debit Card"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Halifax Card"));
+		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Credit Card"));
 	}
 
 	private void setupAddresses() {
@@ -142,7 +145,7 @@ public class OfflineDB {
 
 		users = new ArrayList<User>();
 		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "Admin", password,
-				UserLevel.ADMIN, null, null));
+				UserLevel.ADMIN, paymentDetails.get(0), addresses.get(4)));
 		users.add(new User(2, "Mr", "Dan", "Black", new Date(215455415), "jonny.black@email.com", "User2", password,
 				UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(2)));
 		users.add(new User(3, "Mr", "Ben", "Black", new Date(215455415), "jonny.black@email.com", "User3", password,

@@ -127,8 +127,14 @@
 							<h:outputLabel value="Sort Code: " />
 							<h:inputText id="sortCode"
 								value="#{registration.paymentDetails.sortCode}" />
+							<br /> <br />							
+							<div>
+								<h:message class="register-error" for="description" />
+							</div>
+							<h:outputLabel value="Payment Detail Nickname: " />
+							<h:inputText id="description"
+								value="#{registration.paymentDetails.description}" />
 							<br /> <br />
-
 						</div>
 						<hr />
 						<h:commandButton class="button-green" value="Submit"

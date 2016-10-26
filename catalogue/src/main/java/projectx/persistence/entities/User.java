@@ -169,6 +169,13 @@ public class User {
 	public List<Address> getAddresses() {
 		return addresses;
 	}
+	
+	public Address getFirstAddress(){
+		if(addresses == null || addresses.size() < 1){
+			return null;
+		}
+		return addresses.get(0);	
+	}
 
 	public void setAddresses(List<Address> addresses) {
 		this.addresses = addresses;

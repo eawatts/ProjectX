@@ -34,16 +34,23 @@ public class PaymentDetails {
 	@Column(name = "sort_code", length = 8)
 	@Size(min = 6, max = 8, message = "Sortcode must be between 6 and 8 digits long.")
 	private String sortCode;
+	
+	@Column(name = "description", length = 45)
+	@Size(min = 2, max = 45, message = "Description must be between 2 and 45 characters long.")
+	private String description;
+	
 
 	public PaymentDetails() {
 	}
 
-	public PaymentDetails(Integer id, String accountNumber, String sortCode) {
+	public PaymentDetails(Integer id, String accountNumber, String sortCode, String description) {
 		this.id = id;
 		this.accountNumber = accountNumber;
 		this.sortCode = sortCode;
+		this.description = description;
 	}
 
+	
 	public Integer getId() {
 		return id;
 	}
@@ -79,4 +86,12 @@ public class PaymentDetails {
 	public void setSort_code(String sort_code) {
 		this.sortCode = sort_code;
 	}
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 }

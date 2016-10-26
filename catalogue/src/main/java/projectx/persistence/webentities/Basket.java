@@ -16,7 +16,11 @@ public class Basket {
 	public void setBasketContents(List<BasketProduct> basketContents) {
 		this.basketContents = basketContents;
 	}
-
+	
+	public void addSingleProductToBasket(Product product){
+		addProductToBasket(product, 1);
+	}
+	
 	public void addProductToBasket(Product product, int quantity) {
 		if (basketContents == null)
 			basketContents = initialiseBasketContents();
@@ -52,7 +56,7 @@ public class Basket {
 		}
 	}
 
-	public double totalBasketPrice() {
+	public double getTotalPrice() {
 		double totalPrice = 0.00;
 		if (basketContents == null) {
 			return totalPrice;
@@ -62,5 +66,16 @@ public class Basket {
 			}
 			return Math.round(totalPrice * 100.0) / 100.0;
 		}
+	}
+	
+	public List<BasketProduct> getContents() {
+		return basketContents;
+	}
+	
+	public int getCount() {
+		if (basketContents == null) {
+			return 0;
+		}
+		return basketContents.size();
 	}
 }
