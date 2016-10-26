@@ -1,0 +1,41 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="ims_template.xhtml">
+	<meta charset="utf-8" />
+	<ui:define name="page-stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+	</ui:define>
+	<ui:define name="title">Product</ui:define>
+	<ui:define name="maincontent">
+	<div class="main-content">
+			<div class="breadcrumbs">
+			<a href="ims_homepage.xhtml">IMS</a> > <a href="ims_products.xhtml">Product List</a> <a href="ims_homepage.xhtml">Home</a> > <h:outputText value="#{product.name}"></h:outputText>
+			</div>
+			<div class="row">
+			<h1>
+				<h:outputText styleClass="titleText" value="#{product.name}">
+				<div class="regular slider">
+					<ui:repeat var="img" value="#{selectedProduct.product.images}">
+					<h:form>
+					<div class="slider-product-image">
+					<img src="img#{img.path}" alt=""/>
+					</div>
+					<div class="slider-button">
+					<h:commandButton action="#{selectedProduct.product.setImgAsDefault"></h:commandButton>
+					
+					</div>
+					</h:form>
+					</ui:repeat>
+					<h:commandButton action="#{selectedProduct.product.addImg}">Add Image</h:commandButton>
+					<br />
+					
+				
+				
+				</div>
+			</h1>
+			
+			</div>
+			</div>
+	</ui:composition>

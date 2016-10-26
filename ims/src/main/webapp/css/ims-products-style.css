@@ -1,3 +1,13 @@
+:root
+{
+	--raisin-black: #272727;
+    --floral-white: #f9fbf2;
+    --orange-yellow: #fed766;
+    --british-racing-green: #004425;
+    --sweet-sweet-brown: #a53f2b;
+    --inline-width: 40%;
+}
+
 .styled-select select {
   background: transparent;
   width: 240px;
@@ -8,13 +18,22 @@
   border-radius: 0;
   height: 34px;
 }
-.header-row{
-  margin: auto;
-  display:block;
-  width: auto;
-  text-align: left;
-  height: 100px;
+.header-row {
+	font-size:130%;
+	font-weight: bold;
+	text-align: justify;
+	background-color: var(--british-racing-green);
+	color: var(--floral-white);
+	border-style: solid;
+	border-width: 2px;
+	border-color: var(--sweet-sweet-brown);
+	margin: auto;
+	display: block;
+	width: auto;
+	text-align: centre;
+	height: 35px;
 }
+
 .product-row{
   margin: auto;
   width: auto;
