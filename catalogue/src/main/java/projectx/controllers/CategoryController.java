@@ -35,7 +35,6 @@ public class CategoryController implements Serializable{
 		}
 		
 		public Category findById(){
-			System.out.println(subcategoryid);
 			return categoryService.findById(subcategoryid);
 		}
 		public String viewSubcatagory(int id){

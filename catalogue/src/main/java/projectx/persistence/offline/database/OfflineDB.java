@@ -35,7 +35,7 @@ public class OfflineDB {
 	private List<SubCategory> subcategories4;
 	private List<SubCategory> subcategories5;
 	private List<SubCategory> subcategories6;
-	
+
 	private ArrayList<Product> classicgnomes;
 	private ArrayList<Product> secatures;
 	private ArrayList<Product> feednweed;
@@ -79,7 +79,7 @@ public class OfflineDB {
 		setupReviews();
 		setupCategoriesProducts();
 		setupCategories();
-		
+
 	}
 
 	private void setupProducts() {
@@ -141,21 +141,33 @@ public class OfflineDB {
 		String password = "test";
 
 		users = new ArrayList<User>();
-		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "Admin", password, UserLevel.ADMIN, null, null));
-		users.add(new User(2, "Mr", "Dan", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(2)));
-		users.add(new User(3, "Mr", "Ben", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(3)));
-		users.add(new User(4, "Mr", "Chris", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(4), addresses.get(4)));
-		users.add(new User(5, "Mr", "Alan", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(5), addresses.get(1)));
-		users.add(new User(6, "Mrs", "Sally", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(6), addresses.get(2)));
-		users.add(new User(7, "Mrs", "Dorean", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(0)));
-		users.add(new User(8, "Mrs", "Jenny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(6), addresses.get(5)));
-		users.add(new User(9, "Mrs", "Jolene", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,	UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(4)));
-		users.add(new User(10, "Miss", "Karen", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(2)));
-		users.add(new User(11, "Miss", "Kate", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(1)));
-		users.add(new User(12, "Mr", "Baz", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, paymentDetails.get(1), addresses.get(0)));
-		users.add(new User(13, "Mrs", "Greath", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password, UserLevel.CUSTOMER, paymentDetails.get(1), addresses.get(3)));
+		users.add(new User(1, "Mr", "Jonny", "Black", new Date(215455415), "jonny.black@email.com", "Admin", password,
+				UserLevel.ADMIN, null, null));
+		users.add(new User(2, "Mr", "Dan", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+				UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(2)));
+		users.add(new User(3, "Mr", "Ben", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+				UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(3)));
+		users.add(new User(4, "Mr", "Chris", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+				UserLevel.CUSTOMER, paymentDetails.get(4), addresses.get(4)));
+		users.add(new User(5, "Mr", "Alan", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+				UserLevel.CUSTOMER, paymentDetails.get(5), addresses.get(1)));
+		users.add(new User(6, "Mrs", "Sally", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+				UserLevel.CUSTOMER, paymentDetails.get(6), addresses.get(2)));
+		users.add(new User(7, "Mrs", "Dorean", "Black", new Date(215455415), "jonny.black@email.com", "JBlack",
+				password, UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(0)));
+		users.add(new User(8, "Mrs", "Jenny", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+				UserLevel.CUSTOMER, paymentDetails.get(6), addresses.get(5)));
+		users.add(new User(9, "Mrs", "Jolene", "Black", new Date(215455415), "jonny.black@email.com", "JBlack",
+				password, UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(4)));
+		users.add(new User(10, "Miss", "Karen", "Black", new Date(215455415), "jonny.black@email.com", "JBlack",
+				password, UserLevel.CUSTOMER, paymentDetails.get(2), addresses.get(2)));
+		users.add(new User(11, "Miss", "Kate", "Black", new Date(215455415), "jonny.black@email.com", "JBlack",
+				password, UserLevel.CUSTOMER, paymentDetails.get(3), addresses.get(1)));
+		users.add(new User(12, "Mr", "Baz", "Black", new Date(215455415), "jonny.black@email.com", "JBlack", password,
+				UserLevel.CUSTOMER, paymentDetails.get(1), addresses.get(0)));
+		users.add(new User(13, "Mrs", "Greath", "Black", new Date(215455415), "jonny.black@email.com", "JBlack",
+				password, UserLevel.CUSTOMER, paymentDetails.get(1), addresses.get(3)));
 	}
-
 
 	private void setupReviews() {
 		reviews = new ArrayList<Review>();
@@ -178,102 +190,100 @@ public class OfflineDB {
 		reviews.add(new Review(17, 4.6f, "Perfect proportions.", users.get(1), products.get(1)));
 		reviews.add(new Review(18, 0.5f, "Tripping hazard.", users.get(10), products.get(1)));
 	}
-	
-	private void setupCategoriesProducts(){
+
+	private void setupCategoriesProducts() {
 		classicgnomes = new ArrayList<Product>();
-			classicgnomes.add(products.get(0));
-			classicgnomes.add(products.get(1));
-			classicgnomes.add(products.get(2));
-			classicgnomes.add(products.get(3));
-			classicgnomes.add(products.get(4));
-			classicgnomes.add(products.get(5));
-			classicgnomes.add(products.get(6));
-			classicgnomes.add(products.get(7));
-			classicgnomes.add(products.get(8));
-			classicgnomes.add(products.get(9));
-			classicgnomes.add(products.get(10));
-			classicgnomes.add(products.get(11));
-			classicgnomes.add(products.get(12));
-			
-		 noveltygnomes = new ArrayList<Product>();
-		 themedgnomes = new ArrayList<Product>();
-		 gnomecare = new ArrayList<Product>();
-		 lighting = new ArrayList<Product>();
-		 heaters = new ArrayList<Product>();
-		 hottubs = new ArrayList<Product>();
-		 bbqs = new ArrayList<Product>();
-		 misc = new ArrayList<Product>();
-		 animals = new ArrayList<Product>();
-		 windchimes = new ArrayList<Product>();
-		 weathervanes = new ArrayList<Product>();
-		 pots = new ArrayList<Product>();
-		 rakes = new ArrayList<Product>();
-		 hoes = new ArrayList<Product>();
-		 spadesnforks = new ArrayList<Product>();
-		 trowels = new ArrayList<Product>();
-		 pumps = new ArrayList<Product>();
-		 ponds = new ArrayList<Product>();
-		 pipes = new ArrayList<Product>();
-		 fountains = new ArrayList<Product>();
-		 tablesnchairs = new ArrayList<Product>();
-		 benches = new ArrayList<Product>();
-		 hammocks = new ArrayList<Product>();
-		 swinging = new ArrayList<Product>();
-		 birdhouses = new ArrayList<Product>();
-		 mowers = new ArrayList<Product>();
-		 strimmers = new ArrayList<Product>();
-		 feednweed = new ArrayList<Product>();
-		 secatures = new ArrayList<Product>();
+		classicgnomes.add(products.get(0));
+		classicgnomes.add(products.get(1));
+		classicgnomes.add(products.get(2));
+		classicgnomes.add(products.get(3));
+		classicgnomes.add(products.get(4));
+		classicgnomes.add(products.get(5));
+		classicgnomes.add(products.get(6));
+		classicgnomes.add(products.get(7));
+		classicgnomes.add(products.get(8));
+		classicgnomes.add(products.get(9));
+		classicgnomes.add(products.get(10));
+		classicgnomes.add(products.get(11));
+		classicgnomes.add(products.get(12));
+
+		noveltygnomes = new ArrayList<Product>();
+		themedgnomes = new ArrayList<Product>();
+		gnomecare = new ArrayList<Product>();
+		lighting = new ArrayList<Product>();
+		heaters = new ArrayList<Product>();
+		hottubs = new ArrayList<Product>();
+		bbqs = new ArrayList<Product>();
+		misc = new ArrayList<Product>();
+		animals = new ArrayList<Product>();
+		windchimes = new ArrayList<Product>();
+		weathervanes = new ArrayList<Product>();
+		pots = new ArrayList<Product>();
+		rakes = new ArrayList<Product>();
+		hoes = new ArrayList<Product>();
+		spadesnforks = new ArrayList<Product>();
+		trowels = new ArrayList<Product>();
+		pumps = new ArrayList<Product>();
+		ponds = new ArrayList<Product>();
+		pipes = new ArrayList<Product>();
+		fountains = new ArrayList<Product>();
+		tablesnchairs = new ArrayList<Product>();
+		benches = new ArrayList<Product>();
+		hammocks = new ArrayList<Product>();
+		swinging = new ArrayList<Product>();
+		birdhouses = new ArrayList<Product>();
+		mowers = new ArrayList<Product>();
+		strimmers = new ArrayList<Product>();
+		feednweed = new ArrayList<Product>();
+		secatures = new ArrayList<Product>();
 	}
+
 	private void setupCategories() {
 		categories = new ArrayList<Category>();
 
-		
-		
-		
 		Category one = new Category(1, "Gnomes", subcategories);
 		one.addSubCategory(new SubCategory(1, "Classic", one, classicgnomes));
 		one.addSubCategory(new SubCategory(2, "Novelty", one, noveltygnomes));
 		one.addSubCategory(new SubCategory(3, "Themed", one, themedgnomes));
-		one.addSubCategory(new SubCategory(4, "Gnome Care", one,gnomecare));
+		one.addSubCategory(new SubCategory(4, "Gnome Care", one, gnomecare));
 
 		Category two = new Category(2, "Electrical", subcategories1);
-		two.addSubCategory(new SubCategory(5, "Lighting", two,lighting));
-		two.addSubCategory(new SubCategory(6, "Heaters", two,heaters));
-		two.addSubCategory(new SubCategory(7, "Hot Tubs", two,hottubs));
-		two.addSubCategory(new SubCategory(8, "BBQs", two,bbqs));
-		two.addSubCategory(new SubCategory(9, "Misc", two,misc));
+		two.addSubCategory(new SubCategory(5, "Lighting", two, lighting));
+		two.addSubCategory(new SubCategory(6, "Heaters", two, heaters));
+		two.addSubCategory(new SubCategory(7, "Hot Tubs", two, hottubs));
+		two.addSubCategory(new SubCategory(8, "BBQs", two, bbqs));
+		two.addSubCategory(new SubCategory(9, "Misc", two, misc));
 
 		Category three = new Category(3, "Oranaments", subcategories2);
-		three.addSubCategory(new SubCategory(10, "Animal", three,animals));
-		three.addSubCategory(new SubCategory(11, "Wind Chimes", three,windchimes));
-		three.addSubCategory(new SubCategory(12, "Weather Vanes", three,weathervanes));
-		three.addSubCategory(new SubCategory(13, "Pots", three,pots));
+		three.addSubCategory(new SubCategory(10, "Animal", three, animals));
+		three.addSubCategory(new SubCategory(11, "Wind Chimes", three, windchimes));
+		three.addSubCategory(new SubCategory(12, "Weather Vanes", three, weathervanes));
+		three.addSubCategory(new SubCategory(13, "Pots", three, pots));
 
 		Category four = new Category(4, "Rakes and Hoes", subcategories3);
-		four.addSubCategory(new SubCategory(14, "Rakes", four,rakes));
-		four.addSubCategory(new SubCategory(15, "Hoes", four,hoes));
-		four.addSubCategory(new SubCategory(16, "Spades and Forks", four,spadesnforks));
-		four.addSubCategory(new SubCategory(17, "Trowels", four,trowels));
+		four.addSubCategory(new SubCategory(14, "Rakes", four, rakes));
+		four.addSubCategory(new SubCategory(15, "Hoes", four, hoes));
+		four.addSubCategory(new SubCategory(16, "Spades and Forks", four, spadesnforks));
+		four.addSubCategory(new SubCategory(17, "Trowels", four, trowels));
 
 		Category five = new Category(5, "Water Features", subcategories4);
-		five.addSubCategory(new SubCategory(18, "Pumps", five,pumps));
-		five.addSubCategory(new SubCategory(19, "Ponds", five,ponds));
-		five.addSubCategory(new SubCategory(19, "Pipes", five,pipes));
-		five.addSubCategory(new SubCategory(19, "Fountains", five,fountains));
+		five.addSubCategory(new SubCategory(18, "Pumps", five, pumps));
+		five.addSubCategory(new SubCategory(19, "Ponds", five, ponds));
+		five.addSubCategory(new SubCategory(19, "Pipes", five, pipes));
+		five.addSubCategory(new SubCategory(19, "Fountains", five, fountains));
 
 		Category six = new Category(6, "Furniture", subcategories5);
-		six.addSubCategory(new SubCategory(20, "Tables and Chairs", six,tablesnchairs));
-		six.addSubCategory(new SubCategory(21, "Benches", six,benches));
-		six.addSubCategory(new SubCategory(22, "Hammocks", six,hammocks));
-		six.addSubCategory(new SubCategory(23, "Swinging", six,swinging));
-		six.addSubCategory(new SubCategory(24, "Bird Houses", six,birdhouses));
+		six.addSubCategory(new SubCategory(20, "Tables and Chairs", six, tablesnchairs));
+		six.addSubCategory(new SubCategory(21, "Benches", six, benches));
+		six.addSubCategory(new SubCategory(22, "Hammocks", six, hammocks));
+		six.addSubCategory(new SubCategory(23, "Swinging", six, swinging));
+		six.addSubCategory(new SubCategory(24, "Bird Houses", six, birdhouses));
 
 		Category seven = new Category(7, "Maintenance", subcategories6);
-		seven.addSubCategory(new SubCategory(25, "Mowers", seven,mowers));
-		seven.addSubCategory(new SubCategory(26, "Strimmers", seven,strimmers));
-		seven.addSubCategory(new SubCategory(27, "Feed and Weed", seven,feednweed));
-		seven.addSubCategory(new SubCategory(28, "Secateurs", seven,secatures));
+		seven.addSubCategory(new SubCategory(25, "Mowers", seven, mowers));
+		seven.addSubCategory(new SubCategory(26, "Strimmers", seven, strimmers));
+		seven.addSubCategory(new SubCategory(27, "Feed and Weed", seven, feednweed));
+		seven.addSubCategory(new SubCategory(28, "Secateurs", seven, secatures));
 
 		categories.add(one);
 		categories.add(two);
@@ -415,14 +425,14 @@ public class OfflineDB {
 	public void userAdd(User user) {
 		users.add(user);
 	}
-	
-	public User login(String username, String pass){
-		for(User user : users){
-			if(user.getUsername().equals(username) && user.getPassword().equals(pass)){
+
+	public User login(String username, String pass) {
+		for (User user : users) {
+			if (user.getUsername().equals(username) && user.getPassword().equals(pass)) {
 				return user;
 			}
 		}
-			return null;
+		return null;
 	}
 
 	// ----- END USERS -----
@@ -476,7 +486,6 @@ public class OfflineDB {
 		return subcategoryList;
 	}
 
-	
 	/**
 	 * @param category
 	 *            name
@@ -504,7 +513,7 @@ public class OfflineDB {
 	}
 
 	public ArrayList<Product> getSubcatsProducts(String subcategory) {
-		switch(subcategory){
+		switch (subcategory) {
 		case "Classic":
 			return classicgnomes;
 		case "Novelty":
@@ -516,6 +525,5 @@ public class OfflineDB {
 		}
 		return null;
 	}
-
 
 }

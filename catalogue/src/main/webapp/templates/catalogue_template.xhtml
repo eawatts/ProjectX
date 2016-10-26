@@ -69,22 +69,19 @@
 
 								</ul>
 								<div class="mobile-nav-menu">
+
 									<ul class="mobile-nav-list">
-										<li><a href="catalogue_gnomes.html"
-											class="mobile-dropdown-button">Gnomes</a></li>
-										<li><a href="catalogue_electrical.html"
-											class="mobile-dropdown-button">Electrical</a></li>
-										<li><a href="catalogue_ornaments.html"
-											class="mobile-dropdown-button">Ornaments</a></li>
-										<li><a href="catalogue_rakesAndHoes.html"
-											class="mobile-dropdown-button">Rakes and Hoes</a></li>
-										<li><a href="catalogue_waterFeatures.html"
-											class="mobile-dropdown-button">Water Features</a></li>
-										<li><a href="catalogue_furniture.html"
-											class="mobile-dropdown-button">Furniture</a></li>
-										<li><a href="catalogue_Maintenance.html"
-											class="mobile-dropdown-button">Maintenance</a></li>
+										<ui:repeat var="cat" value="#{category.categories}">
+											<h:form>
+												<li><h:commandLink styleClass="mobile-dropdown-button"
+														value="#{cat.name}"
+														action="#{category.viewSubcatagory(cat.categoryID)}"></h:commandLink>
+												</li>
+											</h:form>
+										</ui:repeat>
 									</ul>
+
+
 								</div>
 							</div>
 
@@ -149,98 +146,27 @@
 								<li class="dropdown-category"><a
 									href="catalogue_index.xhtml" class="dropdown-button active">Home</a>
 								</li>
-								<li class="dropdown-category"><a
-									href="catalogue_subcategories.xhtml" class="dropdown-button">Gnomes</a>
-									<div class="dropdown-content">
-										<a href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Seasonal</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Themed</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Novelty</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Classic</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Gnome Care</a>
-									</div></li>
-								<li class="dropdown-category"><a
-									href="catalogue_subcategories.xhtml" class="dropdown-button">Electrical</a>
-									<div class="dropdown-content">
-										<a href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Lighting</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Heaters</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Hot Tubs</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">BBQs</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Misc</a>
-									</div></li>
-								<li class="dropdown-category"><a
-									href="catalogue_subcategories.xhtml" class="dropdown-button">Ornaments</a>
-									<div class="dropdown-content">
-										<a href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Animal</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Wind Chimes</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Weather Vanes</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Pots</a>
-									</div></li>
-								<li class="dropdown-category"><a
-									href="catalogue_subcategories.xhtml" class="dropdown-button">Rakes
-										and Hoes</a>
-									<div class="dropdown-content">
-										<a href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Rakes</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Hoes</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Spades and Forks</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Trowels</a>
-									</div></li>
-								<li class="dropdown-category"><a
-									href="catalogue_subcategories.xhtml" class="dropdown-button">Water
-										Features</a>
-									<div class="dropdown-content">
-										<a href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Ponds</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Pumps</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Pipes</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Fountains</a>
-									</div></li>
-								<li class="dropdown-category"><a
-									href="catalogue_subcategories.xhtml" class="dropdown-button">Furniture</a>
-									<div class="dropdown-content">
-										<a href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Tables and Chairs</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Benches</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Hammocks</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Swinging</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Bird Houses</a>
-									</div></li>
-								<li class="dropdown-category"><a
-									href="catalogue_subcategories.xhtml" class="dropdown-button">Maintenance</a>
-									<div class="dropdown-content">
-										<a href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Mowers</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Strimmers</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Feed and Weed</a> <a
-											href="catalogue_productlist.xhtml"
-											class="dropdown-sub-button">Secateurs</a>
-									</div></li>
+								
+								<ui:repeat var="cat" value="#{category.categories}">
+								<li class="dropdown-category">
+									<h:form>
+										<h:commandLink styleClass="dropdown-button"
+												value="#{cat.name}"
+												action="#{category.viewSubcatagory(cat.categoryID)}"></h:commandLink>
+											<div class="dropdown-content">
+												<ui:repeat var="subCat"
+													value="#{cat.subCategories}">
+													<h:commandLink styleClass="dropdown-sub-button"
+														value="#{subCat.name}"
+														action="#{products.viewList(subCat.name)}"></h:commandLink>
+												</ui:repeat>
+
+
+											</div>
+											</h:form>
+											</li>
+									
+								</ui:repeat>
 							</ul>
 						</div>
 					</nav>
