@@ -2,7 +2,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="/templates/catalogue_template.xhtml">
+	template="/templates/main_template.xhtml">
 
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/product.css" />
@@ -20,11 +20,11 @@
 		<div class="main-content">
 			<div id="breadcrumbs">
 				<ul class="breadcrumb">
-					<li><h:link outcome="catalogue_index">Home</h:link></li>
+					<li><h:link outcome="index">Home</h:link></li>
 					<li><a
-						href="http://localhost:8080/catalogue/catalogue_categories2.xhtml">Catagories</a></li>
+						href="http://localhost:8080/catalogue/categories2.xhtml">Catagories</a></li>
 					<li><a
-						href="http://localhost:8080/catalogue/catalogue_subcategories.xhtml">Gnomes</a></li>
+						href="http://localhost:8080/catalogue/subcategories.xhtml">Gnomes</a></li>
 					<li><a href="#">Classic</a></li>
 					<li><a href="#"><h:outputText
 								value="#{current_product.product.name}" /></a></li>
@@ -186,7 +186,7 @@
 
 	<ui:define name="custom-scripts">
 		<script type="text/javaScript" src="libraries/slider/slick.min.js"></script>
-		<script type="text/javaScript" src="js/catalogue_product.js"></script>
+		<script type="text/javaScript" src="js/product.js"></script>
 	</ui:define>
 
 </ui:composition>

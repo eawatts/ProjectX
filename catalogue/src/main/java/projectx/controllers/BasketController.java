@@ -41,7 +41,7 @@ public class BasketController implements Serializable {
 	}
 
 	public String view() {
-		return "catalogue_basket";
+		return "basket";
 	}
 
 	public List<BasketProduct> getBasket() {

@@ -2,10 +2,10 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="templates/catalogue_template.xhtml">
+	template="templates/main_template.xhtml">
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css"
-			href="css/catalogue_categories.css"></link>
+			href="css/categories.css"></link>
 	</ui:define>
 	<meta charset="ISO-8859-1" />
 	<ui:define name="title">Categories</ui:define>
@@ -17,7 +17,7 @@
 				<ui:repeat var="cat" value="#{category.categories}">
 					<div class="col-tab-6 col-desk-4">
 						<div class="box">
-							<a href="catalogue_subcategories.xhtml"><h:graphicImage class="accord"
+							<a href="subcategories.xhtml"><h:graphicImage class="accord"
 								value="http://placehold.it/140x100"/> </a>
 							<h:commandButton class="accordion" value="#{cat.name}"
 								outcome="cat">
@@ -25,7 +25,7 @@
 							<div class="panel">
 								<p>
 									<ui:repeat var="subCat" value="#{cat.subCategories}">
-										<h:outputLink value="#{subCat.name}" outcome="subCat" target="catalogue_subCat">
+										<h:outputLink value="#{subCat.name}" outcome="subCat" target="subCat">
 										<h:outputText value="#{subCat.name}"/> 
 										</h:outputLink>
 										<br></br>
@@ -37,7 +37,7 @@
 				</ui:repeat>
 			</div>
 		</div>
-		<script type="text/javascript" src="js/catalogue_categories.js">
+		<script type="text/javascript" src="js/categories.js">
 		</script>
 	</ui:define>
 </ui:composition>

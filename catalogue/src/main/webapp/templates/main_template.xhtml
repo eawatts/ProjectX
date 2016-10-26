@@ -31,7 +31,7 @@
 							<div id="header-mobile">
 								<ul class="header-mobile-list">
 									<li class="header-mobile-item"><a
-										href="catalogue_index.xhtml"> <h:graphicImage
+										href="index.xhtml"> <h:graphicImage
 												class="nav-mobile-logo" value="img/site/nb_logo.png"
 												alt="NB Gardens Logo"></h:graphicImage></a></li>
 									<li class="header-mobile-item"><h:inputText
@@ -66,10 +66,9 @@
 											</button>
 										</div>
 									</li>
-
 								</ul>
-								<div class="mobile-nav-menu">
 
+								<div class="mobile-nav-menu">
 									<ul class="mobile-nav-list">
 										<ui:repeat var="cat" value="#{category.categories}">
 											<h:form>
@@ -80,15 +79,13 @@
 											</h:form>
 										</ui:repeat>
 									</ul>
-
-
 								</div>
 							</div>
 
 							<div id="header-desktop">
 								<div class="row">
 									<div class="col-tab-3 col-desk-3 nav-banner-desktop-left">
-										<a href="catalogue_index.xhtml"> <h:graphicImage
+										<a href="index.xhtml"> <h:graphicImage
 												class="nav-desktop-logo" value="img/site/nb_logo.png"
 												alt="NB Gardens Logo"></h:graphicImage></a>
 									</div>
@@ -102,7 +99,7 @@
 										</button>
 									</div>
 									<div class="col-tab-3 col-desk-3 nav-banner-desktop-right">
-										<a href="catalogue_basket.xhtml">
+										<a href="basket.xhtml">
 											<button type="button"
 												class="button-green-inverse nav-banner-desktop-right-button">
 												<h:outputText value="(#{basket.basketCount})" />
@@ -111,7 +108,7 @@
 										</a>
 										<h:panelGroup layout="block"
 											rendered="#{current_session.loggedIn eq true}">
-											<a href="catalogue_account.xhtml">
+											<a href="account.xhtml">
 												<button
 													class="button-green-inverse nav-banner-desktop-right-button">
 													<h:outputText value="#{current_session.userFirstName}" />
@@ -120,7 +117,7 @@
 										</h:panelGroup>
 										<h:panelGroup layout="block"
 											rendered="#{current_session.loggedIn ne true}">
-											<a href="catalogue_login.xhtml">
+											<a href="login.xhtml">
 												<button
 													class="button-green-inverse nav-banner-desktop-right-button">
 													<h:outputText value="Login" />
@@ -144,9 +141,8 @@
 						<div id="nav-desktop">
 							<ul class="dropdown-all-buttons">
 								<li class="dropdown-category"><a
-									href="catalogue_index.xhtml" class="dropdown-button active">Home</a>
+									href="index.xhtml" class="dropdown-button active">Home</a>
 								</li>
-
 								<ui:repeat var="cat" value="#{category.categories}">
 									<li class="dropdown-category"><h:form>
 											<h:commandLink styleClass="dropdown-button"
@@ -158,11 +154,8 @@
 														value="#{subCat.name}"
 														action="#{products.viewList(subCat.name)}"></h:commandLink>
 												</ui:repeat>
-
-
 											</div>
 										</h:form></li>
-
 								</ui:repeat>
 							</ul>
 						</div>
@@ -204,29 +197,23 @@
 				<hr class="footer-separator" />
 				<div class="row">
 					<div class="col-tab-12 col-desk-12">
-
 						<ul class="footer-sitemap-list">
 							<ui:repeat var="cat" value="#{category.categories}">
-							
-								
-									<li class="footer-sitemap-category">
-									<h:form>
-									<h:commandLink
-											styleClass="footer-sitemap-category-header"
+								<li class="footer-sitemap-category"><h:form>
+										<h:commandLink styleClass="footer-sitemap-category-header"
 											value="#{cat.name}"
 											action="#{category.viewSubcatagory(cat.categoryID)}">
-									</h:commandLink>
+										</h:commandLink>
 									</h:form>
-										<div class="footer-sitemap-sub-category-list">
-											<ui:repeat var="subCat" value="#{cat.subCategories}">
+									<div class="footer-sitemap-sub-category-list">
+										<ui:repeat var="subCat" value="#{cat.subCategories}">
 											<h:form>
 												<h:commandLink styleClass="footer-sitemap-sub-category"
 													value="#{subCat.name}"
 													action="#{products.viewList(subCat.name)}"></h:commandLink>
 											</h:form>
-											</ui:repeat>
-										</div></li>
-								
+										</ui:repeat>
+									</div></li>
 							</ui:repeat>
 						</ul>
 					</div>
@@ -235,7 +222,7 @@
 
 			<!-- Javascript -->
 			<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
-			<script type="text/javaScript" src="js/catalogue_template.js"></script>
+			<script type="text/javaScript" src="js/template.js"></script>
 			<ui:insert name="custom-scripts" />
 		</body>
 	</f:view>

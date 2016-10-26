@@ -54,7 +54,7 @@ public class LoginController implements Serializable{
 	}
 
 	public String createUser(){
-		return "catalogue_account_create";
+		return "account_create";
 	}
 	
 	/**
@@ -87,7 +87,7 @@ public class LoginController implements Serializable{
 		username = null;
 		password = null;
 		error = null;
-		return "catalogue_index";
+		return "index";
 	}
 	
 	/**
@@ -99,6 +99,6 @@ public class LoginController implements Serializable{
 		this.password = null;
 		this.error = null;
 		currentsession.logout();
-		return "catalogue_index";
+		return "index";
 	}
 }
