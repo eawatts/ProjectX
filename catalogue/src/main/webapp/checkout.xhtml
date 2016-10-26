@@ -1,0 +1,104 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/catalogue_template.xhtml">
+
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/checkout.css"></link>
+	</ui:define>
+
+	<ui:define name="title">Your Order</ui:define>
+
+	<ui:define name="main-content">
+		<div class="checkout-title">Check your order</div>
+
+		<div class="row">
+			<div class="col-tab-12 col-desk-12"></div>
+			Place your order with the order button.
+		</div>
+		<div class="row">
+			<div class="col-tab-8 col-desk-8 order-box">
+				<div class="checkout-box-left">
+					<div class="row">
+						<div class="col-tab-4 col-desk-4">
+							Address <br />
+							<h:outputText value="TODO"></h:outputText>
+							<h:form>
+								<h:commandLink value="Change"></h:commandLink>
+							</h:form>
+						</div>
+						<div class="col-tab-4 col-desk-4">
+							Billing Info <br />
+							<h:outputText value="TODO"></h:outputText>
+							<h:form>
+								<h:commandLink value="Change"></h:commandLink>
+							</h:form>
+						</div>
+						<div class="col-tab-4 col-desk-4">
+							Estimated Delivery <br />
+							<h:outputText value="TODO"></h:outputText>
+						</div>
+					</div>				
+					<hr/>
+					<br />
+					<div class="row">
+						<div class="col-tab-12 col-desk-12">
+							<ui:repeat var="basket_product" value="#{basket.basket}">
+								<div class="row">
+									<div class="col-tab-2 col-desk-2">
+										<h:graphicImage class="basket-image"
+											value="img#{basket_product.product.productImageFilepath}" />
+									</div>
+									<div class="col-tab-3 col-desk-3">
+										<h:panelGroup renedered="#{basket.basket != null}">
+											<h:outputText styleClass="basket-row"
+												value="#{basket_product.product.name}" />
+										</h:panelGroup>
+									</div>
+									<div class="col-tab-2 col-desk-2">
+										<h:outputText styleClass="basket-row"
+											value="#{basket_product.quantity}" /> item/items
+									</div>
+									<div class="col-tab-3 col-desk-3">
+										<h:outputText styleClass="basket-row"
+											value="&#163;#{basket_product.product.priceToDisplay}" /> each
+									</div>
+									<div class="col-tab-2 col-desk-2">
+
+										<h:form>
+											<h:commandButton class="button-brown" value="Delete"
+												action="#{basket.removeProduct(basket_product.product.id)}" />
+										</h:form>
+
+									</div>
+								</div>
+								<hr />
+							</ui:repeat>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-tab-4 col-desk-4">
+				<div class="checkout-box">
+					<div class="row">
+						<div class="col-tab-12 col-desk-12">
+							<h:commandButton styleClass="button-brown order-button"
+								value="Place Order"></h:commandButton>
+						</div>
+					</div>
+					<br />
+					<div class="row">
+						<div class="col-tab-12 col-desk-12">Order Summary</div>
+					</div>
+					<div class="row">
+						Total Price:
+						<h:outputText value="&#163;#{basket.totalBasketPrice}"></h:outputText>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</ui:define>
+</ui:composition>
