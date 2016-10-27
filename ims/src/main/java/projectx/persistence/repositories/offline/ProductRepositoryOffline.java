@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
+import javax.faces.model.DataModel;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Product;
@@ -52,6 +53,11 @@ public class ProductRepositoryOffline implements ProductRepository {
 	public Product findByProductName(String name) 
 	{
 		return initialData.findProductByName(name);
+	}
+
+	@Override
+	public List<Product> getLowStockProducts() {
+		return initialData.getLowStockProducts();
 	}
 
 }

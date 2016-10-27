@@ -1,12 +1,15 @@
 package projectx.controllers;
-import projectx.persistence.entities.*;
-import projectx.services.PurchaseOrderSerivce;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.faces.bean.SessionScoped;
-import javax.inject.*;
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import projectx.persistence.entities.PurchaseOrder;
+import projectx.services.PurchaseOrderSerivce;
+
 
 
 

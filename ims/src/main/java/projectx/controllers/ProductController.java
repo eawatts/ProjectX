@@ -61,18 +61,8 @@ public class ProductController implements Serializable
 		return productDataModel;
 	}
 	
-	public List<Supplier> getSupplier(int productId)
-	{
-		return selectedProduct.getSelectedProduct().getSupplierList(productId);
+	public List<Product> getLowStockProducts(){
+		return productService.getLowStockProduct();
 	}
-	
-	public void setSelectedProduct(int productId)
-	{
-		selectedProduct.setSelectedProduct(productService.findProductById(productId));
-	}
-	
-//	public DataModel<Product> getLowStockProducts(){
-//		
-//	}
 	
 }
