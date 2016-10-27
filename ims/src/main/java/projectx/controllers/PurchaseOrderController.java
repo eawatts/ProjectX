@@ -1,28 +1,15 @@
 package projectx.controllers;
-<<<<<<< HEAD
-=======
-import projectx.persistence.entities.*;
-import projectx.services.PurchaseOrderSerivce;
 
->>>>>>> a5a2fa9953ceb311e1d7dadcc20622a6a7b05282
 import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.faces.bean.SessionScoped;
-<<<<<<< HEAD
-import javax.faces.model.DataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
-import projectx.persistence.entities.Supplier;
-import projectx.persistence.selected.SelectedPurchaseOrder;
-import projectx.persistence.util.OrderState;
 import projectx.services.PurchaseOrderSerivce;
-=======
-import javax.inject.*;
->>>>>>> a5a2fa9953ceb311e1d7dadcc20622a6a7b05282
+
 
 
 

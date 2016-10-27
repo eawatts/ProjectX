@@ -31,6 +31,9 @@ public class OfflineDB {
 	private List<Supplier> suppliers;
 	private List<PurchaseOrder> purchaseOrders;
 	private List<ProductsOrdered> productsOrdered;
+	private ArrayList<String> p1imgs;
+	
+	
 	
 	@PostConstruct
 	private void populateData() {
@@ -38,22 +41,30 @@ public class OfflineDB {
 		users.add(new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"));
 		users.add(new User(2,"alstock","password","Al","Stock",UserLevel.ADMIN,"alstock@al.co.uk"));
 		
-		products = new ArrayList<Product>();
-		products.add(new Product(1,"Product",100,5.00,20,"a very shiny product"));
-		products.add(new Product(2,"Another product",150,3.00,20,"another very shiny product"));
-		products.add(new Product(3,"Gnome",200,3.00,20,"a Gnome"));
-		products.add(new Product(4,"Another Gnome",250,3.00,20,"another Gnome"));
-		products.add(new Product(5,"Help",300,3.00,20,"shiny product"));
-		products.add(new Product(6,"Help Me",350,3.00,20,"another shiny product"));
-		
-		paymentDetails = new ArrayList<PaymentDetails>();
-		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
-		
-		suppliers= new ArrayList<Supplier>();
+		suppliers = new ArrayList<Supplier>();
 		suppliers.add(new Supplier(1, "Gnomes gnomes gnomes", "1 Road Street", "The Town", "M56YH", "07463772819"));
 		suppliers.add(new Supplier(2, "Rakes and Hoes Emporium", "33 Garden Street", "Cheshire", "SG147YH", "04463776419"));
 		suppliers.add(new Supplier(3, "We Sell Stuff", "2 Made Up Street", "Barca", "BE39UI", "01320739921"));
 		suppliers.add(new Supplier(4, "Gnomes R Us", "123 Fake Street", "MAdeUp Land", "TU59PI", "01193812204"));
+		
+		p1imgs= new ArrayList<String>();
+		p1imgs.add("asd");
+		p1imgs.add("asd");
+		p1imgs.add("asd");
+		p1imgs.add("asd");
+		
+		products = new ArrayList<Product>();
+		products.add(new Product(1,"Product",100,5.00,20,"a very shiny product",suppliers,p1imgs));
+		products.add(new Product(2,"Another product",150,3.00,20,"another very shiny product",suppliers,p1imgs));
+		products.add(new Product(3,"Gnome",200,3.00,20,"a Gnome",suppliers,p1imgs));
+		products.add(new Product(4,"Another Gnome",250,3.00,20,"another Gnome",suppliers,p1imgs));
+		products.add(new Product(5,"Help",300,3.00,20,"shiny product",suppliers,p1imgs));
+		products.add(new Product(6,"Help Me",350,3.00,20,"another shiny product",suppliers,p1imgs));
+		
+		paymentDetails = new ArrayList<PaymentDetails>();
+		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
+		
+		
 		
 		purchaseOrders= new ArrayList<PurchaseOrder>();
 		PurchaseOrder purchaseOrder1=new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"), OrderState.ORDER_CLOSED, productsOrdered);
