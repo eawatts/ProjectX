@@ -2,18 +2,18 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="ims_template.xhtml">
+	template="templates/template_ims.xhtml">
 	<meta charset="utf-8" />
-	<ui:define name="page-stylesheet">
+	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/login.css" />
 		<link rel="stylesheet" type="text/css" href="css/product.css"/>
 	</ui:define>
 	
 	<ui:define name="title">Product</ui:define>
-	<ui:define name="maincontent">
+	<ui:define name="main-content">
 		<div class="main-content">
 			<div class="breadcrumbs">
-				<a href="ims_homepage.xhtml">IMS</a> > <a href="ims_products.xhtml">Product
+				<a href="homepage.xhtml">IMS</a> > <a href="products.xhtml">Product
 					List</a>  >
 				<h:outputText value="#{product.name}"></h:outputText>
 			</div>

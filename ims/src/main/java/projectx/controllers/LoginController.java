@@ -93,7 +93,7 @@ public class LoginController implements Serializable{
 		this.password = null;
 		this.error = null;
 		currentsession.logout();
-		return "ims_login";
+		return "login";
 	}
 
 	
