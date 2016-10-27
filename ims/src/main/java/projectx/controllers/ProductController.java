@@ -1,6 +1,7 @@
 package projectx.controllers;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
@@ -65,6 +66,7 @@ public class ProductController implements Serializable
 		return productDataModel;
 	}
 	
+
 //	public List<Supplier> getSupplier(int productId)
 //	{
 //		return selectedProduct.getSelectedProduct().getSupplierList(productId);
@@ -84,8 +86,11 @@ public class ProductController implements Serializable
 	}
 
 	
-//	public DataModel<Product> getLowStockProducts(){
-//		
-//	}
 	
+
+	public List<Product> getLowStockProducts(){
+		return productService.getLowStockProduct();
+	}
+	
+
 }

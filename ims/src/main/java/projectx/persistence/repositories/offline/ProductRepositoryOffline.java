@@ -54,4 +54,9 @@ public class ProductRepositoryOffline implements ProductRepository {
 		return initialData.findProductByName(name);
 	}
 
+	@Override
+	public List<Product> getLowStockProducts() {
+		return initialData.getLowStockProducts();
+	}
+
 }

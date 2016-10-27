@@ -11,7 +11,8 @@ import projectx.persistence.repositories.ProductRepository;
 @Stateless
 public class ProductService{
 	@Inject
-	private ProductRepository productManager;
+	private ProductRepository productRepository;
+	
 	public Product findProductById(String id)
 	{
 		return findProductById(Integer.parseInt(id));
@@ -19,14 +20,18 @@ public class ProductService{
 	
 	public Product findProductById(int id)
 	{
-		return productManager.findByProductId(id);
+		return productRepository.findByProductId(id);
 	}
 	public List<Product> getProducts() 
 	{
-		return productManager.getProducts();
+		return productRepository.getProducts();
+	}
+
+	public List<Product> getLowStockProduct() {
+		return productRepository.getLowStockProducts();
 	}
 	
 	public Product getProductbyID(int id){
-		return productManager.findByProductId(id);
+		return productRepository.findByProductId(id);
 	}
 } 

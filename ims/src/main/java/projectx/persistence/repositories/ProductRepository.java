@@ -6,6 +6,7 @@ import projectx.persistence.entities.Product;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
+import javax.faces.model.DataModel;
 
 
 @Stateless
@@ -18,5 +19,6 @@ public interface ProductRepository
 	public void updateProduct(Product products);
 	public Product findByProductId(int productId);
 	public Product findByProductName(String name);
+	public List<Product> getLowStockProducts();
 
 }

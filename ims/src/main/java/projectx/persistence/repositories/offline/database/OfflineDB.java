@@ -2,11 +2,15 @@ package projectx.persistence.repositories.offline.database;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
+import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 
 import projectx.persistence.entities.Category;
 import projectx.persistence.entities.PaymentDetails;
@@ -54,12 +58,14 @@ public class OfflineDB {
 		p1imgs.add("asd");
 		
 		products = new ArrayList<Product>();
+
 		products.add(new Product(1,"Product",100,5.00,20,"a very shiny product",suppliers,p1imgs));
 		products.add(new Product(2,"Another product",150,3.00,20,"another very shiny product",suppliers,p1imgs));
 		products.add(new Product(3,"Gnome",200,3.00,20,"a Gnome",suppliers,p1imgs));
 		products.add(new Product(4,"Another Gnome",250,3.00,20,"another Gnome",suppliers,p1imgs));
 		products.add(new Product(5,"Help",300,3.00,20,"shiny product",suppliers,p1imgs));
 		products.add(new Product(6,"Help Me",350,3.00,20,"another shiny product",suppliers,p1imgs));
+
 		
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
@@ -336,8 +342,16 @@ public class OfflineDB {
 		purchaseOrders.remove(purchaseOrder);
 		purchaseOrders.add(purchaseOrder);
 	}
-	
-	
-	
-	
+
+	public List<Product> getLowStockProducts() {		
+		class MyComparator implements Comparator<Product>{
+
+			@Override
+			public int compare(Product product1, Product product2) {				
+				return new Integer(product1.getCurrentStock() - product1.getLowLimit()).compareTo(product2.getCurrentStock() - product2.getLowLimit());
+			}		
+		}
+		Collections.sort(products, new MyComparator());		
+		return products;
+	}	
 }
