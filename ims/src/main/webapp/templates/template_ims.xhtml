@@ -10,25 +10,18 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 	<title><ui:insert name="title" /></title>
+	<link rel="icon" type="image/x-icon" href=".../resources/assets/nb_favicon.png" />
 	<!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css" />
-	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
-	<link rel="stylesheet" type="text/css" href="css/ims.css" />
-	<!-- This adds the small icon in the browser tab. -->
-	<link rel="icon" type="image/x-icon"
-		href=".../resources/assets/nb_favicon.png" />
-	<!-- This is required to add the small icons, such as the basket etc. -->
-	<link rel="stylesheet" type="text/css" href="css/template.css"></link>
-	<link rel="stylesheet" type="text/css" href="css/ims.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/responsive.css"></link>
-	<link rel="stylesheet" type="text/css"
-		href="css/font-awesome/css/font-awesome.min.css"></link>
-	<ui:insert name="page-stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/ims.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/template.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css"></link>
+	<ui:insert name="custom-css" />
 </h:head>
 
 <f:view>
 	<body>
-		<!-- This is the green navigation banner along the top of each page. -->
 		<header>
 			<div>
 				<nav>
@@ -43,36 +36,28 @@
 								<div class="notification-center">
 									<div class="noti-pos">
 										<div class="col-tab-1 col-desk-1">
-											<h:graphicImage class="noti-ims navinav"
-												value="resources/assets/pendingPO.png"></h:graphicImage>
+											<i class="fa fa-file-text-o" aria-hidden="true"></i>
 										</div>
 										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\aprovedPO.png" />
+											<i class="fa fa-check" aria-hidden="true"></i>
 										</div>
 										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\emergency.png" />
+											<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
 										</div>
 										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\warehouse.png" />
+											<i class="fa fa-building-o" aria-hidden="true"></i>
 										</div>
 										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\delivery.png" />
+											<i class="fa fa-truck" aria-hidden="true"></i>
 										</div>
 										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\saveerror.png" />
+											<i class="fa fa-floppy-o" aria-hidden="true"></i>
 										</div>
 										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\warehouseidle.png" />
+											<i class="fa fa-pause-circle-o" aria-hidden="true"></i>
 										</div>
 										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\cashdiscrepency.png" />
+											<i class="fa fa-credit-card" aria-hidden="true"></i>
 										</div>
 									</div>
 								</div>
@@ -93,35 +78,6 @@
 					</div>
 
 					<div class="nav-links">
-						<!-- This is what is displayed if the screen is detected to be a mobile device. -->
-						<div id="nav-mobile">
-							<div class="mobile-nav">
-								<div class="mobile-nav-toggle">
-									<h:commandButton type="button"
-										class="button-green-inverse button-burger-nav">
-										<i class="fa fa-bars"></i>
-									</h:commandButton>
-								</div>
-								<div class="mobile-nav-menu">
-									<ul class="mobile-nav-list">
-										<li><a href="ims_createpurchaseorder.xhtml"
-											class="mobile-dropdown-button">Create Purchase Order</a></li>
-										<li><a href="ims_editpurchaseorder.xhtml"
-											class="mobile-dropdown-button">Edit Purchase Order</a></li>
-										<li><a href="ims_viewpurchaseorders.xhtml"
-											class="mobile-dropdown-button">View Purchase Order</a></li>
-										<li><a href="ims_products.xhtml"
-											class="mobile-dropdown-button">Product</a></li>
-										<li><a href="ims_metrics.xhtml"
-											class="mobile-dropdown-button">Metrics</a></li>
-										<li><a href="ims_suppliers.xhtml"
-											class="mobile-dropdown-button">Suppliers</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<!-- This is what is displayed if the screen is detected to be a desktop device. -->
 						<div id="nav-desktop">
 							<ul class="dropdown-all-buttons">
 								<li class="dropdown-category"><a href="index.xhtml"
@@ -129,19 +85,19 @@
 								<li class="dropdown-category">
 									<div class="dropdown-button">Purchase Order</div>
 									<div class="dropdown-content">
-										<a href="ims_createpurchaseorder.xhtml"
+										<a href="purchase_order_create.xhtml"
 											class="dropdown-sub-button">Create Purchase Order</a> <a
-											href="ims_editPurchaseOrder.xhtml"
+											href="purchase_order_edit.xhtml"
 											class="dropdown-sub-button">Edit Purchase Order</a> <a
-											href="ims_viewpurchaseorders.xhtml"
+											href="purchase_order_view.xhtml"
 											class="dropdown-sub-button">View Purchase Order</a>
 									</div>
 								</li>
-								<li class="dropdown-category"><a href="ims_products.xhtml"
+								<li class="dropdown-category"><a href="products.xhtml"
 									class="dropdown-button active">Product</a></li>
-								<li class="dropdown-category"><a href="ims_metrics.xhtml"
+								<li class="dropdown-category"><a href="metrics.xhtml"
 									class="dropdown-button active">Metrics</a></li>
-								<li class="dropdown-category"><a href="ims_suppliers.xhtml"
+								<li class="dropdown-category"><a href="suppliers.xhtml"
 									class="dropdown-button active">Suppliers</a></li>
 							</ul>
 						</div>
@@ -152,7 +108,7 @@
 
 		<!-- This is the content of the actual page. -->
 		<div class="main-content">
-			<ui:insert name="maincontent" />
+			<ui:insert name="main-content" />
 		</div>
 
 		<!-- This is the green footer along the bottom of each page. -->
@@ -171,17 +127,17 @@
 				<div class="col-tab-8 col-desk-8">
 					<div id="footer-right">
 						<ul>
-							<li><a href="ims_help.xhtml">Help</a></li>
-							<li><a href="ims_metrics.xhtml">Metrics</a></li>
-							<li><a href="ims_product.xhtml">Product</a></li>
-							<li><a href="ims_suppliers.xhtml">Suppliers</a></li>
+							<li><a href="help.xhtml">Help</a></li>
+							<li><a href="metrics.xhtml">Metrics</a></li>
+							<li><a href="product.xhtml">Product</a></li>
+							<li><a href="suppliers.xhtml">Suppliers</a></li>
 							<li>Purchase Order
 								<ul>
-									<li><a href="ims_createpurchaseorder.xhtml">Generate
+									<li><a href="purchase_order_create.xhtml">Generate
 											Purchase Order</a></li>
-									<li><a href="ims_editpurchaseorder.xhtml">Edit
+									<li><a href="purchase_order_edit.xhtml">Edit
 											Purchase Order</a></li>
-									<li><a href="ims_viewpurchaseorders.xhtml">View
+									<li><a href="purchase_order_view.xhtml">View
 											Purchase Order</a></li>
 								</ul>
 							</li>
@@ -190,10 +146,11 @@
 				</div>
 			</div>
 		</footer>
+		
 		<!-- Javascript -->
 		<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
-		<script type="text/javaScript" src="js/navigation.js"></script>
 		<ui:insert name="custom-scripts" />
+		
 	</body>
 </f:view>
 </html>

@@ -23,7 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="css/responsive.css"></link>
 	<link rel="stylesheet" type="text/css"
 		href="css/font-awesome/css/font-awesome.min.css"></link>
-	<ui:insert name="page-stylesheet" />
+	<ui:insert name="custom-css" />
 </h:head>
 
 <f:view>
@@ -98,17 +98,17 @@
 								</div>
 								<div class="mobile-nav-menu">
 									<ul class="mobile-nav-list">
-										<li><a href="ims_createpurchaseorder.xhtml"
+										<li><a href="purchase_order_create.xhtml"
 											class="mobile-dropdown-button">Create Purchase Order</a></li>
-										<li><a href="ims_editpurchaseorder.xhtml"
+										<li><a href="purchase_order_edit.xhtml"
 											class="mobile-dropdown-button">Edit Purchase Order</a></li>
-										<li><a href="ims_viewpurchaseorders.xhtml"
+										<li><a href="purchase_order_view.xhtml"
 											class="mobile-dropdown-button">View Purchase Order</a></li>
-										<li><a href="ims_products.xhtml"
+										<li><a href="products.xhtml"
 											class="mobile-dropdown-button">Product</a></li>
-										<li><a href="ims_metrics.xhtml"
+										<li><a href="metrics.xhtml"
 											class="mobile-dropdown-button">Metrics</a></li>
-										<li><a href="ims_suppliers.xhtml"
+										<li><a href="suppliers.xhtml"
 											class="mobile-dropdown-button">Suppliers</a></li>
 									</ul>
 								</div>
@@ -123,19 +123,19 @@
 								<li class="dropdown-category">
 									<div class="dropdown-button">Purchase Order</div>
 									<div class="dropdown-content">
-										<a href="ims_createpurchaseorder.xhtml"
+										<a href="purchase_order_create.xhtml"
 											class="dropdown-sub-button">Create Purchase Order</a> <a
-											href="ims_editPurchaseOrder.xhtml"
+											href="purchase_order_edit.xhtml"
 											class="dropdown-sub-button">Edit Purchase Order</a> <a
-											href="ims_viewpurchaseorders.xhtml"
+											href="purchase_order_view.xhtml"
 											class="dropdown-sub-button">View Purchase Order</a>
 									</div>
 								</li>
-								<li class="dropdown-category"><a href="ims_products.xhtml"
+								<li class="dropdown-category"><a href="products.xhtml"
 									class="dropdown-button active">Product</a></li>
-								<li class="dropdown-category"><a href="ims_metrics.xhtml"
+								<li class="dropdown-category"><a href="metrics.xhtml"
 									class="dropdown-button active">Metrics</a></li>
-								<li class="dropdown-category"><a href="ims_suppliers.xhtml"
+								<li class="dropdown-category"><a href="suppliers.xhtml"
 									class="dropdown-button active">Suppliers</a></li>
 							</ul>
 						</div>
@@ -146,7 +146,7 @@
 
 		<!-- This is the content of the actual page. -->
 		<div class="main-content">
-			<ui:insert name="maincontent" />
+			<ui:insert name="main-content" />
 		</div>
 
 		<!-- This is the green footer along the bottom of each page. -->
@@ -165,17 +165,17 @@
 				<div class="col-tab-8 col-desk-8">
 					<div id="footer-right">
 						<ul>
-							<li><a href="ims_help.xhtml">Help</a></li>
-							<li><a href="ims_metrics.xhtml">Metrics</a></li>
-							<li><a href="ims_product.xhtml">Product</a></li>
-							<li><a href="ims_suppliers.xhtml">Suppliers</a></li>
+							<li><a href="help.xhtml">Help</a></li>
+							<li><a href="metrics.xhtml">Metrics</a></li>
+							<li><a href="product.xhtml">Product</a></li>
+							<li><a href="suppliers.xhtml">Suppliers</a></li>
 							<li>Purchase Order
 								<ul>
-									<li><a href="ims_createpurchaseorder.xhtml">Generate
+									<li><a href="purchase_order_create.xhtml">Generate
 											Purchase Order</a></li>
-									<li><a href="ims_editpurchaseorder.xhtml">Edit
+									<li><a href="purchase_order_edit.xhtml">Edit
 											Purchase Order</a></li>
-									<li><a href="ims_viewpurchaseorders.xhtml">View
+									<li><a href="purchase_order_view.xhtml">View
 											Purchase Order</a></li>
 								</ul>
 							</li>
@@ -184,9 +184,12 @@
 				</div>
 			</div>
 		</footer>
+		
 		<!-- Javascript -->
 		<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
 		<script type="text/javaScript" src="js/navigation.js"></script>
+		<ui:insert name="custom-scripts" />
+		
 	</body>
 </f:view>
 </html>

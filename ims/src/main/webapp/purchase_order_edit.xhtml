@@ -2,17 +2,29 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="ims_template.xhtml">
+	template="templates/template_ims.xhtml">
 	<meta charset="utf-8" />
-	<ui:define name="title"> Create Purchase Order </ui:define>
-	<ui:define name="page-stylesheet">
+	<ui:define name="title">Edit Purchase Order</ui:define>
+	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css"
 			href="css/ims-purchase-order-view.css" />
 	</ui:define>
-	<ui:define name="maincontent">
-
+	<ui:define name="main-content">
 		<div class="pageheading">
-			<h2>Create Purchase Order</h2>
+			<h2>Edit Purchase Order</h2>
+		</div>
+		<div class="Supplier Info">
+			Supplier ID:
+			<h:outputText value="#{purchaseOrder.supplier.id}" />
+			<br /> Supplier name:
+			<h:outputText value="#{purchaseOrder.supplier.name}" />
+			<br /> Approved/rejected:
+			<h:outputText value="#{purchaseOrder.approved}" />
+			<br /> Rejection Date:
+			<h:outputText value="#{purchaseOrder.approvalDate}" />
+			<br /> Status:
+			<h:outputText value="#{purchaseOrder.status}" />
+			<br />
 		</div>
 		<div class="poheaders">
 			<div class="row">
@@ -24,43 +36,36 @@
 				<div class="col-desk-2 col-tab-2">Confirm</div>
 			</div>
 		</div>
-		<form>
+		<h:form>
 			<div class="poItems">
 				<div class="poitem">
 					<div class="row">
 						<div class="col-desk-2 col-tab-2">
 							<select name="productID">
-								<option value="ProductA">ProductA</option>
-								<option value="ProductB">ProductB</option>
-								<option value="ProductC">ProductC</option>
-								<option value="ProductD">ProductD</option>
-								<option value="ProductE">ProductE</option>
-								<option value="ProductF">ProductF</option>
-								<option value="ProductG">ProductG</option>
-								<option value="ProductH">ProductH</option>
-								<option value="ProductI">ProductI</option>
-								<option value="ProductJ">ProductJ</option>
+								<ui:repeat var="product" value="#{products.productIDs}">
+									<option value="#{product.id}"> <h:outputText escape="false" value="#{product.id}" /> </option>
+								</ui:repeat>
 							</select>
 						</div>
 						<div class="col-desk-2 col-tab-2">
-							<input type="text" disabled="disabled" value="Product A" />
+							<h:outputText disabled="true" value="#{product.name}" />
 						</div>
 						<div class="col-desk-2 col-tab-2">
-							<input type="number" name="quantity" min="0" max="999" />
+							<input type="number" name="quantity" min="1"
+								max="#{product.stocklevel}" />
 						</div>
 						<div class="col-desk-2 col-tab-2">
-							<input type="text" disabled="disabled" value="100000" />
+							<h:outputText value="#{product.stocklevel}" />
 						</div>
 						<div class="col-desk-2 col-tab-2">
-							<input type="text" disabled="disabled" value="Delivered" />
+							<h:outputText value="#{product.status}" />
 						</div>
-						<div class="col-desk-2 col-tab-2">
-							<input type="checkbox" name="confirm" checked="checked" />
-						</div>
+						<div class="col-desk-2 col-tab-2"></div>
 					</div>
 				</div>
 			</div>
-		</form>
+			<br />
+		</h:form>
 		<div class="Controls">
 			<div class="add-generatePO">
 				<div class="row">
@@ -72,6 +77,6 @@
 				</div>
 			</div>
 		</div>
+		<br />
 	</ui:define>
-	<br />
 </ui:composition>
