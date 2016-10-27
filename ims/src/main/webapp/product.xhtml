@@ -15,16 +15,16 @@
 			<div class="breadcrumbs">
 				<a href="homepage.xhtml">IMS</a> > <a href="products.xhtml">Product
 					List</a>  >
-				<h:outputText value="#{product.name}"></h:outputText>
+				<h:outputText value="#{product.productbyID.name}"></h:outputText>
 			</div>
 			<div class="row">
 				<h1>
-					<h:outputText styleClass="titleText" value="#{product.name}"></h:outputText>
+					<h:outputText styleClass="titleText" value="#{product.productbyID.name}"></h:outputText>
 				</h1>
 				</div>
 				<div class ="row">
 				<div class="regular slider">
-					<ui:repeat var="img" value="#{product.images}">
+					<ui:repeat var="img" value="#{product.productbyID.images}">
 						<h:form>
 							<div class="slider-product-image">
 								<img src="img#{img.path}" alt="" />
@@ -45,10 +45,10 @@
 				<div class="row">
 					<div class="col-tab-3 col-desk-3">
 					<h2>Low Limit</h2>
-							<h:outputText class="stocklowlimit" value="#{product.lowStockLevel}"></h:outputText>
+							<h:outputText class="stocklowlimit" value="#{product.productbyID.lowStockLevel}"></h:outputText>
 							<button type="button" class="edit_lowlimit">edit</button>
 							<h:form>
-							<h:inputText class="updatestocklowlimit" value="#{product.lowStockLevel}"></h:inputText>
+							<h:inputText class="updatestocklowlimit" value="#{product.productbyID.lowStockLevel}"></h:inputText>
 							<h:commandButton class="save_lowlimit" value="save" action="#{product.lowStockLevel}"></h:commandButton>
 							<button type="button" class="cancel_lowlimit">Cancel</button> 
 							</h:form>
@@ -56,20 +56,20 @@
 					
 					<div class="col-tab-3 col-desk-3">
 					<h2>Stock Level</h2>
-							<h:outputText class="stocklevel" value="#{product.currentStockLevel}"></h:outputText>
+							<h:outputText class="stocklevel" value="#{product.productbyID.currentStockLevel}"></h:outputText>
 							<button type="button" class="edit_stocklevel">edit</button>
 							<h:form>
-							<h:inputText class="update_stocklevel" value="#{product.currentStockLevel}"></h:inputText>
+							<h:inputText class="update_stocklevel" value="#{product.productbyID.currentStockLevel}"></h:inputText>
 							<h:commandButton class="save_stocklevel" value="save" action="#{product.currentStockLevel}"></h:commandButton>
 							<button type="button" class="cancel_stocklevel">Cancel</button> 
 							</h:form>
 					</div>
 					<div class="col-tab-3 col-desk-3">
 					<h2>Price</h2>
-							<h:outputText class="price" value="#{product.price}"></h:outputText>
+							<h:outputText class="price" value="#{product.productbyID.price}"></h:outputText>
 							<button type="button" class="edit_price">edit</button>
 							<h:form>
-							<h:inputText class="update_price" value="#{product.price}"></h:inputText>
+							<h:inputText class="update_price" value="#{product.productbyID.price}"></h:inputText>
 							<h:commandButton class="save_price" value="save" action="#{product.price}"></h:commandButton>
 							<button type="button" class="cancel_price">Cancel</button> 
 							</h:form>
@@ -77,7 +77,7 @@
 					</div>
 					<div class="col-tab-3 col-desk-3">
 					<h2>Discontinued?</h2>
-							<h:selectBooleanCheckbox value="#{product.isDiscontinued}"></h:selectBooleanCheckbox>
+							<h:selectBooleanCheckbox value="#{product.productbyID.isDiscontinued}"></h:selectBooleanCheckbox>
 							True/False
 					</div>
 					<br />
@@ -88,10 +88,10 @@
 				<br />
 				<hr />
 				<div class="row">
-					<h:outputText class="showdescription" value="#{product.description}"></h:outputText>
+					<h:outputText class="showdescription" value="#{product.productbyID.description}"></h:outputText>
 					<button type="button" class="edit_desc">edit</button>
 					<h:form>
-					<h:inputText class="editdescription" value="#{product.description}"></h:inputText>
+					<h:inputText class="editdescription" value="#{product.productbyID.description}"></h:inputText>
 					<h:commandButton class="save_desc" value="save" action="#{product.description}"></h:commandButton>
 					<button type="button" class="cancel_desc">Cancel</button>
 					</h:form>

@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
-import javax.faces.model.DataModel;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Product;
