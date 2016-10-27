@@ -10,17 +10,12 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 	<title><ui:insert name="title" /></title>
+	<link rel="icon" type="image/x-icon" href="img/nb_favicon.png" />
 	<!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css" />
-	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
-	<link rel="stylesheet" type="text/css" href="css/ims.css" />
-	<!-- This adds the small icon in the browser tab. -->
-	<link rel="icon" type="image/x-icon"
-		href=".../resources/assets/nb_favicon.png" />
-	<!-- This is required to add the small icons, such as the basket etc. -->
-	<link rel="stylesheet" type="text/css" href="css/template.css"></link>
-	<link rel="stylesheet" type="text/css" href="css/ims.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/responsive.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/ims.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/template.css"></link>
 	<link rel="stylesheet" type="text/css"
 		href="css/font-awesome/css/font-awesome.min.css"></link>
 	<ui:insert name="custom-css" />
@@ -28,116 +23,16 @@
 
 <f:view>
 	<body>
-		<!-- This is the green navigation banner along the top of each page. -->
 		<header>
 			<div>
 				<nav>
 					<div class="nav-banner">
 						<div class="row">
-							<div class="col-tab-2 col-desk-2 nav-banner-left">
+							<div class="col-tab-12 col-desk-12 nav-banner-left">
 								<a href="index.xhtml"> <h:graphicImage
-										class="nav-mobile-logo" value="resources/assets/nb_logo.png"
+										class="nav-mobile-logo" value="img/nb_logo.png"
 										alt="NB Gardens Logo" width="100" height="100"></h:graphicImage></a>
 							</div>
-							<div id="navinav" class="nav-banner-centre">
-								<div class="notification-center">
-									<div class="noti-pos">
-										<div class="col-tab-1 col-desk-1">
-											<h:graphicImage class="noti-ims navinav"
-												value="resources/assets/pendingPO.png"></h:graphicImage>
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\aprovedPO.png" />
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\emergency.png" />
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\warehouse.png" />
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\delivery.png" />
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\saveerror.png" />
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\warehouseidle.png" />
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<img class="noti-ims navinav"
-												src="resources\assets\cashdiscrepency.png" />
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-tab-2 col-desk-2 nav-banner-right">
-								<button type="button"
-									class="button-green-inverse nav-banner-right-button navinav">
-									Logout <i class="fa fa-user"></i>
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="nav-links">
-						<!-- This is what is displayed if the screen is detected to be a mobile device. -->
-						<div id="nav-mobile">
-							<div class="mobile-nav">
-								<div class="mobile-nav-toggle">
-									<h:commandButton type="button"
-										class="button-green-inverse button-burger-nav">
-										<i class="fa fa-bars"></i>
-									</h:commandButton>
-								</div>
-								<div class="mobile-nav-menu">
-									<ul class="mobile-nav-list">
-										<li><a href="purchase_order_create.xhtml"
-											class="mobile-dropdown-button">Create Purchase Order</a></li>
-										<li><a href="purchase_order_edit.xhtml"
-											class="mobile-dropdown-button">Edit Purchase Order</a></li>
-										<li><a href="purchase_order_view.xhtml"
-											class="mobile-dropdown-button">View Purchase Order</a></li>
-										<li><a href="products.xhtml"
-											class="mobile-dropdown-button">Product</a></li>
-										<li><a href="metrics.xhtml"
-											class="mobile-dropdown-button">Metrics</a></li>
-										<li><a href="suppliers.xhtml"
-											class="mobile-dropdown-button">Suppliers</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<!-- This is what is displayed if the screen is detected to be a desktop device. -->
-						<div id="nav-desktop">
-							<ul class="dropdown-all-buttons">
-								<li class="dropdown-category"><a href="index.xhtml"
-									class="dropdown-button active">Home</a></li>
-								<li class="dropdown-category">
-									<div class="dropdown-button">Purchase Order</div>
-									<div class="dropdown-content">
-										<a href="purchase_order_create.xhtml"
-											class="dropdown-sub-button">Create Purchase Order</a> <a
-											href="purchase_order_edit.xhtml"
-											class="dropdown-sub-button">Edit Purchase Order</a> <a
-											href="purchase_order_view.xhtml"
-											class="dropdown-sub-button">View Purchase Order</a>
-									</div>
-								</li>
-								<li class="dropdown-category"><a href="products.xhtml"
-									class="dropdown-button active">Product</a></li>
-								<li class="dropdown-category"><a href="metrics.xhtml"
-									class="dropdown-button active">Metrics</a></li>
-								<li class="dropdown-category"><a href="suppliers.xhtml"
-									class="dropdown-button active">Suppliers</a></li>
-							</ul>
 						</div>
 					</div>
 				</nav>
@@ -153,43 +48,19 @@
 		<br />
 		<footer>
 			<div class="row">
-				<div class="col-tab-2 col-desk-2">
-					<div id="footer-left"></div>
-				</div>
-				<div class="col-tab-2 col-desk-2">
-					<div id="footer-centre">
-						<i class="fa fa-times" aria-hidden="true"></i>pedite Consulting
-						2016
-					</div>
-				</div>
-				<div class="col-tab-8 col-desk-8">
-					<div id="footer-right">
-						<ul>
-							<li><a href="help.xhtml">Help</a></li>
-							<li><a href="metrics.xhtml">Metrics</a></li>
-							<li><a href="product.xhtml">Product</a></li>
-							<li><a href="suppliers.xhtml">Suppliers</a></li>
-							<li>Purchase Order
-								<ul>
-									<li><a href="purchase_order_create.xhtml">Generate
-											Purchase Order</a></li>
-									<li><a href="purchase_order_edit.xhtml">Edit
-											Purchase Order</a></li>
-									<li><a href="purchase_order_view.xhtml">View
-											Purchase Order</a></li>
-								</ul>
-							</li>
-						</ul>
+				<div class="col-tab-12 col-desk-12">
+					<div class="footer-company-copyright">
+						<i class="fa fa-copyright"></i> <i class="fa fa-times"></i>pedite
+						Consulting 2016
 					</div>
 				</div>
 			</div>
+			<br/>
 		</footer>
-		
+
 		<!-- Javascript -->
 		<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
-		<script type="text/javaScript" src="js/navigation.js"></script>
 		<ui:insert name="custom-scripts" />
-		
 	</body>
 </f:view>
 </html>

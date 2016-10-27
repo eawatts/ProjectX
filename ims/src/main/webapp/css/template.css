@@ -1,17 +1,23 @@
 .nav-logo-ims {
-  max-width:100px;
-  max-height: 100px;
+	max-width: 100px;
+	max-height: 100px;
 }
-.banner-left{
-  background-color:#004425;
-  display: inline-block;
+
+.banner-left {
+	background-color: #004425;
+	display: inline-block;
 }
-.banner-center{
-  background-color:#004425;
-  position:center;
+
+.banner-center {
+	background-color: #004425;
+	position: center;
 }
-.notification-center{background-color: #000000}
-.noti-ims{
-  max-width:40px;
-  max-height: 40px;
+
+.notification-center {
+	background-color: #004425
+}
+
+.noti-ims {
+	max-width: 40px;
+	max-height: 40px;
 }

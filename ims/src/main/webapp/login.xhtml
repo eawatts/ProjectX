@@ -2,7 +2,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="templates/template_ims.xhtml">
+	template="templates/template_login.xhtml">
 
 	<meta charset="utf-8" />
 	<ui:define name="custom-css">
@@ -12,9 +12,6 @@
 	<ui:define name="main-content">
 
 		<div class="main-content">
-			<div class="breadcrumbs">
-				<a href="homepage.html">Home</a> > <a href="login.html">Login</a>
-			</div>
 			<div class="row">
 				<div class="col-tab-12 col-desk-12">
 					<article class="mainBody">
@@ -23,8 +20,7 @@
 						</div>
 
 						<div class="description">
-							<p>Please login to your NB Gardens Account to access website
-								features and checkout.</p>
+							<p>Please login to your NB Gardens Account to access website.</p>
 						</div>
 						<h:form>
 							<div>
@@ -43,7 +39,6 @@
 							<h:commandButton class="button-green" action="#{login.login()}"
 								type="submit" value="Login"></h:commandButton>
 						</h:form>
-
 						<br />
 					</article>
 				</div>

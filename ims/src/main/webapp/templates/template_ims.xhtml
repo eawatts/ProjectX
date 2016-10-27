@@ -10,13 +10,14 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 	<title><ui:insert name="title" /></title>
-	<link rel="icon" type="image/x-icon" href=".../resources/assets/nb_favicon.png" />
+	<link rel="icon" type="image/x-icon" href="img/nb_favicon.png" />
 	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/responsive.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/ims.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/template.css"></link>
-	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css"></link>
+	<link rel="stylesheet" type="text/css"
+		href="css/font-awesome/css/font-awesome.min.css"></link>
 	<ui:insert name="custom-css" />
 </h:head>
 
@@ -29,37 +30,33 @@
 						<div class="row">
 							<div class="col-tab-2 col-desk-2 nav-banner-left">
 								<a href="index.xhtml"> <h:graphicImage
-										class="nav-mobile-logo" value="resources/assets/nb_logo.png"
+										class="nav-mobile-logo" value="img/nb_logo.png"
 										alt="NB Gardens Logo" width="100" height="100"></h:graphicImage></a>
 							</div>
-							<div id="navinav" class="nav-banner-centre">
-								<div class="notification-center">
-									<div class="noti-pos">
-										<div class="col-tab-1 col-desk-1">
-											<i class="fa fa-file-text-o" aria-hidden="true"></i>
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<i class="fa fa-check" aria-hidden="true"></i>
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<i class="fa fa-building-o" aria-hidden="true"></i>
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<i class="fa fa-truck" aria-hidden="true"></i>
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<i class="fa fa-floppy-o" aria-hidden="true"></i>
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<i class="fa fa-pause-circle-o" aria-hidden="true"></i>
-										</div>
-										<div class="col-tab-1 col-desk-1">
-											<i class="fa fa-credit-card" aria-hidden="true"></i>
-										</div>
-									</div>
+							<div class="notification-center">
+								<div class="col-tab-1 col-desk-1">
+									<i class="fa fa-file-text-o" aria-hidden="true"></i>
+								</div>
+								<div class="col-tab-1 col-desk-1">
+									<i class="fa fa-check" aria-hidden="true"></i>
+								</div>
+								<div class="col-tab-1 col-desk-1">
+									<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+								</div>
+								<div class="col-tab-1 col-desk-1">
+									<i class="fa fa-building-o" aria-hidden="true"></i>
+								</div>
+								<div class="col-tab-1 col-desk-1">
+									<i class="fa fa-truck" aria-hidden="true"></i>
+								</div>
+								<div class="col-tab-1 col-desk-1">
+									<i class="fa fa-floppy-o" aria-hidden="true"></i>
+								</div>
+								<div class="col-tab-1 col-desk-1">
+									<i class="fa fa-pause-circle-o" aria-hidden="true"></i>
+								</div>
+								<div class="col-tab-1 col-desk-1">
+									<i class="fa fa-credit-card" aria-hidden="true"></i>
 								</div>
 							</div>
 							<div class="col-tab-2 col-desk-2 nav-banner-right">
@@ -87,9 +84,8 @@
 									<div class="dropdown-content">
 										<a href="purchase_order_create.xhtml"
 											class="dropdown-sub-button">Create Purchase Order</a> <a
-											href="purchase_order_edit.xhtml"
-											class="dropdown-sub-button">Edit Purchase Order</a> <a
-											href="purchase_order_view.xhtml"
+											href="purchase_order_edit.xhtml" class="dropdown-sub-button">Edit
+											Purchase Order</a> <a href="purchase_order_view.xhtml"
 											class="dropdown-sub-button">View Purchase Order</a>
 									</div>
 								</li>
@@ -115,42 +111,45 @@
 		<br />
 		<footer>
 			<div class="row">
-				<div class="col-tab-2 col-desk-2">
-					<div id="footer-left"></div>
-				</div>
-				<div class="col-tab-2 col-desk-2">
-					<div id="footer-centre">
-						<i class="fa fa-times" aria-hidden="true"></i>pedite Consulting
-						2016
+				<div class="col-tab-12 col-desk-12">
+					<div class="footer-company-copyright">
+						<i class="fa fa-copyright"></i> <i class="fa fa-times"></i>pedite
+						Consulting 2016
 					</div>
 				</div>
-				<div class="col-tab-8 col-desk-8">
+			</div>
+			<hr class="footer-separator" />
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
 					<div id="footer-right">
-						<ul>
-							<li><a href="help.xhtml">Help</a></li>
-							<li><a href="metrics.xhtml">Metrics</a></li>
-							<li><a href="product.xhtml">Product</a></li>
-							<li><a href="suppliers.xhtml">Suppliers</a></li>
-							<li>Purchase Order
-								<ul>
-									<li><a href="purchase_order_create.xhtml">Generate
-											Purchase Order</a></li>
-									<li><a href="purchase_order_edit.xhtml">Edit
-											Purchase Order</a></li>
-									<li><a href="purchase_order_view.xhtml">View
-											Purchase Order</a></li>
-								</ul>
+						<ul class="footer-sitemap-list">
+							<li class="footer-sitemap-category">
+								<a class="footer-sitemap-category-header">Help</a>
+								<div class="footer-sitemap-sub-category-list">
+									<a class="footer-sitemap-sub-category" href="help.xhtml">Help</a>
+									<a class="footer-sitemap-sub-category" href="metrics.xhtml">Metrics</a>
+									<a class="footer-sitemap-sub-category" href="product.xhtml">Product</a>
+									<a class="footer-sitemap-sub-category" href="suppliers.xhtml">Suppliers</a>
+								</div>
+							</li>
+							<li class="footer-sitemap-category">
+							<a class="footer-sitemap-category-header">Purchase Orders</a>
+								<div class="footer-sitemap-sub-category-list">
+									<a class="footer-sitemap-sub-category" href="purchase_order_create.xhtml">Generate Purchase Order</a>
+									<a class="footer-sitemap-sub-category" href="purchase_order_edit.xhtml">Edit Purchase Order</a>
+									<a class="footer-sitemap-sub-category" href="purchase_order_view.xhtml">View Purchase Order</a>
+								</div>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</footer>
-		
+
 		<!-- Javascript -->
 		<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
 		<ui:insert name="custom-scripts" />
-		
+
 	</body>
 </f:view>
 </html>
