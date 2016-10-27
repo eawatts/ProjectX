@@ -29,26 +29,26 @@
 						<div class="col-tab-3 col-desk-3">Low Limit</div>
 					</div>
 					<hr class="table-row" />
-					<ui:repeat var="product" value="#{products.lowStockProducts}">
+					<ui:repeat var="lowStockProduct" value="#{product.lowStockProducts}">
 						<div class="row">
 							<div class="col-tab-3 col-desk-3" align="left">
 								<p>
-									<h:outputText value="#{product.id}" />
+									<h:outputText value="#{lowStockProduct.id}" />
 								</p>
 							</div>
 							<div class="col-tab-3 col-desk-3">
 								<p>
-									<h:outputText value="#{product.name}" />
+									<h:outputText value="#{lowStockProduct.name}" />
 								</p>
 							</div>
 							<div class="col-tab-3 col-desk-3">
 								<p>
-									<h:outputText value="#{product.currentStock}" />
+									<h:outputText value="#{lowStockProduct.currentStock}" />
 								</p>
 							</div>
 							<div class="col-tab-3 col-desk-3">
 								<p>
-									<h:outputText value="#{product.lowLimit}" />
+									<h:outputText value="#{lowStockProduct.lowLimit}" />
 								</p>
 							</div>
 						</div>

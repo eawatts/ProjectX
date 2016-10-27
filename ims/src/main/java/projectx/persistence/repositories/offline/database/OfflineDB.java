@@ -58,13 +58,13 @@ public class OfflineDB {
 		p1imgs.add("asd");
 		
 		products = new ArrayList<Product>();
-
 		products.add(new Product(1,"Product",100,5.00,20,"a very shiny product",suppliers,p1imgs));
 		products.add(new Product(2,"Another product",150,3.00,20,"another very shiny product",suppliers,p1imgs));
 		products.add(new Product(3,"Gnome",200,3.00,20,"a Gnome",suppliers,p1imgs));
 		products.add(new Product(4,"Another Gnome",250,3.00,20,"another Gnome",suppliers,p1imgs));
 		products.add(new Product(5,"Help",300,3.00,20,"shiny product",suppliers,p1imgs));
 		products.add(new Product(6,"Help Me",350,3.00,20,"another shiny product",suppliers,p1imgs));
+		products.add(new Product(7, "Test Product", 200, 4.00, 50, "Test description", suppliers, p1imgs));
 
 		
 		paymentDetails = new ArrayList<PaymentDetails>();
@@ -343,9 +343,9 @@ public class OfflineDB {
 		purchaseOrders.add(purchaseOrder);
 	}
 
-	public List<Product> getLowStockProducts() {		
+	public List<Product> getLowStockProducts() {	
+		System.out.println(products.get(1).getName());
 		class MyComparator implements Comparator<Product>{
-
 			@Override
 			public int compare(Product product1, Product product2) {				
 				return new Integer(product1.getCurrentStock() - product1.getLowLimit()).compareTo(product2.getCurrentStock() - product2.getLowLimit());
