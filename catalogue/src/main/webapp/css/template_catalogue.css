@@ -72,6 +72,10 @@ body {
 /* DESKTOP HEADER - END  */
 
 /* DESKTOP NAVIGATION */
+#header-desktop {
+	display: none;
+}
+
 #nav-desktop ul {
 	list-style-type: none;
 	margin: 0px 0px 0px 0px;
@@ -142,6 +146,10 @@ body {
 /* DESKTOP NAVIGATION - END */
 
 /* MOBILE HEADER  */
+#header-mobile {
+	display: none;
+}
+
 #header-mobile .header-mobile-list {
 	width: 100%;
 	max-height: 50px;

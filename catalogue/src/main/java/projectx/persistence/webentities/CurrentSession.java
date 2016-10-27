@@ -17,8 +17,7 @@ public class CurrentSession implements Serializable {
 	private User user;
 	private Basket basket;
 	
-	// Used to store a String if wanting to redirect after an event (login for example).
-	private String urlRedirect;
+	private String urlRedirect; // Used to store a page to redirect to after an event (login for example).
 
 	@PostConstruct
 	private void setupCurrentSession(){

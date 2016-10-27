@@ -1,51 +1,50 @@
 package projectx.persistence.entities;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+import projectx.persistence.webentities.BasketProduct;
+
 @Entity
 @Table(name = "Order")
 
-@NamedQueries (
-	{
-		@NamedQuery(name ="Order.findByOrderType" , query = "Select o FROM Order o  WHERE o.orderType= :orderType"),
-		@NamedQuery(name="Order.findByUser", query ="Select o FROM Order o Join user u WHERE o.user= :user  "),
-		@NamedQuery(name="Order.findByOrderDate", query ="Select o deliveryDate FROM Order o WHERE o.orderDate= :orderDate"),
-	}
-)
-
+@NamedQueries({
+		@NamedQuery(name = "Order.findByOrderType", query = "Select o FROM Order o  WHERE o.orderType= :orderType"),
+		@NamedQuery(name = "Order.findByUser", query = "Select o FROM Order o Join user u WHERE o.user= :user  "),
+		@NamedQuery(name = "Order.findByOrderDate", query = "Select o deliveryDate FROM Order o WHERE o.orderDate= :orderDate"), })
 
 public class Order {
 
-	public static final String findByOrderDate="Order.findByOrderDate";
-	public static final String findByUser="Order.findByUser";
-	public static final String findByOrderType="Order.findByOrderType";
-	
+	public static final String findByOrderDate = "Order.findByOrderDate";
+	public static final String findByUser = "Order.findByUser";
+	public static final String findByOrderType = "Order.findByOrderType";
+
 	@Id
-	@GeneratedValue ( strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable=false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
 	@NotNull
-	private int orderID;
+	private Integer id;
 
 	@ManyToOne
-	@JoinColumn(name = "user_id", nullable=false)
+	@JoinColumn(name = "user_id", nullable = false)
 	@NotNull
 	private User user;
 
 	@ManyToOne
-	@JoinColumn(name = "order_type_id", nullable=false)
+	@JoinColumn(name = "order_type_id", nullable = false)
 	@NotNull
 	private OrderType orderType;
 
 	@ManyToOne
-	@JoinColumn(name = "order_state_id", nullable=false)
+	@JoinColumn(name = "order_state_id", nullable = false)
 	@NotNull
 	private OrderState orderState;
 
 	@Column(name = "notes")
-	@Size (max=100)
+	@Size(max = 100)
 	private String notes;
 
 	@Column(name = "order_date")
@@ -53,17 +52,29 @@ public class Order {
 
 	@Column(name = "delivery_date")
 	private Date deliveryDate;
-
-	// set and get Order Id
-	public int getOrderID() {
-		return orderID;
+	
+	private List<BasketProduct> products;
+	
+	public Order(Integer id, User user, OrderType orderType, OrderState orderState, String notes, Date orderDate,
+			Date deliveryDate, List<BasketProduct> products) {
+		this.id = id;
+		this.user = user;
+		this.orderType = orderType;
+		this.orderState = orderState;
+		this.notes = notes;
+		this.orderDate = orderDate;
+		this.deliveryDate = deliveryDate;
+		this.setProducts(products);
 	}
 
-	public void setOrderID(int orderID) {
-		this.orderID = orderID;
+	public Integer getId() {
+		return id;
 	}
 
-	// set and get notes
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getNotes() {
 		return notes;
 	}
@@ -72,7 +83,6 @@ public class Order {
 		this.notes = notes;
 	}
 
-	// set and get Order Date
 	public Date getOrderDate() {
 		return orderDate;
 	}
@@ -81,7 +91,6 @@ public class Order {
 		this.orderDate = orderDate;
 	}
 
-	// set and get Delivery Date
 	public Date getDeliveryDate() {
 		return deliveryDate;
 	}
@@ -90,12 +99,11 @@ public class Order {
 		this.deliveryDate = deliveryDate;
 	}
 
-	// get and set foreign keys
-	public User getUserID() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUserID(User user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 
@@ -114,5 +122,12 @@ public class Order {
 	public void setOrderState(OrderState orderState) {
 		this.orderState = orderState;
 	}
-	
+
+	public List<BasketProduct> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<BasketProduct> products) {
+		this.products = products;
+	}
 }

@@ -8,16 +8,18 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 
-import org.hibernate.dialect.MySQL57InnoDBDialect;
-
 import projectx.persistence.entities.Address;
 import projectx.persistence.entities.Category;
+import projectx.persistence.entities.Order;
+import projectx.persistence.entities.OrderState;
+import projectx.persistence.entities.OrderType;
 import projectx.persistence.entities.PaymentDetails;
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Review;
 import projectx.persistence.entities.SubCategory;
 import projectx.persistence.entities.User;
 import projectx.persistence.entities.UserLevel;
+import projectx.persistence.webentities.BasketProduct;
 import projectx.persistence.webentities.CurrentProduct;
 import projectx.persistence.webentities.ProductWithAverageReview;
 
@@ -30,7 +32,8 @@ public class OfflineDB {
 	private List<Review> reviews;
 	private List<PaymentDetails> paymentDetails;
 	private List<Address> addresses;
-	private List<Category> categories;
+	private List<Order> orders;
+ 	private List<Category> categories;
 	private List<SubCategory> subcategories;
 	private List<SubCategory> subcategories1;
 	private List<SubCategory> subcategories2;
@@ -70,8 +73,7 @@ public class OfflineDB {
 	private ArrayList<Product> mowers;
 	private ArrayList<Product> strimmers;
 
-	public OfflineDB() {
-	}
+	public OfflineDB() {}
 
 	@PostConstruct
 	public void setupData() {
@@ -80,9 +82,9 @@ public class OfflineDB {
 		setupAddresses();
 		setupUsers();
 		setupReviews();
+		setupOrders();
 		setupCategoriesProducts();
 		setupCategories();
-
 	}
 
 	private void setupProducts() {
@@ -193,6 +195,24 @@ public class OfflineDB {
 		reviews.add(new Review(17, 4.6f, "Perfect proportions.", users.get(1), products.get(1)));
 		reviews.add(new Review(18, 0.5f, "Tripping hazard.", users.get(10), products.get(1)));
 	}
+	
+	private void setupOrders() {
+		orders = new ArrayList<Order>();
+		
+		List<BasketProduct> productsForOrder = new ArrayList<BasketProduct>();
+		productsForOrder.add(new BasketProduct(products.get(0), 1));
+		productsForOrder.add(new BasketProduct(products.get(5), 2));
+		productsForOrder.add(new BasketProduct(products.get(6), 4));
+		productsForOrder.add(new BasketProduct(products.get(2), 1));
+		orders.add(new Order(1, users.get(0), OrderType.CUSTOMER, OrderState.OUT_FOR_DELIVERY, "Leave with Garry next door", new Date(15263), new Date(45155541), productsForOrder));
+		
+		productsForOrder = new ArrayList<BasketProduct>();
+		productsForOrder.add(new BasketProduct(products.get(2), 2));
+		productsForOrder.add(new BasketProduct(products.get(4), 1));
+		productsForOrder.add(new BasketProduct(products.get(6), 1));
+		productsForOrder.add(new BasketProduct(products.get(8), 3));
+		orders.add(new Order(2, users.get(0), OrderType.CUSTOMER, OrderState.DELIVERED, "Don't put in shed!", new Date(15263), new Date(45155541), productsForOrder));
+	}
 
 	private void setupCategoriesProducts() {
 		classicgnomes = new ArrayList<Product>();
@@ -299,6 +319,7 @@ public class OfflineDB {
 	}
 
 	// ----- PRODUCTS -----
+	
 	/**
 	 * Returns a copy of the Products.
 	 * 
@@ -443,6 +464,29 @@ public class OfflineDB {
 	}
 
 	// ----- END USERS -----
+	
+	// ----- ORDERS -----
+	
+	public List<Order> getOrders() {
+		return this.orders;
+	}
+	
+	public List<Order> getOrdersForUser(int userId) {
+		List<Order> userOrders = new ArrayList<Order>();
+		
+		for (Order order : orders){
+			if (order.getUser().getId() == userId) {
+				userOrders.add(order);
+			}
+		}
+		return userOrders;
+	}
+	
+	public void addOrder(Order order) {
+		this.orders.add(order);
+	}
+
+	// ----- END ORDERS -----
 
 	// ----- CATEGORIES -----
 

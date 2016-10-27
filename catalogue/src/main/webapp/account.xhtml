@@ -6,6 +6,7 @@
 
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/account.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/accordion_custom.css"></link>
 	</ui:define>
 
 	<ui:define name="title">Your Account</ui:define>
@@ -13,17 +14,75 @@
 	<ui:define name="main-content">
 		<div class="row">
 			<div class="col-tab-12 col-desk-12">
-				<h:panelGroup layout="block" rendered="#{current_session.loggedIn eq true}">
+				<h:panelGroup layout="block"
+					rendered="#{current_session.loggedIn eq true}">
 					<h1>Your Account</h1>
 					<p>
-					 Username:<h:outputText value="#{current_session.user.username}"></h:outputText>
+						<strong>Username: </strong>
+						<h:outputText value="#{current_session.user.username}"></h:outputText>
 					</p>
+					<p>
+						<strong>Name: </strong>
+						<h:outputText value="#{current_session.user.firstname} "></h:outputText>
+						<h:outputText value="#{current_session.user.surname}"></h:outputText>
+					</p>
+					<p>
+						<strong>Email: </strong>
+						<h:outputText value="#{current_session.user.emailAddress}"></h:outputText>
+					</p>
+					<p>
+						<strong>Orders: </strong>
+					</p>
+					<ui:repeat var="user_order"	value="#{orders.getOrdersForUser(current_session.user.id)}">
+						<div class="row">
+							<div class="col-tab-3 col-desk-3">
+								<strong>Order ID: </strong>
+								<h:outputText value="#{user_order.id}"></h:outputText>
+							</div>
+							<div class="col-tab-3 col-desk-3">
+							<strong>State: </strong>
+								<h:outputText value="#{user_order.orderState.displayName}"></h:outputText>
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="col-tab-12 col-desk-12">
+							<br/>
+								<button class="accordion-header button-green">See Products</button>
+								<div class="accordion-body">
+									<div class="row">
+										<div class="col-tab-12 col-desk-12">
+											<ui:repeat var="user_order_product"
+												value="#{user_order.products}">
+												<hr/>
+												<div class="row">
+													<div class="col-tab-2 col-desk-2">
+														<h:outputText value="#{user_order_product.product.id}"></h:outputText>
+													</div>
+													<div class="col-tab-4 col-desk-4">
+														<h:outputText value="#{user_order_product.product.name}"></h:outputText>
+													</div>
+												</div>
+											</ui:repeat>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<hr/>
+					</ui:repeat>
 					<h:form>
-					<h:commandButton class="button-brown" action="#{login.logout()}"
+						<br />
+						<h:commandButton class="button-brown" action="#{login.logout()}"
 							type="submit" value="Logout"></h:commandButton>
 					</h:form>
 				</h:panelGroup>
-				</div>
 			</div>
+		</div>
 	</ui:define>
+
+	<ui:define name="custom-scripts">
+		<script type="text/javaScript" src="js/accordion_custom.js"></script>
+	</ui:define>
+
 </ui:composition>

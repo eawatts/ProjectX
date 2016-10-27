@@ -22,21 +22,21 @@
 				<div class="checkout-box-left">
 					<div class="row">
 						<div class="col-tab-4 col-desk-4">
-							Address <br />
-							<em>
-								<h:outputText value="#{current_session.user.firstAddress.housenumber}"></h:outputText><br/>
-								<h:outputText value="#{current_session.user.firstAddress.street}"></h:outputText><br/>
-								<h:outputText value="#{current_session.user.firstAddress.town}"></h:outputText><br/>
-								<h:outputText value="#{current_session.user.firstAddress.postcode}"></h:outputText><br/>
+							Address <br /> <em> <h:outputText
+									value="#{current_session.user.firstAddress.housenumber}"></h:outputText><br />
+								<h:outputText
+									value="#{current_session.user.firstAddress.street}"></h:outputText><br />
+								<h:outputText value="#{current_session.user.firstAddress.town}"></h:outputText><br />
+								<h:outputText
+									value="#{current_session.user.firstAddress.postcode}"></h:outputText><br />
 							</em>
 							<h:form>
 								<h:commandLink value="Change"></h:commandLink>
 							</h:form>
 						</div>
 						<div class="col-tab-4 col-desk-4">
-							Billing Info: <br />
-							Card Nickname: <br/>
-							<em><h:outputText value="#{current_session.user.paymentDetails.description}"></h:outputText></em>
+							Billing Info: <br /> Card Nickname: <br /> <em><h:outputText
+									value="#{current_session.user.paymentDetails.description}"></h:outputText></em>
 							<h:form>
 								<h:commandLink value="Change"></h:commandLink>
 							</h:form>
@@ -49,8 +49,9 @@
 					<hr />
 					<br />
 					<div class="row">
-						<div class="col-tab-12 col-desk-12">							
-							<ui:repeat var="basket_product"	value="#{current_session.basket.contents}">
+						<div class="col-tab-12 col-desk-12">
+							<ui:repeat var="basket_product"
+								value="#{current_session.basket.contents}">
 								<div class="row">
 									<div class="col-tab-2 col-desk-2">
 										<h:graphicImage class="basket-image"
@@ -73,10 +74,10 @@
 										each
 									</div>
 									<div class="col-tab-2 col-desk-2">
-									<h:form>
-										<h:commandButton class="button-brown" value="Delete"
-											action="#{current_session.basket.removeProduct(basket_product.product.id)}" />
-									</h:form>
+										<h:form>
+											<h:commandButton class="button-brown" value="Delete"
+												action="#{current_session.basket.removeProduct(basket_product.product.id)}" />
+										</h:form>
 									</div>
 								</div>
 								<hr />
@@ -90,8 +91,12 @@
 				<div class="checkout-box">
 					<div class="row">
 						<div class="col-tab-12 col-desk-12">
-							<a href="checkout_complete.xhtml"><h:commandButton
-									styleClass="button-brown order-button" value="Place Order"></h:commandButton></a>
+							<h:form>
+								<h:commandButton styleClass="button-brown order-button"
+									value="Place Order"
+									action="#{orders.completeBasketOrder()}">
+								</h:commandButton>
+							</h:form>
 						</div>
 					</div>
 					<br />
