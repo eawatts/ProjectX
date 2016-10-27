@@ -25,4 +25,8 @@ public class ProductService{
 	{
 		return productManager.getProducts();
 	}
+	
+	public Product getProductbyID(int id){
+		return productManager.findByProductId(id);
+	}
 } 
