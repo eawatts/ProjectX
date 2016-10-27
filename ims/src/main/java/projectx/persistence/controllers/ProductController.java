@@ -71,4 +71,8 @@ public class ProductController implements Serializable
 		selectedProduct.setSelectedProduct(productService.findProductById(productId));
 	}
 	
+//	public DataModel<Product> getLowStockProducts(){
+//		
+//	}
+	
 }

@@ -37,12 +37,12 @@ public class InitialData {
 		users.add(new User(2,"alstock","password","Al","Stock",UserLevel.ADMIN,"alstock@al.co.uk"));
 		
 		products = new ArrayList<Product>();
-		products.add(new Product(1,"product",300,5.00,20,"a very shiny product"));
-		products.add(new Product(2,"Another product",300,3.00,20,"another very shiny product"));
-		products.add(new Product(3,"Gnome",300,3.00,20,"a Gnome"));
-		products.add(new Product(4,"Another Gnome",300,3.00,20,"another Gnome"));
+		products.add(new Product(1,"Product",100,5.00,20,"a very shiny product"));
+		products.add(new Product(2,"Another product",150,3.00,20,"another very shiny product"));
+		products.add(new Product(3,"Gnome",200,3.00,20,"a Gnome"));
+		products.add(new Product(4,"Another Gnome",250,3.00,20,"another Gnome"));
 		products.add(new Product(5,"Help",300,3.00,20,"shiny product"));
-		products.add(new Product(6,"Help Me",300,3.00,20,"another shiny product"));
+		products.add(new Product(6,"Help Me",350,3.00,20,"another shiny product"));
 		
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
@@ -62,10 +62,10 @@ public class InitialData {
 		purchaseOrder2.addOrderedProducts(new ProductsOrdered(4,products.get(5),10,purchaseOrder2));
 		PurchaseOrder purchaseOrder3=new PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"), OrderState.PENDING_DELIVERY, productsOrdered);
 		purchaseOrder3.addOrderedProducts(new ProductsOrdered(5,products.get(3),20,purchaseOrder3));
-		purchaseOrder3.addOrderedProducts(new ProductsOrdered(6,products.get(6),10,purchaseOrder3));
+		purchaseOrder3.addOrderedProducts(new ProductsOrdered(6,products.get(5),10,purchaseOrder3));
 		PurchaseOrder purchaseOrder4=new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"), OrderState.DELIVERED, productsOrdered);
 		purchaseOrder4.addOrderedProducts(new ProductsOrdered(7,products.get(4),20,purchaseOrder4));
-		purchaseOrder4.addOrderedProducts(new ProductsOrdered(8,products.get(6),10,purchaseOrder4));
+		purchaseOrder4.addOrderedProducts(new ProductsOrdered(8,products.get(5),10,purchaseOrder4));
 
 	}
 
@@ -85,6 +85,22 @@ public class InitialData {
 
 	public List<Review> getReviews() {
 		return reviews;
+	}
+	//LOGIN
+	
+	/**
+	 * Will check with the Users to see if there is a match for a Username and Password.
+	 * @param username the Username to check.
+	 * @param password the Password to check.
+	 * @return null if no User is found, the User is there is a match.
+	 */
+	public User login(String username, String password) {
+		for (User user : users) {
+			if (user.getUsername().equals(username) && user.getPassword().equals(password) && user.getUserLevel().equals(UserLevel.ADMIN)) {
+				return user;
+			}
+		}
+		return null;
 	}
 	
 	// CATEGORY
