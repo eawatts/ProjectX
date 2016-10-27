@@ -49,7 +49,7 @@ public class Product {
 
 		private ArrayList<String> imgs;
 		
-		public Product(int i, String string, int j, double d, int k, String string2, List<Supplier> suppliers2, ArrayList<String> p1imgs){};
+//		public Product(int i, String string, int j, double d, int k, String string2, List<Supplier> suppliers2, ArrayList<String> p1imgs){};
 		public Product(int id, String name, int stockLvl, double price, int lowStock, String description,ArrayList<Supplier> suppliers,ArrayList<String> imglists ){
 			this.id = id;
 			this.name = name;
