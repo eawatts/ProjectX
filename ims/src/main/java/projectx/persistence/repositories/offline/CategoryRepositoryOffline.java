@@ -8,14 +8,14 @@ import javax.inject.Inject;
 
 import projectx.persistence.entities.Category;
 import projectx.persistence.repositories.CategoryRepository;
-import projectx.persistence.util.InitialData;
+import projectx.persistence.repositories.offline.database.OfflineDB;
 
 @Stateless
 @Default
 public class CategoryRepositoryOffline implements CategoryRepository {
 	
 	@Inject
-	private InitialData db;
+	private OfflineDB db;
 
 	@Override
 	public void persistCategory(Category category)

@@ -1,4 +1,4 @@
-package projectx.persistence.services;
+package projectx.services;
 
 import java.util.ArrayList;
 import javax.ejb.Stateless;

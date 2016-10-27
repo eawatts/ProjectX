@@ -8,14 +8,14 @@ import javax.inject.Inject;
 
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.repositories.SupplierRepository;
-import projectx.persistence.util.InitialData;
+import projectx.persistence.repositories.offline.database.OfflineDB;
 
 @Stateless
 @Default
 public class SupplierRepositoryOffline implements SupplierRepository {
 
 	@Inject
-	InitialData initialData;
+	OfflineDB initialData;
 	
 	@Override
 	public void createSupplier(Supplier supplier) {

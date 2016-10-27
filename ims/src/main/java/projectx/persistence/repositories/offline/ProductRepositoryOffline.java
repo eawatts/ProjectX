@@ -9,14 +9,14 @@ import javax.inject.Inject;
 
 import projectx.persistence.entities.Product;
 import projectx.persistence.repositories.ProductRepository;
-import projectx.persistence.util.InitialData;
+import projectx.persistence.repositories.offline.database.OfflineDB;
 
 @Stateless
 @Default
 public class ProductRepositoryOffline implements ProductRepository {
 
 	@Inject
-	InitialData initialData;
+	OfflineDB initialData;
 	
 	@Override
 	public void persistProduct(Product products) {

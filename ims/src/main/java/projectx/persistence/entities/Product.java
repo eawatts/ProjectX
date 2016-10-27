@@ -41,10 +41,16 @@ public class Product {
 		
 		@Column(name="description", nullable = false, length = 500)
 		private String description;
-		private ArrayList<Supplier> suppliers;
 		
-		public Product(){};
-		public Product(int id, String name, int stockLvl, double price, int lowStock, String description){
+		
+		private List<Supplier> suppliers;
+		
+
+
+		private ArrayList<String> imgs;
+		
+		public Product(int i, String string, int j, double d, int k, String string2, List<Supplier> suppliers2, ArrayList<String> p1imgs){};
+		public Product(int id, String name, int stockLvl, double price, int lowStock, String description,ArrayList<Supplier> suppliers,ArrayList<String> imglists ){
 			this.id = id;
 			this.name = name;
 			this.currentStock = stockLvl;
@@ -52,7 +58,9 @@ public class Product {
 			this.lowLimit = lowStock;
 			this.isDiscontinued = false;
 			this.description = description;
-		}
+			this.suppliers=suppliers;
+			this.imgs = imglists;
+			}
 		/**
 		 * @return the id
 		 */
@@ -152,16 +160,18 @@ public class Product {
 			this.description = description;
 		}
 		
-		public List<Supplier> getSupplierList(int productID)
-		{
-			if(suppliers == null)
-			{
-				ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
-				suppliers.add(new Supplier(1,"Gnome supplier", null, null, null, null));
-				suppliers.add(new Supplier(2,"GnomeOther supplier", null, null, null, null));
-				suppliers.add(new Supplier(3,"Gnome Super supplier", null, null, null, null));
-			}
+		
+		public List<Supplier> getSuppliers() {
 			return suppliers;
+		}
+		public void setSuppliers(List<Supplier> suppliers) {
+			this.suppliers = suppliers;
+		}
+		public ArrayList<String> getImgs() {
+			return imgs;
+		}
+		public void setImgs(ArrayList<String> imglists) {
+			this.imgs = imglists;
 		}
 		
 		

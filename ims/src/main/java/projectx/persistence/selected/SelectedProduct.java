@@ -11,9 +11,6 @@ import projectx.persistence.entities.Product;
 @Named("selected")
 public class SelectedProduct implements Serializable
 {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7762864582284913362L;
 	private Product selectedProduct;
 	/**
@@ -30,6 +27,4 @@ public class SelectedProduct implements Serializable
 	{
 		this.selectedProduct = selectedProduct;
 	}
-	
-	
 }

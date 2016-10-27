@@ -1,17 +1,15 @@
-package projectx.persistence.controllers;
-import projectx.persistence.entities.*;
-import projectx.persistence.selected.SelectedPurchaseOrder;
-import projectx.persistence.services.*;
-import projectx.persistence.util.OrderState;
+package projectx.controllers;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 
 import javax.faces.bean.SessionScoped;
-import javax.faces.model.DataModel;
-import javax.faces.model.ListDataModel;
-import javax.inject.*;
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import projectx.persistence.entities.PurchaseOrder;
+import projectx.services.PurchaseOrderSerivce;
+
 
 
 
@@ -20,13 +18,13 @@ import javax.inject.*;
 public class PurchaseOrderController implements Serializable{
 	@Inject 
 	private PurchaseOrderSerivce purchaseOrderSerivce;
-	@Inject
+/*	@Inject
 	private SelectedPurchaseOrder selectedPurchaseOrder;
-	private DataModel<PurchaseOrder> purchaseOrderDataModel=null;
+	private DataModel<PurchaseOrder> purchaseOrderDataModel=null;*/
 	
 	private static final long serialVersionUID = 1L;
 	
-	private int id;
+/*	private int id;
 	private Supplier supplier;
 	private boolean approved;
 	private Date approvalDate;
@@ -40,7 +38,7 @@ public class PurchaseOrderController implements Serializable{
 		this.approvalDate=sApprovalDate;
 		this.status=sStatus;
 		this.productsOrdered=sProductsOrdered;
-	}
+	}*/
 
 	public ArrayList<PurchaseOrder> getPurchaseOrderList(){	
 		return purchaseOrderSerivce.getPurchaseOrder();

@@ -8,14 +8,14 @@ import javax.inject.Inject;
 
 import projectx.persistence.entities.User;
 import projectx.persistence.repositories.UserRepository;
-import projectx.persistence.util.InitialData;
+import projectx.persistence.repositories.offline.database.OfflineDB;
 
 @Stateless
 @Default
 public class UserRepositoryOffline implements UserRepository {
 	
 	@Inject
-	private InitialData db;
+	private OfflineDB db;
 
 	@Override
 	public void persistUser(User user) {

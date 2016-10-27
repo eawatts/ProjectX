@@ -1,4 +1,4 @@
-package projectx.persistence.controllers;
+package projectx.controllers;
 
 import java.io.Serializable;
 import java.util.List;
@@ -12,9 +12,9 @@ import javax.inject.Named;
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.selected.SelectedProduct;
-import projectx.persistence.services.ProductService;
+import projectx.services.ProductService;
 
-@Named("products")
+@Named("product")
 @SessionScoped
 public class ProductController implements Serializable
 {
@@ -59,16 +59,6 @@ public class ProductController implements Serializable
 			productDataModel = createDataModel();
 		}
 		return productDataModel;
-	}
-	
-	public List<Supplier> getSupplier(int productId)
-	{
-		return selectedProduct.getSelectedProduct().getSupplierList(productId);
-	}
-	
-	public void setSelectedProduct(int productId)
-	{
-		selectedProduct.setSelectedProduct(productService.findProductById(productId));
 	}
 	
 	public List<Product> getLowStockProducts(){

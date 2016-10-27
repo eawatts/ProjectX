@@ -1,4 +1,4 @@
-package projectx.persistence.services;
+package projectx.services;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
