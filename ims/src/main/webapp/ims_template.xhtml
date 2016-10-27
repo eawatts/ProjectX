@@ -78,10 +78,16 @@
 								</div>
 							</div>
 							<div class="col-tab-2 col-desk-2 nav-banner-right">
-								<button type="button"
-									class="button-green-inverse nav-banner-right-button navinav">
-									Logout <i class="fa fa-user"></i>
-								</button>
+								<h:panelGroup rendered="#{current_session.user ne null}">
+									<h:form>
+										<h:commandButton type="submit"
+											value="#{current_session.userFirstName} click here to logout"
+											styleClass="button-green-inverse nav-banner-right-button navinav"
+											action="#{login.logout()}">
+										</h:commandButton>
+									</h:form>
+								</h:panelGroup>
+
 							</div>
 						</div>
 					</div>

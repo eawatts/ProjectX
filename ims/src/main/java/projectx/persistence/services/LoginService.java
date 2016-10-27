@@ -3,25 +3,22 @@ package projectx.persistence.services;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import projectx.persistence.repositories.UserRepository;
-
+import projectx.persistence.entities.User;
+import projectx.persistence.repositories.LoginRepository;
 
 @Stateless
 public class LoginService {
-	@Inject
-	private UserRepository userRepo;
 	
-	public boolean validateDetails(String username, String pass)
-	{
-
-		if(username==null || pass ==null) return false;
-		
-		if(userRepo.checkPassword(username, pass)) return true;
-		else return false;
-		
-		}
-	public String getUserID(String username){
-		return userRepo.getId(username.toLowerCase());
+	@Inject
+	private LoginRepository loginrepository;
+	
+	/**
+	 * Will forward on a Login request to the LoginRepository.
+	 * @param username the User's username.
+	 * @param password the User's password.
+	 * @return a User if the Login attempt was successful, null if not.
+	 */
+	public User login(String username, String password){
+		return loginrepository.login(username, password);
 	}
-
 }

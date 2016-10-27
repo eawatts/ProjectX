@@ -4,7 +4,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="ims_template.xhtml">
 	<ui:define name="page-stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/homepage.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/index.css"></link>
 	</ui:define>
 
 
@@ -13,20 +13,23 @@
 	<ui:define name="maincontent">
 		<div class="main-content">
 			<div class="row">
-				<h1 class="titleText">Home</h1>
+				<div class="page-title">
+					<h1>Home</h1>
+				</div>
 				<p class="description">
 					<b>Top 25 Low Stock Items</b>
 				</p>
 			</div>
 			<div class="row">
 				<div class="table">
-					<div class="row">
+					<div class="row table-head">
 						<div class="col-tab-3 col-desk-3" align="left">Product ID</div>
 						<div class="col-tab-3 col-desk-3">Name</div>
 						<div class="col-tab-3 col-desk-3">Current Stock</div>
 						<div class="col-tab-3 col-desk-3">Low Limit</div>
 					</div>
-					<ui:repeat var="product" value="#{products.productList}">
+					<hr class="table-row" />
+					<ui:repeat var="product" value="#{products.productDataModel}">
 						<div class="row">
 							<div class="col-tab-3 col-desk-3" align="left">
 								<p>
@@ -40,15 +43,16 @@
 							</div>
 							<div class="col-tab-3 col-desk-3">
 								<p>
-									<h:outputText value="#{product.currentstock}" />
+									<h:outputText value="#{product.currentStock}" />
 								</p>
 							</div>
 							<div class="col-tab-3 col-desk-3">
 								<p>
-									<h:outputText value="#{product.lowlimit}" />
+									<h:outputText value="#{product.lowLimit}" />
 								</p>
 							</div>
 						</div>
+						<hr class="table-row" />
 					</ui:repeat>
 				</div>
 			</div>
