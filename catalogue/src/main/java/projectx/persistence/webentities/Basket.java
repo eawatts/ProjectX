@@ -7,6 +7,9 @@ import projectx.persistence.entities.Product;
 
 public class Basket {
 
+	public static final int DAYS_FOR_DELIVERY = 2;
+	public static final int DAY_IN_MILLISECONDS = 86400000;
+
 	private List<BasketProduct> basketContents;
 
 	public List<BasketProduct> getBasketContents() {
@@ -16,11 +19,18 @@ public class Basket {
 	public void setBasketContents(List<BasketProduct> basketContents) {
 		this.basketContents = basketContents;
 	}
-	
-	public void addSingleProductToBasket(Product product){
+
+	public ArrayList<BasketProduct> initialiseBasketContents() {
+		if (basketContents == null)
+			return new ArrayList<BasketProduct>();
+		else
+			return null;
+	}
+
+	public void addSingleProductToBasket(Product product) {
 		addProductToBasket(product, 1);
 	}
-	
+
 	public void addProductToBasket(Product product, int quantity) {
 		if (basketContents == null)
 			basketContents = initialiseBasketContents();
@@ -40,11 +50,15 @@ public class Basket {
 		}
 	}
 
-	public ArrayList<BasketProduct> initialiseBasketContents() {
-		if (basketContents == null)
-			return new ArrayList<BasketProduct>();
-		else
-			return null;
+	public List<BasketProduct> getContents() {
+		return basketContents;
+	}
+
+	public int getCount() {
+		if (basketContents == null) {
+			return 0;
+		}
+		return basketContents.size();
 	}
 
 	public void removeProduct(int productId) {
@@ -66,16 +80,5 @@ public class Basket {
 			}
 			return Math.round(totalPrice * 100.0) / 100.0;
 		}
-	}
-	
-	public List<BasketProduct> getContents() {
-		return basketContents;
-	}
-	
-	public int getCount() {
-		if (basketContents == null) {
-			return 0;
-		}
-		return basketContents.size();
 	}
 }
