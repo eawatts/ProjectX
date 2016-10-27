@@ -1,4 +1,4 @@
-package projectx.persistence.controllers;
+package projectx.controllers;
 
 import java.io.Serializable;
 import java.util.List;
@@ -12,7 +12,7 @@ import javax.inject.Named;
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.selected.SelectedProduct;
-import projectx.persistence.services.ProductService;
+import projectx.services.ProductService;
 
 @Named("product")
 @SessionScoped

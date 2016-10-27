@@ -1,4 +1,4 @@
-package projectx.persistence.controllers;
+package projectx.controllers;
 
 import java.io.Serializable;
 
@@ -7,8 +7,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.User;
-import projectx.persistence.services.LoginService;
 import projectx.persistence.webentities.CurrentSession;
+import projectx.services.LoginService;
 
 
 

@@ -9,13 +9,13 @@ import javax.inject.Inject;
 
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.repositories.PurchaseOrderRepository;
-import projectx.persistence.util.InitialData;
+import projectx.persistence.repositories.offline.database.OfflineDB;
 
 @Stateless
 @Default
 public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
 	@Inject
-	InitialData initialData;
+	OfflineDB initialData;
 	
 
 	@Override

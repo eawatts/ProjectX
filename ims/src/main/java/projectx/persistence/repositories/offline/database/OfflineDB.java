@@ -1,4 +1,4 @@
-package projectx.persistence.util;
+package projectx.persistence.repositories.offline.database;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -16,10 +16,12 @@ import projectx.persistence.entities.Product;
 import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.User;
+import projectx.persistence.util.OrderState;
+import projectx.persistence.util.UserLevel;
 
 @Startup
 @Singleton
-public class InitialData {
+public class OfflineDB {
 
 	private List<User> users;
 	private List<Review> reviews;

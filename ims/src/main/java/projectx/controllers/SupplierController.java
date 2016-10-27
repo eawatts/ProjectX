@@ -1,4 +1,4 @@
-package projectx.persistence.controllers;
+package projectx.controllers;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Supplier;
-import projectx.persistence.services.SupplierService;
+import projectx.services.SupplierService;
 
 @Named("suppliers")
 @SessionScoped
