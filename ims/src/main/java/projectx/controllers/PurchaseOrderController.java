@@ -1,18 +1,19 @@
 package projectx.controllers;
-import projectx.persistence.entities.*;
-import projectx.persistence.selected.SelectedPurchaseOrder;
-import projectx.persistence.services.*;
-import projectx.persistence.util.OrderState;
-import projectx.services.PurchaseOrderSerivce;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
-import javax.faces.model.ListDataModel;
-import javax.inject.*;
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import projectx.persistence.entities.ProductsOrdered;
+import projectx.persistence.entities.PurchaseOrder;
+import projectx.persistence.entities.Supplier;
+import projectx.persistence.selected.SelectedPurchaseOrder;
+import projectx.persistence.util.OrderState;
+import projectx.services.PurchaseOrderSerivce;
 
 
 
