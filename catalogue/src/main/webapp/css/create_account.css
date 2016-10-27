@@ -1,0 +1,50 @@
+:root { -
+	-raisin-black: #272727; -
+	-floral-white: #f9fbf2; -
+	-orange-yellow: #fed766; -
+	-british-racing-green: #004425; -
+	-sweet-sweet-brown: #a53f2b; -
+	-inline-width: 80%;
+}
+
+#userInfo {
+	text-align: left;
+	color: var(- -raisin-black);
+	margin: auto;
+	width: 80%;
+	display: block;
+}
+
+#userInfoForm {
+	text-align: right;
+	width: var(- -inline-width);
+	margin: auto;
+	box-sizing: border-box;
+	padding-left: 10%;
+	padding-right: 30%;
+}
+
+#address {
+	text-align: right;
+	width: var(- -inline-width);
+	margin: auto;
+	box-sizing: border-box;
+	padding-left: 10%;
+	padding-right: 30%;
+}
+
+#payment {
+	text-align: right;
+	width: var(- -inline-width);
+	margin: auto;
+	box-sizing: border-box;
+	padding-left: 10%;
+	padding-right: 30%;
+}
+.register-error{
+	color: red;
+}
+
+h2 {
+	padding-left: 5%;
+}

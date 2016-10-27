@@ -54,7 +54,12 @@ public class LoginController implements Serializable{
 	}
 
 	public String createUser(){
-		return "catalogue_account_create";
+		return "account_create";
+	}
+	
+	public String loginRedirectToCheckoutSummary(){
+		currentsession.setUrlRedirect("checkout_summary");
+		return "login";
 	}
 	
 	/**
@@ -73,8 +78,7 @@ public class LoginController implements Serializable{
 			this.password = "";
 			return null;
 		}
-		
-		User user = loginservice.login("Admin", "test");
+		User user = loginservice.login(this.username, this.password);
 		
 		if(user == null){
 			this.error = "Check Username or Password";
@@ -87,7 +91,12 @@ public class LoginController implements Serializable{
 		username = null;
 		password = null;
 		error = null;
-		return "catalogue_index";
+		
+		if(currentsession.getUrlRedirect() != null){
+			return currentsession.getUrlRedirect();
+		}
+		
+		return "index";
 	}
 	
 	/**
@@ -99,6 +108,6 @@ public class LoginController implements Serializable{
 		this.password = null;
 		this.error = null;
 		currentsession.logout();
-		return "catalogue_index";
+		return "index";
 	}
 }

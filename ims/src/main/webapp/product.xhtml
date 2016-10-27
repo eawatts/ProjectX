@@ -6,13 +6,15 @@
 	<meta charset="utf-8" />
 	<ui:define name="page-stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<link rel="stylesheet" type="text/css" href="css/product.css"/>
 	</ui:define>
+	
 	<ui:define name="title">Product</ui:define>
 	<ui:define name="maincontent">
 		<div class="main-content">
 			<div class="breadcrumbs">
 				<a href="ims_homepage.xhtml">IMS</a> > <a href="ims_products.xhtml">Product
-					List</a> <a href="ims_homepage.xhtml">Home</a> >
+					List</a>  >
 				<h:outputText value="#{product.name}"></h:outputText>
 			</div>
 			<div class="row">
@@ -22,65 +24,75 @@
 				</div>
 				<div class ="row">
 				<div class="regular slider">
-					<ui:repeat var="img" value="#{selectedProduct.product.images}">
+					<ui:repeat var="img" value="#{product.images}">
 						<h:form>
 							<div class="slider-product-image">
 								<img src="img#{img.path}" alt="" />
 							</div>
 							<div class="slider-button">
 								<h:commandButton
-									action="#{selectedProduct.product.setImgAsDefault"></h:commandButton>
+									action="#{product.setImgAsDefault}"></h:commandButton>
 
 							</div>
 						</h:form>
 					</ui:repeat>
-					<h:commandButton action="#{selectedProduct.product.addImg}">Add Image</h:commandButton>
+					<h:commandButton action="#{product.addImg}">Add Image</h:commandButton>
 				</div>
 				</div>
 				<br />
+				<br />
+				<hr />
 				<div class="row">
 					<div class="col-tab-3 col-desk-3">
-							<h:outputText class="stocklowlimit" value="#{selectedProduct.product.lowStockLevel}"></h:outputText>
+					<h2>Low Limit</h2>
+							<h:outputText class="stocklowlimit" value="#{product.lowStockLevel}"></h:outputText>
 							<button type="button" class="edit_lowlimit">edit</button>
 							<h:form>
-							<h:inputText class="updatestocklowlimit" value="#{selectedProduct.product.lowStockLevel}"></h:inputText>
-							<h:commandButton class="save_lowlimit" value="save" action="#{selectedProduct.product.lowStockLevel}"></h:commandButton>
+							<h:inputText class="updatestocklowlimit" value="#{product.lowStockLevel}"></h:inputText>
+							<h:commandButton class="save_lowlimit" value="save" action="#{product.lowStockLevel}"></h:commandButton>
 							<button type="button" class="cancel_lowlimit">Cancel</button> 
 							</h:form>
 						</div>
 					
 					<div class="col-tab-3 col-desk-3">
-							<h:outputText class="stocklevel" value="#{selectedProduct.product.currentStockLevel}"></h:outputText>
+					<h2>Stock Level</h2>
+							<h:outputText class="stocklevel" value="#{product.currentStockLevel}"></h:outputText>
 							<button type="button" class="edit_stocklevel">edit</button>
 							<h:form>
-							<h:inputText class="update_stocklevel" value="#{selectedProduct.product.currentStockLevel}"></h:inputText>
-							<h:commandButton class="save_stocklevel" value="save" action="#{selectedProduct.product.currentStockLevel}"></h:commandButton>
+							<h:inputText class="update_stocklevel" value="#{product.currentStockLevel}"></h:inputText>
+							<h:commandButton class="save_stocklevel" value="save" action="#{product.currentStockLevel}"></h:commandButton>
 							<button type="button" class="cancel_stocklevel">Cancel</button> 
 							</h:form>
 					</div>
 					<div class="col-tab-3 col-desk-3">
-							<h:outputText class="price" value="#{selectedProduct.product.price}"></h:outputText>
+					<h2>Price</h2>
+							<h:outputText class="price" value="#{product.price}"></h:outputText>
 							<button type="button" class="edit_price">edit</button>
 							<h:form>
-							<h:inputText class="update_price" value="#{selectedProduct.product.price}"></h:inputText>
-							<h:commandButton class="save_price" value="save" action="#{selectedProduct.product.price}"></h:commandButton>
+							<h:inputText class="update_price" value="#{product.price}"></h:inputText>
+							<h:commandButton class="save_price" value="save" action="#{product.price}"></h:commandButton>
 							<button type="button" class="cancel_price">Cancel</button> 
 							</h:form>
 							
 					</div>
 					<div class="col-tab-3 col-desk-3">
-							<h:selectBooleanCheckbox value="#{selectedProduct.product.isDiscontinued}"></h:selectBooleanCheckbox>
-							is discontinued
+					<h2>Discontinued?</h2>
+							<h:selectBooleanCheckbox value="#{product.isDiscontinued}"></h:selectBooleanCheckbox>
+							True/False
 					</div>
 					<br />
 
 				</div>
+				
+								<br />
+				<br />
+				<hr />
 				<div class="row">
-					<h:ouputText class="showdescription" value="#{selectedProduct.product.description"></h:ouputText>
+					<h:outputText class="showdescription" value="#{product.description}"></h:outputText>
 					<button type="button" class="edit_desc">edit</button>
 					<h:form>
-					<h:inputText class="editdescription" value="#{selectedProduct.product.description}"></h:inputText>
-					<h:commandButton class="save_desc" value="save" action="#{selectedProduct.product.description}"></h:commandButton>
+					<h:inputText class="editdescription" value="#{product.description}"></h:inputText>
+					<h:commandButton class="save_desc" value="save" action="#{product.description}"></h:commandButton>
 					<button type="button" class="cancel_desc">Cancel</button>
 					</h:form>
 

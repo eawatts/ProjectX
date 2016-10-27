@@ -1,0 +1,27 @@
+
+:root
+{
+	--raisin-black: #272727;
+    --floral-white: #f9fbf2;
+    --orange-yellow: #fed766;
+    --british-racing-green: #004425;
+    --sweet-sweet-brown: #a53f2b;
+    --inline-width: 40%;
+}
+
+.login{
+	background-color: var(--british-racing-green);
+	Color: var(--floral-white);
+}
+.form{
+	Color: var(--sweet-sweet-brown);
+}
+.login-form {
+	text-align: center;
+	align-content: center;
+	width:100%;
+}
+
+.login-error{
+	color: red;
+}

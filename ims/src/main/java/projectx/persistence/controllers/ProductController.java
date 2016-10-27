@@ -14,7 +14,7 @@ import projectx.persistence.entities.Supplier;
 import projectx.persistence.selected.SelectedProduct;
 import projectx.persistence.services.ProductService;
 
-@Named("products")
+@Named("product")
 @SessionScoped
 public class ProductController implements Serializable
 {

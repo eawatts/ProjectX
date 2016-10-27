@@ -39,7 +39,7 @@ public class CategoryController implements Serializable{
 		}
 		public String viewSubcatagory(int id){
 			subcategoryid = id;
-			return "catalogue_subcategories";
+			return "subcategories";
 			
 		}
 }

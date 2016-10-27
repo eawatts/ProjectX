@@ -26,7 +26,6 @@ public class SubcategoryController implements Serializable {
 	
 	
 	public List<SubCategory> getSubCategories(){
-		
 		return subCategoryService.getSubCategories();
 	}
 	
@@ -39,12 +38,10 @@ public class SubcategoryController implements Serializable {
 	}
 
 	public String getName() {
-		System.out.println(name);
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
-		
 }

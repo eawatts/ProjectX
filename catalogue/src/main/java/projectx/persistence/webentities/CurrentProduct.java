@@ -20,7 +20,8 @@ public class CurrentProduct implements Serializable {
 
 	private ProductWithAverageReview product;
 	private List<Review> reviews;
-	
+	private int quantity = 1;
+
 	public CurrentProduct(){}
 	
 	public CurrentProduct(Product product, Integer averageReview, List<Review> reviews){
@@ -59,6 +60,14 @@ public class CurrentProduct implements Serializable {
 	
 	public void setReviews(List<Review> reviews) {
 		this.reviews = reviews;
+	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
 	/**
