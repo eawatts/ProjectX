@@ -9,33 +9,86 @@
 	</ui:define>
 	<ui:define name="title">Product</ui:define>
 	<ui:define name="maincontent">
-	<div class="main-content">
+		<div class="main-content">
 			<div class="breadcrumbs">
-			<a href="ims_homepage.xhtml">IMS</a> > <a href="ims_products.xhtml">Product List</a> <a href="ims_homepage.xhtml">Home</a> > <h:outputText value="#{product.name}"></h:outputText>
+				<a href="ims_homepage.xhtml">IMS</a> > <a href="ims_products.xhtml">Product
+					List</a> <a href="ims_homepage.xhtml">Home</a> >
+				<h:outputText value="#{product.name}"></h:outputText>
 			</div>
 			<div class="row">
-			<h1>
-				<h:outputText styleClass="titleText" value="#{product.name}">
+				<h1>
+					<h:outputText styleClass="titleText" value="#{product.name}"></h:outputText>
+				</h1>
+				</div>
+				<div class ="row">
 				<div class="regular slider">
 					<ui:repeat var="img" value="#{selectedProduct.product.images}">
-					<h:form>
-					<div class="slider-product-image">
-					<img src="img#{img.path}" alt=""/>
-					</div>
-					<div class="slider-button">
-					<h:commandButton action="#{selectedProduct.product.setImgAsDefault"></h:commandButton>
-					
-					</div>
-					</h:form>
+						<h:form>
+							<div class="slider-product-image">
+								<img src="img#{img.path}" alt="" />
+							</div>
+							<div class="slider-button">
+								<h:commandButton
+									action="#{selectedProduct.product.setImgAsDefault"></h:commandButton>
+
+							</div>
+						</h:form>
 					</ui:repeat>
 					<h:commandButton action="#{selectedProduct.product.addImg}">Add Image</h:commandButton>
-					<br />
-					
-				
-				
 				</div>
-			</h1>
-			
-			</div>
-			</div>
-	</ui:composition>
+				</div>
+				<br />
+				<div class="row">
+					<div class="col-tab-3 col-desk-3">
+							<h:outputText class="stocklowlimit" value="#{selectedProduct.product.lowStockLevel}"></h:outputText>
+							<button type="button" class="edit_lowlimit">edit</button>
+							<h:form>
+							<h:inputText class="updatestocklowlimit" value="#{selectedProduct.product.lowStockLevel}"></h:inputText>
+							<h:commandButton class="save_lowlimit" value="save" action="#{selectedProduct.product.lowStockLevel}"></h:commandButton>
+							<button type="button" class="cancel_lowlimit">Cancel</button> 
+							</h:form>
+						</div>
+					
+					<div class="col-tab-3 col-desk-3">
+							<h:outputText class="stocklevel" value="#{selectedProduct.product.currentStockLevel}"></h:outputText>
+							<button type="button" class="edit_stocklevel">edit</button>
+							<h:form>
+							<h:inputText class="update_stocklevel" value="#{selectedProduct.product.currentStockLevel}"></h:inputText>
+							<h:commandButton class="save_stocklevel" value="save" action="#{selectedProduct.product.currentStockLevel}"></h:commandButton>
+							<button type="button" class="cancel_stocklevel">Cancel</button> 
+							</h:form>
+					</div>
+					<div class="col-tab-3 col-desk-3">
+							<h:outputText class="price" value="#{selectedProduct.product.price}"></h:outputText>
+							<button type="button" class="edit_price">edit</button>
+							<h:form>
+							<h:inputText class="update_price" value="#{selectedProduct.product.price}"></h:inputText>
+							<h:commandButton class="save_price" value="save" action="#{selectedProduct.product.price}"></h:commandButton>
+							<button type="button" class="cancel_price">Cancel</button> 
+							</h:form>
+							
+					</div>
+					<div class="col-tab-3 col-desk-3">
+							<h:selectBooleanCheckbox value="#{selectedProduct.product.isDiscontinued}"></h:selectBooleanCheckbox>
+							is discontinued
+					</div>
+					<br />
+
+				</div>
+				<div class="row">
+					<h:ouputText class="showdescription" value="#{selectedProduct.product.description"></h:ouputText>
+					<button type="button" class="edit_desc">edit</button>
+					<h:form>
+					<h:inputText class="editdescription" value="#{selectedProduct.product.description}"></h:inputText>
+					<h:commandButton class="save_desc" value="save" action="#{selectedProduct.product.description}"></h:commandButton>
+					<button type="button" class="cancel_desc">Cancel</button>
+					</h:form>
+
+
+				</div>
+		</div>
+		</ui:define>
+		<ui:define name="custom-scripts">
+			<script type="text/javaScript" src="js/product_edit.js"></script>
+		</ui:define>
+</ui:composition>
