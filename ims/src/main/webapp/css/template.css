@@ -25,7 +25,11 @@
 	max-width: 40px;
 	max-height: 40px;
 }
-
-#main-content{
-	align-content: center;
+h1{
+	text-align:center;
+}
+.not-logged-in{
+	position:absolute;
+	left:50%;
+	top:50%;
 	}
