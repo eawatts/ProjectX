@@ -391,9 +391,9 @@ public class OfflineDB {
 	}
 
 	public PurchaseOrder getPurchaseOrderById(int id) {
-		for (PurchaseOrder purchOrder : purchaseOrders) {
-			if (purchOrder.getId()==id)
-				return purchOrder;
+		for (PurchaseOrder purchaseOrder : purchaseOrders) {
+			if (purchaseOrder.getId()==id)
+				return purchaseOrder;
 		}
 		return null;
 	}
@@ -408,16 +408,17 @@ public class OfflineDB {
 	}
 
 	public List<Product> getLowStockProducts() {
+		List<Product> orderedProducts = new ArrayList<Product>(products);
 		class MyComparator implements Comparator<Product> {
-
+			
 			@Override
 			public int compare(Product product1, Product product2) {
 				return new Integer(product1.getCurrentStock() - product1.getLowLimit())
 						.compareTo(product2.getCurrentStock() - product2.getLowLimit());
 			}
 		}
-		Collections.sort(products, new MyComparator());
-		return products;
+		Collections.sort(orderedProducts, new MyComparator());
+		return orderedProducts;
 	}
 
 	// NOTIFICATIONS
