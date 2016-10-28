@@ -2,7 +2,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_login.xhtml'}">
+	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
 	
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/index.css"></link>

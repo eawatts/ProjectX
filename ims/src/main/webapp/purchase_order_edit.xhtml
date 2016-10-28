@@ -2,7 +2,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="templates/template_ims.xhtml">
+	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
 	<meta charset="utf-8" />
 	<ui:define name="title">Edit Purchase Order</ui:define>
 	<ui:define name="custom-css">
