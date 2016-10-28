@@ -85,7 +85,7 @@ public class OfflineDB {
 		PurchaseOrder purchaseOrder4 = new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"),
 				OrderState.DELIVERED, productsOrdered);
 		purchaseOrder4.addOrderedProducts(new ProductsOrdered(7, products.get(4), 20, purchaseOrder4));
-		purchaseOrder4.addOrderedProducts(new ProductsOrdered(8, products.get(5), 10, purchaseOrder4));
+		purchaseOrder4.addOrderedProducts(new ProductsOrdered(8, products.get(5), 10, purchaseOrder4));	
 
 	}
 
