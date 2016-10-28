@@ -14,7 +14,8 @@ public class CurrentSession implements Serializable{
 
 		private static final long serialVersionUID = 1L;
 		private User user;
-		
+		private NotificationManager notificationManager;
+
 		public User getUser() {
 			return user;
 		}
@@ -34,5 +35,8 @@ public class CurrentSession implements Serializable{
 		public void logout() {
 			this.user = null;
 		}
-		
+
+		public NotificationManager getNotificationManager() {
+			return notificationManager;
+		}
 }
