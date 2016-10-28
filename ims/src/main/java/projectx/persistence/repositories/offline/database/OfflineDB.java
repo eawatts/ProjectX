@@ -426,10 +426,16 @@ public class OfflineDB {
 	// NOTIFICATIONS
 
 	public List<Notification> getNotifications() {
-		return db.getNotifications();
+		return new ArrayList<>(notifications);
 	}
 
 	public List<Notification> getNotificationsForType(NotificationType type) {
-		return db.getNotificationsForType(type);
+		List<Notification> matchingNotifications = new ArrayList<Notification>();
+		for (Notification notification : notifications) {
+			if(notification.getType() == type) {
+				matchingNotifications.add(notification);
+			}
+		}
+		return matchingNotifications;
 	}
 }
