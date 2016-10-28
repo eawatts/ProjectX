@@ -390,9 +390,9 @@ public class OfflineDB {
 		return null;
 	}
 
-	public PurchaseOrder getPurchaseOrderById(String id) {
+	public PurchaseOrder getPurchaseOrderById(int id) {
 		for (PurchaseOrder purchOrder : purchaseOrders) {
-			if (Integer.toString(purchOrder.getId()).equals(id))
+			if (purchOrder.getId()==id)
 				return purchOrder;
 		}
 		return null;

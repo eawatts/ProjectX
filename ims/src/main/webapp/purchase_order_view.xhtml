@@ -2,7 +2,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
+	template="templates/template_ims.xhtml">
 	<meta charset="utf-8" />
 	<ui:define name="title">View Purchase Order</ui:define>
 	<ui:define name="custom-css">
@@ -21,6 +21,7 @@
 					<div class="col-desk-2 col-tab-4">Status</div>
 					<div class="col-desk-2 col-tab-2"></div>
 				</div>
+				<hr/>
 			</div>
 			<div class="poItems">
 				<ui:repeat var="purchaseOrder" value="#{purchaseOrders.purchaseOrderList}">
@@ -33,11 +34,32 @@
 								<h:outputText value="#{purchaseOrder.status}"></h:outputText>
 							</div>
 							<div class="col-desk-2 col-tab-2">
+								<h:commandButton id="view" type="button" 
+								onclick= "location.href='#popup1';#{purchaseOrders.findPOById(purchaseOrder.id)};" 
+								value="view" />
 							</div>
 						</div>
 					</div>
 					<hr />
 				</ui:repeat>	
+			</div>
+			<div id="popup1" class="overlay">
+				<div class="popup">
+					<div class="row">
+						<div class="col-desk-3 col-tab-3">
+							<h:outputText type="text" value="#{purchaseOrders.id}"></h:outputText>
+						</div>
+						<div class="col-desk-3 col-tab-3">
+							<h:outputText type="text" value="#{purchaseOrders.supplier.name}"></h:outputText>
+						</div>
+						<div class="col-desk-3 col-tab-3">
+							Approved:<h:outputText type="text" value="#{purchaseOrders.approved}"></h:outputText>
+						</div>
+						<div class="col-desk-3 col-tab-3">
+							Approval Date<h:outputText type="text" value="#{purchaseOrders.approvalDate}"></h:outputText>
+						</div>
+					</div>
+				</div>
 			</div>
 			
 			<br/>
