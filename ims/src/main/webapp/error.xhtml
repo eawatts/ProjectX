@@ -3,25 +3,30 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template_ims.xhtml">
-
-	<meta charset="utf-8" />
-	<ui:define name="title">Metrics</ui:define>
 	
-	<ui:define name="custom-css">
-		<link rel="stylesheet" type="text/css" href="css/metrics.css" />
-	</ui:define>
+	<meta charset="utf-8" />
+	
+	<ui:define name="title">Error</ui:define>
+	
+	<ui:define name="custom-css"></ui:define>
 	
 	<ui:define name="main-content">
 		<div class="main-content">
 			<div class="main-content">
 				<div class="row">
-					<h1 class="Heading">Metrics</h1>
+					<h1 class="Heading">404 Error</h1>
 				</div>
 				<div class="row">
-					<div class="">
-					</div>
+					<p id="description">
+						<b>Oh Noooooo!</b> It appears we couldn't find the page you were
+						looking for.
+					</p>
+					<p id="description1">Please accept our sincerest apologise,
+						better luck next time!</p>
 				</div>
-
+				<div class="row">
+					<h:graphicImage value="img/Capture.png" />
+				</div>
 			</div>
 		</div>
 	</ui:define>
