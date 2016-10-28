@@ -5,6 +5,7 @@
 	template="templates/template_ims.xhtml">
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/index.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/checkbox.css"></link>
 	</ui:define>
 
 
@@ -23,33 +24,41 @@
 			<div class="row">
 				<div class="table">
 					<div class="row table-head">
-						<div class="col-tab-3 col-desk-3" align="left">Product ID</div>
+						<div class="col-tab-2 col-desk-2" align="left">Product ID</div>
 						<div class="col-tab-3 col-desk-3">Name</div>
-						<div class="col-tab-3 col-desk-3">Current Stock</div>
-						<div class="col-tab-3 col-desk-3">Low Limit</div>
+						<div class="col-tab-2 col-desk-2">Current Stock</div>
+						<div class="col-tab-2 col-desk-2">Low Limit</div>
+						<div class="col-tab-3 col-desk-3">Add To Purchase Order</div>
 					</div>
 					<hr class="table-row" />
-					<ui:repeat var="product" value="#{products.lowStockProducts}">
+					<ui:repeat var="lowStockProduct"
+						value="#{product.top25LowStockProducts}">
 						<div class="row">
-							<div class="col-tab-3 col-desk-3" align="left">
+							<div class="col-tab-2 col-desk-2" align="left">
 								<p>
-									<h:outputText value="#{product.id}" />
+									<h:outputText value="#{lowStockProduct.id}" />
 								</p>
 							</div>
 							<div class="col-tab-3 col-desk-3">
 								<p>
-									<h:outputText value="#{product.name}" />
+									<h:outputText value="#{lowStockProduct.name}" />
+								</p>
+							</div>
+							<div class="col-tab-2 col-desk-2">
+								<p>
+									<h:outputText value="#{lowStockProduct.currentStock}" />
+								</p>
+							</div>
+							<div class="col-tab-2 col-desk-2">
+								<p>
+									<h:outputText value="#{lowStockProduct.lowLimit}" />
 								</p>
 							</div>
 							<div class="col-tab-3 col-desk-3">
-								<p>
-									<h:outputText value="#{product.currentStock}" />
-								</p>
-							</div>
-							<div class="col-tab-3 col-desk-3">
-								<p>
-									<h:outputText value="#{product.lowLimit}" />
-								</p>
+								<div class="slideThree">
+									<input type="checkbox" value="None" id="slideThree"
+										name="check"/>
+								</div>
 							</div>
 						</div>
 						<hr class="table-row" />
@@ -58,4 +67,7 @@
 			</div>
 		</div>
 	</ui:define>
+	<!-- Javascript -->
+	<script type="text/javaScript" src="js/checkbox.js"></script>
+	<ui:insert name="custom-scripts" />
 </ui:composition>
