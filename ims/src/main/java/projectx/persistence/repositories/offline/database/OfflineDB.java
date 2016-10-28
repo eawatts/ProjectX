@@ -59,7 +59,6 @@ public class OfflineDB {
 		p1imgs.add("asd");
 
 		products = new ArrayList<Product>();
-<<<<<<< HEAD
 		products.add(new Product(1, "Gnome", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
 		products.add(new Product(2, "Gnomeo", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
 		products.add(new Product(3, "Gnomezilla", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
@@ -90,41 +89,6 @@ public class OfflineDB {
 		products.add(new Product(28, "Petrol Chainsaw", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
 		products.add(new Product(29, "Hedge Trimmer", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
 		products.add(new Product(30, "Paddling Pool", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-=======
-		products.add(new Product(1, "Product", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(2, "Another product", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(3, "Gnome", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(4, "Another Gnome", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(5, "Help", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(6, "Help Me", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(7, "Product", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(8, "Another product", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(9, "Gnome", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(10, "Another Gnome", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(11, "Help", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(12, "Help Me", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(13, "Product", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(
-				new Product(14, "Another product", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(15, "Gnome", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(16, "Another Gnome", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(17, "Help", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(18, "Help Me", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(19, "Product", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(
-				new Product(20, "Another product", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(21, "Gnome", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(22, "Another Gnome", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(23, "Help", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(24, "Help Me", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(25, "Product", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(
-				new Product(26, "Another product", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(27, "Gnome", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(28, "Another Gnome", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(29, "Help", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(30, "Help Me", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
->>>>>>> 854f5fb73d05607e7d0f06eec810c90c4e55db80
 
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,
