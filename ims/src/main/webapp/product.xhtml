@@ -24,10 +24,10 @@
 				</div>
 				<div class ="row">
 				<div class="regular slider">
-					<ui:repeat var="img" value="#{product.productByID.images}">
+					<ui:repeat var="img" value="#{product.productByID.imgs}">
 						<h:form>
 							<div class="slider-product-image">
-								<img src="img#{img.path}" alt="" />
+								<img src="img#{img}" alt="" />
 							</div>
 							<div class="slider-button">
 								<h:commandButton
@@ -45,22 +45,22 @@
 				<div class="row">
 					<div class="col-tab-3 col-desk-3">
 					<h2>Low Limit</h2>
-							<h:outputText class="stocklowlimit" value="#{product.productByID.lowStockLevel}"></h:outputText>
+							<h:outputText class="stocklowlimit" value="#{product.productByID.lowLimit}"></h:outputText>
 							<button type="button" class="edit_lowlimit">edit</button>
 							<h:form>
-							<h:inputText class="updatestocklowlimit" value="#{product.productByID.lowStockLevel}"></h:inputText>
-							<h:commandButton class="save_lowlimit" value="save" action="#{product.lowStockLevel}"></h:commandButton>
+							<h:inputText class="updatestocklowlimit" value="#{product.productByID.lowLimit}"></h:inputText>
+							<h:commandButton class="save_lowlimit" value="save" action="#{product.lowLimit}"></h:commandButton>
 							<button type="button" class="cancel_lowlimit">Cancel</button> 
 							</h:form>
 						</div>
 					
 					<div class="col-tab-3 col-desk-3">
 					<h2>Stock Level</h2>
-							<h:outputText class="stocklevel" value="#{product.productByID.currentStockLevel}"></h:outputText>
+							<h:outputText class="stocklevel" value="#{product.productByID.currentStock}"></h:outputText>
 							<button type="button" class="edit_stocklevel">edit</button>
 							<h:form>
-							<h:inputText class="update_stocklevel" value="#{product.productByID.currentStockLevel}"></h:inputText>
-							<h:commandButton class="save_stocklevel" value="save" action="#{product.currentStockLevel}"></h:commandButton>
+							<h:inputText class="update_stocklevel" value="#{product.productByID.currentStock}"></h:inputText>
+							<h:commandButton class="save_stocklevel" value="save" action="#{product.currentStock}"></h:commandButton>
 							<button type="button" class="cancel_stocklevel">Cancel</button> 
 							</h:form>
 					</div>
