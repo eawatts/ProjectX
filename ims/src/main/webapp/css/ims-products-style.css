@@ -95,3 +95,8 @@
 .view-button{
 	margin:5px;
 }
+.bottom-row{
+	text-align: right;
+	float: right;
+	margin-right: 13%
+}
