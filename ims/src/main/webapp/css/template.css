@@ -17,7 +17,15 @@
 	background-color: #004425
 }
 
+.notification-icon {
+	font-size: 200%;
+}
+
 .noti-ims {
 	max-width: 40px;
 	max-height: 40px;
 }
+
+#main-content{
+	align-content: center;
+	}

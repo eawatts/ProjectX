@@ -1,8 +1,6 @@
 package projectx.services;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -13,15 +11,15 @@ import projectx.persistence.repositories.PurchaseOrderRepository;
 @Stateless
 public class PurchaseOrderSerivce {
 	@Inject
-	private PurchaseOrderRepository purchaseOrderManager;
+	private PurchaseOrderRepository purchaseOrderRepo;
 	
 	public PurchaseOrder findProductById(String id)
 	{
-		return purchaseOrderManager.findPurchaseOrderById(id);
+		return purchaseOrderRepo.findPurchaseOrderById(id);
 	}
-	public ArrayList<PurchaseOrder> getPurchaseOrder() 
-	{
-		return purchaseOrderManager.getPurchaseOrders();
+	
+	public ArrayList<PurchaseOrder> getPurchaseOrderList() {
+		return purchaseOrderRepo.getPurchaseOrders();
 	}
 	
 }
