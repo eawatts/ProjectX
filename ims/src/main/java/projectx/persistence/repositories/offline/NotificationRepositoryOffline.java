@@ -37,4 +37,9 @@ public class NotificationRepositoryOffline implements NotificationRepository{
 	public void persistNotifications(List<Notification> notifications) {
 		// TODO Auto-generated method stub
 	}
+
+	@Override
+	public void dismiss(Notification notification) {
+		db.dismissNotification(notification);
+	}
 }

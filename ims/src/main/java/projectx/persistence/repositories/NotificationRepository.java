@@ -6,6 +6,8 @@ import projectx.persistence.entities.Notification;
 import projectx.persistence.util.NotificationType;
 
 public interface NotificationRepository {
+	
+	public void dismiss(Notification notification);
 
 	public List<Notification> getNotifications();
 	public List<Notification> getNotificationsForType(NotificationType type);
