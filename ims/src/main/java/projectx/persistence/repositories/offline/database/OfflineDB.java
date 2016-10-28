@@ -30,7 +30,7 @@ public class OfflineDB {
 	private List<PaymentDetails> paymentDetails;
 	private List<Category> categories;
 	private List<Product> products;
-	private List<Supplier> suppliers;
+	private ArrayList<Supplier> suppliers;
 	private List<PurchaseOrder> purchaseOrders;
 	private List<ProductsOrdered> productsOrdered;
 	private ArrayList<String> p1imgs;

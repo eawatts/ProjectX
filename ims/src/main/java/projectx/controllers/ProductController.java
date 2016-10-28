@@ -26,6 +26,8 @@ public class ProductController implements Serializable
 	@SuppressWarnings("unused")
 	private int selectedProductIndex;
 	
+	private Product productByID; 
+	
 	
 	private DataModel<Product> productDataModel = null;
 	
@@ -77,16 +79,22 @@ public class ProductController implements Serializable
 		selectedProduct.setSelectedProduct(productService.findProductById(productId));
 	}
 	
-	public Product getProductbyID(){
+	
+	public Product getProductByID(){
 		int productid = 1;
-		for(int i=0;i>10;i++){
+		System.out.println("Test1");
+		/*for(int i=1;i<10;i++){
 			System.out.print(productService.getProductbyID(productid).getName());
-		}
-		return productService.getProductbyID(productid);
+		}*/
+		System.out.println("Product is "+productService.getProductbyID(1));
+		return productService.getProductbyID(1);
 	}
+	
+	
 
-	
-	
+	public void setProductByID(Product productbyID) {
+		this.productByID = productbyID;
+	}
 
 	public List<Product> getLowStockProducts(){
 		return productService.getLowStockProduct();
