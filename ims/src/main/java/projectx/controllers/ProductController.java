@@ -36,15 +36,15 @@ public class ProductController implements Serializable
 	
 	public String getProduct(String id)
 	{
-		try
+		/*try
 		{
 			selectedProduct.setSelectedProduct(productService.findProductById(id));
 			return "product";
 		}
 		catch(Exception e)
 		{
-			return "browse";
-		}
+			
+		}*/return "browse";
 	}
 	
 	public DataModel<Product> listProducts()

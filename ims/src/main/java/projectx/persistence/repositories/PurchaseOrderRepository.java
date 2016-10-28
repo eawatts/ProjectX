@@ -12,7 +12,7 @@ public interface PurchaseOrderRepository {
 	
 	public PurchaseOrder findPurchaseOrderBySupplierId(String supplierID);
 	public PurchaseOrder findPurchaseOrderByOrderStatus(String orderStatus);
-	public PurchaseOrder findPurchaseOrderById(String id);
+	public PurchaseOrder findPurchaseOrderById(int id);
 	public ArrayList<PurchaseOrder> getPurchaseOrders();
 	public void updatePurchaseOrder (PurchaseOrder purchaseOrder);
 }

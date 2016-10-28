@@ -42,7 +42,7 @@ public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
 	}
 
 	@Override
-	public PurchaseOrder findPurchaseOrderById(String id) {
+	public PurchaseOrder findPurchaseOrderById(int id) {
 		return initialData.getPurchaseOrderById(id);
 	}
 

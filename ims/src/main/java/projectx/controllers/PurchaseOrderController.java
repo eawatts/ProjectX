@@ -34,20 +34,18 @@ public class PurchaseOrderController implements Serializable{
 	private Date approvalDate;
 	private OrderState status;
 	private List<ProductsOrdered> productsOrdered;
-	
-	public void selected(int sId, Supplier sSupplier, boolean sApproved, Date sApprovalDate, OrderState sStatus, List<ProductsOrdered> sProductsOrdered){
-		this.id=sId;
-		this.supplier=sSupplier;
-		this.approved=sApproved;
-		this.approvalDate=sApprovalDate;
-		this.status=sStatus;
-		this.productsOrdered=sProductsOrdered;}
 
 
 	public ArrayList<PurchaseOrder> getPurchaseOrderList(){	
 		return purchaseOrderSerivce.getPurchaseOrderList();
 	}
-
+	public PurchaseOrder findPOById(int id){
+		return purchaseOrderSerivce.findPOById(id);
+	} 
+	
+	public void viewPO(int id){
+		this.id=id;
+	}
 
 	public int getId() {
 		return id;
