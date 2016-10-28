@@ -1,0 +1,99 @@
+@charset "ISO-8859-1";
+
+:root
+{
+	--raisin-black: #272727;
+    --floral-white: #f9fbf2;
+    --orange-yellow: #fed766;
+    --british-racing-green: #004425;
+    --sweet-sweet-brown: #a53f2b;
+    --inline-width: 80%;
+}
+
+
+ul.breadcrumb
+{
+    padding: 8px 16px;
+    list-style: none;
+    background-color: #f9fbf2;
+}
+ul.breadcrumb li 
+{
+	display: inline;
+}
+ul.breadcrumb li+li:before 
+{
+    padding: 8px;
+    color: black;
+    content: ">";
+}
+ul.breadcrumb li a 
+{
+	color: green;
+}
+
+article
+{
+	color: var(--raisin-black);
+	margin: auto;
+	width: 80%;
+    padding: 10px;
+}
+
+label
+{
+	width: 5em;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block;
+}
+
+#userInfo
+{
+
+	text-align: left;
+	color: var(--raisin-black);
+	margin: auto;
+	width: 80%;
+    display: block;
+}
+
+#userInfoForm
+{
+	text-align: right;
+	width: var(--inline-width);
+	margin: auto;
+	box-sizing: border-box;
+	padding-left: 10%;
+	padding-right: 30%;
+}
+
+#address
+{
+	text-align: right;
+	width: var(--inline-width);
+	margin: auto;
+	box-sizing: border-box;
+	padding-left: 10%;
+	padding-right: 30%;
+}
+
+#payment
+{
+	text-align: right;
+	width: var(--inline-width);
+	margin: auto;
+	box-sizing: border-box;
+	padding-left: 10%;
+	padding-right: 30%;
+}
+
+#submitbutton
+{
+	text-align: center;
+}
+h2
+{
+	padding-left: 5%;
+}

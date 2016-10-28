@@ -8,12 +8,9 @@ import java.sql.Date;
 
 public interface OrderRepository {
 	public void persistOrder (Order order);
-	public void persistOrders (List<Order> orders);
-	
-	public List<Order> getOrders();
-	public List<Order> getOrdersForUser(int userId);
+	public void persistOrders (List<Order> order);
 	
 	public Order findByOrderType (String orderType);
-	public Order findByUser (int userId);
+	public Order findByUser (String orderType);
 	public Order findByOrderDate (Date orderDate);
 }
