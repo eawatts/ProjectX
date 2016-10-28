@@ -20,5 +20,6 @@ public interface ProductRepository
 	public Product findByProductId(int productId);
 	public Product findByProductName(String name);
 	public List<Product> getLowStockProducts();
+	public void addProduct(Product p);
 
 }

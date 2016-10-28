@@ -86,33 +86,18 @@
 						<a class="close" href="#">X</a>
 						<h:form>
 							<div class="row">
+								<b>Next Free ID</b>
+								<h:inputText type="text" name="ProductName"
+									value="#{product.Id}"></h:inputText>
+							</div>
+							<div class="row">
 								<b>Name</b>
 								<h:inputText type="text" name="ProductName"
 									value="#{product.name}"></h:inputText>
 							</div>
 							<div class="row">
-								<b>Current Stock</b>
-								<h:inputText type="text" name="ProductStock"
-									value="#{product.stock}"></h:inputText>
-							</div>
-							<div class="row">
-								<b>Low Limit</b>
-								<h:inputText type="text" name="ProductLowLimit"
-									value="#{product.lowlimit}"></h:inputText>
-							</div>
-							<div class="row">
-								<b>Description</b>
-								<h:inputText type="text" name="ProductDescription"
-									value="#{product.description}"></h:inputText>
-							</div>
-							<div class="row">
-								<b>Supplier</b>
-								<h:inputText type="text" name="ProductSupplier"
-									value="#{product.supplier}"></h:inputText>
-							</div>
-							<div class="row">
 								<h:commandButton class="submit-button" type="submit"
-									action="#{Suppliers.addProduct}" value="Edit Product"></h:commandButton>
+								 value="Save"></h:commandButton>
 							</div>
 						</h:form>
 					</div>
