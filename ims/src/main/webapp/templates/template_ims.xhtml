@@ -118,10 +118,10 @@
 
 			<h:panelGroup rendered="#{current_session.loggedIn ne true}">
 				<h1>You must be logged in to access this content!!</h1>
-				<div class="not-logged-in">
+				<div>
 					<a href="login.xhtml">
 						<button
-							class="button-green-inverse nav-banner-desktop-right-button login-temp">
+							class="button-green-inverse nav-banner-desktop-right-button not-logged-in">
 							<h:outputText value="Go To Login" />
 						</button>
 					</a>
