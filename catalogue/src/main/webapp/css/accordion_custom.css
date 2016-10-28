@@ -1,0 +1,11 @@
+.accordion-header {
+}
+
+.accordion-body {
+	padding: 0 18px;
+	display: none;
+}
+
+.accordion-body.show {
+	display: block;
+}

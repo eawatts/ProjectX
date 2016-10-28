@@ -1,0 +1,89 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="../templates/main_template.xhtml">
+
+	<link rel="stylesheet" type="text/css" href="css/feedback.css">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="title">Feedback</ui:define>
+	<ui:define name="maincontent">
+
+		<div>
+			<br />
+			<h2>Feedback</h2>
+
+			<div class="feedback">
+				<div class="row">
+					<div class="col-desk-2">
+						<div class="productimage">
+							<img class="nav-logo" src="../assets/nb_logo.png" />
+						</div>
+					</div>
+					<div class="col-desk-10">
+						<div class="productdescription">
+							Product Name: Lorem Ipsum <br> Product Description: "Lorem
+							ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+							minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+							aliquip ex ea commodo consequat. Duis aute irure dolor in
+							reprehenderit in voluptate velit esse cillum dolore eu fugiat
+							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+							sunt in culpa qui officia deserunt mollit anim id est laborum."
+						</div>
+					</div>
+				</div>
+				<form>
+					<div id="feedbackinfo">
+						<div class="row">
+							<div class="col-desk-1">Rating:</div>
+
+							<div class="col-desk-1">
+								<select name="stars">
+									<option value="1"> * </option>
+									<option value="2"> ** </option>
+									<option value="3"> *** </option>
+									<option value="4"> **** </option>
+									<option value="5"> ***** </option>
+								</select>
+							</div>
+
+							<div class="col-desk-10"></div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-desk-12">
+								Feedback:
+								<div class="feedbackbox">
+									<textarea name="feedbackdescription" rows="10" cols="60"></textarea>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-desk-1">Recommend?</div>
+							<div class="col-desk-1">
+								<input type="radio" name="recommend" value="yes" checked>
+								Yes
+							</div>
+							<div class="col-desk-1">
+								<input type="radio" name="recommend" value="no"> No
+							</div>
+							<div class="col-desk-8"></div>
+							<div class="col-desk-1">
+								<input type="submit">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<br />
+		</div>
+
+	</ui:define>
+	<ui:define name="custom-scripts">
+		<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javaScript" src="js/navigation.js"></script>
+	</ui:define>
+</ui:composition>

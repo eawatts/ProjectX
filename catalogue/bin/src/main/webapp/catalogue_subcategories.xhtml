@@ -1,0 +1,44 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/main_template.xhtml">
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css"
+			href="css/categories.css"></link>
+	</ui:define>
+	<meta charset="ISO-8859-1" />
+	<ui:define name="title">SubCategories</ui:define>
+	<ui:define name="main-content">
+		<div>
+			<h1>
+				<h:outputText value="#{category.findByid(1).name}">
+				</h:outputText>
+			</h1>
+			<div class="row">
+				<ui:repeat var="cat" value="#{category.findByid(1).subCategories}">
+					<div class="col-tab-6 col-desk-4">
+						<div class="box">
+						<h:form>
+							<h:graphicImage class="accord"
+								value="http://placehold.it/140x100" />
+							<h:commandButton class="accordion" value="#{cat.name}"
+								outcome="#{products.view(2)}">
+	
+								<h:commandLink class="product-slider-title"
+											value="#{slider_product.product.name}"
+											action="#{products.view(2)}">
+										</h:commandLink>
+							</h:commandButton>
+							<div class="panel">
+							</div>
+							</h:form>
+						</div>
+					</div>
+				</ui:repeat>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/categories.js">
+		</script>
+	</ui:define>
+</ui:composition>

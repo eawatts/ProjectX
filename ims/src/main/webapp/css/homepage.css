@@ -22,10 +22,8 @@
 	border-color:var(--sweet-sweet-brown); 
 	padding: 0.1em;
 }
-#description{
+.description{
 	text-align: center;
-	display:inline-block;
-
 	color:var( --sweet-sweet-brown);
 	
 }
@@ -47,7 +45,7 @@
 	margin: auto;
   display:table;         
   width:auto;         
-  background-color:#fed766;         
+  background-color:#f9fbf2;         
   border:1px solid  #a53f2b;         
   border-spacing:5px;/*cellspacing:poor IE support for  this*/
   Color: var(--raisin-black);
@@ -59,6 +57,10 @@
 	background-color: var(--british-racing-green);
 	Color: var(--floral-white);
 	padding:0em 0.2em 0em 0.2em;
+	display:inline-block;
+	margin-left: 45%;
+	border-style: solid;
+	border-color: #a53f2b;
 	
 	
 }

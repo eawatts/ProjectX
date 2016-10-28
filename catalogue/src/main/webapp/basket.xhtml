@@ -1,0 +1,124 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/main_template.xhtml">
+
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/basket.css" />
+	</ui:define>
+
+	<ui:define name="title">Basket</ui:define>
+
+	<ui:define name="main-content">
+		<div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<div class="page-title">
+						<h1>Basket</h1>
+					</div>
+				</div>
+			</div>
+
+			<h:panelGroup layout="block"
+				rendered="#{current_session.basket.count ne 0}">
+				<div class="row">
+					<div class="col-tab-2 col-desk-2">
+						<p></p>
+					</div>
+					<div class="col-tab-4 col-desk-4">
+						<h2>Product Name</h2>
+					</div>
+					<div class="col-tab-1 col-desk-1">
+						<h2>Quantity</h2>
+					</div>
+					<div class="col-tab-2 col-desk-2">
+						<h2>Product Price</h2>
+					</div>
+					<div class="col-tab-2 col-desk-2">
+						<h2>Sub-total</h2>
+					</div>
+					<div class="col-tab-1 col-desk-1"></div>
+				</div>
+			</h:panelGroup>
+
+			<h:outputText styleClass="basket-empty" escape="false"
+				value="No items currently in your basket"
+				rendered="#{current_session.basket.count eq 0}">Your basket is empty
+			</h:outputText>
+
+			<ui:repeat var="basket_product"
+				value="#{current_session.basket.contents}">
+				<div class="row">
+					<div class="col-tab-2 col-desk-2">
+						<h:graphicImage class="basket-image"
+							value="img#{basket_product.product.productImageFilepath}" />
+					</div>
+					<div class="col-tab-4 col-desk-4">
+						<h:outputText styleClass="basket-row"
+							value="#{basket_product.product.name}" />
+					</div>
+					<div class="col-tab-1 col-desk-1">
+						<h:outputText styleClass="basket-row"
+							value="#{basket_product.quantity}" />
+					</div>
+					<div class="col-tab-2 col-desk-2">
+						<h:outputText styleClass="basket-row"
+							value="&#163;#{basket_product.product.priceToDisplay}" />
+					</div>
+					<div class="col-tab-2 col-desk-2">
+						<h:outputText styleClass="basket-row"
+							value="&#163;#{basket_product.basketProductPrice}" />
+					</div>
+					<div class="col-tab-1 col-desk-1">
+						<h:form>
+							<h:commandButton class="button-brown" value="Delete"
+								action="#{current_session.basket.removeProduct(basket_product.product.id)}" />
+						</h:form>
+					</div>
+				</div>
+				<hr />
+			</ui:repeat>
+			<div class="row">
+				<div class="col-tab-8 col-desk-8">
+					<p>
+						<h:graphicImage class="progress-bar"
+							value="#{user.basket.checkoutProgress}" />
+					</p>
+				</div>
+				<div class="col-tab-4 col-desk-4">
+					<br /> <br />
+
+					<!-- Items in basket & not logged in - Show Login to continue -->
+					<h:panelGroup layout="block"
+						rendered="#{(current_session.basket.count gt 0) and (current_session.loggedIn eq false)}">
+						<div class="basket-bottom-right">
+							<strong>Total Price: </strong><h:outputText value="&#163;#{current_session.basket.totalPrice}"></h:outputText>
+						</div>
+						<h:form>
+						<h:commandButton class="button-green" value="Login to Proceed"
+							action="#{login.loginRedirectToCheckoutSummary()}" /></h:form>
+					</h:panelGroup>
+
+					<!-- Items in basket & logged in - show continue -->
+					<h:panelGroup layout="block"
+						rendered="#{(current_session.basket.count gt 0) and (current_session.loggedIn eq true)}">
+						<div class="basket-bottom-right">
+							<strong>Total Price: </strong><h:outputText value="&#163;#{current_session.basket.totalPrice}"></h:outputText>
+						</div>
+						<a href="checkout_summary.xhtml">
+							<button type="button" class="basket-button button-green">Proceed to checkout</button>
+						</a>
+					</h:panelGroup>
+
+					<a href="index.xhtml">
+						<button type="button" class="button-brown basket-button">Continue
+							Shopping</button>
+					</a>
+				</div>
+			</div>
+			<hr />
+			<br />
+		</div>
+	</ui:define>
+</ui:composition>

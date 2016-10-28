@@ -1,0 +1,44 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/main_template.xhtml">
+
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/login.css"></link>
+	</ui:define>
+
+	<ui:define name="title">Login</ui:define>
+
+	<ui:define name="main-content">
+		<div class="row">
+			<div class="col-tab-12 col-desk-12">
+				<div class="login-form">
+					<h1>Login or Create an Account</h1>
+					<p>Please login to your NB Gardens Account to access website
+						features and checkout.</p>
+						
+			 	<h:form>
+			 		<div>
+					<h:outputText rendered="#{login.error ne null}" class="login-error" value="#{login.error}" />
+					</div>
+						
+						<label>Username: <h:inputText class="login_input"
+								type="text" value="#{login.username}" />
+						</label>
+						<br />
+						<label>Password: <h:inputSecret class="login_input"
+								type="password" value="#{login.password}" />
+						</label>
+						<h:commandButton class="button-green" action="#{login.login()}"
+							type="submit" value="Login"></h:commandButton>
+					</h:form>
+					<a href="account_create.xhtml">
+						<button class="button-brown">Create Account</button>
+					</a>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>

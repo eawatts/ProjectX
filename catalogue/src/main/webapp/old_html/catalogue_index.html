@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>NB Gardens</title>
+		<!-- Stylesheets. -->
+		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+		<link rel="stylesheet" type="text/css" href="css/catalogue.css">
+		<link rel='stylesheet prefetch' href='https://npmcdn.com/flickity@2/dist/flickity.css'>
+		<link rel="stylesheet" href="css/flickity.css">
+	</head>
+
+	<body>
+		<!-- This is the green navigation banner along the top of each page. -->
+		<header>
+		<div>
+			<nav>
+				<div class="nav-banner">
+
+					<div class="row">
+						<div class="col-tab-3 col-desk-3 nav-banner-left">
+							<img class="nav-logo" src="../assets/nb_logo.png"/>
+						</div>
+						<div class="col-tab-6 col-desk-6 nav-banner-centre">
+							<input type="search" class="nav-banner-right-search searchbox-brown" name="searchbar">
+							<button type="button" class="button-green-inverse nav-banner-right-search-button"><i class="fa fa-search"></i></button>
+						</div>
+						<div class="col-tab-3 col-desk-3 nav-banner-right">
+							<button type="button" class="button-green-inverse nav-banner-right-button">Basket <i class="fa fa-shopping-basket"></i></button>
+							<button type="button" class="button-green-inverse nav-banner-right-button">Login <i class="fa fa-user"></i></button>
+						</div>
+					</div>
+
+					<!-- <div class="nav-banner-left">
+						<img class="nav-logo" src="../assets/nb_logo.png"/>
+					</div>
+					<div class="nav-banner-centre">
+						<input type="search" name="searchbar">
+						<button type="button"><i class="fa fa-search"></i></button>
+					</div>
+					<div class="nav-banner-right">
+						<button type="button">Basket <i class="fa fa-shopping-basket"></i></button>
+						<button type="button">Login <i class="fa fa-user"></i></button>
+					</div> -->
+				</div>
+
+				<div class=nav-links>
+
+					<!-- This is what is displayed if the screen is detected to be a mobile device. -->
+					<div id="nav-mobile">
+						<div class="mobile-nav">
+							<div class="mobile-nav-toggle">
+								<div></div>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							<div class="mobile-nav-menu">
+								<ul>
+									<a href="gnomes.html" class="mobile-dropdown-button">Gnomes</a>
+									<a href="electrical.html" class="mobile-dropdown-button">Electrical</a>
+									<a href="ornaments.html" class="mobile-dropdown-button">Ornaments</a>
+									<a href="rakesAndHoes.html" class="mobile-dropdown-button">Rakes and Hoes</a>
+									<a href="waterFeatures.html" class="mobile-dropdown-button">Water Features</a>
+									<a href="furniture.html" class="mobile-dropdown-button">Furniture</a>
+									<a href="Maintenance.html" class="mobile-dropdown-button">Maintenance</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- This is what is displayed if the screen is detected to be a desktop device. -->
+					<div id="nav-desktop">
+						<ul class="dropdown-list">
+							<li><a href="index.html" class="active">Home</a></li>
+							<li class="dropdown">
+								<a href="gnomes.html" class="dropdown-button">Gnomes</a>
+								<div class="dropdown-content">
+									<a href="seasonal.html">Seasonal</a>
+									<a href="themed.html">Themed</a>
+									<a href="novelty.html">Novelty</a>
+									<a href="classic.html">Classic</a>
+									<a href="gnomeCare.html">Gnome Care</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="electrical.html" class="dropdown-button">Electrical</a>
+								<div class="dropdown-content">
+									<a href="lighting.html">Lighting</a>
+									<a href="heaters.html">Heaters</a>
+									<a href="hotTubs.html">Hot Tubs</a>
+									<a href="bbqs.html">BBQs</a>
+									<a href="misc.html">Misc</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="ornaments.html" class="dropdown-button">Ornaments</a>
+								<div class="dropdown-content">
+									<a href="animal.html">Animal</a>
+									<a href="windChimes.html">Wind Chimes</a>
+									<a href="weatherVanes.html">Weather Vanes</a>
+									<a href="pots.html">Pots</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="rakesAndHoes.html" class="dropdown-button">Rakes and Hoes</a>
+								<div class="dropdown-content">
+									<a href="rakes.html">Rakes</a>
+									<a href="hoes.html">Hoes</a>
+									<a href="spadesAndForks.html">Spades and Forks</a>
+									<a href="Trowels.html">Trowels</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="waterFeatures.html" class="dropdown-button">Water Features</a>
+								<div class="dropdown-content">
+									<a href="ponds.html">Ponds</a>
+									<a href="pumps.html">Pumps</a>
+									<a href="pipes.html">Pipes</a>
+									<a href="fountains.html">Fountains</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="furniture.html" class="dropdown-button">Furniture</a>
+								<div class="dropdown-content">
+									<a href="tablesAndChairs.html">Tables and Chairs</a>
+									<a href="benches.html">Benches</a>
+									<a href="hammocks.html">Hammocks</a>
+									<a href="swinging.html">Swinging</a>
+									<a href="birdHouses.html">Bird Houses</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="maintenance.html" class="dropdown-button">Maintenance</a>
+								<div class="dropdown-content">
+									<a href="mowers.html">Mowers</a>
+									<a href="strimmers.html">Strimmers</a>
+									<a href="feedAndWeed.html">Feed and Weed</a>
+									<a href="secateurs.html">Secateurs</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+		<!-- This is the content of the actual page. -->
+		<div id=content-main>
+
+			<div class="row">
+				<div class="col-tab-6 col-desk-3">
+					<p>Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.</p>
+				</div>
+				<div class="col-tab-6 col-desk-3">
+					<p>Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.</p>
+				</div>
+				<div class="col-tab-6 col-desk-3">
+					<p>Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.</p>
+				</div>
+				<div class="col-tab-6 col-desk-3">
+					<p>Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.Ita graviter et severe voluptatem secrevit a bono. Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. Videsne quam sit magna dissensio? Duo Reges: constructio interrete.</p>
+				</div>
+			</div>
+			<br>
+			<h1>Popular Products</h1>
+			<div class="carousel" data-flickity='{ "freeScroll": true,"groupCells": "80%", "wrapAround": true }'>
+  				<div class="carousel-cell">
+  					<div class="item">
+	  					<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+	  						<h3><a href="#">product</a></h3>
+	  						<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+							<div id="resultbuttonBasket">
+								<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+							</div>
+							<div id="resultbuttonwishlist">
+								<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+							</div>
+						</div>
+					</div>
+	  				<div class="carousel-cell">
+	  					<div class="item">
+		  					<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+		  						<h3><a href="#">product</a></h3>
+		  						<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+								<div id="resultbuttonBasket">
+									<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+								</div>
+								<div id="resultbuttonwishlist">
+									<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+								</div>
+							</div>
+						</div>
+	  						<div class="carousel-cell">
+	  							<div class="item">
+		  							<div id="itemimage"><!--<img src="http://placehold.it/140x100"/>--><iframe width="140" height="100" src="https://www.youtube.com/embed/dQw4w9WgXcQ?list=PLjqNIb_ZU6K8Jh_Q01s4qXPV6n9Y1a-JW&amp;controls=0&amp;showinfo=0;autoplay=1" frameborder="0" allowfullscreen></iframe></div>
+		  							<h3><a href="#">product</a></h3>
+		  							<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+									<div id="resultbuttonBasket">
+										<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+									</div>
+									<div id="resultbuttonwishlist">
+										<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+									</div>
+								</div>
+							</div>
+	  						<div class="carousel-cell">
+	  							<div class="item">
+		  							<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+		  							<h3><a href="#">product</a></h3>
+		  							<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+									<div id="resultbuttonBasket">
+										<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+									</div>
+									<div id="resultbuttonwishlist">
+										<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+									</div>
+								</div>
+							</div>
+	  						<div class="carousel-cell">
+	  							<div class="item">
+		  							<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+		  							<h3><a href="#">product</a></h3>
+		  							<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+									<div id="resultbuttonBasket">
+										<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+									</div>
+									<div id="resultbuttonwishlist">
+										<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+									</div>
+								</div>
+							</div>
+			</div>
+			<br>
+			<h1>Season</h1>
+			<div class="carousel" data-flickity='{ "freeScroll": true,"groupCells": "80%", "wrapAround": true }'>
+  				<div class="carousel-cell">
+  					<div class="item">
+	  					<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+	  						<h3><a href="#">product</a></h3>
+	  						<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+							<div id="resultbuttonBasket">
+								<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+							</div>
+							<div id="resultbuttonwishlist">
+								<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+							</div>
+						</div>
+					</div>
+	  				<div class="carousel-cell">
+	  					<div class="item">
+		  					<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+		  						<h3><a href="#">product</a></h3>
+		  						<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+								<div id="resultbuttonBasket">
+									<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+								</div>
+								<div id="resultbuttonwishlist">
+									<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+								</div>
+							</div>
+						</div>
+	  						<div class="carousel-cell">
+	  							<div class="item">
+		  							<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+		  							<h3><a href="#">product</a></h3>
+		  							<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+									<div id="resultbuttonBasket">
+										<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+									</div>
+									<div id="resultbuttonwishlist">
+										<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+									</div>
+								</div>
+							</div>
+	  						<div class="carousel-cell">
+	  							<div class="item">
+		  							<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+		  							<h3><a href="#">product</a></h3>
+		  							<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+									<div id="resultbuttonBasket">
+										<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+									</div>
+									<div id="resultbuttonwishlist">
+										<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+									</div>
+								</div>
+							</div>
+	  						<div class="carousel-cell">
+	  							<div class="item">
+		  							<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+		  							<h3><a href="#">product</a></h3>
+		  							<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+									<div id="resultbuttonBasket">
+										<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+									</div>
+									<div id="resultbuttonwishlist">
+										<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+									</div>
+								</div>
+							</div>
+				</div>
+			<br>
+			<h1>Sale</h1>
+			<div class="carousel" data-flickity='{ "freeScroll": true,"groupCells": "80%", "wrapAround": true }'>
+  				<div class="carousel-cell">
+  					<div class="item">
+	  					<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+	  						<h3><a href="#">product</a></h3>
+	  						<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+							<div id="resultbuttonBasket">
+								<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+							</div>
+							<div id="resultbuttonwishlist">
+								<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+							</div>
+						</div>
+					</div>
+	  				<div class="carousel-cell">
+	  					<div class="item">
+		  					<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+		  						<h3><a href="#">product</a></h3>
+		  						<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+								<div id="resultbuttonBasket">
+									<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+								</div>
+								<div id="resultbuttonwishlist">
+									<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+								</div>
+							</div>
+						</div>
+	  						<div class="carousel-cell">
+	  							<div class="item">
+		  							<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+		  							<h3><a href="#">product</a></h3>
+		  							<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+									<div id="resultbuttonBasket">
+										<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+									</div>
+									<div id="resultbuttonwishlist">
+										<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+									</div>
+								</div>
+							</div>
+	  						<div class="carousel-cell">
+	  							<div class="item">
+		  							<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+		  							<h3><a href="#">product</a></h3>
+		  							<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+									<div id="resultbuttonBasket">
+										<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+									</div>
+									<div id="resultbuttonwishlist">
+										<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+									</div>
+								</div>
+							</div>
+	  						<div class="carousel-cell">
+	  							<div class="item">
+		  							<div id="itemimage"><img src="http://placehold.it/140x100"/></div>
+		  							<h3><a href="#">product</a></h3>
+		  							<p>Am no an listening depending up believing. Enough around remove to barton agreed regret in or it.</p>
+									<div id="resultbuttonBasket">
+										<button type="button" onclick="alert('Added to basket')">Add to Basket</button>
+									</div>
+									<div id="resultbuttonwishlist">
+										<button type="button" onclick="alert('Added to wishlist')">Add to Wishlist</button>
+									</div>
+								</div>
+							</div>
+				</div>
+			<br>
+			<br>
+		</div>
+
+		<!-- This is the green footer along the bottom of each page. -->
+		<footer>
+			<div id="footer-left">
+			</div>
+			<div id="footer-centre">
+			</div>
+			<div id="footer-right">
+				<a href="help.html">Help</a>
+				<a href="about.html">About</a>
+				<a href="contact.html">Contact</a>
+			</div>
+		</footer>
+		<script src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js'></script>
+        <script src="js/flickity.js"></script>
+	</body>
+</html>

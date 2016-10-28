@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<div id="container">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<title>NB Gardens</title>
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/catalogue.css">
+	<link rel="stylesheet" type="text/css" href="css/categories.css">
+	<link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
+	<!-- This adds the small icon in the browser tab. -->
+	<link rel="icon" type="image/x-icon" href="../assets/nb_favicon.png">
+	<!-- This is required to add the small icons, such as the basket etc. -->
+	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+	<!-- Javascript -->
+	<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javaScript" src="js/navigation.js"></script>
+</head>
+
+<body>
+	<!-- This is the green navigation banner along the top of each page. -->
+	<header>
+		<div>
+			<nav>
+				<div class="nav-banner">
+
+					<div class="row">
+						<div class="col-tab-3 col-desk-3 nav-banner-left">
+							<img class="nav-logo" src="../assets/nb_logo.png"/>
+						</div>
+						<div class="col-tab-6 col-desk-6 nav-banner-centre">
+							<input type="search" class="nav-banner-right-search" name="searchbar">
+							<button type="button" class="nav-banner-right-search-button"><i class="fa fa-search"></i></button>
+						</div>
+						<div class="col-tab-3 col-desk-3 nav-banner-right">
+							<button type="button" class="nav-banner-right-button">Basket <i class="fa fa-shopping-basket"></i></button>
+							<button type="button" class="nav-banner-right-button">Login <i class="fa fa-user"></i></button>
+						</div>
+					</div>
+
+					<!-- <div class="nav-banner-left">
+						<img class="nav-logo" src="../assets/nb_logo.png"/>
+					</div>
+					<div class="nav-banner-centre">
+						<input type="search" name="searchbar">
+						<button type="button"><i class="fa fa-search"></i></button>
+					</div>
+					<div class="nav-banner-right">
+						<button type="button">Basket <i class="fa fa-shopping-basket"></i></button>
+						<button type="button">Login <i class="fa fa-user"></i></button>
+					</div> -->
+				</div>
+
+				<div class=nav-links>
+
+					<!-- This is what is displayed if the screen is detected to be a mobile device. -->
+					<div id="nav-mobile">
+						<div class="mobile-nav">
+							<div class="mobile-nav-toggle">
+								<div></div>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							<div class="mobile-nav-menu">
+								<ul>
+									<a href="gnomes.html" class="mobile-dropdown-button">Gnomes</a>
+									<a href="electrical.html" class="mobile-dropdown-button">Electrical</a>
+									<a href="ornaments.html" class="mobile-dropdown-button">Ornaments</a>
+									<a href="rakesAndHoes.html" class="mobile-dropdown-button">Rakes and Hoes</a>
+									<a href="waterFeatures.html" class="mobile-dropdown-button">Water Features</a>
+									<a href="furniture.html" class="mobile-dropdown-button">Furniture</a>
+									<a href="Maintenance.html" class="mobile-dropdown-button">Maintenance</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- This is what is displayed if the screen is detected to be a desktop device. -->
+					<div id="nav-desktop">
+						<ul class="dropdown-list">
+							<li><a href="index.html" class="active">Home</a></li>
+							<li class="dropdown">
+								<a href="gnomes.html" class="dropdown-button">Gnomes</a>
+								<div class="dropdown-content">
+									<a href="seasonal.html">Seasonal</a>
+									<a href="themed.html">Themed</a>
+									<a href="novelty.html">Novelty</a>
+									<a href="classic.html">Classic</a>
+									<a href="gnomeCare.html">Gnome Care</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="electrical.html" class="dropdown-button">Electrical</a>
+								<div class="dropdown-content">
+									<a href="lighting.html">Lighting</a>
+									<a href="heaters.html">Heaters</a>
+									<a href="hotTubs.html">Hot Tubs</a>
+									<a href="bbqs.html">BBQs</a>
+									<a href="misc.html">Misc</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="ornaments.html" class="dropdown-button">Ornaments</a>
+								<div class="dropdown-content">
+									<a href="animal.html">Animal</a>
+									<a href="windChimes.html">Wind Chimes</a>
+									<a href="weatherVanes.html">Weather Vanes</a>
+									<a href="pots.html">Pots</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="rakesAndHoes.html" class="dropdown-button">Rakes and Hoes</a>
+								<div class="dropdown-content">
+									<a href="rakes.html">Rakes</a>
+									<a href="hoes.html">Hoes</a>
+									<a href="spadesAndForks.html">Spades and Forks</a>
+									<a href="Trowels.html">Trowels</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="waterFeatures.html" class="dropdown-button">Water Features</a>
+								<div class="dropdown-content">
+									<a href="ponds.html">Ponds</a>
+									<a href="pumps.html">Pumps</a>
+									<a href="pipes.html">Pipes</a>
+									<a href="fountains.html">Fountains</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="furniture.html" class="dropdown-button">Furniture</a>
+								<div class="dropdown-content">
+									<a href="tablesAndChairs.html">Tables and Chairs</a>
+									<a href="benches.html">Benches</a>
+									<a href="hammocks.html">Hammocks</a>
+									<a href="swinging.html">Swinging</a>
+									<a href="birdHouses.html">Bird Houses</a>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="maintenance.html" class="dropdown-button">Maintenance</a>
+								<div class="dropdown-content">
+									<a href="mowers.html">Mowers</a>
+									<a href="strimmers.html">Strimmers</a>
+									<a href="feedAndWeed.html">Feed and Weed</a>
+									<a href="secateurs.html">Secateurs</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+		<!-- This is the content of the actual page. -->
+		<div id=content-main>
+			<br/>
+				<section>
+				<div name=breadcrumb>
+					<ul class="breadcrumb">
+			   			<a href="index.html">Home </a>
+			       		<a href="userAccount.html">/ Categories</a>
+			       	</ul>
+				</div>
+				<h2>
+			   			Categories
+				</h2>
+
+				<div class=row>
+					<div class="col-tab-6 col-desk-4" >
+					<div class="box">
+						<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Gnomes</button>
+						<div class="panel">
+							<p>
+								<a href="seasonal.html">Seasonal</a><br/>
+								<a href="themed.html">Themed</a><br/>
+								<a href="novelty.html">Novelty</a><br/>
+								<a href="classic.html">Classic</a><br/>
+								<a href="gnomeCare.html">Gnome Care</a><br/>
+							</p>
+						</div>
+					</div>
+					</div>
+					<div class="col-tab-6 col-desk-4" >
+					<div class="box">
+						<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Electrical</button>
+						<div class="panel">
+							<p>
+								<a href="lighting.html">Lighting</a><br/>
+								<a href="heaters.html">Heaters</a><br/>
+								<a href="hotTubs.html">Hot Tubs</a><br/>
+								<a href="bbqs.html">BBQs</a><br/>
+								<a href="misc.html">Misc</a><br/>
+							</p>
+						</div>
+					</div>
+					</div>
+						<div class="col-tab-6 col-desk-4" >
+						<div class="box">
+						<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Ornaments</button>
+						<div class="panel">
+							<p>
+								<a href="animal.html">Animal</a><br/>
+								<a href="windChimes.html">Wind Chimes</a><br/>
+								<a href="weatherVanes.html">Weather Vanes</a><br/>
+								<a href="pots.html">Pots</a><br/>
+							</p>
+						</div>
+					</div>
+					</div>
+					<div class="col-tab-6 col-desk-4" >	
+					<div class="box">
+					<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Rakes and Hoes</button>
+						<div class="panel">
+							<p>
+								<a href="rakes.html">Rakes</a><br/>
+								<a href="hoes.html">Hoes</a><br/>
+								<a href="spadesAndForks.html">Spades and Forks</a><br/>
+								<a href="Trowels.html">Trowels</a><br/>
+							</p>
+						</div>
+					</div>
+					</div>
+					<div class="col-tab-6 col-desk-4" >
+					<div class="box">
+					<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Water Features</button>
+						<div class="panel">
+							<p>
+								<a href="ponds.html">Ponds</a><br/>
+								<a href="pumps.html">Pumps</a><br/>
+								<a href="pipes.html">Pipes</a><br/>
+								<a href="fountains.html">Fountains</a><br/>
+							</p>
+						</div>
+					</div>
+					</div>
+					<div class="col-tab-6 col-desk-4" >	
+					<div class="box">
+					<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Furniture</button>
+						<div class="panel">
+							<p>
+								<a href="tablesAndChairs.html">Tables and Chairs</a><br/>
+								<a href="benches.html">Benches</a><br/>
+								<a href="hammocks.html">Hammocks</a><br/>
+								<a href="swinging.html">Swinging</a><br/>
+								<a href="birdHouses.html">Bird Houses</a><br/>
+							</p>
+						</div>
+					</div>
+					</div>
+					<div class="col-tab-6 col-desk-4" >	
+					<div class="box">
+					<img class= "accord" src="http://placehold.it/140x100"/>
+						<button class="accordion">Maintenance</button>
+						<div class="panel">
+							<p>
+								<a href="mowers.html">Mowers</a><br/>
+								<a href="strimmers.html">Strimmers</a><br/>
+								<a href="feedAndWeed.html">Feed and Weed</a><br/>
+								<a href="secateurs.html">Secateurs</a><br/>
+							</p>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+</script>
+			  <div>
+			  <br/>
+			  </div>
+		  </section>
+
+			<br/>
+		</div>
+
+		<!-- This is the green footer along the bottom of each page. -->
+		<br>
+		<br/>
+		<footer>
+			<div class="row">
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-left">
+    					<a href="https://www.facebook.com">
+    						<i class="fa fa-facebook-square" aria-hidden="true"></i>
+    					</a>
+    					<a href="https://twitter.com/">
+    						<i class="fa fa-twitter-square" aria-hidden="true"></i>
+    					</a>
+					</div>
+    			</div>
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-centre">
+    					&copy;
+    					Xpedite Consulting 2016
+					</div>
+    			</div>
+    			<div class="col-tab-4 col-desk-4">
+    				<div id="footer-right">
+						<a href="help.html">Help</a>
+						<a href="about.html">About</a>
+						<a href="contact.html">Contact</a>
+					</div>
+    			</div>
+    		</div>
+		</footer>
+	</div>
+</html>

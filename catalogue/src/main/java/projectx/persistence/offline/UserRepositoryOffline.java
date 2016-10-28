@@ -2,25 +2,31 @@ package projectx.persistence.offline;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.User;
+import projectx.persistence.offline.database.OfflineDB;
 import projectx.persistence.repositories.interfaces.UserRepository;
 
+@Stateless
+@Default
 public class UserRepositoryOffline implements UserRepository {
 	
 	@Inject
-	private InitialData db;
-
-	@Override
+	private OfflineDB db;
+	
+	public UserRepositoryOffline(){}
+	
+	
 	public void persistUser(User user) {
-		db.persistUser(user);
+		db.userAdd(user);
 	}
 
 	@Override
 	public void persistUsers(List<User> users) {
-		db.persistUsers(users);
-		
+		// TODO Auto-generated method stub
 	}
 
 	@Override
@@ -30,16 +36,18 @@ public class UserRepositoryOffline implements UserRepository {
 
 	@Override
 	public void updateUser(User user) {
-		db.updateUser(user);
+		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public User findByUsername(String username) {
-		return db.findByUsername(username);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public boolean checkPassword(String username, String password) {
-		return db.checkPassword(username, password);
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

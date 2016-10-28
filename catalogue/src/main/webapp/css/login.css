@@ -1,10 +1,3 @@
-@CHARSET "ISO-8859-1"
-.i {
-}
-
-article {
-  text-align: center;
-}
 
 :root
 {
@@ -20,14 +13,15 @@ article {
 	background-color: var(--british-racing-green);
 	Color: var(--floral-white);
 }
-.description{
-	Color: var(--sweet-sweet-brown);
-
-}
-
-#formTitle{
-	Color: var(--raisin-black);
-}
 .form{
 	Color: var(--sweet-sweet-brown);
+}
+.login-form {
+	text-align: center;
+	align-content: center;
+	width:100%;
+}
+
+.login-error{
+	color: red;
 }

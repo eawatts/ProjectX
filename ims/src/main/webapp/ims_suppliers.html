@@ -116,44 +116,39 @@
 
 		<!-- This is the content of the actual page. -->
 	<div class="main-content">
-	<br/>
-	<h2>
+<div class="row">
+	<h1>
 		Suppliers Table
-	</h2>
+	</h1>
+    </div>
 		<div class="row">
-			<div class="col-tab-12 col-desk-12">
-
-				<form id="supplier-table">
-					<div class="div-table">
-						<div class="div-table-row">
-							<div class="div-table-col" align="left">Supplier ID</div>
-							<div  class="div-table-col">Name</div>
-							<div  class="div-table-col">Address</div>
-							<div  class="div-table-col">Contact Info</div>
-						</div>
-						<div class="div-table-row">
-							<div class="div-table-col">001</div>
-							<div class="div-table-col"><a class="button" href="#popup1">Supplier 1</a>
-								
-							</div>
-							<div class="div-table-col">A Road, Somewhere, #######</div>
-							<div class="div-table-col">###########</div>
-						</div>
-						<div class="div-table-row">
-							<div class="div-table-col">001</div>
-							<div class="div-table-col">002</div>
-							<div class="div-table-col">003</div>
-							<div class="div-table-col">004</div>
-						</div>
-					</div>
-				</form>
-
-			</div>
+            <div class="div-table">
+                <div class="header-row">
+                <div class="row">
+                    <div class="col-tab-1 col-desk-1"> Supplier ID </div>
+                    <div class="col-tab-2 col-desk-2"> Name </div>
+                    <div class="col-tab-1 col-desk-1"> Address Line 1 </div>
+                    <div class="col-tab-2 col-desk-2"> Address Line 2 </div>
+                    <div class="col-tab-3 col-desk-3"> Post Code </div>
+                    <div class="col-tab-2 col-desk-2"> Phone Number </div>
+                </div>
+            </div>
+                <div class="product-row">
+                <div class="row">
+                    <div class="col-tab-1 col-desk-1"> 001 </div>
+                    <div class="col-tab-2 col-desk-2"> Gnomes R Us </div>
+                    <div class="col-tab-1 col-desk-1"> Gnome Road </div>
+                    <div class="col-tab-2 col-desk-2"> Gnomesville </div>
+                    <div class="col-tab-3 col-desk-3"> M1 32X</div>
+                    <div class="col-tab-2 col-desk-2">
+                        077462717372
+                    </div>
+                    <div class="col-tab-1 col-desk-1">
+                               <button id="editP" type="button" onclick="location.href='#popup1'">Edit</button>
+                    </div></div>
+            </div>
 		</div>
-		<br/>
-		<ul class="buttons">
-			<li><a class="button1" href="#popup2">Add New Supplier  &#43</a></li>
-		</ul>
+		            <button id="add" type="button" onclick="location.href='#popup2'">Add</button>
 		<div id="popup2" class="overlay">
 			<div class="popup">
 				<h2>Add Supplier</h2>

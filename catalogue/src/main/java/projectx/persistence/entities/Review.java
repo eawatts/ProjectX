@@ -1,5 +1,7 @@
 package projectx.persistence.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,27 +15,18 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@Entity
+import junit.framework.Test;
 
-/**
- * 
- * @author Ed Watts
- * 
- * Named queries to find entries in the database
- *
- */
-@NamedQueries({
-	@NamedQuery(name = Review.VIEW_ALL,
-				query = "SELECT r FROM Review r"),
-	@NamedQuery(name = Review.VEIW_USER_ID,
-				query = "SELECT r.user_id FROM Review r"), 
-	@NamedQuery(name = Review.FIND_BY_USER_ID,
-				query = "SELECT r.user_id FROM Review r WHERE r.user_id = :user_id"),
-	@NamedQuery(name = Review.PERSIST_REVIEW,
-				query = ""),
-	@NamedQuery(name = Review.PERSIST_REVIEWS,
-				query = ""),
-})
+@Entity
+@NamedQueries(
+	{
+		@NamedQuery(name = Review.VIEW_ALL,	query = "SELECT r FROM Review r"),
+		@NamedQuery(name = Review.VEIW_USER_ID,	query = "SELECT r.user_id FROM Review r"), 
+		@NamedQuery(name = Review.FIND_BY_USER_ID, query = "SELECT r.user_id FROM Review r WHERE r.user_id = :user_id"),
+		@NamedQuery(name = Review.PERSIST_REVIEW, query = ""),
+		@NamedQuery(name = Review.PERSIST_REVIEWS, query = ""),
+	}
+)
 
 @Table(name = "Review")
 public class Review {
@@ -51,7 +44,7 @@ public class Review {
 
 	@Column(name = "rating", nullable = false)
 	@NotNull
-	private Long rating;
+	private float rating;
 
 	@Column(name = "comment", length = 512)
 	@Size(min = 2, max = 512)
@@ -76,7 +69,7 @@ public class Review {
 	 * @param reviewer
 	 * @param product
 	 */
-	public Review(int id, Long rating, String comment, User reviewer, Product product) {
+	public Review(int id, float rating, String comment, User reviewer, Product product) {
 		super();
 		this.id = id;
 		this.rating = rating;
@@ -97,7 +90,7 @@ public class Review {
 	 * returns a rating value
 	 * @return
 	 */
-	public Long getRating() {
+	public float getRating() {
 		return rating;
 	}
 
