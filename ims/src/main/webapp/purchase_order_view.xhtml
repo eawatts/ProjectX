@@ -17,52 +17,81 @@
 			</div>
 			<div class="poheaders">
 				<div class="row">
-					<div class="col-desk-6 col-tab-6">Purchase Order ID</div>
-					<div class="col-desk-2 col-tab-4">Status</div>
+					<div class="col-desk-2 col-tab-2">Purchase Order ID</div>
+					<div class="col-desk-2 col-tab-2">Status</div>
+					<div class="col-desk-2 col-tab-2">Supplier</div>
+					<div class="col-desk-2 col-tab-2">Approved</div>
+					<div class="col-desk-2 col-tab-2">Approval date</div>
 					<div class="col-desk-2 col-tab-2"></div>
 				</div>
-				<hr/>
+				<hr />
 			</div>
 			<div class="poItems">
-				<ui:repeat var="purchaseOrder" value="#{purchaseOrders.purchaseOrderList}">
+				<ui:repeat var="purchaseOrder"
+					value="#{purchaseOrders.purchaseOrderList}">
 					<div class="po-row">
 						<div class="row">
-							<div class="col-desk-6 col-tab-6">
+							<div class="col-desk-2 col-tab-2">
 								<h:outputText value="#{purchaseOrder.id}"></h:outputText>
 							</div>
-							<div class="col-desk-4 col-tab-4">
-								<h:outputText value="#{purchaseOrder.status}"></h:outputText>
+							<div class="col-desk-2 col-tab-2">
+								<h:outputText value="#{purchaseOrder.status.displayName}"></h:outputText>
 							</div>
 							<div class="col-desk-2 col-tab-2">
-								<h:commandButton id="view" type="button" 
-								onclick= "location.href='#popup1';#{purchaseOrders.findPOById(purchaseOrder.id)};" 
-								value="view" />
+								<h:outputText type="text" value="#{purchaseOrder.supplier.name}"></h:outputText>
 							</div>
+							<div class="col-desk-2 col-tab-2">
+
+								<h:outputText type="text" value="#{purchaseOrder.approval}"></h:outputText>
+							</div>
+							<div class="col-desk-2 col-tab-2">
+
+								<h:outputText type="text" value="#{purchaseOrder.approvalDate}"></h:outputText>
+							</div>
+							<div class="col-desk-2 col-tab-2">
+								<h:commandButton id="view" type="button"
+									onclick="location.href='#popup1';#{purchaseOrders.findPOById(purchaseOrder.id)};"
+									value="view" />
+							</div>
+						</div>
+					</div>
+					<br />
+					<hr />
+					<div id="popup1" class="overlay">
+						<div class="popup">
+							<div class="col-desk-3 col-tab-3">Product ID</div>
+							<div class="col-desk-3 col-tab-3">Product Name</div>
+							<div class="col-desk-3 col-tab-3">Price</div>
+							<div class="col-desk-3 col-tab-3">Quantity</div>
+							<hr />
+							<ui:repeat var="productsOrdered"
+								value="#{purchaseOrder.purchasedProducts}">
+								<div class="row">
+									<div class="col-desk-3 col-tab-3">
+										<h:outputText type="text"
+											value="#{productsOrdered.product.id}"></h:outputText>
+									</div>
+									<div class="col-desk-3 col-tab-3">
+										<h:outputText type="text"
+											value="#{productsOrdered.product.name}"></h:outputText>
+									</div>
+									<div class="col-desk-3 col-tab-3">
+										<h:outputText type="text"
+											value="£#{productsOrdered.product.price}"></h:outputText>
+									</div>
+									<div class="col-desk-3 col-tab-3">
+										<h:outputText type="text"
+											value="#{productsOrdered.numberOrdered}"></h:outputText>
+									</div>
+
+								</div>
+							</ui:repeat>
 						</div>
 					</div>
 					<hr />
-				</ui:repeat>	
+				</ui:repeat>
 			</div>
-			<div id="popup1" class="overlay">
-				<div class="popup">
-					<div class="row">
-						<div class="col-desk-3 col-tab-3">
-							<h:outputText type="text" value="#{purchaseOrder.id}"></h:outputText>
-						</div>
-						<div class="col-desk-3 col-tab-3">
-							<h:outputText type="text" value="#{purchaseOrder.supplier.name}"></h:outputText>
-						</div>
-						<div class="col-desk-3 col-tab-3">
-							Approved:<h:outputText type="text" value="#{purchaseOrder.approval}"></h:outputText>
-						</div>
-						<div class="col-desk-3 col-tab-3">
-							Approval Date<h:outputText type="text" value="#{purchaseOrder.approvalDate}"></h:outputText>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<br/>
+			<br />
 			<div class="Controls">
 				<div class="add-generatePO">
 					<div class="row">

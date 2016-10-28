@@ -84,7 +84,7 @@ public class ProductsOrdered {
 		return product;
 	}
 
-	public int getOrdered() {
+	public int getNumberOrdered() {
 		return ordered;
 	}
 
