@@ -17,41 +17,30 @@
 			</div>
 			<div class="poheaders">
 				<div class="row">
-					<div class="col-desk-2 col-tab-2">Purchase Order ID</div>
-					<div class="col-desk-2 col-tab-2">Supplier</div>
-					<div class="col-desk-2 col-tab-2">Approved/ Rejected</div>
-					<div class="col-desk-2 col-tab-2">Date Approved</div>
-					<div class="col-desk-2 col-tab-2">Status</div>
+					<div class="col-desk-6 col-tab-6">Purchase Order ID</div>
+					<div class="col-desk-2 col-tab-4">Status</div>
 					<div class="col-desk-2 col-tab-2"></div>
 				</div>
 			</div>
 			<div class="poItems">
-				<ui:repeat var="purchaseOrder" value="#{purchaseOrders.datamodel}">
-					<div class="poitem">
+				<ui:repeat var="purchaseOrder" value="#{purchaseOrders.purchaseOrderList}">
+					<div class="po-row">
 						<div class="row">
-							<div class="col-desk-2 col-tab-2">
-								<h:outputText escape="false" value="#{purchaseOrder.id}" />
+							<div class="col-desk-6 col-tab-6">
+								<h:outputText value="#{purchaseOrder.id}"></h:outputText>
+							</div>
+							<div class="col-desk-4 col-tab-4">
+								<h:outputText value="#{purchaseOrder.status}"></h:outputText>
 							</div>
 							<div class="col-desk-2 col-tab-2">
-								<h:outputText escape="false"
-									value="#{purchaseOrder.supplier.name}" />
-							</div>
-							<div class="col-desk-2 col-tab-2">
-								<h:outputText escape="false" value="#{purchaseOrder.Approved}" />
-							</div>
-							<div class="col-desk-2 col-tab-2">
-								<h:outputText escape="false"
-									value="#{purchaseOrder.ApprovedDate}" />
-							</div>
-							<div class="col-desk-2 col-tab-2">
-								<h:outputText escape="false" value="#{purchaseOrder.Status}" />
-							</div>
-							<div class="col-desk-2 col-tab-2">
-								<button name="edit">Edit</button>
 							</div>
 						</div>
 					</div>
+					<hr />
+				</ui:repeat>	
 			</div>
+			
+			<br/>
 			<div class="Controls">
 				<div class="add-generatePO">
 					<div class="row">

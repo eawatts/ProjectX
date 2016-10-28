@@ -13,7 +13,7 @@ import projectx.persistence.entities.Product;
 import projectx.persistence.selected.SelectedProduct;
 import projectx.services.ProductService;
 
-@Named("product")
+@Named("products")
 @SessionScoped
 public class ProductController implements Serializable
 {
@@ -86,8 +86,8 @@ public class ProductController implements Serializable
 		/*for(int i=1;i<10;i++){
 			System.out.print(productService.getProductbyID(productid).getName());
 		}*/
-		System.out.println("Product is "+productService.getProductbyID(1));
-		return productService.getProductbyID(1);
+		System.out.println("Product is "+productService.getProductbyID(3));
+		return productService.getProductbyID(3);
 	}
 	
 	

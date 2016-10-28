@@ -115,7 +115,21 @@
 
 		<!-- This is the content of the actual page. -->
 		<div class="main-content">
-			<ui:insert name="main-content" />
+			<h:panelGroup rendered="#{current_session.loggedIn eq true}">
+				<ui:insert name="main-content" />
+			</h:panelGroup>
+
+			<h:panelGroup rendered="#{current_session.loggedIn ne true}">
+				<h1>You must be logged in to access this content!!</h1>
+				<div class="not-logged-in">
+					<a href="login.xhtml">
+						<button
+							class="button-green-inverse nav-banner-desktop-right-button login-temp">
+							<h:outputText value="Go To Login" />
+						</button>
+					</a>
+				</div>
+			</h:panelGroup>
 		</div>
 
 		<!-- This is the green footer along the bottom of each page. -->
