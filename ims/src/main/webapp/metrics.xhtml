@@ -6,11 +6,13 @@
 
 	<meta charset="utf-8" />
 	<ui:define name="title">Metrics</ui:define>
-	
+		<script type="text/javascript"
+				src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript" src="/js/charts.js"></script>
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/metrics.css" />
 	</ui:define>
-	
+
 	<ui:define name="main-content">
 		<div class="main-content">
 			<div class="main-content">
@@ -18,10 +20,12 @@
 					<h1 class="Heading">Metrics</h1>
 				</div>
 				<div class="row">
-					<div class="">
-					</div>
+					<!--Div that will hold the pie chart-->
+					<div id="chart_div"></div>
+					<div class=""></div>
 				</div>
-
+				<!--Load the AJAX API-->
+			
 			</div>
 		</div>
 	</ui:define>
