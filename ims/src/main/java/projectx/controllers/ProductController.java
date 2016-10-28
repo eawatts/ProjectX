@@ -106,5 +106,9 @@ public class ProductController implements Serializable
 		return productService.getLowStockProduct();
 	}
 	
+	public List<Product> getTop25LowStockProducts(){
+		return productService.getTop25LowStockProducts();
+	}
+	
 
 }
