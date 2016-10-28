@@ -19,6 +19,7 @@
     box-sizing: border-box;
 }
 .onoffswitch-inner:before {
+	text-align:left;
     content: "Active";
     padding-left: 10px;
     background-color: #004425; color: #F9FBF2;
