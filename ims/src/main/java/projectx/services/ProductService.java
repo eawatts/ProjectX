@@ -3,7 +3,6 @@ package projectx.services;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.faces.model.DataModel;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Product;
@@ -30,5 +29,9 @@ public class ProductService{
 
 	public List<Product> getLowStockProduct() {
 		return productRepository.getLowStockProducts();
+	}
+	
+	public Product getProductbyID(int id){
+		return productRepository.findByProductId(id);
 	}
 } 

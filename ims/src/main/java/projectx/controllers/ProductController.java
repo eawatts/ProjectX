@@ -10,7 +10,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Product;
-import projectx.persistence.entities.Supplier;
 import projectx.persistence.selected.SelectedProduct;
 import projectx.services.ProductService;
 
@@ -23,9 +22,17 @@ public class ProductController implements Serializable
 	private ProductService productService;
 	@Inject
 	private SelectedProduct selectedProduct;
+
 	@SuppressWarnings("unused")
 	private int selectedProductIndex;
+	
+	private Product productByID; 
+	
+	
 	private DataModel<Product> productDataModel = null;
+	
+	
+	
 	public String getProduct(String id)
 	{
 		try
@@ -61,8 +68,37 @@ public class ProductController implements Serializable
 		return productDataModel;
 	}
 	
+
+//	public List<Supplier> getSupplier(int productId)
+//	{
+//		return selectedProduct.getSelectedProduct().getSupplierList(productId);
+//	}
+//	
+	public void setSelectedProduct(int productId)
+	{
+		selectedProduct.setSelectedProduct(productService.findProductById(productId));
+	}
+	
+	
+	public Product getProductByID(){
+		int productid = 1;
+		System.out.println("Test1");
+		/*for(int i=1;i<10;i++){
+			System.out.print(productService.getProductbyID(productid).getName());
+		}*/
+		System.out.println("Product is "+productService.getProductbyID(1));
+		return productService.getProductbyID(1);
+	}
+	
+	
+
+	public void setProductByID(Product productbyID) {
+		this.productByID = productbyID;
+	}
+
 	public List<Product> getLowStockProducts(){
 		return productService.getLowStockProduct();
 	}
 	
+
 }

@@ -32,7 +32,7 @@ public class OfflineDB {
 	private List<PaymentDetails> paymentDetails;
 	private List<Category> categories;
 	private List<Product> products;
-	private List<Supplier> suppliers;
+	private ArrayList<Supplier> suppliers;
 	private List<PurchaseOrder> purchaseOrders;
 	private List<ProductsOrdered> productsOrdered;
 	private ArrayList<String> p1imgs;
@@ -63,7 +63,7 @@ public class OfflineDB {
 		products.add(new Product(3,"Gnome",200,3.00,20,"a Gnome",suppliers,p1imgs));
 		products.add(new Product(4,"Another Gnome",250,3.00,20,"another Gnome",suppliers,p1imgs));
 		products.add(new Product(5,"Help",300,3.00,20,"shiny product",suppliers,p1imgs));
-		products.add(new Product(6,"Help Me",350,3.00,20,"another shiny product",suppliers,p1imgs));
+		products.add(new Product(6,"Help Me",3,3.00,20,"another shiny product",suppliers,p1imgs));
 		products.add(new Product(7, "Test Product", 200, 4.00, 50, "Test description", suppliers, p1imgs));
 
 		
@@ -252,9 +252,15 @@ public class OfflineDB {
 
 	public Product getProductByID(int productId)
 	{
+		
 		for(Product p: products)
 		{
-			if( p.getId() == productId) return p;
+			System.out.println(p.getId());
+			if( p.getId() == productId) 
+			{
+				System.out.println("Product found ");
+				return p;
+			}
 		}
 		return null;
 	}
@@ -344,7 +350,6 @@ public class OfflineDB {
 	}
 
 	public List<Product> getLowStockProducts() {	
-		System.out.println(products.get(1).getName());
 		class MyComparator implements Comparator<Product>{
 			@Override
 			public int compare(Product product1, Product product2) {				
