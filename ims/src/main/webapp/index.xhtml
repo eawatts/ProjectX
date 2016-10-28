@@ -3,10 +3,9 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
-	
+
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/index.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/checkbox.css"></link>
 	</ui:define>
 
 	<meta charset="utf-8" />
@@ -55,8 +54,11 @@
 								</p>
 							</div>
 							<div class="col-tab-3 col-desk-3">
-								
-								
+								<div class="index-checkbox">
+									<p>
+										<h:selectBooleanCheckbox value="#"></h:selectBooleanCheckbox>
+									</p>
+								</div>
 							</div>
 						</div>
 						<hr class="table-row" />

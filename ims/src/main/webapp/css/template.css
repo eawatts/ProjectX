@@ -47,16 +47,12 @@
 	max-height: 40px;
 }
 
-#main-content {
-	align-content: center;
+.header{
+	text-align:center;
+	background-color: #f9fbf2;
 }
 
-h1 {
+.login-redirect{
 	text-align: center;
-}
-
-.not-logged-in {
-	position: absolute;
-	left: 50%;
-	top: 50%;
+	
 }

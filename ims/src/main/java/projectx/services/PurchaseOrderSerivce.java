@@ -13,13 +13,17 @@ public class PurchaseOrderSerivce {
 	@Inject
 	private PurchaseOrderRepository purchaseOrderRepo;
 	
-	public PurchaseOrder findProductById(String id)
-	{
-		return purchaseOrderRepo.findPurchaseOrderById(id);
-	}
+//	public PurchaseOrder findPOById(int id)
+//	{
+//		return purchaseOrderRepo.findPurchaseOrderById(id);
+//	}
 	
 	public ArrayList<PurchaseOrder> getPurchaseOrderList() {
 		return purchaseOrderRepo.getPurchaseOrders();
+	}
+
+	public PurchaseOrder findPOById(int id) {
+		return purchaseOrderRepo.findPurchaseOrderById(id);
 	}
 	
 }

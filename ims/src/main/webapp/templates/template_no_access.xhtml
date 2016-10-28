@@ -44,16 +44,21 @@
 			<h:panelGroup rendered="#{current_session.loggedIn eq true}">
 				<ui:insert name="main-content" />
 			</h:panelGroup>
-
 			<h:panelGroup rendered="#{current_session.loggedIn ne true}">
-				<h1>You must be logged in to access this content!!</h1>
-				<div>
+			<div class="row">
+			<div class="col-tab-12 col-desk-12">
+		
+				<h1 class="header">You must be logged in to access this content!!</h1>
+				<div class="login-redirect">
 					<a href="login.xhtml">
 						<button
-							class="button-green-inverse nav-banner-desktop-right-button not-logged-in">
+							class="button-green-inverse">
 							<h:outputText value="Go To Login" />
 						</button>
 					</a>
+				</div>
+				
+				</div>
 				</div>
 			</h:panelGroup>
 		</div>

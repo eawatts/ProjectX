@@ -16,8 +16,8 @@
 		</div>
 		<div class="poheaders">
 			<div class="row">
-				<div class="col-desk-2 col-tab-2">Product ID</div>
-				<div class="col-desk-2 col-tab-2">Name</div>
+				<div class="col-desk-2 col-tab-2">Product Name</div>
+				<div class="col-desk-2 col-tab-2">Id</div>
 				<div class="col-desk-2 col-tab-2">Quantity</div>
 				<div class="col-desk-2 col-tab-2">Current Stock</div>
 				<div class="col-desk-2 col-tab-2">Supplier</div>
@@ -30,16 +30,9 @@
 					<div class="row">
 						<div class="col-desk-2 col-tab-2">
 							<select name="productID">
-								<option value="ProductA">ProductA</option>
-								<option value="ProductB">ProductB</option>
-								<option value="ProductC">ProductC</option>
-								<option value="ProductD">ProductD</option>
-								<option value="ProductE">ProductE</option>
-								<option value="ProductF">ProductF</option>
-								<option value="ProductG">ProductG</option>
-								<option value="ProductH">ProductH</option>
-								<option value="ProductI">ProductI</option>
-								<option value="ProductJ">ProductJ</option>
+								<ui:repeat var="productToBuy" value="#{products.lowStockProducts}">
+									<option value="productToBuy"><h:outputText value="#{productToBuy.name}"/></option>
+								</ui:repeat>
 							</select>
 						</div>
 						<div class="col-desk-2 col-tab-2">

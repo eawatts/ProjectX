@@ -9,6 +9,7 @@
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css"
 			href="css/ims-products-style.css" />
+					<link rel="stylesheet" type="text/css" href="css/switch.css"/>
 	</ui:define>
 	<ui:define name="main-content">
 		<div class="main-content">
@@ -20,73 +21,86 @@
 				<div class="col-tab-3 col-desk-3">Name</div>
 				<div class="col-tab-2 col-desk-2">Stock</div>
 				<div class="col-tab-2 col-desk-2">Low Limit</div>
-				<div class="col-tab-2 col-desk-2">View</div>
-				<div class="col-tab-2 col-desk-2">Edit</div>
+				<div class="col-tab-2 col-desk-2">Status</div>
+				<div class="col-tab-2 col-desk-2 custom-title">View</div>
 			</div>
+			<br />
 			<ui:repeat var="product" value="#{products.productDataModel}">
 				<div class="product-row">
-				<h:form>
-					<div class="col-tab-1 col-desk-1">
-						<h:outputText value="#{product.id}" />
-					</div>
-					<div class="col-tab-3 col-desk-3">
-						<h:outputText value="#{product.name}" />
-					</div>
-					<div class="col-tab-2 col-desk-2">
-						<h:outputText value="#{product.currentStock}" />
-					</div>
-					<div class="col-tab-2 col-desk-2">
-						<h:outputText value="#{product.lowLimit}" />
-					</div>
+				
+					
+					
+						<div class="col-tab-1 col-desk-1">
+							<h:outputText value="#{product.id}" />
+						</div>
+						<div class="col-tab-3 col-desk-3">
+							<h:outputText value="#{product.name}" />
+						</div>
+						<div class="col-tab-2 col-desk-2">
+							<h:outputText value="#{product.currentStock}" />
+						</div>
+							<div class="col-tab-2 col-desk-2">
+							<h:outputText value="#{product.lowLimit}" />
+						</div>
+						<div class="col-tab-2 col-desk-2">
+						
+							<div class="onoffswitch">
+								
+								<h:form id="switch" name="switch">
+									<h:selectBooleanCheckbox name="onoffswitch"
+										styleClass="onoffswitch-checkbox" id="myonoffswitch"
+										value="#{product.isDiscontinued}">
+										<f:ajax event="click" execute="@form" />
+									</h:selectBooleanCheckbox>
+									<h:outputLabel class="onoffswitch-label" for="switch:myonoffswitch">
+										<span class="onoffswitch-inner"></span> 
+										<span class="onoffswitch-switch"></span>
+									</h:outputLabel>
 
+								</h:form>
+								
+							</div>
+								
+						</div>
+				
+					<h:form>
+						<div class="col-tab-2 col-desk-2">
+
+							<h:commandButton styleClass="button-green view-button"
+								value="View/Edit" action="#{products.viewProduct(product.id)}"></h:commandButton>
+						</div>
 					
-					<div class="col-tab-4 col-desk-4">
-					
-						<h:commandButton 
-							value="View #{product.name}" action="#{products.viewProduct(product.id)}"></h:commandButton>
-					</div>
 					</h:form>
 				</div>
-
+				<hr class="table-row" />
+				<br />
 			</ui:repeat>
 			<div class="row">
-				<button id="editP" type="button" onclick="location.href='#popup2'">Add</button>
-			</div>
-			
-			<div id="popup2" class="overlay">
-				<div class="popup">
-					<a class="close" href="#">X</a>
-					<h:form>
-						<div class="row">
-							<b>Name</b>
-							<h:inputText type="text" name="ProductName"
-								value="#{product.name}"></h:inputText>
-						</div>
-						<div class="row">
-							<b>Current Stock</b>
-							<h:inputText type="text" name="ProductStock"
-								value="#{product.stock}"></h:inputText>
-						</div>
-						<div class="row">
-							<b>Low Limit</b>
-							<h:inputText type="text" name="ProductLowLimit"
-								value="#{product.lowlimit}"></h:inputText>
-						</div>
-						<div class="row">
-							<b>Description</b>
-							<h:inputText type="text" name="ProductDescription"
-								value="#{product.description}"></h:inputText>
-						</div>
-						<div class="row">
-							<b>Supplier</b>
-							<h:inputText type="text" name="ProductSupplier"
-								value="#{product.supplier}"></h:inputText>
-						</div>
-						<div class="row">
-							<h:commandButton class="submit-button" type="submit"
-								action="#{Suppliers.addProduct}" value="Edit Product"></h:commandButton>
-						</div>
-					</h:form>
+				<div class="col-tab-12 col-desk-12">
+					<button class="button-green bottom-row" id="editP" type="button"
+						onclick="location.href='#popup2'">Add</button>
+				</div>
+
+				<div id="popup2" class="overlay">
+					<div class="popup">
+						<a class="close" href="#">X</a>
+						<h:form>
+							<div class="row">
+								<b>Next Free ID</b>
+								<h:inputText type="text" name="ProductName"
+									value="#{product.Id}"></h:inputText>
+							</div>
+							<div class="row">
+								<b>Name</b>
+								<h:inputText type="text" name="ProductName"
+									value="#{product.name}"></h:inputText>
+							</div>
+							<div class="row">
+								<h:commandButton class="submit-button" type="submit"
+								 value="Save"></h:commandButton>
+							</div>
+						</h:form>
+					</div>
 				</div>
 			</div>
 		</div>
