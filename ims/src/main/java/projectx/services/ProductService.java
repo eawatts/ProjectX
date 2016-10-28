@@ -48,7 +48,9 @@ public class ProductService{
 			listSize = 25;
 		}
 		for(int i=0; i<listSize; i++){
+	
 			top25LowStockProducts.add(orderedProducts.get(i));
+			System.out.println(top25LowStockProducts.get(i).getName());
 		}
 		return top25LowStockProducts;
 	}
