@@ -30,6 +30,7 @@ public class ProductController implements Serializable
 	
 	
 	private DataModel<Product> productDataModel = null;
+	private int productid;
 	
 	
 	
@@ -81,13 +82,18 @@ public class ProductController implements Serializable
 	
 	
 	public Product getProductByID(){
-		int productid = 1;
+		
 		System.out.println("Test1");
 		/*for(int i=1;i<10;i++){
 			System.out.print(productService.getProductbyID(productid).getName());
 		}*/
-		System.out.println("Product is "+productService.getProductbyID(3));
-		return productService.getProductbyID(3);
+		System.out.println("Product is "+productService.getProductbyID(productid));
+		return productService.getProductbyID(productid);
+	}
+	
+	public String viewProduct(int id){
+		productid = id;
+		return "product";
 	}
 	
 	
