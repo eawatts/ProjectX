@@ -14,6 +14,10 @@ public class NotificationService {
 
 	@Inject
 	private NotificationRepository notificationRepository;
+	
+	public void dismiss(Notification notification) {
+		notificationRepository.dismiss(notification);
+	}
 
 	public List<Notification> getNotifications() {
 		return notificationRepository.getNotifications();

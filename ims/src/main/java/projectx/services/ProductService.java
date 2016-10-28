@@ -28,6 +28,9 @@ public class ProductService{
 		return productRepository.getProducts();
 	}
 
+	public void addProduct(Product p){
+		productRepository.addProduct(p);
+	}
 	public List<Product> getLowStockProduct() {
 		return productRepository.getLowStockProducts();
 	}

@@ -1,6 +1,7 @@
 package projectx.controllers;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
@@ -10,6 +11,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Product;
+import projectx.persistence.entities.Supplier;
 import projectx.persistence.selected.SelectedProduct;
 import projectx.services.ProductService;
 
@@ -96,6 +98,10 @@ public class ProductController implements Serializable
 		return "product";
 	}
 	
+	public void createProduct(int id, String name, int stockLvl, double price, int lowStock, String description,ArrayList<Supplier> suppliers,ArrayList<String> imglists ){
+		Product p = new Product(id,name,stockLvl,price,lowStock,description,null,null);
+		productService.addProduct(p);
+	}
 	
 
 	public void setProductByID(Product productbyID) {

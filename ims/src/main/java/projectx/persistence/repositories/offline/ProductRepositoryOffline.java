@@ -36,6 +36,10 @@ public class ProductRepositoryOffline implements ProductRepository {
 	public List<Product> getProducts() {
 		return initialData.getProducts();
 	}
+	
+	public void addProduct(Product p){
+		initialData.addProduct(p);
+	}
 
 	@Override
 	public void updateProduct(Product products) 

@@ -45,12 +45,10 @@ public class Product {
 		
 		private List<Supplier> suppliers;
 		
-
-
+	
 		private ArrayList<String> imgs;
 		
-
-//		public Product(int i, String string, int j, double d, int k, String string2, List<Supplier> suppliers2, ArrayList<String> p1imgs){};
+		
 		public Product(int id, String name, int stockLvl, double price, int lowStock, String description,ArrayList<Supplier> suppliers,ArrayList<String> imglists ){
 
 			this.id = id;
@@ -58,7 +56,7 @@ public class Product {
 			this.currentStock = stockLvl;
 			this.price = price;
 			this.lowLimit = lowStock;
-			this.isDiscontinued = false;
+			this.isDiscontinued = true;
 			this.description = description;
 			this.suppliers=suppliers;
 			this.imgs = imglists;
