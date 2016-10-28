@@ -1,0 +1,35 @@
+@CHARSET "ISO-8859-1";
+
+.mainContent{
+	text-align: center;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 300px;
+    text-align: right;
+}
+input {
+  display: inline-block;
+  float: left;
+  width:50%;
+}
+:root
+{
+	--raisin-black: #272727;
+    --floral-white: #f9fbf2;
+    --orange-yellow: #fed766;
+    --british-racing-green: #004425;
+    --sweet-sweet-brown: #a53f2b;
+    --inline-width: 40%;
+}
+#Title{
+	background-color: var(--british-racing-green);
+	Color: var(--floral-white);
+}
+.description{
+	Color: var(--sweet-sweet-brown);
+
+}

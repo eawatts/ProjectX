@@ -4,9 +4,14 @@ import java.util.List;
 
 import projectx.persistence.entities.PaymentDetails;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 
-public interface PaymentDetailRepository {
-	
+
+@Stateless
+@Default
+public interface PaymentDetailRepository
+{
 	public void persistPaymentDetails (PaymentDetails paymentDetails);
 	public void persistPaymentDetails(List<PaymentDetails> paymentDetails);
 	public List<PaymentDetails> getPaymentDetails();

@@ -1,5 +1,6 @@
 package projectx.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -33,5 +34,22 @@ public class ProductService{
 	
 	public Product getProductbyID(int id){
 		return productRepository.findByProductId(id);
+	}
+
+	public List<Product> getTop25LowStockProducts() {
+		List<Product> orderedProducts = new ArrayList<Product>();
+		List<Product> top25LowStockProducts = new ArrayList<Product>();
+		orderedProducts = getLowStockProduct();
+		int listSize = orderedProducts.size();
+		if(listSize < 25){
+			
+		}
+		else{
+			listSize = 25;
+		}
+		for(int i=0; i<listSize; i++){
+			top25LowStockProducts.add(orderedProducts.get(i));
+		}
+		return top25LowStockProducts;
 	}
 } 

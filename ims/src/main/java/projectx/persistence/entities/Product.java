@@ -136,14 +136,14 @@ public class Product {
 		/**
 		 * @return the isDiscontinued
 		 */
-		public boolean isDiscontinued()
+		public boolean getIsDiscontinued()
 		{
 			return isDiscontinued;
 		}
 		/**
 		 * @param isDiscontinued the isDiscontinued to set
 		 */
-		public void setDiscontinued(boolean isDiscontinued)
+		public void setIsDiscontinued(boolean isDiscontinued)
 		{
 			this.isDiscontinued = isDiscontinued;
 		}
