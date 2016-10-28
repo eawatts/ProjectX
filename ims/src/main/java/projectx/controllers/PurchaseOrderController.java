@@ -3,6 +3,7 @@ package projectx.controllers;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -32,9 +33,9 @@ public class PurchaseOrderController implements Serializable{
 	private boolean approved;
 	private Date approvalDate;
 	private OrderState status;
-	private ProductsOrdered productsOrdered;
+	private List<ProductsOrdered> productsOrdered;
 	
-	public void selected(int sId, Supplier sSupplier, boolean sApproved, Date sApprovalDate, OrderState sStatus, ProductsOrdered sProductsOrdered){
+	public void selected(int sId, Supplier sSupplier, boolean sApproved, Date sApprovalDate, OrderState sStatus, List<ProductsOrdered> sProductsOrdered){
 		this.id=sId;
 		this.supplier=sSupplier;
 		this.approved=sApproved;
@@ -98,12 +99,12 @@ public class PurchaseOrderController implements Serializable{
 	}
 
 
-	public ProductsOrdered getProductsOrdered() {
+	public List<ProductsOrdered> getProductsOrdered() {
 		return productsOrdered;
 	}
 
 
-	public void setProductsOrdered(ProductsOrdered productsOrdered) {
+	public void setProductsOrdered(List<ProductsOrdered> productsOrdered) {
 		this.productsOrdered = productsOrdered;
 	}
 	

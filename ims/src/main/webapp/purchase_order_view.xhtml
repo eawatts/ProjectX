@@ -21,6 +21,7 @@
 					<div class="col-desk-2 col-tab-4">Status</div>
 					<div class="col-desk-2 col-tab-2"></div>
 				</div>
+				<hr/>
 			</div>
 			<div class="poItems">
 				<ui:repeat var="purchaseOrder" value="#{purchaseOrders.purchaseOrderList}">
@@ -33,13 +34,24 @@
 								<h:outputText value="#{purchaseOrder.status}"></h:outputText>
 							</div>
 							<div class="col-desk-2 col-tab-2">
+								<h:commandButton id="editP" type="button" 
+								onclick="location.href='#popup1'; #{purchaseOrders.selected(purchaseOrder.id, purchaseOrder.supplier, purchaseOrder.approval, purchaseOrder.approvalDate, purchaseOrder.status, purchaseOrder.purchasedProducts)};"
+								value="view" />
 							</div>
 						</div>
 					</div>
 					<hr />
 				</ui:repeat>	
 			</div>
-			
+			<div id="popup1" class="overlay">
+				<div class="popup">
+					<div class="row">
+						<div class="col-desk-3 col-tab-3">
+							<h:outputText type="text" value="#{purchaseOrder.id}}"></h:outputText>
+						</div>
+					</div>
+				</div>
+			</div>
 			<br/>
 			<div class="Controls">
 				<div class="add-generatePO">
