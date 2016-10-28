@@ -33,7 +33,7 @@ public class OfflineDB {
 	private List<Category> categories;
 	private List<Product> products;
 	private ArrayList<Supplier> suppliers;
-	private List<PurchaseOrder> purchaseOrders;
+	private ArrayList<PurchaseOrder> purchaseOrders;
 	private List<ProductsOrdered> productsOrdered;
 	private ArrayList<String> p1imgs;
 	
@@ -73,6 +73,8 @@ public class OfflineDB {
 		
 		
 		purchaseOrders= new ArrayList<PurchaseOrder>();
+		purchaseOrders.add(new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"), OrderState.ORDER_CLOSED, productsOrdered));
+		
 		PurchaseOrder purchaseOrder1=new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"), OrderState.ORDER_CLOSED, productsOrdered);
 		purchaseOrder1.addOrderedProducts(new ProductsOrdered(1,products.get(1),20,purchaseOrder1));
 		purchaseOrder1.addOrderedProducts(new ProductsOrdered(2,products.get(2),10,purchaseOrder1));
@@ -311,7 +313,6 @@ public class OfflineDB {
 	}
 
 	//PurchaseOrder
-	//PurchaseOrder
 	public PurchaseOrder getPurchaseOrderBySupplierID(String supplierID) {
 		for(PurchaseOrder purchOrder: purchaseOrders)
 		{
@@ -340,8 +341,8 @@ public class OfflineDB {
 		return null;
 	}
 
-	public List<PurchaseOrder> getPurchaseOrders() {
-		return purchaseOrders;
+	public ArrayList<PurchaseOrder> getPurchaseOrders() {
+		return new ArrayList<PurchaseOrder>(this.purchaseOrders);
 	}
 
 	public void updatePurchaseOrders(PurchaseOrder purchaseOrder) {
