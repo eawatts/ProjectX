@@ -92,3 +92,6 @@ html {
 .custom-checkbox{
 	background-color:  #004425;
 }
+.table-row{
+	margin: 0;
+}
