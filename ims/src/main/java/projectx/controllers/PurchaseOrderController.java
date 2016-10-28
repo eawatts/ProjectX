@@ -40,6 +40,7 @@ public class PurchaseOrderController implements Serializable{
 		return purchaseOrderSerivce.getPurchaseOrderList();
 	}
 	public PurchaseOrder findPOById(int id){
+		System.out.println("!!!!!!!!!!!!!!!!");
 		return purchaseOrderSerivce.findPOById(id);
 	} 
 	
