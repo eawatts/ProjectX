@@ -30,8 +30,11 @@
 	margin: auto;
 	display: block;
 	width: auto;
-	text-align: centre;
+
 	height: 35px;
+}
+.custom-title{
+	text-align: center;
 }
 
 .product-row{
@@ -88,4 +91,7 @@
 }
 .popup .close:hover {
   color: #004425;
+}
+.view-button{
+	margin:5px;
 }
