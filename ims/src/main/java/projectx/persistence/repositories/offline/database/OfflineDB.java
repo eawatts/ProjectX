@@ -123,7 +123,15 @@ public class OfflineDB {
 		
 		notifications = new ArrayList<Notification>();
 		notifications.add(new Notification(1, NotificationType.PURCHASE_ORDER_ISSUE, "It seems a bit costly."));
-		notifications.add(new Notification(1, NotificationType.WAREHOUSE_IDLE, "Half of the team are not doing anything."));
+		notifications.add(new Notification(2, NotificationType.PURCHASE_ORDER_ISSUE, "It's cheaper at the first place."));
+		notifications.add(new Notification(3, NotificationType.PURCHASE_ORDER_ISSUE, "We are planning to stop selling these."));
+		notifications.add(new Notification(4, NotificationType.PURCHASE_ORDER_ISSUE, "Double the about out Product 34."));
+		notifications.add(new Notification(5, NotificationType.PURCHASE_ORDER_ISSUE, "Just resubmit this one Monday."));
+		notifications.add(new Notification(6, NotificationType.WAREHOUSE_IDLE, "Half of the team are not doing anything."));
+		notifications.add(new Notification(7, NotificationType.WAREHOUSE_IDLE, "Baz hasn't done any work all day."));
+		notifications.add(new Notification(8, NotificationType.SAVE_ERROR, "Is the server down?"));
+		notifications.add(new Notification(9, NotificationType.SAVE_ERROR, "Can't save the Purchase Order!"));
+		notifications.add(new Notification(10, NotificationType.SAVE_ERROR, "Not sure what happened."));
 
 	}
 
@@ -435,5 +443,9 @@ public class OfflineDB {
 			}
 		}
 		return matchingNotifications;
+	}
+	
+	public void dismissNotification(Notification notification) {
+		notifications.remove(notification);
 	}
 }
