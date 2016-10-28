@@ -11,6 +11,7 @@ import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
 import projectx.persistence.entities.Category;
+import projectx.persistence.entities.Notification;
 import projectx.persistence.entities.PaymentDetails;
 import projectx.persistence.entities.Review;
 import projectx.persistence.entities.Supplier;
@@ -18,6 +19,7 @@ import projectx.persistence.entities.Product;
 import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.User;
+import projectx.persistence.util.NotificationType;
 import projectx.persistence.util.OrderState;
 import projectx.persistence.util.UserLevel;
 
@@ -30,6 +32,7 @@ public class OfflineDB {
 	private List<PaymentDetails> paymentDetails;
 	private List<Category> categories;
 	private List<Product> products;
+	private List<Notification> notifications;
 	private ArrayList<Supplier> suppliers;
 	private ArrayList<PurchaseOrder> purchaseOrders;
 	private List<ProductsOrdered> productsOrdered;
@@ -56,6 +59,7 @@ public class OfflineDB {
 		p1imgs.add("asd");
 
 		products = new ArrayList<Product>();
+<<<<<<< HEAD
 		products.add(new Product(1, "Gnome", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
 		products.add(new Product(2, "Gnomeo", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
 		products.add(new Product(3, "Gnomezilla", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
@@ -86,36 +90,76 @@ public class OfflineDB {
 		products.add(new Product(28, "Petrol Chainsaw", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
 		products.add(new Product(29, "Hedge Trimmer", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
 		products.add(new Product(30, "Paddling Pool", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-
+=======
+		products.add(new Product(1, "Product", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
+		products.add(new Product(2, "Another product", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
+		products.add(new Product(3, "Gnome", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
+		products.add(new Product(4, "Another Gnome", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
+		products.add(new Product(5, "Help", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
+		products.add(new Product(6, "Help Me", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
+		products.add(new Product(7, "Product", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
+		products.add(new Product(8, "Another product", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
+		products.add(new Product(9, "Gnome", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
+		products.add(new Product(10, "Another Gnome", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
+		products.add(new Product(11, "Help", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
+		products.add(new Product(12, "Help Me", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
+		products.add(new Product(13, "Product", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
+		products.add(
+				new Product(14, "Another product", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
+		products.add(new Product(15, "Gnome", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
+		products.add(new Product(16, "Another Gnome", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
+		products.add(new Product(17, "Help", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
+		products.add(new Product(18, "Help Me", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
+		products.add(new Product(19, "Product", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
+		products.add(
+				new Product(20, "Another product", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
+		products.add(new Product(21, "Gnome", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
+		products.add(new Product(22, "Another Gnome", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
+		products.add(new Product(23, "Help", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
+		products.add(new Product(24, "Help Me", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
+		products.add(new Product(25, "Product", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
+		products.add(
+				new Product(26, "Another product", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
+		products.add(new Product(27, "Gnome", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
+		products.add(new Product(28, "Another Gnome", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
+		products.add(new Product(29, "Help", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
+		products.add(new Product(30, "Help Me", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
+>>>>>>> 854f5fb73d05607e7d0f06eec810c90c4e55db80
 
 		paymentDetails = new ArrayList<PaymentDetails>();
-		paymentDetails.add(new PaymentDetails(1,new User(1,"hello","password","firstname","lastname",UserLevel.CUSTOMER,"username@email.com"),"89012345","123456"));
-		
-		
-		
-		purchaseOrders= new ArrayList<PurchaseOrder>();
-		
-		
-		PurchaseOrder purchaseOrder1=new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"), OrderState.ORDER_CLOSED, productsOrdered);
-		purchaseOrder1.addOrderedProducts(new ProductsOrdered(1,products.get(1),20,purchaseOrder1));
-		purchaseOrder1.addOrderedProducts(new ProductsOrdered(2,products.get(2),10,purchaseOrder1));
-		PurchaseOrder purchaseOrder2=new PurchaseOrder(2, suppliers.get(1), false, Date.valueOf("2016-02-16"), OrderState.PENDING_CONFIRMATION, productsOrdered);
-		purchaseOrder2.addOrderedProducts(new ProductsOrdered(3,products.get(1),20,purchaseOrder2));
-		purchaseOrder2.addOrderedProducts(new ProductsOrdered(4,products.get(5),10,purchaseOrder2));
-		PurchaseOrder purchaseOrder3=new PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"), OrderState.PENDING_DELIVERY, productsOrdered);
-		purchaseOrder3.addOrderedProducts(new ProductsOrdered(5,products.get(3),20,purchaseOrder3));
-		purchaseOrder3.addOrderedProducts(new ProductsOrdered(6,products.get(5),10,purchaseOrder3));
-		PurchaseOrder purchaseOrder4=new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"), OrderState.DELIVERED, productsOrdered);
-		purchaseOrder4.addOrderedProducts(new ProductsOrdered(7,products.get(4),20,purchaseOrder4));
-		purchaseOrder4.addOrderedProducts(new ProductsOrdered(8,products.get(5),10,purchaseOrder4));
 		paymentDetails.add(new PaymentDetails(1,
 				new User(1, "hello", "password", "firstname", "lastname", UserLevel.CUSTOMER, "username@email.com"),
 				"89012345", "123456"));
+		paymentDetails.add(new PaymentDetails(1,
+				new User(1, "hello", "password", "firstname", "lastname", UserLevel.CUSTOMER, "username@email.com"),
+				"89012345", "123456"));
+
+		purchaseOrders = new ArrayList<PurchaseOrder>();
+		PurchaseOrder purchaseOrder1 = new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"),
+				OrderState.ORDER_CLOSED, productsOrdered);
+		purchaseOrder1.addOrderedProducts(new ProductsOrdered(1, products.get(1), 20, purchaseOrder1));
+		purchaseOrder1.addOrderedProducts(new ProductsOrdered(2, products.get(2), 10, purchaseOrder1));
+		PurchaseOrder purchaseOrder2 = new PurchaseOrder(2, suppliers.get(1), false, Date.valueOf("2016-02-16"),
+				OrderState.PENDING_CONFIRMATION, productsOrdered);
+		purchaseOrder2.addOrderedProducts(new ProductsOrdered(3, products.get(1), 20, purchaseOrder2));
+		purchaseOrder2.addOrderedProducts(new ProductsOrdered(4, products.get(5), 10, purchaseOrder2));
+		PurchaseOrder purchaseOrder3 = new PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"),
+				OrderState.PENDING_DELIVERY, productsOrdered);
+		purchaseOrder3.addOrderedProducts(new ProductsOrdered(5, products.get(3), 20, purchaseOrder3));
+		purchaseOrder3.addOrderedProducts(new ProductsOrdered(6, products.get(5), 10, purchaseOrder3));
+		PurchaseOrder purchaseOrder4 = new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"),
+				OrderState.DELIVERED, productsOrdered);
+		purchaseOrder4.addOrderedProducts(new ProductsOrdered(7, products.get(4), 20, purchaseOrder4));
+		purchaseOrder4.addOrderedProducts(new ProductsOrdered(8, products.get(5), 10, purchaseOrder4));
 
 		purchaseOrders.add(purchaseOrder1);
 		purchaseOrders.add(purchaseOrder2);
 		purchaseOrders.add(purchaseOrder3);
 		purchaseOrders.add(purchaseOrder4);
+		
+		notifications = new ArrayList<Notification>();
+		notifications.add(new Notification(1, NotificationType.PURCHASE_ORDER_ISSUE, "It seems a bit costly."));
+		notifications.add(new Notification(1, NotificationType.WAREHOUSE_IDLE, "Half of the team are not doing anything."));
 
 	}
 
@@ -357,8 +401,7 @@ public class OfflineDB {
 		}
 	}
 
-
-	//PurchaseOrder
+	// PurchaseOrder
 
 	// PurchaseOrder
 	// PurchaseOrder
@@ -400,7 +443,6 @@ public class OfflineDB {
 		purchaseOrders.add(purchaseOrder);
 	}
 
-
 	public List<Product> getLowStockProducts() {
 		class MyComparator implements Comparator<Product> {
 
@@ -413,5 +455,20 @@ public class OfflineDB {
 		Collections.sort(products, new MyComparator());
 		return products;
 	}
+
+	// NOTIFICATIONS
+
+	public List<Notification> getNotifications() {
+		return new ArrayList<>(notifications);
+	}
+
+	public List<Notification> getNotificationsForType(NotificationType type) {
+		List<Notification> matchingNotifications = new ArrayList<Notification>();
+		for (Notification notification : notifications) {
+			if(notification.getType() == type) {
+				matchingNotifications.add(notification);
+			}
+		}
+		return matchingNotifications;
+	}
 }
-	

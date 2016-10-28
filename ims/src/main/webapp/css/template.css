@@ -46,11 +46,17 @@
 	max-width: 40px;
 	max-height: 40px;
 }
-h1{
-	text-align:center;
+
+#main-content {
+	align-content: center;
 }
-.not-logged-in{
-	position:absolute;
-	left:50%;
-	top:50%;
-	}
+
+h1 {
+	text-align: center;
+}
+
+.not-logged-in {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
