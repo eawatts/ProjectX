@@ -20,10 +20,6 @@ import projectx.persistence.util.OrderType;
 })
 
 
-
-
-
-
 public class Order {
 
 	public static final String findByOrderDate="Order.findByOrderDate";

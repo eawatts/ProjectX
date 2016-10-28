@@ -3,25 +3,54 @@
 	max-height: 100px;
 }
 
-.banner-left {
+.nav-banner-left {
 	background-color: #004425;
 	display: inline-block;
 }
 
-.banner-center {
-	background-color: #004425;
-	position: center;
+.nav-banner-right {
+	
 }
 
-.notification-center {
-	background-color: #004425
+.nav-banner-center {
+	background-color: #004425;
+	align-content: center;
+	height: 100px;
+	vertical-align: middle;
 }
 
 .notification-icon {
-	font-size: 200%;
+	font-size: 250%;
+	text-align: center;
+	width: 12.5%;
+	margin-top: 30px;
+	opacity: 0.2;
+}
+
+.notification-icon.active-white {
+	color: #f9fbf2;
+	opacity: 1;
+}
+
+.notification-icon.active-brown {
+	color: a53f2b;
+	opacity: 1;
+}
+
+.notification-icon.active-yellow {
+	color: #fed766;
+	opacity: 1;
 }
 
 .noti-ims {
 	max-width: 40px;
 	max-height: 40px;
 }
+h1{
+	text-align:center;
+}
+.not-logged-in{
+	position:absolute;
+	left:50%;
+	top:50%;
+	}
