@@ -1,0 +1,111 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
+	<meta charset="utf-8" />
+	<ui:define name="title">View Purchase Order</ui:define>
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css"
+			href="css/ims-purchase-order-view.css" />
+	</ui:define>
+	<ui:define name="main-content">
+		<!-- This is the content of the actual page. -->
+		<div class="main-content">
+			<div class="pageheading">
+				<h2>View Purchase Order</h2>
+			</div>
+			<div class="poheaders">
+				<div class="row">
+					<div class="col-desk-2 col-tab-2">Purchase Order ID</div>
+					<div class="col-desk-2 col-tab-2">Status</div>
+					<div class="col-desk-2 col-tab-2">Supplier</div>
+					<div class="col-desk-2 col-tab-2">Approved</div>
+					<div class="col-desk-2 col-tab-2">Approval date</div>
+					<div class="col-desk-2 col-tab-2"></div>
+				</div>
+				<hr />
+			</div>
+			<div class="poItems">
+				<ui:repeat var="purchaseOrder"
+					value="#{purchaseOrders.purchaseOrderList}">
+					<div class="po-row">
+						<div class="row">
+							<div class="col-desk-2 col-tab-2">
+								<h:outputText value="#{purchaseOrder.id}"></h:outputText>
+							</div>
+							<div class="col-desk-2 col-tab-2">
+								<h:outputText value="#{purchaseOrder.status.displayName}"></h:outputText>
+							</div>
+							<div class="col-desk-2 col-tab-2">
+								<h:outputText type="text" value="#{purchaseOrder.supplier.name}"></h:outputText>
+							</div>
+							<div class="col-desk-2 col-tab-2">
+
+								<h:outputText type="text" value="#{purchaseOrder.approval}"></h:outputText>
+							</div>
+							<div class="col-desk-2 col-tab-2">
+
+								<h:outputText type="text" value="#{purchaseOrder.approvalDate}"></h:outputText>
+							</div>
+							<div class="col-desk-2 col-tab-2">
+								<h:commandButton id="view" type="button"
+									onclick="location.href='#popup1';#{purchaseOrders.findPOById(purchaseOrder.id)};"
+									value="view" />
+							</div>
+						</div>
+					</div>
+					<br />
+					<hr />
+					<div id="popup1" class="overlay">
+						<div class="popup">
+							<div class="col-desk-3 col-tab-3">Product ID</div>
+							<div class="col-desk-3 col-tab-3">Product Name</div>
+							<div class="col-desk-3 col-tab-3">Price</div>
+							<div class="col-desk-3 col-tab-3">Quantity</div>
+							<hr />
+							<ui:repeat var="productsOrdered"
+								value="#{purchaseOrder.purchasedProducts}">
+								<div class="row">
+									<div class="col-desk-3 col-tab-3">
+										<h:outputText type="text"
+											value="#{productsOrdered.product.id}"></h:outputText>
+									</div>
+									<div class="col-desk-3 col-tab-3">
+										<h:outputText type="text"
+											value="#{productsOrdered.product.name}"></h:outputText>
+									</div>
+									<div class="col-desk-3 col-tab-3">
+										<h:outputText type="text"
+											value="£#{productsOrdered.product.price}"></h:outputText>
+									</div>
+									<div class="col-desk-3 col-tab-3">
+										<h:outputText type="text"
+											value="#{productsOrdered.numberOrdered}"></h:outputText>
+									</div>
+
+								</div>
+							</ui:repeat>
+						</div>
+					</div>
+					<hr />
+				</ui:repeat>
+			</div>
+			<br />
+			<div class="Controls">
+				<div class="add-generatePO">
+					<div class="row">
+						<div class="col-desk-6 col-tab-6">
+							<button name="createPO">Create New Purchase Order</button>
+						</div>
+
+						<div class="col-desk-6 col-tab-6">
+							<button name="generatePO">Geneate New Purchase Order</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</ui:define>
+</ui:composition>

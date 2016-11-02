@@ -1,23 +1,18 @@
 package projectx.persistence.offline;
 
-import java.sql.Date;
 import java.util.List;
 
-import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Order;
-import projectx.persistence.offline.database.OfflineDB;
 import projectx.persistence.repositories.interfaces.OrderRepository;
 
-@Stateless
-@Default
-public class OrderRepositoryOffline implements OrderRepository{
-
+public class OrderRepositoryOffline {
+	
 	@Inject
-	private OfflineDB db;
+	private InitialData db;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	public void persistOrder(Order order) {
 		db.addUser(user);
@@ -26,38 +21,35 @@ public class OrderRepositoryOffline implements OrderRepository{
 	public void persistOrder(Order order) {
 		db.addOrder(order);
 >>>>>>> catalogue
-	}
-	
-	@Override
-	public List<Order> getOrders() {
-		return db.getOrders();
-	}
-	
-	@Override
-	public List<Order> getOrdersForUser(int userId) {
-		return db.getOrdersForUser(userId);
-	}
-	
-	// UNIMPLEMENTED
-	
-	@Override
-	public Order findByUser(int userId) {
-		// TODO Auto-generated method stub
-		return null;
+=======
+	public void persistOrder(Order order) {
+		db.addUser(user);
+>>>>>>> a4d9d31e4056cc67be05e8d750d55499280e3f53
 	}
 
 	@Override
-	public void persistOrders(List<Order> orders) {
-		// TODO Auto-generated method stub
-	}
-	
-	@Override
-	public Order findByOrderDate(Date orderDate) {
-		// TODO Auto-generated method stub
-		return null;
+	public void saveUsers(List<User> users) {
+		db.saveUsers(users);
+		
 	}
 
 	@Override
+	public List<User> getUsers() {
+		return db.getUsers();
+	}
+
+	@Override
+	public void updateUser(User user) {
+		db.updateUser(user);
+	}
+
+	@Override
+	public User findByUsername(String username) {
+		return db.findByUsername(username);
+	}
+
+	@Override
+<<<<<<< HEAD
 <<<<<<< HEAD
 	public boolean checkPassword(String username, String password) {
 		return db.checkPassword(username, password);
@@ -70,3 +62,9 @@ public class OrderRepositoryOffline implements OrderRepository{
 	}
 }
 >>>>>>> catalogue
+=======
+	public boolean checkPassword(String username, String password) {
+		return db.checkPassword(username, password);
+	}
+}
+>>>>>>> a4d9d31e4056cc67be05e8d750d55499280e3f53

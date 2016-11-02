@@ -1,0 +1,70 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
+	<meta charset="utf-8" />
+	<ui:define name="title"> Create Purchase Order </ui:define>
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css"
+			href="css/ims-purchase-order-view.css" />
+	</ui:define>
+	<ui:define name="main-content">
+
+		<div class="pageheading">
+			<h2>Create Purchase Order</h2>
+		</div>
+		<div class="poheaders">
+			<div class="row">
+				<div class="col-desk-2 col-tab-2">Product Name</div>
+				<div class="col-desk-2 col-tab-2">Id</div>
+				<div class="col-desk-2 col-tab-2">Quantity</div>
+				<div class="col-desk-2 col-tab-2">Current Stock</div>
+				<div class="col-desk-2 col-tab-2">Supplier</div>
+				<div class="col-desk-2 col-tab-2">Confirm</div>
+			</div>
+		</div>
+		<form>
+			<div class="poItems">
+				<div class="poitem">
+					<div class="row">
+						<div class="col-desk-2 col-tab-2">
+							<select name="productID">
+								<ui:repeat var="productToBuy" value="#{products.lowStockProducts}">
+									<option value="productToBuy"><h:outputText value="#{productToBuy.name}"/></option>
+								</ui:repeat>
+							</select>
+						</div>
+						<div class="col-desk-2 col-tab-2">
+							<input type="text" disabled="disabled" value="Product A" />
+						</div>
+						<div class="col-desk-2 col-tab-2">
+							<input type="number" name="quantity" min="0" max="999" />
+						</div>
+						<div class="col-desk-2 col-tab-2">
+							<input type="text" disabled="disabled" value="100000" />
+						</div>
+						<div class="col-desk-2 col-tab-2">
+							<input type="text" disabled="disabled" value="Delivered" />
+						</div>
+						<div class="col-desk-2 col-tab-2">
+							<input type="checkbox" name="confirm" checked="checked" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="Controls">
+			<div class="add-generatePO">
+				<div class="row">
+					<div class="col-desk-6 col-tab-6"></div>
+
+					<div class="col-desk-6 col-tab-6">
+						<button name="createPO">Create New Purchase Order</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+	<br />
+</ui:composition>

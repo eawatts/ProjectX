@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+	<title><ui:insert name="title" /></title>
+	<link rel="icon" type="image/x-icon" href="img/nb_favicon.png" />
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/nb_gardens-theme.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/responsive.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/ims.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/template.css"></link>
+	<link rel="stylesheet" type="text/css"
+		href="css/font-awesome/css/font-awesome.min.css"></link>
+	<ui:insert name="custom-css" />
+</h:head>
+
+<f:view>
+	<body>
+		<header>
+			<div>
+				<nav>
+					<div class="nav-banner">
+						<div class="row">
+							<div class="col-tab-12 col-desk-12 nav-banner-left">
+								<a href="index.xhtml"> <h:graphicImage
+										class="nav-mobile-logo" value="img/nb_logo.png"
+										alt="NB Gardens Logo" width="100" height="100"></h:graphicImage></a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<!-- This is the content of the actual page. -->
+		<div class="main-content">
+			<h:panelGroup rendered="#{current_session.loggedIn eq true}">
+				<ui:insert name="main-content" />
+			</h:panelGroup>
+			<h:panelGroup rendered="#{current_session.loggedIn ne true}">
+			<div class="row">
+			<div class="col-tab-12 col-desk-12">
+		
+				<h1 class="header">You must be logged in to access this content!!</h1>
+				<div class="login-redirect">
+					<a href="login.xhtml">
+						<button
+							class="button-green-inverse">
+							<h:outputText value="Go To Login" />
+						</button>
+					</a>
+				</div>
+				
+				</div>
+				</div>
+			</h:panelGroup>
+		</div>
+
+		<!-- This is the green footer along the bottom of each page. -->
+		<br />
+		<footer>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<div class="footer-company-copyright">
+						<i class="fa fa-copyright"></i> <i class="fa fa-times"></i>pedite
+						Consulting 2016
+					</div>
+				</div>
+			</div>
+			<br/>
+		</footer>
+
+		<!-- Javascript -->
+		<script type="text/javaScript" src="js/jquery-3.1.1.min.js"></script>
+		<ui:insert name="custom-scripts" />
+	</body>
+</f:view>
+</html>
