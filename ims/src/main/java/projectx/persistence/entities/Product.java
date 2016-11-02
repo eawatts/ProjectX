@@ -61,6 +61,9 @@ public class Product {
 			this.suppliers=suppliers;
 			this.imgs = imglists;
 			}
+		public Product() {
+		
+		}
 		/**
 		 * @return the id
 		 */
