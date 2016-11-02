@@ -1,0 +1,72 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
+	<meta charset="utf-8" />
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<link rel="stylesheet" type="text/css" href="css/product.css" />
+		<link rel="stylesheet" type="text/css" href="css/switch.css" />
+	</ui:define>
+
+	<ui:define name="title">Product</ui:define>
+	<ui:define name="main-content">
+		<div class="main-content">
+			<div class="breadcrumbs">
+				<a href="homepage.xhtml">IMS</a> > <a href="products.xhtml">Product
+					List</a> > Add Product
+			</div>
+			<div class="row">
+				<h2>Adding a new product</h2>
+			</div>
+
+			<h:form>
+				<div class="row">
+					<h3>Input product name</h3>
+					<h:inputText class="set" value="#{newproduct.product.name}"></h:inputText>
+				</div>
+				<div class="row">
+					<h3>Input product details</h3>
+					<div class="col-tab-3 col-desk-3">
+						<h4>Set stock low limit</h4>
+						<h:inputText class="set" value="#{newproduct.product.lowLimit}"></h:inputText>
+					</div>
+					<div class="col-tab-3 col-desk-3">
+						<h4>Set Stock Level</h4>
+						<h:inputText class="set"
+							value="#{newproduct.product.currentStock}"></h:inputText>
+					</div>
+					<div class="col-tab-3 col-desk-3">
+						<h4>Set Price</h4>
+						<h:inputText class="set" value="#{newproduct.product.price}"></h:inputText>
+					</div>
+					<div class="col-tab-3 col-desk-3">
+					<h4>Set status</h4>
+					<div class="onoffswitch">
+						<h:selectBooleanCheckbox name="onoffswitch"
+							styleClass="onoffswitch-checkbox" id="myonoffswitch"
+							value="#{newproduct.product.isDiscontinued}"></h:selectBooleanCheckbox>
+							<label class="onoffswitch-label" for="switch:myonoffswitch">
+								<span class="onoffswitch-inner"></span> <span
+								class="onoffswitch-switch"></span>
+							</label>
+					</div>
+					</div>
+				</div>
+
+
+
+
+				<div class="row">
+					<h4>Set Description</h4>
+					<h:inputText class="set" value="#{newproduct.product.description}"></h:inputText>
+				</div>
+				<br />
+				<hr />
+				<h:commandButton
+				class="addproduct" value="Add Proudct" action="#{newproduct.addProduct}"></h:commandButton>
+				</h:form>
+		</div>
+	</ui:define>
+	</ui:composition>
