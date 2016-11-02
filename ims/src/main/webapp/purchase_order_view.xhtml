@@ -1,0 +1,116 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
+	<meta charset="utf-8" />
+	<ui:define name="title">View Purchase Order</ui:define>
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/ims-purchase-order-view.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom-accordian.css" />
+	</ui:define>
+	<ui:define name="main-content">
+		<!-- This is the content of the actual page. -->
+		<div class="main-content">
+			<div id="pageheading">
+				<h2>View Purchase Order</h2>
+			</div>
+			<div class="poheaders">
+				<div class="row">
+					<div class="col-desk-2 col-tab-2">Purchase Order ID</div>
+					<div class="col-desk-2 col-tab-2">Status</div>
+					<div class="col-desk-4 col-tab-4">Supplier</div>
+					<div class="col-desk-2 col-tab-2">Approved</div>
+					<div class="col-desk-2 col-tab-2">Approval date</div>
+					
+				</div>
+				<hr />
+			</div>
+			<div class="poItems">
+				<ui:repeat var="purchaseOrder"
+					value="#{purchaseOrders.purchaseOrderList}">
+					<div class="row po-details">
+						<div class="col-desk-2 col-tab-2">
+							<h:outputText value="#{purchaseOrder.id}"></h:outputText>
+						</div>
+						<div class="col-desk-2 col-tab-2">
+							<h:outputText value="#{purchaseOrder.status.displayName}"></h:outputText>
+						</div>
+						<div class="col-desk-4 col-tab-4">
+							<h:outputText type="text" value="#{purchaseOrder.supplier.name}"></h:outputText>
+						</div>
+						<div class="col-desk-2 col-tab-2">
+
+							<h:outputText type="text" value="#{purchaseOrder.approval}"></h:outputText>
+						</div>
+						<div class="col-desk-2 col-tab-2">
+
+							<h:outputText type="text" value="#{purchaseOrder.approvalDate}"></h:outputText>
+						</div>
+						
+					</div>
+
+					<div class="row"> 
+						<div class="col-tab-12 col-desk-12">
+							<br />
+							<button class="accordion-header button-green">See
+								Products</button>
+							<div class="accordion-body">
+								<div class="row">
+									<div class="col-desk-3 col-tab-3">Product ID</div>
+									<div class="col-desk-3 col-tab-3">Product Name</div>
+									<div class="col-desk-3 col-tab-3">Price</div>
+									<div class="col-desk-3 col-tab-3">Quantity</div>
+									<hr />
+
+
+									<ui:repeat var="productsOrdered"
+										value="#{purchaseOrder.purchasedProducts}">
+										<div class="row poTitle" >
+											<div class="col-desk-3 col-tab-3">
+												<h:outputText type="text"
+													value="#{productsOrdered.product.id}"></h:outputText>
+											</div>
+											<div class="col-desk-3 col-tab-3">
+												<h:outputText type="text"
+													value="#{productsOrdered.product.name}"></h:outputText>
+											</div>
+											<div class="col-desk-3 col-tab-3">
+												<h:outputText type="text"
+													value="£#{productsOrdered.product.price}"></h:outputText>
+											</div>
+											<div class="col-desk-3 col-tab-3">
+												<h:outputText type="text"
+													value="#{productsOrdered.numberOrdered}"></h:outputText>
+											</div>
+
+										</div>
+									</ui:repeat>
+								</div>
+							</div>
+						</div>
+					</div>
+				</ui:repeat>
+			</div>
+			<ui:repeat></ui:repeat>
+		</div>
+		<br />
+		<div class="Controls">
+			<div class="add-generatePO">
+				<div class="row">
+					<div class="col-desk-6 col-tab-6">
+						<button name="createPO">Create New Purchase Order</button>
+					</div>
+
+					<div class="col-desk-6 col-tab-6">
+						<button name="generatePO">Generate New Purchase Order</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+	<ui:define name="custom-scripts">
+		<script type="text/javaScript" src="js/custom-accordian.js"></script>
+	</ui:define>
+</ui:composition>

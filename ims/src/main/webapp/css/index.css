@@ -1,0 +1,24 @@
+@CHARSET "ISO-8859-1";
+
+
+:root
+{
+	--raisin-black: #272727;
+    --floral-white: #f9fbf2;
+    --orange-yellow: #fed766;
+    --british-racing-green: #004425;
+    --sweet-sweet-brown: #a53f2b;
+    --inline-width: 40%;
+}
+.page-title{
+	text-align: center;
+}
+.description{
+	text-align: center;
+	color:var( --sweet-sweet-brown);
+	font-size: 130%;	
+}
+.table-head{
+	font-size: 130%;
+	font-weight: bold;
+}

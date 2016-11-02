@@ -1,0 +1,32 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
+
+	<meta charset="utf-8" />
+	<ui:define name="title">Metrics</ui:define>
+		<script type="text/javascript"
+				src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript" src="/js/charts.js"></script>
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/metrics.css" />
+	</ui:define>
+
+	<ui:define name="main-content">
+		<div class="main-content">
+			<div class="main-content">
+				<div class="row">
+					<h1 class="Heading">Metrics</h1>
+				</div>
+				<div class="row">
+					<!--Div that will hold the pie chart-->
+					<div id="chart_div"></div>
+					<div class=""></div>
+				</div>
+				<!--Load the AJAX API-->
+			
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

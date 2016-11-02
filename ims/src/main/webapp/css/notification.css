@@ -1,0 +1,52 @@
+
+.notification-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.notification-icon .notification-body {
+    visibility: hidden;
+    background-color: #a53f2b;
+    color: #f9fbf2;
+    text-align: center;
+    padding: 2px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    top: 100%;
+    left: 50%;
+    
+    width: 200px;
+    margin-left: -100px; /* Use half of the width*/
+ 
+    position: absolute;
+    z-index: 1;
+}
+
+.notification-icon:hover .notification-body {
+    visibility: visible;
+}
+
+.notification-body-list {
+	padding: 0px;
+}
+
+.notification-icon .notification-body::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #a53f2b transparent;
+}
+
+.notification-body-list-item {
+	list-style-type: none;
+	margin-top: 5px;
+}
+
+.notification-body-list-item-close {
+	color: #f9fbf2;
+	text-decoration: none;
+}

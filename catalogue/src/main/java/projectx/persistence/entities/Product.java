@@ -1,16 +1,15 @@
 package projectx.persistence.entities;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
-@NamedQueries (
-	{
-		@NamedQuery (name = Product.FIND_BY_PRODUCT_NAME, query = "SELECT p FROM Product p WHERE p.name = :Productname")
-	}
+@NamedQueries ({
+@NamedQuery (name = Product.FIND_BY_PRODUCT_NAME, query = "SELECT p FROM Product p WHERE p.name = :Productname")
+}
 )
 
 @Entity
@@ -31,9 +30,6 @@ public class Product {
 		@Size (min = 2, max = 50)
 		private String name;
 		
-		@Column(name="description", nullable = false, length = 500)
-		private String description;
-		
 		@Column(name="price", precision = 7, scale = 2, nullable = false)
 		private BigDecimal price;
 		
@@ -46,30 +42,16 @@ public class Product {
 		@Column(name="is_discontinued", nullable = false)
 		private boolean isDiscontinued;
 		
-		@ManyToOne
-		@JoinColumn(name = "subcategory_id", nullable=false)
-		@NotNull
-		private int sub_id;
-		
-		@Column(name = "product_image_filepath", nullable=false)
-		private String product_image_filepath;
-		
 		public Product(){};
-
-		public Product(int id, String name, String description, int stockLvl, BigDecimal price, int lowStock, int maxStock, int sub_id, String product_image_filepath){
-
-			this.id = id;
+		public Product(String name, int stockLvl, BigDecimal price, int lowStock, int maxStock){
 			this.name = name;
-			this.description = description;
 			this.currentStockLevel = stockLvl;
 			this.price = price;
 			this.lowStockLevel = lowStock;
 			this.highStockLevel = maxStock;
 			this.isDiscontinued = false;
-			this.sub_id = sub_id;
-			this.product_image_filepath = product_image_filepath;
 		}
-
+		
 		public int getId() {
 			return id;
 		}
@@ -88,21 +70,9 @@ public class Product {
 			this.name = name;
 		}
 		
-		public String getDescription() {
-			return description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
 		public BigDecimal getPrice() {
 			return price;
 		}
-		public String getPriceToDisplay() {
-			return (price.setScale(2, RoundingMode.CEILING)).toString();
-		}
-		
 		public void setPrice(BigDecimal price) {
 			this.price = price;
 		}
@@ -127,16 +97,5 @@ public class Product {
 		public void setDiscontinued(boolean isDiscontinued) {
 			this.isDiscontinued = isDiscontinued;
 		}
-		public int getSub_id() {
-			return sub_id;
-		}
-		public void setSub_id(int sub_id) {
-			this.sub_id = sub_id;
-		}
-		public String getProductImageFilepath(){
-			return product_image_filepath;
-		}
-		public void setProductImageFilepath(String product_image_filepath){
-			this.product_image_filepath = product_image_filepath;
-		}
+		
 }
