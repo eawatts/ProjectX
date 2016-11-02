@@ -9,7 +9,7 @@
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css"
 			href="css/ims-products-style.css" />
-					<link rel="stylesheet" type="text/css" href="css/switch.css"/>
+		<link rel="stylesheet" type="text/css" href="css/switch.css" />
 	</ui:define>
 	<ui:define name="main-content">
 		<div class="main-content">
@@ -27,49 +27,50 @@
 			<br />
 			<ui:repeat var="product" value="#{products.productDataModel}">
 				<div class="product-row">
-				
-					
-					
-						<div class="col-tab-1 col-desk-1">
-							<h:outputText value="#{product.id}" />
-						</div>
-						<div class="col-tab-3 col-desk-3">
-							<h:outputText value="#{product.name}" />
-						</div>
-						<div class="col-tab-2 col-desk-2">
-							<h:outputText value="#{product.currentStock}" />
-						</div>
-							<div class="col-tab-2 col-desk-2">
-							<h:outputText value="#{product.lowLimit}" />
-						</div>
-						<div class="col-tab-2 col-desk-2">
-						
-							<div class="onoffswitch">
-								
-								<h:form id="switch" name="switch">
-									<h:selectBooleanCheckbox name="onoffswitch"
-										styleClass="onoffswitch-checkbox" id="myonoffswitch"
-										value="#{product.isDiscontinued}">
-										<f:ajax event="click" execute="@form" />
-									</h:selectBooleanCheckbox>
-									<h:outputLabel class="onoffswitch-label" for="switch:myonoffswitch">
-										<span class="onoffswitch-inner"></span> 
-										<span class="onoffswitch-switch"></span>
-									</h:outputLabel>
 
-								</h:form>
-								
-							</div>
-								
+
+
+					<div class="col-tab-1 col-desk-1">
+						<h:outputText value="#{product.id}" />
+					</div>
+					<div class="col-tab-3 col-desk-3">
+						<h:outputText value="#{product.name}" />
+					</div>
+					<div class="col-tab-2 col-desk-2">
+						<h:outputText value="#{product.currentStock}" />
+					</div>
+					<div class="col-tab-2 col-desk-2">
+						<h:outputText value="#{product.lowLimit}" />
+					</div>
+					<div class="col-tab-2 col-desk-2">
+
+						<div class="onoffswitch">
+
+							<h:form id="switch" name="switch">
+								<h:selectBooleanCheckbox name="onoffswitch"
+									styleClass="onoffswitch-checkbox" id="myonoffswitch"
+									value="#{product.isDiscontinued}">
+									<f:ajax event="click" execute="@form" />
+								</h:selectBooleanCheckbox>
+								<h:outputLabel class="onoffswitch-label"
+									for="switch:myonoffswitch">
+									<span class="onoffswitch-inner"></span>
+									<span class="onoffswitch-switch"></span>
+								</h:outputLabel>
+
+							</h:form>
+
 						</div>
-				
+
+					</div>
+
 					<h:form>
 						<div class="col-tab-2 col-desk-2">
 
 							<h:commandButton styleClass="button-green view-button"
 								value="View/Edit" action="#{products.viewProduct(product.id)}"></h:commandButton>
 						</div>
-					
+
 					</h:form>
 				</div>
 				<hr class="table-row" />

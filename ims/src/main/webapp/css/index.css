@@ -23,3 +23,7 @@
 	font-weight: bold;
 }
 
+.sliderItem
+{
+	display:inline-block;
+}
