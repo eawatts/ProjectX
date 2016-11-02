@@ -4,16 +4,21 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
 	<meta charset="utf-8" />
-	<ui:define name="title">View Purchase Order</ui:define>
+	<ui:define name="title">Vihfjyjygew Purchase Order</ui:define>
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css"
 			href="css/ims-purchase-order-view.css" />
+			<link rel="stylesheet" type="text/css"
+			href="css/nb-gardens-theme.css" />
 	</ui:define>
 	<ui:define name="main-content">
 		<!-- This is the content of the actual page. -->
 		<div class="main-content">
+		<script type="text/javascript">
+			alert("test message");
+		</script>
 			<div class="pageheading">
-				<h2>View Purchase Order</h2>
+				<h2>Viewfnfhfhyn yj Purchase Order</h2>
 			</div>
 			<div class="poheaders">
 				<div class="row">
@@ -49,9 +54,11 @@
 								<h:outputText type="text" value="#{purchaseOrder.approvalDate}"></h:outputText>
 							</div>
 							<div class="col-desk-2 col-tab-2">
-								<h:commandButton id="view" type="button"
-									onclick="location.href='#popup1';#{purchaseOrders.findPOById(purchaseOrder.id)};"
-									value="view" />
+								<h:commandButton id="show" styleClass="button-green" type="button" value="view" />
+									<!-- onclick="location.href='#popup1';#{purchaseOrders.findPOById(purchaseOrder.id)};" -->
+									
+									
+									<h:commandButton styleClass="button-green" id="hide" type="button" value="hide" />
 							</div>
 						</div>
 					</div>
@@ -87,7 +94,7 @@
 								</div>
 							</ui:repeat>
 						</div>
-					</div>
+					</div>	
 					<hr />
 				</ui:repeat>
 			</div>
@@ -107,5 +114,11 @@
 			</div>
 
 		</div>
+		
 	</ui:define>
+	
+	
+	<ui:define name="custom-scripts">
+			<script type="text/javaScript" src="js/po_expand.js"></script>
+		</ui:define>
 </ui:composition>
