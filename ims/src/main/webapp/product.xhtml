@@ -6,8 +6,10 @@
 	<meta charset="utf-8" />
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/switch.css" />
-		<link rel="stylesheet" type="text/css" href="libraries/slider/slick.css" />
-		<link rel="stylesheet" type="text/css" href="libraries/slider/slick-theme.css" />
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick.css" />
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick-theme.css" />
 		<link rel="stylesheet" type="text/css" href="css/slide_custom.css" />
 		<link rel="stylesheet" type="text/css" href="css/login.css" />
 		<link rel="stylesheet" type="text/css" href="css/product.css" />
@@ -42,12 +44,13 @@
 							</h:form>
 						</div>
 					</ui:repeat>
-					<br />
-					<h:form>
-						<h:commandButton action="#{products.addImg}">Add Image</h:commandButton>
-					</h:form>
+
 
 				</div>
+				<br />
+				<h:form>
+					<h:commandButton action="#{products.addImg}">Add Image</h:commandButton>
+				</h:form>
 			</div>
 			<br /> <br />
 			<hr />
@@ -130,5 +133,6 @@
 	<ui:define name="custom-scripts">
 		<script type="text/javaScript" src="js/product_edit.js"></script>
 		<script type="text/javaScript" src="libraries/slider/slick.min.js"></script>
+		<script type="text/javaScript" src="js/product.js"></script>
 	</ui:define>
 </ui:composition>
