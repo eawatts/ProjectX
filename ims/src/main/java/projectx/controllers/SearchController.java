@@ -12,27 +12,37 @@ import projectx.services.SearchService;
 
 @Named("search")
 @SessionScoped
-public class SearchController implements Serializable{
+public class SearchController implements Serializable {
 
 	@Inject
 	private SearchService searchService;
-	
+
 	private List searchResults;
 	private String parameter;
 	private String category;
-	
-	public String search(){
-		List results = searchService.search(parameter,category);
+
+	public String search() {
+		List results = searchService.search(parameter, category);
 		this.setSearchResults(results);
-		if(results!= null)
-		{
+
+		if (results != null) {
+			System.out.println("To " + category);
+
+			switch (category) {
+			case "product":
+				return "products";
+			case "supplier":
+				return "suppliers";
+			case "purchase order":
+				return "purchase_order_view";
+
+			}
+
+		} else {
 			return null;
 		}
-		else
-		{
-			return null;
-		}
-		
+		return null;
+
 	}
 
 	public String getParameter() {
@@ -54,21 +64,31 @@ public class SearchController implements Serializable{
 	/**
 	 * @return the searchResults
 	 */
-	public List getSearchResults()
-	{
+	public List getSearchResults() {
 		return searchResults;
 	}
 
 	/**
-	 * @param searchResults the searchResults to set
+	 * @param searchResults
+	 *            the searchResults to set
 	 */
-	public void setSearchResults(List searchResults)
-	{
+	public void setSearchResults(List searchResults) {
 		this.searchResults = searchResults;
 	}
-	
-	public void clearResults()
-	{
+
+	public String clearProductResults() {
 		this.searchResults = null;
+		return "products";
 	}
+	
+	public String clearSupplierResults(){
+		this.searchResults = null;
+		return "suppliers";
+	}
+	public String clearPurchaseResults(){
+		this.searchResults = null;
+		return "purchase_order_view";
+	}
+
+
 }
