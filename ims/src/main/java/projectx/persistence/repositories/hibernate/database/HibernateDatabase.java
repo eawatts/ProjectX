@@ -63,6 +63,84 @@ public class HibernateDatabase {
 			}
 		}
 	}
+	
+	// USERS
+	
+	public void persistUser(User user) {
+		if (user == null) {
+			return;
+		}
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			session.save(user);
+			session.beginTransaction().commit();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+	
+	public List<User> getUsers() {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(User.class);
+			return criteria.list();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+	
+	public User findByUsername(String username) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(User.class);
+			criteria.add(Restrictions.like("username", username));
+			return (User) criteria.uniqueResult();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+	
+	public boolean checkPassword(String username, String password) {
+		if (username == "" || password == "") {
+			return false;
+		}
+		User user = null;
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(User.class);
+			criteria.add(Restrictions.like("username", username));
+			criteria.add(Restrictions.like("password", password));
+			user = (User) criteria.uniqueResult();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return false;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+		// If we got a User back, the password must of been good.
+		return user != null ? true : false;
+	}
 
 	// NOTIFICATIONS
 
