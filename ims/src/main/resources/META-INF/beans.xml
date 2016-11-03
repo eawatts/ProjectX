@@ -12,6 +12,9 @@
 
 		<!-- UNCOMMENT THIS TO USE NOTIFICATIONS VIA THE DATABASE -->
 		<class>projectx.persistence.repositories.hibernate.NotificationRepositoryHibernate</class>
+		
+		<!-- UNCOMMENT THIS TO USE PRODUCTS VIA THE DATABASE -->
+		<!-- <class>projectx.persistence.repositories.hibernate.ProductRepositoryHibernate</class> -->
 
 	</alternatives>
 
