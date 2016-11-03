@@ -29,14 +29,6 @@ public class PurchaseOrderSerivce {
 		return purchaseOrderRepo.findPurchaseOrderById(id);
 	}
 
-	public void addProductToPurchaseOrder() {
-		
-		
-	}
-
-	public List<PurchaseOrderProduct> createPurchaseOrderEntry() {
-		return purchaseOrderRepo.createPurchaseOrderEntry();
-	}
 	
 	
 	

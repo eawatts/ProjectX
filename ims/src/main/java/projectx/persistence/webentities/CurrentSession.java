@@ -52,5 +52,10 @@ public class CurrentSession implements Serializable{
 		public void setPendingPurchaseOrder(PendingPurchaseOrder pendingPurchaseOrder){
 			this.pendingPurchaseOrder=pendingPurchaseOrder;
 		}
+
+		public void addLineItem(Product product, Supplier supplier, int quantity) {
+			pendingPurchaseOrder.addLineItem(product,supplier,quantity);
+			
+		}
 		
 }

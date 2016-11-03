@@ -14,8 +14,11 @@ import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.util.OrderState;
+import projectx.persistence.webentities.CurrentSession;
 import projectx.persistence.webentities.PurchaseOrderProduct;
+import projectx.services.ProductService;
 import projectx.services.PurchaseOrderSerivce;
+import projectx.services.SupplierService;
 
 
 
@@ -30,12 +33,21 @@ public class PurchaseOrderController implements Serializable{
 	private PurchaseOrderSerivce purchaseOrderService;
 	@Inject
 	private SearchController searchController;
+	@Inject
+	CurrentSession current_session;
+	@Inject
+	private ProductService productService;
+	@Inject
+	private SupplierService supplierService;
 	private int id;
 	private Supplier supplier;
 	private boolean approved;
 	private Date approvalDate;
 	private OrderState status;
 	private List<ProductsOrdered> productsOrdered;
+	private int productid;
+	private int supplierid;
+	private int quantity;
 
 
 	public List getPurchaseOrderList(){	
@@ -114,15 +126,33 @@ public class PurchaseOrderController implements Serializable{
 	public void setProductsOrdered(List<ProductsOrdered> productsOrdered) {
 		this.productsOrdered = productsOrdered;
 	}
-	
-	public List<PurchaseOrderProduct> createPurchaseOrderEntry(){
-		return purchaseOrderSerivce.createPurchaseOrderEntry();
+
+	public int getProductid() {
+		return productid;
+	}
+	public void setProductid(int productid) {
+		this.productid = productid;
+	}
+	public int getSupplierid() {
+		return supplierid;
+	}
+	public void setSupplierid(int supplierid) {
+		this.supplierid = supplierid;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
-//	public String addProductToPurchaseOrder(){
-//		purchaseOrderSerivce.addProductToPurchaseOrder();
-//		return null;
-//	}
+	public String addLineItem()
+	{
+		current_session.addLineItem(productService.findProductById(productid),supplierService.findSupplierById(supplierid),quantity);
+		return null;
+		
+	}
+	
 	
 	
 	

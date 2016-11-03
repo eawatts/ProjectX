@@ -64,6 +64,26 @@ public class PendingPurchaseOrder{
 	public void newRowToPurchaseOrder(){	
 		addProductToPurchaseOrder(new Product(), 0, new Supplier());
 	}
+	public void setPurchaseOrderRow(){
+		
+	}
+
+	public void addLineItem(Product product, Supplier supplier, int quantity) {
+		boolean flag = true;
+		for(PurchaseOrderProduct pop: purchaseOrderContents)
+		{
+			if(pop.getProduct().equals(product) && pop.getSupplier().equals(supplier))
+			{
+				pop.setQuantity(pop.getQuantity() + quantity);
+				flag=false;
+				break;
+			}
+			
+		}
+		if(flag) purchaseOrderContents.add(new PurchaseOrderProduct(product, quantity, supplier));
+
+		
+	}
 	
 
 }

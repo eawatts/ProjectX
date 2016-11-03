@@ -22,34 +22,29 @@
 			<div class="col-desk-2 col-tab-2">Add new product</div>
 		</div>
 		<hr />
-		<ui:repeat id="purchaseOrdertable" var="purchase-order-row"
+		<ui:repeat id="purchaseOrdertable" var="purchaseOrderContents"
 			value="#{current_session.pendingPurchaseOrder.purchaseOrderContents}">
 			<h:form>
-
 				<div class="row">
 					<div class="col-desk-4 col-tab-4">
 
-						<h:selectOneMenu sytleclass="searchselect" value="#{search.category}">
-							<ui:repeat var="dropdownproduct" value="#{products.products}">
-								<f:selectItem itemValue="#{dropdownproduct.name} - #{dropdownproduct.price}" itemLabel="#{dropdownproduct.name} - #{dropdownproduct.price}"/>	
-							</ui:repeat>
+						<h:selectOneMenu sytleclass="searchselect" value="#{purchaseOrderContents.product.id ne null ? purchaseOrderContents.product.id : 1}">
+							<f:selectItems var="dropdownproduct" value="#{products.products}" itemValue="#{dropdownproduct.id}" itemLabel="#{dropdownproduct.name} - #{dropdownproduct.price}"/>	
 						</h:selectOneMenu>
 					
 					</div>
 					<div class="col-desk-2 col-tab-2">
-						<select>
-							<ui:repeat var="supplier" value="#{suppliers.suppliersList}">
-								<option value="#{supplier.name}"><h:outputText value="#{supplier.name}"/></option>
-							</ui:repeat>
-						</select>
+						<h:selectOneMenu sytleclass="searchselect" value="#{purchaseOrderContents.supplier.id ne null ? purchaseOrderContents.supplier.id : 1}">
+							<f:selectItems var="supplier" value="#{suppliers.suppliersList}" itemValue="#{supplier.id}" itemLabel="#{supplier.name}"/>	
+						</h:selectOneMenu>
 					</div>
 					<div class="col-desk-2 col-tab-2">
 						<h:inputText styleClass="quantity" type="number"
-							value="#{purchase_order_product.quantity}" />
+							value="#{purchaseOrderContents.quantity ne null ? purchaseOrderContents.quantity : 0}" />
 					</div>
 					<div class="col-desk-2 col-tab-2">
 						<h:commandButton styleClass="button-green"
-							value="Add this line to order" action="purchaseOrder.addRow)" />
+							value="Add this line to order" action="#{purchaseOrders.addLineItem()}" />
 					</div>
 				</div>
 			</h:form>
