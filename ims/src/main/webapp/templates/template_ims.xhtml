@@ -399,6 +399,18 @@
 
 				</nav>
 			</div>
+			<div class="row">
+			<h:form>
+				<h:inputText value="#{search.parameter}"><f:ajax event="click" execute="@form" /></h:inputText>
+				<h:selectOneMenu value="#{search.category}">
+					<f:selectItem itemValue="purchaseorder" itemLabel="Purchase Orders"/>
+					<f:selectItem itemValue="product" itemLabel="Product"/>
+					<f:selectItem itemValue="supplier" itemLabel="supplier"/>
+				</h:selectOneMenu>
+				<h:commandButton value="search" action="search.searchy"></h:commandButton>
+			</h:form>
+			
+			</div>
 		</header>
 
 		<!-- This is the content of the actual page. -->

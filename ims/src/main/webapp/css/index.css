@@ -22,3 +22,8 @@
 	font-size: 130%;
 	font-weight: bold;
 }
+
+.sliderItem
+{
+	display:inline-block;
+}

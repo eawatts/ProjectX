@@ -449,4 +449,43 @@ public class OfflineDB {
 		notifications.remove(notification);
 		System.out.println("*******************************************????**********************************");
 	}
+	
+	public List getSearchResults(String search, String searchList)
+	{
+		List results;
+		switch(searchList)
+		{
+			case "product":
+			{
+				results = new ArrayList<Product>();
+				for(Product p: products)
+				{
+					if(p.getName().toLowerCase().contains(search.toLowerCase())|| Integer.toString(p.getId()).equals(search)) results.add(p);
+				}
+				break;
+			}
+			case "supplier":
+			{
+				results = new ArrayList<Supplier>();
+				for(Supplier s: suppliers)
+				{
+					if(s.getName().toLowerCase().contains(search.toLowerCase())|| Integer.toString(s.getId()).equals(search)) results.add(s);
+				}
+				break;
+			}
+			case "purchase order":
+			{
+				results = new ArrayList<PurchaseOrder>();
+				for(PurchaseOrder po: purchaseOrders)
+				{
+					if(Integer.toString(po.getId()).equals(search) || po.getSupplier().getName().equals(search)) results.add(po);
+				}
+				break;
+			}
+			default: return null;
+		}
+		
+		
+		return results;
+	}
 }
