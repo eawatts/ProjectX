@@ -1,5 +1,5 @@
 .onoffswitch {
-    position: relative; width: 104px;
+    position: relative; width: 90px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 .onoffswitch-checkbox {
@@ -14,8 +14,8 @@
     transition: margin 0.3s ease-in 0s;
 }
 .onoffswitch-inner:before, .onoffswitch-inner:after {
-    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    display: block; float: left; width: 50%; height: 25px; padding: 0; line-height: 30px;
+    font-size: 13px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
     box-sizing: border-box;
 }
 .onoffswitch-inner:before {
@@ -34,7 +34,7 @@
     display: block; width: 37px; margin: -3.5px;
     background: #FFFFFF;
     position: absolute; top: 0; bottom: 0;
-    right: 77px;
+    right: 65px;
     border: 2px solid #272727; border-radius: 20px;
     transition: all 0.3s ease-in 0s; 
 }

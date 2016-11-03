@@ -37,6 +37,7 @@ public class OfflineDB {
 	private ArrayList<PurchaseOrder> purchaseOrders;
 	private List<ProductsOrdered> productsOrdered;
 	private ArrayList<String> p1imgs;
+	
 
 	@PostConstruct
 	private void populateData() {
@@ -334,6 +335,8 @@ public class OfflineDB {
 	}
 
 	// Supplier
+
+	
 	public void addSupplier(Supplier s) {
 		suppliers.add(s);
 	}
@@ -448,6 +451,10 @@ public class OfflineDB {
 	public void dismissNotification(Notification notification) {
 		notifications.remove(notification);
 	}
+<<<<<<< HEAD
+
+
+=======
 	
 	public List getSearchResults(String search, String searchList)
 	{
@@ -487,4 +494,5 @@ public class OfflineDB {
 		
 		return results;
 	}
+>>>>>>> 885d1d4ed0b4469f37d13dec501311a7f23696af
 }
