@@ -30,11 +30,11 @@ public class Supplier {
 	@Size(min = 2, max = 50)
 	private String name;
 
-	@Column(name = "addressLine1", nullable = false, length = 100)
+	@Column(name = "address_line_1", nullable = false, length = 100)
 	@Size(min = 2, max = 100)
 	private String addressLine1;
 
-	@Column(name = "addressLine2", nullable = false, length = 100)
+	@Column(name = "address_line_2", nullable = false, length = 100)
 	@Size(min = 2, max = 100)
 	private String addressLine2;
 

@@ -45,7 +45,7 @@ public class Product {
 
 	private ArrayList<Supplier> suppliers;
 
-	private ArrayList<String> imgs;
+	private ArrayList<String> images;
 
 	public Product() {
 	}
@@ -60,7 +60,7 @@ public class Product {
 		this.isDiscontinued = true;
 		this.description = description;
 		this.suppliers = suppliers;
-		this.imgs = imglists;
+		this.images = imglists;
 	}
 
 	public int getId() {
@@ -128,10 +128,10 @@ public class Product {
 	}
 
 	public ArrayList<String> getImgs() {
-		return imgs;
+		return images;
 	}
 
 	public void setImgs(ArrayList<String> imglists) {
-		this.imgs = imglists;
+		this.images = imglists;
 	}
 }

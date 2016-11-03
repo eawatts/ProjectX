@@ -9,6 +9,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 import projectx.persistence.entities.Notification;
+import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
 
 /**
@@ -49,7 +50,7 @@ public class HibernateSession {
 		properties.setProperty("hibernate.connection.username", USERNAME);
 		properties.setProperty("hibernate.connection.password", PASSWORD);
 		properties.setProperty("hibernate.show_sql", "true");
-		properties.setProperty("hibernate.hbm2ddl.auto", "update");
+		properties.setProperty("hibernate.hbm2ddl.auto", "create");
 
 		// TODO: Switch this across to update when used.
 		// properties.setProperty("hibernate.hbm2ddl.auto", "update");
@@ -58,6 +59,7 @@ public class HibernateSession {
 		configuration.addProperties(properties);
 		configuration.addAnnotatedClass(User.class);
 		configuration.addAnnotatedClass(Notification.class);
+		configuration.addAnnotatedClass(Supplier.class);
 		// TODO: Add an Annotated Class for each class in the Database
 
 		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()

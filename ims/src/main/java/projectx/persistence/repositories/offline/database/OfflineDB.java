@@ -36,7 +36,7 @@ public class OfflineDB {
 	private ArrayList<Supplier> suppliers;
 	private ArrayList<PurchaseOrder> purchaseOrders;
 	private ArrayList<ProductsOrdered> productsOrdered;
-	private ArrayList<String> p1imgs;
+	private ArrayList<String> productImages;
 	
 
 	@PostConstruct
@@ -52,43 +52,45 @@ public class OfflineDB {
 		suppliers.add(new Supplier(3, "We Sell Stuff", "2 Made Up Street", "Barca", "BE39UI", "01320739921"));
 		suppliers.add(new Supplier(4, "Gnomes R Us", "123 Fake Street", "MAdeUp Land", "TU59PI", "01193812204"));
 
-		p1imgs = new ArrayList<String>();
-		p1imgs.add("asd");
-		p1imgs.add("asd");
-		p1imgs.add("asd");
-		p1imgs.add("asd");
+		productImages = new ArrayList<String>();
+		productImages.add("/image1");
+		productImages.add("/image1");
+		productImages.add("/image1");
+		productImages.add("/image1");
+		productImages.add("/image1");
+		productImages.add("/image1");
 
 		products = new ArrayList<Product>();
-		products.add(new Product(1, "Gnome", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(2, "Gnomeo", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(3, "Gnomezilla", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(4, "Egnomeous", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(5, "SpeedyGnome", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(6, "Lawnmower", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(7, "Pond base", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(8, "Bench", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(9, "Hot tub", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(10, "Spade", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(11, "Trowel", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(12, "Rake", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(13, "Classy Hoe", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(14, "Water Fountain", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(15, "Flamingo", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(16, "Windchime", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(17, "Weathervane", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(18, "Weedkiller", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(19, "Flower Pot", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(20, "Compost", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(21, "Patio Heater", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(22, "Mean Grill", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(23, "Outdoor Table", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(24, "Outdoor Light", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(25, "Santa Gnome", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(26, "Garden Gloves", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(27, "Secataurs", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(28, "Petrol Chainsaw", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(29, "Hedge Trimmer", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(30, "Paddling Pool", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
+		products.add(new Product(1, "Gnome", 100, 5.00, 20, "a very shiny product", suppliers, productImages));
+		products.add(new Product(2, "Gnomeo", 150, 3.00, 20, "another very shiny product", suppliers, productImages));
+		products.add(new Product(3, "Gnomezilla", 200, 3.00, 20, "a Gnome", suppliers, productImages));
+		products.add(new Product(4, "Egnomeous", 250, 3.00, 20, "another Gnome", suppliers, productImages));
+		products.add(new Product(5, "SpeedyGnome", 300, 3.00, 20, "shiny product", suppliers, productImages));
+		products.add(new Product(6, "Lawnmower", 350, 3.00, 20, "another shiny product", suppliers, productImages));
+		products.add(new Product(7, "Pond base", 100, 5.00, 20, "a very shiny product", suppliers, productImages));
+		products.add(new Product(8, "Bench", 150, 3.00, 20, "another very shiny product", suppliers, productImages));
+		products.add(new Product(9, "Hot tub", 200, 3.00, 20, "a Gnome", suppliers, productImages));
+		products.add(new Product(10, "Spade", 250, 3.00, 20, "another Gnome", suppliers, productImages));
+		products.add(new Product(11, "Trowel", 300, 3.00, 20, "shiny product", suppliers, productImages));
+		products.add(new Product(12, "Rake", 350, 3.00, 20, "another shiny product", suppliers, productImages));
+		products.add(new Product(13, "Classy Hoe", 100, 5.00, 20, "a very shiny product", suppliers, productImages));
+		products.add(new Product(14, "Water Fountain", 150, 3.00, 20, "another very shiny product", suppliers, productImages));
+		products.add(new Product(15, "Flamingo", 200, 3.00, 20, "a Gnome", suppliers, productImages));
+		products.add(new Product(16, "Windchime", 250, 3.00, 20, "another Gnome", suppliers, productImages));
+		products.add(new Product(17, "Weathervane", 300, 3.00, 20, "shiny product", suppliers, productImages));
+		products.add(new Product(18, "Weedkiller", 350, 3.00, 20, "another shiny product", suppliers, productImages));
+		products.add(new Product(19, "Flower Pot", 100, 5.00, 20, "a very shiny product", suppliers, productImages));
+		products.add(new Product(20, "Compost", 150, 3.00, 20, "another very shiny product", suppliers, productImages));
+		products.add(new Product(21, "Patio Heater", 200, 3.00, 20, "a Gnome", suppliers, productImages));
+		products.add(new Product(22, "Mean Grill", 250, 3.00, 20, "another Gnome", suppliers, productImages));
+		products.add(new Product(23, "Outdoor Table", 300, 3.00, 20, "shiny product", suppliers, productImages));
+		products.add(new Product(24, "Outdoor Light", 350, 3.00, 20, "another shiny product", suppliers, productImages));
+		products.add(new Product(25, "Santa Gnome", 100, 5.00, 20, "a very shiny product", suppliers, productImages));
+		products.add(new Product(26, "Garden Gloves", 150, 3.00, 20, "another very shiny product", suppliers, productImages));
+		products.add(new Product(27, "Secataurs", 200, 3.00, 20, "a Gnome", suppliers, productImages));
+		products.add(new Product(28, "Petrol Chainsaw", 250, 3.00, 20, "another Gnome", suppliers, productImages));
+		products.add(new Product(29, "Hedge Trimmer", 300, 3.00, 20, "shiny product", suppliers, productImages));
+		products.add(new Product(30, "Paddling Pool", 350, 3.00, 20, "another shiny product", suppliers, productImages));
 
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,
