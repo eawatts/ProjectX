@@ -22,7 +22,7 @@ public class Product {
 	@GeneratedValue()
 	@GenericGenerator(name = "increment", strategy = "increment")
 	@Column(name = "id", nullable = false)
-	private int id;
+	private Integer id;
 
 	@Column(name = "current_stock", nullable = false)
 	private int currentStock;
@@ -50,7 +50,7 @@ public class Product {
 	public Product() {
 	}
 
-	public Product(int id, String name, int stockLvl, double price, int lowStock, String description,
+	public Product(Integer id, String name, int stockLvl, double price, int lowStock, String description,
 			ArrayList<Supplier> suppliers, ArrayList<String> imglists) {
 		this.id = id;
 		this.name = name;
@@ -63,11 +63,11 @@ public class Product {
 		this.images = imglists;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
