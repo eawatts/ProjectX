@@ -12,7 +12,9 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import projectx.persistence.entities.Notification;
+import projectx.persistence.entities.User;
 import projectx.persistence.util.NotificationType;
+import projectx.persistence.util.UserLevel;
 
 @Startup
 @Singleton
@@ -36,48 +38,83 @@ public class HibernateDatabase {
 	 * return; }
 	 */
 
+	// USERS - LOGIN
+
+	public User login(String username, String password) {
+
+		if (username == "" || password == "") {
+			return null;
+		}
+
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(User.class);
+			criteria.add(Restrictions.like("username", username));
+			criteria.add(Restrictions.like("password", password));
+			criteria.add(Restrictions.like("userLevel", UserLevel.ADMIN));
+			return (User) criteria.uniqueResult();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+
 	// NOTIFICATIONS
 
 	public void persistNotification(Notification notification) {
 		if (notification == null) {
 			return;
 		}
-		Session session = sessionManager.getSession();
-		session.save(notification);
-		session.beginTransaction().commit();
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			session.save(notification);
+			session.beginTransaction().commit();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
 	}
 
 	public List<Notification> getNotifications() {
 		Session session = null;
 		try {
-		    session = sessionManager.getSession();
+			session = sessionManager.getSession();
 			Criteria criteria = session.createCriteria(Notification.class);
 			return criteria.list();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
 		} finally {
-		    if (session != null) {
-		        session.close();
-		    }
+			if (session != null) {
+				session.close();
+			}
 		}
 	}
 
 	public List<Notification> getNotificationsForType(NotificationType type) {
 		Session session = null;
 		try {
-		    session = sessionManager.getSession();
-		    Criteria criteria = session.createCriteria(Notification.class);
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(Notification.class);
 			criteria.add(Restrictions.like("type", type));
 			return criteria.list();
-		    
-		} catch(Exception e) {
+
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
 		} finally {
-		    if (session != null) {
-		        session.close();
-		    }
+			if (session != null) {
+				session.close();
+			}
 		}
 	}
 
@@ -88,20 +125,20 @@ public class HibernateDatabase {
 		Session session = null;
 		Transaction transaction = null;
 		try {
-		    session = sessionManager.getSession();
-		    transaction = session.beginTransaction();
-		    session.delete(notification);
-		    transaction.commit();
-		    
-		} catch(Exception e) {
+			session = sessionManager.getSession();
+			transaction = session.beginTransaction();
+			session.delete(notification);
+			transaction.commit();
+
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		    if (transaction != null) {
-		        transaction.rollback();
-		    }
+			if (transaction != null) {
+				transaction.rollback();
+			}
 		} finally {
-		    if (session != null) {
-		        session.close();
-		    }
+			if (session != null) {
+				session.close();
+			}
 		}
 	}
 }
