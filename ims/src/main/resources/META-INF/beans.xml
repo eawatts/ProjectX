@@ -6,9 +6,10 @@
 
 	<alternatives>
 
-		<!-- <class>com.qac.netbooks.managers.sql.CutomerManagerSQL</class> -->
-
-		<!-- <class>com.qac.netbooks.managers.sql.AuthorManagerSQL</class> -->
+		<!-- UNCOMMENT THIS TO USE NOTIFICATIONS VIA THE DATABASE -->
+		<!-- <class>projectx.persistence.repositories.hibernate.NotificationRepositoryHibernate</class> -->
+		
+		
 
 	</alternatives>
 

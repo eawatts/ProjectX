@@ -8,7 +8,6 @@ import javax.inject.Inject;
 
 import projectx.persistence.entities.Notification;
 import projectx.persistence.repositories.NotificationRepository;
-import projectx.persistence.repositories.hibernate.database.HibernateDatabase;
 import projectx.persistence.repositories.offline.database.OfflineDB;
 import projectx.persistence.util.NotificationType;
 
@@ -18,10 +17,7 @@ public class NotificationRepositoryOffline implements NotificationRepository{
 
 	@Inject
 	private OfflineDB db;
-	
-	@Inject
-	private HibernateDatabase hdb;
-	
+		
 	@Override
 	public List<Notification> getNotifications() {
 		return db.getNotifications();
@@ -44,8 +40,6 @@ public class NotificationRepositoryOffline implements NotificationRepository{
 
 	@Override
 	public void dismiss(Notification notification) {
-		System.out.println("*******************************************!!**********************************");
 		db.dismissNotification(notification);
-		hdb.addNotification();
 	}
 }

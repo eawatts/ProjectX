@@ -1,11 +1,17 @@
 package projectx.persistence.repositories.hibernate.database;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
-
+import org.hibernate.query.Query;
 
 import projectx.persistence.entities.Notification;
 import projectx.persistence.util.NotificationType;
@@ -14,23 +20,54 @@ import projectx.persistence.util.NotificationType;
 @Singleton
 public class HibernateDatabase {
 	
-	private HibernateSession hibernateSession;
+	private HibernateSession sessionManager;
 
 	@PostConstruct
 	private void configure() {
-		hibernateSession = HibernateSession.getInstance();
+		sessionManager = HibernateSession.getInstance();
 	}
+	
+	public void seedDatabase() {
+		HibernateDatabaseSeed.seedDatabase(sessionManager.getSession());
+	}
+	
+	private void commitAndCloseSession(Session session) {
+		if(session == null) {
+			return;
+		}
+		session.beginTransaction().commit();;
+		session.close();
+		return;
+	}
+	
+	// NOTIFICATIONS
 		
-	public void addNotification() {
-		
-		System.out.println("*******************************************2222**********************************");
-		System.out.println("Hibernate Database: adding Notification?");
-		Notification notification = new Notification(null, NotificationType.SAVE_ERROR, "Testing the database.");
-		Session session = hibernateSession.getSession();
+	public void persistNotification(Notification notification) {
+		if (notification == null) {	return;	}
+		Session session = sessionManager.getSession();
 		session.save(notification);
-		session.beginTransaction().commit();
-		session.close();	
+		commitAndCloseSession(session);
 	}
-
-
+	
+	public List<Notification> getNotifications() {
+		Session session = sessionManager.getSession();
+		CriteriaQuery<Notification> query = session.getCriteriaBuilder().createQuery(Notification.class);
+		query.from(Notification.class);
+		return session.createQuery(query).getResultList();
+	}
+	
+	public List<Notification> getNotificationsForType(NotificationType type) {
+		Session session = sessionManager.getSession();
+		CriteriaBuilder builder = session.getCriteriaBuilder();
+		CriteriaQuery<Notification> query = builder.createQuery(Notification.class);
+		query.where(builder.equal(query.from(Notification.class).get("type"), type)).from(Notification.class);
+		return session.createQuery(query).getResultList();
+	}
+	
+	public void dismiss(Notification notification) {
+		if (notification == null) {	return;	}
+		Session session = sessionManager.getSession();
+		session.delete(notification);
+		commitAndCloseSession(session);
+	}
 }

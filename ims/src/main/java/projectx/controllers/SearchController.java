@@ -17,7 +17,7 @@ public class SearchController {
 	private String category;
 	
 	public String search(String parameter, String category){
-		List searchresults = searchService.search(parameter,category);
+		ArrayList searchresults = searchService.search(parameter,category);
 		for(Object  a:searchresults){
 			System.out.println(a);
 		}
