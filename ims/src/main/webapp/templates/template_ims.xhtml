@@ -372,7 +372,21 @@
 							</div>
 						</div>
 					</div>
-
+						<div class="row">
+			<div class="search">
+			<h:form>
+				<h:inputText styleClass="searchinput" value="#{search.parameter}"><f:ajax event="click" execute="@form" /></h:inputText>
+			
+				<h:selectOneMenu sytleclass="searchselect" value="#{search.category}">
+					<f:selectItem itemValue="purchase order" itemLabel="Purchase Orders"/>
+					<f:selectItem itemValue="product" itemLabel="Product"/>
+					<f:selectItem itemValue="supplier" itemLabel="supplier"/>
+				</h:selectOneMenu>
+				
+				<h:commandButton styleClass ="searchbutton" value="search" action="#{search.search}"></h:commandButton>
+			</h:form>
+			</div>
+			</div>
 					<div class="nav-links">
 						<div id="nav-desktop">
 							<ul class="dropdown-all-buttons">
@@ -400,21 +414,7 @@
 
 				</nav>
 			</div>
-			<div class="row">
-			<div class="search">
-			<h:form>
-				<h:inputText styleClass="searchinput" value="#{search.parameter}"><f:ajax event="click" execute="@form" /></h:inputText>
-			
-				<h:selectOneMenu sytleclass="searchselect" value="#{search.category}">
-					<f:selectItem itemValue="purchase order" itemLabel="Purchase Orders"/>
-					<f:selectItem itemValue="product" itemLabel="Product"/>
-					<f:selectItem itemValue="supplier" itemLabel="supplier"/>
-				</h:selectOneMenu>
-				
-				<h:commandButton styleClass ="searchbutton" value="search" action="#{search.search}"></h:commandButton>
-			</h:form>
-			</div>
-			</div>
+		
 		</header>
 
 		<!-- This is the content of the actual page. -->
