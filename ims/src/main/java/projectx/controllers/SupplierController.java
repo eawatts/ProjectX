@@ -2,10 +2,13 @@ package projectx.controllers;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Supplier;
 import projectx.services.SupplierService;
 
@@ -18,6 +21,8 @@ public class SupplierController implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Inject 
 	private SupplierService supplierService;
+	@Inject
+	private SearchController searchController;
 	
 	private int id;
 	private String name;
@@ -58,8 +63,15 @@ public class SupplierController implements Serializable{
 		this.supplierById=supplierById;
 	}
 	
-	public ArrayList<Supplier> getSuppliersList(){
-		return supplierService.getSuppliersList();
+	public List getSuppliersList(){
+		if(searchController.getSearchResults() != null && searchController.getSearchResults().size() > 0 && searchController.getSearchResults().get(0) instanceof Supplier)
+		{
+			return searchController.getSearchResults();
+		}
+		else
+		{
+			return supplierService.getSuppliersList();
+		}
 		
 	}	
 	/**
