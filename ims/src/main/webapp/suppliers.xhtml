@@ -6,7 +6,7 @@
 
 	<meta charset="utf-8" />
 	<ui:define name="custom-css">
-		<link rel="stylesheet" type="text/css" href="css/supplier.css" />
+		<link rel="stylesheet" type="text/css" href="css/ims_supplier.css" />
 	</ui:define>
 	<ui:define name="title">Suppliers</ui:define>
 	<ui:define name="main-content">
@@ -37,12 +37,14 @@
 									<div class="col-tab-2 col-desk-2">
 										<b>Phone Number</b>
 									</div>
+									<div class="col-tab-1 col-desk-1">
+									</div>
 								</div>
 							</div>
 							<hr />
 							<ui:repeat var="supplier" value="#{suppliers.suppliersList}">
 								<div class="product-row">
-									<div class="row">
+								<div class="row">
 										<div class="col-tab-1 col-desk-1">
 											<h:outputText value="#{supplier.id}"></h:outputText>
 										</div>
@@ -61,55 +63,16 @@
 										<div class="col-tab-2 col-desk-2">
 											<h:outputText value="#{supplier.phone}"></h:outputText>
 										</div>
+										<h:form>
 										<div class="col-tab-1 col-desk-1">
-											<h:commandButton id="editP" type="button"
-												onclick="location.href='#popup1';#{suppliers.selected(supplier.id, supplier.name, supplier.addressLine1, supplier.addressLine2, supplier.postcode, supplier.phone)};"
-												value="Edit" />
-											<!-- <button id="editP" type="button" onclick="location.href='#popup1'">Edit</button> -->
+											<h:commandButton styleClass="button-green view-button" value="Edit" action="#{suppliers.viewSupplier(supplier.id)}"></h:commandButton>
 										</div>
-									</div>
+										</h:form>
 								</div>
-								<div id="popup1" class="overlay">
-									<div class="popup">
-										<h2>Edit Supplier</h2>
-										<a class="close" href="#">X</a>
-										<div class="content">
-											<h:form action="#{suppliers.editSupplier}">
-										ID <h:outputText type="text" class="Saddr"
-													value="#{supplier.id}"></h:outputText>
-												<br /> 
-										Name <h:inputText type="text" class="Sname"
-													value="#{suppliers.name}" required="true"
-													requiredMessage="#{supplier.getName}"></h:inputText>
-												<br /> 
-										Address Line 1 <h:inputText type="text" class="Saddr"
-													value="#{suppliers.addressLine1}" required="true"
-													requiredMessage="#{supplier.getAddressLine1}"></h:inputText>
-												<br /> 
-										Address Line 2 <h:inputText type="text" class="Saddr"
-													value="#{suppliers.addressLine2}" required="true"
-													requiredMessage="#{supplier.getAddressLine2}"></h:inputText>
-												<br /> 
-										Postcode <h:inputText type="text" class="Saddr"
-													value="#{supplier.postcode}"
-													pattern="[A-Z]{1-2} [0-9]{1-2} [0-9]{1} [A-Z]{2} "
-													required="true" requiredMessage="#{suppliers.getPostcode}"></h:inputText>
-												<br /> 
-										Phone <h:inputText type="text" class="Saddr"
-													value="#{suppliers.phone}" required="true"
-													requiredMessage="#{supplier.getPhone}"></h:inputText>
-												<br />
-												<h:commandButton class="submit-button" type="submit"
-													action="#{suppliers.editSupplier(suppliers.id, suppliers.name, suppliers.addressLine1, suppliers.addressLine2, suppliers.postcode, suppliers.phone)}"
-													value="Edit Supplier" />
-											</h:form>
-										</div>
-									</div>
 								</div>
-								<hr />
-							</ui:repeat>
+							</ui:repeat>	
 						</div>
-						<button id="add" type="button" onclick="location.href='#popup2'">Add</button>
+						<h:commandButton styleClass="button-green view-button" value="Add" onclick="location.href='#popup2'"></h:commandButton>
 						<div id="popup2" class="overlay">
 							<div class="popup">
 								<h2>Add Supplier</h2>
@@ -117,28 +80,28 @@
 								<div class="content">
 									<h:form class="addForm">
 										Name <h:inputText type="text" class="Sname"
-											value="#{supplierSelected.name}" required="true"
+											value="#{newSupplier.supplier.name}" required="true"
 											requiredMessage="Please Enter Name"></h:inputText>
 										<br /> 
 										Address Line 1 <h:inputText type="text" class="Saddr"
-											value="#{supplierSelected.addressLine1}" required="true"
+											value="#{newSupplier.supplier.addressLine1}" required="true"
 											requiredMessage="Please Enter Address Line 1"></h:inputText>
 										<br /> 
 										Address Line 2 <h:inputText type="text" class="Saddr"
-											value="#{supplierSelected.addressLine2}" required="true"
+											value="#{newSupplier.supplier.addressLine2}" required="true"
 											requiredMessage="Please Enter Address Line 2"></h:inputText>
 										<br /> 
 										Postcode <h:inputText type="text" class="Saddr"
-											value="#{supplierSelected.postcode}"
+											value="#{newSupplier.supplier.postcode}"
 											pattern="[A-Z]{1-2} [0-9]{1-2} [0-9]{1} [A-Z]{2} "
 											required="true" requiredMessage="Please Enter Postcode"></h:inputText>
 										<br /> 
 										Phone <h:inputText type="text" class="Saddr"
-											value="#{supplierSelected.phone}" required="true"
+											value="#{newSupplier.supplier.phone}" required="true"
 											requiredMessage="Please Enter Phone Number"></h:inputText>
 										<br />
-										<h:commandButton class="submit-button" type="submit"
-											action="#{Suppliers.createSupplier}" value="Create Supplier">
+										<h:commandButton class="submit-button button-green" type="submit"
+											action="#{newSupplier.addSupplier}" value="Create Supplier">
 										</h:commandButton>
 									</h:form>
 								</div>

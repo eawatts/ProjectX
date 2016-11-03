@@ -39,6 +39,11 @@ public class SupplierService{
 		supplierRepo.updateSupplier(id, name, addressLine1, addressLine2, postcode, phone);
 	}
 
+	public void addSupplier(Supplier supplier) {
+		supplierRepo.addSupplier(supplier);
+		
+	}
+
 	//public void editSupplier(SelectedSupplier selectedSupplier) {
 	//	supplierRepo.updateSupplier(selectedSupplier.getId(), supplierRepo.g, addressLine1, addressLine2, postcode, phone);
 	//}

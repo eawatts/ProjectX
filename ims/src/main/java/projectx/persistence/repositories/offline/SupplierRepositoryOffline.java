@@ -17,11 +17,6 @@ public class SupplierRepositoryOffline implements SupplierRepository {
 	@Inject
 	OfflineDB initialData;
 	
-	@Override
-	public void createSupplier(Supplier supplier) {
-		initialData.addSupplier(supplier);
-
-	}
 
 	@Override
 	public Supplier findBySupplierName(String name) {
@@ -49,5 +44,12 @@ public class SupplierRepositoryOffline implements SupplierRepository {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void addSupplier(Supplier supplier) {
+		initialData.addSupplier(supplier);
+	}
+
+
 
 }
