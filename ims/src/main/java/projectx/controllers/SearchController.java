@@ -6,6 +6,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import projectx.services.SearchService;
+
 @Named("search")
 @RequestScoped
 public class SearchController {
@@ -16,12 +18,23 @@ public class SearchController {
 	private String parameter;
 	private String category;
 	
-	public String search(String parameter, String category){
+	public String search(){
+		System.out.println("hello");
+		System.out.println(parameter);
+		System.out.println(category);
 		List searchresults = searchService.search(parameter,category);
-		for(Object  a:searchresults){
-			System.out.println(a);
+		if(searchresults!= null)
+		{
+			for(Object  a:searchresults){
+				System.out.println(a);
+			}
+			return null;
 		}
-		return null;
+		else
+		{
+			return null;
+		}
+		
 	}
 
 	public String getParameter() {
