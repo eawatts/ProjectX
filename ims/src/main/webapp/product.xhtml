@@ -5,14 +5,14 @@
 	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
 	<meta charset="utf-8" />
 	<ui:define name="custom-css">
-		<link rel="stylesheet" type="text/css" href="css/login.css" />
-		<link rel="stylesheet" type="text/css" href="css/product.css" />
 		<link rel="stylesheet" type="text/css" href="css/switch.css" />
 		<link rel="stylesheet" type="text/css"
-			href="libraries/slider/slick.css"></link>
+			href="libraries/slider/slick.css" />
 		<link rel="stylesheet" type="text/css"
-			href="libraries/slider/slick-theme.css"></link>
-		<link rel="stylesheet" type="text/css" href="css/slide_custom.css"></link>
+			href="libraries/slider/slick-theme.css" />
+		<link rel="stylesheet" type="text/css" href="css/slide_custom.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<link rel="stylesheet" type="text/css" href="css/product.css" />
 	</ui:define>
 
 	<ui:define name="title">Product</ui:define>
@@ -32,20 +32,25 @@
 			<div class="row">
 				<div class="regular slider">
 					<ui:repeat var="img" value="#{products.productByID.imgs}">
-						<div>
+						<div class="sliderItem">
 							<h:form>
 								<div class="slider-product-image">
 									<img src="img/nb_favicon.png" alt="" />
 									<!-- "<img#{img}" -->
 								</div>
 								<div class="slider-button">
-									<h:commandButton action="#{products.setImgAsDefault}"></h:commandButton>
+									<h:commandButton action="#{products.setImgAsDefault}" />
 								</div>
 							</h:form>
 						</div>
 					</ui:repeat>
-					<h:commandButton action="#{products.addImg}">Add Image</h:commandButton>
+
+
 				</div>
+				<br />
+				<h:form>
+					<h:commandButton action="#{products.addImg}">Add Image</h:commandButton>
+				</h:form>
 			</div>
 			<br /> <br />
 			<hr />
@@ -128,5 +133,6 @@
 	<ui:define name="custom-scripts">
 		<script type="text/javaScript" src="js/product_edit.js"></script>
 		<script type="text/javaScript" src="libraries/slider/slick.min.js"></script>
+		<script type="text/javaScript" src="js/product.js"></script>
 	</ui:define>
 </ui:composition>

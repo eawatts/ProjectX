@@ -1,0 +1,38 @@
+/*
+raisin black = #272727
+floral white = #f9fbf2
+orange yellow = #fed766
+british racing green = #004425
+sweet sweet brown = #a53f2b
+*/
+
+.search{
+	padding:10px;
+}
+
+.searchinput{
+	position:relative;
+	left:50px;
+	font-size:18px;
+	width:500px;
+	padding: 8px 5px; 
+	color: #004425;
+	
+}
+
+select{
+	position:relative;
+	left:0px;
+	
+	height:30px;
+
+}
+
+.searchbutton{
+	position:relative;
+	left:30px;
+	width:15%;
+	height: 30px;
+	
+	border:10px
+}

@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a4j="http://richfaces.org/a4j">
+     <h:head></h:head>
+    <h:form id="form">
+        <rich:chart title="Sales Figures" styleClass="graf">
+            <a4j:repeat value="#{test.products}" var="country">
+                <rich:chartSeries label="#{product.name}" type="line">
+                    <a4j:repeat value="#{product.data}" var="record">
+                        <rich:chartPoint x="#{record.year}" y="#{record.tons}" />
+                    </a4j:repeat>
+                </rich:chartSeries>
+            </a4j:repeat>
+            <rich:chartXAxis label="year" />
+            <rich:chartYAxis label="metric tons of CO2 per capita" />
+        </rich:chart>
+ 
+        <rich:chart id="bar" title="GDP sector composition">
+            <rich:chartLegend sorting="ascending" />
+            <a4j:repeat value="#{test.profit}" var="country">
+                <rich:chartSeries label="#{country.product}" type="bar">
+                    <rich:chartPoint x="January" y="#{country.jan}" />
+                    <rich:chartPoint x="February" y="#{country.feb}" />
+                    <rich:chartPoint x="March" y="#{country.march}" />
+                </rich:chartSeries>
+            </a4j:repeat>
+        </rich:chart>
+ 
+        <rich:chart id="pie" title="USA GDP">
+            <rich:chartLegend sorting="ascending" />
+            <rich:chartSeries data="#{test.pie}" type="pie" />
+        </rich:chart>
+    </h:form>
+</ui:composition>
