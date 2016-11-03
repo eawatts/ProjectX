@@ -76,11 +76,19 @@ public class SearchController implements Serializable {
 		this.searchResults = searchResults;
 	}
 
-	public void clearResults() {
+	public String clearProductResults() {
 		this.searchResults = null;
-	}
-
-	public String redirect() {
 		return "products";
 	}
+	
+	public String clearSupplierResults(){
+		this.searchResults = null;
+		return "suppliers";
+	}
+	public String clearPurchaseResults(){
+		this.searchResults = null;
+		return "purchase_order_view";
+	}
+
+
 }

@@ -388,6 +388,7 @@
 			</div>
 			</div>
 					<div class="nav-links">
+					<h:form>
 						<div id="nav-desktop">
 							<ul class="dropdown-all-buttons">
 								<li class="dropdown-category"><a href="index.xhtml"
@@ -398,18 +399,20 @@
 										<a href="purchase_order_create.xhtml"
 											class="dropdown-sub-button">Create Purchase Order</a> <a
 											href="purchase_order_edit.xhtml" class="dropdown-sub-button">Edit
-											Purchase Order</a> <a href="purchase_order_view.xhtml"
-											class="dropdown-sub-button">View Purchase Order</a>
+											Purchase Order</a> <h:commandLink styleClass="dropdown-button" value="View Purchase Orders" action="#{search.clearPurchaseResults}"></h:commandLink>
 									</div>
 								</li>
-								<li class="dropdown-category"><a href="products.xhtml"
-									class="dropdown-button">Product</a></li>
+								<li class="dropdown-category">
+								
+								<h:commandLink styleClass="dropdown-button" value="Product" action="#{search.clearProductResults}"></h:commandLink>
+								
+								</li>
 								<li class="dropdown-category"><a href="metrics.xhtml"
 									class="dropdown-button">Metrics</a></li>
-								<li class="dropdown-category"><a href="suppliers.xhtml"
-									class="dropdown-button">Suppliers</a></li>
+								<li class="dropdown-category"><h:commandLink styleClass="dropdown-button" value="View Suppliers" action="#{search.clearSupplierResults}"></h:commandLink></li>
 							</ul>
 						</div>
+						</h:form>
 					</div>
 
 				</nav>
