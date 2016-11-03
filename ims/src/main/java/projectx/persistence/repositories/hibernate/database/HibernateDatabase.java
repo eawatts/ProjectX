@@ -1,5 +1,6 @@
 package projectx.persistence.repositories.hibernate.database;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -12,6 +13,7 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import projectx.persistence.entities.Notification;
+import projectx.persistence.entities.Supplier;
 import projectx.persistence.util.NotificationType;
 
 @Startup
@@ -104,4 +106,69 @@ public class HibernateDatabase {
 		    }
 		}
 	}
+
+	// SUPPLIERS
+	public List getSuppliers() {
+		Session session = null;
+		try{
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(Supplier.class);
+			return criteria.list();
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+			return null;
+		}finally{
+			 if (session != null) {
+			        session.close();
+			    }
+		}
+		
+	}
+
+	public Supplier findBySupplierId(int id) {
+		Session session = null;
+		try{
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(Supplier.class);
+			criteria.add(Restrictions.like("id", id));
+			return (Supplier) criteria.uniqueResult();
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+			return null;
+		}finally{
+			 if (session != null) {
+			        session.close();
+			    }
+		}
+		
+	}
+
+	public Supplier findBySupplierName(String name) {
+		Session session = null;
+		try{
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(Supplier.class);
+			criteria.add(Restrictions.like("name", name));
+			return (Supplier) criteria.uniqueResult();
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+			return null;
+		}finally{
+			 if (session != null) {
+			        session.close();
+			    }
+		}
+	}
+
+	public void addSupplier(Supplier supplier) {
+		if (supplier == null) {
+			return;
+		}
+		Session session = sessionManager.getSession();
+		session.save(supplier);
+		session.beginTransaction().commit();
+		
+	}
+
+
 }
