@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.hibernate.Session;
 
 import projectx.persistence.entities.Notification;
+import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
 import projectx.persistence.util.NotificationType;
 import projectx.persistence.util.UserLevel;
@@ -14,6 +15,7 @@ public class HibernateDatabaseSeed {
 	public static void seedDatabase(Session session) {
 		seedUsers(session);
 		seedNotifications(session);
+		seedSuppliers(session);
 		session.close();
 	}
 	
@@ -43,6 +45,18 @@ public class HibernateDatabaseSeed {
 		notifications.add(new Notification(null, NotificationType.DELIVERY_ERROR, "The eagle has landed!"));
 		
 		for (Notification notification : notifications)	session.save(notification);
+		
+		session.beginTransaction().commit();
+	}	
+	
+	private static void seedSuppliers(Session session) {
+		ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
+		suppliers.add(new Supplier(1, "Gnomes gnomes gnomes", "1 Road Street", "The Town", "M56YH", "07463772819"));
+		suppliers.add(new Supplier(2, "Rakes and Hoes Emporium", "33 Garden Street", "Cheshire", "SG147YH", "04463776419"));
+		suppliers.add(new Supplier(3, "We Sell Stuff", "2 Made Up Street", "Barca", "BE39UI", "01320739921"));
+		suppliers.add(new Supplier(4, "Gnomes R Us", "123 Fake Street", "MAdeUp Land", "TU59PI", "01193812204"));
+		
+		for (Supplier supplier : suppliers) session.save(supplier);
 		
 		session.beginTransaction().commit();
 	}	
