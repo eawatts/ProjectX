@@ -24,97 +24,88 @@ public class ProductController implements Serializable
 	private ProductService productService;
 	@Inject
 	private SelectedProduct selectedProduct;
+	@Inject
+	private SearchController searchController;
 
 	@SuppressWarnings("unused")
 	private int selectedProductIndex;
-	
-	private Product productByID; 
-	
-	
-	private DataModel<Product> productDataModel = null;
+	private Product productByID;
 	private int productid;
-	
-	
-	
+
 	public String getProduct(String id)
 	{
-		/*try
-		{
-			selectedProduct.setSelectedProduct(productService.findProductById(id));
-			return "product";
-		}
-		catch(Exception e)
-		{
-			
-		}*/return "browse";
+		/*
+		 * try {
+		 * selectedProduct.setSelectedProduct(productService.findProductById(id)
+		 * ); return "product"; } catch(Exception e) {
+		 * 
+		 * }
+		 */return "browse";
 	}
-	
-	public DataModel<Product> listProducts()
-	{
-		if(productDataModel == null)
-			productDataModel = createDataModel();
-		return productDataModel;
-	}
-	
-	public DataModel<Product> createDataModel()
-	{
-		
-		return new ListDataModel<Product>(productService.getProducts());
-	}
-	
-	public DataModel<Product> getProductDataModel()
-	{
-		if(productDataModel == null)
-		{
-			productDataModel = createDataModel();
-		}
-		return productDataModel;
-	}
-	
 
-//	public List<Supplier> getSupplier(int productId)
-//	{
-//		return selectedProduct.getSelectedProduct().getSupplierList(productId);
-//	}
-//	
+
+	public List getProductList()
+	{	
+		if(searchController.getSearchResults() != null && searchController.getSearchResults().size() > 0 && searchController.getSearchResults().get(0) instanceof Product)
+		{
+			return searchController.getSearchResults();
+		}
+		else
+		{
+			return productService.getProducts();
+		}
+		
+	}
+
+	// public List<Supplier> getSupplier(int productId)
+	// {
+	// return selectedProduct.getSelectedProduct().getSupplierList(productId);
+	// }
+	//
 	public void setSelectedProduct(int productId)
 	{
 		selectedProduct.setSelectedProduct(productService.findProductById(productId));
 	}
-	
-	
-	public Product getProductByID(){
-		
+
+	public Product getProductByID()
+	{
+
 		System.out.println("Test1");
-		/*for(int i=1;i<10;i++){
-			System.out.print(productService.getProductbyID(productid).getName());
-		}*/
-		System.out.println("Product is "+productService.getProductbyID(productid));
+		/*
+		 * for(int i=1;i<10;i++){
+		 * System.out.print(productService.getProductbyID(productid).getName());
+		 * }
+		 */
+		System.out.println("Product is " + productService.getProductbyID(productid));
 		return productService.getProductbyID(productid);
 	}
-	
-	public String viewProduct(int id){
+
+	public String viewProduct(int id)
+	{
 		productid = id;
 		return "product";
 	}
-	
-	public void createProduct(int id, String name, int stockLvl, double price, int lowStock, String description,ArrayList<Supplier> suppliers,ArrayList<String> imglists ){
-		Product p = new Product(id,name,stockLvl,price,lowStock,description,null,null);
+
+	public void createProduct(int id, String name, int stockLvl, double price, int lowStock, String description,
+			ArrayList<Supplier> suppliers, ArrayList<String> imglists)
+	{
+		Product p = new Product(id, name, stockLvl, price, lowStock, description, null, null);
 		productService.addProduct(p);
 	}
-	
 
-	public void setProductByID(Product productbyID) {
+	public void setProductByID(Product productbyID)
+	{
 		this.productByID = productbyID;
 	}
 
-	public List<Product> getLowStockProducts(){
+	public List<Product> getLowStockProducts()
+	{
 		return productService.getLowStockProduct();
 	}
-	
-	public List<Product> getTop25LowStockProducts(){
+
+	public List<Product> getTop25LowStockProducts()
+	{
 		return productService.getTop25LowStockProducts();
 	}
-	
 
 }
