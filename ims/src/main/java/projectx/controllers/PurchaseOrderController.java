@@ -9,6 +9,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import projectx.persistence.entities.Product;
 import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
@@ -26,8 +27,9 @@ public class PurchaseOrderController implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	@Inject 
-	private PurchaseOrderSerivce purchaseOrderSerivce;
-
+	private PurchaseOrderSerivce purchaseOrderService;
+	@Inject
+	private SearchController searchController;
 	private int id;
 	private Supplier supplier;
 	private boolean approved;
@@ -36,11 +38,18 @@ public class PurchaseOrderController implements Serializable{
 	private List<ProductsOrdered> productsOrdered;
 
 
-	public ArrayList<PurchaseOrder> getPurchaseOrderList(){	
-		return purchaseOrderSerivce.getPurchaseOrderList();
+	public List getPurchaseOrderList(){	
+		if(searchController.getSearchResults() != null && searchController.getSearchResults().size() > 0 && searchController.getSearchResults().get(0) instanceof PurchaseOrder)
+		{
+			return searchController.getSearchResults();
+		}
+		else
+		{
+			return purchaseOrderService.getPurchaseOrderList();
+		}
 	}
 	public PurchaseOrder findPOById(int id){
-		return purchaseOrderSerivce.findPOById(id);
+		return purchaseOrderService.findPOById(id);
 	} 
 	
 	public void viewPO(int id){

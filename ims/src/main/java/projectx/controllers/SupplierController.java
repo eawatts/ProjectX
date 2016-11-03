@@ -2,7 +2,6 @@ package projectx.controllers;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -26,6 +25,19 @@ public class SupplierController implements Serializable{
 	private String addressLine2;
 	private String postcode;
 	private String phone;
+	private Supplier supplierById;
+   
+	
+	public Supplier getSupplierById(){
+		System.out.println("test");
+		return supplierService.findSupplierById(id);
+	}
+	
+	public String viewSupplier(int id){
+		System.out.println(id);
+		this.id=id;
+		return "supplier";
+	}
 	
 	public void selected(int id, String name, String addressLine1, String addressLine2, String postcode, String phone) {
 		this.id = id;
@@ -36,14 +48,20 @@ public class SupplierController implements Serializable{
 		this.postcode = postcode;
 		System.out.println(id + ": " + name);
 	}
+	
 	public void  editSupplier(int id, String name, String addressLine1, String addressLine2, String postcode, String phone){
 		System.out.println("edited supplier" + getName());
 		supplierService.editSupplier(id, name, addressLine1, addressLine2, postcode, phone);
 	}
-
-	public ArrayList<Supplier> getSuppliersList(){	
-		return supplierService.getSuppliersList();
+	
+	public void setSupplierById(Supplier supplierById){
+		this.supplierById=supplierById;
 	}
+	
+	public ArrayList<Supplier> getSuppliersList(){
+		return supplierService.getSuppliersList();
+		
+	}	
 	/**
 	 * @return the name
 	 */
@@ -122,12 +140,5 @@ public class SupplierController implements Serializable{
 		return id;
 	}
 
-//	public void selected(int id, String name, String addressLine1, String addressLine2, String postcode, String phone) {
-//		selectedSupplier.selected(id, name, addressLine1, addressLine2, postcode, phone);
-//		System.out.println(id + ": " + name);
-//	}
-	
-	
-	
-	
+
 }
