@@ -65,9 +65,9 @@ public class HibernateDatabase {
 			}
 		}
 	}
-	
+
 	// USERS
-	
+
 	public void persistUser(User user) {
 		if (user == null) {
 			return;
@@ -85,7 +85,7 @@ public class HibernateDatabase {
 			}
 		}
 	}
-	
+
 	public List<User> getUsers() {
 		Session session = null;
 		try {
@@ -101,7 +101,7 @@ public class HibernateDatabase {
 			}
 		}
 	}
-	
+
 	public User findByUsername(String username) {
 		Session session = null;
 		try {
@@ -119,7 +119,7 @@ public class HibernateDatabase {
 			}
 		}
 	}
-	
+
 	public boolean checkPassword(String username, String password) {
 		if (username == "" || password == "") {
 			return false;
@@ -225,53 +225,53 @@ public class HibernateDatabase {
 	// SUPPLIERS
 	public List getSuppliers() {
 		Session session = null;
-		try{
+		try {
 			session = sessionManager.getSession();
 			Criteria criteria = session.createCriteria(Supplier.class);
 			return criteria.list();
-		}catch(Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
-		}finally{
-			 if (session != null) {
-			        session.close();
-			    }
+		} finally {
+			if (session != null) {
+				session.close();
+			}
 		}
-		
+
 	}
 
 	public Supplier findBySupplierId(int id) {
 		Session session = null;
-		try{
+		try {
 			session = sessionManager.getSession();
 			Criteria criteria = session.createCriteria(Supplier.class);
 			criteria.add(Restrictions.like("id", id));
 			return (Supplier) criteria.uniqueResult();
-		}catch(Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
-		}finally{
-			 if (session != null) {
-			        session.close();
-			    }
+		} finally {
+			if (session != null) {
+				session.close();
+			}
 		}
-		
+
 	}
 
 	public Supplier findBySupplierName(String name) {
 		Session session = null;
-		try{
+		try {
 			session = sessionManager.getSession();
 			Criteria criteria = session.createCriteria(Supplier.class);
 			criteria.add(Restrictions.like("name", name));
 			return (Supplier) criteria.uniqueResult();
-		}catch(Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
-		}finally{
-			 if (session != null) {
-			        session.close();
-			    }
+		} finally {
+			if (session != null) {
+				session.close();
+			}
 		}
 	}
 
@@ -282,8 +282,7 @@ public class HibernateDatabase {
 		Session session = sessionManager.getSession();
 		session.save(supplier);
 		session.beginTransaction().commit();
-		
-	}
 
+	}
 
 }
