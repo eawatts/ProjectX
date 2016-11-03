@@ -6,8 +6,9 @@
 
 	<alternatives>
 	
-		<!-- UNCOMMENT THIS TO USE USERS VIA THE DATABASE -->
+		<!-- UNCOMMENT THESE TO USE USERS VIA THE DATABASE -->
 		<class>projectx.persistence.repositories.hibernate.UserRepositoryHibernate</class>
+		<class>projectx.persistence.repositories.hibernate.LoginRepositoryHibernate</class>
 
 		<!-- UNCOMMENT THIS TO USE NOTIFICATIONS VIA THE DATABASE -->
 		<class>projectx.persistence.repositories.hibernate.NotificationRepositoryHibernate</class>
