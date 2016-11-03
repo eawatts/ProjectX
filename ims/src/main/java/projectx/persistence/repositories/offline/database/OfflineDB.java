@@ -450,9 +450,9 @@ public class OfflineDB {
 	public void dismissNotification(Notification notification) {
 		notifications.remove(notification);
 	}
-	
-	public List getSearchResults(String search, String searchList)
-	{
+
+	public List getSearchResults(String search, String searchList){
+
 		List results;
 		switch(searchList)
 		{
@@ -490,3 +490,4 @@ public class OfflineDB {
 		return results;
 	}
 }
+
