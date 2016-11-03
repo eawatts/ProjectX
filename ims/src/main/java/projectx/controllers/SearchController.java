@@ -1,33 +1,31 @@
 package projectx.controllers;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.services.SearchService;
 
 @Named("search")
-@RequestScoped
-public class SearchController {
+@SessionScoped
+public class SearchController implements Serializable{
 
 	@Inject
 	private SearchService searchService;
 	
+	private List searchResults;
 	private String parameter;
 	private String category;
 	
 	public String search(){
-		System.out.println("hello");
-		System.out.println(parameter);
-		System.out.println(category);
-		List searchresults = searchService.search(parameter,category);
-		if(searchresults!= null)
+		List results = searchService.search(parameter,category);
+		this.setSearchResults(results);
+		if(results!= null)
 		{
-			for(Object  a:searchresults){
-				System.out.println(a);
-			}
 			return null;
 		}
 		else
@@ -51,5 +49,26 @@ public class SearchController {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	/**
+	 * @return the searchResults
+	 */
+	public List getSearchResults()
+	{
+		return searchResults;
+	}
+
+	/**
+	 * @param searchResults the searchResults to set
+	 */
+	public void setSearchResults(List searchResults)
+	{
+		this.searchResults = searchResults;
+	}
+	
+	public void clearResults()
+	{
+		this.searchResults = null;
 	}
 }
