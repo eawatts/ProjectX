@@ -35,7 +35,7 @@ public class OfflineDB {
 	private List<Notification> notifications;
 	private ArrayList<Supplier> suppliers;
 	private ArrayList<PurchaseOrder> purchaseOrders;
-	private List<ProductsOrdered> productsOrdered;
+	private ArrayList<ProductsOrdered> productsOrdered;
 	private ArrayList<String> p1imgs;
 
 	@PostConstruct
@@ -447,5 +447,6 @@ public class OfflineDB {
 	
 	public void dismissNotification(Notification notification) {
 		notifications.remove(notification);
+		System.out.println("*******************************************????**********************************");
 	}
 }

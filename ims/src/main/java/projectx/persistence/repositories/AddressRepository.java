@@ -4,8 +4,6 @@ import java.util.List;
 
 import projectx.persistence.entities.Address;
 
-
-
 public interface AddressRepository{
 	public void persistAddress(Address address);
 	public void persistAddress(List<Address> address);
