@@ -2,36 +2,43 @@ package projectx.persistence.repositories.hibernate;
 
 import java.util.ArrayList;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Alternative;
+import javax.inject.Inject;
+
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.repositories.SupplierRepository;
+import projectx.persistence.repositories.hibernate.database.HibernateDatabase;
 
 @Stateless
 @Alternative
 
 public class SupplierRepositoryHibernate implements SupplierRepository{
+	
+	@Inject
+	private HibernateDatabase db;
 
 	@Override
 	public Supplier findBySupplierName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return db.findBySupplierName(name);
 	}
 
 	@Override
 	public Supplier findBySupplierId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return db.findBySupplierId(id);
 	}
 
+	
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Supplier> getSuppliers() {
-		// TODO Auto-generated method stub
-		return null;
+		return (ArrayList<Supplier>) db.getSuppliers();
 	}
 
 	@Override
 	public void updateSupplier(int id, String name, String addressLine1, String addressLine2, String postcode,
 			String phone) {
-		// TODO Auto-generated method stub
+		db.updateSupplier(id, name, addressLine1, addressLine2, postcode, phone);
 		
 	}
 
@@ -43,7 +50,7 @@ public class SupplierRepositoryHibernate implements SupplierRepository{
 
 	@Override
 	public void addSupplier(Supplier supplier) {
-		// TODO Auto-generated method stub
+		db.addSupplier(supplier);
 		
 	}
 	
