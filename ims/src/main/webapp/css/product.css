@@ -22,3 +22,19 @@ sweet sweet brown = #a53f2b
 .editdescription{display: none;}
 .save_desc{display: none;}
 .cancel_desc{display: none;}
+
+.slider-product-image{
+	height:50%;
+}
+.slider-basket-button{
+	color: #004425;
+	text-align: center;
+	width: 100%;
+	align-content: center;
+	padding-bottom: 1%;
+	font-weight: bold;
+}
+.sliderItem
+{
+	display: inline-block;	
+}
