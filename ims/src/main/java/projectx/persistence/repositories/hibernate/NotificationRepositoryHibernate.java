@@ -21,14 +21,12 @@ public class NotificationRepositoryHibernate implements NotificationRepository {
 
 	@Override
 	public List<Notification> getNotifications() {
-		// TODO Auto-generated method stub
-		return null;
+		return db.getNotifications();
 	}
 
 	@Override
 	public List<Notification> getNotificationsForType(NotificationType type) {
-		// TODO Auto-generated method stub
-		return null;
+		return db.getNotificationsForType(type);
 	}
 
 	@Override

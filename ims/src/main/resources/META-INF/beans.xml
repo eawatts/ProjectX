@@ -7,7 +7,7 @@
 	<alternatives>
 
 		<!-- UNCOMMENT THIS TO USE NOTIFICATIONS VIA THE DATABASE -->
-		<!-- <class>projectx.persistence.repositories.hibernate.NotificationRepositoryHibernate</class> -->
+		<class>projectx.persistence.repositories.hibernate.NotificationRepositoryHibernate</class>
 		
 		
 

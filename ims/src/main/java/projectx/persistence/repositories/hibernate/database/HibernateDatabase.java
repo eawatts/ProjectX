@@ -5,69 +5,103 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.query.Query;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 import projectx.persistence.entities.Notification;
 import projectx.persistence.util.NotificationType;
 
 @Startup
 @Singleton
+@SuppressWarnings({ "unchecked", "deprecation" })
 public class HibernateDatabase {
-	
+
 	private HibernateSession sessionManager;
 
 	@PostConstruct
 	private void configure() {
 		sessionManager = HibernateSession.getInstance();
 	}
-	
+
 	public void seedDatabase() {
 		HibernateDatabaseSeed.seedDatabase(sessionManager.getSession());
 	}
-	
-	private void commitAndCloseSession(Session session) {
-		if(session == null) {
+
+	/*
+	 * private void commitAndCloseSession(Session session) { if(session == null)
+	 * { return; } session.beginTransaction().commit();; session.close();
+	 * return; }
+	 */
+
+	// NOTIFICATIONS
+
+	public void persistNotification(Notification notification) {
+		if (notification == null) {
 			return;
 		}
-		session.beginTransaction().commit();;
-		session.close();
-		return;
-	}
-	
-	// NOTIFICATIONS
-		
-	public void persistNotification(Notification notification) {
-		if (notification == null) {	return;	}
 		Session session = sessionManager.getSession();
 		session.save(notification);
-		commitAndCloseSession(session);
+		session.beginTransaction().commit();
 	}
-	
+
 	public List<Notification> getNotifications() {
-		Session session = sessionManager.getSession();
-		CriteriaQuery<Notification> query = session.getCriteriaBuilder().createQuery(Notification.class);
-		query.from(Notification.class);
-		return session.createQuery(query).getResultList();
+		Session session = null;
+		try {
+		    session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(Notification.class);
+			return criteria.list();
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+		    if (session != null) {
+		        session.close();
+		    }
+		}
 	}
-	
+
 	public List<Notification> getNotificationsForType(NotificationType type) {
-		Session session = sessionManager.getSession();
-		CriteriaBuilder builder = session.getCriteriaBuilder();
-		CriteriaQuery<Notification> query = builder.createQuery(Notification.class);
-		query.where(builder.equal(query.from(Notification.class).get("type"), type)).from(Notification.class);
-		return session.createQuery(query).getResultList();
+		Session session = null;
+		try {
+		    session = sessionManager.getSession();
+		    Criteria criteria = session.createCriteria(Notification.class);
+			criteria.add(Restrictions.like("type", type));
+			return criteria.list();
+		    
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+		    if (session != null) {
+		        session.close();
+		    }
+		}
 	}
-	
+
 	public void dismiss(Notification notification) {
-		if (notification == null) {	return;	}
-		Session session = sessionManager.getSession();
-		session.delete(notification);
-		commitAndCloseSession(session);
+		if (notification == null) {
+			return;
+		}
+		Session session = null;
+		Transaction transaction = null;
+		try {
+		    session = sessionManager.getSession();
+		    transaction = session.beginTransaction();
+		    session.delete(notification);
+		    transaction.commit();
+		    
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		    if (transaction != null) {
+		        transaction.rollback();
+		    }
+		} finally {
+		    if (session != null) {
+		        session.close();
+		    }
+		}
 	}
 }
