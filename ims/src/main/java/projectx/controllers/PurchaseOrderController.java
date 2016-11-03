@@ -13,13 +13,13 @@ import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.util.OrderState;
+import projectx.persistence.webentities.PurchaseOrderProduct;
 import projectx.services.PurchaseOrderSerivce;
 
 
 
-
-@Named("purchaseOrders")
 @SessionScoped
+@Named("purchaseOrders")
 public class PurchaseOrderController implements Serializable{
 	/**
 	 * 
@@ -105,6 +105,15 @@ public class PurchaseOrderController implements Serializable{
 	public void setProductsOrdered(List<ProductsOrdered> productsOrdered) {
 		this.productsOrdered = productsOrdered;
 	}
+	
+	public List<PurchaseOrderProduct> createPurchaseOrderEntry(){
+		return purchaseOrderSerivce.createPurchaseOrderEntry();
+	}
+	
+//	public String addProductToPurchaseOrder(){
+//		purchaseOrderSerivce.addProductToPurchaseOrder();
+//		return null;
+//	}
 	
 	
 	
