@@ -48,10 +48,9 @@ public class SearchController implements Serializable
 	public String search()
 	{
 		List result = searchService.search(parameter);
-		this.setSearchResults(result);
-		System.out.println(result.size());
 		if (result != null)
 		{
+			this.setSearchResults(result);
 			return "search";
 		} else
 		{
@@ -74,7 +73,6 @@ public class SearchController implements Serializable
 	 */
 	public List getSearchResults()
 	{
-		System.out.println("getting search results");
 		return searchResults;
 	}
 

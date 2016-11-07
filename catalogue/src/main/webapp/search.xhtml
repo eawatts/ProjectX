@@ -11,21 +11,25 @@
             <div class="searchresult">
                <div class="row">
                   <div class="col-desk-1">
-                     <h:outputText value="#{product.id}" />
+                  <h:form>
+                     <h:commandLink value="#{product.name}" action="#{products.view(product.id)}" />
+                  </h:form>
                   </div>
                   <div class="col-desk-2">
-                  	<h:graphicImage value="#{product.productImageFilepath}"/>
+                  	<h:graphicImage value="img/#{product.productImageFilepath}"/> <br/> <h:outputText value="£#{product.priceToDisplay}" />
                   </div>
                   <div class="col-desk-6">
                   	<h:outputText value="#{product.description}" />
                   </div>
                   <div class="col-desk-3">
-                     <h:commandButton action="#{basket.addproduct(product)}"> Add to Basket </h:commandButton>
+                     <h:commandButton action="#{basket.addproduct(product)}" class="button-green" value= "Add to Basket"/>
                      <br />
-                     <h:commandButton action="#{wishlist.addproduct(product)}"> Add to Wishlist </h:commandButton>
+                     <br />
+                     <h:commandButton action="#{wishlist.addproduct(product)}" class="button-green" value=" Add to Wishlist"/>
                   </div>
                </div>
             </div>
+            <hr />
          </ui:repeat>
       </div>
    </ui:define> 
