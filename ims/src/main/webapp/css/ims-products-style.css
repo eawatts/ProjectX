@@ -29,6 +29,15 @@
 	margin: auto;
 	display: block;
 	width: auto;
+	text-align: justify;
+	background-color: var(--british-racing-green);
+	color: var(--floral-white);
+	border-style: solid;
+	border-width: 2px;
+	border-color: var(--sweet-sweet-brown);
+	margin: auto;
+	display: block;
+	width: auto;
 	height: 35px;
 }
 .custom-title{
