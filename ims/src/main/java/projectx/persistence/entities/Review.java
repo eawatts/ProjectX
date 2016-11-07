@@ -15,8 +15,15 @@ import javax.validation.constraints.Size;
 
 @Entity
 
+/**
+ * 
+ * @author Ed Watts
+ * 
+ * Named queries to find entries in the database
+ *
+ */
 @NamedQueries({
-/*	@NamedQuery(name = Review.VIEW_ALL,
+	@NamedQuery(name = Review.VIEW_ALL,
 				query = "SELECT r FROM Review r"),
 	@NamedQuery(name = Review.VEIW_USER_ID,
 				query = "SELECT r.user_id FROM Review r"), 
@@ -25,10 +32,10 @@ import javax.validation.constraints.Size;
 	@NamedQuery(name = Review.PERSIST_REVIEW,
 				query = ""),
 	@NamedQuery(name = Review.PERSIST_REVIEWS,
-				query = ""),*/
+				query = ""),
 })
 
-@Table(name = "review")
+@Table(name = "Review")
 public class Review {
 	
 	public static final String PERSIST_REVIEW = "Review.persistReview";
@@ -60,9 +67,15 @@ public class Review {
 	@NotNull
 	private Product product;
 
-	public Review() {
-	}
-	
+	/**
+	 * Review constructor
+	 * 
+	 * @param id
+	 * @param rating
+	 * @param comment
+	 * @param reviewer
+	 * @param product
+	 */
 	public Review(int id, Long rating, String comment, User reviewer, Product product) {
 		super();
 		this.id = id;
@@ -72,14 +85,26 @@ public class Review {
 		this.product = product;
 	}
 
+	/**
+	 * returns user id 
+	 * @return
+	 */
 	public int getId() {
 		return id;
 	}
 
+	/**
+	 * returns a rating value
+	 * @return
+	 */
 	public Long getRating() {
 		return rating;
 	}
 
+	/**
+	 * sets a rating value
+	 * @param rating
+	 */
 	public void setRating(Long rating) {
 		this.rating = rating;
 	}
@@ -99,4 +124,5 @@ public class Review {
 	public Product getProduct() {
 		return product;
 	}
+
 }

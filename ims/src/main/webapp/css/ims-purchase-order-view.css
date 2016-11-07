@@ -40,31 +40,3 @@
 .PO-button{
   padding-left: 150px;
 }
-.po-details{
-  border-top-color: black;
- border-top: solid;
- border-width: 1px;
-}
-#pageheading{
-	text-align: center;
-}
-.accordian-button{
-	margin-left: 85%;
-margin-bottom: 5px;
-	
-}
-.table-head{
-	background-color: #004425;
-	font-size: 130%;
-	font-weight: bold;
-	color:  #f9fbf2;
-	border-bottom: solid;
-	border-bottom-color: #a53f2b;	
-	border-width: 3px;
-}
-.po-create-buttons{
-	margin-left: 33%;
-}
-.form-header{
-	margin: 0px;
-}
