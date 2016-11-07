@@ -35,81 +35,106 @@
 					</ui:repeat>
 				</div>
 				
-				<h:commandButton styleClass="button-green view-button" value="PieCahrt" onclick="location.href='#popup2'"></h:commandButton>
+				<div id="hidden-content2" class="dontsee">
+					<ui:repeat var="lowProduct" value="#{products.lowStockProducts}">
+						<div class="row">
+							<div class="col-tab-4 col-desk-4 name">
+								<h:outputText value="#{lowProduct.name}" />
+							</div>
+							<div class="col-tab-4 col-desk-4 cstock">
+								<h:outputText value="#{lowProduct.currentStock}" />
+							</div>
+							<div class="col-tab-4 col-desk-4 lowLimit">
+								<h:outputText value="#{lowProduct.lowLimit}" />
+							</div>
+						</div>	
+					</ui:repeat>
+				</div>	
+				
+				<h:commandButton styleClass="button-green view-button" value="Stock Levels Pie Cahrt" onclick="location.href='#popup2'"></h:commandButton>
 				<div id="popup2" class="overlay">
 							<div class="popup">
 								<a class="close" href="#">X</a>
 								<div class="content">
-			<div id="piechart" style="width: 900px; height: 500px;"></div>
-				</div>
+						<div id="piechart" style="width: 900px; height: 500px;"></div>
+						</div>
 							</div>
 						</div>
 			
+			
+			<h:commandButton styleClass="button-green view-button" value="25 Lowest Stock Products" onclick="location.href='#popup3'"></h:commandButton>
+				<div id="popup3" class="overlay">
+							<div class="popup">
+								<a class="close" href="#">X</a>
+								<div class="content">
+								<div class="row">
+					  			<div id="chart_div" style="width: 900px; height: 500px;"></div>
+								</div>
+								</div>
+							</div>
+						</div>
+			</div>
 			</div>
 		
-		</div>
 	
 	<script>
-	//doc load
-	
-	//hidden-content
-	
+	//piechart
 	$(document).ready(function(){
-		
 		var products = [];
-		
-		
-		var axis = ['Name','Stock'];
-			
-			
-		
+		var axis = ['Name','Stock'];	
 		products.push(axis);
-		
-		
 		$('#hidden-content .row').each(function(){
-			
 			var prodname = $(this).find('.name').text().trim();
 			var prodstock = parseInt($(this).find('.stock').text().trim());
-			
 			var newProduct = [prodname,prodstock];
-			
-				
-				
-			
 			products.push(newProduct);
 		});
-		
 		products.forEach(function(x){
 			console.log(JSON.stringify(x));
 		});
-		
-		
-		
-	    google.charts.load('current', {'packages':['corechart']});
+		google.charts.load('current', {'packages':['corechart']});
 	    google.charts.setOnLoadCallback(drawChart);
 	    
-	    
-	    function drawChart() {
-
-    		var data = google.visualization.arrayToDataTable(products);
-
-	        var options = {
-	          title: 'Stock Levels'
-	        };
-
-	        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-	        chart.draw(data, options);
+	  	function drawChart() {
+			var data = google.visualization.arrayToDataTable(products);
+			var options = {
+	          title: 'Stock Levels'};
+			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+			chart.draw(data, options);
         }
-		
-		
-	});
-	
-	
 
-    </script>
-	
-	
-	
+    	//barchart
+	    var products2 = []
+		var axis2 = ['Name','Stock', 'LowLimit'];	
+		products2.push(axis2);
+		$('#hidden-content2 .row').each(function(){
+			var prodname2 = $(this).find('.name').text().trim();
+			var prodstock2 = parseInt($(this).find('.cstock').text().trim());
+			var prodlowlimit2 = parseInt($(this).find('.lowLimit').text().trim());
+			var newProduct2 = [prodname2,prodstock2,prodlowlimit2];
+			products2.push(newProduct2);
+		});
+		products2.forEach(function(y){
+			console.log(JSON.stringify(y));
+		});
+		
+		google.charts.load('current', {packages: ['corechart', 'bar']});
+		google.charts.setOnLoadCallback(drawMultSeries);
+		
+		function drawMultSeries() {
+		    var data2 = google.visualization.arrayToDataTable(products2);
+			var options2 = {
+		        title: 'Top 25 Low Stock Products Against their low limits',
+		        chartArea: {width: '50%'},
+		        hAxis: {title: 'Stock Level',minValue: 0},
+		        vAxis: {title: 'Product'}
+		      };
+			
+			var chart2 = new google.visualization.BarChart(document.getElementById('chart_div'));
+		    chart2.draw(data2, options2);
+		}
+	});
+		
+		</script>
 	</ui:define>
 </ui:composition>
