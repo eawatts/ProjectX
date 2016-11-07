@@ -455,6 +455,9 @@ public class OfflineDB {
 	
 	public List getSearchResults(String search, String searchList){
 
+
+
+	public List getSearchResults(String search, String searchList){
 		List results;
 		switch(searchList)
 		{
@@ -491,7 +494,7 @@ public class OfflineDB {
 		
 		return results;
 	}
-	
+
 }
 
 
