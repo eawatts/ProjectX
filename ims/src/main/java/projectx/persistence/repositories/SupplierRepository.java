@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import projectx.persistence.entities.Supplier;
 
+
 public interface SupplierRepository {
 	public Supplier findBySupplierName(String name);
 	public Supplier findBySupplierId(int id);

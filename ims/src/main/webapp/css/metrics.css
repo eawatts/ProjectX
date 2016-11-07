@@ -1,3 +1,4 @@
+@CHARSET "ISO-8859-1";
 @CHARSET "ISO-8859-1"
 .i {
 }
@@ -37,10 +38,6 @@
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
-}
-.see{
-	 visibility: visible;
-	 
 }
 .overlay {
   position: fixed;

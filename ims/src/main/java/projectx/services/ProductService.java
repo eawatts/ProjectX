@@ -10,32 +10,32 @@ import projectx.persistence.entities.Product;
 import projectx.persistence.repositories.ProductRepository;
 
 @Stateless
-public class ProductService {
-	
+public class ProductService{
 	@Inject
 	private ProductRepository productRepository;
-
-	public Product findProductById(String id) {
+	
+	public Product findProductById(String id)
+	{
 		return findProductById(Integer.parseInt(id));
 	}
-
-	public Product findProductById(int id) {
+	
+	public Product findProductById(int id)
+	{
 		return productRepository.findByProductId(id);
 	}
-
-	public List<Product> getProducts() {
+	public List<Product> getProducts() 
+	{
 		return productRepository.getProducts();
 	}
 
-	public void addProduct(Product p) {
+	public void addProduct(Product p){
 		productRepository.addProduct(p);
 	}
-
 	public List<Product> getLowStockProduct() {
 		return productRepository.getLowStockProducts();
 	}
-
-	public Product getProductbyID(int id) {
+	
+	public Product getProductbyID(int id){
 		return productRepository.findByProductId(id);
 	}
 
@@ -44,15 +44,16 @@ public class ProductService {
 		List<Product> top25LowStockProducts = new ArrayList<Product>();
 		orderedProducts = getLowStockProduct();
 		int listSize = orderedProducts.size();
-		if (listSize < 25) {
-
-		} else {
+		if(listSize < 25){
+			
+		}
+		else{
 			listSize = 25;
 		}
-		for (int i = 0; i < listSize; i++) {
-
+		for(int i=0; i<listSize; i++){
+	
 			top25LowStockProducts.add(orderedProducts.get(i));
 		}
 		return top25LowStockProducts;
 	}
-}
+} 

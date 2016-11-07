@@ -89,3 +89,9 @@ html {
   border-radius: 2px;
   border: 2px solid #A53F2B;
 }
+.custom-checkbox{
+	background-color:  #004425;
+}
+.table-row{
+	margin: 0;
+}
