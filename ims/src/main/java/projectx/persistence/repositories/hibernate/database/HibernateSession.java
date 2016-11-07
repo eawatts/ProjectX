@@ -8,7 +8,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import projectx.controllers.TestController.Product;
 import projectx.persistence.entities.Notification;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;

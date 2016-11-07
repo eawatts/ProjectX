@@ -10,19 +10,21 @@
     --sweet-sweet-brown: #a53f2b;
     --inline-width: 40%;
 }
-.page-title{
-	text-align: center;
-}
+
 .description{
-	text-align: center;
-	color:var( --sweet-sweet-brown);
+	text-align:left;
+	color:  #a53f2b;
 	font-size: 130%;	
 }
 .table-head{
 	font-size: 130%;
 	font-weight: bold;
+	color: #f9fbf2;
+	background-color: #004425;
+	border-bottom: 5px;
+	border-bottom-color: #a53f2b;
+	border-bottom-style: solid;
 }
-
 .sliderItem
 {
 	display:inline-block;

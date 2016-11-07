@@ -28,15 +28,17 @@
 body {
   background: #F9FBF2;
 }
-
-h1 {
-  text-align: center;
-  color: #666666;
-  margin: 80px 0;
-}
-
 h2 {
   text-align: center;
+}
+.header-row{
+	background-color: #004425;
+	color:#F9FBF2;
+	border-bottom: 5px;
+	border-bottom-color:  #a53f2b;
+	border-bottom-style: solid;
+	font-weight: bold;
+	font-size: 130%;
 }
 
 .button {
@@ -124,7 +126,10 @@ h2 {
     font-size: 24px;
     margin: 4px 2px;
     cursor: pointer;
-
+}
+.add-button{
+	float: right;
+	margin-right: 3%;
 }
 
 @media screen and (max-width: 700px){

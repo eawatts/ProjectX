@@ -4,15 +4,12 @@ import java.sql.Date;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-
 import org.hibernate.annotations.GenericGenerator;
-
 import projectx.persistence.util.OrderState;
 import projectx.persistence.util.OrderType;
 
 @Entity
 @Table(name = "order")
-
 @NamedQueries({
 /*		@NamedQuery(name = "Order.findByOrderType", query = "Select o FROM Order o  WHERE o.orderType= :orderType"),
 		@NamedQuery(name = "Order.findByUser", query = "Select o FROM Order o Join user u WHERE o.user= :user  "),
@@ -26,8 +23,9 @@ public class Order {
 	public static final String findByOrderType = "Order.findByOrderType";
 
 	@Id
-	@GeneratedValue()
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
+	@NotNull
 	private Integer id;
 
 	@ManyToOne

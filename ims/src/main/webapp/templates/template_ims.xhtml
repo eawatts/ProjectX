@@ -21,10 +21,12 @@
 	<link rel="stylesheet" type="text/css"
 		href="css/font-awesome/css/font-awesome.min.css"></link>
 	<ui:insert name="custom-css" />
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="https://www.gstatic.com/charts/loader.js"></script>
+
 </h:head>
 
 <f:view>
@@ -40,6 +42,7 @@
 										alt="NB Gardens Logo" width="100" height="100"></h:graphicImage></a>
 							</div>
 							<div class="col-tab-8 col-desk-8 nav-banner-center">
+
 								<!-- NOTIFICATIONS - PURCHASE ORDER PENDING -->
 								<h:panelGroup
 									rendered="#{notifications.purchaseOrderPendingNotifications.size() eq 0}">
@@ -375,52 +378,64 @@
 							</div>
 						</div>
 					</div>
-						<div class="row">
-			<div class="search">
-			<h:form>
-				<h:inputText styleClass="searchinput" value="#{search.parameter}"><f:ajax event="click" execute="@form" /></h:inputText>
-			
-				<h:selectOneMenu sytleclass="searchselect" value="#{search.category}">
-					<f:selectItem itemValue="purchase order" itemLabel="Purchase Orders"/>
-					<f:selectItem itemValue="product" itemLabel="Product"/>
-					<f:selectItem itemValue="supplier" itemLabel="supplier"/>
-				</h:selectOneMenu>
-				
-				<h:commandButton styleClass ="searchbutton" value="search" action="#{search.search}"></h:commandButton>
-			</h:form>
-			</div>
-			</div>
-					<div class="nav-links">
-					<h:form>
-						<div id="nav-desktop">
-							<ul class="dropdown-all-buttons">
-								<li class="dropdown-category"><a href="index.xhtml"
-									class="dropdown-button active">Home</a></li>
-								<li class="dropdown-category">
-									<div class="dropdown-button">Purchase Order</div>
-									<div class="dropdown-content">
-										<a href="purchase_order_create.xhtml"
-											class="dropdown-sub-button">Create Purchase Order</a> <a
-											href="purchase_order_edit.xhtml" class="dropdown-sub-button">Edit
-											Purchase Order</a> <h:commandLink styleClass="dropdown-button" value="View Purchase Orders" action="#{search.clearPurchaseResults}"></h:commandLink>
-									</div>
-								</li>
-								<li class="dropdown-category">
-								
-								<h:commandLink styleClass="dropdown-button" value="Product" action="#{search.clearProductResults}"></h:commandLink>
-								
-								</li>
-								<li class="dropdown-category"><a href="metrics.xhtml"
-									class="dropdown-button">Metrics</a></li>
-								<li class="dropdown-category"><h:commandLink styleClass="dropdown-button" value="View Suppliers" action="#{search.clearSupplierResults}"></h:commandLink></li>
-							</ul>
+					<div class="row">
+						<div class="search">
+							<h:form>
+								<div class="col-tab-6 col-desk-6">
+									<h:inputText styleClass="searchinput"
+										value="#{search.parameter}" placeholder="Enter your search here...">
+										<f:ajax event="click" execute="@form" />
+									</h:inputText>
+								</div>
+								<div class="col-tab-6 col-desk-6">
+									<h:selectOneMenu sytleclass="searchselect"
+										value="#{search.category}">
+										<f:selectItem itemValue="purchase order"
+											itemLabel="Purchase Orders" />
+										<f:selectItem itemValue="product" itemLabel="Product" />
+										<f:selectItem itemValue="supplier" itemLabel="Supplier" />
+									</h:selectOneMenu>
+									<h:commandButton styleClass="searchbutton button-green-inverse" value="Search"
+										action="#{search.search}"></h:commandButton>
+								</div>
+							</h:form>
 						</div>
+					</div>
+
+					<div class="nav-links">
+						<h:form>
+							<div id="nav-desktop">
+								<ul class="dropdown-all-buttons">
+									<li class="dropdown-category"><a href="index.xhtml"
+										class="dropdown-button active">Home</a></li>
+									<li class="dropdown-category">
+										<div class="dropdown-button">Purchase Order</div>
+										<div class="dropdown-content">
+											<a href="purchase_order_create.xhtml"
+												class="dropdown-sub-button">Create Purchase Order</a> <a
+												href="purchase_order_edit.xhtml" class="dropdown-sub-button">Edit
+												Purchase Order</a>
+											<h:commandLink styleClass="dropdown-button"
+												value="View Purchase Orders"
+												action="#{search.clearPurchaseResults}"></h:commandLink>
+										</div>
+									</li>
+									<li class="dropdown-category"><h:commandLink
+											styleClass="dropdown-button" value="Product"
+											action="#{search.clearProductResults}"></h:commandLink></li>
+									<li class="dropdown-category"><a href="metrics.xhtml"
+										class="dropdown-button">Metrics</a></li>
+									<li class="dropdown-category"><h:commandLink
+											styleClass="dropdown-button" value="View Suppliers"
+											action="#{search.clearSupplierResults}"></h:commandLink></li>
+								</ul>
+							</div>
 						</h:form>
 					</div>
 
 				</nav>
 			</div>
-		
+
 		</header>
 
 		<!-- This is the content of the actual page. -->
@@ -459,21 +474,21 @@
 					<div id="footer-right">
 						<ul class="footer-sitemap-list">
 							<li class="footer-sitemap-category"><p
-								class="footer-sitemap-category-header">Pages</p>
+									class="footer-sitemap-category-header">Pages</p>
 								<div class="footer-sitemap-sub-category-list">
 									<a class="footer-sitemap-sub-category" href="help.xhtml">Help</a>
 									<a class="footer-sitemap-sub-category" href="metrics.xhtml">Metrics</a>
-									<a class="footer-sitemap-sub-category" href="products.xhtml">Products</a>
+									<a class="footer-sitemap-sub-category" href="product.xhtml">Product</a>
 									<a class="footer-sitemap-sub-category" href="suppliers.xhtml">Suppliers</a>
 								</div></li>
 							<li class="footer-sitemap-category"><p
-								class="footer-sitemap-category-header">Purchase Orders</p>
+									class="footer-sitemap-category-header">Purchase Orders</p>
 								<div class="footer-sitemap-sub-category-list">
 									<a class="footer-sitemap-sub-category"
-										href="purchase_order_create.xhtml">Create Purchase Order</a>
-									<a class="footer-sitemap-sub-category"
-										href="purchase_order_edit.xhtml">Edit Purchase Order</a>
-										 <a class="footer-sitemap-sub-category"
+										href="purchase_order_create.xhtml">Create Purchase Order</a> <a
+										class="footer-sitemap-sub-category"
+										href="purchase_order_edit.xhtml">Edit Purchase Order</a> <a
+										class="footer-sitemap-sub-category"
 										href="purchase_order_view.xhtml">View Purchase Order</a>
 								</div></li>
 						</ul>
