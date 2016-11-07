@@ -11,28 +11,31 @@ sweet sweet brown = #a53f2b
 }
 
 .searchinput{
-	position:relative;
-	left:50px;
+	margin-left: 53%;
 	font-size:18px;
-	width:70%;
-	padding: 8px 5px; 
-	color: #004425;
-	
+	color: #272727;
+	width:51%;
+	height: 30px;
+	background-color: #f9fbf2;
+	border: 1px;
+	border-radius: 2px;
 }
 
 select{
-	position:relative;
-	left:0px;
-	
+	margin-left:1%;
+	margin-right:2px;
 	height:30px;
-
+	width:20%;
+	background-color: #f9fbf2;
+	border-radius: 2px;
 }
 
 .searchbutton{
-	position:relative;
-	left:30px;
-	width:15%;
+	width:20%;
 	height: 30px;
-	
-	border:10px
+	border:2px;
+	border-color:  #f9fbf2;
+	border-style: solid;
+	font-weight: bold;
+	font-size:14px;
 }
