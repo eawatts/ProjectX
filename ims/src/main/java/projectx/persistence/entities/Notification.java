@@ -3,28 +3,44 @@ package projectx.persistence.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.GenericGenerator;
 
 import projectx.persistence.util.NotificationType;
 
 @Entity
 @Table(name = "notification")
 
-@NamedQueries ({
+@NamedQueries({
+	@NamedQuery(name = Notification.FIND_NOTIFICATIONS_BY_TYPE, query = "SELECT n FROM Notification n WHERE n.type = :type")
 })
 
 public class Notification {
+	
+	public static final String FIND_NOTIFICATIONS_BY_TYPE = "Supplier.findNotificationsByType";
 
+	@Id
+	@GeneratedValue()
+	@Column(name = "id", nullable = false)
+	private Integer id;
+
+	@NotNull
+	@Column(name = "type", nullable = false)
+	private NotificationType type;
+
+	@Column(name = "details")
+	@Size(max = 250)
+	private String details;
+	
 	public Notification() {
 	}
-	
+
 	public Notification(Integer id, NotificationType type, String details) {
 		super();
 		this.id = id;
@@ -32,21 +48,6 @@ public class Notification {
 		this.details = details;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
-	@NotNull
-	private Integer id;
-
-	@ManyToOne
-	@JoinColumn(name = "type", nullable = false)
-	@NotNull
-	private NotificationType type;
-	
-	@Column(name = "details")
-	@Size(max = 250)
-	private String details;
-	
 	public Integer getId() {
 		return id;
 	}

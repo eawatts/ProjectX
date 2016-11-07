@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -40,7 +39,7 @@ public class Review {
 	@Id
 	@Column(name = "id", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name = "rating", nullable = false)
 	@NotNull
@@ -51,19 +50,19 @@ public class Review {
 	private String comment;
 
 	@ManyToOne
-	@JoinColumn(name = "user_id", nullable = false)
+	@JoinColumn(name = "reviewer", nullable = false)
 	@NotNull
 	private User reviewer;
 
 	@ManyToOne
-	@JoinColumn(name = "product_id", nullable = false)
+	@JoinColumn(name = "product", nullable = false)
 	@NotNull
 	private Product product;
 
 	public Review() {
 	}
 	
-	public Review(int id, Long rating, String comment, User reviewer, Product product) {
+	public Review(Integer id, Long rating, String comment, User reviewer, Product product) {
 		super();
 		this.id = id;
 		this.rating = rating;
@@ -72,8 +71,12 @@ public class Review {
 		this.product = product;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public Long getRating() {
@@ -96,7 +99,15 @@ public class Review {
 		return reviewer;
 	}
 
+	public void setReviewer(User reviewer) {
+		this.reviewer = reviewer;
+	}
+
 	public Product getProduct() {
 		return product;
 	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}	
 }

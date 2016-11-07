@@ -9,7 +9,7 @@ import projectx.persistence.entities.PurchaseOrder;
 
 @SuppressWarnings("serial")
 @SessionScoped
-@Named("selected")
+@Named("selected_purchase_order")
 public class SelectedPurchaseOrder implements Serializable{
 	private PurchaseOrder selectedpurchaseOrder;
 

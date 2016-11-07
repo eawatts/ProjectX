@@ -36,7 +36,7 @@ public class OfflineDB {
 	private List<Notification> notifications;
 	private ArrayList<Supplier> suppliers;
 	private ArrayList<PurchaseOrder> purchaseOrders;
-	private List<ProductsOrdered> productsOrdered;
+	private ArrayList<ProductsOrdered> productsOrdered;
 	private ArrayList<String> p1imgs;
 	
 
@@ -99,6 +99,10 @@ public class OfflineDB {
 		paymentDetails.add(new PaymentDetails(1,
 				new User(1, "hello", "password", "firstname", "lastname", UserLevel.CUSTOMER, "username@email.com"),
 				"89012345", "123456"));
+		
+		productsOrdered = new ArrayList<ProductsOrdered>();
+		productsOrdered.add(new ProductsOrdered());
+		productsOrdered.add(new ProductsOrdered());
 
 		purchaseOrders = new ArrayList<PurchaseOrder>();
 		PurchaseOrder purchaseOrder1 = new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"),

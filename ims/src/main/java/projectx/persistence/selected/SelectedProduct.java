@@ -8,7 +8,7 @@ import javax.inject.Named;
 import projectx.persistence.entities.Product;
 
 @SessionScoped
-@Named("selected")
+@Named("selected_product")
 public class SelectedProduct implements Serializable
 {
 	private static final long serialVersionUID = 7762864582284913362L;
