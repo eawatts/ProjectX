@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.repositories.PurchaseOrderRepository;
 import projectx.persistence.repositories.offline.database.OfflineDB;
+import projectx.persistence.webentities.PurchaseOrderProduct;
 
 @Stateless
 @Default
@@ -54,5 +55,11 @@ public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
 	@Override
 	public void updatePurchaseOrder(PurchaseOrder purchaseOrder) {
 		initialData.updatePurchaseOrders(purchaseOrder);
+	}
+
+	@Override
+	public List<PurchaseOrderProduct> createPurchaseOrderEntry() {
+		return initialData.createPurchaseOrderEntry();
+		
 	}
 }

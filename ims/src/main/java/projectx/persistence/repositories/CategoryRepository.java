@@ -1,14 +1,8 @@
 package projectx.persistence.repositories;
 
 import java.util.List;
-
-import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
-
 import projectx.persistence.entities.Category;
 
-@Stateless
-@Default
 public interface CategoryRepository
 {
 	

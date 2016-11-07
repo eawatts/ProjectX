@@ -1,0 +1,37 @@
+.option{
+	  display: none;
+}
+
+.suboption{
+	display:none;
+}
+
+.Header:link{
+	font-weight: bold;
+	text-decoration: none;
+	color:#272727;
+	font-size:20px;
+}
+
+
+.Header:hover{
+	font-weight: bold;
+	text-decoration: none;
+	color:#fed766;
+	font-size:20px;
+}
+
+.subheading:link{
+	font-weight: bold;
+	text-decoration: none;
+	color:#272727;
+	font-size:16px;
+}
+
+
+.subheading:hover{
+	font-weight: bold;
+	text-decoration: none;
+	color:#fed766;
+	font-size:16px;
+}

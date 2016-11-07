@@ -1,23 +1,24 @@
-package projectx.persistence.repositories.offline;
+package projectx.persistence.repositories.hibernate;
 
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
+import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.Notification;
 import projectx.persistence.repositories.NotificationRepository;
-import projectx.persistence.repositories.offline.database.OfflineDB;
+import projectx.persistence.repositories.hibernate.database.HibernateDatabase;
 import projectx.persistence.util.NotificationType;
 
 @Stateless
-@Default
-public class NotificationRepositoryOffline implements NotificationRepository{
+@Alternative // This can be used by changing beans.xml
 
+public class NotificationRepositoryHibernate implements NotificationRepository {
+	
 	@Inject
-	private OfflineDB db;
-		
+	private HibernateDatabase db;
+
 	@Override
 	public List<Notification> getNotifications() {
 		return db.getNotifications();
@@ -30,16 +31,16 @@ public class NotificationRepositoryOffline implements NotificationRepository{
 
 	@Override
 	public void persistNotification(Notification notification) {
-		// TODO Auto-generated method stub
+		db.persistNotification(notification);
 	}
 
 	@Override
 	public void persistNotifications(List<Notification> notifications) {
 		// TODO Auto-generated method stub
 	}
-
+	
 	@Override
 	public void dismiss(Notification notification) {
-		db.dismissNotification(notification);
+		db.dismiss(notification);
 	}
 }

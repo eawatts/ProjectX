@@ -44,7 +44,7 @@ public class ProductController implements Serializable
 	}
 
 
-	public List getProductList()
+	public List<Product> getProductList()
 	{	
 		if(searchController.getSearchResults() != null && searchController.getSearchResults().size() > 0 && searchController.getSearchResults().get(0) instanceof Product)
 		{
@@ -106,6 +106,10 @@ public class ProductController implements Serializable
 	public List<Product> getTop25LowStockProducts()
 	{
 		return productService.getTop25LowStockProducts();
+	}
+
+	public List<Product> getProducts(){
+		return productService.getProducts();
 	}
 
 }
