@@ -14,19 +14,21 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
 
+import projectx.persistence.util.UserLevel;
+
 @NamedQueries (
 	{
-		@NamedQuery (name = User.SAVE_USER, query = ""),
+/*		@NamedQuery (name = User.SAVE_USER, query = ""),
 		@NamedQuery (name = User.SAVE_USERS, query = ""),
 		@NamedQuery (name = User.GET_USERS, query = ""),
 		@NamedQuery (name = User.UPDATE_USER, query = ""),
 		@NamedQuery (name = User.FIND_BY_USERNAME, query = "SELECT u FROM User u WHERE u.username = :username"),
-		@NamedQuery (name = User.CHECK_PASSWORD, query = "")
+		@NamedQuery (name = User.CHECK_PASSWORD, query = "")*/	
 	}
 )
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class User {
 	
 	public static final String SAVE_USER = "User.saveUser";
@@ -37,9 +39,9 @@ public class User {
 	public static final String CHECK_PASSWORD = "User.checkPassword";
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
+	@Column(name = "id")
 	private int id;
-		
+
 	@Column(name = "username", length = 30, nullable = false)
 	private String username;
 	
@@ -52,9 +54,6 @@ public class User {
 	@Column(name = "surname", length = 50, nullable = false)
 	private String surname;
 	
-	@ManyToOne
-	@MapsId
-	@JoinColumn(name = "")
 	@Column(name = "user_level", nullable = false)
 	private UserLevel userLevel;
 	
