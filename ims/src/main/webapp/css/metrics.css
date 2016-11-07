@@ -39,6 +39,10 @@
   visibility: hidden;
   opacity: 0;
 }
+.see{
+	 visibility: visible;
+	 
+}
 .overlay {
   position: fixed;
   top: 0;
