@@ -21,6 +21,10 @@
 	<link rel="stylesheet" type="text/css"
 		href="css/font-awesome/css/font-awesome.min.css"></link>
 	<ui:insert name="custom-css" />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	
 </h:head>
 
 <f:view>
@@ -388,6 +392,7 @@
 			</div>
 			</div>
 					<div class="nav-links">
+					<h:form>
 						<div id="nav-desktop">
 							<ul class="dropdown-all-buttons">
 								<li class="dropdown-category"><a href="index.xhtml"
@@ -398,18 +403,20 @@
 										<a href="purchase_order_create.xhtml"
 											class="dropdown-sub-button">Create Purchase Order</a> <a
 											href="purchase_order_edit.xhtml" class="dropdown-sub-button">Edit
-											Purchase Order</a> <a href="purchase_order_view.xhtml"
-											class="dropdown-sub-button">View Purchase Order</a>
+											Purchase Order</a> <h:commandLink styleClass="dropdown-button" value="View Purchase Orders" action="#{search.clearPurchaseResults}"></h:commandLink>
 									</div>
 								</li>
-								<li class="dropdown-category"><a href="products.xhtml"
-									class="dropdown-button">Product</a></li>
+								<li class="dropdown-category">
+								
+								<h:commandLink styleClass="dropdown-button" value="Product" action="#{search.clearProductResults}"></h:commandLink>
+								
+								</li>
 								<li class="dropdown-category"><a href="metrics.xhtml"
 									class="dropdown-button">Metrics</a></li>
-								<li class="dropdown-category"><a href="suppliers.xhtml"
-									class="dropdown-button">Suppliers</a></li>
+								<li class="dropdown-category"><h:commandLink styleClass="dropdown-button" value="View Suppliers" action="#{search.clearSupplierResults}"></h:commandLink></li>
 							</ul>
 						</div>
+						</h:form>
 					</div>
 
 				</nav>
@@ -452,22 +459,22 @@
 				<div class="col-tab-12 col-desk-12">
 					<div id="footer-right">
 						<ul class="footer-sitemap-list">
-							<li class="footer-sitemap-category"><a
-								class="footer-sitemap-category-header">Help</a>
+							<li class="footer-sitemap-category"><p
+								class="footer-sitemap-category-header">Pages</p>
 								<div class="footer-sitemap-sub-category-list">
 									<a class="footer-sitemap-sub-category" href="help.xhtml">Help</a>
 									<a class="footer-sitemap-sub-category" href="metrics.xhtml">Metrics</a>
 									<a class="footer-sitemap-sub-category" href="product.xhtml">Product</a>
 									<a class="footer-sitemap-sub-category" href="suppliers.xhtml">Suppliers</a>
 								</div></li>
-							<li class="footer-sitemap-category"><a
-								class="footer-sitemap-category-header">Purchase Orders</a>
+							<li class="footer-sitemap-category"><p
+								class="footer-sitemap-category-header">Purchase Orders</p>
 								<div class="footer-sitemap-sub-category-list">
 									<a class="footer-sitemap-sub-category"
-										href="purchase_order_create.xhtml">Generate Purchase Order</a>
+										href="purchase_order_create.xhtml">Create Purchase Order</a>
 									<a class="footer-sitemap-sub-category"
-										href="purchase_order_edit.xhtml">Edit Purchase Order</a> <a
-										class="footer-sitemap-sub-category"
+										href="purchase_order_edit.xhtml">Edit Purchase Order</a>
+										 <a class="footer-sitemap-sub-category"
 										href="purchase_order_view.xhtml">View Purchase Order</a>
 								</div></li>
 						</ul>

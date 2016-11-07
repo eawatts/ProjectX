@@ -1,0 +1,79 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
+	<meta charset="utf-8" />
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/help.css" />
+	</ui:define>
+	<ui:define name="title">Help</ui:define>
+	<ui:define name="main-content">
+		<div class="main-content">
+			<div class="breadcrumbs">
+					<a href="index.xhtml">IMS</a> > <a href="suppliers.xhtml">Help</a>
+			</div>
+			<div>
+				<div class="row">
+					<div id="Title">
+						<h1>Help</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div id="heading">
+						<a class="Header" href="javascript:showonlyone('option1');">Notifications</a>
+					</div>
+					<div class="option" id="option1">
+						<div class="row">
+							<a class="subheading" href="javascript:showonlyonesub('suboption1');">Why are there yellow symbols at the top?</a>
+							<div class="suboption" id="suboption1">
+							<p>This shows there are warnings to do with this area that need to be looked at and are usually important</p>
+							</div>
+						</div>
+						<div class="row">
+							<a class="subheading" href="javascript:showonlyonesub('suboption2');">How do I stop the symbols being yellow?</a>
+							<div class="suboption" id="suboption2">
+							<p>Hover over your choosen symbol and then click the x button next to the notification once it has been read.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div id="heading">
+						<a class="Header" href="javascript:showonlyone('option2');">Purchase Orders </a>
+					</div>
+					<div class="option" id="option2">
+						<div class="row">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div id="heading">
+						<a class="Header" href="javascript:showonlyone('option3');">Products </a>
+					</div>
+					<div class="option" id="option3">
+						<div class="row">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div id="heading">
+						<a class="Header" href="javascript:showonlyone('option4');">Suppliers </a>
+					</div>
+					<div class="option" id="option4">
+						<div class="row">
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+			</div>
+		</div>
+	</ui:define>
+	<ui:define name="custom-scripts">
+		<script type="text/javaScript" src="js/help-accordian.js"></script>
+	</ui:define>
+</ui:composition>
