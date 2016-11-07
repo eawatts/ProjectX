@@ -1,5 +1,5 @@
 @CHARSET "ISO-8859-1";
-.navinav{
+img.navinav{
 	max-width:100%;
 }
 
@@ -7,7 +7,7 @@
 	margin: auto;
   display:table;
   width:auto;         
-  max-width:100%;         
+  max-width:80%;         
   background-color:#eee;         
   border:1px solid  #666666;         
   border-spacing:5px;/*cellspacing:poor IE support for  this*/
