@@ -14,55 +14,54 @@
 		<div class="pageheading">
 			<h2>Create Purchase Order</h2>
 		</div>
-		<div class="poheaders">
-			<div class="row">
-				<div class="col-desk-2 col-tab-2">Product Name</div>
-				<div class="col-desk-2 col-tab-2">Id</div>
-				<div class="col-desk-2 col-tab-2">Quantity</div>
-				<div class="col-desk-2 col-tab-2">Current Stock</div>
-				<div class="col-desk-2 col-tab-2">Supplier</div>
-				<div class="col-desk-2 col-tab-2">Confirm</div>
-			</div>
-		</div>
-		<form>
-			<div class="poItems">
-				<div class="poitem">
-					<div class="row">
-						<div class="col-desk-2 col-tab-2">
-							<select name="productID">
-								<ui:repeat var="productToBuy" value="#{products.lowStockProducts}">
-									<option value="productToBuy"><h:outputText value="#{productToBuy.name}"/></option>
-								</ui:repeat>
-							</select>
-						</div>
-						<div class="col-desk-2 col-tab-2">
-							<input type="text" disabled="disabled" value="Product A" />
-						</div>
-						<div class="col-desk-2 col-tab-2">
-							<input type="number" name="quantity" min="0" max="999" />
-						</div>
-						<div class="col-desk-2 col-tab-2">
-							<input type="text" disabled="disabled" value="100000" />
-						</div>
-						<div class="col-desk-2 col-tab-2">
-							<input type="text" disabled="disabled" value="Delivered" />
-						</div>
-						<div class="col-desk-2 col-tab-2">
-							<input type="checkbox" name="confirm" checked="checked" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</form>
-		<div class="Controls">
-			<div class="add-generatePO">
-				<div class="row">
-					<div class="col-desk-6 col-tab-6"></div>
 
-					<div class="col-desk-6 col-tab-6">
-						<button name="createPO">Create New Purchase Order</button>
+		<div class="row">
+			<div class="col-desk-4 col-tab-4">Product</div>
+			<div class="col-desk-2 col-tab-2">Supplier</div>
+			<div class="col-desk-2 col-tab-2">Quantity</div>
+			<div class="col-desk-2 col-tab-2">Add new product</div>
+		</div>
+		<hr />
+		<ui:repeat id="purchaseOrdertable" var="purchase-order-row"
+			value="#{current_session.pendingPurchaseOrder.purchaseOrderContents}">
+			<h:form>
+
+				<div class="row">
+					<div class="col-desk-4 col-tab-4">
+
+						<h:selectOneMenu sytleclass="searchselect" value="#{search.category}">
+							<ui:repeat var="dropdownproduct" value="#{products.products}">
+								<f:selectItem itemValue="#{dropdownproduct.name} - #{dropdownproduct.price}" itemLabel="#{dropdownproduct.name} - #{dropdownproduct.price}"/>	
+							</ui:repeat>
+						</h:selectOneMenu>
+					
+					</div>
+					<div class="col-desk-2 col-tab-2">
+						<select>
+							<ui:repeat var="supplier" value="#{suppliers.suppliersList}">
+								<option value="#{supplier.name}"><h:outputText value="#{supplier.name}"/></option>
+							</ui:repeat>
+						</select>
+					</div>
+					<div class="col-desk-2 col-tab-2">
+						<h:inputText styleClass="quantity" type="number"
+							value="#{purchase_order_product.quantity}" />
+					</div>
+					<div class="col-desk-2 col-tab-2">
+						<h:commandButton styleClass="button-green"
+							value="Add this line to order" action="purchaseOrder.addRow)" />
 					</div>
 				</div>
+			</h:form>
+		</ui:repeat>
+		<br />
+		<div class="row">
+			<div class="col-desk-12 col-tab-12">
+				<h:form>
+					<h:commandButton styleClass="button-green"
+						value="Add another Product"
+						action="#{current_session.pendingPurchaseOrder.newRowToPurchaseOrder}" />
+				</h:form>
 			</div>
 		</div>
 	</ui:define>

@@ -22,6 +22,7 @@ import projectx.persistence.entities.User;
 import projectx.persistence.util.NotificationType;
 import projectx.persistence.util.OrderState;
 import projectx.persistence.util.UserLevel;
+import projectx.persistence.webentities.PurchaseOrderProduct;
 
 @Startup
 @Singleton
@@ -453,6 +454,7 @@ public class OfflineDB {
 		notifications.remove(notification);
 	}
 
+
 	public List getSearchResults(String search, String searchList){
 
 		List results;
@@ -491,5 +493,7 @@ public class OfflineDB {
 		
 		return results;
 	}
+
 }
+
 
