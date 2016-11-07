@@ -1,7 +1,9 @@
-body {
-	background-color: #004425;
+@CHARSET "ISO-8859-1";
+
+body{
+	background-color:#004425;
 }
 
-.row {
-	float: center;
+.row{
+	float:center;
 }

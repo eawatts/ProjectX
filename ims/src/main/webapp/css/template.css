@@ -1,58 +1,17 @@
 .nav-logo-ims {
-	max-width: 100px;
-	max-height: 100px;
+  max-width:100px;
+  max-height: 100px;
 }
-
-.nav-banner-left {
-	background-color: #004425;
-	display: inline-block;
+.banner-left{
+  background-color:#004425;
+  display: inline-block;
 }
-
-.nav-banner-right {
-	
+.banner-center{
+  background-color:#004425;
+  position:center;
 }
-
-.nav-banner-center {
-	background-color: #004425;
-	align-content: center;
-	height: 100px;
-	vertical-align: middle;
-}
-
-.notification-icon {
-	font-size: 250%;
-	text-align: center;
-	width: 12.5%;
-	margin-top: 30px;
-	opacity: 0.2;
-}
-
-.notification-icon.active-white {
-	color: #f9fbf2;
-	opacity: 1;
-}
-
-.notification-icon.active-brown {
-	color: a53f2b;
-	opacity: 1;
-}
-
-.notification-icon.active-yellow {
-	color: #fed766;
-	opacity: 1;
-}
-
-.noti-ims {
-	max-width: 40px;
-	max-height: 40px;
-}
-
-.header{
-	text-align:center;
-	background-color: #f9fbf2;
-}
-
-.login-redirect{
-	text-align: center;
-	
+.notification-center{background-color: #000000}
+.noti-ims{
+  max-width:40px;
+  max-height: 40px;
 }

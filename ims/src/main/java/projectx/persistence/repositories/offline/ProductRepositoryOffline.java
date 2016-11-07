@@ -15,52 +15,47 @@ import projectx.persistence.repositories.offline.database.OfflineDB;
 public class ProductRepositoryOffline implements ProductRepository {
 
 	@Inject
-	OfflineDB initialData;
-	
+	OfflineDB offlineDB;
+
 	@Override
 	public void persistProduct(Product products) {
-		initialData.addProduct(products);
-
+		offlineDB.addProduct(products);
 	}
 
 	@Override
 	public void persistProducts(List<Product> products) {
-		for(Product p: products)
-		{
-			initialData.addProduct(p);
+		for (Product p : products) {
+			offlineDB.addProduct(p);
 		}
-
 	}
 
 	@Override
 	public List<Product> getProducts() {
-		return initialData.getProducts();
+		return offlineDB.getProducts();
 	}
-	
-	public void addProduct(Product p){
-		initialData.addProduct(p);
+
+	public void addProduct(Product p) {
+		offlineDB.addProduct(p);
 	}
 
 	@Override
-	public void updateProduct(Product products) 
-	{
-		initialData.updateProduct(products);
+	public void updateProduct(Product products) {
+		offlineDB.updateProduct(products);
 	}
 
 	@Override
 	public Product findByProductId(int productId) {
-		return initialData.getProductByID(productId);
+		return offlineDB.getProductByID(productId);
 	}
 
 	@Override
-	public Product findByProductName(String name) 
-	{
-		return initialData.findProductByName(name);
+	public Product findByProductName(String name) {
+		return offlineDB.findProductByName(name);
 	}
 
 	@Override
 	public List<Product> getLowStockProducts() {
-		return initialData.getLowStockProducts();
+		return offlineDB.getLowStockProducts();
 	}
 
 }

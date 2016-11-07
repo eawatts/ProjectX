@@ -1,13 +1,11 @@
-:root
-{
-	--raisin-black: #272727;
-    --floral-white: #f9fbf2;
-    --orange-yellow: #fed766;
-    --british-racing-green: #004425;
-    --sweet-sweet-brown: #a53f2b;
-    --inline-width: 40%;
+.div-table{
+  margin: auto;
+  display:table;         
+  width:auto;         
+  background-color:#eee;         
+  border:1px solid  #666666;         
+  border-spacing:5px;/*cellspacing:poor IE support for  this*/
 }
-
 .styled-select select {
   background: transparent;
   width: 240px;
@@ -34,22 +32,20 @@
 .custom-title{
 	text-align: center;
 }
-
 .product-row{
   margin: auto;
-  width: auto;
-  display:block;
-  text-align: center;
-  box-sizing: border-box;
-  height: 20px;
+  float:left;/*fix for  buggy browsers*/
+  display:inline-block;                  
+  background-color:#ccc; 
+  padding-bottom: 10px;
+  border: 1px solid #666666;` 	
 }
 .page-title h2{
   margin: auto;
   text-align: center;
-  box-sizing: border-box;
 }
 .overlay{
-  position: fixed;
+	position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -89,12 +85,4 @@
 }
 .popup .close:hover {
   color: #004425;
-}
-.view-button{
-	margin:5px;
-}
-.bottom-row{
-	text-align: right;
-	float: right;
-	margin-right: 13%
 }

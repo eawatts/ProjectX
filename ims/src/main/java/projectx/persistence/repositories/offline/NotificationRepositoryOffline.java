@@ -17,7 +17,7 @@ public class NotificationRepositoryOffline implements NotificationRepository{
 
 	@Inject
 	private OfflineDB db;
-	
+		
 	@Override
 	public List<Notification> getNotifications() {
 		return db.getNotifications();

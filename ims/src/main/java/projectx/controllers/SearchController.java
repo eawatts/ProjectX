@@ -41,8 +41,8 @@ public class SearchController implements Serializable {
 		} else {
 			return null;
 		}
-		return null;
 
+		return null;
 	}
 
 	public String getParameter() {

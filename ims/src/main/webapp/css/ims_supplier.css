@@ -1,8 +1,29 @@
 @CHARSET "ISO-8859-1";
-.navinav{
+img.navinav{
 	max-width:100%;
 }
 
+.div-table{
+	margin: auto;
+  display:table;
+  width:auto;         
+  max-width:80%;         
+  background-color:#eee;         
+  border:1px solid  #666666;         
+  border-spacing:5px;/*cellspacing:poor IE support for  this*/
+}
+.div-table-row{
+  display:table-row;
+  width:auto;
+  clear:both;
+  min-width:100%;
+}
+.div-table-col{
+  float:left;/*fix for  buggy browsers*/
+  display:table-column;         
+  width:auto;         
+  background-color:#ccc;  
+}
 
 body {
   background: #F9FBF2;

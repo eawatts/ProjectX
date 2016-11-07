@@ -14,8 +14,6 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
 
-import projectx.persistence.util.UserLevel;
-
 @NamedQueries (
 	{
 		@NamedQuery (name = User.SAVE_USER, query = ""),
@@ -24,7 +22,6 @@ import projectx.persistence.util.UserLevel;
 		@NamedQuery (name = User.UPDATE_USER, query = ""),
 		@NamedQuery (name = User.FIND_BY_USERNAME, query = "SELECT u FROM User u WHERE u.username = :username"),
 		@NamedQuery (name = User.CHECK_PASSWORD, query = "")
-		
 	}
 )
 
@@ -42,7 +39,7 @@ public class User {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
 	private int id;
-
+		
 	@Column(name = "username", length = 30, nullable = false)
 	private String username;
 	
