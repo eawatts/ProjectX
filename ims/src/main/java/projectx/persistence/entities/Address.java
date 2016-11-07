@@ -39,7 +39,6 @@ public class Address {
 
 	@Id
 	@GeneratedValue()
-	@GenericGenerator(name = "increment", strategy = "increment")
 	@Column(name = "id", nullable = false)
 	private int id;
 

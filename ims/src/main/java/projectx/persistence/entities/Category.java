@@ -35,7 +35,6 @@ public class Category {
 	
 	@Id
 	@GeneratedValue()
-	@GenericGenerator(name = "increment", strategy = "increment")
 	@Column(name = "id", nullable = false)
 	private int categoryID;
 

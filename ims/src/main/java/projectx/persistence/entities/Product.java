@@ -20,7 +20,6 @@ public class Product {
 
 	@Id
 	@GeneratedValue()
-	@GenericGenerator(name = "increment", strategy = "increment")
 	@Column(name = "id", nullable = false)
 	private Integer id;
 

@@ -38,7 +38,6 @@ public class PaymentDetails {
 
 	@Id
 	@GeneratedValue()
-	@GenericGenerator(name = "increment", strategy = "increment")
 	@Column(name = "id", nullable = false)
 	private int id;
 

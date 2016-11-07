@@ -16,7 +16,7 @@ public class HibernateDatabaseSeed {
 	public static void seedDatabase(Session session) {
 		seedUsers(session);
 		seedNotifications(session);
-		seedSuppliersAndProducts(session);
+		//seedSuppliersAndProducts(session);
 
 		session.close();
 	}

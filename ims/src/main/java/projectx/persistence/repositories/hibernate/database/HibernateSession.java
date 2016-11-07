@@ -61,7 +61,7 @@ public class HibernateSession {
 		configuration.addAnnotatedClass(User.class);
 		configuration.addAnnotatedClass(Notification.class);
 		configuration.addAnnotatedClass(Supplier.class);
-		configuration.addAnnotatedClass(Product.class);
+		//configuration.addAnnotatedClass(Product.class);
 		// TODO: Add an Annotated Class for each class in the Database
 
 		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
