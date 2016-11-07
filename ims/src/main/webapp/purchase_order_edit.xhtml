@@ -42,8 +42,8 @@
 					<div class="row">
 						<div class="col-desk-2 col-tab-2">
 							<select name="productID">
-								<ui:repeat var="product" value="#{products.productIDs}">
-									<option value="#{product.id}"> <h:outputText escape="false" value="#{product.id}" /> </option>
+								<ui:repeat var="product" value="#{products.productList}">
+									<option value="#{product.id}"></option>
 								</ui:repeat>
 							</select>
 						</div>
