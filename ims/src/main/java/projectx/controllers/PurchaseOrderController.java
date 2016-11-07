@@ -116,8 +116,9 @@ public class PurchaseOrderController implements Serializable{
 	}
 	
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry(){
-		return purchaseOrderSerivce.createPurchaseOrderEntry();
+		return purchaseOrderService.createPurchaseOrderEntry();
 	}
+	
 	
 //	public String addProductToPurchaseOrder(){
 //		purchaseOrderSerivce.addProductToPurchaseOrder();
