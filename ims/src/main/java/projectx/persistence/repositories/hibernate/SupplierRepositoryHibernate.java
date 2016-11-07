@@ -28,7 +28,7 @@ public class SupplierRepositoryHibernate implements SupplierRepository{
 		return db.findBySupplierId(id);
 	}
 
-	
+	 
 	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Supplier> getSuppliers() {
