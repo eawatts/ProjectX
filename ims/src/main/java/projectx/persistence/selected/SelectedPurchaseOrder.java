@@ -7,10 +7,11 @@ import javax.inject.Named;
 
 import projectx.persistence.entities.PurchaseOrder;
 
-@SuppressWarnings("serial")
 @SessionScoped
-@Named("selected")
+@Named("selected_purchase_order")
 public class SelectedPurchaseOrder implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private PurchaseOrder selectedpurchaseOrder;
 
 	public PurchaseOrder getSelectedpurchaseOrder() {

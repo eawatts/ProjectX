@@ -5,6 +5,8 @@ import java.sql.Date;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import projectx.persistence.util.OrderState;
 import projectx.persistence.util.OrderType;
 
@@ -12,10 +14,9 @@ import projectx.persistence.util.OrderType;
 @Table(name = "order")
 
 @NamedQueries({
-		@NamedQuery(name = "Order.findByOrderType", query = "Select o FROM Order o  WHERE o.orderType= :orderType"),
+/*		@NamedQuery(name = "Order.findByOrderType", query = "Select o FROM Order o  WHERE o.orderType= :orderType"),
 		@NamedQuery(name = "Order.findByUser", query = "Select o FROM Order o Join user u WHERE o.user= :user  "),
-		@NamedQuery(name = "Order.findByOrderDate", query = "Select o deliveryDate FROM Order o WHERE o.orderDate= :orderDate"),
-
+		@NamedQuery(name = "Order.findByOrderDate", query = "Select o deliveryDate FROM Order o WHERE o.orderDate= :orderDate"),*/
 })
 
 public class Order {
@@ -25,24 +26,21 @@ public class Order {
 	public static final String findByOrderType = "Order.findByOrderType";
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue()
 	@Column(name = "id", nullable = false)
-	@NotNull
 	private Integer id;
 
 	@ManyToOne
-	@JoinColumn(name = "user_id", nullable = false)
 	@NotNull
+	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
 
-	@ManyToOne
-	@JoinColumn(name = "order_type_id", nullable = false)
 	@NotNull
+	@JoinColumn(name = "order_type", nullable = false)
 	private OrderType orderType;
 
-	@ManyToOne
-	@JoinColumn(name = "order_state_id", nullable = false)
 	@NotNull
+	@JoinColumn(name = "order_state", nullable = false)
 	private OrderState orderState;
 
 	@Column(name = "notes")

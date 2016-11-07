@@ -2,12 +2,30 @@ package projectx.persistence.entities;
 
 import javax.persistence.*;
 
-@NamedQueries({ @NamedQuery(name = Address.FIND_BY_ID, query = "Select a FROM Address a WHERE a.id= : Aid"),
-		@NamedQuery(name = Address.FIND_BY_LINE1, query = "Select a FROM Address a WHERE a.line_1= : line_1"),
-		@NamedQuery(name = Address.FIND_BY_LINE2, query = "Select a FROM Address a WHERE a.line_2= : line_2"),
-		@NamedQuery(name = Address.FIND_BY_POSTCODE, query = "Select a FROM Address a WHERE a.postcode= : postcode"),
-		@NamedQuery(name = Address.INSERT_NEW_ADDRESS, query = "INSERT INTO Address (id, line_1, line_2, postcode) VALUES( :Aid, :line_1, :line_2, :postcode, :active)"),
-		@NamedQuery(name = Address.UPDATE_ACTIVE, query =  "UDATE Address  a SET a.active = :status WHERE a.id = :Aid")})
+import org.hibernate.annotations.GenericGenerator;
+
+@NamedQueries({
+		/*
+		 * @NamedQuery(name = Address.FIND_BY_ID, query =
+		 * "Select a FROM Address a WHERE a.id= : Aid"),
+		 * 
+		 * @NamedQuery(name = Address.FIND_BY_LINE1, query =
+		 * "Select a FROM Address a WHERE a.line_1= : line_1"),
+		 * 
+		 * @NamedQuery(name = Address.FIND_BY_LINE2, query =
+		 * "Select a FROM Address a WHERE a.line_2= : line_2"),
+		 * 
+		 * @NamedQuery(name = Address.FIND_BY_POSTCODE, query =
+		 * "Select a FROM Address a WHERE a.postcode= : postcode"),
+		 * 
+		 * @NamedQuery(name = Address.INSERT_NEW_ADDRESS, query =
+		 * "INSERT INTO Address (id, line_1, line_2, postcode) VALUES( :Aid, :line_1, :line_2, :postcode, :active)"
+		 * ),
+		 * 
+		 * @NamedQuery(name = Address.UPDATE_ACTIVE, query =
+		 * "UPDATE Address a SET a.active = :status WHERE a.id = :Aid")
+		 */
+})
 @Entity
 @Table(name = "Address")
 public class Address {
@@ -18,7 +36,9 @@ public class Address {
 	public static final String FIND_BY_POSTCODE = "Address.findByPostCode";
 	public static final String INSERT_NEW_ADDRESS = "Address.new";
 	public static final String UPDATE_ACTIVE = "Address.deactivate";
+
 	@Id
+	@GeneratedValue()
 	@Column(name = "id", nullable = false)
 	private int id;
 
@@ -31,15 +51,9 @@ public class Address {
 	@Column(name = "postcode")
 	private String postcode;
 
-	/**
-	 * Constructor
-	 *
-	 * @param id
-	 * @param line1
-	 * @param line2
-	 * @param postcode
-	 * 
-	 */
+	Address() {
+	}
+
 	Address(int id, String line1, String line2, String postcode) {
 		this.id = id;
 		this.line1 = line1;
