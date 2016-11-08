@@ -25,7 +25,7 @@ public class PurchaseOrderController implements Serializable {
 	@Inject
 	private SelectedPurchaseOrderProduct selectedPurchaseOrderProduct;
 
-	public String addPendingPurchaseOrder() {
+	public String addPendingPurchaseOrderProduct() {
 
 		Product selectedProduct = selectedPurchaseOrderProduct.getProduct();
 		int selectedQuantity = selectedPurchaseOrderProduct.getQuantity();
@@ -33,7 +33,7 @@ public class PurchaseOrderController implements Serializable {
 		
 		List<PurchaseOrderProduct> purchaseOrderProducts = currentsession.getPendingPurchaseOrder().getContents();
 
-		// See if we need to update the quantity or add a new entry
+		// See if we just need to update the quantity if it is exactly the same product.
 		for (PurchaseOrderProduct purchaseOrderProduct : purchaseOrderProducts) {
 			if ((purchaseOrderProduct.getProduct().getId() == selectedProduct.getId()) && (purchaseOrderProduct.getSupplier().getId() == selectedSupplier.getId())) {
 				purchaseOrderProduct.setQuantity(purchaseOrderProduct.getQuantity() + selectedQuantity);
@@ -46,7 +46,7 @@ public class PurchaseOrderController implements Serializable {
 		return null;
 	}
 	
-	public String removePendingPurchaseOrder(int productId, int supplierId) {
+	public String removePendingPurchaseOrderProduct(int productId, int supplierId) {
 		
 		List<PurchaseOrderProduct> purchaseOrderProducts = currentsession.getPendingPurchaseOrder().getContents();
 		for (PurchaseOrderProduct purchaseOrderProduct : purchaseOrderProducts) {
@@ -55,6 +55,15 @@ public class PurchaseOrderController implements Serializable {
 				return null;
 			}
 		}
+		
+		return null;
+	}
+	
+	public String completePurchaseOrder() {
+		
+		List<PurchaseOrderProduct> purchaseOrderProducts = currentsession.getPendingPurchaseOrder().getContents();
+		
+		
 		
 		return null;
 	}
