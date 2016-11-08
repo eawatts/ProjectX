@@ -52,8 +52,8 @@ public class PurchaseOrderRepositoryHibernate implements PurchaseOrderRepository
 
 	@Override
 	public ArrayList<PurchaseOrder> getPurchaseOrders() {
-		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<PurchaseOrder>(db.getPurchaseOrders());
+		
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class PurchaseOrderRepositoryHibernate implements PurchaseOrderRepository
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	@Override
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry() {
 		// TODO Auto-generated method stub

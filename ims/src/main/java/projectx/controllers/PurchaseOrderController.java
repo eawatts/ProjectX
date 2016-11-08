@@ -6,9 +6,10 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import projectx.persistence.entities.Product;
+import projectx.persistence.entities.Supplier;
+import projectx.persistence.selected.SelectedPurchaseOrderProduct;
 import projectx.persistence.webentities.CurrentSession;
-import projectx.services.PurchaseOrderSerivce;
-
 
 @Named("purchase_order")
 @RequestScoped
@@ -19,9 +20,18 @@ public class PurchaseOrderController implements Serializable{
 	@Inject
 	private CurrentSession currentsession;
 	
-	@Inject 
-	private PurchaseOrderSerivce purchaseOrderSerivce;
+	@Inject
+	private SelectedPurchaseOrderProduct selectedPurchaseOrderProduct;
+
 	
-	
-	
+	public String addPendingPurchaseOrder() {
+		
+		Product selectedProduct = selectedPurchaseOrderProduct.getProduct();
+		int selectedQuantity = selectedPurchaseOrderProduct.getQuantity();
+		Supplier selectedSupplier = selectedPurchaseOrderProduct.getSupplier();
+		
+		currentsession.getPendingPurchaseOrder().addProductToPurchaseOrder(selectedProduct, selectedQuantity, selectedSupplier);
+		
+		return null;
+	}
 }

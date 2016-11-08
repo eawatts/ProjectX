@@ -15,7 +15,7 @@
 .nav-banner-center {
 	background-color: #004425;
 	align-content: center;
-	height: 100px;
+	height: 60px;
 	vertical-align: middle;
 }
 
@@ -23,7 +23,7 @@
 	font-size: 250%;
 	text-align: center;
 	width: 12.5%;
-	margin-top: 30px;
+	margin-top: 10px;
 	opacity: 0.2;
 }
 

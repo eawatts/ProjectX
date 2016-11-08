@@ -51,8 +51,7 @@ public class OfflineDB {
 
 		suppliers = new ArrayList<Supplier>();
 		suppliers.add(new Supplier(1, "Gnomes gnomes gnomes", "1 Road Street", "The Town", "M56YH", "07463772819"));
-		suppliers.add(
-				new Supplier(2, "Rakes and Hoes Emporium", "33 Garden Street", "Cheshire", "SG147YH", "04463776419"));
+		suppliers.add(new Supplier(2, "Rakes and Hoes Emporium", "33 Garden Street", "Cheshire", "SG147YH", "04463776419"));
 		suppliers.add(new Supplier(3, "We Sell Stuff", "2 Made Up Street", "Barca", "BE39UI", "01320739921"));
 		suppliers.add(new Supplier(4, "Gnomes R Us", "123 Fake Street", "MAdeUp Land", "TU59PI", "01193812204"));
 
@@ -62,9 +61,6 @@ public class OfflineDB {
 		p1imgs.add("asd");
 		p1imgs.add("asd");
 		
-		
-
-
 		products = new ArrayList<Product>();
 		products.add(new Product(1, "Gnome", 100, 5.00, 20, "a very shiny product", p1imgs));
 		products.add(new Product(2, "Gnomeo", 150, 3.00, 20, "another very shiny product",p1imgs));
@@ -104,7 +100,7 @@ public class OfflineDB {
 		paymentDetails.add(new PaymentDetails(1,
 				new User(1, "hello", "password", "firstname", "lastname", UserLevel.CUSTOMER, "username@email.com"),
 				"89012345", "123456"));
-		
+		/*
 		productsOrdered = new ArrayList<ProductsOrdered>();
 		productsOrdered.add(new ProductsOrdered());
 		productsOrdered.add(new ProductsOrdered());
@@ -131,6 +127,16 @@ public class OfflineDB {
 		purchaseOrders.add(purchaseOrder2);
 		purchaseOrders.add(purchaseOrder3);
 		purchaseOrders.add(purchaseOrder4);
+		*/
+		ArrayList<ProductsOrdered> productsOrdered = new ArrayList<ProductsOrdered>();
+		ArrayList<PurchaseOrder> orders = new ArrayList<PurchaseOrder>();
+		PurchaseOrder purchaseOrder1 = new PurchaseOrder(null, suppliers.get(1), true, Date.valueOf("2016-09-13"),
+				OrderState.ORDER_CLOSED, productsOrdered);
+		
+		orders.add(purchaseOrder1);
+		
+		productsOrdered.add(new ProductsOrdered(null, products.get(1), 20, purchaseOrder1,10.00));
+		productsOrdered.add(new ProductsOrdered(null, products.get(2), 10, purchaseOrder1,10.00));
 		
 		notifications = new ArrayList<Notification>();
 		notifications.add(new Notification(1, NotificationType.PURCHASE_ORDER_ISSUE, "It seems a bit costly."));
@@ -345,7 +351,6 @@ public class OfflineDB {
 	}
 
 	// Supplier
-
 	
 	public void addSupplier(Supplier s) {
 		suppliers.add(s);

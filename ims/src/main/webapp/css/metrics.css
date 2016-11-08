@@ -80,6 +80,7 @@
 }
 .popup .close {
   position: relative;
+  float: right;
   top: 5px;
   left: 10px;
   transition: all 200ms;
@@ -93,5 +94,5 @@
 }
 .popup .content {
   max-height: 30%;
-  overflow: auto;
+
 }

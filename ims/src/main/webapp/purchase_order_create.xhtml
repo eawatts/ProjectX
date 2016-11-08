@@ -33,18 +33,57 @@
 		<ui:repeat var="purchase_order_item"
 			value="#{current_session.pendingPurchaseOrder.contents}">
 			<div class="row">
-				<div class="col-desk-5 col-tab-5"><h:outputText value="#{purchase_order_item.product.name}"></h:outputText></div>
-				<div class="col-desk-5 col-tab-5"><h:outputText value="#{purchase_order_item.supplier.name}"></h:outputText></div>
-				<div class="col-desk-2 col-tab-2"><h:outputText value="#{purchase_order_item.quantity}"></h:outputText></div>
+				<div class="col-desk-5 col-tab-5">
+					<h:outputText value="#{purchase_order_item.product.name}"></h:outputText>
+				</div>
+				<div class="col-desk-5 col-tab-5">
+					<h:outputText value="#{purchase_order_item.supplier.name}"></h:outputText>
+				</div>
+				<div class="col-desk-2 col-tab-2">
+					<h:outputText value="#{purchase_order_item.quantity}"></h:outputText>
+				</div>
 			</div>
 			<br />
 		</ui:repeat>
-		
-		<div>
-			<h:commandButton styleClass="button-green" value="Add Product"/>
-		</div>
-		
-		
 
+		<hr />
+
+		<h4>Add a New Product to Purchase Order</h4>
+		<h:form>
+			<div class="row">
+
+				<div class="col-desk-5 col-tab-5">
+					<h:selectOneMenu value="#{selected_purchase_order_product.product}"
+						converter="#{product_converter}">
+						<f:selectItems value="#{products.products}"
+							var="selected_items_product"
+							itemValue="#{selected_items_product}"
+							itemLabel="#{selected_items_product.name}" />
+					</h:selectOneMenu>
+				</div>
+				<div class="col-desk-5 col-tab-5">
+					<h:selectOneMenu
+						value="#{selected_purchase_order_product.supplier}"
+						converter="#{supplier_converter}">
+						<f:selectItems value="#{suppliers.suppliers}"
+							var="selected_items_supplier"
+							itemValue="#{selected_items_supplier}"
+							itemLabel="#{selected_items_supplier.name}" />
+					</h:selectOneMenu>
+				</div>
+				<div class="col-desk-2 col-tab-2">
+					<h:inputText class="login_input" type="text"
+						value="#{selected_purchase_order_product.quantity}" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-desk-12 col-tab-12">
+
+					<h:commandButton styleClass="button-green" value="Add Product"
+						action="#{purchase_order.addPendingPurchaseOrder()}" />
+
+				</div>
+			</div>
+		</h:form>
 	</ui:define>
 </ui:composition>
