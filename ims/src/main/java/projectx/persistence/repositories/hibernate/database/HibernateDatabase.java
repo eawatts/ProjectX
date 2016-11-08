@@ -289,14 +289,16 @@ public class HibernateDatabase {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
-			Supplier obj = (Supplier) session.get(Supplier.class, id);
-			obj.setName(name);
-			obj.setAddressLine1(addressLine1);
-			obj.setAddressLine2(addressLine2);
-			obj.setPostcode(postcode);
-			obj.setPhone(phone);
+			Supplier supplier = (Supplier) session.get(Supplier.class, id);
+			supplier.setName(name);
+			supplier.setAddressLine1(addressLine1);
+			supplier.setAddressLine2(addressLine2);
+			supplier.setPostcode(postcode);
+			supplier.setPhone(phone);
 			
-			session.update(obj);
+			session.update(supplier);
+			session.save(supplier);
+			session.beginTransaction().commit();
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

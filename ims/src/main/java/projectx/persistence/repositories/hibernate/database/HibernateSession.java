@@ -9,6 +9,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 import projectx.persistence.entities.Notification;
+import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
 
@@ -19,7 +20,7 @@ import projectx.persistence.entities.User;
 public class HibernateSession {
 
 	private static final String USERNAME = "root";
-	private static final String PASSWORD = "1234";
+	private static final String PASSWORD = "password";
 
 	private SessionFactory sessionFactory;
 
@@ -60,7 +61,7 @@ public class HibernateSession {
 		configuration.addAnnotatedClass(User.class);
 		configuration.addAnnotatedClass(Notification.class);
 		configuration.addAnnotatedClass(Supplier.class);
-		//configuration.addAnnotatedClass(Product.class);
+		configuration.addAnnotatedClass(Product.class);
 		// TODO: Add an Annotated Class for each class in the Database
 
 		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
