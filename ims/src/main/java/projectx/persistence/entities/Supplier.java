@@ -114,8 +114,7 @@ public class Supplier implements Serializable{
 	
 	@Override
 	public boolean equals(Object obj) {
-
-		return (obj != null && getClass() == obj.getClass() && id != null) ? id.equals(((Product) obj).id)
+		return (obj != null && getClass() == obj.getClass() && id != null) ? id.equals(((Supplier) obj).id)
 				: (obj == this);
 	}
 
