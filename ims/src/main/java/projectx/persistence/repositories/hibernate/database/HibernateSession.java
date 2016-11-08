@@ -10,6 +10,7 @@ import org.hibernate.service.ServiceRegistry;
 
 import projectx.persistence.entities.Category;
 import projectx.persistence.entities.Notification;
+import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
 
@@ -61,6 +62,7 @@ public class HibernateSession {
 		configuration.addAnnotatedClass(User.class);
 		configuration.addAnnotatedClass(Notification.class);
 		configuration.addAnnotatedClass(Supplier.class);
+		configuration.addAnnotatedClass(PurchaseOrder.class);
 
 		//configuration.addAnnotatedClass(Product.class);
 		// TODO: Add an Annotated Class for each class in the Database
