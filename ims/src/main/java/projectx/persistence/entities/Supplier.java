@@ -111,4 +111,16 @@ public class Supplier implements Serializable{
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+
+		return (obj != null && getClass() == obj.getClass() && id != null) ? id.equals(((Product) obj).id)
+				: (obj == this);
+	}
+
+	@Override
+	public int hashCode() {
+		return (id != null) ? (getClass().hashCode() + id.hashCode()) : super.hashCode();
+	}
 }

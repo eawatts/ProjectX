@@ -2,33 +2,33 @@ package projectx.persistence.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
-
-
 @NamedQueries({
-		/*@NamedQuery(name = Product.FIND_BY_PRODUCT_NAME, query = "SELECT p FROM Product p WHERE p.name = :Productname") 
-		@NamedQuery(name = Product.FIND_LOW_PRODUCT,query="SELECT *, current_stock-low_stock_limit AS surplus FROM Product ORDER BY surplus LIMIT 25"),
-		@NamedQuery(name = Product.SEARCH_PRODUCT, query ="SELECT * FROM Product WHERE name LIKE '%:param%'")*/
-	
+		/*
+		 * @NamedQuery(name = Product.FIND_BY_PRODUCT_NAME, query =
+		 * "SELECT p FROM Product p WHERE p.name = :Productname")
+		 * 
+		 * @NamedQuery(name = Product.FIND_LOW_PRODUCT,
+		 * query="SELECT *, current_stock-low_stock_limit AS surplus FROM Product ORDER BY surplus LIMIT 25"
+		 * ),
+		 * 
+		 * @NamedQuery(name = Product.SEARCH_PRODUCT, query
+		 * ="SELECT * FROM Product WHERE name LIKE '%:param%'")
+		 */
 })
 
 @Entity
 @Table(name = "product")
-public class Product implements Serializable{
+public class Product implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public static final String FIND_BY_PRODUCT_NAME = "Product.findByProductName";
-	public static final String FIND_LOW_PRODUCT="Product.findlowproduct";
+	public static final String FIND_LOW_PRODUCT = "Product.findlowproduct";
 	public static final String SEARCH_PRODUCT = "Product.searchProduct";
+
 	@Id
 	@GeneratedValue()
 	@Column(name = "id", nullable = false)
@@ -55,13 +55,12 @@ public class Product implements Serializable{
 
 	private ArrayList<String> images;
 
-
 	public Product() {
 	}
 
 	public Product(Integer id, String name, int stockLvl, double price, int lowStock, String description,
-			 ArrayList<String> imglists) {
-		
+			ArrayList<String> imglists) {
+
 		this.id = id;
 		this.name = name;
 		this.currentStock = stockLvl;
@@ -70,7 +69,7 @@ public class Product implements Serializable{
 		this.isDiscontinued = true;
 		this.description = description;
 		this.images = imglists;
-	
+
 	}
 
 	public Integer getId() {
@@ -129,7 +128,6 @@ public class Product implements Serializable{
 		this.description = description;
 	}
 
-
 	public ArrayList<String> getImgs() {
 		return images;
 	}
@@ -137,13 +135,12 @@ public class Product implements Serializable{
 	public void setImgs(ArrayList<String> imglists) {
 		this.images = imglists;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
-		
-		return (obj != null && getClass() == obj.getClass() && id != null)
-	            ? id.equals(((Product) obj).id)
-	            : (obj == this);
+
+		return (obj != null && getClass() == obj.getClass() && id != null) ? id.equals(((Product) obj).id)
+				: (obj == this);
 	}
 
 	@Override
