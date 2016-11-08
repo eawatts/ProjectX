@@ -20,7 +20,7 @@ import projectx.persistence.entities.User;
 public class HibernateSession {
 
 	private static final String USERNAME = "root";
-	private static final String PASSWORD = "password";
+	private static final String PASSWORD = "1234";
 
 	private SessionFactory sessionFactory;
 
@@ -47,7 +47,7 @@ public class HibernateSession {
 	private void buildFactory() {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
-		properties.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/nb_gardens_ims");
+		properties.setProperty("hibernate.connection.url", "jdbc:mysql://127.0.0.1:3306/nb_gardens_ims");
 		properties.setProperty("hibernate.connection.username", USERNAME);
 		properties.setProperty("hibernate.connection.password", PASSWORD);
 		properties.setProperty("hibernate.show_sql", "true");

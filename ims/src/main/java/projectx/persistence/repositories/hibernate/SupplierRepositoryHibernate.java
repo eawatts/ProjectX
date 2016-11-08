@@ -35,7 +35,6 @@ public class SupplierRepositoryHibernate implements SupplierRepository{
 		return (ArrayList<Supplier>) db.getSuppliers();
 	}
 
-	@Override
 	public void updateSupplier(int id, String name, String addressLine1, String addressLine2, String postcode,String phone) {
 		db.updateSupplier(id, name, addressLine1, addressLine2, postcode, phone);		
 	}
