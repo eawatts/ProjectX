@@ -8,23 +8,22 @@
 	<ui:define name="title">Create Purchase Order</ui:define>
 
 	<ui:define name="custom-css">
-		<link rel="stylesheet" type="text/css"
-			href="css/ims-purchase-order-view.css" />
+		<link rel="stylesheet" type="text/css" href="css/purchase-order-create.css" />
 	</ui:define>
 
 	<ui:define name="main-content">
 
 		<div class="pageheading">
-			<h2>Create Purchase Order</h2>
+			<h1>Create Purchase Order</h1>
 		</div>
 
-		<div class="row">
-			<div class="col-desk-5 col-tab-5">Product</div>
-			<div class="col-desk-5 col-tab-5">Supplier</div>
-			<div class="col-desk-2 col-tab-2">Quantity</div>
+		<div class="row table-header">
+			<div class="col-desk-5 col-tab-5 ">Product</div>
+			<div class="col-desk-3 col-tab-3 ">Supplier</div>
+			<div class="col-desk-2 col-tab-2 ">Quantity</div>
+			
 		</div>
-		<hr />
-
+		<br/>
 		<h:panelGroup
 			rendered="#{current_session.pendingPurchaseOrder.contents.size() eq 0}">
 			<p>There are currently no Products on this Purchase Order</p>
@@ -36,11 +35,14 @@
 				<div class="col-desk-5 col-tab-5">
 					<h:outputText value="#{purchase_order_item.product.name}"></h:outputText>
 				</div>
-				<div class="col-desk-5 col-tab-5">
+				<div class="col-desk-3 col-tab-3">
 					<h:outputText value="#{purchase_order_item.supplier.name}"></h:outputText>
 				</div>
 				<div class="col-desk-2 col-tab-2">
 					<h:outputText value="#{purchase_order_item.quantity}"></h:outputText>
+				</div>
+				<div class="col-desk-2 col-tab-2">
+					<h:commandButton styleClass="button-green" value="Remove product" action="#{}"></h:commandButton>
 				</div>
 			</div>
 			<br />
@@ -48,7 +50,7 @@
 
 		<hr />
 
-		<h4>Add a New Product to Purchase Order</h4>
+		<h3>Add a New Product to Purchase Order</h3>
 		<h:form>
 			<div class="row">
 
@@ -76,6 +78,7 @@
 						value="#{selected_purchase_order_product.quantity}" />
 				</div>
 			</div>
+			<br/>
 			<div class="row">
 				<div class="col-desk-12 col-tab-12">
 
