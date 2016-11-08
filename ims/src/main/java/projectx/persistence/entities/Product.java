@@ -11,6 +11,9 @@ import org.hibernate.annotations.GenericGenerator;
 
 @NamedQueries({
 		/*@NamedQuery(name = Product.FIND_BY_PRODUCT_NAME, query = "SELECT p FROM Product p WHERE p.name = :Productname")*/ 
+		@NamedQuery(name = Product.FIND_LOW_PRODUCT,query="SELECT *, current_stock-low_stock_limit AS surplus FROM Product ORDER BY surplus LIMIT 25"),
+		@NamedQuery(name = Product.SEARCH_PRODUCT, query ="SELECT * FROM Product WHERE name LIKE '%:param%'")
+	
 })
 
 @Entity
@@ -18,7 +21,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class Product {
 
 	public static final String FIND_BY_PRODUCT_NAME = "Product.findByProductName";
-
+	public static final String FIND_LOW_PRODUCT="Product.findlowproduct";
+	public static final String SEARCH_PRODUCT = "Product.searchProduct";
 	@Id
 	@GeneratedValue()
 	@Column(name = "id", nullable = false)

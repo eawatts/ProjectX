@@ -9,6 +9,8 @@ import javax.persistence.*;
 import projectx.persistence.util.OrderState;
 
 @NamedQueries({
+	
+		@NamedQuery(name = PurchaseOrder.SEARCH_PO, query = "SELECT * FROM supplier WHERE name LIKE '%:param%'")
 		/*
 		 * @NamedQuery(name = PurchaseOrder.INSERT_PURCHASEORDER, query =
 		 * "INSERT INTO purchaseOrder p (id, supplier,approved,approvalDate,satus,products) VALUES(:id, :supplier, :approved, :approvalDate, :satus, :products) "
@@ -41,6 +43,7 @@ public class PurchaseOrder {
 	public static final String FIND_BY_APPROVED = "PurchaseOrder.findByAproved";
 	public static final String FIND_BY_STATUS = "PurchaseOrder.status";
 	public static final String UPDATE_PURCHASEORDER = "PurchaseOrder.updatePurchaseOrder";
+	public static final String SEARCH_PO = "PurchaseOrder.searchPO";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
