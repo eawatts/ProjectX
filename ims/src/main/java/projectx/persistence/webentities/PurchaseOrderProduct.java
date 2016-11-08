@@ -4,11 +4,11 @@ import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Supplier;
 
 public class PurchaseOrderProduct {
-	
-	private int quantity;
+
+	private int quantity = 1;
 	private Product product;
 	private Supplier supplier;
-	
+
 	public PurchaseOrderProduct(Product product, int quantity, Supplier supplier) {
 		this.quantity = quantity;
 		this.product = product;
@@ -38,7 +38,8 @@ public class PurchaseOrderProduct {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+
 	public double getPurchaseOrderProductPrice() {
-		return this.product.getPrice()*quantity;
+		return this.product.getPrice() * quantity;
 	}
 }

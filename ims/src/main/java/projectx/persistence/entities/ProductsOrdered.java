@@ -33,8 +33,8 @@ public class ProductsOrdered {
 	private Product product;
 
 	@NotNull
-	@Column(name = "ammount_ordered")
-	private int ordered;
+	@Column(name = "quantity")
+	private int quantity;
 
 	@NotNull
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -48,11 +48,11 @@ public class ProductsOrdered {
 	public ProductsOrdered() {
 	}
 
-	public ProductsOrdered(Integer id, Product product, int ordered, PurchaseOrder purchaseOrder, double price) {
+	public ProductsOrdered(Integer id, Product product, int quantity, PurchaseOrder purchaseOrder, double price) {
 		super();
 		this.id = id;
 		this.product = product;
-		this.ordered = ordered;
+		this.quantity = quantity;
 		this.purchaseOrder = purchaseOrder;
 		this.price = price;
 	}
@@ -74,11 +74,11 @@ public class ProductsOrdered {
 	}
 
 	public int getOrdered() {
-		return ordered;
+		return quantity;
 	}
 
 	public void setOrdered(int ordered) {
-		this.ordered = ordered;
+		this.quantity = ordered;
 	}
 
 	public PurchaseOrder getPurchaseOrder() {

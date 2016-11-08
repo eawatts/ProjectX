@@ -22,7 +22,6 @@ public class CurrentSession implements Serializable{
 		@PostConstruct
 		public void setupCurrentSession(){
 			this.pendingPurchaseOrder = new PendingPurchaseOrder();
-			this.pendingPurchaseOrder.addProductToPurchaseOrder(new Product(), 0, new Supplier());
 		}
 		
 		public User getUser() {
