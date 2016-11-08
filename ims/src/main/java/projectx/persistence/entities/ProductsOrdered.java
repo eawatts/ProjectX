@@ -32,7 +32,7 @@ public class ProductsOrdered implements Serializable {
 	@Column(name = "id", nullable = false)
 	private Integer id;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@NotNull
 	@JoinColumn(name = "product_id")
 	private Product product;

@@ -113,4 +113,8 @@ public class OldPurchaseOrderController implements Serializable{
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry(){
 		return purchaseOrderService.createPurchaseOrderEntry();
 	}
+	
+	public List<ProductsOrdered> getProductsOrdered(PurchaseOrder purchaseOrder){
+		return purchaseOrderService.getProductsOrdered(purchaseOrder);
+	}
 }

@@ -506,6 +506,12 @@ public class OfflineDB {
 		return results;
 	}
 
+	public List<PurchaseOrderProduct> createPurchaseOrderEntry()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
 
 

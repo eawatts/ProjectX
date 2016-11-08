@@ -56,10 +56,13 @@ public class PurchaseOrder implements Serializable {
 	@Column(name = "id", nullable = false)
 	private Integer id;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "supplier_id", nullable = false, updatable = false)
 	private Supplier supplier;
 
+	//@Column(name = "supplier_name", nullable = false, updatable = false)
+	//private String supplier_name;
+	
 	@Column(name = "approved", length = 10, nullable = false)
 	private boolean approved;
 
@@ -78,11 +81,16 @@ public class PurchaseOrder implements Serializable {
 		super();
 		this.id = id;
 		this.supplier = supplier;
+		//this.supplier_name = supplier.getName();
 		this.approved = approved;
 		this.approvalDate = approvalDate;
 		this.status = status;
 
 	}
+
+	/*public String getSupplier_name() {
+		return supplier_name;
+	}*/
 
 	public Integer getId() {
 		return id;

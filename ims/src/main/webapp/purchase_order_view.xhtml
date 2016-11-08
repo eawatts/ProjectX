@@ -63,7 +63,7 @@
 									<div class="col-desk-3 col-tab-3">Quantity</div>
 									<hr/>
 									<ui:repeat var="productsOrdered"
-										value="#{purchaseOrder.purchasedProducts}">
+										value="#{purchaseOrders.getProductsOrdered(purchaseOrder)}">
 										<div class="row poTitle">
 											<div class="col-desk-3 col-tab-3">
 												<h:outputText type="text"

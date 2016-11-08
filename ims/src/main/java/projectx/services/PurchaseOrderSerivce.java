@@ -6,6 +6,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.repositories.PurchaseOrderRepository;
 import projectx.persistence.webentities.PurchaseOrderProduct;
@@ -15,17 +16,21 @@ import projectx.persistence.webentities.PurchaseOrderProduct;
 public class PurchaseOrderSerivce {
 	
 	@Inject
-	private PurchaseOrderRepository purchaseOrderRepopository;
+	private PurchaseOrderRepository purchaseOrderRepository;
 	
 	public ArrayList<PurchaseOrder> getPurchaseOrderList() {
-		return purchaseOrderRepopository.getPurchaseOrders();
+		return purchaseOrderRepository.getPurchaseOrders();
 	}
 
 	public PurchaseOrder findPurchaseOrderById(int purchaseOrderId) {
-		return purchaseOrderRepopository.findPurchaseOrderById(purchaseOrderId);
+		return purchaseOrderRepository.findPurchaseOrderById(purchaseOrderId);
 	}
 
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry() {
-		return purchaseOrderRepopository.createPurchaseOrderEntry();
+		return purchaseOrderRepository.createPurchaseOrderEntry();
 	}	
+	
+	public List<ProductsOrdered> getProductsOrdered(PurchaseOrder purchaseOrder){
+		return purchaseOrderRepository.getProductsOrdered(purchaseOrder);
+	}
 }
