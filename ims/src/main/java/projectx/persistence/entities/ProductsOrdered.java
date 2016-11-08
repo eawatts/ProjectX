@@ -1,7 +1,10 @@
 package projectx.persistence.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @NamedQueries({
 
@@ -15,7 +18,9 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "products_ordered")
 
-public class ProductsOrdered {
+public class ProductsOrdered implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	public static final String INSERT_ORDEREDPRODUCTS = "ProductsOrdered.saveProductsOrdered";
 	public static final String FIND_ALL = "ProductsOrdered.findAll";
 	public static final String FIND_BY_PRODUCT = "ProductsOrdered.findByProduct";
@@ -27,9 +32,9 @@ public class ProductsOrdered {
 	@Column(name = "id", nullable = false)
 	private Integer id;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@NotNull
-	@JoinColumn(name = "product")
+	@JoinColumn(name = "product_id")
 	private Product product;
 
 	@NotNull
@@ -38,7 +43,7 @@ public class ProductsOrdered {
 
 	@NotNull
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "purchase_order")
+	@JoinColumn(name = "purchase_order_id")
 	private PurchaseOrder purchaseOrder;
 	
 	@NotNull

@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 
+import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.repositories.PurchaseOrderRepository;
 import projectx.persistence.repositories.hibernate.database.HibernateDatabase;
@@ -52,8 +53,8 @@ public class PurchaseOrderRepositoryHibernate implements PurchaseOrderRepository
 
 	@Override
 	public ArrayList<PurchaseOrder> getPurchaseOrders() {
-		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<PurchaseOrder>(db.getPurchaseOrders());
+		
 	}
 
 	@Override
@@ -61,11 +62,17 @@ public class PurchaseOrderRepositoryHibernate implements PurchaseOrderRepository
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	@Override
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public ArrayList<ProductsOrdered> getProductsOrdered(PurchaseOrder purchaseOrder) {
+		return new ArrayList<ProductsOrdered>(db.getProductsOrdered(purchaseOrder));
+		
 	}
 
 }

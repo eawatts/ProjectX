@@ -8,43 +8,91 @@
 	<ui:define name="title">Create Purchase Order</ui:define>
 
 	<ui:define name="custom-css">
-		<link rel="stylesheet" type="text/css"
-			href="css/ims-purchase-order-view.css" />
+		<link rel="stylesheet" type="text/css" href="css/purchase-order-create.css" />
 	</ui:define>
 
 	<ui:define name="main-content">
 
-		<div class="pageheading">
-			<h2>Create Purchase Order</h2>
+		<div >
+			<h1 class="pageheading">Create Purchase Order</h1>
+		</div>	
+		<h:panelGroup
+			rendered="#{current_session.pendingPurchaseOrder.contents.size() ne 0}">
+			<div class="row table-header">
+			<div class="col-desk-5 col-tab-5 ">Product</div>
+			<div class="col-desk-3 col-tab-3 ">Supplier</div>
+			<div class="col-desk-2 col-tab-2 ">Quantity</div>			
 		</div>
-
-		<div class="row">
-			<div class="col-desk-5 col-tab-5">Product</div>
-			<div class="col-desk-5 col-tab-5">Supplier</div>
-			<div class="col-desk-2 col-tab-2">Quantity</div>
-		</div>
-		<hr />
-
+		</h:panelGroup>
+		
+		<br/>
 		<h:panelGroup
 			rendered="#{current_session.pendingPurchaseOrder.contents.size() eq 0}">
-			<p>There are currently no Products on this Purchase Order</p>
+			<p id="empty-purchase-order-text">There are currently no Products on this Purchase Order</p>
 		</h:panelGroup>
 
 		<ui:repeat var="purchase_order_item"
 			value="#{current_session.pendingPurchaseOrder.contents}">
 			<div class="row">
-				<div class="col-desk-5 col-tab-5"><h:outputText value="#{purchase_order_item.product.name}"></h:outputText></div>
-				<div class="col-desk-5 col-tab-5"><h:outputText value="#{purchase_order_item.supplier.name}"></h:outputText></div>
-				<div class="col-desk-2 col-tab-2"><h:outputText value="#{purchase_order_item.quantity}"></h:outputText></div>
+				<div class="col-desk-5 col-tab-5">
+					<h:outputText value="#{purchase_order_item.product.name}"></h:outputText>
+				</div>
+				<div class="col-desk-3 col-tab-3">
+					<h:outputText value="#{purchase_order_item.supplier.name}"></h:outputText>
+				</div>
+				<div class="col-desk-2 col-tab-2">
+					<h:outputText value="#{purchase_order_item.quantity}"></h:outputText>
+				</div>
+				<div class="col-desk-2 col-tab-2">
+				<h:form>
+					<h:commandButton styleClass="button-green" value="Remove product" action="#{purchase_order.removePendingPurchaseOrderProduct(purchase_order_item.product.id,purchase_order_item.supplier.id)}"></h:commandButton>
+				</h:form>
+				</div>
 			</div>
 			<br />
 		</ui:repeat>
-		
-		<div>
-			<h:commandButton styleClass="button-green" value="Add Product"/>
-		</div>
-		
-		
 
+		<hr />
+
+		<h3>Add a New Product to Purchase Order</h3>
+		<h:form>
+			<div class="row">
+
+				<div class="col-desk-5 col-tab-5">
+					<h:selectOneMenu value="#{selected_purchase_order_product.product}"
+						converter="#{product_converter}" styleClass="input-box">
+						<f:selectItems value="#{products.products}"
+							var="selected_items_product"
+							itemValue="#{selected_items_product}"
+							itemLabel="#{selected_items_product.name}" />
+					</h:selectOneMenu>
+				</div>
+				<div class="col-desk-5 col-tab-5">
+					<h:selectOneMenu
+						value="#{selected_purchase_order_product.supplier}"
+						converter="#{supplier_converter}"  styleClass="input-box">
+						<f:selectItems value="#{suppliers.suppliers}"
+							var="selected_items_supplier"
+							itemValue="#{selected_items_supplier}"
+							itemLabel="#{selected_items_supplier.name}" />
+					</h:selectOneMenu>
+				</div>
+				<div class="col-desk-2 col-tab-2">
+					<h:inputText type="text"  styleClass="input-box"
+						value="#{selected_purchase_order_product.quantity}" />
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-desk-12 col-tab-12">
+
+					<h:commandButton styleClass="button-green" value="Add Product"
+						action="#{purchase_order.addPendingPurchaseOrderProduct()}" />
+						<h:commandButton styleClass="button-green clear-button" value="Clear All" 
+						action="#{purchase_order.clearAllPendingPurchaseOrderProducts}" />
+
+				</div>
+			</div>
+		</h:form>
 	</ui:define>
 </ui:composition>

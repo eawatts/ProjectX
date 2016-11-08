@@ -1,15 +1,18 @@
 package projectx.persistence.entities;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.persistence.*;
 
 import projectx.persistence.util.OrderState;
 
 @NamedQueries({
-		/*
+	
+	/*@NamedQuery(name = PurchaseOrder.SEARCH_PO, query = "SELECT * FROM supplier WHERE name LIKE '%:param%'")
+		
 		 * @NamedQuery(name = PurchaseOrder.INSERT_PURCHASEORDER, query =
 		 * "INSERT INTO purchaseOrder p (id, supplier,approved,approvalDate,satus,products) VALUES(:id, :supplier, :approved, :approvalDate, :satus, :products) "
 		 * ),
@@ -34,24 +37,32 @@ import projectx.persistence.util.OrderState;
 
 @Entity
 @Table(name = "purchase_order")
-public class PurchaseOrder {
+public class PurchaseOrder implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final String INSERT_PURCHASEORDER = "PurchaseOrder.savePurchaseOrder";
 	public static final String FIND_ALL = "PurchaseOrder.findAll";
 	public static final String FIND_BY_APPROVALDATE = "PurchaseOrder.findByAprovalDate";
 	public static final String FIND_BY_APPROVED = "PurchaseOrder.findByAproved";
 	public static final String FIND_BY_STATUS = "PurchaseOrder.status";
 	public static final String UPDATE_PURCHASEORDER = "PurchaseOrder.updatePurchaseOrder";
+	public static final String SEARCH_PO = "PurchaseOrder.searchPO";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
 	private Integer id;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "supplier", nullable = false, updatable = false)
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "supplier_id", nullable = false, updatable = false)
 	private Supplier supplier;
 
+	//@Column(name = "supplier_name", nullable = false, updatable = false)
+	//private String supplier_name;
+	
 	@Column(name = "approved", length = 10, nullable = false)
 	private boolean approved;
 
@@ -60,8 +71,7 @@ public class PurchaseOrder {
 
 	@Column(name = "status", length = 10, nullable = false)
 	private OrderState status;
-
-	private ArrayList<ProductsOrdered> productsOrdered;
+	
 
 	public PurchaseOrder() {
 	}
@@ -71,11 +81,16 @@ public class PurchaseOrder {
 		super();
 		this.id = id;
 		this.supplier = supplier;
+		//this.supplier_name = supplier.getName();
 		this.approved = approved;
 		this.approvalDate = approvalDate;
 		this.status = status;
-		this.productsOrdered = productsOrdered;
+
 	}
+
+	/*public String getSupplier_name() {
+		return supplier_name;
+	}*/
 
 	public Integer getId() {
 		return id;
@@ -116,7 +131,7 @@ public class PurchaseOrder {
 	public void setStatus(OrderState nStatus) {
 		this.status = nStatus;
 	}
-
+/*
 	public List<ProductsOrdered> getPurchasedProducts() {
 		return productsOrdered;
 	}
@@ -133,5 +148,6 @@ public class PurchaseOrder {
 		if (orderedProducts.getPurchaseOrder() != this) {
 			orderedProducts.setPurchaseOrder(this);
 		}
-	}
+	}*/
+	
 }

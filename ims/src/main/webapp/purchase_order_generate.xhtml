@@ -1,0 +1,22 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
+	<meta charset="utf-8" />
+
+	<ui:define name="title">Generate Purchase Order</ui:define>
+	<ui:define name="main-content">
+		<div class="pageheading">
+			<h2>Generate Purchase Order</h2>
+			<div class="row">
+			<div class="col-desk-5 col-tab-5">Product</div>
+			<div class="col-desk-5 col-tab-5">Supplier</div>
+			<div class="col-desk-2 col-tab-2">Quantity</div>
+		</div>
+			<hr />
+		
+		</div>
+	</ui:define>
+	
+	</ui:composition>
