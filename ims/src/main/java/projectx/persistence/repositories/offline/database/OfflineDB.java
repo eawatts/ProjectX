@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -39,6 +40,7 @@ public class OfflineDB {
 	private ArrayList<ProductsOrdered> productsOrdered;
 	private ArrayList<String> p1imgs;
 	
+	
 
 	@PostConstruct
 	private void populateData() {
@@ -59,38 +61,41 @@ public class OfflineDB {
 		p1imgs.add("asd");
 		p1imgs.add("asd");
 		p1imgs.add("asd");
+		
+		
+
 
 		products = new ArrayList<Product>();
-		products.add(new Product(1, "Gnome", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(2, "Gnomeo", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(3, "Gnomezilla", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(4, "Egnomeous", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(5, "SpeedyGnome", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(6, "Lawnmower", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(7, "Pond base", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(8, "Bench", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(9, "Hot tub", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(10, "Spade", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(11, "Trowel", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(12, "Rake", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(13, "Classy Hoe", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(14, "Water Fountain", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(15, "Flamingo", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(16, "Windchime", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(17, "Weathervane", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(18, "Weedkiller", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(19, "Flower Pot", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(20, "Compost", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(21, "Patio Heater", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(22, "Mean Grill", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(23, "Outdoor Table", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(24, "Outdoor Light", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
-		products.add(new Product(25, "Santa Gnome", 100, 5.00, 20, "a very shiny product", suppliers, p1imgs));
-		products.add(new Product(26, "Garden Gloves", 150, 3.00, 20, "another very shiny product", suppliers, p1imgs));
-		products.add(new Product(27, "Secataurs", 200, 3.00, 20, "a Gnome", suppliers, p1imgs));
-		products.add(new Product(28, "Petrol Chainsaw", 250, 3.00, 20, "another Gnome", suppliers, p1imgs));
-		products.add(new Product(29, "Hedge Trimmer", 300, 3.00, 20, "shiny product", suppliers, p1imgs));
-		products.add(new Product(30, "Paddling Pool", 350, 3.00, 20, "another shiny product", suppliers, p1imgs));
+		products.add(new Product(1, "Gnome", 100, 5.00, 20, "a very shiny product", p1imgs));
+		products.add(new Product(2, "Gnomeo", 150, 3.00, 20, "another very shiny product",p1imgs));
+		products.add(new Product(3, "Gnomezilla", 200, 3.00, 20, "a Gnome",p1imgs));
+		products.add(new Product(4, "Egnomeous", 250, 3.00, 20, "another Gnome",p1imgs));
+		products.add(new Product(5, "SpeedyGnome", 300, 3.00, 20, "shiny product", p1imgs));
+		products.add(new Product(6, "Lawnmower", 350, 3.00, 20, "another shiny product",p1imgs));
+		products.add(new Product(7, "Pond base", 100, 5.00, 20, "a very shiny product",  p1imgs));
+		products.add(new Product(8, "Bench", 150, 3.00, 20, "another very shiny product",  p1imgs));
+		products.add(new Product(9, "Hot tub", 200, 3.00, 20, "a Gnome",  p1imgs));
+		products.add(new Product(10, "Spade", 250, 3.00, 20, "another Gnome", p1imgs));
+		products.add(new Product(11, "Trowel", 300, 3.00, 20, "shiny product", p1imgs));
+		products.add(new Product(12, "Rake", 350, 3.00, 20, "another shiny product", p1imgs));
+		products.add(new Product(13, "Classy Hoe", 100, 5.00, 20, "a very shiny product", p1imgs));
+		products.add(new Product(14, "Water Fountain", 150, 3.00, 20, "another very shiny product",  p1imgs));
+		products.add(new Product(15, "Flamingo", 200, 3.00, 20, "a Gnome",  p1imgs));
+		products.add(new Product(16, "Windchime", 250, 3.00, 20, "another Gnome",p1imgs));
+		products.add(new Product(17, "Weathervane", 300, 3.00, 20, "shiny product",p1imgs));
+		products.add(new Product(18, "Weedkiller", 350, 3.00, 20, "another shiny product",p1imgs));
+		products.add(new Product(19, "Flower Pot", 100, 5.00, 20, "a very shiny product", p1imgs));
+		products.add(new Product(20, "Compost", 150, 3.00, 20, "another very shiny product",  p1imgs));
+		products.add(new Product(21, "Patio Heater", 200, 3.00, 20, "a Gnome",  p1imgs));
+		products.add(new Product(22, "Mean Grill", 250, 3.00, 20, "another Gnome",  p1imgs));
+		products.add(new Product(23, "Outdoor Table", 300, 3.00, 20, "shiny product", p1imgs));
+		products.add(new Product(24, "Outdoor Light", 350, 3.00, 20, "another shiny product", p1imgs));
+		products.add(new Product(25, "Santa Gnome", 100, 5.00, 20, "a very shiny product", p1imgs));
+		products.add(new Product(26, "Garden Gloves", 150, 3.00, 20, "another very shiny product", p1imgs));
+		products.add(new Product(27, "Secataurs", 200, 3.00, 20, "a Gnome", p1imgs));
+		products.add(new Product(28, "Petrol Chainsaw", 250, 3.00, 20, "another Gnome", p1imgs));
+		products.add(new Product(29, "Hedge Trimmer", 300, 3.00, 20, "shiny product",  p1imgs));
+		products.add(new Product(30, "Paddling Pool", 350, 3.00, 20, "another shiny product", p1imgs));
 
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,
@@ -107,20 +112,20 @@ public class OfflineDB {
 		purchaseOrders = new ArrayList<PurchaseOrder>();
 		PurchaseOrder purchaseOrder1 = new PurchaseOrder(1, suppliers.get(1), true, Date.valueOf("2016-09-13"),
 				OrderState.ORDER_CLOSED, productsOrdered);
-		purchaseOrder1.addOrderedProducts(new ProductsOrdered(1, products.get(1), 20, purchaseOrder1));
-		purchaseOrder1.addOrderedProducts(new ProductsOrdered(2, products.get(2), 10, purchaseOrder1));
+		purchaseOrder1.addOrderedProducts(new ProductsOrdered(1, products.get(1), 20, purchaseOrder1,10.00));
+		purchaseOrder1.addOrderedProducts(new ProductsOrdered(2, products.get(2), 10, purchaseOrder1,10.00));
 		PurchaseOrder purchaseOrder2 = new PurchaseOrder(2, suppliers.get(1), false, Date.valueOf("2016-02-16"),
 				OrderState.PENDING_CONFIRMATION, productsOrdered);
-		purchaseOrder2.addOrderedProducts(new ProductsOrdered(3, products.get(1), 20, purchaseOrder2));
-		purchaseOrder2.addOrderedProducts(new ProductsOrdered(4, products.get(5), 10, purchaseOrder2));
+		purchaseOrder2.addOrderedProducts(new ProductsOrdered(3, products.get(1), 20, purchaseOrder2,10.00));
+		purchaseOrder2.addOrderedProducts(new ProductsOrdered(4, products.get(5), 10, purchaseOrder2,10.00));
 		PurchaseOrder purchaseOrder3 = new PurchaseOrder(3, suppliers.get(3), true, Date.valueOf("2016-10-15"),
 				OrderState.PENDING_DELIVERY, productsOrdered);
-		purchaseOrder3.addOrderedProducts(new ProductsOrdered(5, products.get(3), 20, purchaseOrder3));
-		purchaseOrder3.addOrderedProducts(new ProductsOrdered(6, products.get(5), 10, purchaseOrder3));
+		purchaseOrder3.addOrderedProducts(new ProductsOrdered(5, products.get(3), 20, purchaseOrder3,10.00));
+		purchaseOrder3.addOrderedProducts(new ProductsOrdered(6, products.get(5), 10, purchaseOrder3,10.00));
 		PurchaseOrder purchaseOrder4 = new PurchaseOrder(4, suppliers.get(3), true, Date.valueOf("2016-08-16"),
 				OrderState.DELIVERED, productsOrdered);
-		purchaseOrder4.addOrderedProducts(new ProductsOrdered(7, products.get(4), 20, purchaseOrder4));
-		purchaseOrder4.addOrderedProducts(new ProductsOrdered(8, products.get(5), 10, purchaseOrder4));
+		purchaseOrder4.addOrderedProducts(new ProductsOrdered(7, products.get(4), 20, purchaseOrder4,10.00));
+		purchaseOrder4.addOrderedProducts(new ProductsOrdered(8, products.get(5), 10, purchaseOrder4,10.00));
 
 		purchaseOrders.add(purchaseOrder1);
 		purchaseOrders.add(purchaseOrder2);

@@ -40,16 +40,21 @@ public class ProductsOrdered {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "purchase_order")
 	private PurchaseOrder purchaseOrder;
+	
+	@NotNull
+	@Column(name= "price")
+	private double price;
 
 	public ProductsOrdered() {
 	}
 
-	public ProductsOrdered(Integer id, Product product, int ordered, PurchaseOrder purchaseOrder) {
+	public ProductsOrdered(Integer id, Product product, int ordered, PurchaseOrder purchaseOrder, double price) {
 		super();
 		this.id = id;
 		this.product = product;
 		this.ordered = ordered;
 		this.purchaseOrder = purchaseOrder;
+		this.price = price;
 	}
 
 	public Integer getId() {
@@ -82,5 +87,13 @@ public class ProductsOrdered {
 
 	public void setPurchaseOrder(PurchaseOrder purchaseOrder) {
 		this.purchaseOrder = purchaseOrder;
+	}
+	
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 }

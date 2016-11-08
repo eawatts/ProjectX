@@ -1,6 +1,7 @@
 package projectx.persistence.entities;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.persistence.*;
@@ -42,15 +43,16 @@ public class Product {
 	@Column(name = "description", nullable = false, length = 500)
 	private String description;
 
-	private ArrayList<Supplier> suppliers;
-
 	private ArrayList<String> images;
+
 
 	public Product() {
 	}
 
 	public Product(Integer id, String name, int stockLvl, double price, int lowStock, String description,
-			ArrayList<Supplier> suppliers, ArrayList<String> imglists) {
+			 ArrayList<String> imglists) {
+		
+		
 		this.id = id;
 		this.name = name;
 		this.currentStock = stockLvl;
@@ -58,8 +60,8 @@ public class Product {
 		this.lowLimit = lowStock;
 		this.isDiscontinued = true;
 		this.description = description;
-		this.suppliers = suppliers;
 		this.images = imglists;
+	
 	}
 
 	public Integer getId() {
@@ -118,13 +120,6 @@ public class Product {
 		this.description = description;
 	}
 
-	public List<Supplier> getSuppliers() {
-		return suppliers;
-	}
-
-	public void setSuppliers(ArrayList<Supplier> suppliers) {
-		this.suppliers = suppliers;
-	}
 
 	public ArrayList<String> getImgs() {
 		return images;
@@ -133,4 +128,6 @@ public class Product {
 	public void setImgs(ArrayList<String> imglists) {
 		this.images = imglists;
 	}
+
+
 }
