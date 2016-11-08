@@ -13,31 +13,19 @@ import projectx.persistence.webentities.PurchaseOrderProduct;
 
 @Stateless
 public class PurchaseOrderSerivce {
-	@Inject
-	private PurchaseOrderRepository purchaseOrderRepo;
 	
-//	public PurchaseOrder findPOById(int id)
-//	{
-//		return purchaseOrderRepo.findPurchaseOrderById(id);
-//	}
+	@Inject
+	private PurchaseOrderRepository purchaseOrderRepopository;
 	
 	public ArrayList<PurchaseOrder> getPurchaseOrderList() {
-		return purchaseOrderRepo.getPurchaseOrders();
+		return purchaseOrderRepopository.getPurchaseOrders();
 	}
 
-	public PurchaseOrder findPOById(int id) {
-		return purchaseOrderRepo.findPurchaseOrderById(id);
-	}
-
-	public void addProductToPurchaseOrder() {
-		
-		
+	public PurchaseOrder findPurchaseOrderById(int purchaseOrderId) {
+		return purchaseOrderRepopository.findPurchaseOrderById(purchaseOrderId);
 	}
 
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry() {
-		return purchaseOrderRepo.createPurchaseOrderEntry();
-	}
-	
-	
-	
+		return purchaseOrderRepopository.createPurchaseOrderEntry();
+	}	
 }
