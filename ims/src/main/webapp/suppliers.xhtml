@@ -39,7 +39,7 @@
 									<div class="col-tab-1 col-desk-1"></div>
 								</div>
 							</div>
-							<br/>
+							<br />
 							<ui:repeat var="supplier" value="#{suppliers.suppliersList}">
 								<div class="product-row">
 									<div class="row">
@@ -70,10 +70,10 @@
 										</h:form>
 									</div>
 								</div>
-								<hr/>
+								<hr />
 							</ui:repeat>
 						</div>
-						<br/>
+						<br />
 						<div class="row">
 							<div class="col-tab-12 col-desk-12">
 								<h:commandButton styleClass="button-green add-button"
@@ -84,28 +84,40 @@
 										<a class="close" href="#">X</a>
 										<div class="content">
 											<h:form class="addForm">
-										Name <h:inputText type="text" class="Sname"
+												<h:outputText styleClass="edit-header" value="Name" />
+												<h:inputText type="text"
 													value="#{newSupplier.supplier.name}" required="true"
 													requiredMessage="Please Enter Name"></h:inputText>
-												<br /> 
-										Address Line 1 <h:inputText type="text" class="Saddr"
+												<br />
+												<br />
+												<h:outputText styleClass="edit-header"
+													value="Address Line 1" />
+												<h:inputText type="text"
 													value="#{newSupplier.supplier.addressLine1}"
 													required="true"
 													requiredMessage="Please Enter Address Line 1"></h:inputText>
-												<br /> 
-										Address Line 2 <h:inputText type="text" class="Saddr"
+												<br />
+												<br />
+												<h:outputText styleClass="edit-header"
+													value="Address Line 2 " />
+												<h:inputText type="text"
 													value="#{newSupplier.supplier.addressLine2}"
 													required="true"
 													requiredMessage="Please Enter Address Line 2"></h:inputText>
-												<br /> 
-										Postcode <h:inputText type="text" class="Saddr"
+												<br />
+												<br />
+												<h:outputText styleClass="edit-header" value="Postcode " />
+												<h:inputText type="text"
 													value="#{newSupplier.supplier.postcode}"
 													pattern="[A-Z]{1-2} [0-9]{1-2} [0-9]{1} [A-Z]{2} "
 													required="true" requiredMessage="Please Enter Postcode"></h:inputText>
-												<br /> 
-										Phone <h:inputText type="text" class="Saddr"
+												<br />
+												<br />
+												<h:outputText styleClass="edit-header" value="Phone " />
+												<h:inputText type="text"
 													value="#{newSupplier.supplier.phone}" required="true"
 													requiredMessage="Please Enter Phone Number"></h:inputText>
+												<br />
 												<br />
 												<h:commandButton class="submit-button button-green"
 													type="submit" action="#{newSupplier.addSupplier}"

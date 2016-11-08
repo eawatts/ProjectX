@@ -3,15 +3,7 @@
 	max-width:100%;
 }
 
-.div-table{
-	margin: auto;
-  display:table;
-  width:auto;         
-  max-width:100%;         
-  background-color:#eee;         
-  border:1px solid  #666666;         
-  border-spacing:5px;/*cellspacing:poor IE support for  this*/
-}
+
 .div-table-row{
   display:table-row;
   width:auto;
@@ -112,7 +104,11 @@ h2 {
     font-size: 16px;
     margin: 4px 2px;
     list-style: none;
- 
+}
+.edit-header{
+	display: inline-block;
+	min-width: 40px;
+	width: 100px;
 }
 
 .button1 {
