@@ -1,5 +1,6 @@
 package projectx.persistence.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +16,12 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "product")
-public class Product {
+public class Product implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public static final String FIND_BY_PRODUCT_NAME = "Product.findByProductName";
 

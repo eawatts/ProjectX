@@ -18,6 +18,12 @@
 		
 		<!-- UNCOMMENT THIS TO USE SUPPLIERS VIA THE DATABASE -->
 		 <class>projectx.persistence.repositories.hibernate.SupplierRepositoryHibernate</class>
+		 
+		 <!-- UNCOMMENT THIS TO USE SUPPLIERS VIA THE DATABASE -->
+		 <class>projectx.persistence.repositories.hibernate.PurchaseOrderRepositoryHibernate</class>
+		 
+		 <!-- UNCOMMENT THIS TO USE SUPPLIERS VIA THE DATABASE -->
+		<class>projectx.persistence.repositories.hibernate.ProductsOrderedRepositoryHibernate</class>
 
 	</alternatives>
 

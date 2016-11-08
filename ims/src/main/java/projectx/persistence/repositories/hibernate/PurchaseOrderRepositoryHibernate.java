@@ -61,11 +61,11 @@ public class PurchaseOrderRepositoryHibernate implements PurchaseOrderRepository
 		// TODO Auto-generated method stub
 		
 	}
-
+	/*
 	@Override
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}*/
 
 }

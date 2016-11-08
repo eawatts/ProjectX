@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.enterprise.inject.Alternative;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
@@ -13,8 +14,8 @@ import projectx.persistence.repositories.offline.database.OfflineDB;
 import projectx.persistence.webentities.PurchaseOrderProduct;
 
 @Stateless
-@Default
-public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
+@Alternative
+public class PurchaseOrderRepositoryOffline implements PurchaseOrderRepository {
 	@Inject
 	OfflineDB initialData;
 	
@@ -56,10 +57,9 @@ public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
 	public void updatePurchaseOrder(PurchaseOrder purchaseOrder) {
 		initialData.updatePurchaseOrders(purchaseOrder);
 	}
-
+	/*
 	@Override
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry() {
 		return initialData.createPurchaseOrderEntry();
-		
+		*/
 	}
-}
