@@ -28,3 +28,7 @@
 .closeedit_phone{
 	display:none;
 }
+.edit-button{
+	float:right;
+	margin: 1px
+}
