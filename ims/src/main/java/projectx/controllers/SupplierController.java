@@ -34,7 +34,6 @@ public class SupplierController implements Serializable{
    
 	
 	public Supplier getSupplierById(){
-		System.out.println("test");
 		return supplierService.findSupplierById(id);
 	}
 	
