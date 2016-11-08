@@ -14,7 +14,7 @@ import projectx.persistence.entities.Supplier;
 import projectx.services.SupplierService;
 
 @Named("suppliers")
-@RequestScoped
+@SessionScoped
 public class SupplierController implements Serializable{
 	/**
 	 * 

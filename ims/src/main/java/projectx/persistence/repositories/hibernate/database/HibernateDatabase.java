@@ -11,9 +11,11 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 
-import projectx.persistence.entities.Category;
+
 import projectx.persistence.entities.Notification;
+import projectx.persistence.entities.Product;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
@@ -286,8 +288,9 @@ public class HibernateDatabase {
 		session.beginTransaction().commit();
 
 	}
-	
-	public void updateSupplier(Integer id, String name, String addressLine1, String addressLine2, String postcode,String phone) {
+
+	public void updateSupplier(Integer id, String name, String addressLine1, String addressLine2, String postcode,
+			String phone) {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
@@ -301,18 +304,19 @@ public class HibernateDatabase {
 			session.update(supplier);
 			session.save(supplier);
 			session.beginTransaction().commit();
-			
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			
+
 		} finally {
 			if (session != null) {
 				session.close();
 			}
-	
+
 		}
 	}
-	//Purchase Order
+
+	// Purchase Order
 
 	public void persistPurchaseOrder(PurchaseOrder purchaseOrder) {
 		if (purchaseOrder == null) {
@@ -321,7 +325,9 @@ public class HibernateDatabase {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
+
 			session.save(purchaseOrder);
+
 			session.beginTransaction().commit();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -338,7 +344,9 @@ public class HibernateDatabase {
 			session = sessionManager.getSession();
 			Criteria criteria = session.createCriteria(PurchaseOrder.class);
 			criteria.add(Restrictions.like("Supplier.id", supplierID));
+			criteria.add(Restrictions.like("id", supplierID));
 			return (PurchaseOrder) criteria.uniqueResult();
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
@@ -347,10 +355,142 @@ public class HibernateDatabase {
 				session.close();
 			}
 		}
+	}
+
+	// Products
+	public void persistProduct(Product product) {
+		if (product == null) {
+			return;
+		}
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			session.save(product);
+			session.beginTransaction().commit();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
 
 	}
 
-	
+	public List<Product> getProducts() {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(Product.class);
+			return criteria.list();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+
+	public Product getProductById(int productId) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(Product.class);
+			criteria.add(Restrictions.like("id", productId));
+			return (Product) criteria.uniqueResult();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+
+	public Product getProductByName(String name) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(Product.class);
+			criteria.add(Restrictions.like("name", name));
+			return (Product) criteria.uniqueResult();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+
+	public List<Product> getLowStockProducts() {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Query query = session.getNamedQuery("Product.findlowproduct");
+			return (List<Product>) query.getResultList();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+
+	public List searchProducts(String param) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Query query = session.getNamedQuery("Product.searchProduct").setParameter("param", param);
+			return (List<Product>) query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+
+	public List searchSupplier(String param) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Query query = session.getNamedQuery("Supplier.searchSupplier").setParameter("param", param);
+			return (List<Product>) query.getResultList();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+
+	public List searchPO(String param) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Query query = session.getNamedQuery("PurchaseOrder.searchPO").setParameter("param", param);
+			return (List<Product>) query.getResultList();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
 
 }
-

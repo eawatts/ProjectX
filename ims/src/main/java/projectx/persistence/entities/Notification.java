@@ -24,11 +24,10 @@ import projectx.persistence.util.NotificationType;
 })
 
 public class Notification implements Serializable {
-	
-	/**
-	 * 
-	 */
+
+
 	private static final long serialVersionUID = 1L;
+
 
 	public static final String FIND_NOTIFICATIONS_BY_TYPE = "Supplier.findNotificationsByType";
 

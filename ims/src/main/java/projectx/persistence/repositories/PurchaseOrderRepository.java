@@ -16,6 +16,6 @@ public interface PurchaseOrderRepository {
 	public PurchaseOrder findPurchaseOrderById(int id);
 	public ArrayList<PurchaseOrder> getPurchaseOrders();
 	public void updatePurchaseOrder (PurchaseOrder purchaseOrder);
-	//List<PurchaseOrderProduct> createPurchaseOrderEntry();
+	List<PurchaseOrderProduct> createPurchaseOrderEntry();
 }
 	

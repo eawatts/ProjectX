@@ -57,9 +57,11 @@ public class PurchaseOrderRepositoryOffline implements PurchaseOrderRepository {
 	public void updatePurchaseOrder(PurchaseOrder purchaseOrder) {
 		initialData.updatePurchaseOrders(purchaseOrder);
 	}
-	/*
+	
 	@Override
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry() {
-		return initialData.createPurchaseOrderEntry();
-		*/
+		return null;
+		
 	}
+}
+
