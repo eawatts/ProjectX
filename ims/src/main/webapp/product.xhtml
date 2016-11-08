@@ -35,7 +35,7 @@
 									<!-- "<img#{img}" -->
 								</div>
 								<div class="slider-button">
-									<h:commandButton styleClass="button-green" action="#{products.setImgAsDefault}" value="Set image as default"/>
+									<h:commandButton styleClass="button-green edit-button" action="#{products.setImgAsDefault}" value="Set image as default"/>
 								</div>
 							</h:form>
 						</div>
@@ -53,12 +53,12 @@
 			<div class="row">
 				<div class="col-tab-3 col-desk-3">
 					<h2>Low Limit</h2>
-					<h:outputText class="stocklowlimit output-box"
+					<h:outputText class="stocklowlimit"
 						value="#{products.productByID.lowLimit}"></h:outputText>
 					<button type="button" class="edit_lowlimit button-green edit-button">Edit</button>
 					<h:form>
 						<h:inputText class="updatestocklowlimit"
-							value="#{products.productByID.lowLimit}"></h:inputText><br/>
+							value="#{products.productByID.lowLimit}"></h:inputText><br/><br/>
 						<h:commandButton styleClass="save_lowlimit button-green" value="Save"></h:commandButton>
 						<button type="button" class="cancel_lowlimit button-green">Cancel</button>
 					</h:form>
@@ -66,23 +66,23 @@
 
 				<div class="col-tab-3 col-desk-3">
 					<h2>Stock Level</h2>
-					<h:outputText class="stocklevel output-box"
+					<h:outputText class="stocklevel"
 						value="#{products.productByID.currentStock}"></h:outputText>
 					<button type="button" class="edit_stocklevel button-green edit-button">Edit</button>
 					<h:form>
 						<h:inputText class="update_stocklevel"
-							value="#{products.productByID.currentStock}"></h:inputText><br/>
+							value="#{products.productByID.currentStock}"></h:inputText><br/><br/>
 						<h:commandButton styleClass="save_stocklevel button-green" value="Save"></h:commandButton>
 						<button type="button" class="cancel_stocklevel button-green">Cancel</button>
 					</h:form>
 				</div>
 				<div class="col-tab-3 col-desk-3">
 					<h2>Price</h2>
-					<h:outputText class="price output-box" value="#{products.productByID.price}"></h:outputText>
+					<h:outputText class="price" value="#{products.productByID.price}"></h:outputText>
 					<button type="button" class="edit_price button-green edit-button">Edit</button>
 					<h:form>
 						<h:inputText class="update_price"
-							value="#{products.productByID.price}"></h:inputText><br/>
+							value="#{products.productByID.price}"></h:inputText><br/><br/>
 						<h:commandButton styleClass="save_price button-green" value="Save"></h:commandButton>
 						<button type="button" class="cancel_price button-green">Cancel</button>
 					</h:form>
@@ -90,7 +90,7 @@
 				</div>
 				<div class="col-tab-3 col-desk-3">
 					<h2>Status</h2>
-					<div class="onoffswitch">
+					<div class="onoffswitch edit-button">
 						<h:form id="switch" name="switch">
 
 							<h:selectBooleanCheckbox name="onoffswitch"
@@ -111,18 +111,21 @@
 			<br /> <br /> <br />
 			<hr />
 			<div class="row">
+				<div class="col-tab-3 col-desk-3">
 				<h2>Description</h2>
-				<h:outputText class="showdescription output-box"
+				<h:outputText class="showdescription"
 					value="#{products.productByID.description}"></h:outputText>
 				<button type="button" class="edit_desc button-green edit-button">Edit</button>
 				<h:form>
 					<h:inputText class="editdescription"
-						value="#{products.productByID.description}"></h:inputText><br/>
+						value="#{products.productByID.description}"></h:inputText><br/><br/>
 					<h:commandButton styleClass="save_desc button-green" value="Save"></h:commandButton>
 					<button type="button" class="cancel_desc button-green">Cancel</button>
 				</h:form>
 
-
+			</div>
+			<div class="col-tab-9 col-desk-9">
+			</div>
 			</div>
 		</div>
 	</ui:define>
