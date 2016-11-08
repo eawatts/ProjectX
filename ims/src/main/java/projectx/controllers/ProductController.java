@@ -89,7 +89,7 @@ public class ProductController implements Serializable
 	public void createProduct(int id, String name, int stockLvl, double price, int lowStock, String description,
 			ArrayList<Supplier> suppliers, ArrayList<String> imglists)
 	{
-		Product p = new Product(id, name, stockLvl, price, lowStock, description, null, null);
+		Product p = new Product(id, name, stockLvl, price, lowStock, description, null);
 		productService.addProduct(p);
 	}
 
