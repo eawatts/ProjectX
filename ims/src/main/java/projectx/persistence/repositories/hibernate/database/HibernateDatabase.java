@@ -223,7 +223,7 @@ public class HibernateDatabase {
 	}
 
 	// SUPPLIERS
-	public List getSuppliers() {
+	public List<Supplier> getSuppliers() {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
@@ -284,5 +284,29 @@ public class HibernateDatabase {
 		session.beginTransaction().commit();
 
 	}
-
+	
+	public void updateSupplier(Integer id, String name, String addressLine1, String addressLine2, String postcode,String phone) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Supplier obj = (Supplier) session.get(Supplier.class, id);
+			obj.setName(name);
+			obj.setAddressLine1(addressLine1);
+			obj.setAddressLine2(addressLine2);
+			obj.setPostcode(postcode);
+			obj.setPhone(phone);
+			
+			session.update(obj);
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+	
+		}
+	}
 }
+

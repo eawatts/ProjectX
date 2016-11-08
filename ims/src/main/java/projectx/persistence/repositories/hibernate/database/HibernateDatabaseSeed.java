@@ -16,7 +16,7 @@ public class HibernateDatabaseSeed {
 	public static void seedDatabase(Session session) {
 		seedUsers(session);
 		seedNotifications(session);
-		//seedSuppliersAndProducts(session);
+		seedSuppliersAndProducts(session);
 
 		session.close();
 	}
@@ -78,7 +78,7 @@ public class HibernateDatabaseSeed {
 		productImages.add("/image1");
 		productImages.add("/image1");
 
-		ArrayList<Product> products = new ArrayList<Product>();
+		/*ArrayList<Product> products = new ArrayList<Product>();
 		products.add(new Product(null, "Gnome", 100, 5.00, 20, "a very shiny product", suppliers, productImages));
 		products.add(new Product(null, "Gnomeo", 150, 3.00, 20, "another very shiny product", suppliers, productImages));
 		products.add(new Product(null, "Gnomezilla", 200, 3.00, 20, "a Gnome", suppliers, productImages));
@@ -112,7 +112,7 @@ public class HibernateDatabaseSeed {
 
 		for (Product product : products) session.save(product);
 
-		session.beginTransaction().commit();
+		session.beginTransaction().commit();*/
 	}
 
 }
