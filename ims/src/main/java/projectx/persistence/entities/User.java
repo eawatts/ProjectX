@@ -1,5 +1,7 @@
 package projectx.persistence.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,8 +27,12 @@ import projectx.persistence.util.UserLevel;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final String SAVE_USER = "User.saveUser";
 	public static final String SAVE_USERS = "User.saveUsers";
 	public static final String GET_USERS = "User.getUsers";

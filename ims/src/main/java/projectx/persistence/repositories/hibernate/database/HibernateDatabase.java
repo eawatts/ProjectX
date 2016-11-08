@@ -13,7 +13,7 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
-import projectx.persistence.entities.Category;
+
 import projectx.persistence.entities.Notification;
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.PurchaseOrder;
@@ -294,14 +294,16 @@ public class HibernateDatabase {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
-			Supplier obj = (Supplier) session.get(Supplier.class, id);
-			obj.setName(name);
-			obj.setAddressLine1(addressLine1);
-			obj.setAddressLine2(addressLine2);
-			obj.setPostcode(postcode);
-			obj.setPhone(phone);
-
-			session.update(obj);
+			Supplier supplier = (Supplier) session.get(Supplier.class, id);
+			supplier.setName(name);
+			supplier.setAddressLine1(addressLine1);
+			supplier.setAddressLine2(addressLine2);
+			supplier.setPostcode(postcode);
+			supplier.setPhone(phone);
+			
+			session.update(supplier);
+			session.save(supplier);
+			session.beginTransaction().commit();
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -341,6 +343,7 @@ public class HibernateDatabase {
 		try {
 			session = sessionManager.getSession();
 			Criteria criteria = session.createCriteria(PurchaseOrder.class);
+			criteria.add(Restrictions.like("Supplier.id", supplierID));
 			criteria.add(Restrictions.like("id", supplierID));
 			return (PurchaseOrder) criteria.uniqueResult();
 

@@ -1,8 +1,9 @@
 package projectx.persistence.entities;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.persistence.*;
 
@@ -10,8 +11,12 @@ import projectx.persistence.util.OrderState;
 
 @NamedQueries({
 	
+
 	@NamedQuery(name = PurchaseOrder.SEARCH_PO, query = "SELECT po FROM PurchaseOrder po WHERE po.id LIKE '%:param%'")
+
+
 		/*
+
 		 * @NamedQuery(name = PurchaseOrder.INSERT_PURCHASEORDER, query =
 		 * "INSERT INTO purchaseOrder p (id, supplier,approved,approvalDate,satus,products) VALUES(:id, :supplier, :approved, :approvalDate, :satus, :products) "
 		 * ),
@@ -36,8 +41,12 @@ import projectx.persistence.util.OrderState;
 
 @Entity
 @Table(name = "purchase_order")
-public class PurchaseOrder {
+public class PurchaseOrder implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final String INSERT_PURCHASEORDER = "PurchaseOrder.savePurchaseOrder";
 	public static final String FIND_ALL = "PurchaseOrder.findAll";
 	public static final String FIND_BY_APPROVALDATE = "PurchaseOrder.findByAprovalDate";
@@ -51,8 +60,8 @@ public class PurchaseOrder {
 	@Column(name = "id", nullable = false)
 	private Integer id;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "supplier", nullable = false, updatable = false)
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "supplier_id", nullable = false, updatable = false)
 	private Supplier supplier;
 
 	@Column(name = "approved", length = 10, nullable = false)
@@ -63,8 +72,7 @@ public class PurchaseOrder {
 
 	@Column(name = "status", length = 10, nullable = false)
 	private OrderState status;
-
-	private ArrayList<ProductsOrdered> productsOrdered;
+	
 
 	public PurchaseOrder() {
 	}
@@ -77,7 +85,7 @@ public class PurchaseOrder {
 		this.approved = approved;
 		this.approvalDate = approvalDate;
 		this.status = status;
-		this.productsOrdered = productsOrdered;
+
 	}
 
 	public Integer getId() {
@@ -119,7 +127,7 @@ public class PurchaseOrder {
 	public void setStatus(OrderState nStatus) {
 		this.status = nStatus;
 	}
-
+/*
 	public List<ProductsOrdered> getPurchasedProducts() {
 		return productsOrdered;
 	}
@@ -136,5 +144,6 @@ public class PurchaseOrder {
 		if (orderedProducts.getPurchaseOrder() != this) {
 			orderedProducts.setPurchaseOrder(this);
 		}
-	}
+	}*/
+	
 }

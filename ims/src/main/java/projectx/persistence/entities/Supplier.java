@@ -1,5 +1,7 @@
 package projectx.persistence.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
@@ -14,7 +16,11 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "supplier")
-public class Supplier {
+public class Supplier implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final String FIND_BY_SUPPLIER_NAME = "Supplier.findBySupplierName";
 	public static final String FIND_BY_SUPPLIER_ID = "Supplier.findBySupplierId";
 	public static final String UPDATE_SUPPLIER = "Supplier.updateSupplier";

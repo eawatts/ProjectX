@@ -1,5 +1,6 @@
 package projectx.persistence.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,18 +8,29 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.GenericGenerator;
+
 
 @NamedQueries({
+<<<<<<< HEAD
 		/*@NamedQuery(name = Product.FIND_BY_PRODUCT_NAME, query = "SELECT p FROM Product p WHERE p.name = :Productname")*/ 
 	//	@NamedQuery(name = Product.FIND_LOW_PRODUCT,query="SELECT p, current_stock-low_stock_limit AS surplus FROM Product p ORDER BY surplus LIMIT 25"),
 		@NamedQuery(name = Product.SEARCH_PRODUCT, query ="SELECT p FROM Product p WHERE p.name LIKE '%:param%'")
+=======
+		/*@NamedQuery(name = Product.FIND_BY_PRODUCT_NAME, query = "SELECT p FROM Product p WHERE p.name = :Productname") 
+		@NamedQuery(name = Product.FIND_LOW_PRODUCT,query="SELECT *, current_stock-low_stock_limit AS surplus FROM Product ORDER BY surplus LIMIT 25"),
+		@NamedQuery(name = Product.SEARCH_PRODUCT, query ="SELECT * FROM Product WHERE name LIKE '%:param%'")*/
+>>>>>>> d763c25ccd0b9ff3a533646c63da8502568dcdbb
 	
 })
 
 @Entity
 @Table(name = "product")
-public class Product {
+public class Product implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public static final String FIND_BY_PRODUCT_NAME = "Product.findByProductName";
 	public static final String FIND_LOW_PRODUCT="Product.findlowproduct";
