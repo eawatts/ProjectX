@@ -16,6 +16,7 @@ import projectx.persistence.entities.Supplier;
 import projectx.persistence.util.OrderState;
 import projectx.persistence.webentities.PurchaseOrderProduct;
 import projectx.services.PurchaseOrderSerivce;
+import projectx.services.productsOrderedService;
 
 
 
@@ -30,6 +31,8 @@ public class PurchaseOrderController implements Serializable{
 	private PurchaseOrderSerivce purchaseOrderService;
 	@Inject
 	private SearchController searchController;
+	@Inject
+	private ProductController productController;
 	private int id;
 	private Supplier supplier;
 	private boolean approved;
@@ -120,11 +123,18 @@ public class PurchaseOrderController implements Serializable{
 	}
 	
 	
-//	public String addProductToPurchaseOrder(){
-//		purchaseOrderSerivce.addProductToPurchaseOrder();
-//		return null;
-//	}
-	
+	public void generatePurchaseOrder()
+	{
+		List<Product> productList = productController.getTop25LowStockProducts();
+		
+		for(int i=0;i<productList.size();i++)
+		{
+			productsOrdered.add(new ProductsOrdered(i,productList.get(i), productList.get(i).getLowLimit() - productList.get(i).getCurrentStock(), null, productsOrderedService.getPrice(productList.get(i))));
+		}
+		
+		
+		
+	}
 	
 	
 	
