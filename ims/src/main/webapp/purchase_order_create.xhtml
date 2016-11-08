@@ -51,7 +51,6 @@
 		<h4>Add a New Product to Purchase Order</h4>
 		<h:form>
 			<div class="row">
-
 				<div class="col-desk-5 col-tab-5">
 					<h:selectOneMenu value="#{selected_purchase_order_product.product}"
 						converter="#{product_converter}">
@@ -85,5 +84,21 @@
 				</div>
 			</div>
 		</h:form>
+
+		<h:commandButton styleClass="button-green" value="Confirm"
+			onclick="location.href='#confirm_popup'"></h:commandButton>
+		<div id="confirm_popup" class="overlay">
+			<div class="popup">
+				<a class="close" href="#">x</a>
+				<h3>Confirm Purchase Order</h3>
+				<div class="content">
+					<h:form>
+						<h:commandButton styleClass="button-green" value="Confirm"
+							action="#{purchase_order.completePurchaseOrder()}" />
+					</h:form>
+				</div>
+			</div>
+		</div>
+
 	</ui:define>
 </ui:composition>

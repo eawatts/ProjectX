@@ -210,15 +210,15 @@ public class HibernateDatabaseSeed {
 
 		session.beginTransaction().commit();
 		
-	
 		ArrayList<ProductsOrdered> productsOrdered = new ArrayList<ProductsOrdered>();
 		ArrayList<PurchaseOrder> orders = new ArrayList<PurchaseOrder>();
 		PurchaseOrder purchaseOrder1 = new PurchaseOrder(null, suppliers.get(1), true, Date.valueOf("2016-09-13"),
 				OrderState.ORDER_CLOSED, productsOrdered);
 		
 		orders.add(purchaseOrder1);
-		for (PurchaseOrder purchaseOrder : orders){
-			session.save(purchaseOrder);}
+		
+		for (PurchaseOrder purchaseOrder : orders) session.save(purchaseOrder);
+		
 		session.beginTransaction().commit();
 		
 		productsOrdered.add(new ProductsOrdered(null, products.get(1), 20, purchaseOrder1,10.00));
@@ -229,5 +229,4 @@ public class HibernateDatabaseSeed {
 
 		session.beginTransaction().commit();
 	}
-	
 }

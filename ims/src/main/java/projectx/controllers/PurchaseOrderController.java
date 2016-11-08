@@ -67,10 +67,10 @@ public class PurchaseOrderController implements Serializable {
 	
 	public String completePurchaseOrder() {
 		
-		List<PurchaseOrderProduct> purchaseOrderProducts = currentsession.getPendingPurchaseOrder().getContents();
+		//List<PurchaseOrderProduct> purchaseOrderProducts = currentsession.getPendingPurchaseOrder().getContents();
 		
 		
-		
-		return null;
+		clearAllPendingPurchaseOrderProducts();
+		return "index";
 	}
 }
