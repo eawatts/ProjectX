@@ -29,20 +29,33 @@ public class PurchaseOrderController implements Serializable {
 
 		Product selectedProduct = selectedPurchaseOrderProduct.getProduct();
 		int selectedQuantity = selectedPurchaseOrderProduct.getQuantity();
+		Supplier selectedSupplier = selectedPurchaseOrderProduct.getSupplier();
 		
 		List<PurchaseOrderProduct> purchaseOrderProducts = currentsession.getPendingPurchaseOrder().getContents();
 
 		// See if we need to update the quantity or add a new entry
 		for (PurchaseOrderProduct purchaseOrderProduct : purchaseOrderProducts) {
-			if (purchaseOrderProduct.getProduct().getId() == selectedProduct.getId()) {
+			if ((purchaseOrderProduct.getProduct().getId() == selectedProduct.getId()) && (purchaseOrderProduct.getSupplier().getId() == selectedSupplier.getId())) {
 				purchaseOrderProduct.setQuantity(purchaseOrderProduct.getQuantity() + selectedQuantity);
 				return null;
 			}
 		}
 
-		Supplier selectedSupplier = selectedPurchaseOrderProduct.getSupplier();
 		currentsession.getPendingPurchaseOrder().addProductToPurchaseOrder(selectedProduct, selectedQuantity, selectedSupplier);
 
+		return null;
+	}
+	
+	public String removePendingPurchaseOrder(int productId, int supplierId) {
+		
+		List<PurchaseOrderProduct> purchaseOrderProducts = currentsession.getPendingPurchaseOrder().getContents();
+		for (PurchaseOrderProduct purchaseOrderProduct : purchaseOrderProducts) {
+			if ((purchaseOrderProduct.getProduct().getId() == productId) && (purchaseOrderProduct.getSupplier().getId() == supplierId)) {
+				purchaseOrderProducts.remove(purchaseOrderProduct);
+				return null;
+			}
+		}
+		
 		return null;
 	}
 }
