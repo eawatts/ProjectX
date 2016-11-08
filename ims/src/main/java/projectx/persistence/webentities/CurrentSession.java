@@ -10,7 +10,6 @@ import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
 
-
 @SessionScoped
 @Named("current_session")
 public class CurrentSession implements Serializable{
