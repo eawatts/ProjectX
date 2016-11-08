@@ -52,7 +52,6 @@ public class Product {
 	public Product(Integer id, String name, int stockLvl, double price, int lowStock, String description,
 			 ArrayList<String> imglists) {
 		
-		
 		this.id = id;
 		this.name = name;
 		this.currentStock = stockLvl;
@@ -128,6 +127,17 @@ public class Product {
 	public void setImgs(ArrayList<String> imglists) {
 		this.images = imglists;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		
+		return (obj != null && getClass() == obj.getClass() && id != null)
+	            ? id.equals(((Product) obj).id)
+	            : (obj == this);
+	}
 
-
+	@Override
+	public int hashCode() {
+		return (id != null) ? (getClass().hashCode() + id.hashCode()) : super.hashCode();
+	}
 }

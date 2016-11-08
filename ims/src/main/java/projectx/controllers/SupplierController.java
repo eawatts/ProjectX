@@ -15,13 +15,14 @@ import projectx.services.SupplierService;
 
 @Named("suppliers")
 @RequestScoped
+
 public class SupplierController implements Serializable{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
+	
 	@Inject 
 	private SupplierService supplierService;
+	
 	@Inject
 	private SearchController searchController;
 	
@@ -151,6 +152,8 @@ public class SupplierController implements Serializable{
 	{
 		return id;
 	}
-
-
+	
+	public List<Supplier> getSuppliers() {
+		return supplierService.getSuppliersList();
+	}
 }
