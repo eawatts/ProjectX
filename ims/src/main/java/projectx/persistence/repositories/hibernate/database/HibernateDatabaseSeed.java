@@ -124,16 +124,15 @@ public class HibernateDatabaseSeed {
 				OrderState.ORDER_CLOSED, productsOrdered);
 		
 		orders.add(purchaseOrder1);
-		for (PurchaseOrder purchaseOrder : orders)
-			session.save(purchaseOrder);
-
+		for (PurchaseOrder purchaseOrder : orders){
+			session.save(purchaseOrder);}
 		session.beginTransaction().commit();
 		
 		productsOrdered.add(new ProductsOrdered(null, products.get(1), 20, purchaseOrder1,10.00));
 		productsOrdered.add(new ProductsOrdered(null, products.get(2), 10, purchaseOrder1,10.00));
 		
-		for (ProductsOrdered prodOrder : productsOrdered)
-			session.save(prodOrder);
+		for (ProductsOrdered prodOrder : productsOrdered){
+			session.save(prodOrder);}
 
 		session.beginTransaction().commit();
 	}
