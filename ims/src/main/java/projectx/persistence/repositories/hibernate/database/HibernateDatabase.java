@@ -337,6 +337,23 @@ public class HibernateDatabase {
 			}
 		}
 	}
+	
+	public List<PurchaseOrder> getPurchaseOrders() {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(PurchaseOrder.class);
+			return criteria.list();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+		
+	}
 
 	public PurchaseOrder findPurchaseOrderBySupplierId(String supplierID) {
 		Session session = null;
