@@ -4,11 +4,13 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
 	<meta charset="utf-8" />
-	<ui:define name="title"> Create Purchase Order </ui:define>
+	
+	<ui:define name="title">Create Purchase Order</ui:define>
+	
 	<ui:define name="custom-css">
-		<link rel="stylesheet" type="text/css"
-			href="css/ims-purchase-order-view.css" />
+		<link rel="stylesheet" type="text/css"	href="css/ims-purchase-order-view.css" />
 	</ui:define>
+	
 	<ui:define name="main-content">
 
 		<div class="pageheading">
@@ -28,13 +30,9 @@
 
 				<div class="row">
 					<div class="col-desk-4 col-tab-4">
-
 						<h:selectOneMenu styleclass="searchselect" value="#{search.category}">
-							
-								<f:selectItem var="p" value="products.productList" itemValue="#{p.name} - #{p.price}" itemLabel="#{p.name} - #{p.price}"/>	
-							
+								<f:selectItem var="p" value="products.productList" itemValue="#{p.name} - #{p.price}" itemLabel="#{p.name} - #{p.price}"/>		
 						</h:selectOneMenu>
-					
 					</div>
 					<div class="col-desk-2 col-tab-2">
 						<select>
@@ -47,8 +45,7 @@
 					
 					</div>
 					<div class="col-desk-2 col-tab-2">
-						<h:commandButton styleClass="button-green"
-							value="Add this line to order" action="purchaseOrder.addRow)" />
+						<h:commandButton styleClass="button-green" value="Add this line to order" action="purchaseOrder.addRow)" />
 					</div>
 				</div>
 			</h:form>
