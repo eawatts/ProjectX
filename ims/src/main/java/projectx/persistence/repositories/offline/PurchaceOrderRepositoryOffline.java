@@ -59,7 +59,7 @@ public class PurchaceOrderRepositoryOffline implements PurchaseOrderRepository {
 
 	@Override
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry() {
-		return initialData.createPurchaseOrderEntry();
+		return null; //initialData.createPurchaseOrderEntry();
 		
 	}
 }

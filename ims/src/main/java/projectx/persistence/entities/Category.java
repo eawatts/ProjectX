@@ -2,8 +2,6 @@ package projectx.persistence.entities;
 
 import javax.persistence.*;
 
-import org.hibernate.annotations.GenericGenerator;
-
 @Entity
 @Table(name = "category")
 @NamedQueries({

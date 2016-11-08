@@ -10,7 +10,7 @@ import projectx.persistence.util.OrderState;
 
 @NamedQueries({
 	
-		@NamedQuery(name = PurchaseOrder.SEARCH_PO, query = "SELECT * FROM supplier WHERE name LIKE '%:param%'")
+	@NamedQuery(name = PurchaseOrder.SEARCH_PO, query = "SELECT po FROM PurchaseOrder po WHERE po.id LIKE '%:param%'")
 		/*
 		 * @NamedQuery(name = PurchaseOrder.INSERT_PURCHASEORDER, query =
 		 * "INSERT INTO purchaseOrder p (id, supplier,approved,approvalDate,satus,products) VALUES(:id, :supplier, :approved, :approvalDate, :satus, :products) "

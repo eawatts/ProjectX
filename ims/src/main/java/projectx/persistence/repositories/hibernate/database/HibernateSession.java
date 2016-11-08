@@ -22,7 +22,7 @@ import projectx.persistence.entities.User;
 public class HibernateSession {
 
 	private static final String USERNAME = "root";
-	private static final String PASSWORD = "password";
+	private static final String PASSWORD = "1234";
 
 	private SessionFactory sessionFactory;
 

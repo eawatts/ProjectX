@@ -6,6 +6,7 @@ import javax.validation.constraints.Size;
 @NamedQueries({
 		@NamedQuery(name = Supplier.FIND_BY_SUPPLIER_NAME, query = "SELECT s FROM Supplier s WHERE s.name = :Suppliername"),
 		@NamedQuery(name = Supplier.FIND_BY_SUPPLIER_ID, query = "SELECT s FROM Supplier s WHERE s.id = :Supplierid"),
+		@NamedQuery(name = Supplier.SEARCH_SUPPLIER, query="SELECT s FROM Supplier s WHERE s.name LIKE '%:param%'")
 /*		@NamedQuery(name = Supplier.UPDATE_SUPPLIER, query = ""),
 		@NamedQuery(name = Supplier.CREATE_SUPPLIER, query = ""),
 		@NamedQuery(name = Supplier.GET_SUPPLIERS, query = ""),*/
@@ -20,6 +21,7 @@ public class Supplier {
 	public static final String CREATE_SUPPLIER = "Supplier.createSupplier";
 	public static final String GET_SUPPLIERS = "Supplier.getSuppliers";
 	public static final String DELETE_SUPPLIERS = "Supplier.deleteSupplier";
+	public static final String SEARCH_SUPPLIER = "Supplier.searchSupplier";
 
 	@Id
 	@Column(name = "id")
