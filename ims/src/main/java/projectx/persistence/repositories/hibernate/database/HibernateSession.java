@@ -50,10 +50,11 @@ public class HibernateSession {
 		properties.setProperty("hibernate.connection.username", USERNAME);
 		properties.setProperty("hibernate.connection.password", PASSWORD);
 		properties.setProperty("hibernate.show_sql", "true");
-		properties.setProperty("hibernate.hbm2ddl.auto", "create");
-
-		// TODO: Switch this across to update when used.
-		// properties.setProperty("hibernate.hbm2ddl.auto", "update");
+		
+		// What will you decide?
+		//properties.setProperty("hibernate.hbm2ddl.auto", "create");
+		 properties.setProperty("hibernate.hbm2ddl.auto", "update");
+		
 
 		Configuration configuration = new Configuration();
 		configuration.addProperties(properties);

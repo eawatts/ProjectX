@@ -1,7 +1,6 @@
 package projectx.controllers;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,7 +8,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import projectx.persistence.entities.Product;
 import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
@@ -18,13 +16,10 @@ import projectx.persistence.webentities.PurchaseOrderProduct;
 import projectx.services.PurchaseOrderSerivce;
 
 
-
 @SessionScoped
 @Named("purchaseOrders")
-public class PurchaseOrderController implements Serializable{
-	/**
-	 * 
-	 */
+public class OldPurchaseOrderController implements Serializable{
+
 	private static final long serialVersionUID = 1L;
 	@Inject 
 	private PurchaseOrderSerivce purchaseOrderService;
@@ -49,7 +44,7 @@ public class PurchaseOrderController implements Serializable{
 		}
 	}
 	public PurchaseOrder findPOById(int id){
-		return purchaseOrderService.findPOById(id);
+		return purchaseOrderService.findPurchaseOrderById(id);
 	} 
 	
 	public void viewPO(int id){
@@ -118,14 +113,4 @@ public class PurchaseOrderController implements Serializable{
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry(){
 		return purchaseOrderService.createPurchaseOrderEntry();
 	}
-	
-	
-//	public String addProductToPurchaseOrder(){
-//		purchaseOrderSerivce.addProductToPurchaseOrder();
-//		return null;
-//	}
-	
-	
-	
-	
 }
