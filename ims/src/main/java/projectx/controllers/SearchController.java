@@ -3,11 +3,11 @@ package projectx.controllers;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import projectx.persistence.entities.Product;
 import projectx.services.SearchService;
 
 @Named("search")
@@ -17,12 +17,12 @@ public class SearchController implements Serializable {
 	@Inject
 	private SearchService searchService;
 
-	private List searchResults;
+	private List<Product> searchResults;
 	private String parameter;
 	private String category;
 
 	public String search() {
-		List results = searchService.search(parameter, category);
+		List<Product> results = searchService.search(parameter, category);
 		this.setSearchResults(results);
 
 		if (results != null) {
@@ -64,7 +64,7 @@ public class SearchController implements Serializable {
 	/**
 	 * @return the searchResults
 	 */
-	public List getSearchResults() {
+	public List<Product> getSearchResults() {
 		return searchResults;
 	}
 
@@ -72,7 +72,7 @@ public class SearchController implements Serializable {
 	 * @param searchResults
 	 *            the searchResults to set
 	 */
-	public void setSearchResults(List searchResults) {
+	public void setSearchResults(List<Product> searchResults) {
 		this.searchResults = searchResults;
 	}
 

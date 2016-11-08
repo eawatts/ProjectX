@@ -19,7 +19,7 @@ import projectx.persistence.util.NotificationType;
 	@NamedQuery(name = Notification.FIND_NOTIFICATIONS_BY_TYPE, query = "SELECT n FROM Notification n WHERE n.type = :type")
 })
 
-public class Notification implements Serializable {
+public class Notification{
 
 
 	private static final long serialVersionUID = 1L;

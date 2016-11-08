@@ -2,8 +2,6 @@ package projectx.persistence.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -11,15 +9,11 @@ import javax.validation.constraints.Size;
 
 
 @NamedQueries({
-<<<<<<< HEAD
+
 		/*@NamedQuery(name = Product.FIND_BY_PRODUCT_NAME, query = "SELECT p FROM Product p WHERE p.name = :Productname")*/ 
 	//	@NamedQuery(name = Product.FIND_LOW_PRODUCT,query="SELECT p, current_stock-low_stock_limit AS surplus FROM Product p ORDER BY surplus LIMIT 25"),
-		@NamedQuery(name = Product.SEARCH_PRODUCT, query ="SELECT p FROM Product p WHERE p.name LIKE '%:param%'")
-=======
-		/*@NamedQuery(name = Product.FIND_BY_PRODUCT_NAME, query = "SELECT p FROM Product p WHERE p.name = :Productname") 
-		@NamedQuery(name = Product.FIND_LOW_PRODUCT,query="SELECT *, current_stock-low_stock_limit AS surplus FROM Product ORDER BY surplus LIMIT 25"),
-		@NamedQuery(name = Product.SEARCH_PRODUCT, query ="SELECT * FROM Product WHERE name LIKE '%:param%'")*/
->>>>>>> d763c25ccd0b9ff3a533646c63da8502568dcdbb
+		@NamedQuery(name = Product.SEARCH_PRODUCT, query ="SELECT p FROM Product p where p.name like :param")
+
 	
 })
 

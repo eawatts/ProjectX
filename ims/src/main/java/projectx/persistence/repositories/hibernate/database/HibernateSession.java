@@ -2,6 +2,13 @@ package projectx.persistence.repositories.hibernate.database;
 
 import java.util.Properties;
 
+import javax.annotation.PostConstruct;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -19,43 +26,24 @@ import projectx.persistence.entities.User;
  * A Singleton, that manages the sessions to the Database, and will provide an
  * open Session.
  */
+@Singleton
+@Startup
 public class HibernateSession {
+	private final String USERNAME = "root";
+	private final String PASSWORD = "1234";
 
-	private static final String USERNAME = "root";
-	private static final String PASSWORD = "1234";
+	private EntityManager entityManager = null;
 
-	private SessionFactory sessionFactory;
-
-	private static HibernateSession instance = null;
-
-	public static HibernateSession getInstance() {
-		if (instance == null) {
-			instance = new HibernateSession();
-		}
-		return instance;
-	}
-
-	private HibernateSession() {
-		buildFactory();
-	}
-
-	public Session getSession() {
-		if (sessionFactory == null) {
-			buildFactory();
-		}
-		return sessionFactory.openSession();
+	public EntityManager getSession() {
+		if (entityManager == null)
+			entityManager = Persistence.createEntityManagerFactory("nb_gardens_ims_PU").createEntityManager();
+		return entityManager;
 	}
 
 	private void buildFactory() {
 		Properties properties = new Properties();
-		properties.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
-		properties.setProperty("hibernate.connection.url", "jdbc:mysql://127.0.0.1:3306/nb_gardens_ims");
-		properties.setProperty("hibernate.connection.username", USERNAME);
-		properties.setProperty("hibernate.connection.password", PASSWORD);
-		properties.setProperty("hibernate.show_sql", "true");
-		
-		// What will you decide?
-		properties.setProperty("hibernate.hbm2ddl.auto", "create");
+		//MOVED TO PERSISTENCE.XML
+
 		//properties.setProperty("hibernate.hbm2ddl.auto", "update");
 		
 
@@ -73,6 +61,6 @@ public class HibernateSession {
 		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 				.applySettings(configuration.getProperties()).build();
 		
-		sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+		 
 	}
 }

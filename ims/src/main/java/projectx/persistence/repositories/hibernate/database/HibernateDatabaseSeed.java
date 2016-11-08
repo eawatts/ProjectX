@@ -3,6 +3,8 @@ package projectx.persistence.repositories.hibernate.database;
 import java.sql.Date;
 import java.util.ArrayList;
 
+import javax.persistence.EntityManager;
+
 import org.hibernate.Session;
 
 import projectx.persistence.entities.Notification;
@@ -17,26 +19,26 @@ import projectx.persistence.util.UserLevel;
 
 public class HibernateDatabaseSeed {
 
-	public static void seedDatabase(Session session) {
-		seedUsers(session);
-		seedNotifications(session);
-		seedSuppliersAndProducts(session);
-		session.close();
+	public static void seedDatabase(EntityManager entityManager) {
+		seedUsers(entityManager);
+		seedNotifications(entityManager);
+		seedSuppliersAndProducts(entityManager);
+		entityManager.close();
 	}
 
-	private static void seedUsers(Session session) {
+	private static void seedUsers(EntityManager entityManager) {
 		ArrayList<User> users = new ArrayList<User>();
 		users.add(new User(1, "hello", "password", "firstname", "lastname", UserLevel.CUSTOMER, "username@email.com"));
 		users.add(new User(2, "alstock", "password", "Al", "Stock", UserLevel.ADMIN, "alstock@al.co.uk"));
 		users.add(new User(2, "adam", "test", "Adam", "Dev", UserLevel.ADMIN, "email@me.com"));
-
+		
 		for (User user : users)
-			session.save(user);
+			entityManager.persist(user);
 
-		session.beginTransaction().commit();
+		entityManager.getTransaction().commit();
 	}
 
-	private static void seedNotifications(Session session) {
+	private static void seedNotifications(EntityManager entityManager) {
 		ArrayList<Notification> notifications = new ArrayList<Notification>();
 		notifications.add(new Notification(null, NotificationType.PURCHASE_ORDER_ISSUE, "It seems a bit costly."));
 		notifications
@@ -56,12 +58,12 @@ public class HibernateDatabaseSeed {
 		notifications.add(new Notification(null, NotificationType.DELIVERY_ERROR, "The eagle has landed!"));
 
 		for (Notification notification : notifications)
-			session.save(notification);
+			entityManager.persist(notification);
 
-		session.beginTransaction().commit();
+		entityManager.getTransaction().commit();
 	}
 
-	private static void seedSuppliersAndProducts(Session session) {
+	private static void seedSuppliersAndProducts(EntityManager entityManager) {
 		ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
 		suppliers.add(new Supplier(null, "Gnomes gnomes gnomes", "1 Road Street", "The Town", "M56YH", "07463772819"));
 		suppliers.add(new Supplier(null, "Rakes and Hoes Emporium", "33 Garden Street", "Cheshire", "SG147YH", "04463776419"));
@@ -69,9 +71,9 @@ public class HibernateDatabaseSeed {
 		suppliers.add(new Supplier(null, "Gnomes R Us", "123 Fake Street", "MAdeUp Land", "TU59PI", "01193812204"));
 
 		for (Supplier supplier : suppliers)
-			session.save(supplier);
+			entityManager.persist(supplier);
 
-		session.beginTransaction().commit();
+		entityManager.getTransaction().commit();
 
 		ArrayList<String> productImages = new ArrayList<String>();
 		productImages.add("/image1");
@@ -113,9 +115,9 @@ public class HibernateDatabaseSeed {
 		products.add(new Product(null, "Hedge Trimmer", 300, 3.00, 20, "shiny product", productImages));
 		products.add(new Product(null, "Paddling Pool", 350, 3.00, 20, "another shiny product", productImages));
 
-		for (Product product : products) session.save(product);
+		for (Product product : products) entityManager.persist(product);
 
-		session.beginTransaction().commit();
+		entityManager.getTransaction().commit();
 		
 	
 		ArrayList<ProductsOrdered> productsOrdered = new ArrayList<ProductsOrdered>();
@@ -125,17 +127,17 @@ public class HibernateDatabaseSeed {
 		
 		orders.add(purchaseOrder1);
 		for (PurchaseOrder purchaseOrder : orders)
-			session.save(purchaseOrder);
+			entityManager.persist(purchaseOrder);
 
-		session.beginTransaction().commit();
+		entityManager.getTransaction().commit();
 		
 		productsOrdered.add(new ProductsOrdered(null, products.get(1), 20, purchaseOrder1,10.00));
 		productsOrdered.add(new ProductsOrdered(null, products.get(2), 10, purchaseOrder1,10.00));
 		
 		for (ProductsOrdered prodOrder : productsOrdered)
-			session.save(prodOrder);
+			entityManager.persist(prodOrder);
 
-		session.beginTransaction().commit();
+		entityManager.getTransaction().commit();
 	}
 	
 }

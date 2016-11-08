@@ -1,11 +1,13 @@
 package projectx.persistence.repositories.hibernate.database;
 
-import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
+import javax.inject.Inject;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -27,12 +29,8 @@ import projectx.persistence.util.UserLevel;
 @SuppressWarnings({ "unchecked", "deprecation" })
 public class HibernateDatabase {
 
+	@Inject
 	private HibernateSession sessionManager;
-
-	@PostConstruct
-	private void configure() {
-		sessionManager = HibernateSession.getInstance();
-	}
 
 	public void seedDatabase() {
 		HibernateDatabaseSeed.seedDatabase(sessionManager.getSession());
@@ -448,11 +446,22 @@ public class HibernateDatabase {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
-			Query query = session.getNamedQuery("Product.searchProduct").setParameter("param", param);
+			System.out.println(session.toString());
+			System.out.println("searching...");
+			Query query = session.getNamedQuery("Product.searchProduct").setParameter("param", "%"+param+"%");
 			return (List<Product>) query.getResultList();
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			try {
+				PrintWriter writer = new PrintWriter("Error.txt", "UTF-8");
+				writer.print(e.toString());
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (UnsupportedEncodingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			return null;
 		} finally {
 			if (session != null) {
