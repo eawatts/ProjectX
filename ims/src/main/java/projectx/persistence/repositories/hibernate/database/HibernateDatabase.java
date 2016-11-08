@@ -12,6 +12,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
+import projectx.persistence.entities.Category;
 import projectx.persistence.entities.Notification;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
