@@ -12,7 +12,9 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
+import projectx.persistence.entities.Category;
 import projectx.persistence.entities.Notification;
+import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
 import projectx.persistence.util.NotificationType;
@@ -223,7 +225,7 @@ public class HibernateDatabase {
 	}
 
 	// SUPPLIERS
-	public List getSuppliers() {
+	public List<Supplier> getSuppliers() {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
@@ -284,5 +286,69 @@ public class HibernateDatabase {
 		session.beginTransaction().commit();
 
 	}
+	
+	public void updateSupplier(Integer id, String name, String addressLine1, String addressLine2, String postcode,String phone) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Supplier obj = (Supplier) session.get(Supplier.class, id);
+			obj.setName(name);
+			obj.setAddressLine1(addressLine1);
+			obj.setAddressLine2(addressLine2);
+			obj.setPostcode(postcode);
+			obj.setPhone(phone);
+			
+			session.update(obj);
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+	
+		}
+	}
+	//Purchase Order
+
+	public void persistPurchaseOrder(PurchaseOrder purchaseOrder) {
+		if (purchaseOrder == null) {
+			return;
+		}
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			session.save(purchaseOrder);
+			session.beginTransaction().commit();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+
+	public PurchaseOrder findPurchaseOrderBySupplierId(String supplierID) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(PurchaseOrder.class);
+			criteria.add(Restrictions.like("id", Supplier.id));
+			return (PurchaseOrder) criteria.uniqueResult();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+
+	}
+
+	
 
 }
+

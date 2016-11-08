@@ -15,6 +15,9 @@
 		
 		<!-- UNCOMMENT THIS TO USE PRODUCTS VIA THE DATABASE -->
 		<!-- <class>projectx.persistence.repositories.hibernate.ProductRepositoryHibernate</class> -->
+		
+		<!-- UNCOMMENT THIS TO USE SUPPLIERS VIA THE DATABASE -->
+		 <class>projectx.persistence.repositories.hibernate.SupplierRepositoryHibernate</class>
 
 	</alternatives>
 

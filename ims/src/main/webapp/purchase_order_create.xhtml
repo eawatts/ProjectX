@@ -4,11 +4,14 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="#{current_session.loggedIn ? 'templates/template_ims.xhtml' : 'templates/template_no_access.xhtml'}">
 	<meta charset="utf-8" />
-	<ui:define name="title"> Create Purchase Order </ui:define>
+
+	<ui:define name="title">Create Purchase Order</ui:define>
+
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css"
 			href="css/ims-purchase-order-view.css" />
 	</ui:define>
+
 	<ui:define name="main-content">
 
 		<div class="pageheading">
@@ -16,53 +19,32 @@
 		</div>
 
 		<div class="row">
-			<div class="col-desk-4 col-tab-4">Product</div>
-			<div class="col-desk-2 col-tab-2">Supplier</div>
+			<div class="col-desk-5 col-tab-5">Product</div>
+			<div class="col-desk-5 col-tab-5">Supplier</div>
 			<div class="col-desk-2 col-tab-2">Quantity</div>
-			<div class="col-desk-2 col-tab-2">Add new product</div>
 		</div>
 		<hr />
-		<ui:repeat id="purchaseOrdertable" var="purchase-order-row"
-			value="#{current_session.pendingPurchaseOrder.purchaseOrderContents}">
-			<h:form>
 
-				<div class="row">
-					<div class="col-desk-4 col-tab-4">
+		<h:panelGroup
+			rendered="#{current_session.pendingPurchaseOrder.contents.size() eq 0}">
+			<p>There are currently no Products on this Purchase Order</p>
+		</h:panelGroup>
 
-						<h:selectOneMenu styleclass="searchselect" value="#{search.category}">
-							
-								<f:selectItem var="p" value="products.productList" itemValue="#{p.name} - #{p.price}" itemLabel="#{p.name} - #{p.price}"/>	
-							
-						</h:selectOneMenu>
-					
-					</div>
-					<div class="col-desk-2 col-tab-2">
-						<select>
-							<ui:repeat var="supplier" value="#{suppliers.suppliersList}">
-								<option value="#{supplier.name}"><h:outputText value="#{supplier.name}"/></option>
-							</ui:repeat>
-						</select>
-					</div>
-					<div class="col-desk-2 col-tab-2">
-					
-					</div>
-					<div class="col-desk-2 col-tab-2">
-						<h:commandButton styleClass="button-green"
-							value="Add this line to order" action="purchaseOrder.addRow)" />
-					</div>
-				</div>
-			</h:form>
-		</ui:repeat>
-		<br />
-		<div class="row">
-			<div class="col-desk-12 col-tab-12">
-				<h:form>
-					<h:commandButton styleClass="button-green"
-						value="Add another Product"
-						action="#{current_session.pendingPurchaseOrder.newRowToPurchaseOrder}" />
-				</h:form>
+		<ui:repeat var="purchase_order_item"
+			value="#{current_session.pendingPurchaseOrder.contents}">
+			<div class="row">
+				<div class="col-desk-5 col-tab-5"><h:outputText value="#{purchase_order_item.product.name}"></h:outputText></div>
+				<div class="col-desk-5 col-tab-5"><h:outputText value="#{purchase_order_item.supplier.name}"></h:outputText></div>
+				<div class="col-desk-2 col-tab-2"><h:outputText value="#{purchase_order_item.quantity}"></h:outputText></div>
 			</div>
+			<br />
+		</ui:repeat>
+		
+		<div>
+			<h:commandButton styleClass="button-green" value="Add Product"/>
 		</div>
+		
+		
+
 	</ui:define>
-	<br />
 </ui:composition>

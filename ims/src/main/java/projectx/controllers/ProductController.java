@@ -29,7 +29,7 @@ public class ProductController implements Serializable
 
 	@SuppressWarnings("unused")
 	private int selectedProductIndex;
-	private Product productByID;
+	private Product product;
 	private int productid;
 
 	public String getProduct(String id)
@@ -89,13 +89,13 @@ public class ProductController implements Serializable
 	public void createProduct(int id, String name, int stockLvl, double price, int lowStock, String description,
 			ArrayList<Supplier> suppliers, ArrayList<String> imglists)
 	{
-		Product p = new Product(id, name, stockLvl, price, lowStock, description, null, null);
+		Product p = new Product(id, name, stockLvl, price, lowStock, description, null);
 		productService.addProduct(p);
 	}
 
-	public void setProductByID(Product productbyID)
+	public void setProductByID(Product product)
 	{
-		this.productByID = productbyID;
+		this.product = product;
 	}
 
 	public List<Product> getLowStockProducts()
