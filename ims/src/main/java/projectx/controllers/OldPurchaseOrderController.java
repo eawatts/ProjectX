@@ -1,37 +1,30 @@
 package projectx.controllers;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import projectx.persistence.entities.Product;
 import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.util.OrderState;
-import projectx.persistence.webentities.CurrentSession;
 import projectx.persistence.webentities.PurchaseOrderProduct;
 import projectx.services.PurchaseOrderSerivce;
-import projectx.services.productsOrderedService;
 
 
-@Named("purchase_order")
-@RequestScoped
-public class PurchaseOrderController implements Serializable{
-	/**
-	 * 
-	 */
+@SessionScoped
+@Named("purchaseOrders")
+public class OldPurchaseOrderController implements Serializable{
+
 	private static final long serialVersionUID = 1L;
 	@Inject 
 	private PurchaseOrderSerivce purchaseOrderService;
 	@Inject
 	private SearchController searchController;
-	@Inject
-	private ProductController productController;
 	private int id;
 	private Supplier supplier;
 	private boolean approved;
@@ -120,18 +113,4 @@ public class PurchaseOrderController implements Serializable{
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry(){
 		return purchaseOrderService.createPurchaseOrderEntry();
 	}
-	public void generatePurchaseOrder()
-	{
-		List<Product> productList = productController.getTop25LowStockProducts();
-		
-		for(int i=0;i<productList.size();i++)
-		{
-			productsOrdered.add(new ProductsOrdered(i,productList.get(i), productList.get(i).getLowLimit() - productList.get(i).getCurrentStock(), null, productsOrderedService.getPrice(productList.get(i))));
-		}
-		
-		
-		
-	}
-	
-	
 }

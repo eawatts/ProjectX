@@ -14,6 +14,7 @@ import org.hibernate.criterion.Restrictions;
 
 import projectx.persistence.entities.Category;
 import projectx.persistence.entities.Notification;
+import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
 import projectx.persistence.util.NotificationType;
@@ -309,6 +310,45 @@ public class HibernateDatabase {
 	
 		}
 	}
+	//Purchase Order
+
+	public void persistPurchaseOrder(PurchaseOrder purchaseOrder) {
+		if (purchaseOrder == null) {
+			return;
+		}
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			session.save(purchaseOrder);
+			session.beginTransaction().commit();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+
+	public PurchaseOrder findPurchaseOrderBySupplierId(String supplierID) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(PurchaseOrder.class);
+			criteria.add(Restrictions.like("id", supplierID));
+			return (PurchaseOrder) criteria.uniqueResult();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+
+	}
+
+	
 
 }
 
