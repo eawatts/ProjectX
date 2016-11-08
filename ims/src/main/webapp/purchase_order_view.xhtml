@@ -29,7 +29,7 @@
 			<div class="poItems">
 				<ui:repeat var="purchaseOrder"
 					value="#{purchaseOrders.purchaseOrderList}">
-					<div class="row po-details">
+					<div class="row">
 						<div class="col-desk-2 col-tab-2">
 							<h:outputText value="#{purchaseOrder.id}"></h:outputText>
 						</div>
@@ -61,9 +61,7 @@
 									<div class="col-desk-3 col-tab-3">Product Name</div>
 									<div class="col-desk-3 col-tab-3">Price</div>
 									<div class="col-desk-3 col-tab-3">Quantity</div>
-									<hr />
-
-
+									<hr/>
 									<ui:repeat var="productsOrdered"
 										value="#{purchaseOrder.purchasedProducts}">
 										<div class="row poTitle">
@@ -90,6 +88,7 @@
 							</div>
 						</div>
 					</div>
+					<hr/>
 				</ui:repeat>
 			</div>
 			<ui:repeat></ui:repeat>

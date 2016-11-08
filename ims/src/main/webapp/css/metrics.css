@@ -18,9 +18,12 @@
 }
 
 .Heading{
-  text-align: center;
-  background-color: var(--british-racing-green);
-	Color: var(--floral-white);
+	font-weight: bold;
+	text-align: left;
+  }
+  .piechart{
+  width: 900px; 
+  height: 500px;
   }
 #description{
 	Color: var(--sweet-sweet-brown);
@@ -41,6 +44,7 @@
 }
 .see{
 	 visibility: visible;
+	 background-color: #f9fbf2;
 	 
 }
 .overlay {
@@ -76,6 +80,7 @@
 }
 .popup .close {
   position: relative;
+  float: right;
   top: 5px;
   left: 10px;
   transition: all 200ms;
@@ -89,5 +94,5 @@
 }
 .popup .content {
   max-height: 30%;
-  overflow: auto;
+
 }

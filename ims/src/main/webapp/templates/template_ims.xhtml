@@ -376,18 +376,15 @@
 									</h:form>
 								</h:panelGroup>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="search">
+							<div class="search">
 							<h:form>
-								<div class="col-tab-6 col-desk-6">
+								<div class="col-tab-8 col-desk-8">
 									<h:inputText styleClass="searchinput"
 										value="#{search.parameter}" placeholder="Enter your search here...">
 										<f:ajax event="click" execute="@form" />
 									</h:inputText>
-								</div>
-								<div class="col-tab-6 col-desk-6">
+							
+						
 									<h:selectOneMenu sytleclass="searchselect"
 										value="#{search.category}">
 										<f:selectItem itemValue="purchase order"
@@ -397,11 +394,13 @@
 									</h:selectOneMenu>
 									<h:commandButton styleClass="searchbutton button-green-inverse" value="Search"
 										action="#{search.search}"></h:commandButton>
-								</div>
+									</div>
 							</h:form>
 						</div>
-					</div>
-
+						</div>
+				
+				</div>
+					<br/>
 					<div class="nav-links">
 						<h:form>
 							<div id="nav-desktop">
@@ -411,9 +410,6 @@
 									<li class="dropdown-category">
 										<div class="dropdown-button">Purchase Order</div>
 										<div class="dropdown-content">
-
-											<a href="purchase_order_create.xhtml"
-												class="dropdown-sub-button">Create Purchase Order</a>
 											<a href="purchase_order_create.xhtml" class="dropdown-sub-button">Create Purchase Order</a>
 											<h:commandLink styleClass="dropdown-sub-button"
 												value="View Purchase Orders"

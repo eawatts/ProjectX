@@ -7,106 +7,103 @@
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css" href="css/supplier.css"></link>
 	</ui:define>
-	
+
 	<ui:define name="title">Supplier</ui:define>
 	<ui:define name="main-content">
 		<div class="main-content">
-		<div class="breadcrumbs">
-				<a href="index.xhtml">IMS</a> > <a href="suppliers.xhtml">Supplier
-					List</a> >
-				<h:outputText value="#{suppliers.supplierById.name}"></h:outputText>
-		</div>
-		<br/>
-		
-		<div class="row">
-		<div class="col-tab-12 col-desk-12">
-			<h1>
-				<h:outputText styleClass="titleText" value="#{suppliers.supplierById.name}"></h:outputText>
-			</h1>
-		</div>
-		</div>
-		<br/>
-		
-		<div class="row">
+			<br />
+
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<h1>
+						<h:outputText styleClass="titleText"
+							value="#{suppliers.supplierById.name}"></h:outputText>
+					</h1>
+				</div>
+			</div>
+			<br />
+
+			<div class="row">
 				<div class="col-tab-4 col-desk-4">
 					<h2>ID</h2>
+					<h:outputText type="text" class="Saddr"
+						value="#{suppliers.supplierById.id}"></h:outputText>
 				</div>
+				
 				<div class="col-tab-4 col-desk-4">
 					<h2>Name</h2>
-				</div>
+					<h:outputText type="text" class="supplierName"
+						value="#{suppliers.supplierById.name}"></h:outputText>
+					<button type="button" class="edit_name button-green edit-button">Edit</button>
+					<h:form>
+						<h:inputText class="updatename"
+							value="#{suppliers.supplierById.name}"></h:inputText>
+						<h:commandButton styleClass="button-green view-button edit-button"
+							class="closeedit_name button-green edit-button" value="Save"></h:commandButton>
+						<button type="button" class="closeedit_name button-green edit-button">Cancel</button>
+					</h:form>
+				</div>		
 				<div class="col-tab-4 col-desk-4">
 					<h2>Phone</h2>
-				</div>
-		</div>
-		<div class="row">
-			<div class="col-tab-4 col-desk-4">
-				<h:outputText type="text" class="Saddr" value="#{suppliers.supplierById.id}"></h:outputText>
+					<h:outputText type="text" class="supplierphone"
+						value="#{suppliers.supplierById.phone}"></h:outputText>
+					<button type="button" class="edit_phone button-green edit-button">Edit</button>
+					<h:form>
+						<h:inputText class="updatephone"
+							value="#{suppliers.supplierById.phone}"></h:inputText>
+						<h:commandButton class="closeedit_phone button-green edit-button" value="Save"></h:commandButton>
+						<button type="button" class="closeedit_phone button-green edit-button">Cancel</button>
+					</h:form>
 			</div>
-			<div class="col-tab-4 col-desk-4">
-				<h:outputText type="text" class="supplierName" value="#{suppliers.supplierById.name}"></h:outputText>
-				<button type="button" class="edit_name button-green">edit</button>
-				<h:form>
-						<h:inputText class="updatename" value="#{suppliers.supplierById.name}"></h:inputText>
-						<h:commandButton styleClass="button-green view-button" class="closeedit_name button-green" value="save"></h:commandButton>
-						<button type="button" class="closeedit_name button-green">Cancel</button>
-				</h:form>
 			</div>
-			<div class="col-tab-4 col-desk-4">
-				<h:outputText type="text" class="supplierphone" value="#{suppliers.supplierById.phone}"></h:outputText>
-				<button type="button" class="edit_phone button-green">edit</button>
-				<h:form>
-						<h:inputText class="updatephone" value="#{suppliers.supplierById.phone}"></h:inputText>
-						<h:commandButton class="closeedit_phone" value="save"></h:commandButton>
-						<button type="button" class="closeedit_phone button-green">Cancel</button>
-				</h:form>
+			<br/>
+			<hr/>
+			<div class="row">
+				<div class="col-tab-4 col-desk-4">
+					<h2>Address Line 1</h2>
+					<h:outputText type="text" class="supplieraddressLine1"
+						value="#{suppliers.supplierById.addressLine1}"></h:outputText>
+					<button type="button" class="edit_addressLine1 button-green edit-button">Edit</button>
+					<h:form>
+						<h:inputText class="updateaddressLine1"
+							value="#{suppliers.supplierById.addressLine1}"></h:inputText>
+						<h:commandButton class="closeedit_addressLine1 button-green edit-button"
+							value="Save"></h:commandButton>
+						<button type="button" class="closeedit_addressLine1 button-green edit-button">Cancel</button>
+					</h:form>
+				</div>
+				<div class="col-tab-4 col-desk-4">
+					<h2>Address Line 2</h2>
+					<h:outputText type="text" class="supplieraddressLine2"
+						value="#{suppliers.supplierById.addressLine2}"></h:outputText>
+					<button type="button" class="edit_addressLine2 button-green edit-button">Edit</button>
+					<h:form>
+						<h:inputText class="updateaddressLine2"
+							value="#{suppliers.supplierById.addressLine2}"></h:inputText>
+						<h:commandButton class="closeedit_addressLine2 button-green edit-button"
+							value="Save"></h:commandButton>
+						<button type="button" class="closeedit_addressLine2 button-green edit-button">Cancel</button>
+					</h:form>
+				</div>
+				<div class="col-tab-4 col-desk-4">
+					<h2>Post code</h2>
+					<h:outputText type="text" class="supplierpostcode"
+						value="#{suppliers.supplierById.postcode}"></h:outputText>
+					<button type="button" class="edit_postcode button-green edit-button">Edit</button>
+					<h:form>
+						<h:inputText class="updatepostcode"
+							value="#{suppliers.supplierById.postcode}"
+							pattern="[A-Z]{1-2} [0-9]{1-2} [0-9]{1} [A-Z]{2} "></h:inputText>
+						<h:commandButton class="closeedit_postcode button-green edit-button"
+						 value="Save"></h:commandButton>
+						<button type="button" class="closeedit_postcode button-green edit-button">Cancel</button>
+					</h:form>
+				</div>
 			</div>
+			<br />
 		</div>
-		
-		<div class="row">
-				<div class="col-tab-4 col-desk-4">
-				<h2>Address Line 1</h2>
-				</div>
-				<div class="col-tab-4 col-desk-4">
-				<h2>Address Line 2</h2>
-				</div>
-				<div class="col-tab-4 col-desk-4">
-				<h2>Post code</h2>
-				</div>
-		</div>
-		
-		
-		<div class="row">
-				<div class="col-tab-4 col-desk-4">
-				<h:outputText type="text" class="supplieraddressLine1" value="#{suppliers.supplierById.addressLine1}"></h:outputText>
-				<button type="button" class="edit_addressLine1 button-green">edit</button>
-				<h:form>
-						<h:inputText class="updateaddressLine1" value="#{suppliers.supplierById.addressLine1}"></h:inputText>
-						<h:commandButton class="closeedit_addressLine1 button-green" value="save"></h:commandButton>
-						<button type="button" class="closeedit_addressLine1 button-green">Cancel</button>
-				</h:form>
-				</div>
-				<div class="col-tab-4 col-desk-4">
-				<h:outputText type="text" class="supplieraddressLine2" value="#{suppliers.supplierById.addressLine2}"></h:outputText>
-				<button type="button" class="edit_addressLine2 button-green">edit</button>
-				<h:form>
-						<h:inputText class="updateaddressLine2" value="#{suppliers.supplierById.addressLine2}"></h:inputText>
-						<h:commandButton class="closeedit_addressLine2 button-green" value="save"></h:commandButton>
-						<button type="button" class="closeedit_addressLine2 button-green">Cancel</button>
-				</h:form>
-				</div>
-				<div class="col-tab-4 col-desk-4">
-				<h:outputText type="text" class="supplierpostcode" value="#{suppliers.supplierById.postcode}"></h:outputText>
-				<button type="button" class="edit_postcode button-green">edit</button>
-				<h:form>
-						<h:inputText class="updatepostcode" value="#{suppliers.supplierById.postcode}" pattern="[A-Z]{1-2} [0-9]{1-2} [0-9]{1} [A-Z]{2} "></h:inputText>
-						<h:commandButton class="closeedit_postcode button-green" value="save"></h:commandButton>
-						<button type="button" class="closeedit_postcode button-green">Cancel</button>
-				</h:form>
-				</div>
-		</div><br/>
-</div>
-</ui:define>
-<ui:define name="custom-scripts">
+	</ui:define>
+	<ui:define name="custom-scripts">
 		<script type="text/javaScript" src="js/supplier_edit.js"></script>
-</ui:define> 
+	</ui:define>
 </ui:composition>

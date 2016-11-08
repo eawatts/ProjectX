@@ -22,47 +22,42 @@ public class ProductRepositoryHibernate implements ProductRepository {
 	private HibernateDatabase db;
 
 	@Override
-	public void persistProduct(Product products) {
-		// TODO Auto-generated method stub
+	public void persistProduct(Product product) {
+		db.persistProduct(product);
 	}
 
 	@Override
 	public void persistProducts(List<Product> products) {
-		// TODO Auto-generated method stub
+		// TODO oneday :D
 	}
 
 	@Override
 	public List<Product> getProducts() {
-		// TODO Auto-generated method stub
-		return null;
+		return db.getProducts();
 	}
 
 	@Override
 	public void updateProduct(Product products) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public Product findByProductId(int productId) {
-		// TODO Auto-generated method stub
-		return null;
+		return db.getProductById(productId);
 	}
 
 	@Override
 	public Product findByProductName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return db.getProductByName(name);
 	}
 
 	@Override
 	public List<Product> getLowStockProducts() {
-		// TODO Auto-generated method stub
-		return null;
+		return db.getLowStockProducts();
 	}
 
 	@Override
 	public void addProduct(Product p) {
-		// TODO Auto-generated method stub
+		persistProduct(p); //see persist product
 	}
 }

@@ -16,13 +16,25 @@
 			<div class="page-title">
 				<h1 class="titleText">Product List</h1>
 			</div>
-			<div class="header-row">
-				<div class="col-tab-1 col-desk-1">ID</div>
-				<div class="col-tab-3 col-desk-3">Name</div>
-				<div class="col-tab-2 col-desk-2">Stock</div>
-				<div class="col-tab-2 col-desk-2">Low Limit</div>
-				<div class="col-tab-2 col-desk-2">Status</div> 
-				<div class="col-tab-2 col-desk-2 custom-title">View</div>
+			<div class="row header-row">
+				<div class="col-tab-1 col-desk-1">
+					<h:outputText value="ID"></h:outputText>
+				</div>
+				<div class="col-tab-3 col-desk-3">
+					<h:outputText value="Name"></h:outputText>
+				</div>
+				<div class="col-tab-2 col-desk-2">
+					<h:outputText value="Stock"></h:outputText>
+				</div>
+				<div class="col-tab-2 col-desk-2">
+					<h:outputText value="Low Limit"></h:outputText>
+				</div>
+				<div class="col-tab-2 col-desk-2">
+					<h:outputText value="Status"></h:outputText>
+				</div> 
+				<div class="col-tab-2 col-desk-2 custom-title">
+					<h:outputText value="View"></h:outputText>
+				</div>
 			</div>
 			<br />
 			<ui:repeat var="product" value="#{products.productList}">

@@ -13,45 +13,51 @@
 	<ui:define name="title">Product</ui:define>
 	<ui:define name="main-content">
 		<div class="main-content">
-			<div class="breadcrumbs">
-				<a href="homepage.xhtml">IMS</a> > <a href="products.xhtml">Product
-					List</a> > Add Product
-			</div>
 			<div class="row">
-				<h2>Adding a new product</h2>
+				<div class="col-tab-12 col-desk-12">
+					<h1>Adding a new product</h1>
+				</div>
 			</div>
-
 			<h:form>
 				<div class="row">
-					<h3>Input product name</h3>
-					<h:inputText class="set" value="#{newproduct.product.name}"></h:inputText>
+					<div class="col-tab-12 col-desk-12">
+						<h:outputText styleClass="section-header"
+							value="Input product name:"></h:outputText>
+						<br /> <br />
+						<h:inputText class="set" value="#{newproduct.product.name}"></h:inputText>
+					</div>
 				</div>
+				<br />
 				<div class="row">
-					<h3>Input product details</h3>
+					<div class="col-tab-12 col-desk-12">
+						<h:outputText styleClass="section-header"
+							value="Input product details:"></h:outputText>
+						<br /> <br />
+					</div>
 					<div class="col-tab-3 col-desk-3">
-						<h4>Set stock low limit</h4>
+						<h3>Set stock low limit:</h3>
 						<h:inputText class="set" value="#{newproduct.product.lowLimit}"></h:inputText>
 					</div>
 					<div class="col-tab-3 col-desk-3">
-						<h4>Set Stock Level</h4>
+						<h4>Set stock level:</h4>
 						<h:inputText class="set"
 							value="#{newproduct.product.currentStock}"></h:inputText>
 					</div>
 					<div class="col-tab-3 col-desk-3">
-						<h4>Set Price</h4>
+						<h3>Set price:</h3>
 						<h:inputText class="set" value="#{newproduct.product.price}"></h:inputText>
 					</div>
 					<div class="col-tab-3 col-desk-3">
-					<h4>Set status</h4>
-					<div class="onoffswitch">
-						<h:selectBooleanCheckbox name="onoffswitch"
-							styleClass="onoffswitch-checkbox" id="myonoffswitch"
-							value="#{newproduct.product.isDiscontinued}"></h:selectBooleanCheckbox>
+						<h3>Set status:</h3>
+						<div class="onoffswitch">
+							<h:selectBooleanCheckbox name="onoffswitch"
+								styleClass="onoffswitch-checkbox" id="myonoffswitch"
+								value="#{newproduct.product.isDiscontinued}"></h:selectBooleanCheckbox>
 							<label class="onoffswitch-label" for="switch:myonoffswitch">
 								<span class="onoffswitch-inner"></span> <span
 								class="onoffswitch-switch"></span>
 							</label>
-					</div>
+						</div>
 					</div>
 				</div>
 
@@ -59,14 +65,20 @@
 
 
 				<div class="row">
-					<h4>Set Description</h4>
-					<h:inputText class="set" value="#{newproduct.product.description}"></h:inputText>
+					<div class="col-tab-6 col-desk-6">
+						<h3>Set Description:</h3>
+						<h:inputText class="set" styleClass="description-input" value="#{newproduct.product.description}"></h:inputText>
+					</div>
 				</div>
 				<br />
 				<hr />
-				<h:commandButton
-				class="addproduct" value="Add Proudct" action="#{newproduct.addProduct}"></h:commandButton>
-				</h:form>
+				<div class="row">
+					<div class="col-tab-3 col-desk-3">
+						<h:commandButton class="addproduct" styleClass="button-green"
+							value="Add new product" action="#{newproduct.addProduct}"></h:commandButton>
+					</div>
+				</div>
+			</h:form>
 		</div>
 	</ui:define>
-	</ui:composition>
+</ui:composition>

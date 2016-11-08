@@ -1,14 +1,18 @@
 package projectx.persistence.repositories.hibernate.database;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 import org.hibernate.Session;
 
 import projectx.persistence.entities.Notification;
 import projectx.persistence.entities.Product;
+import projectx.persistence.entities.ProductsOrdered;
+import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
 import projectx.persistence.util.NotificationType;
+import projectx.persistence.util.OrderState;
 import projectx.persistence.util.UserLevel;
 
 public class HibernateDatabaseSeed {
@@ -17,7 +21,6 @@ public class HibernateDatabaseSeed {
 		seedUsers(session);
 		seedNotifications(session);
 		seedSuppliersAndProducts(session);
-
 		session.close();
 	}
 
@@ -113,6 +116,26 @@ public class HibernateDatabaseSeed {
 		for (Product product : products) session.save(product);
 
 		session.beginTransaction().commit();
-	}
+		
+	
+		ArrayList<ProductsOrdered> productsOrdered = new ArrayList<ProductsOrdered>();
+		ArrayList<PurchaseOrder> orders = new ArrayList<PurchaseOrder>();
+		PurchaseOrder purchaseOrder1 = new PurchaseOrder(null, suppliers.get(1), true, Date.valueOf("2016-09-13"),
+				OrderState.ORDER_CLOSED, productsOrdered);
+		
+		orders.add(purchaseOrder1);
+		for (PurchaseOrder purchaseOrder : orders)
+			session.save(purchaseOrder);
 
+		session.beginTransaction().commit();
+		
+		productsOrdered.add(new ProductsOrdered(null, products.get(1), 20, purchaseOrder1,10.00));
+		productsOrdered.add(new ProductsOrdered(null, products.get(2), 10, purchaseOrder1,10.00));
+		
+		for (ProductsOrdered prodOrder : productsOrdered)
+			session.save(prodOrder);
+
+		session.beginTransaction().commit();
+	}
+	
 }
