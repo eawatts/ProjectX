@@ -1,6 +1,7 @@
 package projectx.controllers;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -43,6 +44,11 @@ public class PurchaseOrderController implements Serializable {
 
 		currentsession.getPendingPurchaseOrder().addProductToPurchaseOrder(selectedProduct, selectedQuantity, selectedSupplier);
 
+		return null;
+	}
+	
+	public String clearAllPendingPurchaseOrderProducts() {
+		currentsession.getPendingPurchaseOrder().setPurchaseOrderContents(new ArrayList<PurchaseOrderProduct>());		
 		return null;
 	}
 	
