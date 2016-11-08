@@ -16,6 +16,7 @@ import org.hibernate.query.Query;
 
 import projectx.persistence.entities.Notification;
 import projectx.persistence.entities.Product;
+import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
@@ -338,6 +339,27 @@ public class HibernateDatabase {
 		}
 	}
 	
+
+
+	public PurchaseOrder findPurchaseOrderBySupplierId(String supplierID) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(PurchaseOrder.class);
+			criteria.add(Restrictions.like("Supplier.id", supplierID));
+			criteria.add(Restrictions.like("id", supplierID));
+			return (PurchaseOrder) criteria.uniqueResult();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+	
 	public List<PurchaseOrder> getPurchaseOrders() {
 		Session session = null;
 		try {
@@ -354,15 +376,14 @@ public class HibernateDatabase {
 		}
 		
 	}
-
-	public PurchaseOrder findPurchaseOrderBySupplierId(String supplierID) {
+	
+	public List<ProductsOrdered> getProductsOrdered(PurchaseOrder purchaseOrderID ) {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
-			Criteria criteria = session.createCriteria(PurchaseOrder.class);
-			criteria.add(Restrictions.like("Supplier.id", supplierID));
-			criteria.add(Restrictions.like("id", supplierID));
-			return (PurchaseOrder) criteria.uniqueResult();
+			Criteria criteria = session.createCriteria(ProductsOrdered.class);
+			criteria.add(Restrictions.like("purchase_order_id", purchaseOrderID));
+			return criteria.list();
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
