@@ -37,6 +37,7 @@ import projectx.persistence.util.OrderState;
 @Entity
 @Table(name = "purchase_order")
 public class PurchaseOrder {
+
 	public static final String INSERT_PURCHASEORDER = "PurchaseOrder.savePurchaseOrder";
 	public static final String FIND_ALL = "PurchaseOrder.findAll";
 	public static final String FIND_BY_APPROVALDATE = "PurchaseOrder.findByAprovalDate";

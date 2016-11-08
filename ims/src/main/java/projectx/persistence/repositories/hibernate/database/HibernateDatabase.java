@@ -13,8 +13,10 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
+import projectx.persistence.entities.Category;
 import projectx.persistence.entities.Notification;
 import projectx.persistence.entities.Product;
+import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
 import projectx.persistence.util.NotificationType;
@@ -286,8 +288,9 @@ public class HibernateDatabase {
 		session.beginTransaction().commit();
 
 	}
-	
-	public void updateSupplier(Integer id, String name, String addressLine1, String addressLine2, String postcode,String phone) {
+
+	public void updateSupplier(Integer id, String name, String addressLine1, String addressLine2, String postcode,
+			String phone) {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
@@ -297,28 +300,32 @@ public class HibernateDatabase {
 			obj.setAddressLine2(addressLine2);
 			obj.setPostcode(postcode);
 			obj.setPhone(phone);
-			
+
 			session.update(obj);
-			
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			
+
 		} finally {
 			if (session != null) {
 				session.close();
 			}
-	
+
 		}
 	}
-	// Products
-	public void persistProduct(Product product) {
-		if (product ==null) {
+
+	// Purchase Order
+
+	public void persistPurchaseOrder(PurchaseOrder purchaseOrder) {
+		if (purchaseOrder == null) {
 			return;
 		}
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
-			session.save(product);
+
+			session.save(purchaseOrder);
+
 			session.beginTransaction().commit();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -327,8 +334,45 @@ public class HibernateDatabase {
 				session.close();
 			}
 		}
-		
-		
+	}
+
+	public PurchaseOrder findPurchaseOrderBySupplierId(String supplierID) {
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			Criteria criteria = session.createCriteria(PurchaseOrder.class);
+			criteria.add(Restrictions.like("id", supplierID));
+			return (PurchaseOrder) criteria.uniqueResult();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
+
+	// Products
+	public void persistProduct(Product product) {
+		if (product == null) {
+			return;
+		}
+		Session session = null;
+		try {
+			session = sessionManager.getSession();
+			session.save(product);
+			session.beginTransaction().commit();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+
 	}
 
 	public List<Product> getProducts() {
@@ -385,7 +429,7 @@ public class HibernateDatabase {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
-			Query query= session.getNamedQuery("Product.findlowproduct");
+			Query query = session.getNamedQuery("Product.findlowproduct");
 			return (List<Product>) query.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -401,8 +445,9 @@ public class HibernateDatabase {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
-			Query query= session.getNamedQuery("Product.searchProduct").setParameter("param",param);
+			Query query = session.getNamedQuery("Product.searchProduct").setParameter("param", param);
 			return (List<Product>) query.getResultList();
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
@@ -417,7 +462,7 @@ public class HibernateDatabase {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
-			Query query= session.getNamedQuery("Supplier.searchSupplier").setParameter("param",param);
+			Query query = session.getNamedQuery("Supplier.searchSupplier").setParameter("param", param);
 			return (List<Product>) query.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -433,7 +478,7 @@ public class HibernateDatabase {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
-			Query query= session.getNamedQuery("PurchaseOrder.searchPO").setParameter("param",param);
+			Query query = session.getNamedQuery("PurchaseOrder.searchPO").setParameter("param", param);
 			return (List<Product>) query.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -445,6 +490,4 @@ public class HibernateDatabase {
 		}
 	}
 
-
 }
-

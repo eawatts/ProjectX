@@ -9,27 +9,21 @@ sweet sweet brown = #a53f2b
 .updatestocklowlimit{ display: none;}
 .save_lowlimit{display: none;}
 .cancel_lowlimit{display: none;}
-
 .update_stocklevel{display: none;}
 .save_stocklevel{display: none;}
 .cancel_stocklevel{display: none;}
-
 .update_price{display: none;}
 .save_price{display: none;}
 .cancel_price{display: none;}
-
+.section-header{
+	font-weight: bold;
+	font-size: 130%;
+}
 .edit-button{
 	float: right;
-	margin-right: 20%;
 }
-.output-box{
-	background-color: white;
-	border-style: solid;
-	border-width: 1px;
-	border-color: gray;
-	border-radius: 2px;
-	padding-left: 5px;
-	padding-right: 5px;
+.description-input{
+	width: 100%;
 }
 .editdescription{display: none;}
 .save_desc{display: none;}
