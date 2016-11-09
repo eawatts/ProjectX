@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
+import projectx.persistence.entities.Supplier;
 import projectx.persistence.repositories.PurchaseOrderRepository;
 import projectx.persistence.repositories.hibernate.database.HibernateDatabase;
 import projectx.persistence.webentities.PurchaseOrderProduct;
@@ -76,6 +77,12 @@ public class PurchaseOrderRepositoryHibernate implements PurchaseOrderRepository
 			return new ArrayList<ProductsOrdered>();
 		}
 		return new ArrayList<ProductsOrdered>(db.getProductsOrdered(id));
+		
+	}
+
+	@Override
+	public void addPurchaseOrder(Supplier supplier) {
+		db.addPurchaseOrder(supplier);
 		
 	}
 

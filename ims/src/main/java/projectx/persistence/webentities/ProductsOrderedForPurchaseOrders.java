@@ -11,7 +11,7 @@ import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.util.OrderState;
-import projectx.services.PurchaseOrderSerivce;
+import projectx.services.PurchaseOrderService;
 
 public class ProductsOrderedForPurchaseOrders {
 	
@@ -25,7 +25,7 @@ public class ProductsOrderedForPurchaseOrders {
 	
 	
 	@Inject
-	PurchaseOrderSerivce opc;
+	PurchaseOrderService opc;
 	
 	public ProductsOrderedForPurchaseOrders(Integer id, Supplier supplier, boolean approved, Date approvalDate, OrderState status, ArrayList<ProductsOrdered> products){
 		this.id = id;

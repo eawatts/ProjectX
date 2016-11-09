@@ -15,7 +15,7 @@ import projectx.persistence.entities.Supplier;
 import projectx.persistence.util.OrderState;
 import projectx.persistence.webentities.ProductsOrderedForPurchaseOrders;
 import projectx.persistence.webentities.PurchaseOrderProduct;
-import projectx.services.PurchaseOrderSerivce;
+import projectx.services.PurchaseOrderService;
 
 
 @SessionScoped
@@ -24,7 +24,7 @@ public class OldPurchaseOrderController implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	@Inject 
-	private PurchaseOrderSerivce purchaseOrderService;
+	private PurchaseOrderService purchaseOrderService;
 	@Inject
 	private SearchController searchController;
 	private int id;

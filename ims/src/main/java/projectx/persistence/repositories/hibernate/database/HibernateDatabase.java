@@ -1,5 +1,6 @@
 package projectx.persistence.repositories.hibernate.database;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,7 @@ import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.entities.User;
 import projectx.persistence.util.NotificationType;
+import projectx.persistence.util.OrderState;
 import projectx.persistence.util.UserLevel;
 
 @Startup
@@ -393,7 +395,6 @@ public class HibernateDatabase {
 			return results;
 
 		} catch (Exception e) {
-			//System.out.println("################################");
 			System.out.println(e.getMessage());
 			return null;
 		} finally {
@@ -402,6 +403,33 @@ public class HibernateDatabase {
 			}
 		}
 	}
+	
+	public void addPurchaseOrder(Supplier supplier){    
+                Session session = null;
+                
+           try{
+                session = sessionManager.getSession();	
+ 
+                PurchaseOrder purchaseOrder = new PurchaseOrder();
+                purchaseOrder.setId(null);
+                purchaseOrder.setSupplier(supplier);
+                purchaseOrder.setApproval(false);
+                purchaseOrder.setApprovalDate(Date.valueOf("2016-11-10"));
+                purchaseOrder.setStatus(OrderState.CREATED);
+ 
+                session.save(purchaseOrder);
+                session.beginTransaction().commit();
+                
+        }catch(Exception e){
+        	System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+        finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+    }
 
 	// Products
 	public void persistProduct(Product product) {

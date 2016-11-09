@@ -6,6 +6,7 @@ import java.util.List;
 
 import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
+import projectx.persistence.entities.Supplier;
 import projectx.persistence.webentities.PurchaseOrderProduct;
 
 public interface PurchaseOrderRepository {
@@ -19,5 +20,6 @@ public interface PurchaseOrderRepository {
 	public void updatePurchaseOrder (PurchaseOrder purchaseOrder);
 	List<PurchaseOrderProduct> createPurchaseOrderEntry();
 	public ArrayList<ProductsOrdered> getProductsOrdered(Integer id);
+	public void addPurchaseOrder(Supplier supplier);
 }
 	
