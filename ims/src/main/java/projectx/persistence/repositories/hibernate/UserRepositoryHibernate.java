@@ -7,7 +7,6 @@ import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 
 import projectx.persistence.entities.User;
-import projectx.persistence.repositories.LoginRepository;
 import projectx.persistence.repositories.UserRepository;
 import projectx.persistence.repositories.hibernate.database.HibernateDatabase;
 

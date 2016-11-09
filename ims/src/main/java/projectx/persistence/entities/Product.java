@@ -2,7 +2,13 @@ package projectx.persistence.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import javax.persistence.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 @NamedQueries({
@@ -134,6 +140,10 @@ public class Product implements Serializable {
 
 	public void setImgs(ArrayList<String> imglists) {
 		this.images = imglists;
+	}
+	
+	public String getImage() {
+		return images.get(0);
 	}
 
 	@Override

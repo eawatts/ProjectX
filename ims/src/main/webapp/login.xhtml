@@ -12,45 +12,56 @@
 	<ui:define name="main-content">
 
 		<div class="main-content">
-			<div class="row">
-				<div class="col-tab-12 col-desk-12">
-					<article class="mainBody">
-						<div class="login">
-							<h1>Login</h1>
-						</div>
+			<article class="mainBody">
+				<h:form>
+					<div class="row">
+						<div class="col-tab-12 col-desk-12">
 
-						<div class="description">
-							<p>Please login to your NB Gardens Account to access website.</p>
-						</div>
-						<h:form>
-							<div>
+							<div class="login">
+								<h1>Login</h1>
+							</div>
+
+							<div class="description">
+								<p>Please login to your NB Gardens Account to access
+									website.</p>
+							</div>
+
+							<div class="login-error">
 								<h:outputText rendered="#{login.error ne null}"
 									class="login-error" value="#{login.error}" />
 							</div>
-
-							<label>Username: <h:inputText class="login_input"
+							<br />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-tab-12 col-desk-12">
+							<label>Username:<h:inputText class="login_input"
 									type="text" value="#{login.username}" />
-							</label>
-							<br />
-							<br />
-							<label> Password: <h:inputSecret class="login_input"
-									type="password" value="#{login.password}" />
-							</label>
-							<br />
-							<br />
-							<h:commandButton class="button-green" action="#{login.login()}"
-								type="submit" value="Login"></h:commandButton>
-						</h:form>
-						<br />
-					</article>
-				</div>
-			</div>
-		</div>
+							</label> <br />
+						</div>
+					</div>
 
-		<h:form>
-			<h:commandButton class="button-green" action="#{database.seed()}"
-				type="submit" value="DB" />
-		</h:form>
+					<div class="row second-row">
+						<div class="col-tab-12 col-desk-12">
+							<label>Password:<h:inputSecret
+									styleClass="password-input" class="login_input" type="password"
+									value="#{login.password}" />
+							</label> <br />
+						</div>
+					</div>
+					<br />
+					<h:commandButton class="button-green" action="#{login.login()}"
+						type="submit" value="Login"></h:commandButton>
+				</h:form>
+				<br />
+			</article>
+
+
+			<h:form>
+				<h:commandButton class="button-green" action="#{database.seed()}"
+					type="submit" value="DB" />
+			</h:form>
+		</div>
 	</ui:define>
 
 </ui:composition>

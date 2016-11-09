@@ -1,7 +1,3 @@
-@CHARSET "ISO-8859-1";
-@CHARSET "ISO-8859-1"
-.i {
-}
 
 article {
   text-align: center;
@@ -25,10 +21,19 @@ article {
 	Color: var(--sweet-sweet-brown);
 
 }
+.login-error{
+	color: red;
+}
 
 #formTitle{
 	Color: var(--raisin-black);
 }
 .form{
 	Color: var(--sweet-sweet-brown);
+}
+.password-input{
+	margin-left: 5px;
+}
+.second-row{
+	padding-top: 5px;
 }

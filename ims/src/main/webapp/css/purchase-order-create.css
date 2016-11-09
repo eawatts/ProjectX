@@ -1,0 +1,87 @@
+:root
+{
+	--raisin-black: #272727;
+    --floral-white: #f9fbf2;
+    --orange-yellow: #fed766;
+    --british-racing-green: #004425;
+    --sweet-sweet-brown: #a53f2b;
+    --inline-width: 40%;
+}
+#empty-purchase-order-text{
+	font-size: 130%
+}
+#add-product-title{
+	color: #a53f2b;
+}
+.add-button{
+	float:right;
+	margin-right: 7.5%;
+}
+.input-description{
+	margin-bottom: 3px;
+	margin-top: 0px;
+}
+.pageheading{
+	margin-bottom: 0px;
+}
+.popup-title{
+	margin-top: 0px;
+}
+.table-header{
+	background-color: #004425;
+	font-size: 130%;
+	font-weight: bold;
+	color:  #f9fbf2;
+	border-bottom: solid;
+	border-bottom-color: #a53f2b;	
+	border-width: 5px;
+}
+.clear-button{
+	float:right;
+}
+.cancel-button{
+	float:right;
+}
+.input-box{
+	width: 50%;
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.popup {
+	margin: 70px auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	width: 30%;
+	position: relative;
+	transition: all 5s ease-in-out;
+}
+.popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+
+.popup .close:hover {
+	color: #a53f2b;
+}

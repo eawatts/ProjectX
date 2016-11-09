@@ -9,52 +9,85 @@
 
 	<ui:define name="custom-css">
 		<link rel="stylesheet" type="text/css"
-			href="css/ims-purchase-order-view.css" />
+			href="css/purchase-order-create.css" />
 	</ui:define>
 
 	<ui:define name="main-content">
 
-		<div class="pageheading">
-			<h2>Create Purchase Order</h2>
+		<div>
+			<h1 class="pageheading">Create Purchase Order</h1>
 		</div>
+		<h:panelGroup
+			rendered="#{current_session.pendingPurchaseOrder.contents.size() ne 0}">
+			<div class="row table-header">
+				<div class="col-desk-3 col-tab-3 ">Product</div>
+				<div class="col-desk-3 col-tab-3 ">Supplier</div>
+				<div class="col-desk-2 col-tab-2 ">Quantity</div>
+				<div class="col-desk-2 col-tab-2 ">Total</div>
+			</div>
+		</h:panelGroup>
 
-		<div class="row">
-			<div class="col-desk-5 col-tab-5">Product</div>
-			<div class="col-desk-5 col-tab-5">Supplier</div>
-			<div class="col-desk-2 col-tab-2">Quantity</div>
-		</div>
-		<hr />
-
+		<br />
 		<h:panelGroup
 			rendered="#{current_session.pendingPurchaseOrder.contents.size() eq 0}">
-			<p>There are currently no Products on this Purchase Order</p>
+			<p id="empty-purchase-order-text">There are currently no Products
+				on this Purchase Order</p>
 		</h:panelGroup>
 
 		<ui:repeat var="purchase_order_item"
 			value="#{current_session.pendingPurchaseOrder.contents}">
 			<div class="row">
-				<div class="col-desk-5 col-tab-5">
+				<div class="col-desk-3 col-tab-3">
 					<h:outputText value="#{purchase_order_item.product.name}"></h:outputText>
 				</div>
-				<div class="col-desk-5 col-tab-5">
+				<div class="col-desk-3 col-tab-3">
 					<h:outputText value="#{purchase_order_item.supplier.name}"></h:outputText>
 				</div>
 				<div class="col-desk-2 col-tab-2">
 					<h:outputText value="#{purchase_order_item.quantity}"></h:outputText>
 				</div>
+				<div class="col-desk-2 col-tab-2">
+					<h:outputText value="#{purchase_order_item.totalPrice}"></h:outputText>
+				</div>
+				<div class="col-desk-2 col-tab-2">
+					<h:form>
+						<h:commandButton styleClass="button-brown" value="Remove product"
+							action="#{purchase_order.removePendingPurchaseOrderProduct(purchase_order_item.product.id,purchase_order_item.supplier.id)}"></h:commandButton>
+					</h:form>
+				</div>
 			</div>
 			<br />
 		</ui:repeat>
+		<h:panelGroup
+			rendered="#{current_session.pendingPurchaseOrder.contents.size() ne 0}">
+			<h:form>
+				<h:commandButton styleClass="button-brown clear-button"
+					value="Clear All"
+					action="#{purchase_order.clearAllPendingPurchaseOrderProducts}" />
+			</h:form>
+			<br />
+			<br />
+		</h:panelGroup>
 
 		<hr />
 
-		<h4>Add a New Product to Purchase Order</h4>
+		<h3 id="add-product-title">Add a New Product to Purchase Order</h3>
+		<div class="row">
+			<div class="col-desk-5 col-tab-5">
+				<h3 class="input-description">Select Product</h3>
+			</div>
+			<div class="col-desk-5 col-tab-5">
+				<h3 class="input-description">Select Supplier</h3>
+			</div>
+			<div class="col-desk-2 col-tab-2">
+				<h3 class="input-description">Enter Quantity</h3>
+			</div>
+		</div>
 		<h:form>
 			<div class="row">
-
 				<div class="col-desk-5 col-tab-5">
 					<h:selectOneMenu value="#{selected_purchase_order_product.product}"
-						converter="#{product_converter}">
+						converter="#{product_converter}" styleClass="input-box">
 						<f:selectItems value="#{products.products}"
 							var="selected_items_product"
 							itemValue="#{selected_items_product}"
@@ -64,7 +97,7 @@
 				<div class="col-desk-5 col-tab-5">
 					<h:selectOneMenu
 						value="#{selected_purchase_order_product.supplier}"
-						converter="#{supplier_converter}">
+						converter="#{supplier_converter}" styleClass="input-box">
 						<f:selectItems value="#{suppliers.suppliers}"
 							var="selected_items_supplier"
 							itemValue="#{selected_items_supplier}"
@@ -72,18 +105,45 @@
 					</h:selectOneMenu>
 				</div>
 				<div class="col-desk-2 col-tab-2">
-					<h:inputText class="login_input" type="text"
+					<h:inputText type="text" styleClass="input-box"
 						value="#{selected_purchase_order_product.quantity}" />
 				</div>
 			</div>
+			<br />
 			<div class="row">
 				<div class="col-desk-12 col-tab-12">
 
-					<h:commandButton styleClass="button-green" value="Add Product"
+					<h:commandButton styleClass="button-green add-button" value="Add Product"
 						action="#{purchase_order.addPendingPurchaseOrderProduct()}" />
 
 				</div>
 			</div>
 		</h:form>
+		<h:panelGroup
+			rendered="#{current_session.pendingPurchaseOrder.contents.size() ne 0}">
+			<div class="row">
+				<div class="col-desk-12 col-tab-12">
+					<br />
+					<hr />
+					<h:commandButton styleClass="button-green"
+						value="Confirm completed purchase order"
+						onclick="location.href='#confirm_popup'"></h:commandButton>
+					<div id="confirm_popup" class="overlay">
+						<div class="popup">
+
+							<h2 class="popup-title">Confirm Purchase Order</h2>
+							<div class="content">
+								<h:form>
+									<h:commandButton styleClass="button-green" value="Confirm"
+										action="#{purchase_order.completePurchaseOrder()}" />
+									<h:commandButton styleClass="button-brown cancel-button"
+										value="Cancel" />
+								</h:form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</h:panelGroup>
 	</ui:define>
 </ui:composition>

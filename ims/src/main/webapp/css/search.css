@@ -8,17 +8,18 @@ sweet sweet brown = #a53f2b
 
 .search{
 	margin: auto;
+	display: inline;
 }
-
 .searchinput{
+	padding-left: 4px;
 	margin-left: 30%;
 	font-size:18px;
 	color: #272727;
 	width:20%;
 	height: 30px;
 	background-color: #f9fbf2;
-	border: 1px;
 	border-radius: 2px;
+	border: 2px;
 }
 
 select{

@@ -348,7 +348,6 @@ public class HibernateDatabase {
 			session = sessionManager.getSession();
 			Criteria criteria = session.createCriteria(PurchaseOrder.class);
 			criteria.add(Restrictions.like("Supplier.id", supplierID));
-			criteria.add(Restrictions.like("id", supplierID));
 			return (PurchaseOrder) criteria.uniqueResult();
 
 		} catch (Exception e) {

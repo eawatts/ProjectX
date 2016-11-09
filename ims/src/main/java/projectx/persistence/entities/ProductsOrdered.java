@@ -2,24 +2,46 @@ package projectx.persistence.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @NamedQueries({
 
-/*		@NamedQuery(name = ProductsOrdered.INSERT_ORDEREDPRODUCTS, query = "INSERT INTO OrderedProducts (id,product,ammountOrdered) VALUES (:id, :product, :ammountOrdered)"),
-		@NamedQuery(name = ProductsOrdered.FIND_ALL, query = "SELECT * FROM OrderedProducts"),
-		@NamedQuery(name = ProductsOrdered.FIND_BY_PRODUCT, query = "SELECT * FROM OrderedProducts o where o.productId=:productId"),
-		@NamedQuery(name = ProductsOrdered.FIND_BY_ID, query = "SELECT * FROM OrderedProducts o where o.id=:id"),
-		@NamedQuery(name = ProductsOrdered.UPDATE_ORDEREDPRODUCTS, query = "UPDATE OrderedProducts o SET o.productId=:newProductId , o.ammountOrdered=:newAmooutnOrdered  WHERE o.id=:newId,")*/
+		/*
+		 * @NamedQuery(name = ProductsOrdered.INSERT_ORDEREDPRODUCTS, query =
+		 * "INSERT INTO OrderedProducts (id,product,ammountOrdered) VALUES (:id, :product, :ammountOrdered)"
+		 * ),
+		 * 
+		 * @NamedQuery(name = ProductsOrdered.FIND_ALL, query =
+		 * "SELECT * FROM OrderedProducts"),
+		 * 
+		 * @NamedQuery(name = ProductsOrdered.FIND_BY_PRODUCT, query =
+		 * "SELECT * FROM OrderedProducts o where o.productId=:productId"),
+		 * 
+		 * @NamedQuery(name = ProductsOrdered.FIND_BY_ID, query =
+		 * "SELECT * FROM OrderedProducts o where o.id=:id"),
+		 * 
+		 * @NamedQuery(name = ProductsOrdered.UPDATE_ORDEREDPRODUCTS, query =
+		 * "UPDATE OrderedProducts o SET o.productId=:newProductId , o.ammountOrdered=:newAmooutnOrdered  WHERE o.id=:newId,"
+		 * )
+		 */
 })
 
 @Entity
 @Table(name = "products_ordered")
 
 public class ProductsOrdered implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 	public static final String INSERT_ORDEREDPRODUCTS = "ProductsOrdered.saveProductsOrdered";
 	public static final String FIND_ALL = "ProductsOrdered.findAll";
@@ -45,9 +67,9 @@ public class ProductsOrdered implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "purchase_order_id")
 	private PurchaseOrder purchaseOrder;
-	
+
 	@NotNull
-	@Column(name= "price")
+	@Column(name = "price")
 	private double price;
 
 	public ProductsOrdered() {
@@ -93,7 +115,7 @@ public class ProductsOrdered implements Serializable {
 	public void setPurchaseOrder(PurchaseOrder purchaseOrder) {
 		this.purchaseOrder = purchaseOrder;
 	}
-	
+
 	public double getPrice() {
 		return price;
 	}
