@@ -1,0 +1,75 @@
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 10:24:43.210
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-11-09 10:24:44.359
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-11-09 10:24:46.822
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2016-11-09 10:25:11.260
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 10:25:16.476
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-11-09 10:25:17.532
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-11-09 10:25:19.855
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2016-11-09 10:25:28.116
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 10:26:45.758
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-11-09 10:26:46.787
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-11-09 10:26:51.310
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-11-09 10:26:51.323
+!MESSAGE Module catalogue on WildFly 10.x not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-11-09 10:28:42.667
+!MESSAGE Incremental publish failed for module catalogue
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-11-09 10:28:42.667
+!MESSAGE Could not delete C:/Users/Administrator/wildfly-10.1.0.Final/standalone/deployments/projectx-catalogue-0.0.1-SNAPSHOT.war/WEB-INF/classes/projectx/persistences. May be locked by another process.
+!STACK 0
+java.lang.Exception: Could not delete C:\Users\Administrator\wildfly-10.1.0.Final\standalone\deployments\projectx-catalogue-0.0.1-SNAPSHOT.war\WEB-INF\classes\projectx\persistences. May be locked by another process.
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.LocalFilesystemController.deleteDirectory(LocalFilesystemController.java:322)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.LocalFilesystemController.deleteResource(LocalFilesystemController.java:254)
+	at org.jboss.ide.eclipse.as.wtp.core.server.publish.PublishModuleIncrementalRunner.publishDelta(PublishModuleIncrementalRunner.java:193)
+	at org.jboss.ide.eclipse.as.wtp.core.server.publish.PublishModuleIncrementalRunner.publishDelta(PublishModuleIncrementalRunner.java:187)
+	at org.jboss.ide.eclipse.as.wtp.core.server.publish.PublishModuleIncrementalRunner.publishDelta(PublishModuleIncrementalRunner.java:187)
+	at org.jboss.ide.eclipse.as.wtp.core.server.publish.PublishModuleIncrementalRunner.publishDelta(PublishModuleIncrementalRunner.java:187)
+	at org.jboss.ide.eclipse.as.wtp.core.server.publish.PublishModuleIncrementalRunner.publish(PublishModuleIncrementalRunner.java:118)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.StandardFileSystemPublishController.publishModule(StandardFileSystemPublishController.java:381)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.publishModule(ControllableServerBehavior.java:143)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1091)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1183)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:987)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3172)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:345)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2016-11-09 10:28:53.128
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 10:28:54.836
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-11-09 10:28:55.897
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-11-09 10:28:58.305
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-11-09 10:28:58.306
+!MESSAGE Module catalogue on WildFly 10.x not yet fully deployed. Waiting...

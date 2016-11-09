@@ -18,14 +18,9 @@ public class OrderRepositoryOffline implements OrderRepository{
 	@Inject
 	private OfflineDB db;
 
-<<<<<<< HEAD
-	public void persistOrder(Order order) {
-		db.addUser(user);
-=======
 	@Override
 	public void persistOrder(Order order) {
 		db.addOrder(order);
->>>>>>> catalogue
 	}
 	
 	@Override
@@ -58,15 +53,9 @@ public class OrderRepositoryOffline implements OrderRepository{
 	}
 
 	@Override
-<<<<<<< HEAD
-	public boolean checkPassword(String username, String password) {
-		return db.checkPassword(username, password);
-	}
-}
-=======
+
 	public Order findByOrderType(String orderType) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 }
->>>>>>> catalogue
