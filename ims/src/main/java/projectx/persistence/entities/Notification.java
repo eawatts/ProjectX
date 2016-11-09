@@ -12,22 +12,17 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import projectx.persistence.util.NotificationType;
 
 @Entity
 @Table(name = "notification")
 
 @NamedQueries({
-	@NamedQuery(name = Notification.FIND_NOTIFICATIONS_BY_TYPE, query = "SELECT n FROM Notification n WHERE n.type = :type")
-})
+		@NamedQuery(name = Notification.FIND_NOTIFICATIONS_BY_TYPE, query = "SELECT n FROM Notification n WHERE n.type = :type") })
 
 public class Notification implements Serializable {
 
-
 	private static final long serialVersionUID = 1L;
-
 
 	public static final String FIND_NOTIFICATIONS_BY_TYPE = "Supplier.findNotificationsByType";
 
@@ -43,7 +38,7 @@ public class Notification implements Serializable {
 	@Column(name = "details")
 	@Size(max = 250)
 	private String details;
-	
+
 	public Notification() {
 	}
 

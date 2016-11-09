@@ -6,18 +6,15 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 
-import projectx.persistence.entities.Notification;
 import projectx.persistence.entities.Product;
-import projectx.persistence.repositories.NotificationRepository;
 import projectx.persistence.repositories.ProductRepository;
 import projectx.persistence.repositories.hibernate.database.HibernateDatabase;
-import projectx.persistence.util.NotificationType;
 
 @Stateless
 @Alternative // This can be used by changing beans.xml
 
 public class ProductRepositoryHibernate implements ProductRepository {
-	
+
 	@Inject
 	private HibernateDatabase db;
 
@@ -38,7 +35,7 @@ public class ProductRepositoryHibernate implements ProductRepository {
 
 	@Override
 	public void updateProduct(Product products) {
-		
+
 	}
 
 	@Override
@@ -58,6 +55,6 @@ public class ProductRepositoryHibernate implements ProductRepository {
 
 	@Override
 	public void addProduct(Product p) {
-		persistProduct(p); //see persist product
+		persistProduct(p); // see persist product
 	}
 }

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+
 import projectx.persistence.repositories.hibernate.database.HibernateDatabase;
 
 @Named("database")

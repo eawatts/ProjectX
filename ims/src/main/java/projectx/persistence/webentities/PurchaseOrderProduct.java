@@ -1,9 +1,6 @@
 package projectx.persistence.webentities;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.text.NumberFormat;
-import java.util.Currency;
 import java.util.Locale;
 
 import projectx.persistence.entities.Product;
