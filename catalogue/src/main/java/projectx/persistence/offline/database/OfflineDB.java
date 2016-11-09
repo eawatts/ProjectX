@@ -94,33 +94,147 @@ public class OfflineDB
 	private void setupProducts()
 	{
 		products = new ArrayList<Product>();
-		products.add(new Product(1, "Red Gnome 1", "This gnome is lovely", 100, new BigDecimal(19.99), 10, 100, 1,
+		products.add(new Product(1, "Red Gnome", "This gnome is lovely with its bright red hat", 100, new BigDecimal(19.99), 10, 100, 1,
 				"/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(2, "Red Gnome 2", "Very generic gnome", 100, new BigDecimal(19.99), 10, 100, 1,
-				"/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(3, "Red Gnome 3", "Bogstandard", 100, new BigDecimal(19.99), 10, 100, 1,
-				"/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(4, "Red Gnome 4", "This is a stubbstandard gnome", 100, new BigDecimal(19.99), 10, 100,
-				1, "/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(5, "Red Gnome 5", "Red-hatted gnome", 100, new BigDecimal(19.99), 10, 100, 1,
-				"/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(6, "Red Gnome 6", "Classic Gnome", 100, new BigDecimal(19.99), 10, 100, 1,
-				"/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(7, "Red Gnome 7", "Usual red gnome with hat", 100, new BigDecimal(19.99), 10, 100, 1,
-				"/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(8, "Red Gnome 8", "Classic red hat gnome", 100, new BigDecimal(19.99), 10, 100, 1,
-				"/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(9, "Red Gnome 9", "The gnome of gnomes", 100, new BigDecimal(19.99), 10, 100, 1,
-				"/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(10, "Red Gnome 10", "The one true gnome", 100, new BigDecimal(19.99), 10, 100, 1,
-				"/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(11, "Red Gnome 11", "Large red hat gnome", 100, new BigDecimal(19.99), 10, 100, 1,
-				"/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(12, "Red Gnome 12", "Your dream gnome", 100, new BigDecimal(19.99), 10, 100, 1,
-				"/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(13, "Red Gnome 13", "Classic gnome - medium size", 100, new BigDecimal(19.99), 10, 100,
-				1, "/products/gnomes/gnome_red-hat.png"));
-
+		products.add(new Product(2, "Blue Gnome", "Very generic blue hat gnome", 100, new BigDecimal(19.99), 10, 100, 1,
+				"/products/gnomes/bluegnome.jpg"));
+		products.add(new Product(3, "Girl Gnome", "Our first femal gnome for those that have asked for it", 100, new BigDecimal(19.99), 10, 100, 1,
+				"/products/gnomes/girl-gnome.jpg"));
+		products.add(new Product(4, "Sunflower Gnome", "This is a stubbstandard gnome but most will forgive that for his sunflower", 100, new BigDecimal(24.99), 10, 100,
+				1, "/products/gnomes/sunflowergnome.jpg"));
+		products.add(new Product(5, "Flute Gnome", "Gnome ready to play into your heart", 100, new BigDecimal(21.99), 10, 100, 1,
+				"/products/gnomes/flutegnome.jpg"));
+		products.add(new Product(6, "Grandad Gnome", "Perfect reliable gnome who has seen it all", 100, new BigDecimal(23.99), 10, 100, 1,
+				"/products/gnomes/grandadgnome.jpg"));
+		products.add(new Product(7, "Bird Feeding Gnome", "Gnome feeding birds and willing to join you in the activity", 100, new BigDecimal(24.99), 10, 100, 1,
+				"/products/gnomes/birdfeedinggnome.jpg"));
+		products.add(new Product(8, "Hippie Gnome", "Gnome looking for peace.", 100, new BigDecimal(22.99), 10, 100, 1,
+				"/products/gnomes/hippiegnome.jpg"));
+		products.add(new Product(9, "Golf Gnome", "Hoping to hit a whole in one in your garden.", 100, new BigDecimal(23.99), 10, 100, 1,
+				"/products/gnomes/golfgnome.jpg"));
+		products.add(new Product(10, "Cricket Gnome", "Will easily hit you for four", 100, new BigDecimal(23.99), 10, 100, 1,
+				"/products/gnomes/cricket.jpg"));
+		products.add(new Product(11, "Gnomeland Security", "Every garden requires some sort of security", 100, new BigDecimal(24.99), 10, 100, 1,
+				"/products/gnomes/security.jpg"));		
+		products.add(new Product(12, "Ninja Gnome", "Pesky weeds will never see him coming", 100, new BigDecimal(22.99), 10, 100, 1,
+				"/products/gnomes/ninjagnome.jpg"));
+		products.add(new Product(13, "Game of Gnomes", "One Gnome to rule them all!", 100, new BigDecimal(23.99), 10, 100,
+				1, "/products/gnomes/gameofgnomes.jpg"));
+		products.add(new Product(14, "Gnome and Juliet", "Love couple for your garden", 100, new BigDecimal(27.99), 10, 100,
+				1, "/products/gnomes/gnomeoandjuliet.jpg"));
+		products.add(new Product(15, "Gnomezilla", "No Gnome is safe from this.", 100, new BigDecimal(24.99), 10, 100,
+				1, "/products/gnomes/gnomezilla.jpg"));
+		products.add(new Product(16, "Gnome Brush", "Specific brush to clean your perfect gnomes", 100, new BigDecimal(9.99), 10, 100,
+				1, "/products/gnomes/brush.jpg"));		
+		products.add(new Product(17, "Gnome Cleaner", "Special made solution to clean your gnomes and protect them.", 100, new BigDecimal(6.99), 10, 100,
+				1, "/products/gnomes/gnomecleaner.jpg"));
+		products.add(new Product(18, "Gnome Protector", "Protect that special gnome in yourlife.", 100, new BigDecimal(6.99), 10, 100,
+				1, "/products/gnomes/gnomeprotector.jpg"));
+		products.add(new Product(19, "4 garden lights", "for all those with a modern garden", 100, new BigDecimal(29.99), 10, 100,
+				1, "/products/electrical/pillar.jpg"));
+		products.add(new Product(20, "Lampost", "Adding some classical touches to your garden", 100, new BigDecimal(39.99), 10, 100,
+				1, "/products/electrical/lampost.jpg"));
+		products.add(new Product(21, "Flowerpot Light", "Try using these new flowerpots to see your flowers anytime of the day.", 100, new BigDecimal(39.99), 10, 100,
+				1, "/products/electrical/flowerpotLight.jpg"));
+		products.add(new Product(22, "Decking Lights", "Perfect to add the finishing touch to your decking.", 100, new BigDecimal(29.99), 10, 100,
+				1, "/products/electrical/deckinglight.jpg"));
+		products.add(new Product(23, "Floor Patio Heater", "Perfect to add the finishing touch to your decking.", 100, new BigDecimal(119.99), 10, 100,
+				1, "/products/electrical/deckinglight.jpg"));
+		products.add(new Product(24, "Table Top Heater", "A small outdoor heater to fit on any tabletop.", 100, new BigDecimal(59.99), 10, 100,
+				1, "/products/electrical/tabltopheater.jpg"));
+		products.add(new Product(25, "Umbrela Patio heater", "a ring of heaters which will fit to the umbrella so everyone is kept warm.", 100, new BigDecimal(79.99), 10, 100,
+				1, "/products/electrical/parosealheater.jpg"));
+		products.add(new Product(26, "Replacement Fillaments", "replacement fillimants for your patio heater.", 100, new BigDecimal(29.99), 10, 100,
+				1, "/products/electrical/replacementfillaments.jpg"));		
+		products.add(new Product(27, "Circular Hottub", "A circular hottub for those that dont have a big enough corner.", 100, new BigDecimal(3999.99), 10, 100,
+				1, "/products/electrical/circlehottub.jpg"));
+		products.add(new Product(28, "Inflatable Hottub", "A quick inflatable hottub without taking the space of a full hottub.", 100, new BigDecimal(599.99), 10, 100,
+				1, "/products/electrical/inflatablehottub.jpg"));
+		products.add(new Product(29, "Octagonal Hottub", "A hottub for those looking for something that is a bit different.", 100, new BigDecimal(4999.99), 10, 100,
+				1, "/products/electrical/octagonalhottub.jpg"));
+		products.add(new Product(30, "Rectangular Hottub", "A classic hottub with some modern features.", 100, new BigDecimal(3999.99), 10, 100,
+				1, "/products/electrical/rectanglehottub.jpg"));
+		products.add(new Product(31, "Silver Gas BBQ", "A great looking barbecue that is easy to use and easy on the bank", 100, new BigDecimal(239.99), 10, 100,
+				1, "/products/electrical/silverBBQ.jpg"));
+		products.add(new Product(32, "Red Gas BBQ", "Cook like a BBQ expert without the mess or flare ups", 100, new BigDecimal(199.99), 10, 100,
+				1, "/products/electrical/redBBQ.jpg"));
+		products.add(new Product(33, "Silver Pro BBQ", "A gas BBQ with everything you could ever need.", 100, new BigDecimal(509.99), 10, 100,
+				1, "/products/electrical/proBBQ.jpg"));
+		products.add(new Product(34, "Blue Charcoal BBQ", "A great small easy to use barbecue for picnics or festivals.", 100, new BigDecimal(69.99), 10, 100,
+				1, "/products/electrical/bbqblue.jpg"));
+		products.add(new Product(35, "Single Garden Socket", "A garden post that can bring electricity to anywear in your garden", 100, new BigDecimal(25.99), 10, 100,
+				1, "/products/electrical/bbqblue.jpg"));
+		products.add(new Product(36, "Double wall socket", "Add a socket to the outside of any walls where you need electrics", 100, new BigDecimal(34.99), 10, 100,
+				1, "/products/electrical/bbqblue.jpg"));
+		products.add(new Product(37, "Single Plug Extension Lead", "when your current lead is just not long enough.", 100, new BigDecimal(9.99), 10, 100,
+				1, "/products/electrical/bbqblue.jpg"));
+		products.add(new Product(38, "Triple Plug Extension Lead", "Great for when holding any garden party.", 100, new BigDecimal(19.99), 10, 100,
+				1, "/products/electrical/bbqblue.jpg"));
+		products.add(new Product(39, "Tortoise Shell Cat", "The cat has closed eyes and is curled up.", 100, new BigDecimal(29.99), 10, 100,
+				1, "/products/ornimants/cat.jpg"));
+		products.add(new Product(40, "King Charles Spaniel", "With brown patches over a white coat, big floppy ears and glossy black eyes.", 100, new BigDecimal(29.99), 10, 100,
+				1, "/products/ornimants/kingspaniel.jpg"));
+		products.add(new Product(41, "Black Bear Cub", "Highly detailed walking black bear cub.", 100, new BigDecimal(29.99), 10, 100,
+				1, "/products/ornimants/bearcub.jpg"));		
+		products.add(new Product(42, "Tiger Cub", "Highly detailed sitting tiger cub.", 100, new BigDecimal(29.99), 10, 100,
+				1, "/products/ornimants/tiger.jpg"));
+		products.add(new Product(43, "Heart Windchime", "A windchime made of metal hearts", 100, new BigDecimal(24.99), 10, 100,
+				1, "/products/ornimants/heartwindchimes.jpg"));
+		products.add(new Product(44, "Wooden Windchime", "An old fashioned windchime", 100, new BigDecimal(27.99), 10, 100,
+				1, "/products/ornimants/woodenwindchime.jpg"));
+		products.add(new Product(45, "Metal Windchime", "A modern windchime", 100, new BigDecimal(29.99), 10, 100,
+				1, "/products/ornimants/metalwindchime.jpg"));
+		products.add(new Product(46, "Peakcock Windchime", "a metalic winchime with a large metal peakock holding it together", 100, new BigDecimal(32.99), 10, 100,
+				1, "/products/ornimants/peacockwindchime.jpg"));
+		products.add(new Product(47, "Flying Pig Weathervane", "Well now pigs can fly", 100, new BigDecimal(49.99), 10, 100,
+				1, "/products/ornimants/flyingweathervane.jpg"));
+		products.add(new Product(48, "HummingBird Weathervane", "a metalic silhouette of a hummingbird and a flower", 100, new BigDecimal(45.99), 10, 100,
+				1, "/products/ornimants/hummingbirdweathervane.jpg"));
+		products.add(new Product(49, "Owl Weathervane", "a metalic silhouette of a owl", 100, new BigDecimal(45.99), 10, 100,
+				1, "/products/ornimants/owlweathervane.jpg"));
+		products.add(new Product(50, "Wine Weathervane", "For all those lovers of wine", 100, new BigDecimal(49.99), 10, 100,
+				1, "/products/ornimants/wineweathervane.jpg"));
+		products.add(new Product(51, "Plastic Flowerpot", "Plastic flowerpots great for those starting out", 100, new BigDecimal(9.99), 10, 100,
+				1, "/products/ornimants/plasticflowerpot.jpg"));
+		products.add(new Product(52, "Ribbed Flowerpot", "Classic flowerpot that will be perfect in any garden", 100, new BigDecimal(19.99), 10, 100,
+				1, "/products/ornimants/ribbedflowerpot.jpg"));
+		products.add(new Product(53, "Wall Hanging Flowerpot", "Flowerpots that need to be screwed to the wall", 100, new BigDecimal(29.99), 10, 100,
+				1, "/products/ornimants/wallflowerpot.jpg"));
+		products.add(new Product(54, "Wicker Flowerpot", "Black Wicker pots that will add a modern twist to your garden", 100, new BigDecimal(24.99), 10, 100,
+				1, "/products/ornimants/wickerpot.jpg"));
+		products.add(new Product(55, "Expanding Lawn Rake", "Lawn rake that will expand its head size depending on need", 100, new BigDecimal(14.99), 10, 100,
+				1, "/products/rakesandhoes/expandablerake.jpg"));
+		products.add(new Product(56, "Soil Rake", "Keep borders in blooming good health", 100, new BigDecimal(14.99), 10, 100,
+				1, "/products/rakesandhoes/rakestraight.jpg"));
+		products.add(new Product(57, "Leaf Rake", "Perfect rake for those pesky leaves", 100, new BigDecimal(19.99), 10, 100,
+				1, "/products/rakesandhoes/rakespread.jpg"));
+		products.add(new Product(58, "Hand Rake", "Perfect small rake for your allotment", 100, new BigDecimal(9.99), 10, 100,
+				1, "/products/rakesandhoes/HandRake.jpg"));
+		products.add(new Product(59, "Eye Hoe", "Classic digging hoe that millions of small farmers and gardeners around the world use every day", 100, new BigDecimal(18.99), 10, 100,
+				1, "/products/rakesandhoes/eyehoes.jpg"));
+		products.add(new Product(60, "Hoe", "Ypur houe for everydaywork", 100, new BigDecimal(18.99), 10, 100,
+				1, "/products/rakesandhoes/generalhoe.jpg"));
+		products.add(new Product(61, "Onion Hoe", "Top quality hoe is a must for any vegetable enthusiast", 100, new BigDecimal(18.99), 10, 100,
+				1, "/products/rakesandhoes/onionhoe.jpg"));
+		products.add(new Product(62, "Warren Hoe", "Allows this hoe to be used for drilling seeds as well as cultivating and furrowing", 100, new BigDecimal(18.99), 10, 100,
+				1, "/products/rakesandhoes/warrenhoe.jpg"));
+		products.add(new Product(63, "Digging Spade", "Everyone needs a faithful garden spade this could be yours", 100, new BigDecimal(18.99), 10, 100,
+				1, "/products/rakesandhoes/spade.jpg"));
+		products.add(new Product(64, "Border Spade", "Perfect to fix any borders", 100, new BigDecimal(19.99), 10, 100,
+				1, "/products/rakesandhoes/borderspade.jpg"));
+		products.add(new Product(65, "Border Fork", "Great for working on your borders", 100, new BigDecimal(24.99), 10, 100,
+				1, "/products/rakesandhoes/fork.jpg"));
+		products.add(new Product(66, "Hand Fork", "great for pottering arround in your flowerpots", 100, new BigDecimal(9.99), 10, 100,
+				1, "/products/rakesandhoes/handfork.jpg"));
+		products.add(new Product(67, "Trowel", "Multipurpose trowel that can be used for anything", 100, new BigDecimal(22.99), 10, 100,
+				1, "/products/rakesandhoes/coppertrowel.jpg"));
+		products.add(new Product(68, "Potting Trowel", "Holds more compost than a regular trowel, making it more efficient for potting.", 100, new BigDecimal(23.99), 10, 100,
+				1, "/products/rakesandhoes/pottingtrowel.jpg"));
+		products.add(new Product(69, "Planting Trowel", "Has great soil penetration for planting.", 100, new BigDecimal(19.99), 10, 100,
+				1, "/products/rakesandhoes/plantingtrowel.jpg"));
+		products.add(new Product(70, "Rock Trowel", "Perfect for troweling in the rockery", 100, new BigDecimal(19.99), 10, 100,
+				1, "/products/rakesandhoes/rocktrowel.jpg"));
+		
 	}
 
 	private void setupPaymentDetails()
@@ -236,29 +350,94 @@ public class OfflineDB
 		classicgnomes.add(products.get(4));
 		classicgnomes.add(products.get(5));
 		classicgnomes.add(products.get(6));
-		classicgnomes.add(products.get(7));
-		classicgnomes.add(products.get(8));
-		classicgnomes.add(products.get(9));
-		classicgnomes.add(products.get(10));
-		classicgnomes.add(products.get(11));
-		classicgnomes.add(products.get(12));
-
+		
 		noveltygnomes = new ArrayList<Product>();
+		noveltygnomes.add(products.get(7));
+		noveltygnomes.add(products.get(8));
+		noveltygnomes.add(products.get(9));
+		noveltygnomes.add(products.get(10));
+		noveltygnomes.add(products.get(11));
 		themedgnomes = new ArrayList<Product>();
+		themedgnomes.add(products.get(12));
+		themedgnomes.add(products.get(13));
+		themedgnomes.add(products.get(14));
 		gnomecare = new ArrayList<Product>();
+		gnomecare.add(products.get(15));
+		gnomecare.add(products.get(16));
+		gnomecare.add(products.get(17));
+
+
+		
 		lighting = new ArrayList<Product>();
+		lighting.add(products.get(18));
+		lighting.add(products.get(19));
+		lighting.add(products.get(20));
+		lighting.add(products.get(21));
 		heaters = new ArrayList<Product>();
+		heaters.add(products.get(22));
+		heaters.add(products.get(23));
+		heaters.add(products.get(24));
+		heaters.add(products.get(25));
 		hottubs = new ArrayList<Product>();
+		hottubs.add(products.get(26));
+		hottubs.add(products.get(27));
+		hottubs.add(products.get(28));
+		hottubs.add(products.get(29));
 		bbqs = new ArrayList<Product>();
+		bbqs.add(products.get(30));
+		bbqs.add(products.get(31));
+		bbqs.add(products.get(32));
+		bbqs.add(products.get(33));
 		misc = new ArrayList<Product>();
+		misc.add(products.get(34));
+		misc.add(products.get(35));
+		misc.add(products.get(36));
+		misc.add(products.get(37));
+
+		
 		animals = new ArrayList<Product>();
+		animals.add(products.get(38));
+		animals.add(products.get(39));
+		animals.add(products.get(40));
+		animals.add(products.get(41));
 		windchimes = new ArrayList<Product>();
+		windchimes.add(products.get(42));
+		windchimes.add(products.get(43));
+		windchimes.add(products.get(44));
+		windchimes.add(products.get(45));
 		weathervanes = new ArrayList<Product>();
+		weathervanes.add(products.get(46));
+		weathervanes.add(products.get(47));
+		weathervanes.add(products.get(48));
+		weathervanes.add(products.get(49));
 		pots = new ArrayList<Product>();
+		pots.add(products.get(50));
+		pots.add(products.get(51));
+		pots.add(products.get(52));
+		pots.add(products.get(53));
+		
 		rakes = new ArrayList<Product>();
+		rakes.add(products.get(54));
+		rakes.add(products.get(55));
+		rakes.add(products.get(56));
+		rakes.add(products.get(57));
 		hoes = new ArrayList<Product>();
+		hoes.add(products.get(58));
+		hoes.add(products.get(59));
+		hoes.add(products.get(60));
+		hoes.add(products.get(61));
 		spadesnforks = new ArrayList<Product>();
+		spadesnforks.add(products.get(62));
+		spadesnforks.add(products.get(63));
+		spadesnforks.add(products.get(64));
+		spadesnforks.add(products.get(65));
 		trowels = new ArrayList<Product>();
+		trowels.add(products.get(66));
+		trowels.add(products.get(67));
+		trowels.add(products.get(68));
+		trowels.add(products.get(69));
+
+
 		pumps = new ArrayList<Product>();
 		ponds = new ArrayList<Product>();
 		pipes = new ArrayList<Product>();
