@@ -90,162 +90,162 @@ public class OfflineDB {
 
 	private void setupProducts() {
 		products = new ArrayList<Product>();
-		products.add(new Product(1, "Red Gnome", "This gnome is lovely with its bright red hat", 100,
+		products.add(new Product(1, "Red Gnome", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(19.99), 10, 100, 1, "/products/gnomes/gnome_red-hat.png"));
-		products.add(new Product(2, "Blue Gnome", "Very generic blue hat gnome", 100, new BigDecimal(19.99), 10, 100, 1,
+		products.add(new Product(2, "Blue Gnome", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(19.99), 10, 100, 1,
 				"/products/gnomes/bluegnome.jpg"));
-		products.add(new Product(3, "Girl Gnome", "Our first femal gnome for those that have asked for it", 100,
+		products.add(new Product(3, "Girl Gnome", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(19.99), 10, 100, 1, "/products/gnomes/girl-gnome.jpg"));
 		products.add(new Product(4, "Sunflower Gnome",
-				"This is a stubbstandard gnome but most will forgive that for his sunflower", 100,
+				"Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(24.99), 10, 100, 1, "/products/gnomes/sunflowergnome.jpg"));
-		products.add(new Product(5, "Flute Gnome", "Gnome ready to play into your heart", 100, new BigDecimal(21.99),
+		products.add(new Product(5, "Flute Gnome", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(21.99),
 				10, 100, 1, "/products/gnomes/flutegnome.jpg"));
-		products.add(new Product(6, "Grandad Gnome", "Perfect reliable gnome who has seen it all", 100,
+		products.add(new Product(6, "Grandad Gnome", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomevIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(23.99), 10, 100, 1, "/products/gnomes/grandadgnome.jpg"));
-		products.add(new Product(7, "Bird Feeding Gnome", "Gnome feeding birds and willing to join you in the activity",
+		products.add(new Product(7, "Bird Feeding Gnome", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
 				100, new BigDecimal(24.99), 10, 100, 1, "/products/gnomes/birdfeedinggnome.jpg"));
-		products.add(new Product(8, "Hippie Gnome", "Gnome looking for peace.", 100, new BigDecimal(22.99), 10, 100, 1,
+		products.add(new Product(8, "Hippie Gnome", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(22.99), 10, 100, 1,
 				"/products/gnomes/hippiegnome.jpg"));
-		products.add(new Product(9, "Golf Gnome", "Hoping to hit a whole in one in your garden.", 100,
+		products.add(new Product(9, "Golf Gnome", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(23.99), 10, 100, 1, "/products/gnomes/golfgnome.jpg"));
-		products.add(new Product(10, "Cricket Gnome", "Will easily hit you for four", 100, new BigDecimal(23.99), 10,
+		products.add(new Product(10, "Cricket Gnome", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(23.99), 10,
 				100, 1, "/products/gnomes/cricket.jpg"));
-		products.add(new Product(11, "Gnomeland Security", "Every garden requires some sort of security", 100,
+		products.add(new Product(11, "Gnomeland Security", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeEvery garden requires some sort of security In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(24.99), 10, 100, 1, "/products/gnomes/security.jpg"));
-		products.add(new Product(12, "Ninja Gnome", "Pesky weeds will never see him coming", 100, new BigDecimal(22.99),
+		products.add(new Product(12, "Ninja Gnome", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomePesky weeds will never see him coming In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(22.99),
 				10, 100, 1, "/products/gnomes/ninjagnome.jpg"));
-		products.add(new Product(13, "Game of Gnomes", "One Gnome to rule them all!", 100, new BigDecimal(23.99), 10,
+		products.add(new Product(13, "Game of Gnomes", "Red GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeRed GnomeOne Gnome to rule them all! In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(23.99), 10,
 				100, 1, "/products/gnomes/gameofgnomes.jpg"));
-		products.add(new Product(14, "Gnome and Juliet", "Love couple for your garden", 100, new BigDecimal(27.99), 10,
+		products.add(new Product(14, "Gnome and Juliet", "Love couple for your garden In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(27.99), 10,
 				100, 1, "/products/gnomes/gnomeoandjuliet.jpg"));
-		products.add(new Product(15, "Gnomezilla", "No Gnome is safe from this.", 100, new BigDecimal(24.99), 10, 100,
+		products.add(new Product(15, "Gnomezilla", "No Gnome is safe from this. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(24.99), 10, 100,
 				1, "/products/gnomes/gnomezilla.jpg"));
-		products.add(new Product(16, "Gnome Brush", "Specific brush to clean your perfect gnomes", 100,
+		products.add(new Product(16, "Gnome Brush", "Specific brush to clean your perfect gnomes In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(9.99), 10, 100, 1, "/products/gnomes/brush.jpg"));
-		products.add(new Product(17, "Gnome Cleaner", "Special made solution to clean your gnomes and protect them.",
+		products.add(new Product(17, "Gnome Cleaner", "Special made solution to clean your gnomes and protect them. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
 				100, new BigDecimal(6.99), 10, 100, 1, "/products/gnomes/gnomecleaner.jpg"));
-		products.add(new Product(18, "Gnome Protector", "Protect that special gnome in yourlife.", 100,
+		products.add(new Product(18, "Gnome Protector", "Protect that special gnome in yourlife. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(6.99), 10, 100, 1, "/products/gnomes/gnomeprotector.jpg"));
-		products.add(new Product(19, "4 garden lights", "for all those with a modern garden", 100,
+		products.add(new Product(19, "4 garden lights", "for all those with a modern garden In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(29.99), 10, 100, 1, "/products/electrical/pillar.jpg"));
-		products.add(new Product(20, "Lampost", "Adding some classical touches to your garden", 100,
+		products.add(new Product(20, "Lampost", "Adding some classical touches to your garden In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(39.99), 10, 100, 1, "/products/electrical/lampost.jpg"));
 		products.add(new Product(21, "Flowerpot Light",
-				"Try using these new flowerpots to see your flowers anytime of the day.", 100, new BigDecimal(39.99),
+				"Try using these new flowerpots to see your flowers anytime of the day. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(39.99),
 				10, 100, 1, "/products/electrical/flowerpotLight.jpg"));
-		products.add(new Product(22, "Decking Lights", "Perfect to add the finishing touch to your decking.", 100,
+		products.add(new Product(22, "Decking Lights", "Perfect to add the finishing touch to your decking. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(29.99), 10, 100, 1, "/products/electrical/deckinglight.jpg"));
-		products.add(new Product(23, "Floor Patio Heater", "Perfect to add the finishing touch to your decking.", 100,
+		products.add(new Product(23, "Floor Patio Heater", "Perfect to add the finishing touch to your decking. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(119.99), 10, 100, 1, "/products/electrical/deckinglight.jpg"));
-		products.add(new Product(24, "Table Top Heater", "A small outdoor heater to fit on any tabletop.", 100,
+		products.add(new Product(24, "Table Top Heater", "A small outdoor heater to fit on any tabletop. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(59.99), 10, 100, 1, "/products/electrical/tabltopheater.jpg"));
 		products.add(new Product(25, "Umbrela Patio heater",
-				"a ring of heaters which will fit to the umbrella so everyone is kept warm.", 100,
+				"a ring of heaters which will fit to the umbrella so everyone is kept warm. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(79.99), 10, 100, 1, "/products/electrical/parosealheater.jpg"));
-		products.add(new Product(26, "Replacement Fillaments", "replacement fillimants for your patio heater.", 100,
+		products.add(new Product(26, "Replacement Fillaments", "replacement fillimants for your patio heater. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(29.99), 10, 100, 1, "/products/electrical/replacementfillaments.jpg"));
 		products.add(
-				new Product(27, "Circular Hottub", "A circular hottub for those that dont have a big enough corner.",
+				new Product(27, "Circular Hottub", "A circular hottub for those that dont have a big enough corner. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
 						100, new BigDecimal(3999.99), 10, 100, 1, "/products/electrical/circlehottub.jpg"));
 		products.add(new Product(28, "Inflatable Hottub",
-				"A quick inflatable hottub without taking the space of a full hottub.", 100, new BigDecimal(599.99), 10,
+				"A quick inflatable hottub without taking the space of a full hottub. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(599.99), 10,
 				100, 1, "/products/electrical/inflatablehottub.jpg"));
 		products.add(
-				new Product(29, "Octagonal Hottub", "A hottub for those looking for something that is a bit different.",
+				new Product(29, "Octagonal Hottub", "A hottub for those looking for something that is a bit different. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
 						100, new BigDecimal(4999.99), 10, 100, 1, "/products/electrical/octagonalhottub.jpg"));
-		products.add(new Product(30, "Rectangular Hottub", "A classic hottub with some modern features.", 100,
+		products.add(new Product(30, "Rectangular Hottub", "A classic hottub with some modern features. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(3999.99), 10, 100, 1, "/products/electrical/rectanglehottub.jpg"));
 		products.add(
-				new Product(31, "Silver Gas BBQ", "A great looking barbecue that is easy to use and easy on the bank",
+				new Product(31, "Silver Gas BBQ", "A great looking barbecue that is easy to use and easy on the bank In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
 						100, new BigDecimal(239.99), 10, 100, 1, "/products/electrical/silverBBQ.jpg"));
-		products.add(new Product(32, "Red Gas BBQ", "Cook like a BBQ expert without the mess or flare ups", 100,
+		products.add(new Product(32, "Red Gas BBQ", "Cook like a BBQ expert without the mess or flare ups In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(199.99), 10, 100, 1, "/products/electrical/redBBQ.jpg"));
-		products.add(new Product(33, "Silver Pro BBQ", "A gas BBQ with everything you could ever need.", 100,
+		products.add(new Product(33, "Silver Pro BBQ", "A gas BBQ with everything you could ever need. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(509.99), 10, 100, 1, "/products/electrical/proBBQ.jpg"));
 		products.add(
-				new Product(34, "Blue Charcoal BBQ", "A great small easy to use barbecue for picnics or festivals.",
+				new Product(34, "Blue Charcoal BBQ", "A great small easy to use barbecue for picnics or festivals. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
 						100, new BigDecimal(69.99), 10, 100, 1, "/products/electrical/bbqblue.jpg"));
 		products.add(new Product(35, "Single Garden Socket",
-				"A garden post that can bring electricity to anywear in your garden", 100, new BigDecimal(25.99), 10,
+				"A garden post that can bring electricity to anywear in your garden In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(25.99), 10,
 				100, 1, "/products/electrical/bbqblue.jpg"));
 		products.add(new Product(36, "Double wall socket",
-				"Add a socket to the outside of any walls where you need electrics", 100, new BigDecimal(34.99), 10,
+				"Add a socket to the outside of any walls where you need electrics In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(34.99), 10,
 				100, 1, "/products/electrical/bbqblue.jpg"));
-		products.add(new Product(37, "Single Plug Extension Lead", "when your current lead is just not long enough.",
+		products.add(new Product(37, "Single Plug Extension Lead", "when your current lead is just not long enough. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
 				100, new BigDecimal(9.99), 10, 100, 1, "/products/electrical/bbqblue.jpg"));
-		products.add(new Product(38, "Triple Plug Extension Lead", "Great for when holding any garden party.", 100,
+		products.add(new Product(38, "Triple Plug Extension Lead", "Great for when holding any garden party. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(19.99), 10, 100, 1, "/products/electrical/bbqblue.jpg"));
-		products.add(new Product(39, "Tortoise Shell Cat", "The cat has closed eyes and is curled up.", 100,
+		products.add(new Product(39, "Tortoise Shell Cat", "The cat has closed eyes and is curled up. In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(29.99), 10, 100, 1, "/products/ornimants/cat.jpg"));
 		products.add(new Product(40, "King Charles Spaniel",
-				"With brown patches over a white coat, big floppy ears and glossy black eyes.", 100,
+				"With brown patches over a white coat, big floppy ears and glossy black eyes.In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(29.99), 10, 100, 1, "/products/ornimants/kingspaniel.jpg"));
-		products.add(new Product(41, "Black Bear Cub", "Highly detailed walking black bear cub.", 100,
+		products.add(new Product(41, "Black Bear Cub", "Highly detailed walking black bear cub.In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(29.99), 10, 100, 1, "/products/ornimants/bearcub.jpg"));
-		products.add(new Product(42, "Tiger Cub", "Highly detailed sitting tiger cub.", 100, new BigDecimal(29.99), 10,
+		products.add(new Product(42, "Tiger Cub", "Highly detailed sitting tiger cub.In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(29.99), 10,
 				100, 1, "/products/ornimants/tiger.jpg"));
-		products.add(new Product(43, "Heart Windchime", "A windchime made of metal hearts", 100, new BigDecimal(24.99),
+		products.add(new Product(43, "Heart Windchime", "A windchime made of metal heartsIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(24.99),
 				10, 100, 1, "/products/ornimants/heartwindchimes.jpg"));
-		products.add(new Product(44, "Wooden Windchime", "An old fashioned windchime", 100, new BigDecimal(27.99), 10,
+		products.add(new Product(44, "Wooden Windchime", "An old fashioned windchime In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(27.99), 10,
 				100, 1, "/products/ornimants/woodenwindchime.jpg"));
-		products.add(new Product(45, "Metal Windchime", "A modern windchime", 100, new BigDecimal(29.99), 10, 100, 1,
+		products.add(new Product(45, "Metal Windchime", "A modern windchimeIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(29.99), 10, 100, 1,
 				"/products/ornimants/metalwindchime.jpg"));
 		products.add(new Product(46, "Peakcock Windchime",
-				"a metalic winchime with a large metal peakock holding it together", 100, new BigDecimal(32.99), 10,
+				"a metalic winchime with a large metal peakock holding it togetherIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(32.99), 10,
 				100, 1, "/products/ornimants/peacockwindchime.jpg"));
-		products.add(new Product(47, "Flying Pig Weathervane", "Well now pigs can fly", 100, new BigDecimal(49.99), 10,
+		products.add(new Product(47, "Flying Pig Weathervane", "Well now pigs can flyIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(49.99), 10,
 				100, 1, "/products/ornimants/flyingweathervane.jpg"));
-		products.add(new Product(48, "HummingBird Weathervane", "a metalic silhouette of a hummingbird and a flower",
+		products.add(new Product(48, "HummingBird Weathervane", "a metalic silhouette of a hummingbird and a flowerIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
 				100, new BigDecimal(45.99), 10, 100, 1, "/products/ornimants/hummingbirdweathervane.jpg"));
-		products.add(new Product(49, "Owl Weathervane", "a metalic silhouette of a owl", 100, new BigDecimal(45.99), 10,
+		products.add(new Product(49, "Owl Weathervane", "a metalic silhouette of a owlIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(45.99), 10,
 				100, 1, "/products/ornimants/owlweathervane.jpg"));
-		products.add(new Product(50, "Wine Weathervane", "For all those lovers of wine", 100, new BigDecimal(49.99), 10,
+		products.add(new Product(50, "Wine Weathervane", "For all those lovers of wineIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(49.99), 10,
 				100, 1, "/products/ornimants/wineweathervane.jpg"));
-		products.add(new Product(51, "Plastic Flowerpot", "Plastic flowerpots great for those starting out", 100,
+		products.add(new Product(51, "Plastic Flowerpot", "Plastic flowerpots great for those starting outIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(9.99), 10, 100, 1, "/products/ornimants/plasticflowerpot.jpg"));
-		products.add(new Product(52, "Ribbed Flowerpot", "Classic flowerpot that will be perfect in any garden", 100,
+		products.add(new Product(52, "Ribbed Flowerpot", "Classic flowerpot that will be perfect in any gardenIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(19.99), 10, 100, 1, "/products/ornimants/ribbedflowerpot.jpg"));
-		products.add(new Product(53, "Wall Hanging Flowerpot", "Flowerpots that need to be screwed to the wall", 100,
+		products.add(new Product(53, "Wall Hanging Flowerpot", "Flowerpots that need to be screwed to the wallIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(29.99), 10, 100, 1, "/products/ornimants/wallflowerpot.jpg"));
 		products.add(
-				new Product(54, "Wicker Flowerpot", "Black Wicker pots that will add a modern twist to your garden",
+				new Product(54, "Wicker Flowerpot", "Black Wicker pots that will add a modern twist to your gardenIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
 						100, new BigDecimal(24.99), 10, 100, 1, "/products/ornimants/wickerpot.jpg"));
 		products.add(
-				new Product(55, "Expanding Lawn Rake", "Lawn rake that will expand its head size depending on need",
+				new Product(55, "Expanding Lawn Rake", "Lawn rake that will expand its head size depending on needIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
 						100, new BigDecimal(14.99), 10, 100, 1, "/products/rakesandhoes/expandablerake.jpg"));
-		products.add(new Product(56, "Soil Rake", "Keep borders in blooming good health", 100, new BigDecimal(14.99),
+		products.add(new Product(56, "Soil Rake", "Keep borders in blooming good healthIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(14.99),
 				10, 100, 1, "/products/rakesandhoes/rakestraight.jpg"));
-		products.add(new Product(57, "Leaf Rake", "Perfect rake for those pesky leaves", 100, new BigDecimal(19.99), 10,
+		products.add(new Product(57, "Leaf Rake", "Perfect rake for those pesky leavesIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(19.99), 10,
 				100, 1, "/products/rakesandhoes/rakespread.jpg"));
-		products.add(new Product(58, "Hand Rake", "Perfect small rake for your allotment", 100, new BigDecimal(9.99),
+		products.add(new Product(58, "Hand Rake", "Perfect small rake for your allotmentIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(9.99),
 				10, 100, 1, "/products/rakesandhoes/HandRake.jpg"));
 		products.add(new Product(59, "Eye Hoe",
-				"Classic digging hoe that millions of small farmers and gardeners around the world use every day", 100,
+				"Classic digging hoe that millions of small farmers and gardeners around the world use every dayIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(18.99), 10, 100, 1, "/products/rakesandhoes/eyehoes.jpg"));
-		products.add(new Product(60, "Hoe", "Ypur houe for everydaywork", 100, new BigDecimal(18.99), 10, 100, 1,
+		products.add(new Product(60, "Hoe", "Ypur houe for everydayworkIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(18.99), 10, 100, 1,
 				"/products/rakesandhoes/generalhoe.jpg"));
-		products.add(new Product(61, "Onion Hoe", "Top quality hoe is a must for any vegetable enthusiast", 100,
+		products.add(new Product(61, "Onion Hoe", "Top quality hoe is a must for any vegetable enthusiastIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(18.99), 10, 100, 1, "/products/rakesandhoes/onionhoe.jpg"));
 		products.add(new Product(62, "Warren Hoe",
-				"Allows this hoe to be used for drilling seeds as well as cultivating and furrowing", 100,
+				"Allows this hoe to be used for drilling seeds as well as cultivating and furrowingIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(18.99), 10, 100, 1, "/products/rakesandhoes/warrenhoe.jpg"));
-		products.add(new Product(63, "Digging Spade", "Everyone needs a faithful garden spade this could be yours", 100,
+		products.add(new Product(63, "Digging Spade", "Everyone needs a faithful garden spade this could be yoursIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(18.99), 10, 100, 1, "/products/rakesandhoes/spade.jpg"));
-		products.add(new Product(64, "Border Spade", "Perfect to fix any borders", 100, new BigDecimal(19.99), 10, 100,
+		products.add(new Product(64, "Border Spade", "Perfect to fix any bordersIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(19.99), 10, 100,
 				1, "/products/rakesandhoes/borderspade.jpg"));
-		products.add(new Product(65, "Border Fork", "Great for working on your borders", 100, new BigDecimal(24.99), 10,
+		products.add(new Product(65, "Border Fork", "Great for working on your bordersIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(24.99), 10,
 				100, 1, "/products/rakesandhoes/fork.jpg"));
-		products.add(new Product(66, "Hand Fork", "great for pottering arround in your flowerpots", 100,
+		products.add(new Product(66, "Hand Fork", "great for pottering arround in your flowerpotsIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(9.99), 10, 100, 1, "/products/rakesandhoes/handfork.jpg"));
-		products.add(new Product(67, "Trowel", "Multipurpose trowel that can be used for anything", 100,
+		products.add(new Product(67, "Trowel", "Multipurpose trowel that can be used for anythingIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(22.99), 10, 100, 1, "/products/rakesandhoes/coppertrowel.jpg"));
 		products.add(new Product(68, "Potting Trowel",
-				"Holds more compost than a regular trowel, making it more efficient for potting.", 100,
+				"Holds more compost than a regular trowel, making it more efficient for potting.In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(23.99), 10, 100, 1, "/products/rakesandhoes/pottingtrowel.jpg"));
-		products.add(new Product(69, "Planting Trowel", "Has great soil penetration for planting.", 100,
+		products.add(new Product(69, "Planting Trowel", "Has great soil penetration for planting.In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100,
 				new BigDecimal(19.99), 10, 100, 1, "/products/rakesandhoes/plantingtrowel.jpg"));
-		products.add(new Product(70, "Rock Trowel", "Perfect for troweling in the rockery", 100, new BigDecimal(19.99),
+		products.add(new Product(70, "Rock Trowel", "Perfect for troweling in the rockeryIn the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", 100, new BigDecimal(19.99),
 				10, 100, 1, "/products/rakesandhoes/rocktrowel.jpg"));
 
 	}
