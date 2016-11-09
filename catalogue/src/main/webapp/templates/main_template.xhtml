@@ -38,24 +38,18 @@
 											<h:inputText
 												class="searchbox-brown nav-banner-mobile-right-search"
 												value="#{search.parameter}" ><f:ajax event="click" execute="@form" /> </h:inputText>
-											<h:commandButton
+											<h:commandLink
 												styleClass="button-green-inverse nav-banner-mobile-right-button"
-												value="search" action="#{search.search}" />
+												 action="#{search.search}" ><i class="fa fa-search" aria-hidden="true"></i></h:commandLink>
 										</h:form></li>
 
 									<li class="header-mobile-item">
-										<button type="button"
-											class="button-green-inverse nav-banner-mobile-right-button"
-											onclick="#{user.backet()}">
-											<i class="fa fa-shopping-basket"></i>
-										</button>
+									<a href="basket.xhtml" class="button-green-inverse nav-banner-mobile-right-button"> <i class="fa fa-shopping-basket"></i></a>
 									</li>
 									<li class="header-mobile-item">
-										<button type="button"
-											class="button-green-inverse nav-banner-mobile-right-button"
-											onclick="#{user.profile()}">
+										<a href="account.xhtml" class="button-green-inverse nav-banner-mobile-right-button">
 											<i class="fa fa-user"></i>
-										</button>
+										</a>
 									</li>
 									<li class="header-mobile-item">
 										<!-- This is what is displayed if the screen is detected to be a mobile device. -->
