@@ -5,7 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import projectx.persistence.repositories.interfaces.SearchRepository;
+import projectx.persistence.repositories.SearchRepository;
 
 @Stateless
 public class SearchService

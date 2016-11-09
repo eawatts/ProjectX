@@ -73,3 +73,6 @@ java.lang.Exception: Could not delete C:\Users\Administrator\wildfly-10.1.0.Fina
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-11-09 10:28:58.306
 !MESSAGE Module catalogue on WildFly 10.x not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2016-11-09 11:21:11.020
+!MESSAGE Server processes have been terminated.

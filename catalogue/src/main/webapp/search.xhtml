@@ -3,34 +3,59 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/main_template.xhtml">
-   <ui:define name="title"> Search Results </ui:define>
-   <ui:define name="main-content">
-      <h2>  Search Results </h2>
-      <div class="searchresults">
-         <ui:repeat var="product" value="#{search.getSearchResults()}">
-            <div class="searchresult">
-               <div class="row">
-                  <div class="col-desk-1">
-                  <h:form>
-                     <h:commandLink value="#{product.name}" action="#{products.view(product.id)}" />
-                  </h:form>
-                  </div>
-                  <div class="col-desk-2">
-                  	<h:graphicImage value="img/#{product.productImageFilepath}"/> <br/> <h:outputText value="£#{product.priceToDisplay}" />
-                  </div>
-                  <div class="col-desk-6">
-                  	<h:outputText value="#{product.description}" />
-                  </div>
-                  <div class="col-desk-3">
-                     <h:commandButton action="#{basket.addproduct(product)}" class="button-green" value= "Add to Basket"/>
-                     <br />
-                     <br />
-                     <h:commandButton action="#{wishlist.addproduct(product)}" class="button-green" value=" Add to Wishlist"/>
-                  </div>
-               </div>
-            </div>
-            <hr />
-         </ui:repeat>
-      </div>
-   </ui:define> 
-</ui:composition> 
+
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/search.css" />
+		<link rel="stylesheet" type="text/css" href="css/breadcrumb.css" />
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="libraries/slider/slick-theme.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/slide_custom.css"></link>
+	</ui:define>
+
+
+	<ui:define name="title"> Search Results </ui:define>
+
+	<ui:define name="main-content">
+		<div class="row">
+			<div id="title">
+				<h2>Search Results</h2>
+			</div>
+		</div>
+
+		<ui:repeat var="product" value="#{search.getSearchResults()}">
+			<div class="row">
+				<div class="col-tab-3 col-desk-3">
+					<div id="product-image">
+						<img src="img/#{product.productImageFilepath}"></img>
+					</div>
+				</div>
+				<div class="col-tab-5 col-desk-5">
+					<h3>
+						<h:form>
+							<h:commandLink class="product-title" value="#{product.name}"
+								action='#{products.view(product.id)}' />
+						</h:form>
+					</h3>
+					<br />
+					<h:outputText value="#{product.description}"></h:outputText>
+				</div>
+				<div class="col-tab-2 col-desk-2 price">
+					<h5>
+						£
+						<h:outputText value="#{product.priceToDisplay}"></h:outputText>
+					</h5>
+				</div>
+				<div class="col-tab-2 col-desk-2">
+					<h:form>
+						<h:commandButton
+							action="#{current_session.basket.addSingleProductToBasket(product)}"
+							class="button-green addB" value="Add to Basket" />
+					</h:form>
+				</div>
+			</div>
+			<hr />
+		</ui:repeat>
+	</ui:define>
+</ui:composition>

@@ -7,7 +7,7 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import projectx.persistence.offline.database.OfflineDB;
-import projectx.persistence.repositories.interfaces.SearchRepository;
+import projectx.persistence.repositories.SearchRepository;
 
 @Stateless
 @Default

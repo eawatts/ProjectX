@@ -38,4 +38,16 @@ ul.breadcrumb li a
     padding-top: : 10px;
     padding-bottom: : 10px;
 }
+.product-title {
+	Color: var(--sweet-sweet-brown);
+}	
 
+.price h5{
+	margin-top: 80px;
+}
+.addB{
+	margin-top: 78px;
+}
+#title{
+	text-align: center;
+}
