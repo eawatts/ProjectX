@@ -41,7 +41,6 @@ public class SupplierController implements Serializable{
 	}
 	
 	public String viewSupplier(int id){
-		System.out.println(id);
 		this.id=id;
 		return "supplier";
 	}
