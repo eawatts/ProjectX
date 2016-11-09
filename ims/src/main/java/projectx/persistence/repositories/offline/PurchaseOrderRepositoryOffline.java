@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 
+import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.repositories.PurchaseOrderRepository;
 import projectx.persistence.repositories.offline.database.OfflineDB;
@@ -61,6 +62,12 @@ public class PurchaseOrderRepositoryOffline implements PurchaseOrderRepository {
 	public List<PurchaseOrderProduct> createPurchaseOrderEntry() {
 		return null;
 		
+	}
+
+	@Override
+	public ArrayList<ProductsOrdered> getProductsOrdered(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 

@@ -47,6 +47,7 @@ public class ProductService {
 			listSize = 25;
 		}
 		for (int i = 0; i < listSize; i++) {
+			
 			top25LowStockProducts.add(orderedProducts.get(i));
 		}
 		return top25LowStockProducts;

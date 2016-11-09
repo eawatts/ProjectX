@@ -3,6 +3,7 @@ package projectx.controllers;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -26,6 +27,9 @@ public class PurchaseOrderController implements Serializable {
 
 	@Inject
 	private ProductService productServce;
+	
+	@Inject
+	private SupplierController supplierController;
 
 	@Inject
 	private SelectedPurchaseOrderProduct selectedPurchaseOrderProduct;
@@ -74,13 +78,13 @@ public class PurchaseOrderController implements Serializable {
 
 	public String generatePurchaseOrder() {
 
-		// Get the standard Products
 		List<Product> lowStockProducts = productServce.getTop25LowStockProducts();
 
 		List<PurchaseOrderProduct> purchaseOrderProducts = currentsession.getPendingPurchaseOrder().getContents();
 
 		for (Product product : lowStockProducts) {
-			purchaseOrderProducts.add(new PurchaseOrderProduct(product, 5, new Supplier()));
+			int supplierId = new Random().nextInt(3) + 1; // TODO: Sort this out, this is a disaster.
+			purchaseOrderProducts.add(new PurchaseOrderProduct(product, ((3 * product.getLowLimit()) - product.getCurrentStock()), supplierController.getSupplierActualById(supplierId)));
 		}
 
 		currentsession.getPendingPurchaseOrder().setPurchaseOrderContents(purchaseOrderProducts);
