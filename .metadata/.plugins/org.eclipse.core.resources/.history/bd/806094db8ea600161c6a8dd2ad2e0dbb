@@ -777,9 +777,9 @@ public class OfflineDB {
 			return feednweed;
 		case "bird houses":
 			return birdhouses;
-		case "novelty":
+		case "novelty gnomes":
 			return noveltygnomes;
-		case "themed":
+		case "themed gnomes":
 			return themedgnomes;
 		case "gnome care":
 			return gnomecare;
