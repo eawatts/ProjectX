@@ -114,10 +114,9 @@
 			<br />
 			<div class="row">
 				<div class="col-desk-12 col-tab-12">
-
+					<f:ajax event="click" execute="@form"></f:ajax>
 					<h:commandButton styleClass="button-green add-button" value="Add Product"
 						action="#{purchase_order.addPendingPurchaseOrderProduct()}" />
-
 				</div>
 			</div>
 		</h:form>
