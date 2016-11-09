@@ -19,10 +19,11 @@
 					</div>
 				</div>
 			</div>
-
 			<h:panelGroup layout="block"
 				rendered="#{current_session.basket.count ne 0}">
+				<div class="basket_header">
 				<div class="row">
+				
 					<div class="col-tab-2 col-desk-2">
 						<p></p>
 					</div>
@@ -40,6 +41,7 @@
 					</div>
 					<div class="col-tab-1 col-desk-1"></div>
 				</div>
+				</div>
 			</h:panelGroup>
 
 			<h:outputText styleClass="basket-empty" escape="false"
@@ -55,18 +57,22 @@
 							value="img#{basket_product.product.productImageFilepath}" />
 					</div>
 					<div class="col-tab-3 col-desk-3">
+					<div class="basket_small_header"><h4>Name:</h4></div>
 						<h:outputText styleClass="basket-row"
 							value="#{basket_product.product.name}" />
 					</div>
 					<div class="col-tab-2 col-desk-2">
+					<div class="basket_small_header"><h4>Quantity:</h4></div>
 						<h:outputText styleClass="basket-row"
 							value="#{basket_product.quantity}" />
 					</div>
 					<div class="col-tab-2 col-desk-2">
+					<div class="basket_small_header"><h4>Price:</h4></div>
 						<h:outputText styleClass="basket-row"
 							value="&#163;#{basket_product.product.priceToDisplay}" />
 					</div>
 					<div class="col-tab-2 col-desk-2">
+					<div class="basket_small_header"><h4>Total Price:</h4></div>
 						<h:outputText styleClass="basket-row"
 							value="&#163;#{basket_product.basketProductPrice}" />
 					</div>
@@ -130,4 +136,5 @@
 			<br />
 		</div>
 	</ui:define>
+
 </ui:composition>
