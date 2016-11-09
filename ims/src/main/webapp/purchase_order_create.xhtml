@@ -62,6 +62,7 @@
 		</ui:repeat>
 		<h:panelGroup
 			rendered="#{current_session.pendingPurchaseOrder.contents.size() ne 0}">
+			<h:outputText value="Total Price: #{current_session.pendingPurchaseOrder.totalPrice}"></h:outputText>
 			<h:form>
 				<h:commandButton styleClass="button-brown clear-button"
 					value="Clear All"
@@ -135,6 +136,8 @@
 
 							<h2 class="popup-title">Confirm Purchase Order</h2>
 							<div class="content">
+							<h:outputText value="Please confrim this order(s). Total price: #{current_session.pendingPurchaseOrder.totalPrice}"></h:outputText>
+							<br/><br/>
 								<h:form>
 									<h:commandButton styleClass="button-green" value="Confirm"
 										action="#{purchase_order.completePurchaseOrder()}" />

@@ -1,7 +1,9 @@
 package projectx.persistence.webentities;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Supplier;
@@ -48,15 +50,16 @@ public class PendingPurchaseOrder {
 		}
 	}
 
-	public double getTotalPrice() {
+	public String getTotalPrice() {
 		double totalPrice = 0.00;
 		if (purchaseOrderContents == null) {
-			return totalPrice;
+			return "";
 		} else {
 			for (PurchaseOrderProduct purchaseOrderProduct : purchaseOrderContents) {
 				totalPrice = totalPrice + purchaseOrderProduct.getPurchaseOrderProductPrice();
 			}
-			return Math.round(totalPrice * 100.0) / 100.0;
+			NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(Locale.getDefault());
+			return currencyFormatter.format(totalPrice);
 		}
 	}
 }
