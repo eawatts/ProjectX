@@ -76,21 +76,18 @@ public class PurchaseOrder implements Serializable {
 	public PurchaseOrder() {
 	}
 
-	public PurchaseOrder(Integer id, Supplier supplier, boolean approved, Date approvalDate, OrderState status,
-			ArrayList<ProductsOrdered> productsOrdered) {
+	public PurchaseOrder(Integer id, Supplier supplier, boolean approved, Date approvalDate, OrderState status) {
 		super();
 		this.id = id;
 		this.supplier = supplier;
-		//this.supplier_name = supplier.getName();
+		
 		this.approved = approved;
 		this.approvalDate = approvalDate;
 		this.status = status;
 
 	}
 
-	/*public String getSupplier_name() {
-		return supplier_name;
-	}*/
+
 
 	public Integer getId() {
 		return id;

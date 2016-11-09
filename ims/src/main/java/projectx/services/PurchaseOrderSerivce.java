@@ -30,7 +30,7 @@ public class PurchaseOrderSerivce {
 		return purchaseOrderRepository.createPurchaseOrderEntry();
 	}	
 	
-	public List<ProductsOrdered> getProductsOrdered(PurchaseOrder purchaseOrder){
-		return purchaseOrderRepository.getProductsOrdered(purchaseOrder);
+	public List<ProductsOrdered> getProductsOrdered(Integer id){
+		return purchaseOrderRepository.getProductsOrdered(id);
 	}
 }

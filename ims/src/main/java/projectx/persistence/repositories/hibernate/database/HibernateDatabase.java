@@ -10,6 +10,7 @@ import javax.ejb.Startup;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
@@ -377,15 +378,23 @@ public class HibernateDatabase {
 		
 	}
 	
-	public List<ProductsOrdered> getProductsOrdered(PurchaseOrder purchaseOrderID ) {
+	public List<ProductsOrdered> getProductsOrdered(Integer id) {
 		Session session = null;
 		try {
-			session = sessionManager.getSession();
+			session = sessionManager.getSession();			
 			Criteria criteria = session.createCriteria(ProductsOrdered.class);
-			criteria.add(Restrictions.like("purchase_order_id", purchaseOrderID));
-			return criteria.list();
+			List<ProductsOrdered> rawResults = (List<ProductsOrdered>) criteria.list();
+			List<ProductsOrdered> results = new ArrayList<ProductsOrdered>();
+			
+			for (ProductsOrdered productsOrdered : rawResults) {
+				if(productsOrdered.getPurchaseOrder().getId() == id){
+					results.add(productsOrdered);
+				}
+			}
+			return results;
 
 		} catch (Exception e) {
+			//System.out.println("################################");
 			System.out.println(e.getMessage());
 			return null;
 		} finally {
