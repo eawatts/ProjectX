@@ -20,9 +20,10 @@
 		<h:panelGroup
 			rendered="#{current_session.pendingPurchaseOrder.contents.size() ne 0}">
 			<div class="row table-header">
-				<div class="col-desk-5 col-tab-5 ">Product</div>
+				<div class="col-desk-3 col-tab-3 ">Product</div>
 				<div class="col-desk-3 col-tab-3 ">Supplier</div>
 				<div class="col-desk-2 col-tab-2 ">Quantity</div>
+				<div class="col-desk-2 col-tab-2 ">Total</div>
 			</div>
 		</h:panelGroup>
 
@@ -36,7 +37,7 @@
 		<ui:repeat var="purchase_order_item"
 			value="#{current_session.pendingPurchaseOrder.contents}">
 			<div class="row">
-				<div class="col-desk-5 col-tab-5">
+				<div class="col-desk-3 col-tab-3">
 					<h:outputText value="#{purchase_order_item.product.name}"></h:outputText>
 				</div>
 				<div class="col-desk-3 col-tab-3">
@@ -44,6 +45,9 @@
 				</div>
 				<div class="col-desk-2 col-tab-2">
 					<h:outputText value="#{purchase_order_item.quantity}"></h:outputText>
+				</div>
+				<div class="col-desk-2 col-tab-2">
+					<h:outputText value="#{purchase_order_item.totalPrice}"></h:outputText>
 				</div>
 				<div class="col-desk-2 col-tab-2">
 					<h:form>
