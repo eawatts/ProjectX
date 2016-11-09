@@ -26,10 +26,10 @@
 					<div class="col-tab-2 col-desk-2">
 						<p></p>
 					</div>
-					<div class="col-tab-4 col-desk-4">
+					<div class="col-tab-3 col-desk-3">
 						<h2>Product Name</h2>
 					</div>
-					<div class="col-tab-1 col-desk-1">
+					<div class="col-tab-2 col-desk-2">
 						<h2>Quantity</h2>
 					</div>
 					<div class="col-tab-2 col-desk-2">
@@ -54,11 +54,11 @@
 						<h:graphicImage class="basket-image"
 							value="img#{basket_product.product.productImageFilepath}" />
 					</div>
-					<div class="col-tab-4 col-desk-4">
+					<div class="col-tab-3 col-desk-3">
 						<h:outputText styleClass="basket-row"
 							value="#{basket_product.product.name}" />
 					</div>
-					<div class="col-tab-1 col-desk-1">
+					<div class="col-tab-2 col-desk-2">
 						<h:outputText styleClass="basket-row"
 							value="#{basket_product.quantity}" />
 					</div>
@@ -80,37 +80,46 @@
 				<hr />
 			</ui:repeat>
 			<div class="row">
-				<div class="col-tab-8 col-desk-8">
+				<div class="col-tab-6 col-desk-6">
 					<p>
 						<h:graphicImage class="progress-bar"
 							value="#{user.basket.checkoutProgress}" />
 					</p>
 				</div>
-				<div class="col-tab-4 col-desk-4">
+				<div class="col-tab-6 col-desk-6">
 					<br /> <br />
-
+					<div class="basket-bottom-right">
+						<strong>Total Price: </strong>
+						<h:outputText value="&#163;#{current_session.basket.totalPrice}"></h:outputText>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-tab-10 col-desk-10 invis"></div>
+				<div class="col-tab-2 col-desk-2">
 					<!-- Items in basket & not logged in - Show Login to continue -->
 					<h:panelGroup layout="block"
 						rendered="#{(current_session.basket.count gt 0) and (current_session.loggedIn eq false)}">
-						<div class="basket-bottom-right">
-							<strong>Total Price: </strong><h:outputText value="&#163;#{current_session.basket.totalPrice}"></h:outputText>
-						</div>
 						<h:form>
-						<h:commandButton class="button-green" value="Login to Proceed"
-							action="#{login.loginRedirectToCheckoutSummary()}" /></h:form>
+							<h:commandButton class="button-green but"
+								value="Login to Proceed"
+								action="#{login.loginRedirectToCheckoutSummary()}" />
+						</h:form>
 					</h:panelGroup>
-
 					<!-- Items in basket & logged in - show continue -->
 					<h:panelGroup layout="block"
 						rendered="#{(current_session.basket.count gt 0) and (current_session.loggedIn eq true)}">
-						<div class="basket-bottom-right">
-							<strong>Total Price: </strong><h:outputText value="&#163;#{current_session.basket.totalPrice}"></h:outputText>
-						</div>
+
 						<a href="checkout_summary.xhtml">
-							<button type="button" class="basket-button button-green">Proceed to checkout</button>
+							<button type="button" class="basket-button button-green but">Proceed
+								to checkout</button>
 						</a>
 					</h:panelGroup>
-
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-tab-10 col-desk-10 invis"></div>
+				<div class="col-tab-2 col-desk-2">
 					<a href="index.xhtml">
 						<button type="button" class="button-brown basket-button">Continue
 							Shopping</button>
