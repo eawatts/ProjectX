@@ -44,3 +44,7 @@ sweet sweet brown = #a53f2b
 {
 	display: inline-block;	
 }
+.product-image{
+	width:80%;
+	height:80%;
+}

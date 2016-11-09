@@ -135,6 +135,10 @@ public class Product implements Serializable {
 	public void setImgs(ArrayList<String> imglists) {
 		this.images = imglists;
 	}
+	
+	public String getImage() {
+		return images.get(0);
+	}
 
 	@Override
 	public boolean equals(Object obj) {

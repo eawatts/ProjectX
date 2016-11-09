@@ -18,7 +18,7 @@
 	<ui:define name="title">Product</ui:define>
 	<ui:define name="main-content">
 		<div class="main-content">
-			
+
 			<div class="row">
 				<h1>
 					<h:outputText styleClass="titleText"
@@ -26,27 +26,9 @@
 				</h1>
 			</div>
 			<div class="row">
-				<div class="regular slider">
-					<ui:repeat var="img" value="#{products.productByID.imgs}">
-						<div class="sliderItem">
-							<h:form>
-								<div class="slider-product-image">
-									<img src="img/nb_favicon.png" alt="" />
-									<!-- "<img#{img}" -->
-								</div>
-								<div class="slider-button">
-									<h:commandButton styleClass="button-green edit-button" action="#{products.setImgAsDefault}" value="Set image as default"/>
-								</div>
-							</h:form>
-						</div>
-					</ui:repeat>
-
-
+				<div class="col-tab-3 col-desk-3">
+					<h:graphicImage styleClass="product-image" value="img/nb_favicon.png"></h:graphicImage>
 				</div>
-				<br />
-				<h:form>
-					<h:commandButton action="#{products.addImg}" styleClass="button-green" value="Add Image"></h:commandButton>
-				</h:form>
 			</div>
 			<br /> <br />
 			<hr />
@@ -55,11 +37,15 @@
 					<h2>Low Limit</h2>
 					<h:outputText class="stocklowlimit"
 						value="#{products.productByID.lowLimit}"></h:outputText>
-					<button type="button" class="edit_lowlimit button-green edit-button">Edit</button>
+					<button type="button"
+						class="edit_lowlimit button-green edit-button">Edit</button>
 					<h:form>
 						<h:inputText class="updatestocklowlimit"
-							value="#{products.productByID.lowLimit}"></h:inputText><br/><br/>
-						<h:commandButton styleClass="save_lowlimit button-green" value="Save"></h:commandButton>
+							value="#{products.productByID.lowLimit}"></h:inputText>
+						<br />
+						<br />
+						<h:commandButton styleClass="save_lowlimit button-green"
+							value="Save"></h:commandButton>
 						<button type="button" class="cancel_lowlimit button-green">Cancel</button>
 					</h:form>
 				</div>
@@ -68,11 +54,15 @@
 					<h2>Stock Level</h2>
 					<h:outputText class="stocklevel"
 						value="#{products.productByID.currentStock}"></h:outputText>
-					<button type="button" class="edit_stocklevel button-green edit-button">Edit</button>
+					<button type="button"
+						class="edit_stocklevel button-green edit-button">Edit</button>
 					<h:form>
 						<h:inputText class="update_stocklevel"
-							value="#{products.productByID.currentStock}"></h:inputText><br/><br/>
-						<h:commandButton styleClass="save_stocklevel button-green" value="Save"></h:commandButton>
+							value="#{products.productByID.currentStock}"></h:inputText>
+						<br />
+						<br />
+						<h:commandButton styleClass="save_stocklevel button-green"
+							value="Save"></h:commandButton>
 						<button type="button" class="cancel_stocklevel button-green">Cancel</button>
 					</h:form>
 				</div>
@@ -82,7 +72,9 @@
 					<button type="button" class="edit_price button-green edit-button">Edit</button>
 					<h:form>
 						<h:inputText class="update_price"
-							value="#{products.productByID.price}"></h:inputText><br/><br/>
+							value="#{products.productByID.price}"></h:inputText>
+						<br />
+						<br />
 						<h:commandButton styleClass="save_price button-green" value="Save"></h:commandButton>
 						<button type="button" class="cancel_price button-green">Cancel</button>
 					</h:form>
@@ -112,20 +104,21 @@
 			<hr />
 			<div class="row">
 				<div class="col-tab-3 col-desk-3">
-				<h2>Description</h2>
-				<h:outputText class="showdescription"
-					value="#{products.productByID.description}"></h:outputText>
-				<button type="button" class="edit_desc button-green edit-button">Edit</button>
-				<h:form>
-					<h:inputText class="editdescription"
-						value="#{products.productByID.description}"></h:inputText><br/><br/>
-					<h:commandButton styleClass="save_desc button-green" value="Save"></h:commandButton>
-					<button type="button" class="cancel_desc button-green">Cancel</button>
-				</h:form>
+					<h2>Description</h2>
+					<h:outputText class="showdescription"
+						value="#{products.productByID.description}"></h:outputText>
+					<button type="button" class="edit_desc button-green edit-button">Edit</button>
+					<h:form>
+						<h:inputText class="editdescription"
+							value="#{products.productByID.description}"></h:inputText>
+						<br />
+						<br />
+						<h:commandButton styleClass="save_desc button-green" value="Save"></h:commandButton>
+						<button type="button" class="cancel_desc button-green">Cancel</button>
+					</h:form>
 
-			</div>
-			<div class="col-tab-9 col-desk-9">
-			</div>
+				</div>
+				<div class="col-tab-9 col-desk-9"></div>
 			</div>
 		</div>
 	</ui:define>
