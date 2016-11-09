@@ -7,6 +7,20 @@
 	text-align: center;
 	vertical-align: center;
 }
+@media screen and (max-width: 700px) {
+.basket_header{
+	display:none
+}}
+.basket_small_header{
+	display:none
+	}
+
+@media screen and (max-width: 700px){
+.basket_small_header{
+	display:block
+	}
+}
+
 
 .basket-bottom-right{
 	text-align: center;
