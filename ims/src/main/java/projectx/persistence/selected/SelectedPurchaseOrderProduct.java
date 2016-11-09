@@ -13,13 +13,13 @@ import projectx.persistence.entities.Supplier;
 @Named("selected_purchase_order_product")
 
 public class SelectedPurchaseOrderProduct implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	private Product product;
 	private int quantity;
 	private Supplier supplier;
-	
+
 	@PostConstruct
 	private void initialise() {
 		this.product = new Product();

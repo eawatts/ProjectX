@@ -1,5 +1,11 @@
 package projectx.persistence.webentities;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
+import java.util.Currency;
+import java.util.Locale;
+
 import projectx.persistence.entities.Product;
 import projectx.persistence.entities.Supplier;
 
@@ -33,6 +39,12 @@ public class PurchaseOrderProduct {
 
 	public Product getProduct() {
 		return product;
+	}
+	
+	public String getTotalPrice() {
+		double price = ((double)quantity) * product.getPrice();
+		NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(Locale.getDefault());
+		return currencyFormatter.format(price);
 	}
 
 	public void setProduct(Product product) {
