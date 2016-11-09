@@ -506,7 +506,7 @@ public class HibernateDatabase {
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
-			Query query = session.getNamedQuery("Product.findlowproduct");
+			Query query = session.getNamedQuery("Product.findlowproduct");						
 			return (List<Product>) query.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

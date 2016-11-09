@@ -36,8 +36,11 @@ public class SupplierController implements Serializable{
 		return supplierService.findSupplierById(id);
 	}
 	
+	public Supplier getSupplierActualById(int id){
+		return supplierService.findSupplierById(id);
+	}
+	
 	public String viewSupplier(int id){
-		System.out.println(id);
 		this.id=id;
 		return "supplier";
 	}

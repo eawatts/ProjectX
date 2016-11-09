@@ -62,36 +62,36 @@ public class OfflineDB {
 		p1imgs.add("asd");
 		
 		products = new ArrayList<Product>();
-		products.add(new Product(1, "Gnome", 100, 5.00, 20, "a very shiny product", p1imgs));
-		products.add(new Product(2, "Gnomeo", 150, 3.00, 20, "another very shiny product",p1imgs));
+		products.add(new Product(1, "Gnome", 10, 5.00, 20, "a very shiny product", p1imgs));
+		products.add(new Product(2, "Gnomeo", 19, 3.00, 20, "another very shiny product",p1imgs));
 		products.add(new Product(3, "Gnomezilla", 200, 3.00, 20, "a Gnome",p1imgs));
-		products.add(new Product(4, "Egnomeous", 250, 3.00, 20, "another Gnome",p1imgs));
-		products.add(new Product(5, "SpeedyGnome", 300, 3.00, 20, "shiny product", p1imgs));
-		products.add(new Product(6, "Lawnmower", 350, 3.00, 20, "another shiny product",p1imgs));
-		products.add(new Product(7, "Pond base", 100, 5.00, 20, "a very shiny product",  p1imgs));
-		products.add(new Product(8, "Bench", 150, 3.00, 20, "another very shiny product",  p1imgs));
-		products.add(new Product(9, "Hot tub", 200, 3.00, 20, "a Gnome",  p1imgs));
-		products.add(new Product(10, "Spade", 250, 3.00, 20, "another Gnome", p1imgs));
-		products.add(new Product(11, "Trowel", 300, 3.00, 20, "shiny product", p1imgs));
-		products.add(new Product(12, "Rake", 350, 3.00, 20, "another shiny product", p1imgs));
-		products.add(new Product(13, "Classy Hoe", 100, 5.00, 20, "a very shiny product", p1imgs));
-		products.add(new Product(14, "Water Fountain", 150, 3.00, 20, "another very shiny product",  p1imgs));
-		products.add(new Product(15, "Flamingo", 200, 3.00, 20, "a Gnome",  p1imgs));
-		products.add(new Product(16, "Windchime", 250, 3.00, 20, "another Gnome",p1imgs));
-		products.add(new Product(17, "Weathervane", 300, 3.00, 20, "shiny product",p1imgs));
-		products.add(new Product(18, "Weedkiller", 350, 3.00, 20, "another shiny product",p1imgs));
-		products.add(new Product(19, "Flower Pot", 100, 5.00, 20, "a very shiny product", p1imgs));
-		products.add(new Product(20, "Compost", 150, 3.00, 20, "another very shiny product",  p1imgs));
-		products.add(new Product(21, "Patio Heater", 200, 3.00, 20, "a Gnome",  p1imgs));
-		products.add(new Product(22, "Mean Grill", 250, 3.00, 20, "another Gnome",  p1imgs));
-		products.add(new Product(23, "Outdoor Table", 300, 3.00, 20, "shiny product", p1imgs));
-		products.add(new Product(24, "Outdoor Light", 350, 3.00, 20, "another shiny product", p1imgs));
-		products.add(new Product(25, "Santa Gnome", 100, 5.00, 20, "a very shiny product", p1imgs));
-		products.add(new Product(26, "Garden Gloves", 150, 3.00, 20, "another very shiny product", p1imgs));
-		products.add(new Product(27, "Secataurs", 200, 3.00, 20, "a Gnome", p1imgs));
-		products.add(new Product(28, "Petrol Chainsaw", 250, 3.00, 20, "another Gnome", p1imgs));
-		products.add(new Product(29, "Hedge Trimmer", 300, 3.00, 20, "shiny product",  p1imgs));
-		products.add(new Product(30, "Paddling Pool", 350, 3.00, 20, "another shiny product", p1imgs));
+		products.add(new Product(4, "Egnomeous", 10, 3.00, 20, "another Gnome",p1imgs));
+		products.add(new Product(5, "SpeedyGnome", 30, 3.00, 20, "shiny product", p1imgs));
+		products.add(new Product(6, "Lawnmower", 4, 3.00, 10, "another shiny product",p1imgs));
+		products.add(new Product(7, "Pond base", 10, 5.00, 20, "a very shiny product",  p1imgs));
+		products.add(new Product(8, "Bench", 15, 3.00, 20, "another very shiny product",  p1imgs));
+		products.add(new Product(9, "Hot tub", 20, 3.00, 20, "a Gnome",  p1imgs));
+		products.add(new Product(10, "Spade", 25, 3.00, 20, "another Gnome", p1imgs));
+		products.add(new Product(11, "Trowel", 30, 3.00, 20, "shiny product", p1imgs));
+		products.add(new Product(12, "Rake", 35, 3.00, 20, "another shiny product", p1imgs));
+		products.add(new Product(13, "Classy Hoe", 10, 5.00, 20, "a very shiny product", p1imgs));
+		products.add(new Product(14, "Water Fountain", 10, 3.00, 20, "another very shiny product",  p1imgs));
+		products.add(new Product(15, "Flamingo", 20, 3.00, 20, "a Gnome",  p1imgs));
+		products.add(new Product(16, "Windchime", 25, 3.00, 20, "another Gnome",p1imgs));
+		products.add(new Product(17, "Weathervane", 30, 3.00, 20, "shiny product",p1imgs));
+		products.add(new Product(18, "Weedkiller", 35, 3.00, 20, "another shiny product",p1imgs));
+		products.add(new Product(19, "Flower Pot", 10, 5.00, 20, "a very shiny product", p1imgs));
+		products.add(new Product(20, "Compost", 15, 3.00, 20, "another very shiny product",  p1imgs));
+		products.add(new Product(21, "Patio Heater", 20, 3.00, 20, "a Gnome",  p1imgs));
+		products.add(new Product(22, "Mean Grill", 25, 3.00, 20, "another Gnome",  p1imgs));
+		products.add(new Product(23, "Outdoor Table", 30, 3.00, 20, "shiny product", p1imgs));
+		products.add(new Product(24, "Outdoor Light", 35, 3.00, 20, "another shiny product", p1imgs));
+		products.add(new Product(25, "Santa Gnome", 10, 5.00, 20, "a very shiny product", p1imgs));
+		products.add(new Product(26, "Garden Gloves", 15, 3.00, 20, "another very shiny product", p1imgs));
+		products.add(new Product(27, "Secataurs", 20, 3.00, 20, "a Gnome", p1imgs));
+		products.add(new Product(28, "Petrol Chainsaw", 25, 3.00, 20, "another Gnome", p1imgs));
+		products.add(new Product(29, "Hedge Trimmer", 30, 3.00, 20, "shiny product",  p1imgs));
+		products.add(new Product(30, "Paddling Pool", 1, 3.00, 3, "another shiny product", p1imgs));
 
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1,
@@ -393,9 +393,6 @@ public class OfflineDB {
 
 	// PurchaseOrder
 
-	// PurchaseOrder
-	// PurchaseOrder
-
 	public PurchaseOrder getPurchaseOrderBySupplierID(String supplierID) {
 		for (PurchaseOrder purchOrder : purchaseOrders) {
 			if (purchOrder.getSupplier().equals(supplierID))
@@ -434,7 +431,15 @@ public class OfflineDB {
 	}
 
 	public List<Product> getLowStockProducts() {
-		List<Product> orderedProducts = new ArrayList<Product>(products);
+		
+		List<Product> orderedProducts = new ArrayList<Product>();
+		
+		for (Product product : new ArrayList<Product>(products)) {
+			if(product.getCurrentStock() <= product.getLowLimit()){
+				orderedProducts.add(product);
+			}
+		}
+		
 		class MyComparator implements Comparator<Product> {
 			
 			@Override
@@ -444,6 +449,7 @@ public class OfflineDB {
 			}
 		}
 		Collections.sort(orderedProducts, new MyComparator());
+		
 		return orderedProducts;
 	}
 
