@@ -39,6 +39,11 @@ public class SubCategory {
 	@NotNull
 	private Category category;
 	
+	@Column(name = "product_image_filepath", nullable=false)
+	private String product_image_filepath;
+	
+	
+
 	private List<Product> products;
 	/**
 	 * Constructor
@@ -47,11 +52,12 @@ public class SubCategory {
 	 * @param nName
 	 * @param c_id
 	 */
-	public SubCategory(int id, String nName, Category category, ArrayList<Product> Products) {
+	public SubCategory(int id, String nName, Category category, ArrayList<Product> Products, String image) {
 		setSubCategoryID(id);
 		setName(nName);
 		this.category = category;
 		this.setProducts(Products);
+		this.product_image_filepath=image;
 	}
 
 	/**
@@ -110,4 +116,12 @@ public class SubCategory {
 		this.products = products;
 	}
 
+	
+	public String getProduct_image_filepath() {
+		return product_image_filepath;
+	}
+
+	public void setProduct_image_filepath(String product_image_filepath) {
+		this.product_image_filepath = product_image_filepath;
+	}
 }
