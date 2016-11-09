@@ -470,7 +470,7 @@ public class OfflineDB {
 		products.add(new Product(111, "Wheeled Brush Cutter and Strimmer", "A delightful garden bird feeder in a country teapot design", 87, new BigDecimal(159.99), 5, 50,
 				1, "/products/maintenance/wheeledbrushcutter.jpg"));
 		products.add(new Product(112, "Easytrim Strimmer", "Easytrim electric line trimmer comes with a 280 watt motor and a full 23cm cutting diameter making it ideal for small gardens.", 34, new BigDecimal(19.99), 10, 100,
-				1, "/products/maintenance/easytrim.jpg.jpg"));
+				1, "/products/maintenance/easytrim.jpg"));
 		products.add(new Product(113, "Petrol Grass Strimmer", "The machine offers plenty of power for its 26cc engine and is not only extremely versatile, but very easy to operate and maintain.", 45, new BigDecimal(64.99), 10, 100,
 				1, "/products/maintenance/petrolgrassstrimmer.jpg"));
 		products.add(new Product(114, "Line trimmer", "Perfect to form straight lines in your border", 45, new BigDecimal(40.99), 10, 100,
@@ -762,48 +762,48 @@ public class OfflineDB {
 		categories = new ArrayList<Category>();
 
 		Category one = new Category(1, "Gnomes", subcategories);
-		one.addSubCategory(new SubCategory(1, "Classic", one, classicgnomes));
-		one.addSubCategory(new SubCategory(2, "Novelty", one, noveltygnomes));
-		one.addSubCategory(new SubCategory(3, "Themed", one, themedgnomes));
-		one.addSubCategory(new SubCategory(4, "Gnome Care", one, gnomecare));
+		one.addSubCategory(new SubCategory(1, "Classic", one, classicgnomes,""));
+		one.addSubCategory(new SubCategory(2, "Novelty", one, noveltygnomes,""));
+		one.addSubCategory(new SubCategory(3, "Themed", one, themedgnomes,""));
+		one.addSubCategory(new SubCategory(4, "Gnome Care", one, gnomecare,""));
 
 		Category two = new Category(2, "Electrical", subcategories1);
-		two.addSubCategory(new SubCategory(5, "Lighting", two, lighting));
-		two.addSubCategory(new SubCategory(6, "Heaters", two, heaters));
-		two.addSubCategory(new SubCategory(7, "Hot Tubs", two, hottubs));
-		two.addSubCategory(new SubCategory(8, "BBQs", two, bbqs));
-		two.addSubCategory(new SubCategory(9, "Misc", two, misc));
+		two.addSubCategory(new SubCategory(5, "Lighting", two, lighting,""));
+		two.addSubCategory(new SubCategory(6, "Heaters", two, heaters,""));
+		two.addSubCategory(new SubCategory(7, "Hot Tubs", two, hottubs,""));
+		two.addSubCategory(new SubCategory(8, "BBQs", two, bbqs,""));
+		two.addSubCategory(new SubCategory(9, "Misc", two, misc,""));
 
 		Category three = new Category(3, "Ornaments", subcategories2);
-		three.addSubCategory(new SubCategory(10, "Animals", three, animals));
-		three.addSubCategory(new SubCategory(11, "Wind Chimes", three, windchimes));
-		three.addSubCategory(new SubCategory(12, "Weather Vanes", three, weathervanes));
-		three.addSubCategory(new SubCategory(13, "Pots", three, pots));
+		three.addSubCategory(new SubCategory(10, "Animals", three, animals,""));
+		three.addSubCategory(new SubCategory(11, "Wind Chimes", three, windchimes,""));
+		three.addSubCategory(new SubCategory(12, "Weather Vanes", three, weathervanes,""));
+		three.addSubCategory(new SubCategory(13, "Pots", three, pots,""));
 
 		Category four = new Category(4, "Rakes and Hoes", subcategories3);
-		four.addSubCategory(new SubCategory(14, "Rakes", four, rakes));
-		four.addSubCategory(new SubCategory(15, "Hoes", four, hoes));
-		four.addSubCategory(new SubCategory(16, "Spades and Forks", four, spadesnforks));
-		four.addSubCategory(new SubCategory(17, "Trowels", four, trowels));
+		four.addSubCategory(new SubCategory(14, "Rakes", four, rakes,""));
+		four.addSubCategory(new SubCategory(15, "Hoes", four, hoes,""));
+		four.addSubCategory(new SubCategory(16, "Spades and Forks", four, spadesnforks,""));
+		four.addSubCategory(new SubCategory(17, "Trowels", four, trowels,""));
 
 		Category five = new Category(5, "Water Features", subcategories4);
-		five.addSubCategory(new SubCategory(18, "Pumps", five, pumps));
-		five.addSubCategory(new SubCategory(19, "Ponds", five, ponds));
-		five.addSubCategory(new SubCategory(19, "Pipes", five, pipes));
-		five.addSubCategory(new SubCategory(19, "Fountains", five, fountains));
+		five.addSubCategory(new SubCategory(18, "Pumps", five, pumps,""));
+		five.addSubCategory(new SubCategory(19, "Ponds", five, ponds,""));
+		five.addSubCategory(new SubCategory(19, "Pipes", five, pipes,""));
+		five.addSubCategory(new SubCategory(19, "Fountains", five, fountains,""));
 
 		Category six = new Category(6, "Furniture", subcategories5);
-		six.addSubCategory(new SubCategory(20, "Tables and Chairs", six, tablesnchairs));
-		six.addSubCategory(new SubCategory(21, "Benches", six, benches));
-		six.addSubCategory(new SubCategory(22, "Hammocks", six, hammocks));
-		six.addSubCategory(new SubCategory(23, "Swinging", six, swinging));
-		six.addSubCategory(new SubCategory(24, "Bird Houses", six, birdhouses));
+		six.addSubCategory(new SubCategory(20, "Tables and Chairs", six, tablesnchairs,""));
+		six.addSubCategory(new SubCategory(21, "Benches", six, benches,""));
+		six.addSubCategory(new SubCategory(22, "Hammocks", six, hammocks,""));
+		six.addSubCategory(new SubCategory(23, "Swinging", six, swinging,""));
+		six.addSubCategory(new SubCategory(24, "Bird Houses", six, birdhouses,""));
 
 		Category seven = new Category(7, "Maintenance", subcategories6);
-		seven.addSubCategory(new SubCategory(25, "Mowers", seven, mowers));
-		seven.addSubCategory(new SubCategory(26, "Strimmers", seven, strimmers));
-		seven.addSubCategory(new SubCategory(27, "Feed and Weed", seven, feednweed));
-		seven.addSubCategory(new SubCategory(28, "Secateurs", seven, secatures));
+		seven.addSubCategory(new SubCategory(25, "Mowers", seven, mowers,""));
+		seven.addSubCategory(new SubCategory(26, "Strimmers", seven, strimmers,""));
+		seven.addSubCategory(new SubCategory(27, "Feed and Weed", seven, feednweed,""));
+		seven.addSubCategory(new SubCategory(28, "Secateurs", seven, secatures,""));
 
 		categories.add(one);
 		categories.add(two);
@@ -1070,7 +1070,7 @@ public class OfflineDB {
 		switch (subcategory.toLowerCase()) {
 		case "classic":
 			return classicgnomes;
-		case "secatures":
+		case "secateurs":
 			return secatures;
 		case "feed and weed":
 			return feednweed;
