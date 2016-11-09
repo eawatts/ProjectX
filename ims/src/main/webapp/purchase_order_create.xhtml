@@ -30,8 +30,10 @@
 		<br />
 		<h:panelGroup
 			rendered="#{current_session.pendingPurchaseOrder.contents.size() eq 0}">
-			<p id="empty-purchase-order-text">There are currently no Products
-				on this Purchase Order</p>
+				<h:form>
+					<p id="empty-purchase-order-text">There are currently no Products on this Purchase Order
+					<h:commandLink action="#{purchase_order.generatePurchaseOrder()}" value="Click to generate one"></h:commandLink></p>
+				</h:form>
 		</h:panelGroup>
 
 		<ui:repeat var="purchase_order_item"

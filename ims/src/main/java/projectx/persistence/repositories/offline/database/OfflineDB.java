@@ -128,7 +128,7 @@ public class OfflineDB {
 		purchaseOrders.add(purchaseOrder3);
 		purchaseOrders.add(purchaseOrder4);
 		*/
-		ArrayList<ProductsOrdered> productsOrdered = new ArrayList<ProductsOrdered>();
+		/*ArrayList<ProductsOrdered> productsOrdered = new ArrayList<ProductsOrdered>();
 		ArrayList<PurchaseOrder> orders = new ArrayList<PurchaseOrder>();
 		PurchaseOrder purchaseOrder1 = new PurchaseOrder(null, suppliers.get(1), true, Date.valueOf("2016-09-13"),
 				OrderState.ORDER_CLOSED, productsOrdered);
@@ -136,7 +136,7 @@ public class OfflineDB {
 		orders.add(purchaseOrder1);
 		
 		productsOrdered.add(new ProductsOrdered(null, products.get(1), 20, purchaseOrder1,10.00));
-		productsOrdered.add(new ProductsOrdered(null, products.get(2), 10, purchaseOrder1,10.00));
+		productsOrdered.add(new ProductsOrdered(null, products.get(2), 10, purchaseOrder1,10.00));*/
 		
 		notifications = new ArrayList<Notification>();
 		notifications.add(new Notification(1, NotificationType.PURCHASE_ORDER_ISSUE, "It seems a bit costly."));

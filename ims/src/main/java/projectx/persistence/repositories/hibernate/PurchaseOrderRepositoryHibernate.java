@@ -70,8 +70,12 @@ public class PurchaseOrderRepositoryHibernate implements PurchaseOrderRepository
 	}
 
 	@Override
-	public ArrayList<ProductsOrdered> getProductsOrdered(PurchaseOrder purchaseOrder) {
-		return new ArrayList<ProductsOrdered>(db.getProductsOrdered(purchaseOrder));
+	public ArrayList<ProductsOrdered> getProductsOrdered(Integer id) {
+		if(db == null){
+			System.out.println("NULLLLLLLLLLL");	
+			return new ArrayList<ProductsOrdered>();
+		}
+		return new ArrayList<ProductsOrdered>(db.getProductsOrdered(id));
 		
 	}
 

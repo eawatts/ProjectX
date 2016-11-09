@@ -40,17 +40,13 @@ public class ProductService {
 	}
 
 	public List<Product> getTop25LowStockProducts() {
-		List<Product> orderedProducts = new ArrayList<Product>();
+		List<Product> orderedProducts = getLowStockProduct();
 		List<Product> top25LowStockProducts = new ArrayList<Product>();
-		orderedProducts = getLowStockProduct();
 		int listSize = orderedProducts.size();
-		if (listSize < 25) {
-
-		} else {
+		if (listSize > 25) {
 			listSize = 25;
 		}
 		for (int i = 0; i < listSize; i++) {
-
 			top25LowStockProducts.add(orderedProducts.get(i));
 		}
 		return top25LowStockProducts;
