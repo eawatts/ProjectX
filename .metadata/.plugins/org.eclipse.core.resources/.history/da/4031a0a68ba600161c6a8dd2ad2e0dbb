@@ -21,11 +21,11 @@
 			<div id="breadcrumbs">
 				<ul class="breadcrumb">
 					<li><h:link outcome="index">Home</h:link></li>
-					<li><a href="http://localhost:8080/catalogue/categories.xhtml">Catagories</a></li>
+					<li><a
+						href="http://localhost:8080/catalogue/categories.xhtml">Catagories</a></li>
 					<li><a
 						href="http://localhost:8080/catalogue/subcategories.xhtml">Gnomes</a></li>
-					<li><a
-						href="http://localhost:8080/catalogue/productlist.xhtml">Classic</a></li>
+					<li><a href="http://localhost:8080/catalogue/productlist.xhtml">Classic</a></li>
 					<li><a href="#"><h:outputText
 								value="#{current_product.product.name}" /></a></li>
 				</ul>
@@ -70,10 +70,6 @@
 								<div class="row">
 									<div class="col-tab-12 col-desk-12">
 										<ul class="product-slider-star-rating">
-											<h:panelGroup layout="block"
-												rendered="#{current_product.averageReview eq null}">
-												<p class="review-text">There are no reviews.</p>
-											</h:panelGroup>
 											<h:form rendered="#{current_product.averageReview lt 1}"
 												class="product-slider-star">
 												<li><i class="fa fa-star-half" aria-hidden="true"></i></li>

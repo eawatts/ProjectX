@@ -238,3 +238,11 @@ Caused by: org.xml.sax.SAXParseException: Premature end of file.
 2016-11-09 13:57:56,524 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 28 resources
 2016-11-09 13:57:56,526 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2016-11-09 13:57:56,526 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\workspace2\catalogue\src\test\resources
+2016-11-09 14:23:56,794 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-09 14:23:56,794 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-11-09 14:23:56,796 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-09 14:23:56,797 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\workspace2\catalogue\src\test\resources
+2016-11-09 14:49:00,915 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-09 14:49:00,916 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-11-09 14:49:00,918 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-09 14:49:00,918 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\workspace2\catalogue\src\test\resources
