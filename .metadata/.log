@@ -1254,3 +1254,138 @@ java.lang.Exception: Could not delete C:\Users\Administrator\wildfly-10.1.0.Fina
 
 !ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 10:29:07.699
 !MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 11:33:14.009
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 11:33:26.669
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 11:33:26.918
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 11:53:16.533
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 11:53:29.218
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 11:53:29.229
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:03:21.354
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:03:34.711
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:03:34.712
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:20:38.979
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:20:51.626
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:20:51.847
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:25:55.400
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:26:08.411
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:26:08.416
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:29:48.567
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:30:01.564
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:30:01.577
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:49:15.433
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:49:28.162
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:49:28.226
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.eclipse.jface.text 2 0 2016-11-09 13:52:40.445
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2016-11-09 13:52:40.445
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:53:33.933
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:53:46.409
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:53:46.514
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:56:44.302
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:56:57.247
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:56:57.441
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 13:58:05.243
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 14:23:57.918
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 14:24:11.056
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 14:24:11.477
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 14:50:35.418
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 14:50:47.762
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 14:50:47.893
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 14:59:08.773
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 14:59:21.675
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 14:59:21.676
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 15:12:04.363
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 15:12:17.019
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 15:12:17.112
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 15:54:27.386
+!MESSAGE The server "WildFly 10.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_101 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 15:54:40.352
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-11-09 15:54:40.597
+!MESSAGE Unable to retrieve a list of remote deployment scanners for server WildFly 10.x

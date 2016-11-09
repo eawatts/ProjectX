@@ -16,7 +16,8 @@
 	margin: 5px 5px 5px 0px
 }
 .basket-image{
-	height:50px;
+	height:200px;
+	width: 100px;
 }
 .basket-row{
 	margin-top: 50px;
@@ -25,4 +26,8 @@
 	padding-left:20%;
 	font-size: 100%;
 	font-weight: bold;
+}
+
+.invis{
+	height: 1px;
 }

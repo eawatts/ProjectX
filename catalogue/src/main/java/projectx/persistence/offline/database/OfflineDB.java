@@ -24,8 +24,7 @@ import projectx.persistence.webentities.CurrentProduct;
 import projectx.persistence.webentities.ProductWithAverageReview;
 
 @Singleton
-public class OfflineDB
-{
+public class OfflineDB {
 	private static final int NUMBER_OF_PRODUCTS_TO_RETRIEVE = 10;
 
 	private List<Product> products;
@@ -74,13 +73,11 @@ public class OfflineDB
 	private ArrayList<Product> mowers;
 	private ArrayList<Product> strimmers;
 
-	public OfflineDB()
-	{
+	public OfflineDB() {
 	}
 
 	@PostConstruct
-	public void setupData()
-	{
+	public void setupData() {
 		setupProducts();
 		setupPaymentDetails();
 		setupAddresses();
@@ -91,8 +88,7 @@ public class OfflineDB
 		setupCategories();
 	}
 
-	private void setupProducts()
-	{
+	private void setupProducts() {
 		products = new ArrayList<Product>();
 		products.add(new Product(1, "Red Gnome", "This gnome is lovely with its bright red hat", 100, new BigDecimal(19.99), 10, 100, 1,
 				"/products/gnomes/gnome_red-hat.png"));
@@ -340,8 +336,8 @@ public class OfflineDB
 				1, "/products/maintenance/house.jpg"));
 	}
 
-	private void setupPaymentDetails()
-	{
+
+	private void setupPaymentDetails() {
 		paymentDetails = new ArrayList<PaymentDetails>();
 		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Halifax Card"));
 		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Credit Card"));
@@ -355,8 +351,7 @@ public class OfflineDB
 		paymentDetails.add(new PaymentDetails(1, "125685", "236595632", "Credit Card"));
 	}
 
-	private void setupAddresses()
-	{
+	private void setupAddresses() {
 		addresses = new ArrayList<Address>();
 		addresses.add(new Address(0, "Cherry House", "My Street", "Manchester", "M4 CTR"));
 		addresses.add(new Address(1, "Cherry House", "My Street", "Manchester", "M4 CTR"));
@@ -366,8 +361,7 @@ public class OfflineDB
 		addresses.add(new Address(5, "Cherry House", "My Street", "Manchester", "M4 CTR"));
 	}
 
-	private void setupUsers()
-	{
+	private void setupUsers() {
 		String password = "test";
 
 		users = new ArrayList<User>();
@@ -399,8 +393,7 @@ public class OfflineDB
 				password, UserLevel.CUSTOMER, paymentDetails.get(1), addresses.get(3)));
 	}
 
-	private void setupReviews()
-	{
+	private void setupReviews() {
 		reviews = new ArrayList<Review>();
 		reviews.add(new Review(1, 4.5f, "Pretty dank.", users.get(1), products.get(2)));
 		reviews.add(new Review(2, 3.1f, "Pretty good.", users.get(2), products.get(3)));
@@ -422,8 +415,7 @@ public class OfflineDB
 		reviews.add(new Review(18, 0.5f, "Tripping hazard.", users.get(10), products.get(1)));
 	}
 
-	private void setupOrders()
-	{
+	private void setupOrders() {
 		orders = new ArrayList<Order>();
 
 		List<BasketProduct> productsForOrder = new ArrayList<BasketProduct>();
@@ -443,8 +435,7 @@ public class OfflineDB
 				new Date(15263), new Date(45155541), productsForOrder));
 	}
 
-	private void setupCategoriesProducts()
-	{
+	private void setupCategoriesProducts() {
 		classicgnomes = new ArrayList<Product>();
 		classicgnomes.add(products.get(0));
 		classicgnomes.add(products.get(1));
@@ -453,7 +444,7 @@ public class OfflineDB
 		classicgnomes.add(products.get(4));
 		classicgnomes.add(products.get(5));
 		classicgnomes.add(products.get(6));
-		
+
 		noveltygnomes = new ArrayList<Product>();
 		noveltygnomes.add(products.get(7));
 		noveltygnomes.add(products.get(8));
@@ -469,23 +460,24 @@ public class OfflineDB
 		gnomecare.add(products.get(16));
 		gnomecare.add(products.get(17));
 
-
-		
 		lighting = new ArrayList<Product>();
 		lighting.add(products.get(18));
 		lighting.add(products.get(19));
 		lighting.add(products.get(20));
 		lighting.add(products.get(21));
+
 		heaters = new ArrayList<Product>();
 		heaters.add(products.get(22));
 		heaters.add(products.get(23));
 		heaters.add(products.get(24));
 		heaters.add(products.get(25));
+
 		hottubs = new ArrayList<Product>();
 		hottubs.add(products.get(26));
 		hottubs.add(products.get(27));
 		hottubs.add(products.get(28));
 		hottubs.add(products.get(29));
+
 		bbqs = new ArrayList<Product>();
 		bbqs.add(products.get(30));
 		bbqs.add(products.get(31));
@@ -497,7 +489,6 @@ public class OfflineDB
 		misc.add(products.get(36));
 		misc.add(products.get(37));
 
-		
 		animals = new ArrayList<Product>();
 		animals.add(products.get(38));
 		animals.add(products.get(39));
@@ -518,7 +509,7 @@ public class OfflineDB
 		pots.add(products.get(51));
 		pots.add(products.get(52));
 		pots.add(products.get(53));
-		
+
 		rakes = new ArrayList<Product>();
 		rakes.add(products.get(54));
 		rakes.add(products.get(55));
@@ -539,7 +530,6 @@ public class OfflineDB
 		trowels.add(products.get(67));
 		trowels.add(products.get(68));
 		trowels.add(products.get(69));
-
 
 		pumps = new ArrayList<Product>();
 		pumps.add(products.get(70));
@@ -610,8 +600,7 @@ public class OfflineDB
 		secatures.add(products.get(121));
 	}
 
-	private void setupCategories()
-	{
+	private void setupCategories() {
 		categories = new ArrayList<Category>();
 
 		Category one = new Category(1, "Gnomes", subcategories);
@@ -627,8 +616,8 @@ public class OfflineDB
 		two.addSubCategory(new SubCategory(8, "BBQs", two, bbqs));
 		two.addSubCategory(new SubCategory(9, "Misc", two, misc));
 
-		Category three = new Category(3, "Oranaments", subcategories2);
-		three.addSubCategory(new SubCategory(10, "Animal", three, animals));
+		Category three = new Category(3, "Ornaments", subcategories2);
+		three.addSubCategory(new SubCategory(10, "Animals", three, animals));
 		three.addSubCategory(new SubCategory(11, "Wind Chimes", three, windchimes));
 		three.addSubCategory(new SubCategory(12, "Weather Vanes", three, weathervanes));
 		three.addSubCategory(new SubCategory(13, "Pots", three, pots));
@@ -675,37 +664,31 @@ public class OfflineDB
 	 * 
 	 * @return copy of the Products ArrayList.
 	 */
-	public List<Product> getProducts()
-	{
+	public List<Product> getProducts() {
 		return new ArrayList<Product>(products);
 	}
 
-	public List<ProductWithAverageReview> getTopProductsWithAverageReview()
-	{
+	public List<ProductWithAverageReview> getTopProductsWithAverageReview() {
 
 		List<ProductWithAverageReview> productsWithAverageReview = new ArrayList<ProductWithAverageReview>();
-		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++)
-		{
+		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++) {
 			productsWithAverageReview.add(new ProductWithAverageReview(products.get(i),
 					getAverageReviewForProductId(products.get(i).getId())));
 		}
 		return productsWithAverageReview;
 	}
 
-	public List<ProductWithAverageReview> getSeasonalProductsWithAverageReview()
-	{
+	public List<ProductWithAverageReview> getSeasonalProductsWithAverageReview() {
 
 		List<ProductWithAverageReview> productsWithAverageReview = new ArrayList<ProductWithAverageReview>();
-		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++)
-		{
+		for (int i = 0; i < NUMBER_OF_PRODUCTS_TO_RETRIEVE; i++) {
 			productsWithAverageReview.add(new ProductWithAverageReview(products.get(i),
 					getAverageReviewForProductId(products.get(i).getId())));
 		}
 		return productsWithAverageReview;
 	}
 
-	public CurrentProduct getCurrentProduct(int productId)
-	{
+	public CurrentProduct getCurrentProduct(int productId) {
 
 		Product product = getProductFromId(productId);
 		Integer averageReview = getAverageReviewForProductId(productId);
@@ -714,13 +697,10 @@ public class OfflineDB
 		return new CurrentProduct(product, averageReview, reviews);
 	}
 
-	public Product getProductFromId(int productId)
-	{
+	public Product getProductFromId(int productId) {
 
-		for (Product product : products)
-		{
-			if (product.getId() == productId)
-			{
+		for (Product product : products) {
+			if (product.getId() == productId) {
 				return product;
 			}
 		}
@@ -738,68 +718,54 @@ public class OfflineDB
 	 *            the Product Id to check.
 	 * @return null if no Reviews exist, the average score if present.
 	 */
-	public Integer getAverageReviewForProductId(int productId)
-	{
+	public Integer getAverageReviewForProductId(int productId) {
 
 		// See if the Product actually exists.
 		Product product = getProductFromId(productId);
-		if (product == null)
-		{
+		if (product == null) {
 			return null;
 		}
 
 		int reviewTotal = 0;
 		int numberOfReviews = 0;
 
-		for (Review review : reviews)
-		{
-			if (review.getProduct().getId() == productId)
-			{
+		for (Review review : reviews) {
+			if (review.getProduct().getId() == productId) {
 				numberOfReviews++;
 				reviewTotal += review.getRating();
 			}
 		}
 
-		if (numberOfReviews == 0)
-		{ // Also helps prevent divide by zero.
+		if (numberOfReviews == 0) { // Also helps prevent divide by zero.
 			return null;
 		}
 
 		return reviewTotal / numberOfReviews;
 	}
 
-	public List<Review> getSomeReviews(int n, int itemID)
-	{
+	public List<Review> getSomeReviews(int n, int itemID) {
 		List<Review> reviewList = new ArrayList<Review>();
-		for (int i = 0; i < reviews.size(); i++)
-		{
-			if (reviews.get(i).getProduct().getId() == itemID)
-			{
+		for (int i = 0; i < reviews.size(); i++) {
+			if (reviews.get(i).getProduct().getId() == itemID) {
 				reviewList.add(reviews.get(i));
-				if (reviewList.size() == n)
-				{
+				if (reviewList.size() == n) {
 					break;
 				}
-			} else
-			{
+			} else {
 				continue;
 			}
 		}
 		return reviewList;
 	}
 
-	public List<Review> getReviews()
-	{
+	public List<Review> getReviews() {
 		return new ArrayList<Review>(reviews);
 	}
 
-	public List<Review> getReviewsForProductId(int productId)
-	{
+	public List<Review> getReviewsForProductId(int productId) {
 		ArrayList<Review> reviewsForProduct = new ArrayList<Review>();
-		for (Review review : reviews)
-		{
-			if (review.getProduct().getId() == productId)
-			{
+		for (Review review : reviews) {
+			if (review.getProduct().getId() == productId) {
 				reviewsForProduct.add(review);
 			}
 		}
@@ -815,13 +781,11 @@ public class OfflineDB
 	 * 
 	 * @return copy of the Users ArrayList.
 	 */
-	public List<User> getUsers()
-	{
+	public List<User> getUsers() {
 		return new ArrayList<User>(users);
 	}
 
-	public void userAdd(User user)
-	{
+	public void userAdd(User user) {
 		users.add(user);
 	}
 
@@ -835,12 +799,9 @@ public class OfflineDB
 	 *            the Password to check.
 	 * @return null if no User is found, the User is there is a match.
 	 */
-	public User login(String username, String password)
-	{
-		for (User user : users)
-		{
-			if (user.getUsername().equals(username) && user.getPassword().equals(password))
-			{
+	public User login(String username, String password) {
+		for (User user : users) {
+			if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
 				return user;
 			}
 		}
@@ -851,27 +812,22 @@ public class OfflineDB
 
 	// ----- ORDERS -----
 
-	public List<Order> getOrders()
-	{
+	public List<Order> getOrders() {
 		return this.orders;
 	}
 
-	public List<Order> getOrdersForUser(int userId)
-	{
+	public List<Order> getOrdersForUser(int userId) {
 		List<Order> userOrders = new ArrayList<Order>();
 
-		for (Order order : orders)
-		{
-			if (order.getUser().getId() == userId)
-			{
+		for (Order order : orders) {
+			if (order.getUser().getId() == userId) {
 				userOrders.add(order);
 			}
 		}
 		return userOrders;
 	}
 
-	public void addOrder(Order order)
-	{
+	public void addOrder(Order order) {
 		this.orders.add(order);
 	}
 
@@ -879,31 +835,24 @@ public class OfflineDB
 
 	// ----- CATEGORIES -----
 
-	public List<Category> getCategories()
-	{
+	public List<Category> getCategories() {
 		return new ArrayList<Category>(categories);
 	}
 
-	public Category findByName(String name)
-	{
+	public Category findByName(String name) {
 
-		for (Category category : categories)
-		{
-			if (category.getName() == name)
-			{
+		for (Category category : categories) {
+			if (category.getName() == name) {
 				return category;
 			}
 		}
 		return null;
 	}
 
-	public Category findById(int id)
-	{
+	public Category findById(int id) {
 
-		for (Category category : categories)
-		{
-			if (category.getCategoryID() == id)
-			{
+		for (Category category : categories) {
+			if (category.getCategoryID() == id) {
 				return category;
 			}
 		}
@@ -919,18 +868,14 @@ public class OfflineDB
 	 * @return list of categories
 	 */
 
-	public List<SubCategory> getSubCategories()
-	{
+	public List<SubCategory> getSubCategories() {
 		return new ArrayList<SubCategory>(subcategories);
 	}
 
-	public List<SubCategory> getSubCategories(Category category)
-	{
+	public List<SubCategory> getSubCategories(Category category) {
 		List<SubCategory> subcategoryList = new ArrayList<SubCategory>();
-		for (SubCategory subcat : subcategories)
-		{
-			if (category.getCategoryID() == subcat.getCategory().getCategoryID())
-			{
+		for (SubCategory subcat : subcategories) {
+			if (category.getCategoryID() == subcat.getCategory().getCategoryID()) {
 				subcategoryList.add(subcat);
 			}
 		}
@@ -943,56 +888,97 @@ public class OfflineDB
 	 * @return Category
 	 */
 
-	public SubCategory findSubByName(String name)
-	{
+	public SubCategory findSubByName(String name) {
 
-		for (SubCategory subcategory : subcategories)
-		{
-			if (subcategory.getName() == name)
-			{
+		for (SubCategory subcategory : subcategories) {
+			if (subcategory.getName() == name) {
 				return subcategory;
 			}
 		}
 		return null;
 	}
 
-	public SubCategory findSubByid(int id)
-	{
+	public SubCategory findSubByid(int id) {
 
-		for (SubCategory subcategory : subcategories)
-		{
-			if (subcategory.getSubCategoryID() == id)
-			{
+		for (SubCategory subcategory : subcategories) {
+			if (subcategory.getSubCategoryID() == id) {
 				return subcategory;
 			}
 		}
 		return null;
 	}
 
-	public ArrayList<Product> getSubcatsProducts(String subcategory)
-	{
-		switch (subcategory)
-		{
-		case "Classic":
+	public ArrayList<Product> getSubcatsProducts(String subcategory) {
+		switch (subcategory.toLowerCase()) {
+		case "classic":
 			return classicgnomes;
-		case "Novelty":
+		case "secatures":
+			return secatures;
+		case "feed and weed":
+			return feednweed;
+		case "bird houses":
+			return birdhouses;
+		case "novelty":
 			return noveltygnomes;
-		case "Themed":
+		case "themed":
 			return themedgnomes;
-		case "Gnome Care":
+		case "gnome care":
 			return gnomecare;
+		case "lighting":
+			return lighting;
+		case "heaters":
+			return heaters;
+		case "hot tubs":
+			return hottubs;
+		case "bbqs":
+			return bbqs;
+		case "misc":
+			return misc;
+		case "animals":
+			return animals;
+		case "wind chimes":
+			return windchimes;
+		case "weather vanes":
+			return weathervanes;
+		case "pots":
+			return pots;
+		case "rakes":
+			return rakes;
+		case "hoes":
+			return hoes;
+		case "spades and forks":
+			return spadesnforks;
+		case "trowels":
+			return trowels;
+		case "pumps":
+			return pumps;
+		case "ponds":
+			return ponds;
+		case "fountains":
+			return fountains;
+		case "pipes":
+			return pipes;
+		case "tables and chairs":
+			return tablesnchairs;
+		case "benches":
+			return benches;
+		case "hammocks":
+			return hammocks;
+		case "swinging":
+			return swinging;
+		case "mowers":
+			return mowers;
+		case "strimmers":
+			return strimmers;
 		}
 		return null;
 	}
 
-	public List search(String parameter)
-	{
+	public List search(String parameter) {
 		List results = new ArrayList<Product>();
-		for (Product p : products)
-		{
+		for (Product p : products) {
 			if (p.getName().toLowerCase().contains(parameter.toLowerCase())
-					|| Integer.toString(p.getId()).equals(parameter))
-			{
+					|| Integer.toString(p.getId()).equals(parameter)) {
 				results.add(p);
 			}
 		}
