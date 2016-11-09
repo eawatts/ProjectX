@@ -34,8 +34,8 @@
 			<div class="row">
 				<div class="col-tab-4 col-desk-4">
 					<h:graphicImage
-						value="img#{current_product.product.productImageFilepath}"
-						style="width:200px;height:200px;"></h:graphicImage>
+						value="img#{current_product.productImageFilepath}"
+						style="width:100px;height:200px;"></h:graphicImage>
 				</div>
 				<div class="col-tab-8 col-desk-8">
 					<div class="row">

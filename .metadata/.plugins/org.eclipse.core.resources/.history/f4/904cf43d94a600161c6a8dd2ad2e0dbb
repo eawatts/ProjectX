@@ -26,6 +26,7 @@
 .slider-product-image{
 	height:200px;
 	width: 200px;
+	margin-left: 30%;
 }
 .slider-basket-button{
 	color: #004425;

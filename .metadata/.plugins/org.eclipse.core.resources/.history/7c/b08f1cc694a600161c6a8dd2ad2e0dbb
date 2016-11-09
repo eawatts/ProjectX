@@ -475,7 +475,7 @@ public class OfflineDB {
 		two.addSubCategory(new SubCategory(8, "BBQs", two, bbqs));
 		two.addSubCategory(new SubCategory(9, "Misc", two, misc));
 
-		Category three = new Category(3, "Ornaments", subcategories2);
+		Category three = new Category(3, "Oranaments", subcategories2);
 		three.addSubCategory(new SubCategory(10, "Animals", three, animals));
 		three.addSubCategory(new SubCategory(11, "Wind Chimes", three, windchimes));
 		three.addSubCategory(new SubCategory(12, "Weather Vanes", three, weathervanes));
