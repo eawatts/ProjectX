@@ -1,6 +1,7 @@
 package projectx.controllers;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.util.OrderState;
+import projectx.persistence.webentities.ProductsOrderedForPurchaseOrders;
 import projectx.persistence.webentities.PurchaseOrderProduct;
 import projectx.services.PurchaseOrderSerivce;
 
@@ -99,12 +101,7 @@ public class OldPurchaseOrderController implements Serializable{
 	public void setStatus(OrderState status) {
 		this.status = status;
 	}
-
-
-	public List<ProductsOrdered> getProductsOrdered() {
-		return productsOrdered;
-	}
-
+	
 
 	public void setProductsOrdered(List<ProductsOrdered> productsOrdered) {
 		this.productsOrdered = productsOrdered;
@@ -114,7 +111,36 @@ public class OldPurchaseOrderController implements Serializable{
 		return purchaseOrderService.createPurchaseOrderEntry();
 	}
 	
-	public List<ProductsOrdered> getProductsOrdered(PurchaseOrder purchaseOrder){
-		return purchaseOrderService.getProductsOrdered(purchaseOrder);
+	public List<ProductsOrdered> getProductsOrdered(Integer id){
+		//System.out.println(purchaseOrderService.getProductsOrdered(id).get(1));
+		return purchaseOrderService.getProductsOrdered(id);
 	}
+	/*
+	public List<ProductsOrdered> getProductsForPurchaseOrder(){
+		ArrayList<ProductsOrdered> products = new ArrayList<ProductsOrdered>();
+		products = (ArrayList<ProductsOrdered>) getProductsOrdered(this.id);
+		return products; 
+	}*/
+	public ArrayList<ProductsOrderedForPurchaseOrders> getPurchaseOrdersWithProducts(){
+		ArrayList<ProductsOrderedForPurchaseOrders> poWithProducts = new ArrayList<ProductsOrderedForPurchaseOrders>();
+		poWithProducts = createProductsOrderedForPurchaseOrder();
+		
+		return poWithProducts;
+	}
+	
+	private ArrayList<ProductsOrderedForPurchaseOrders> createProductsOrderedForPurchaseOrder(){
+		
+		ArrayList<PurchaseOrder> purchaseOrders = new ArrayList<PurchaseOrder>();
+		purchaseOrders = (ArrayList<PurchaseOrder>) getPurchaseOrderList();
+		
+		ArrayList<ProductsOrderedForPurchaseOrders> poWithProoducts = new ArrayList<ProductsOrderedForPurchaseOrders>();
+		
+		for(PurchaseOrder purchaseOrder: purchaseOrders){
+			ArrayList<ProductsOrdered> poProducts = new ArrayList<ProductsOrdered>(purchaseOrderService.getProductsOrdered(purchaseOrder.getId()));
+			ProductsOrderedForPurchaseOrders p = new ProductsOrderedForPurchaseOrders(purchaseOrder.getId(), purchaseOrder.getSupplier(), purchaseOrder.isApproval(),
+					purchaseOrder.getApprovalDate(), purchaseOrder.getStatus(), poProducts);
+			poWithProoducts.add(p);
+		}
+		return poWithProoducts;
+}
 }

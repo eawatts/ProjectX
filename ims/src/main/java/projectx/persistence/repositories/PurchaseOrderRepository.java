@@ -18,6 +18,6 @@ public interface PurchaseOrderRepository {
 	public ArrayList<PurchaseOrder> getPurchaseOrders();
 	public void updatePurchaseOrder (PurchaseOrder purchaseOrder);
 	List<PurchaseOrderProduct> createPurchaseOrderEntry();
-	public ArrayList<ProductsOrdered> getProductsOrdered(PurchaseOrder purchaseOrder);
+	public ArrayList<ProductsOrdered> getProductsOrdered(Integer id);
 }
 	

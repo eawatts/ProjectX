@@ -210,23 +210,29 @@ public class HibernateDatabaseSeed {
 
 		session.beginTransaction().commit();
 		
+		
 		ArrayList<ProductsOrdered> productsOrdered = new ArrayList<ProductsOrdered>();
 		ArrayList<PurchaseOrder> orders = new ArrayList<PurchaseOrder>();
 		PurchaseOrder purchaseOrder1 = new PurchaseOrder(null, suppliers.get(1), true, Date.valueOf("2016-09-13"),
-				OrderState.ORDER_CLOSED, productsOrdered);
+				OrderState.ORDER_CLOSED);
+		PurchaseOrder purchaseOrder2 = new PurchaseOrder(null, suppliers.get(0), true, Date.valueOf("2016-09-13"),
+				OrderState.CONFIRMED);
 		
 		orders.add(purchaseOrder1);
-		
-		for (PurchaseOrder purchaseOrder : orders) session.save(purchaseOrder);
-		
-		session.beginTransaction().commit();
-		
+		orders.add(purchaseOrder2);
+		for (PurchaseOrder purchaseOrder : orders) {
+			session.save(purchaseOrder);
+			session.beginTransaction().commit();
+		}
 		productsOrdered.add(new ProductsOrdered(null, products.get(1), 20, purchaseOrder1,10.00));
 		productsOrdered.add(new ProductsOrdered(null, products.get(2), 10, purchaseOrder1,10.00));
+		productsOrdered.add(new ProductsOrdered(null, products.get(3), 20, purchaseOrder1,10.00));
+		productsOrdered.add(new ProductsOrdered(null, products.get(0), 10, purchaseOrder2,10.00));
+		productsOrdered.add(new ProductsOrdered(null, products.get(4), 20, purchaseOrder2,10.00));
+		productsOrdered.add(new ProductsOrdered(null, products.get(7), 10, purchaseOrder2,10.00));
 		
 		for (ProductsOrdered prodOrder : productsOrdered){
 			session.save(prodOrder);}
-
-		session.beginTransaction().commit();
+			session.beginTransaction().commit();
 	}
 }
