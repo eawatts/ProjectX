@@ -1,6 +1,8 @@
 package projectx.persistence.repositories.hibernate.database;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -13,7 +15,6 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
-
 
 import projectx.persistence.entities.Notification;
 import projectx.persistence.entities.Product;
@@ -302,7 +303,7 @@ public class HibernateDatabase {
 			supplier.setAddressLine2(addressLine2);
 			supplier.setPostcode(postcode);
 			supplier.setPhone(phone);
-			
+
 			session.update(supplier);
 			session.save(supplier);
 			session.beginTransaction().commit();
@@ -339,8 +340,6 @@ public class HibernateDatabase {
 			}
 		}
 	}
-	
-
 
 	public PurchaseOrder findPurchaseOrderBySupplierId(String supplierID) {
 		Session session = null;
@@ -359,7 +358,7 @@ public class HibernateDatabase {
 			}
 		}
 	}
-	
+
 	public List<PurchaseOrder> getPurchaseOrders() {
 		Session session = null;
 		try {
@@ -374,19 +373,19 @@ public class HibernateDatabase {
 				session.close();
 			}
 		}
-		
+
 	}
-	
+
 	public List<ProductsOrdered> getProductsOrdered(Integer id) {
 		Session session = null;
 		try {
-			session = sessionManager.getSession();			
+			session = sessionManager.getSession();
 			Criteria criteria = session.createCriteria(ProductsOrdered.class);
 			List<ProductsOrdered> rawResults = (List<ProductsOrdered>) criteria.list();
 			List<ProductsOrdered> results = new ArrayList<ProductsOrdered>();
-			
+
 			for (ProductsOrdered productsOrdered : rawResults) {
-				if(productsOrdered.getPurchaseOrder().getId() == id){
+				if (productsOrdered.getPurchaseOrder().getId() == id) {
 					results.add(productsOrdered);
 				}
 			}
@@ -474,11 +473,31 @@ public class HibernateDatabase {
 	}
 
 	public List<Product> getLowStockProducts() {
+		System.out.println("ITS WORKING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		Session session = null;
 		try {
 			session = sessionManager.getSession();
-			Query query = session.getNamedQuery("Product.findlowproduct");						
-			return (List<Product>) query.getResultList();
+			Criteria criteria = session.createCriteria(Product.class);
+			List<Product> allProducts = (List<Product>)criteria.list();
+			List<Product> orderedProducts = new ArrayList<Product>();
+			
+			for (Product product : allProducts) {
+				if (product.getCurrentStock() <= product.getLowLimit()) {
+					orderedProducts.add(product);
+				}
+			}
+			
+			class MyComparator implements Comparator<Product> {
+				@Override
+				public int compare(Product product1, Product product2) {
+					return new Integer(product1.getCurrentStock() - product1.getLowLimit())
+							.compareTo(product2.getCurrentStock() - product2.getLowLimit());
+				}
+			}
+			Collections.sort(orderedProducts, new MyComparator());
+
+			return orderedProducts;
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
