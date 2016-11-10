@@ -781,29 +781,29 @@ public class OfflineDB {
 		three.addSubCategory(new SubCategory(13, "Pots", three, pots,""));
 
 		Category four = new Category(4, "Rakes and Hoes", subcategories3);
-		four.addSubCategory(new SubCategory(14, "Rakes", four, rakes,""));
-		four.addSubCategory(new SubCategory(15, "Hoes", four, hoes,""));
-		four.addSubCategory(new SubCategory(16, "Spades and Forks", four, spadesnforks,""));
-		four.addSubCategory(new SubCategory(17, "Trowels", four, trowels,""));
+		four.addSubCategory(new SubCategory(14, "Rakes", four, rakes,"/subcategory/rake.jpg"));
+		four.addSubCategory(new SubCategory(15, "Hoes", four, hoes,"/subcategory/hoe.jpg"));
+		four.addSubCategory(new SubCategory(16, "Spades and Forks", four, spadesnforks,"/subcategory/spadesnforks.jpg"));
+		four.addSubCategory(new SubCategory(17, "Trowels", four, trowels,"/subcategory/trowel.jpg"));
 
 		Category five = new Category(5, "Water Features", subcategories4);
-		five.addSubCategory(new SubCategory(18, "Pumps", five, pumps,""));
-		five.addSubCategory(new SubCategory(19, "Ponds", five, ponds,""));
-		five.addSubCategory(new SubCategory(19, "Pipes", five, pipes,""));
-		five.addSubCategory(new SubCategory(19, "Fountains", five, fountains,""));
+		five.addSubCategory(new SubCategory(18, "Pumps", five, pumps,"/subcategory/pumps.jpg"));
+		five.addSubCategory(new SubCategory(19, "Ponds", five, ponds,"/subcategory/pond.jpg"));
+		five.addSubCategory(new SubCategory(19, "Pipes", five, pipes,"/subcategory/pipes.jpg"));
+		five.addSubCategory(new SubCategory(19, "Fountains", five, fountains,"/subcategory/fount.jpg"));
 
 		Category six = new Category(6, "Furniture", subcategories5);
-		six.addSubCategory(new SubCategory(20, "Tables and Chairs", six, tablesnchairs,""));
-		six.addSubCategory(new SubCategory(21, "Benches", six, benches,""));
-		six.addSubCategory(new SubCategory(22, "Hammocks", six, hammocks,""));
-		six.addSubCategory(new SubCategory(23, "Swinging", six, swinging,""));
-		six.addSubCategory(new SubCategory(24, "Bird Houses", six, birdhouses,""));
+		six.addSubCategory(new SubCategory(20, "Tables and Chairs", six, tablesnchairs,"/subcategory/tablesnchairs.jpg"));
+		six.addSubCategory(new SubCategory(21, "Benches", six, benches,"/subcategory/bench.jpg"));
+		six.addSubCategory(new SubCategory(22, "Hammocks", six, hammocks,"/subcategory/hammock.jpg"));
+		six.addSubCategory(new SubCategory(23, "Swinging", six, swinging,"/subcategory/swing.jpg"));
+		six.addSubCategory(new SubCategory(24, "Bird Houses", six, birdhouses,"/subcategory/birdhouse.jpg"));
 
 		Category seven = new Category(7, "Maintenance", subcategories6);
-		seven.addSubCategory(new SubCategory(25, "Mowers", seven, mowers,""));
-		seven.addSubCategory(new SubCategory(26, "Strimmers", seven, strimmers,""));
-		seven.addSubCategory(new SubCategory(27, "Feed and Weed", seven, feednweed,""));
-		seven.addSubCategory(new SubCategory(28, "Secateurs", seven, secatures,""));
+		seven.addSubCategory(new SubCategory(25, "Mowers", seven, mowers,"/subcategory/mower.jpg"));
+		seven.addSubCategory(new SubCategory(26, "Strimmers", seven, strimmers,"/subcategory/strimmer.jpg"));
+		seven.addSubCategory(new SubCategory(27, "Feed and Weed", seven, feednweed,"/subcategory/feednweed.jpg"));
+		seven.addSubCategory(new SubCategory(28, "Secateurs", seven, secatures,"/subcategory/secateurs.jpg"));
 
 		categories.add(one);
 		categories.add(two);
