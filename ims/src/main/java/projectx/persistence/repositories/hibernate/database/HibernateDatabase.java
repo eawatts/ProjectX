@@ -404,7 +404,7 @@ public class HibernateDatabase {
 		}
 	}
 	
-	public void addPurchaseOrder(Supplier supplier){    
+	public PurchaseOrder addPurchaseOrder(Supplier supplier){    
                 Session session = null;
                 
            try{
@@ -419,10 +419,11 @@ public class HibernateDatabase {
  
                 session.save(purchaseOrder);
                 session.beginTransaction().commit();
-                
+                return purchaseOrder;
         }catch(Exception e){
         	System.out.println(e.getMessage());
             e.printStackTrace();
+            return null;
         }
         finally {
 			if (session != null) {
@@ -430,6 +431,34 @@ public class HibernateDatabase {
 			}
 		}
     }
+	
+	public void addProductsOrdered(Product product, int quantity, PurchaseOrder purchaseOrder){    
+        Session session = null;
+        
+   try{
+        session = sessionManager.getSession();	
+
+        ProductsOrdered products = new ProductsOrdered();
+        products.setId(null);
+        products.setProduct(product);
+        products.setOrdered(quantity);
+        products.setPurchaseOrder(purchaseOrder);
+        products.setPrice(product.getPrice());
+
+        session.save(products);
+        session.beginTransaction().commit();
+        
+}catch(Exception e){
+	System.out.println(e.getMessage());
+    e.printStackTrace();
+}
+finally {
+	if (session != null) {
+		session.close();
+	}
+}
+}
+
 
 	// Products
 	public void persistProduct(Product product) {

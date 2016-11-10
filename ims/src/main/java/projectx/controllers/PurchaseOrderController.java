@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import projectx.persistence.entities.Product;
+import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
 import projectx.persistence.selected.SelectedPurchaseOrderProduct;
 import projectx.persistence.webentities.CurrentSession;
@@ -88,7 +89,7 @@ public class PurchaseOrderController implements Serializable {
 		List<PurchaseOrderProduct> purchaseOrderProducts = currentsession.getPendingPurchaseOrder().getContents();
 
 		for (Product product : lowStockProducts) {
-			int supplierId = new Random().nextInt(3) + 1; // TODO: Sort this out, this is a disaster.
+			int supplierId = new Random().nextInt(4) + 1; // TODO: Sort this out, this is a disaster.
 			purchaseOrderProducts.add(new PurchaseOrderProduct(product, ((3 * product.getLowLimit()) - product.getCurrentStock()), supplierController.getSupplierActualById(supplierId)));
 		}
 
@@ -118,22 +119,33 @@ public class PurchaseOrderController implements Serializable {
 			
 			}
 		}
-		List<ArrayList<PurchaseOrderProduct>> suppliers = new ArrayList<ArrayList<PurchaseOrderProduct>>();
-		suppliers.add(gnomes);
-		suppliers.add(rakes);
-		suppliers.add(weSell);
-		suppliers.add(gnomesRUs);
-		
-		for(ArrayList<PurchaseOrderProduct> supplier : suppliers){
-			if(supplier.size() > 0){
-				purchaseOrderService.addPurchaseOrder(supplier.get(0).getSupplier());
-			}
-			else{
-				System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		List<ArrayList<PurchaseOrderProduct>> productsForSuppliers = new ArrayList<ArrayList<PurchaseOrderProduct>>();
+		productsForSuppliers.add(gnomes);
+		productsForSuppliers.add(rakes);
+		productsForSuppliers.add(weSell);
+		productsForSuppliers.add(gnomesRUs);
+		int count = 0;
+		for(ArrayList<PurchaseOrderProduct> products : productsForSuppliers){
+			count += 1;
+			if(products.size() > 0){
+				PurchaseOrder purchaseOrder = purchaseOrderService.addPurchaseOrder(products.get(0).getSupplier());
+				addProduct(count, productsForSuppliers, purchaseOrder);
 			}
 		}
 		
 		clearAllPendingPurchaseOrderProducts();
 		return "index";
+	}
+	
+	public ArrayList<PurchaseOrder> getPurchaseOrders(){	
+			return purchaseOrderService.getPurchaseOrderList();
+		}
+	
+	public void addProduct(int count, List<ArrayList<PurchaseOrderProduct>> productsForSuppliers, PurchaseOrder purchaseOrder){
+		ArrayList<PurchaseOrderProduct> products = new ArrayList<PurchaseOrderProduct>();
+		products = productsForSuppliers.get(count-1);
+		for(PurchaseOrderProduct product : products){
+			purchaseOrderService.addPurchaseOrderProduct(product.getProduct(), product.getQuantity(), purchaseOrder);
+		}
 	}
 }

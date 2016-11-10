@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 
+import projectx.persistence.entities.Product;
 import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
@@ -81,9 +82,12 @@ public class PurchaseOrderRepositoryHibernate implements PurchaseOrderRepository
 	}
 
 	@Override
-	public void addPurchaseOrder(Supplier supplier) {
-		db.addPurchaseOrder(supplier);
+	public PurchaseOrder addPurchaseOrder(Supplier supplier) {
+		return db.addPurchaseOrder(supplier);
 		
+	}
+	public void addPurchaseOrder(Product product, int quantity, PurchaseOrder purchaseOrder){
+		db.addProductsOrdered(product, quantity, purchaseOrder);
 	}
 
 }

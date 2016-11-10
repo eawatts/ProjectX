@@ -6,6 +6,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import projectx.persistence.entities.Product;
 import projectx.persistence.entities.ProductsOrdered;
 import projectx.persistence.entities.PurchaseOrder;
 import projectx.persistence.entities.Supplier;
@@ -35,7 +36,12 @@ public class PurchaseOrderService {
 		return purchaseOrderRepository.getProductsOrdered(id);
 	}
 	
-	public void addPurchaseOrder(Supplier supplier){
-		purchaseOrderRepository.addPurchaseOrder(supplier);
+	public PurchaseOrder addPurchaseOrder(Supplier supplier){
+		return purchaseOrderRepository.addPurchaseOrder(supplier);
+	}
+
+	public void addPurchaseOrderProduct(Product product, int quantity, PurchaseOrder purchaseOrder) {
+		purchaseOrderRepository.addPurchaseOrder(product, quantity, purchaseOrder);
+		
 	}
 }
