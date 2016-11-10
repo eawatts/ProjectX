@@ -70,31 +70,31 @@
 									<div class="col-tab-12 col-desk-12">
 										<ul class="product-slider-star-rating">
 											<h:panelGroup layout="block"
-												rendered="#{current_product.averageReview eq null}">
+												rendered="#{current_product.averageReview eq null}" styleClass="product-slider-star">
 												<p class="review-text">There are no reviews.</p>
 											</h:panelGroup>
 											<h:form rendered="#{current_product.averageReview lt 1}"
-												class="product-slider-star">
+												class="product-slider-star" styleClass="product-slider-star">
 												<li><i class="fa fa-star-half" aria-hidden="true"></i></li>
 											</h:form>
 											<h:form rendered="#{current_product.averageReview ge 1}">
-												<li class="product-slider-star"><i class="fa fa-star"
+												<li class="product-slider-star" styleClass="product-slider-star"><i class="fa fa-star"
 													aria-hidden="true"></i></li>
 											</h:form>
 											<h:form rendered="#{current_product.averageReview ge 2}"
-												class="product-slider-star">
+												class="product-slider-star" styleClass="product-slider-star">
 												<li><i class="fa fa-star" aria-hidden="true"></i></li>
 											</h:form>
 											<h:form rendered="#{current_product.averageReview ge 3}"
-												class="product-slider-star">
+												class="product-slider-star" styleClass="product-slider-star">
 												<li><i class="fa fa-star" aria-hidden="true"></i></li>
 											</h:form>
 											<h:form rendered="#{current_product.averageReview ge 4}"
-												class="product-slider-star">
+												class="product-slider-star" styleClass="product-slider-star">
 												<li><i class="fa fa-star" aria-hidden="true"></i></li>
 											</h:form>
 											<h:form rendered="#{current_product.averageReview ge 5}"
-												class="product-slider-star">
+												class="product-slider-star" styleClass="product-slider-star">
 												<li><i class="fa fa-star" aria-hidden="true"></i></li>
 											</h:form>
 										</ul>
@@ -155,23 +155,23 @@
 											<li><i class="fa fa-star-half" aria-hidden="true"></i></li>
 										</h:form>
 										<h:form rendered="#{slider_review.rating ge 1}"
-											class="product-slider-star">
+											class="product-slider-star" styleClass="product-slider-star">
 											<li><i class="fa fa-star" aria-hidden="true"></i></li>
 										</h:form>
 										<h:form rendered="#{slider_review.rating ge 2}"
-											class="product-slider-star">
+											class="product-slider-star" styleClass="product-slider-star">
 											<li><i class="fa fa-star" aria-hidden="true"></i></li>
 										</h:form>
 										<h:form rendered="#{slider_review.rating ge 3}"
-											class="product-slider-star">
+											class="product-slider-star" styleClass="product-slider-star">
 											<li><i class="fa fa-star" aria-hidden="true"></i></li>
 										</h:form>
 										<h:form rendered="#{slider_review.rating ge 4}"
-											class="product-slider-star">
+											class="product-slider-star" styleClass="product-slider-star">
 											<li><i class="fa fa-star" aria-hidden="true"></i></li>
 										</h:form>
 										<h:form rendered="#{slider_review.rating ge 5}"
-											class="product-slider-star">
+											class="product-slider-star" styleClass="product-slider-star">
 											<li><i class="fa fa-star" aria-hidden="true"></i></li>
 										</h:form>
 									</ul>
