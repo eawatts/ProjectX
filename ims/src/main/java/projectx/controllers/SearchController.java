@@ -25,8 +25,6 @@ public class SearchController implements Serializable {
 		this.setSearchResults(results);
 
 		if (results != null) {
-			System.out.println("To " + category);
-
 			switch (category) {
 			case "product":
 				return "products";

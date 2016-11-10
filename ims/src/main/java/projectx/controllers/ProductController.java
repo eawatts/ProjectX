@@ -67,14 +67,6 @@ public class ProductController implements Serializable
 
 	public Product getProductByID()
 	{
-
-		System.out.println("Test1");
-		/*
-		 * for(int i=1;i<10;i++){
-		 * System.out.print(productService.getProductbyID(productid).getName());
-		 * }
-		 */
-		System.out.println("Product is " + productService.getProductbyID(productid));
 		return productService.getProductbyID(productid);
 	}
 
