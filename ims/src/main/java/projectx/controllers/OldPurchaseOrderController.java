@@ -112,7 +112,6 @@ public class OldPurchaseOrderController implements Serializable{
 	}
 	
 	public List<ProductsOrdered> getProductsOrdered(Integer id){
-		//System.out.println(purchaseOrderService.getProductsOrdered(id).get(1));
 		return purchaseOrderService.getProductsOrdered(id);
 	}
 	/*

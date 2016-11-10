@@ -473,7 +473,6 @@ public class HibernateDatabase {
 	}
 
 	public List<Product> getLowStockProducts() {
-		System.out.println("ITS WORKING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		Session session = null;
 		try {
 			session = sessionManager.getSession();

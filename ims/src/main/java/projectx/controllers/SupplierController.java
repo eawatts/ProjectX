@@ -52,11 +52,9 @@ public class SupplierController implements Serializable{
 		this.addressLine2 = addressLine2;
 		this.phone = phone;
 		this.postcode = postcode;
-		System.out.println(id + ": " + name);
 	}
 	
 	public void  editSupplier(int id, String name, String addressLine1, String addressLine2, String postcode, String phone){
-		System.out.println("edited supplier" + getName());
 		supplierService.editSupplier(id, name, addressLine1, addressLine2, postcode, phone);
 	}
 	
