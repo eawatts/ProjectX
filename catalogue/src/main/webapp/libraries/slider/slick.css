@@ -87,9 +87,18 @@
 .slick-slide img
 {
     display: block;
-    margin-left:20%;
+    margin-left:40%;
     max-height: 60%;
     max-width: 60%;
+}
+@media screen and (max-width:1550px){
+	.slick-slide img{
+	margin-left:20%}
+}
+@media screen and (max-width: 820px) {
+	.slick-slide img{
+	margin-left:-10%
+	}
 }
 .slick-slide.slick-loading img
 {
