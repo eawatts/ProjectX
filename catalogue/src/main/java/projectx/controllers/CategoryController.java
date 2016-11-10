@@ -37,10 +37,10 @@ public class CategoryController implements Serializable{
 		public Category findById(){
 			return categoryService.findById(subcategoryid);
 		}
+		
 		public String viewSubcatagory(int id){
 			subcategoryid = id;
-			return "subcategories";
-			
+			return "subcategories";	
 		}
 }
 	
