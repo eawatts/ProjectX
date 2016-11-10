@@ -33,6 +33,10 @@ public class Category {
 	 */
 	@OneToMany(mappedBy="Category")
 	private List<SubCategory> subCategories;
+	
+	@Column(name = "product_image_filepath", nullable=false)
+	private String productImageFilepath;
+	
 
 	/**
 	 * Constructor
@@ -41,10 +45,11 @@ public class Category {
 	 * @param nName
 	 * @param subcategories 
 	 */
-	public Category(int id, String nName, List<SubCategory> subcategories) {
+	public Category(int id, String nName, List<SubCategory> subcategories, String productImageFilepath) {
 		setCategoryID(id);
 		setName(nName);
 		this.subCategories = subcategories;
+		this.productImageFilepath=productImageFilepath;
 	}
 
 	/**
@@ -91,4 +96,13 @@ public class Category {
 		if(subCategory.getCategory() != this)
 			subCategory.setCategory(this);
 	}
+
+	public String getProductImageFilepath() {
+		return productImageFilepath;
+	}
+
+	public void setProductImageFilepath(String productImageFilepath) {
+		this.productImageFilepath = productImageFilepath;
+	}
+
 }

@@ -40,7 +40,7 @@ public class SubCategory {
 	private Category category;
 	
 	@Column(name = "product_image_filepath", nullable=false)
-	private String product_image_filepath;
+	private String productImageFilepath;
 	
 	
 
@@ -57,7 +57,7 @@ public class SubCategory {
 		setName(nName);
 		this.category = category;
 		this.setProducts(Products);
-		this.product_image_filepath=image;
+		this.productImageFilepath=image;
 	}
 
 	/**
@@ -117,11 +117,11 @@ public class SubCategory {
 	}
 
 	
-	public String getProduct_image_filepath() {
-		return product_image_filepath;
+	public String getProductImageFilepath() {
+		return productImageFilepath;
 	}
 
 	public void setProduct_image_filepath(String product_image_filepath) {
-		this.product_image_filepath = product_image_filepath;
+		this.productImageFilepath = product_image_filepath;
 	}
 }

@@ -20,8 +20,9 @@
 					<div class="col-tab-6 col-desk-4">
 						<div class="box">
 						<h:form>
-							<h:graphicImage class="accord"
-								value="http://placehold.it/140x100" />
+							<h:commandLink action="#{products.viewList(cat.name)}">
+							<h:graphicImage  class="accord catimg"
+								value="img/#{cat.productImageFilepath}" /></h:commandLink>
 							<h:commandButton class="accordion" value="#{cat.name}"
 								 action="#{products.viewList(cat.name)}">
 							</h:commandButton>
